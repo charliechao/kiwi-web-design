@@ -73,11 +73,22 @@ const industries = [
 
   <!-- Hero -->
   <section class="hero section-dark">
-    <div class="container">
-      <h1>Google Ads Management for Auckland Small Businesses</h1>
-      <p class="lead">Get more calls, quote requests, and leads from customers already searching for what you do.</p>
-      <p class="price-badge">Setup from NZ$499</p>
-      <a href="/website-designer-auckland/" class="btn-primary">Get Started</a>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Google Ads Management for Auckland Small Businesses</h1>
+        <p class="lead">Get more calls, quote requests, and leads from customers already searching for what you do.</p>
+        <p class="price-badge">Setup from NZ$499</p>
+        <a href="/website-designer-auckland/" class="btn-primary">Get Started</a>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/g9554e254a3deda0f4e0d191733f0a80e83092bd51e07c6bd164691af8ea9c90b53820097badbed62a4494dd5b32fc136695cdb73860356f52358effc887c6e83_1280-2672184-e1758395116775.jpg"
+          alt="Google Ads management for Auckland businesses"
+          width="586"
+          height="328"
+          loading="eager"
+        />
+      </div>
     </div>
   </section>
 
@@ -118,6 +129,18 @@ const industries = [
 
 <style>
   .hero { padding: 6rem 0; }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
   .hero h1 { color: var(--kwd-white); max-width: 720px; }
   .lead { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 600px; margin-bottom: 1rem; }
   .price-badge {
@@ -167,6 +190,8 @@ const industries = [
   }
 
   @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-image { display: none; }
     .features-grid { grid-template-columns: 1fr; }
     .industry-list { columns: 1; }
   }

@@ -94,10 +94,21 @@ const process = [
 
   <!-- Hero -->
   <section class="hero section-dark">
-    <div class="container">
-      <h1>SEO Services Auckland</h1>
-      <p class="lead">Boost your business visibility with affordable SEO services in Auckland. Get expert help to drive traffic and grow your business.</p>
-      <a href="/website-designer-auckland/" class="btn-primary">Get a Free SEO Audit</a>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>SEO Services Auckland</h1>
+        <p class="lead">Boost your business visibility with affordable SEO services in Auckland. Get expert help to drive traffic and grow your business.</p>
+        <a href="/website-designer-auckland/" class="btn-primary">Get a Free SEO Audit</a>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+          alt="SEO analytics and data on a laptop screen"
+          width="800"
+          height="533"
+          loading="eager"
+        />
+      </div>
     </div>
   </section>
 
@@ -198,6 +209,18 @@ const process = [
 
 <style>
   .hero { padding: 6rem 0; }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
   .hero h1 { color: var(--kwd-white); }
   .lead { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 600px; margin-bottom: 2rem; }
 
@@ -264,6 +287,8 @@ const process = [
   .faq-item p { margin: 0.75rem 0 0; color: var(--kwd-brown); }
 
   @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-image { display: none; }
     .stats-row, .services-grid, .results-grid, .process-grid { grid-template-columns: 1fr; }
   }
 </style>

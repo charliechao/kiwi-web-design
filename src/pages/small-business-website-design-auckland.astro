@@ -88,9 +88,27 @@ const industries = [
 
   <!-- Why small businesses choose us -->
   <section class="section section-cream">
-    <div class="container">
-      <h2>Why Small Businesses Choose Us</h2>
-      <p>A professional website helps your business get found, build trust, and win new customers. At Kiwi Web Design, we create affordable, high-quality website designs in Auckland that are built to generate leads — not just look good.</p>
+    <div class="container why-grid">
+      <div class="why-text">
+        <h2>Why Small Businesses Choose Us</h2>
+        <p>A professional website helps your business get found, build trust, and win new customers. At Kiwi Web Design, we create affordable, high-quality website designs in Auckland that are built to generate leads — not just look good.</p>
+      </div>
+      <div class="why-images">
+        <img
+          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/office1-1024x683.jpg"
+          alt="Web design team working at Kiwi Web Design Auckland"
+          width="500"
+          height="333"
+          loading="lazy"
+        />
+        <img
+          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/office2-1024x683.jpg"
+          alt="Website design consultation in Auckland"
+          width="500"
+          height="333"
+          loading="lazy"
+        />
+      </div>
     </div>
   </section>
 
@@ -147,6 +165,25 @@ const industries = [
 </Layout>
 
 <style>
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .why-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .why-images img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+  }
+
   .hero { padding: 6rem 0; }
   .hero h1 { color: var(--kwd-white); }
   .subheading {
@@ -214,6 +251,7 @@ const industries = [
   .region-list a:hover { background: var(--kwd-yellow); }
 
   @media (max-width: 768px) {
+    .why-grid { grid-template-columns: 1fr; }
     .industries-grid { grid-template-columns: 1fr; }
   }
 </style>

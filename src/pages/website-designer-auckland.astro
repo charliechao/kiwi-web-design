@@ -42,6 +42,17 @@ const schema = {
   schema={schema}
 >
 
+  <!-- Page hero image -->
+  <section class="contact-hero">
+    <img
+      src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/Auckland.jpg"
+      alt="Auckland city — Kiwi Web Design serves all of Auckland"
+      width="1900"
+      height="1000"
+      loading="eager"
+    />
+  </section>
+
   <section class="section">
     <div class="container contact-grid">
 
@@ -113,6 +124,19 @@ const schema = {
 </Layout>
 
 <style>
+  .contact-hero {
+    max-height: 400px;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .contact-hero img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center 60%;
+    display: block;
+  }
+
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

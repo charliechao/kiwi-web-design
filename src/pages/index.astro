@@ -110,13 +110,24 @@ const faqs = [
 
   <!-- Hero -->
   <section class="hero section-dark">
-    <div class="container">
-      <p class="eyebrow">Web Design · SEO · Google Ads · Auckland</p>
-      <h1>Our Websites, SEO and Google Ads generate real leads for Auckland small businesses</h1>
-      <p class="lead">Kiwi Web Design helps Auckland small businesses drive traffic, enquiries, and sales online — not just build websites.</p>
-      <div class="hero-ctas">
-        <a href="/website-designer-auckland/" class="btn-primary">Get a Free Quote</a>
-        <a href="/small-business-website-design-auckland/" class="btn-ghost">See Our Packages</a>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Web Design · SEO · Google Ads · Auckland</p>
+        <h1>Our Websites, SEO and Google Ads generate real leads for Auckland small businesses</h1>
+        <p class="lead">Kiwi Web Design helps Auckland small businesses drive traffic, enquiries, and sales online — not just build websites.</p>
+        <div class="hero-ctas">
+          <a href="/website-designer-auckland/" class="btn-primary">Get a Free Quote</a>
+          <a href="/small-business-website-design-auckland/" class="btn-ghost">See Our Packages</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/08/Auckland.jpg"
+          alt="Auckland city skyline at dusk"
+          width="760"
+          height="400"
+          loading="eager"
+        />
       </div>
     </div>
   </section>
@@ -125,6 +136,31 @@ const faqs = [
   <section class="section section-cream">
     <div class="container text-center">
       <h2>We provide professional websites, SEO and Google Ads services to generate more leads for you</h2>
+    </div>
+  </section>
+
+  <!-- Portfolio strip -->
+  <section class="section">
+    <div class="container">
+      <h2>Some of Our Clients</h2>
+      <p class="section-intro">Real Auckland businesses we've helped build an online presence.</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Cleaner-e1750284778292.jpg" alt="Auckland cleaning business website" width="400" height="300" loading="lazy" />
+        </div>
+        <div class="portfolio-item">
+          <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Building_Inspector-e1750284793590.jpg" alt="Auckland building inspector website" width="400" height="300" loading="lazy" />
+        </div>
+        <div class="portfolio-item">
+          <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Specialist-e1753415885359.jpg" alt="Auckland specialist business website" width="400" height="300" loading="lazy" />
+        </div>
+        <div class="portfolio-item">
+          <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Lavaranda-e1753415431519.jpg" alt="Lavaranda Auckland website" width="400" height="300" loading="lazy" />
+        </div>
+        <div class="portfolio-item">
+          <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Barrett-Access-Scaffolding-Company.jpg" alt="Barrett Access Scaffolding Auckland website" width="400" height="300" loading="lazy" />
+        </div>
+      </div>
     </div>
   </section>
 
@@ -173,6 +209,31 @@ const faqs = [
 <style>
   .hero {
     padding: 6rem 0;
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
+  .section-intro { color: var(--kwd-brown); margin-bottom: 1.5rem; }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+  .portfolio-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
   }
   .eyebrow {
     font-size: 0.8rem;
@@ -236,6 +297,9 @@ const faqs = [
   .faq-item p { margin: 0.75rem 0 0; color: var(--kwd-brown); }
 
   @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-image { display: none; }
     .packages-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
