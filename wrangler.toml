@@ -1,0 +1,4 @@
+name = "kwd-new-ai-site"
+# TODO: Update to your actual first-deploy date.
+compatibility_date = "2025-03-15"
+pages_build_output_dir = "./dist"
