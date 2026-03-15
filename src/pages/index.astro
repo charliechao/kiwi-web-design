@@ -1,32 +1,89 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "name": "Auckland Web Design That Generates Leads | Kiwi Web Design",
+      "description": "We build websites for Auckland small businesses that generate real enquiries. Strategy-first web design focused on leads, not just looks.",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "datePublished": "2025-04-09T22:43:08+00:00",
+      "dateModified": "2026-03-05T21:19:05+00:00",
+      "inLanguage": "en-NZ",
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/#breadcrumb" },
+      "potentialAction": [{ "@type": "ReadAction", "target": ["https://www.kiwiwebdesign.co.nz/"] }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/#breadcrumb",
+      "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home" }]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.kiwiwebdesign.co.nz/#website",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "name": "Kiwi Web Design",
+      "description": "Websites built to generate leads",
+      "alternateName": "Web Design Auckland",
+      "publisher": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "inLanguage": "en-NZ",
+      "potentialAction": [{
+        "@type": "SearchAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://www.kiwiwebdesign.co.nz/?s={search_term_string}" },
+        "query-input": { "@type": "PropertyValueSpecification", "valueRequired": true, "valueName": "search_term_string" }
+      }]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.kiwiwebdesign.co.nz/#/schema/logo/image/",
+        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png",
+        "contentUrl": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png",
+        "width": 512,
+        "height": 512,
+        "caption": "Kiwi Web Design",
+        "inLanguage": "en-NZ"
+      },
+      "image": { "@id": "https://www.kiwiwebdesign.co.nz/#/schema/logo/image/" },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61559560322941",
+        "https://x.com/charliechao",
+        "https://www.tiktok.com/@kiwi_web_design",
+        "https://www.youtube.com/@Kiwiwebdesign",
+        "https://www.instagram.com/kiwi_web_design/",
+        "https://www.linkedin.com/company/108270459/",
+        "https://clutch.co/profile/kiwi-web-design-0",
+        "https://nz.trustpilot.com/review/kiwiwebdesign.co.nz",
+        "https://www.designrush.com/agency/profile/kiwi-web-design",
+        "https://yellow.co.nz/auckland/bpp/kiwi-web-design-579405073"
+      ]
+    }
+  ]
+};
 ---
 
-<Layout title="Home | KWD New AI Site">
-  <h1>KWD New AI Site</h1>
-  <p>Built with Astro 5 · Deployed to Cloudflare Pages</p>
-
-  <section>
-    <h2>About</h2>
-    <p>
-      Kiwi Web Design builds fast, modern websites for New Zealand businesses.
-      This site is powered by Astro 5 with static output, hosted on Cloudflare Pages
-      for global edge delivery.
-    </p>
-  </section>
-
-  <section>
-    <h2>Services</h2>
-    <ul>
-      <li>Website design &amp; development</li>
-      <li>SEO &amp; performance optimisation</li>
-      <li>AI-assisted content &amp; copywriting</li>
-      <li>Ongoing support &amp; maintenance</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Pipeline test</h2>
-    <p>If you can read this on the live site, the Cloudflare Pages deploy pipeline is working.</p>
+<Layout
+  title="Auckland Web Design That Generates Leads | Kiwi Web Design"
+  description="We build websites for Auckland small businesses that generate real enquiries. Strategy-first web design focused on leads, not just looks."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/"
+  schema={schema}
+>
+  <!-- TODO: Replace with actual homepage content from the live site -->
+  <section class="section">
+    <div class="container">
+      <h1>Auckland Web Design That Generates Leads</h1>
+      <p>We build websites for Auckland small businesses that generate real enquiries. Strategy-first web design focused on leads, not just looks.</p>
+      <a href="/website-designer-auckland/" class="btn-primary">Get a Free Quote</a>
+    </div>
   </section>
 </Layout>

@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/google-ads/",
+      "url": "https://www.kiwiwebdesign.co.nz/google-ads/",
+      "name": "Google Ads Management Auckland | Google Ads for Small Business",
+      "description": "Get more calls and enquiries with practical Google Ads management for Auckland small businesses. Setup from NZ$499 with clear reporting and conversion tracking.",
+      "datePublished": "2025-09-02T05:12:14+00:00",
+      "dateModified": "2026-03-11T05:38:01+00:00",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/google-ads/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/google-ads/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Google Ads" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png",
+        "width": 512,
+        "height": 512
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Google Ads Management Auckland | Google Ads for Small Business"
+  description="Get more calls and enquiries with practical Google Ads management for Auckland small businesses. Setup from NZ$499 with clear reporting and conversion tracking."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/google-ads/"
+  schema={schema}
+>
+  <!-- TODO: Replace with actual page content from the live site -->
+  <section class="section">
+    <div class="container">
+      <h1>Google Ads Management Auckland</h1>
+      <p>Get more calls and enquiries with practical Google Ads management for Auckland small businesses. Setup from NZ$499 with clear reporting and conversion tracking.</p>
+      <a href="/website-designer-auckland/" class="btn-primary">Get Started</a>
+    </div>
+  </section>
+</Layout>

@@ -1,41 +1,145 @@
 ---
-// To use image optimisation, import the Image component and your asset:
-// import { Image } from 'astro:assets';
-// import siteLogo from '../assets/logo.svg';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
-  description?: string;
+  description: string;
+  canonicalURL?: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description = 'A KWD AI site built with Astro.' } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title, description, canonicalURL, schema } = Astro.props;
+
+const OG_IMAGE = 'https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png';
+
+const resolvedCanonical = canonicalURL ?? new URL(Astro.url.pathname, Astro.site).href;
+
+// Escape </script> sequences so JSON-LD doesn't break the HTML parser
+const schemaStr = schema
+  ? JSON.stringify(schema).replace(/<\/script>/gi, '<\\/script>')
+  : null;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-NZ">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalURL} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/">Home</a>
-      </nav>
-    </header>
 
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={resolvedCanonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content={resolvedCanonical} />
+    <meta property="og:title"       content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image"       content={OG_IMAGE} />
+    <meta property="og:site_name"   content="Kiwi Web Design" />
+    <meta property="og:locale"      content="en_NZ" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image"       content={OG_IMAGE} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts: DM Serif Display (headings) + Poppins (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    {schemaStr && <script type="application/ld+json" is:inline set:html={schemaStr} />}
+  </head>
+
+  <body>
+    <Header />
     <main>
       <slot />
     </main>
-
-    <footer>
-      <p>&copy; {new Date().getFullYear()} KWD New AI Site</p>
-    </footer>
+    <Footer />
   </body>
 </html>
+
+<style is:global>
+  :root {
+    --kwd-yellow:    #fbe8a6;
+    --kwd-gold:      #f3d97a;
+    --kwd-dark:      #2c2927;
+    --kwd-brown:     #534a45;
+    --kwd-cream:     #f2f1e5;
+    --kwd-white:     #ffffff;
+    --kwd-container: 1200px;
+    --kwd-font-body:    'Poppins', sans-serif;
+    --kwd-font-heading: 'DM Serif Display', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--kwd-font-body);
+    color: var(--kwd-dark);
+    background: var(--kwd-white);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+
+  main { flex: 1; }
+
+  img { max-width: 100%; height: auto; }
+
+  a { color: inherit; text-decoration: none; }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--kwd-font-heading);
+    line-height: 1.2;
+    margin-top: 0;
+  }
+
+  h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+  h2 { font-size: clamp(1.75rem, 3.5vw, 3rem); }
+  h3 { font-size: clamp(1.25rem, 2.5vw, 2rem); }
+
+  p { margin-top: 0; }
+
+  .container {
+    max-width: var(--kwd-container);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  /* Shared utility classes available to all pages */
+  .btn-primary {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.75rem 1.75rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--kwd-gold); }
+
+  .section        { padding: 5rem 0; }
+  .section-cream  { background: var(--kwd-cream); }
+  .section-dark   { background: var(--kwd-dark); color: var(--kwd-white); }
+</style>

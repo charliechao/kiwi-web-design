@@ -7,7 +7,8 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://example.com',
+  site: 'https://www.kiwiwebdesign.co.nz',
+  trailingSlash: 'always',
   adapter: cloudflare({
     imageService: 'compile', // use Sharp at build time for prerendered pages
   }),

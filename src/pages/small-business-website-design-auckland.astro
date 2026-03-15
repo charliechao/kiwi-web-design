@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/",
+      "url": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/",
+      "name": "Affordable Web Design in Auckland for Small Businesses",
+      "description": "Affordable web design in Auckland for tradies and small businesses. WordPress packages from $1,290, free in-person consults, delivery in 2 to 3 weeks.",
+      "datePublished": "2025-09-02T05:14:25+00:00",
+      "dateModified": "2026-02-24T07:53:35+00:00",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "primaryImageOfPage": { "@id": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/#primaryimage" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/#breadcrumb" }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/#primaryimage",
+      "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-211856-211856.jpg",
+      "width": 130,
+      "height": 130,
+      "caption": "Affordable web design services for small businesses in Auckland, created by Kiwi Web Design."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Affordable Web Design Auckland" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png",
+        "width": 512,
+        "height": 512
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Affordable Web Design in Auckland for Small Businesses"
+  description="Affordable web design in Auckland for tradies and small businesses. WordPress packages from $1,290, free in-person consults, delivery in 2 to 3 weeks."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/"
+  schema={schema}
+>
+  <!-- TODO: Replace with actual page content from the live site -->
+  <section class="section">
+    <div class="container">
+      <h1>Affordable Web Design in Auckland for Small Businesses</h1>
+      <p>Affordable web design in Auckland for tradies and small businesses. WordPress packages from $1,290, free in-person consults, delivery in 2 to 3 weeks.</p>
+      <a href="/website-designer-auckland/" class="btn-primary">Get a Free Quote</a>
+    </div>
+  </section>
+</Layout>

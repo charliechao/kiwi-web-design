@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/seo-auckland/",
+      "url": "https://www.kiwiwebdesign.co.nz/seo-auckland/",
+      "name": "SEO Services Auckland | Local SEO for Small Business | Kiwi Web Design",
+      "description": "Boost your business visibility with affordable SEO services in Auckland. Get expert help to drive traffic and grow your business.",
+      "datePublished": "2025-07-08T02:43:37+00:00",
+      "dateModified": "2026-03-05T21:13:57+00:00",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/seo-auckland/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/seo-auckland/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Search Engine Optimisation" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png",
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "VideoObject",
+          "position": 1,
+          "name": "Why Choose Kiwi Web Design (90s)",
+          "description": "Quick intro to Kiwi Web Design — Auckland-wide, AI-first, affordable, and small-business focused.",
+          "uploadDate": "2024-05-15",
+          "contentUrl": "https://www.youtube.com/watch?v=n9BFps8DyRY"
+        },
+        {
+          "@type": "VideoObject",
+          "position": 2,
+          "name": "AI-First & Affordable Web Design for Auckland Small Businesses",
+          "description": "How Kiwi Web Design uses AI to deliver affordable, high-quality websites faster than traditional agencies.",
+          "uploadDate": "2024-05-15",
+          "contentUrl": "https://www.youtube.com/watch?v=vCd2E2GnWkY"
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Layout
+  title="SEO Services Auckland | Local SEO for Small Business | Kiwi Web Design"
+  description="Boost your business visibility with affordable SEO services in Auckland. Get expert help to drive traffic and grow your business."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/seo-auckland/"
+  schema={schema}
+>
+  <!-- TODO: Replace with actual page content from the live site -->
+  <section class="section">
+    <div class="container">
+      <h1>SEO Services Auckland</h1>
+      <p>Boost your business visibility with affordable SEO services in Auckland. Get expert help to drive traffic and grow your business.</p>
+      <a href="/website-designer-auckland/" class="btn-primary">Get a Free Consultation</a>
+    </div>
+  </section>
+</Layout>
