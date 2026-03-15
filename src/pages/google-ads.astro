@@ -38,6 +38,30 @@ const schema = {
     }
   ]
 };
+
+const features = [
+  {
+    title: "Why Use Google Ads",
+    desc: "Google Ads puts your business in front of customers at the exact moment they are searching for your service. For Auckland small businesses, that makes it one of the most cost-effective ways to generate leads fast.",
+  },
+  {
+    title: "Our Approach",
+    desc: "We set up campaigns with tight targeting, negative keywords, and conversion tracking so every dollar you spend is working hard. No wasted ad spend, clear reporting every month.",
+  },
+  {
+    title: "What You Get",
+    desc: "Campaign setup, keyword research, ad copywriting, landing page advice, conversion tracking, and monthly performance reports — all included from NZ$499 setup.",
+  },
+];
+
+const industries = [
+  "Trades (plumbers, electricians, builders)",
+  "eCommerce & retail",
+  "Law firms",
+  "Healthcare & dental",
+  "Beauty & wellness",
+  "Restaurants & hospitality",
+];
 ---
 
 <Layout
@@ -46,12 +70,104 @@ const schema = {
   canonicalURL="https://www.kiwiwebdesign.co.nz/google-ads/"
   schema={schema}
 >
-  <!-- TODO: Replace with actual page content from the live site -->
-  <section class="section">
+
+  <!-- Hero -->
+  <section class="hero section-dark">
     <div class="container">
-      <h1>Google Ads Management Auckland</h1>
-      <p>Get more calls and enquiries with practical Google Ads management for Auckland small businesses. Setup from NZ$499 with clear reporting and conversion tracking.</p>
+      <h1>Google Ads Management for Auckland Small Businesses</h1>
+      <p class="lead">Get more calls, quote requests, and leads from customers already searching for what you do.</p>
+      <p class="price-badge">Setup from NZ$499</p>
       <a href="/website-designer-auckland/" class="btn-primary">Get Started</a>
     </div>
   </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="container">
+      <div class="features-grid">
+        {features.map(({ title, desc }) => (
+          <div class="feature-card">
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="section section-cream">
+    <div class="container">
+      <h2>Industries We Work With</h2>
+      <ul class="industry-list">
+        {industries.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark text-center">
+    <div class="container">
+      <h2>Ready to get more leads this week?</h2>
+      <p>Google Ads can put you in front of customers today. Book a free consultation and we'll tell you exactly what's possible for your business.</p>
+      <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  .hero { padding: 6rem 0; }
+  .hero h1 { color: var(--kwd-white); max-width: 720px; }
+  .lead { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 600px; margin-bottom: 1rem; }
+  .price-badge {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.3rem 1rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  .text-center { text-align: center; }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .feature-card {
+    border: 2px solid var(--kwd-cream);
+    border-radius: 8px;
+    padding: 1.75rem;
+  }
+  .feature-card h3 { margin-bottom: 0.75rem; }
+  .feature-card p { color: var(--kwd-brown); font-size: 0.95rem; margin: 0; }
+
+  .industry-list {
+    columns: 2;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+  }
+  .industry-list li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+    break-inside: avoid;
+  }
+  .industry-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--kwd-brown);
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .industry-list { columns: 1; }
+  }
+</style>

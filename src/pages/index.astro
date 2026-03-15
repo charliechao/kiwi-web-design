@@ -15,8 +15,7 @@ const schema = {
       "datePublished": "2025-04-09T22:43:08+00:00",
       "dateModified": "2026-03-05T21:19:05+00:00",
       "inLanguage": "en-NZ",
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/#breadcrumb" },
-      "potentialAction": [{ "@type": "ReadAction", "target": ["https://www.kiwiwebdesign.co.nz/"] }]
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
@@ -31,12 +30,7 @@ const schema = {
       "description": "Websites built to generate leads",
       "alternateName": "Web Design Auckland",
       "publisher": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
-      "inLanguage": "en-NZ",
-      "potentialAction": [{
-        "@type": "SearchAction",
-        "target": { "@type": "EntryPoint", "urlTemplate": "https://www.kiwiwebdesign.co.nz/?s={search_term_string}" },
-        "query-input": { "@type": "PropertyValueSpecification", "valueRequired": true, "valueName": "search_term_string" }
-      }]
+      "inLanguage": "en-NZ"
     },
     {
       "@type": "Organization",
@@ -48,13 +42,10 @@ const schema = {
         "@type": "ImageObject",
         "@id": "https://www.kiwiwebdesign.co.nz/#/schema/logo/image/",
         "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png",
-        "contentUrl": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png",
         "width": 512,
         "height": 512,
-        "caption": "Kiwi Web Design",
-        "inLanguage": "en-NZ"
+        "caption": "Kiwi Web Design"
       },
-      "image": { "@id": "https://www.kiwiwebdesign.co.nz/#/schema/logo/image/" },
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61559560322941",
         "https://x.com/charliechao",
@@ -63,13 +54,51 @@ const schema = {
         "https://www.instagram.com/kiwi_web_design/",
         "https://www.linkedin.com/company/108270459/",
         "https://clutch.co/profile/kiwi-web-design-0",
-        "https://nz.trustpilot.com/review/kiwiwebdesign.co.nz",
-        "https://www.designrush.com/agency/profile/kiwi-web-design",
-        "https://yellow.co.nz/auckland/bpp/kiwi-web-design-579405073"
+        "https://nz.trustpilot.com/review/kiwiwebdesign.co.nz"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How much does it cost to generate leads online for a small Auckland business?", "acceptedAnswer": { "@type": "Answer", "text": "Starting from $1,290 for a lead-focused website with basic SEO." } },
+        { "@type": "Question", "name": "Will my website actually generate enquiries?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every site we build is designed around conversion with clear calls to action." } },
+        { "@type": "Question", "name": "How long does SEO take to bring leads?", "acceptedAnswer": { "@type": "Answer", "text": "You can expect early movement in 2 to 3 months, with stronger results building over 6–12 months." } },
+        { "@type": "Question", "name": "Why choose your agency over other Auckland agencies?", "acceptedAnswer": { "@type": "Answer", "text": "Free consultations, AI-driven efficiency, 50–70% lower cost than traditional agencies, transparent pricing, fast turnaround." } }
       ]
     }
   ]
 };
+
+const packages = [
+  {
+    name: "Launch & Get Found",
+    price: "From $1,290",
+    desc: "A professional website built to rank locally and turn visitors into enquiries.",
+  },
+  {
+    name: "Lead Growth Engine",
+    price: "From $2,690",
+    desc: "Website + SEO combined to grow your organic traffic and qualified leads month on month.",
+  },
+  {
+    name: "Sales Accelerator",
+    price: "From $3,890",
+    desc: "The full stack — website, SEO, and Google Ads working together for immediate and long-term lead generation.",
+  },
+];
+
+const faqs = [
+  { q: "How much does it cost to generate leads online for a small Auckland business?", a: "Starting from $1,290 for a lead-focused website with basic SEO." },
+  { q: "Will my website actually generate enquiries?", a: "Yes. Every site we build is designed around conversion with clear calls to action." },
+  { q: "How long does SEO take to bring leads?", a: "You can expect early movement in 2 to 3 months, with stronger results building over 6–12 months." },
+  { q: "Can you help with Google Ads as well?", a: "Yes. Google Ads is the fastest way to generate enquiries while your SEO builds momentum." },
+  { q: "Do you offer website, SEO, and Google Ads together?", a: "Yes — we combine all three for both short-term and long-term lead generation." },
+  { q: "Will my website rank well on Google in Auckland?", a: "It depends on your competition, but every site is built with proper on-page SEO and local signals." },
+  { q: "Do you work with tradies and service businesses?", a: "Yes — we regularly work with trades, services, and local businesses right across Auckland." },
+  { q: "Can you add e-commerce or booking features?", a: "Yes, with secure payment gateways and custom booking functionality." },
+  { q: "Can you migrate my site from Wix or Squarespace?", a: "Yes — we rebuild and improve with better SEO and speed." },
+  { q: "Why choose your agency over other Auckland agencies?", a: "Free consultations, AI-driven efficiency, 50–70% lower cost than traditional agencies, transparent pricing, fast turnaround." },
+];
 ---
 
 <Layout
@@ -78,12 +107,135 @@ const schema = {
   canonicalURL="https://www.kiwiwebdesign.co.nz/"
   schema={schema}
 >
-  <!-- TODO: Replace with actual homepage content from the live site -->
-  <section class="section">
+
+  <!-- Hero -->
+  <section class="hero section-dark">
     <div class="container">
-      <h1>Auckland Web Design That Generates Leads</h1>
-      <p>We build websites for Auckland small businesses that generate real enquiries. Strategy-first web design focused on leads, not just looks.</p>
-      <a href="/website-designer-auckland/" class="btn-primary">Get a Free Quote</a>
+      <p class="eyebrow">Web Design · SEO · Google Ads · Auckland</p>
+      <h1>Our Websites, SEO and Google Ads generate real leads for Auckland small businesses</h1>
+      <p class="lead">Kiwi Web Design helps Auckland small businesses drive traffic, enquiries, and sales online — not just build websites.</p>
+      <div class="hero-ctas">
+        <a href="/website-designer-auckland/" class="btn-primary">Get a Free Quote</a>
+        <a href="/small-business-website-design-auckland/" class="btn-ghost">See Our Packages</a>
+      </div>
     </div>
   </section>
+
+  <!-- Services intro -->
+  <section class="section section-cream">
+    <div class="container text-center">
+      <h2>We provide professional websites, SEO and Google Ads services to generate more leads for you</h2>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section class="section">
+    <div class="container">
+      <div class="packages-grid">
+        {packages.map(({ name, price, desc }) => (
+          <div class="package-card">
+            <h3>{name}</h3>
+            <p class="price">{price}</p>
+            <p>{desc}</p>
+            <a href="/website-designer-auckland/" class="btn-primary">Get Started</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-cream">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        {faqs.map(({ q, a }) => (
+          <details class="faq-item">
+            <summary>{q}</summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA strip -->
+  <section class="section section-dark text-center">
+    <div class="container">
+      <h2>Ready to generate more leads?</h2>
+      <p>Free consultation — online or in person, Auckland wide.</p>
+      <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  .hero {
+    padding: 6rem 0;
+  }
+  .eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-yellow);
+    margin-bottom: 1rem;
+  }
+  .hero h1 { color: var(--kwd-white); max-width: 800px; }
+  .lead { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 600px; }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+  .btn-ghost {
+    display: inline-block;
+    border: 2px solid var(--kwd-yellow);
+    color: var(--kwd-yellow);
+    padding: 0.7rem 1.75rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { background: var(--kwd-yellow); color: var(--kwd-dark); }
+
+  .text-center { text-align: center; }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .package-card {
+    border: 2px solid var(--kwd-cream);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .package-card h3 { margin: 0; font-family: var(--kwd-font-body); font-size: 1.1rem; font-weight: 700; }
+  .price { font-size: 1.5rem; font-family: var(--kwd-font-heading); color: var(--kwd-dark); margin: 0; }
+  .package-card p { flex: 1; color: var(--kwd-brown); }
+
+  .faq-list { max-width: 780px; }
+  .faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 1rem 0;
+  }
+  .faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-item summary::after { content: "+"; font-size: 1.25rem; color: var(--kwd-brown); }
+  .faq-item[open] summary::after { content: "−"; }
+  .faq-item p { margin: 0.75rem 0 0; color: var(--kwd-brown); }
+
+  @media (max-width: 768px) {
+    .packages-grid { grid-template-columns: 1fr; }
+  }
+</style>

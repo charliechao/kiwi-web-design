@@ -48,6 +48,26 @@ const schema = {
     }
   ]
 };
+
+const included = [
+  "A responsive WordPress site that looks great on phones, tablets, and desktops",
+  "SEO-ready structure to help your site show up on Google",
+  "Free consultation (in person or online) to understand your goals",
+  "Fast turnaround with AI-powered tools to save you time and money",
+];
+
+const industries = [
+  {
+    name: "Trades",
+    desc: "If your phone is not ringing enough and you are not sure how to get more leads online, you are not alone. We work with Kiwi tradies across Auckland — plumbers, roofers, landscapers, and HVAC companies — to improve their Google rankings, drive the right traffic, and turn that traffic into real enquiries and booked jobs.",
+    link: "/tradie-website-design-auckland/",
+  },
+  { name: "eCommerce", desc: "WooCommerce and Shopify stores built to convert visitors into customers.", link: "/ecommerce-website-auckland/" },
+  { name: "Healthcare", desc: "Professional websites for clinics, specialists, and health providers.", link: "/how-kiwi-web-design-helps-auckland-healthcare/" },
+  { name: "Beauty", desc: "Elegant, booking-ready sites for salons, spas, and beauty professionals.", link: "/how-kiwi-web-design-helps-auckland-beauty-industry/" },
+  { name: "Restaurants", desc: "Mouth-watering sites with menus, reservations, and online ordering.", link: "/how-kiwi-web-design-helps-auckland-restaurants/" },
+  { name: "Legal", desc: "Trust-building websites for law firms and legal professionals.", link: "/how-kiwi-web-design-helps-auckand-lawyers/" },
+];
 ---
 
 <Layout
@@ -56,12 +76,144 @@ const schema = {
   canonicalURL="https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/"
   schema={schema}
 >
-  <!-- TODO: Replace with actual page content from the live site -->
-  <section class="section">
+
+  <!-- Hero -->
+  <section class="hero section-dark">
     <div class="container">
-      <h1>Affordable Web Design in Auckland for Small Businesses</h1>
-      <p>Affordable web design in Auckland for tradies and small businesses. WordPress packages from $1,290, free in-person consults, delivery in 2 to 3 weeks.</p>
-      <a href="/website-designer-auckland/" class="btn-primary">Get a Free Quote</a>
+      <h1>Affordable Website Design Auckland</h1>
+      <h2 class="subheading">Servicing Auckland wide, including Rodney, Waitakere, Northshore, Auckland CBD, East and South Auckland. Affordable package from $1,290.</h2>
+      <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
     </div>
   </section>
+
+  <!-- Why small businesses choose us -->
+  <section class="section section-cream">
+    <div class="container">
+      <h2>Why Small Businesses Choose Us</h2>
+      <p>A professional website helps your business get found, build trust, and win new customers. At Kiwi Web Design, we create affordable, high-quality website designs in Auckland that are built to generate leads — not just look good.</p>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="section">
+    <div class="container">
+      <h2>What's Included</h2>
+      <ul class="included-list">
+        {included.map((item) => <li>{item}</li>)}
+      </ul>
+      <a href="/website-designer-auckland/" class="btn-primary">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="section section-cream">
+    <div class="container">
+      <h2>Industries We Work With</h2>
+      <p>Build effective websites, SEO and Google Ads to help Auckland small businesses generate leads.</p>
+      <div class="industries-grid">
+        {industries.map(({ name, desc, link }) => (
+          <div class="industry-card">
+            <h3>{name}</h3>
+            <p>{desc}</p>
+            <a href={link}>Learn more →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional links -->
+  <section class="section">
+    <div class="container">
+      <h2>Serving All of Auckland</h2>
+      <ul class="region-list">
+        <li><a href="/north-shore-website-design/">North Shore</a></li>
+        <li><a href="/west-auckland-web-design/">West Auckland</a></li>
+        <li><a href="/central-auckland-web-design/">Central Auckland</a></li>
+        <li><a href="/east-auckland-web-design/">East Auckland</a></li>
+        <li><a href="/south-auckland-web-design/">South Auckland</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark text-center">
+    <div class="container">
+      <h2>Ready for an affordable website that actually works?</h2>
+      <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  .hero { padding: 6rem 0; }
+  .hero h1 { color: var(--kwd-white); }
+  .subheading {
+    font-family: var(--kwd-font-body);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    max-width: 680px;
+    margin-bottom: 2rem;
+  }
+  .text-center { text-align: center; }
+
+  .included-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: grid;
+    gap: 0.75rem;
+  }
+  .included-list li {
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .included-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--kwd-brown);
+    font-weight: 700;
+  }
+
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .industry-card {
+    background: var(--kwd-white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .industry-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .industry-card p { font-size: 0.9rem; color: var(--kwd-brown); margin-bottom: 1rem; }
+  .industry-card a { font-size: 0.875rem; font-weight: 600; color: var(--kwd-dark); }
+
+  .region-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+  }
+  .region-list a {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: var(--kwd-cream);
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .region-list a:hover { background: var(--kwd-yellow); }
+
+  @media (max-width: 768px) {
+    .industries-grid { grid-template-columns: 1fr; }
+  }
+</style>

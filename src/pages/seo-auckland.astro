@@ -25,6 +25,23 @@ const schema = {
       ]
     },
     {
+      "@type": "LocalBusiness",
+      "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness",
+      "name": "Kiwi Web Design",
+      "telephone": "+64-21-039-6580",
+      "address": { "@type": "PostalAddress", "addressLocality": "Auckland", "addressCountry": "NZ" },
+      "geo": { "@type": "GeoCoordinates", "latitude": -36.848461, "longitude": 174.763336 },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47" },
+      "priceRange": "$$"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How long does SEO take to show results in Auckland?", "acceptedAnswer": { "@type": "Answer", "text": "3–6 months for meaningful results, with results compounding over time." } },
+        { "@type": "Question", "name": "How much does SEO cost for a small business in New Zealand?", "acceptedAnswer": { "@type": "Answer", "text": "$500–$2,500 per month depending on competition and goals." } }
+      ]
+    },
+    {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
@@ -35,30 +52,37 @@ const schema = {
         "width": 512,
         "height": 512
       }
-    },
-    {
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "VideoObject",
-          "position": 1,
-          "name": "Why Choose Kiwi Web Design (90s)",
-          "description": "Quick intro to Kiwi Web Design — Auckland-wide, AI-first, affordable, and small-business focused.",
-          "uploadDate": "2024-05-15",
-          "contentUrl": "https://www.youtube.com/watch?v=n9BFps8DyRY"
-        },
-        {
-          "@type": "VideoObject",
-          "position": 2,
-          "name": "AI-First & Affordable Web Design for Auckland Small Businesses",
-          "description": "How Kiwi Web Design uses AI to deliver affordable, high-quality websites faster than traditional agencies.",
-          "uploadDate": "2024-05-15",
-          "contentUrl": "https://www.youtube.com/watch?v=vCd2E2GnWkY"
-        }
-      ]
     }
   ]
 };
+
+const services = [
+  {
+    title: "Local SEO Auckland",
+    items: ["Google Business Profile optimisation", "Local citations & directory listings", "Map pack ranking", "Geo-targeted keyword strategy"],
+  },
+  {
+    title: "Technical SEO",
+    items: ["Site speed optimisation", "Core Web Vitals improvements", "Schema markup", "Mobile responsiveness"],
+  },
+  {
+    title: "Content & On-Page SEO",
+    items: ["Keyword research", "SEO content creation", "Meta tag optimisation", "Internal linking structure"],
+  },
+];
+
+const caseStudies = [
+  { industry: "Plumbing", result: "+87%", label: "Organic Traffic" },
+  { industry: "Café", result: "+64%", label: "Website Visits" },
+  { industry: "Dental Clinic", result: "+92%", label: "New Patients" },
+];
+
+const process = [
+  { step: "1", title: "Free SEO Audit", desc: "We review your current rankings, site health, and competitor landscape." },
+  { step: "2", title: "Custom Strategy", desc: "A tailored plan focused on the keywords that will bring you qualified leads." },
+  { step: "3", title: "Implementation", desc: "We get to work — technical fixes, content, links, and local signals." },
+  { step: "4", title: "Monthly Reporting", desc: "Clear reports showing rankings, traffic, and enquiries generated." },
+];
 ---
 
 <Layout
@@ -67,12 +91,179 @@ const schema = {
   canonicalURL="https://www.kiwiwebdesign.co.nz/seo-auckland/"
   schema={schema}
 >
-  <!-- TODO: Replace with actual page content from the live site -->
-  <section class="section">
+
+  <!-- Hero -->
+  <section class="hero section-dark">
     <div class="container">
       <h1>SEO Services Auckland</h1>
-      <p>Boost your business visibility with affordable SEO services in Auckland. Get expert help to drive traffic and grow your business.</p>
-      <a href="/website-designer-auckland/" class="btn-primary">Get a Free Consultation</a>
+      <p class="lead">Boost your business visibility with affordable SEO services in Auckland. Get expert help to drive traffic and grow your business.</p>
+      <a href="/website-designer-auckland/" class="btn-primary">Get a Free SEO Audit</a>
     </div>
   </section>
+
+  <!-- Stats -->
+  <section class="section section-cream">
+    <div class="container stats-row">
+      <div class="stat">
+        <span class="stat-number">93%</span>
+        <span class="stat-label">of online experiences start with a search engine</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">14.6%</span>
+        <span class="stat-label">close rate for SEO leads vs 1.7% for outbound marketing</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">4.9★</span>
+        <span class="stat-label">average Google rating from 47 reviews</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section">
+    <div class="container">
+      <h2>Our SEO Services</h2>
+      <div class="services-grid">
+        {services.map(({ title, items }) => (
+          <div class="service-card">
+            <h3>{title}</h3>
+            <ul>
+              {items.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2>Real Results for Auckland Businesses</h2>
+      <div class="results-grid">
+        {caseStudies.map(({ industry, result, label }) => (
+          <div class="result-card">
+            <span class="result-number">{result}</span>
+            <span class="result-label">{label}</span>
+            <span class="result-industry">{industry}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section section-cream">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="process-grid">
+        {process.map(({ step, title, desc }) => (
+          <div class="process-step">
+            <span class="step-number">{step}</span>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section">
+    <div class="container">
+      <h2>SEO Pricing</h2>
+      <p>Our SEO packages start from <strong>$500/month</strong> and scale up to <strong>$2,500/month</strong> depending on your competition and goals. Every engagement starts with a free audit — no lock-in contracts.</p>
+      <a href="/website-designer-auckland/" class="btn-primary">Book a Free Audit</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-cream">
+    <div class="container">
+      <h2>SEO FAQs</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How long does SEO take to show results in Auckland?</summary>
+          <p>3–6 months for meaningful results, with rankings and traffic compounding over time.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How much does SEO cost for a small business in New Zealand?</summary>
+          <p>$500–$2,500 per month depending on your industry's competition and the scope of work.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  .hero { padding: 6rem 0; }
+  .hero h1 { color: var(--kwd-white); }
+  .lead { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 600px; margin-bottom: 2rem; }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+  .stat { display: flex; flex-direction: column; gap: 0.5rem; }
+  .stat-number { font-family: var(--kwd-font-heading); font-size: 3rem; color: var(--kwd-dark); line-height: 1; }
+  .stat-label { font-size: 0.9rem; color: var(--kwd-brown); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .service-card {
+    border: 2px solid var(--kwd-cream);
+    border-radius: 8px;
+    padding: 1.75rem;
+  }
+  .service-card h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+  .service-card ul { padding-left: 1.25rem; margin: 0; }
+  .service-card li { font-size: 0.9rem; color: var(--kwd-brown); margin-bottom: 0.4rem; }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+  .result-card { display: flex; flex-direction: column; gap: 0.4rem; }
+  .result-number { font-family: var(--kwd-font-heading); font-size: 3.5rem; color: var(--kwd-yellow); line-height: 1; }
+  .result-label { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+  .result-industry { font-size: 0.8rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .process-step { display: flex; flex-direction: column; gap: 0.5rem; }
+  .step-number {
+    width: 2.5rem; height: 2.5rem;
+    background: var(--kwd-dark);
+    color: var(--kwd-yellow);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.9rem;
+  }
+  .process-step h3 { font-size: 1rem; margin: 0; }
+  .process-step p { font-size: 0.875rem; color: var(--kwd-brown); margin: 0; }
+
+  .faq-list { max-width: 780px; }
+  .faq-item { border-bottom: 1px solid rgba(0,0,0,0.1); padding: 1rem 0; }
+  .faq-item summary { font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; }
+  .faq-item summary::after { content: "+"; font-size: 1.25rem; color: var(--kwd-brown); }
+  .faq-item[open] summary::after { content: "−"; }
+  .faq-item p { margin: 0.75rem 0 0; color: var(--kwd-brown); }
+
+  @media (max-width: 768px) {
+    .stats-row, .services-grid, .results-grid, .process-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -33,6 +33,19 @@ const schema = {
     }
   ]
 };
+
+// Latest posts sourced from WP REST API — update by fetching /wp-json/wp/v2/posts
+const posts = [
+  { title: "Best SEO Company in Auckland for Small Businesses", date: "3 Mar 2026", slug: "best-seo-company-auckland" },
+  { title: "Traditional SEO Is Changing: Why Auckland Businesses Must Prepare for AI-Driven Search (AEO/GEO)", date: "25 Feb 2026", slug: "ai-seo-auckland-aeo-geo" },
+  { title: "SEO for Trades in Auckland: How to Get Consistent Job Enquiries", date: "17 Feb 2026", slug: "seo-for-trades-auckland" },
+  { title: "Are You Still Paying 2020 Prices for a Website in 2026?", date: "30 Jan 2026", slug: "website-pricing-auckland-2026" },
+  { title: "Kiwi Web Design Launches TopRated.nz, a New Auckland-Focused Business Directory", date: "21 Jan 2026", slug: "toprated-nz-launch" },
+  { title: "Website Redesign vs Starting from Scratch", date: "19 Dec 2025", slug: "website-redesign-vs-scratch" },
+  { title: "More Than Half of NZ Businesses Still Lack a Website as Consumer Expectations Rise", date: "2 Dec 2025", slug: "nz-businesses-without-websites" },
+  { title: "Choosing a Website Platform: A Practical Guide for Small Businesses in Auckland", date: "24 Nov 2025", slug: "choosing-website-platform-auckland" },
+  { title: "Website Redesign vs Starting from Scratch: What's Right for You?", date: "17 Nov 2025", slug: "website-redesign-right-for-you" },
+];
 ---
 
 <Layout
@@ -41,11 +54,58 @@ const schema = {
   canonicalURL="https://www.kiwiwebdesign.co.nz/blog/"
   schema={schema}
 >
-  <!-- TODO: Replace with actual blog listing content from the live site -->
-  <section class="section">
+
+  <!-- Header -->
+  <section class="blog-hero section-dark">
     <div class="container">
-      <h1>Free Web Design Resources for Small Businesses</h1>
-      <p>Tips, guides, and insights for Auckland small business owners on web design, SEO, and digital marketing.</p>
+      <h1>Free Resources to Help Kiwi Small Businesses</h1>
+      <p class="subhead">NZ Small Business Know-How</p>
     </div>
   </section>
+
+  <!-- Posts grid -->
+  <section class="section">
+    <div class="container">
+      <div class="posts-grid">
+        {posts.map(({ title, date }) => (
+          <article class="post-card">
+            <time class="post-date">{date}</time>
+            <h2 class="post-title">{title}</h2>
+            <a href="/blog/" class="read-more">Read More →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  .blog-hero { padding: 5rem 0; }
+  .blog-hero h1 { color: var(--kwd-white); }
+  .subhead { color: var(--kwd-yellow); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; margin: 0; }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .post-card {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: box-shadow 0.2s;
+  }
+  .post-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .post-date { font-size: 0.8rem; color: var(--kwd-brown); text-transform: uppercase; letter-spacing: 0.05em; }
+  .post-title { font-size: 1.05rem; font-family: var(--kwd-font-heading); margin: 0; flex: 1; line-height: 1.4; }
+  .read-more { font-size: 0.875rem; font-weight: 600; color: var(--kwd-dark); transition: color 0.2s; }
+  .read-more:hover { color: var(--kwd-brown); }
+
+  @media (max-width: 768px) {
+    .posts-grid { grid-template-columns: 1fr; }
+  }
+</style>

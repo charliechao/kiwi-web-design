@@ -16,8 +16,7 @@ const schema = {
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "primaryImageOfPage": { "@id": "https://www.kiwiwebdesign.co.nz/about-us/#primaryimage" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/about-us/#breadcrumb" },
-      "potentialAction": [{ "@type": "ReadAction", "target": ["https://www.kiwiwebdesign.co.nz/about-us/"] }]
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/about-us/#breadcrumb" }
     },
     {
       "@type": "ImageObject",
@@ -25,9 +24,7 @@ const schema = {
       "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Kiwi-Web-Design-Owner-Charlie.jpeg",
       "contentUrl": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Kiwi-Web-Design-Owner-Charlie.jpeg",
       "width": 768,
-      "height": 1024,
-      "caption": "Kiwi Web Design team enjoying Auckland's views, highlighting our connection to local businesses and community",
-      "inLanguage": "en-NZ"
+      "height": 1024
     },
     {
       "@type": "BreadcrumbList",
@@ -60,18 +57,104 @@ const schema = {
   canonicalURL="https://www.kiwiwebdesign.co.nz/about-us/"
   schema={schema}
 >
-  <!-- TODO: Replace with actual page content from the live site -->
+
+  <!-- About Charlie -->
   <section class="section">
-    <div class="container">
-      <h1>Charlie Chao: A Passion for Helping Businesses</h1>
-      <img
-        src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Kiwi-Web-Design-Owner-Charlie.jpeg"
-        alt="Kiwi Web Design team enjoying Auckland's views"
-        width="768"
-        height="1024"
-        loading="lazy"
-      />
-      <p>Kiwi Web Design helps Auckland tradies and small businesses with affordable websites built fast and locally.</p>
+    <div class="container about-grid">
+      <div class="about-text">
+        <h1>About Me</h1>
+        <p>Hi, I'm Charlie Chao — a dad, husband, and the guy behind Kiwi Web Design in Auckland. I was born and raised in China, and I've called Aotearoa New Zealand home since 2002. These days, I'm based in Mt Albert, Auckland. I am the co-founder of Mt Albert Business Association.</p>
+        <p>I started doing freelance web design back in 2014, after completing a bootcamp at Yoobee School of Design in Auckland. Between 2015 and 2025, I also worked full-time in banking, finance, and crypto. Now, I'm running my web design agency full-time — and loving it.</p>
+        <p>What I enjoy most is meeting and getting to know other small business owners. If you'd like to chat, feel free to reach out or connect with me on LinkedIn. Always happy to talk!</p>
+        <a
+          href="https://www.linkedin.com/in/gocharlie/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >Connect on LinkedIn</a>
+      </div>
+      <div class="about-image">
+        <img
+          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Kiwi-Web-Design-Owner-Charlie.jpeg"
+          alt="Charlie Chao, founder of Kiwi Web Design Auckland"
+          width="768"
+          height="1024"
+          loading="lazy"
+        />
+      </div>
     </div>
   </section>
+
+  <!-- About the company -->
+  <section class="section section-cream">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We are a small team of web experts based in Auckland with over 10 years of experience in website building to help businesses grow online.</p>
+
+      <div class="mission-grid">
+        <div class="mission-card">
+          <h4>Mission.</h4>
+          <p>Our mission is to empower small Kiwi businesses to use the Internet to its full potential by providing affordable, effective, custom design websites and digital marketing solutions.</p>
+        </div>
+        <div class="mission-card">
+          <h4>Vision.</h4>
+          <p>Our vision is to become the leading web design agency in providing the best value of web design and digital marketing services to improve Kiwi businesses' productivity and business strength.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark text-center">
+    <div class="container">
+      <h2>Let's work together</h2>
+      <p>Free consultation — online or in person across Auckland.</p>
+      <a href="/website-designer-auckland/" class="btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 4rem;
+    align-items: start;
+  }
+  .about-text h1 { margin-bottom: 1.5rem; }
+  .about-text p { color: var(--kwd-brown); margin-bottom: 1rem; }
+  .about-image img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .mission-card {
+    background: var(--kwd-white);
+    border-radius: 8px;
+    padding: 2rem;
+    border-left: 4px solid var(--kwd-yellow);
+  }
+  .mission-card h4 {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .mission-card p { color: var(--kwd-brown); margin: 0; }
+
+  .text-center { text-align: center; }
+
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .about-image { order: -1; }
+    .about-image img { max-height: 400px; object-fit: cover; object-position: top; }
+    .mission-grid { grid-template-columns: 1fr; }
+  }
+</style>
