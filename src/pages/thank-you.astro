@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/thank-you/",
+      "url": "https://www.kiwiwebdesign.co.nz/thank-you/",
+      "name": "Thank You",
+      "description": "Thank you for choosing Kiwi Web Design for your Auckland web design needs! Our expert team delivers lead-generating websites tailored to you.",
+      "inLanguage": "en-NZ",
+      "isPartOf": {
+        "@id": "https://www.kiwiwebdesign.co.nz/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://www.kiwiwebdesign.co.nz/thank-you/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/thank-you/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.kiwiwebdesign.co.nz/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Thank You"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "url": "https://www.kiwiwebdesign.co.nz",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
+      }
+    }
+  ]
+};
+---
+<Layout title="Thank You" description="Thank you for choosing Kiwi Web Design for your Auckland web design needs! Our expert team delivers lead-generating websites tailored to you." schema={schema}>
+  <section style="background:var(--kwd-dark);color:var(--kwd-white);text-align:center;padding:6rem 1.5rem 5rem;">
+    <div style="max-width:600px;margin:0 auto;">
+      <p style="font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--kwd-yellow);font-weight:700;margin:0 0 1rem;">Thank You</p>
+      <h1 style="font-family:var(--kwd-font-heading);font-size:clamp(2rem,5vw,3rem);margin:0 0 1rem;">Thanks for reaching out!</h1>
+      <p style="font-size:1.1rem;opacity:.85;margin:0 0 2.5rem;line-height:1.65;">We'll get back to you within 24 hours. In the meantime, feel free to explore our work.</p>
+      <a href="/" style="background:var(--kwd-yellow);color:var(--kwd-dark);padding:.75rem 2rem;border-radius:6px;font-weight:700;text-decoration:none;display:inline-block;">Back to Home</a>
+    </div>
+  </section>
+</Layout>
