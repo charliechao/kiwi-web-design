@@ -1,0 +1,309 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stats = [
+  { num: "3x", label: "More booking enquiries" },
+  { num: "92%", label: "Mobile-ready score" },
+  { num: "6x", label: "Organic traffic increase" }
+];
+
+const faqs = [
+  { q: "How long does a redesign like this take?", a: "Most small business sites take 2–4 weeks depending on content and approvals." },
+  { q: "Do you handle maintenance?", a: "Yes—ongoing updates, backups, and monitoring are available, or we can hand over." },
+  { q: "Who writes the content?", a: "We can draft or edit content. Many clients provide bullet points and we refine." },
+  { q: "Do you work with tradies and local services?", a: "Absolutely—Auckland tradies and service pros are our core focus." },
+  { q: "Can we meet in person in Auckland?", a: "Yes—we’re Auckland-based and can meet locally or jump on a quick video call." }
+];
+
+const gallery = [
+  "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Building_Inspector-e1750284793590.jpg"
+];
+
+const schema = {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.kiwiwebdesign.co.nz/inspector-guys-building-inspections-website/","url":"https://www.kiwiwebdesign.co.nz/inspector-guys-building-inspections-website/","name":"Inspector Guys Website Design Auckland – Kiwi Web Design Case Study","description":"How Kiwi Web Design transformed a home inspection company's website to generate more bookings and build customer trust across Auckland.","inLanguage":"en-NZ","isPartOf":{"@id":"https://www.kiwiwebdesign.co.nz/#website"},"breadcrumb":{"@id":"https://www.kiwiwebdesign.co.nz/inspector-guys-building-inspections-website/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://www.kiwiwebdesign.co.nz/inspector-guys-building-inspections-website/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.kiwiwebdesign.co.nz/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://www.kiwiwebdesign.co.nz/blog/"},{"@type":"ListItem","position":3,"name":"Inspector Guys Building Inspections"}]},{"@type":"Organization","@id":"https://www.kiwiwebdesign.co.nz/#organization","name":"Kiwi Web Design","url":"https://www.kiwiwebdesign.co.nz/"}]};
+---
+
+<Layout
+  title="Inspector Guys Website Design Auckland – Kiwi Web Design Case Study"
+  description="How Kiwi Web Design transformed a home inspection company's website to generate more bookings and build customer trust across Auckland."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/inspector-guys-building-inspections-website/"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="cs-hero section-dark">
+    <div class="container cs-hero-inner">
+      <div class="cs-hero-text">
+        <p class="cs-eyebrow">Case Study — Building Inspections</p>
+        <h1>Inspector Guys Building Inspections Website</h1>
+        <p class="cs-hero-desc">How Kiwi Web Design transformed a home inspection company's website to generate more bookings and build customer trust across Auckland.</p>
+        <div class="cs-hero-stats">
+          {stats.map(({ num, label }) => (
+            <div class="cs-stat">
+              <span class="cs-stat-num">{num}</span>
+              <span class="cs-stat-label">{label}</span>
+            </div>
+          ))}
+        </div>
+        <a href="/website-designer-auckland/" class="btn-primary">Get a Free Consultation</a>
+      </div>
+      <div class="cs-hero-image">
+        <img
+          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Building_Inspector-e1750284793590.jpg"
+          alt="Inspector Guys Building Inspections website by Kiwi Web Design Auckland"
+          width="700"
+          height="500"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- About + Challenge -->
+  <section class="section">
+    <div class="container cs-two-col">
+      <div class="cs-about">
+        <h2>About the Client</h2>
+        <p class="cs-client-tag">Inspector Guys Building Inspections — Building Inspections</p>
+        <p>Inspector Guys is an Auckland-based home and building inspection service led by Andy . The brand specialises in pre-purchase reports, roof and moisture checks, and practical advice for Kiwis making confident property decisions. The previous site had helpful information, but it felt dated and didn’t guide users toward booking an inspection. Our mission: communicate trust and expertise while making it effortless to enquire or call.</p>
+      </div>
+      <div class="cs-challenge">
+        <h2>The Challenge</h2>
+        <p>Despite a solid reputation, the site underperformed on clarity and conversion. Users struggled to find key services or book quickly—especially on mobile. Content signposting, CTAs, and trust signals needed a lift.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Solution -->
+  
+
+  <!-- Results stats -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2>Results</h2>
+      
+      <div class="cs-stats-grid">
+        {stats.map(({ num, label }) => (
+          <div class="cs-result-card">
+            <span class="cs-result-num">{num}</span>
+            <span class="cs-result-label">{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  {gallery.length > 0 && (
+    <section class="section section-cream">
+      <div class="container">
+        <h2>Project Gallery</h2>
+        <div class="cs-gallery">
+          {gallery.map((src) => (
+            <img
+              src={src}
+              alt="Inspector Guys Building Inspections website screenshot"
+              width="700"
+              height="450"
+              loading="lazy"
+              class="cs-gallery-img"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Testimonial -->
+  <section class="section">
+    <div class="container cs-narrow">
+      <blockquote class="cs-quote">
+        <p>“The new site feels professional and is much easier for customers to use. Calls and enquiries are simpler than ever—great job team.” — Andy, Inspector Guys (Auckland)</p>
+        <cite>— Inspector Guys Building Inspections</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  {faqs.length > 0 && (
+    <section class="section section-cream">
+      <div class="container cs-narrow">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          {faqs.map(({ q, a }) => (
+            <details class="faq-item">
+              <summary>{q}</summary>
+              <p>{a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="section section-dark text-center">
+    <div class="container cs-narrow">
+      <h2>Ready for your own success story?</h2>
+      <p>Book a free consultation with Kiwi Web Design and let's talk about growing your Auckland business online.</p>
+      <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* Hero */
+  .cs-hero { padding: 5rem 0; }
+  .cs-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .cs-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 0.75rem;
+  }
+  .cs-hero h1 { color: var(--kwd-white); font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 1rem; }
+  .cs-hero-desc { color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 1.05rem; }
+  .cs-hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .cs-stat { display: flex; flex-direction: column; }
+  .cs-stat-num { font-size: 1.6rem; font-weight: 800; color: var(--kwd-yellow); font-family: var(--kwd-font-heading); line-height: 1; }
+  .cs-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.65); margin-top: 0.2rem; }
+  .cs-hero-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+
+  /* Two-col layout */
+  .cs-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .cs-two-col h2 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); margin-bottom: 0.75rem; }
+  .cs-client-tag {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--kwd-brown);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Narrow container for content sections */
+  .cs-narrow { max-width: 820px; }
+  .cs-narrow h2 { margin-bottom: 1rem; }
+
+  /* Results */
+  .cs-results-intro { color: rgba(255,255,255,0.75); margin-bottom: 2.5rem; max-width: 700px; }
+  .cs-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .cs-result-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 10px;
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .cs-result-num { font-size: 2.2rem; font-weight: 800; color: var(--kwd-yellow); font-family: var(--kwd-font-heading); line-height: 1; }
+  .cs-result-label { font-size: 0.875rem; color: rgba(255,255,255,0.7); }
+
+  /* Gallery */
+  .cs-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .cs-gallery-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  /* Testimonial */
+  .cs-quote {
+    background: var(--kwd-cream);
+    border-left: 5px solid var(--kwd-yellow);
+    border-radius: 0 10px 10px 0;
+    padding: 2rem 2.5rem;
+    margin: 0;
+  }
+  .cs-quote p {
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--kwd-dark);
+    margin: 0 0 1rem;
+  }
+  .cs-quote cite { font-size: 0.875rem; font-weight: 600; color: var(--kwd-brown); font-style: normal; }
+
+  /* FAQ */
+  .faq-list { display: grid; gap: 0.75rem; margin-top: 2rem; }
+  .faq-item {
+    background: var(--kwd-white);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .faq-item summary {
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    list-style: none;
+    position: relative;
+    padding-right: 2.5rem;
+  }
+  .faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--kwd-brown);
+  }
+  .faq-item[open] summary::after { content: "−"; }
+  .faq-item p { padding: 0 1.25rem 1rem; margin: 0; font-size: 0.9rem; color: var(--kwd-brown); }
+
+  /* CTA */
+  .text-center { text-align: center; }
+  .section-dark.text-center h2 { color: var(--kwd-white); }
+  .section-dark.text-center p { color: rgba(255,255,255,0.75); margin-bottom: 2rem; max-width: 560px; margin-inline: auto; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .cs-hero-inner { grid-template-columns: 1fr; }
+    .cs-hero-image { display: none; }
+    .cs-two-col { grid-template-columns: 1fr; }
+    .cs-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .cs-gallery { grid-template-columns: 1fr; }
+    .cs-stats-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
