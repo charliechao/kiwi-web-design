@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -10,161 +17,191 @@ const schema = {
       "name": "WordPress + AI Tools Integration Auckland",
       "description": "Connect WordPress with AI chatbots, automations & AEO-ready schema. Auckland specialists at Kiwi Web Design.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/wordpress-ai-tools-integration-auckland/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/wordpress-ai-tools-integration-auckland/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-ai-tools-integration-auckland/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "WordPress + AI Tools Integration Auckland"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress AI Tools Integration" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const integrations = [
+  {
+    icon: "💬",
+    title: "AI Live Chat & Chatbots",
+    desc: "Add an AI-powered chat widget that answers common questions, qualifies leads, and books appointments — 24/7, without a human on call.",
+    items: ["Tidio AI, Crisp, Intercom", "Custom FAQ training", "Lead capture flows", "Handoff to human agent"],
+  },
+  {
+    icon: "🤖",
+    title: "Automation Workflows",
+    desc: "Connect your WordPress site to Zapier, Make (Integromat), or n8n to automate lead follow-ups, CRM updates, email sequences, and more.",
+    items: ["Zapier / Make / n8n setup", "CRM integrations (HubSpot, etc.)", "Automated email sequences", "Form-to-CRM pipelines"],
+  },
+  {
+    icon: "🏷️",
+    title: "AEO-Ready Schema Markup",
+    desc: "Answer Engine Optimisation schema so your WordPress content is structured for AI Overviews, featured snippets, and chatbot citations.",
+    items: ["FAQ & HowTo schema", "speakable markup", "LocalBusiness schema", "Product & Service schema"],
+  },
+  {
+    icon: "📝",
+    title: "AI Writing Assistant Integration",
+    desc: "Integrate AI writing tools directly into your WordPress editor so your team can draft, rewrite, and improve content without leaving the CMS.",
+    items: ["Bertha AI setup", "Jetpack AI (if applicable)", "Custom ChatGPT workflow", "Prompt template library"],
+  },
+  {
+    icon: "🔍",
+    title: "AI-Powered Site Search",
+    desc: "Replace WordPress's basic search with AI-powered semantic search that understands what visitors are looking for, even if they don't use the exact right words.",
+    items: ["Algolia / SearchWP integration", "Semantic search setup", "Search analytics", "Autocomplete & suggestions"],
+  },
+  {
+    icon: "📊",
+    title: "Analytics & AI Insights",
+    desc: "Connect Google Analytics 4, Search Console, and AI-powered reporting tools to give you clear, actionable insights about your site's performance.",
+    items: ["GA4 eCommerce events", "Search Console API setup", "Looker Studio dashboards", "AI-generated monthly summaries"],
+  },
+];
+
+const useCases = [
+  { icon: "🔧", industry: "Tradies", use: "AI chatbot qualifies quote requests after hours, books callback time, and sends auto-confirmation SMS." },
+  { icon: "💆", industry: "Salons & clinics", use: "AI chat answers 'do you offer X?' questions and links directly to your online booking system." },
+  { icon: "⚖️", industry: "Professional services", use: "AI assistant handles initial enquiry triage, collecting key information before your team follows up." },
+  { icon: "🛒", industry: "eCommerce", use: "Chatbot assists with product questions, order tracking, and returns — reducing support ticket volume." },
+];
+
+const process = [
+  { step: "1", title: "Discovery & Tool Selection", desc: "We review your current WordPress setup, your business workflows, and which AI tools will provide the best ROI for your specific situation." },
+  { step: "2", title: "Integration & Configuration", desc: "We install, connect, and configure the chosen tools — trained on your business information, pricing, FAQs, and tone of voice." },
+  { step: "3", title: "Test & Refine", desc: "We test every integration end-to-end — from chatbot conversations to automation triggers — and refine the responses and flows." },
+  { step: "4", title: "Handover & Training", desc: "We hand over with a written guide and training session so your team can manage and update the AI tools themselves." },
+];
+
+const faqs = [
+  { q: "Do I need to build a new website to add AI tools?", a: "No. We can integrate AI tools into your existing WordPress site. A rebuild isn't required — we assess what you have and integrate the right tools on top of it." },
+  { q: "What AI chatbot do you recommend?", a: "For most small businesses, we recommend Tidio or Crisp — they're affordable, easy to train, and have good AI capabilities. For more complex needs or custom AI agents, we build on more advanced platforms. We recommend based on your specific use case and budget." },
+  { q: "Will AI chatbots replace my team?", a: "No — they handle the repetitive, after-hours, and high-volume enquiries so your team can focus on conversations that actually need a human. Think of it as a first filter, not a replacement." },
+  { q: "What is AEO and how does schema markup help?", a: "AEO (Answer Engine Optimisation) is the practice of structuring content so AI-powered tools — Google AI Overviews, ChatGPT, Perplexity — can extract and cite your answers. Schema markup (specifically FAQ, HowTo, and speakable properties) tells AI systems exactly which parts of your page are direct answers to common questions." },
+  { q: "How much does WordPress AI integration cost?", a: "It depends on the scope. Adding a basic AI chatbot starts from $299 + GST. A full suite of integrations (chatbot + automation workflows + schema + analytics) typically runs $800–$1,800 + GST as a one-off setup, with optional monthly management." },
+];
 ---
-<Layout title="WordPress + AI Tools Integration Auckland" description="Connect WordPress with AI chatbots, automations & AEO-ready schema. Auckland specialists at Kiwi Web Design." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">WordPress Services</p>
-        <h1>WordPress + AI Tools Integration Auckland</h1>
-        <p class="hero-sub">Connect WordPress with AI chatbots, automations & AEO-ready schema. Auckland specialists at Kiwi Web Design.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="WordPress + AI Tools Integration Auckland | Chatbots, Automations & Schema"
+  description="Connect WordPress with AI chatbots, automations & AEO-ready schema. Auckland specialists at Kiwi Web Design."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/wordpress-ai-tools-integration-auckland/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="WordPress AI Integration Auckland"
+    title="Make your WordPress site work harder with AI."
+    subtitle="AI chatbots, automation workflows, AEO-ready schema markup, and AI writing tools — all integrated into your existing WordPress site by Auckland specialists."
+    ctaPrimary={{ text: "Book a Free Consult", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Integrations", href: "#integrations" }}
+  />
+
+  <!-- Integrations -->
+  <section class="section" style="background: var(--kwd-cream);" id="integrations">
+    <div class="container">
+      <SectionHeader
+        eyebrow="AI Integrations"
+        title="What we connect to your WordPress site."
+        subtitle="Purpose-built integrations that solve real business problems — not tech for tech's sake."
+      />
+      <ServiceGrid items={integrations} cols={3} />
+    </div>
+  </section>
+
+  <!-- Use cases -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Real Use Cases"
+        title="How Auckland businesses use AI on their WordPress sites."
+        light={true}
+      />
+      <div class="wpai-usecases">
+        {useCases.map(({ icon, industry, use }) => (
+          <div class="wpai-usecase">
+            <div class="wpai-uc-top">
+              <span class="wpai-uc-icon">{icon}</span>
+              <strong class="wpai-uc-industry">{industry}</strong>
+            </div>
+            <p class="wpai-uc-desc">{use}</p>
+          </div>
+        ))}
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/AI-Integration-Website-Auckland.jpg" alt="WordPress + AI Tools Integration Auckland" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-
+  <!-- Process -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="Integrated and running in days, not months."
+        subtitle="A structured four-step process from tool selection to handover."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="faq-inner">
-      <h2>Frequently Asked Questions</h2>
-      <details class="faq-item">
-        <summary>Automation: Leads, CRM & Operations</summary>
-        <div class="faq-answer"><p>Connect forms to AI for smart tagging, summary, and routing. Push qualified leads to your CRM, send a tailored reply, and create tasks automatically with Make or Zapier.</p><p><strong>Outcome:</strong> Faster follow-ups and fewer missed opportunities.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>AEO/GEO-Ready Structure</summary>
-        <div class="faq-answer"><p>We add schema (FAQ, Service, LocalBusiness, Product, HowTo) and clean information architecture so conversational engines (AEO/GEO) and Google understand your business and service areas across Auckland and NZ.</p><p><strong>Outcome:</strong> Better discovery in AI assistants and search.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Performance, Privacy & Compliance</summary>
-        <div class="faq-answer"><p>From caching and CDNs to consent and data retention, we keep your stack fast and compliant for New Zealand SMEs.</p><p><strong>Outcome:</strong> Quicker load times, happier users, less risk.</p></div>
-      </details>
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="WordPress AI Integration Questions"
+        subtitle="Common questions from Auckland businesses about adding AI to their WordPress sites."
+      />
     </div>
   </section>
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to add AI to your WordPress site?"
+    subtitle="Free consultation — we'll recommend the right integrations for your business and budget."
+    ctaPrimary={{ text: "Book a Free Consult", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See AI SEO Too", href: "/ai-seo-for-auckland-small-businesses/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .wpai-usecases {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
   }
+  .wpai-usecase {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .wpai-uc-top { display: flex; align-items: center; gap: 0.6rem; }
+  .wpai-uc-icon { font-size: 1.4rem; }
+  .wpai-uc-industry { font-size: 0.875rem; font-weight: 700; color: var(--kwd-yellow); }
+  .wpai-uc-desc { font-size: 0.84rem; color: rgba(255,255,255,0.65); line-height: 1.6; margin: 0; }
+
+  @media (max-width: 900px) { .wpai-usecases { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 580px) { .wpai-usecases { grid-template-columns: 1fr; } }
 </style>

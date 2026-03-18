@@ -1,5 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import StatsRow from '../components/StatsRow.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,259 +15,296 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/",
       "url": "https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/",
-      "name": "AI SEO for Auckland small businesses",
-      "description": "New Zealand&#8217;s AI SEO Agency Rank Higher, Faster with AI SEO Auckland Kiwi Web Design uses cutting-edge artificial intelligence to power every part of your SEO strategy — from keyword research to content creation — delivering results up to 3× faster than traditional SEO. Get Your Free AI SEO Audit See How It Works 📈 [&hellip;]",
+      "name": "AI SEO for Auckland Small Businesses",
+      "description": "AI-powered SEO for Auckland small businesses. Rank higher on Google and get cited by ChatGPT, Perplexity and AI Overviews with Kiwi Web Design.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "AI SEO for Auckland small businesses"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "AI SEO Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const stats = [
+  { number: "58%", label: "of searches now return AI-generated answers (Google AI Overviews)" },
+  { number: "3×", label: "faster results with AI-assisted content and SEO workflows" },
+  { number: "27%", label: "of US adults use ChatGPT for product research" },
+  { number: "Day 1", label: "AI SEO foundations built into every new site" },
+];
+
+const services = [
+  {
+    icon: "🤖",
+    title: "Generative Engine Optimisation (GEO)",
+    desc: "Structure your content so it gets cited by ChatGPT, Perplexity, Google AI Overviews, and Gemini — not just ranked in blue-link results.",
+    items: ["AI-citability content audits", "Answer-first content structuring", "Entity & topic coverage", "llms.txt setup"],
+  },
+  {
+    icon: "🏷️",
+    title: "AI-Ready Schema Markup",
+    desc: "Comprehensive JSON-LD structured data that tells AI systems who you are, what you do, and why you're authoritative.",
+    items: ["LocalBusiness & Service schema", "FAQ & HowTo schema", "speakable properties", "sameAs entity linking"],
+  },
+  {
+    icon: "📝",
+    title: "AI-Assisted Content Strategy",
+    desc: "We use AI tools to research competitor content gaps, identify question clusters, and produce content that matches search intent at scale.",
+    items: ["Keyword & topic clustering", "Competitor content gap analysis", "AI-drafted, human-reviewed copy", "Content calendar planning"],
+  },
+  {
+    icon: "⚡",
+    title: "Technical SEO & Core Web Vitals",
+    desc: "Fast-loading, crawlable, mobile-first WordPress sites that satisfy Google's technical ranking requirements from day one.",
+    items: ["Core Web Vitals optimisation", "Crawl efficiency", "Sitemap & robots.txt", "Page speed audit & fixes"],
+  },
+  {
+    icon: "🗺️",
+    title: "Local AI SEO",
+    desc: "Appear in Google Maps, local AI Overviews, and 'near me' searches. We optimise your Google Business Profile and local content footprint.",
+    items: ["Google Business Profile optimisation", "Local schema markup", "Suburb landing pages", "Review velocity strategy"],
+  },
+  {
+    icon: "📊",
+    title: "AI Search Visibility Tracking",
+    desc: "We track not just rankings, but how your brand appears in AI-generated answers — a new metric most agencies ignore.",
+    items: ["AI mention monitoring", "GBP insights reporting", "Search Console integration", "Monthly AI visibility report"],
+  },
+];
+
+const aiBenefit = [
+  { icon: "🔍", title: "Google AI Overviews", desc: "Google now shows AI-generated summaries above organic results. We structure your content to be pulled into these overviews for your target queries." },
+  { icon: "💬", title: "ChatGPT & Perplexity", desc: "When customers ask AI chatbots about local services, your business should appear. We build the content authority signals that make that happen." },
+  { icon: "⭐", title: "Gemini & Bing Copilot", desc: "AI assistants increasingly cite structured, authoritative local businesses. We create the entity clarity and schema markup that drives citations." },
+  { icon: "📈", title: "Traditional SEO Too", desc: "AI SEO doesn't replace traditional SEO — it extends it. Rankings, links, and speed still matter. We do both, together." },
+];
+
+const process = [
+  { step: "1", title: "AI Visibility Audit", desc: "We audit your current visibility across Google, AI Overviews, and AI chat tools. You get a clear picture of where you appear — and where you're missing." },
+  { step: "2", title: "Strategy & Content Plan", desc: "We identify the highest-impact keyword clusters, AI-answer opportunities, and schema gaps. A prioritised roadmap tailored to your industry." },
+  { step: "3", title: "Implementation", desc: "Technical fixes, schema markup, content production, GBP optimisation, and on-page SEO — deployed in a structured monthly sprint." },
+  { step: "4", title: "Track & Report", desc: "Monthly reporting covering rankings, organic traffic, AI citations, and GBP insights — so you can see the return on every dollar spent." },
+];
+
+const faqs = [
+  { q: "What is AI SEO and how is it different from regular SEO?", a: "Traditional SEO focuses on ranking in Google's blue-link results. AI SEO (also called Generative Engine Optimisation or GEO) focuses on getting your content cited or featured in AI-generated answers from Google AI Overviews, ChatGPT, Perplexity, and similar tools. The techniques partially overlap — structured content, schema markup, authority signals — but GEO adds new layers like entity optimisation, citability structuring, and llms.txt setup." },
+  { q: "Do Auckland small businesses really need to worry about AI search?", a: "Increasingly, yes. Google AI Overviews now appear on more than 58% of searches in the US and are rolling out globally. If someone asks 'best plumber in Ponsonby' and Google generates an AI answer, your business either appears in it or doesn't. We help you appear." },
+  { q: "How do you get a business cited in ChatGPT or Perplexity?", a: "AI systems draw from crawlable web content, third-party mentions, and structured data. We improve your citability by: structuring content as direct answers, adding comprehensive schema markup, building authoritative mentions on third-party sites, and ensuring your GBP and directory presence is strong and consistent." },
+  { q: "What is a GEO score?", a: "A GEO (Generative Engine Optimisation) score measures how likely AI systems are to cite your content. We assess factors like content citability, schema completeness, technical crawlability for AI bots, and brand mention presence across AI-training sources." },
+  { q: "Does AI SEO replace traditional SEO?", a: "No — it extends it. Traditional ranking signals (links, speed, mobile performance, keyword relevance) still matter. AI SEO adds new optimisation layers on top. We do both together as part of every SEO engagement." },
+  { q: "How much does AI SEO cost?", a: "Our AI SEO packages start from $500/month for a foundational local SEO + GEO setup. Full AI SEO strategy and content production runs $1,000–$2,500/month depending on industry competitiveness and content volume. We give you a clear quote based on your specific goals." },
+];
 ---
-<Layout title="AI SEO for Auckland small businesses" description="New Zealand’s AI SEO Agency Rank Higher, Faster with AI SEO Auckland Kiwi Web Design uses cutting-edge artificial intelligence to power every part of your SEO strategy — from keyword research to content creation — delivering results up to 3× faster than traditional SEO. Get Your Free AI SEO Audit See How It Works 📈 [...]" schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Digital Marketing</p>
-        <h1>Rank Higher, Faster with AI SEO Auckland</h1>
-        <p class="hero-sub">New Zealand’s AI SEO Agency Rank Higher, Faster with AI SEO Auckland Kiwi Web Design uses cutting-edge artificial intelligence to power every part of your SEO strategy — from keyword research to content creation — delivering results up to 3× faster than traditional SEO. Get Your Free AI SEO Audit See How It Works 📈 [...]</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="AI SEO for Auckland Small Businesses | GEO & Google Rankings"
+  description="AI-powered SEO for Auckland small businesses. Rank higher on Google and get cited by ChatGPT, Perplexity and AI Overviews with Kiwi Web Design."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="AI SEO Auckland"
+    title="Rank on Google. Get cited by AI. Both."
+    subtitle="SEO for the next era of search. We optimise Auckland small businesses for traditional Google rankings and AI-generated answers — so you get found however your customers are searching."
+    badgeText="GEO + Traditional SEO"
+    ctaPrimary={{ text: "Get a Free AI SEO Audit", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See How It Works", href: "#services" }}
+  />
+
+  <StatsRow items={stats} />
+
+  <!-- Why AI search matters -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="The AI Search Shift"
+        title="Search is changing. Your SEO strategy should too."
+        subtitle="AI-generated answers now appear above organic results for more than half of all searches. Here's what that means for your business."
+      />
+      <div class="aiseo-engines">
+        {aiBenefit.map(({ icon, title, desc }) => (
+          <div class="aiseo-engine-card">
+            <span class="aiseo-eng-icon">{icon}</span>
+            <h3 class="aiseo-eng-title">{title}</h3>
+            <p class="aiseo-eng-desc">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <SectionHeader
+        eyebrow="AI SEO Services"
+        title="Every layer of modern search optimisation."
+        subtitle="From technical foundations to AI-citability content — we cover every ranking signal that matters in 2025 and beyond."
+      />
+      <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <!-- What traditional vs AI SEO looks like -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Traditional vs AI SEO"
+        title="What we do differently."
+        light={true}
+        subtitle="Standard SEO agencies optimise for blue links. We optimise for the full search landscape."
+      />
+      <div class="aiseo-compare">
+        <div class="aiseo-compare-col">
+          <p class="aiseo-compare-label">Traditional SEO only</p>
+          <ul class="aiseo-compare-list aiseo-compare-list--old">
+            <li>Optimise page titles & meta descriptions</li>
+            <li>Build backlinks</li>
+            <li>Target keyword rankings</li>
+            <li>Improve page speed</li>
+          </ul>
+        </div>
+        <div class="aiseo-compare-divider">+</div>
+        <div class="aiseo-compare-col aiseo-compare-col--new">
+          <p class="aiseo-compare-label aiseo-compare-label--new">What we add with AI SEO</p>
+          <ul class="aiseo-compare-list aiseo-compare-list--new">
+            <li>Structure content as direct answers AI can cite</li>
+            <li>Add comprehensive JSON-LD schema (speakable, FAQ, HowTo)</li>
+            <li>Build entity authority via third-party mentions</li>
+            <li>Set up llms.txt and AI crawler access</li>
+            <li>Optimise for AI Overviews and featured snippets</li>
+            <li>Track AI citation mentions monthly</li>
+          </ul>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/Auckland.jpg" alt="Rank Higher, Faster with AI SEO Auckland" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<!-- ============================================================
- AI SEO Auckland — WordPress / Elementor HTML Widget File
- Kiwi Web Design | kiwiwebdesign.co.nz
- Unique wrapper class: .ai-seo-body
- Paste this entire file into an Elementor HTML Widget.
- Set page layout to "Elementor Full Width" with no title.
- ============================================================ -->
-
-<!-- ===== SCHEMA: LocalBusiness ===== -->
-
-<!-- ===== SCHEMA: Service ===== -->
-
-<!-- ===== SCHEMA: FAQPage ===== -->
-
-<!-- ===== SCHEMA: BreadcrumbList ===== -->
-
-<!-- ===== SCOPED STYLES ===== -->
-
-<!-- ===== PAGE CONTENT ===== -->
-
-<!-- Background ambient glows -->
-
-<main>
-
- <!-- ===== HERO ===== -->
-
-New Zealand's AI SEO Agency
- 
- 
- <p>Kiwi Web Design uses cutting-edge artificial intelligence to power every part of your SEO strategy — from keyword research to content creation — delivering results up to 3× faster than traditional SEO.</p>
- 
- <a href="#aiseo-contact">
- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
- Get Your Free AI SEO Audit
- </a>
- <a href="#aiseo-process">
- See How It Works
- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
- </a>
-
-<figure>
- <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="AI-powered SEO analytics dashboard showing keyword rankings and organic traffic growth for an Auckland small business" loading="lazy">
- 
- 📈
- 
- <strong>+312%</strong>
- Organic Traffic in 90 Days
-
-</figure>
-
-<!-- ===== STATS ===== -->
-
-3×
- Faster Results vs Traditional SEO
-
-200+
- NZ Businesses Ranked on Page 1
-
-4.9★
- Average Google Rating
-
-94%
- Client Retention Rate
-
-<!-- ===== SERVICES / FEATURES ===== -->
-
-What's Included
- 
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="Audit, plan, build, report."
+        subtitle="A structured monthly engagement that compounds over time."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="faq-inner">
-      <h2>Frequently Asked Questions</h2>
-      <details class="faq-item">
-        <summary>What is AI SEO and how is it different from traditional SEO?</summary>
-        <div class="faq-answer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-
-<p>AI SEO uses artificial intelligence and machine learning to automate and enhance every part of the SEO process — from keyword research and content creation to technical audits and competitor analysis. Unlike traditional SEO which relies on manual research, AI processes thousands of data points instantly, identifies patterns humans can't see, and adapts strategies in real time. The result: faster rankings, better content, and stronger ROI for Auckland small businesses.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>How quickly will I see results from AI SEO in Auckland?</summary>
-        <div class="faq-answer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-
-<p>Most Auckland businesses see meaningful ranking improvements within 2–4 months with AI SEO, compared to 4–6 months with traditional methods. AI accelerates the process by identifying quick-win keywords faster, publishing optimised content at scale, and automatically resolving technical issues. Some clients see early improvements for low-competition terms in as little as 6 weeks.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Is AI SEO suitable for small businesses in New Zealand?</summary>
-        <div class="faq-answer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-
-<p>Absolutely — AI SEO is especially powerful for NZ small businesses because it levels the playing field against larger competitors with bigger budgets. Our AI tools allow us to deliver enterprise-grade SEO strategy at small business prices. Whether you're a local Auckland tradesperson, retailer, or professional services firm, AI SEO can consistently generate organic leads from Google.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>What AI tools do you use for SEO?</summary>
-        <div class="faq-answer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-
-<p>We use a combination of leading AI platforms for keyword intelligence, natural language generation for content, machine learning-based technical audit tools, and predictive analytics dashboards. All AI output is reviewed and refined by our experienced NZ SEO specialists to ensure accuracy, brand alignment, and compliance with Google's quality guidelines.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Do you offer a free AI SEO audit for Auckland businesses?</summary>
-        <div class="faq-answer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-
-<p>Yes! We offer a complimentary AI SEO audit for all Auckland and NZ businesses. Our AI audit analyses your website's technical health, current keyword rankings, content quality, backlink profile, and competitor positions. Contact us below or call <a href="tel:+64210396580">021 039 6580</a> to book your free audit.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>How much does AI SEO cost for a small business in NZ?</summary>
-        <div class="faq-answer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-
-<p>Our AI SEO packages start from NZD $799/month for the Starter plan, which covers AI keyword research, on-page optimisation, Google Business Profile management, and monthly reporting. The Growth plan at $1,499/month includes full AI content creation and link building. Enterprise pricing is custom. All plans are month-to-month with no lock-in contract.</p>
-
-<!-- ===== CTA ===== -->
-
-Ready to Rank?</div>
-      </details>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="AI SEO Questions Answered"
+        subtitle="Common questions from Auckland businesses about AI search and GEO."
+      />
     </div>
   </section>
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to rank on Google and in AI answers?"
+    subtitle="Free AI SEO audit — we'll show you exactly where you appear, and where you're missing out."
+    ctaPrimary={{ text: "Get a Free AI SEO Audit", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See All SEO Services", href: "/seo-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .aiseo-engines {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .aiseo-engine-card {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .aiseo-eng-icon { font-size: 1.75rem; }
+  .aiseo-eng-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .aiseo-eng-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
+
+  .aiseo-compare {
+    display: grid;
+    grid-template-columns: 1fr auto 1.4fr;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 2.5rem;
+  }
+  .aiseo-compare-col {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 1.75rem;
+  }
+  .aiseo-compare-col--new {
+    background: rgba(251,232,166,0.08);
+    border-color: rgba(251,232,166,0.25);
+  }
+  .aiseo-compare-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1rem;
+  }
+  .aiseo-compare-label--new { color: var(--kwd-yellow); }
+  .aiseo-compare-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .aiseo-compare-list li {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.6);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .aiseo-compare-list--old li::before { content: "–"; position: absolute; left: 0; color: rgba(255,255,255,0.3); }
+  .aiseo-compare-list--new li { color: rgba(255,255,255,0.8); }
+  .aiseo-compare-list--new li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-yellow); font-weight: 700; }
+  .aiseo-compare-divider {
+    font-family: var(--kwd-font-heading);
+    font-size: 2.5rem;
+    color: var(--kwd-yellow);
+    display: flex;
+    align-items: center;
+    padding-top: 1.75rem;
+  }
+
+  @media (max-width: 960px) {
+    .aiseo-engines { grid-template-columns: repeat(2, 1fr); }
+    .aiseo-compare { grid-template-columns: 1fr; }
+    .aiseo-compare-divider { display: none; }
+  }
+  @media (max-width: 580px) {
+    .aiseo-engines { grid-template-columns: 1fr; }
   }
 </style>

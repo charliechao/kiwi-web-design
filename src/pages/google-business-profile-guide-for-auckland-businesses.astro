@@ -1,5 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import StatsRow from '../components/StatsRow.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -10,219 +15,310 @@ const schema = {
       "name": "Google Business Profile Guide for Auckland Businesses",
       "description": "Learn how to set up and optimise your Google Business Profile for local visibility in Auckland and NZ: categories, NAP, photos, reviews, posts, tracking.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Google Business Profile Guide for Auckland Businesses"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Google Business Profile Guide" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const stats = [
+  { number: "97%", label: "of consumers use Google to find local businesses" },
+  { number: "5×", label: "more views for fully-completed GBP listings vs incomplete ones" },
+  { number: "Free", label: "Google Business Profile is completely free to set up" },
+  { number: "3-Pack", label: "GBP is the key to appearing in Google Maps top 3" },
+];
+
+const steps = [
+  {
+    num: "01",
+    title: "Claim & Verify Your Listing",
+    content: `Go to <strong>business.google.com</strong> and search for your business name. If it exists, claim it. If not, create it. You'll need to verify ownership — Google typically sends a postcard with a PIN to your business address, or offers phone/email verification for some businesses.`,
+    tips: ["Use your exact legal business name", "Choose the physical address or service area correctly", "Don't use a PO Box as your primary address"],
+  },
+  {
+    num: "02",
+    title: "Choose the Right Business Category",
+    content: `Your primary category is the most important single field in GBP. It tells Google what searches to show your business for. Be specific — 'Plumber' outperforms 'Contractor'. You can add secondary categories too.`,
+    tips: ["Be as specific as possible with your primary category", "Add all relevant secondary categories", "Check what categories top-ranking competitors use", "Avoid generic categories like 'Local Business'"],
+  },
+  {
+    num: "03",
+    title: "Complete Every Profile Field",
+    content: `Fully completed profiles receive 5× more views. Fill in: business name, address/service area, phone, website, hours, attributes (women-led, wheelchair accessible, etc.), and a keyword-rich business description.`,
+    tips: ["Write a 750-character description using key service terms", "Set special hours for public holidays", "Add all relevant attributes for your business type", "Enable messaging if you can respond promptly"],
+  },
+  {
+    num: "04",
+    title: "Add Photos & Videos",
+    content: `Businesses with photos receive 42% more directions requests and 35% more website clicks. Add: exterior and interior photos, team/staff photos, product or service images, and a cover photo that represents your brand.`,
+    tips: ["Minimum 3 photos of each type (exterior, interior, team)", "Name photos with descriptive filenames before uploading", "Add at least one video (even a simple walkthrough)", "Update photos seasonally"],
+  },
+  {
+    num: "05",
+    title: "Build & Manage Reviews",
+    content: `Reviews are the #1 local ranking factor alongside relevance and distance. More reviews, and a higher average rating, drives more calls and visits. Ask every happy customer for a review — make it easy by sharing your direct review link.`,
+    tips: ["Create a short.link to your review page and add it to invoices/receipts", "Respond to every review — positive and negative", "Never incentivise or buy fake reviews", "Aim for a steady drip of reviews, not a burst"],
+  },
+  {
+    num: "06",
+    title: "Post Weekly Updates",
+    content: `GBP Posts appear in your listing and show Google your business is active. Post about: offers, new services, events, before/after jobs, or just useful tips for your customers. Posts stay live for 7 days (Offers stay longer).`,
+    tips: ["Post at least once a week", "Include a photo and a call to action in every post", "Use keywords naturally in post text", "Use Offer posts for time-limited promotions"],
+  },
+  {
+    num: "07",
+    title: "Monitor Insights & Calls",
+    content: `GBP Insights shows how many people viewed your listing, called your number, got directions, and visited your website. Track these monthly to see what's working and where to focus your optimisation.`,
+    tips: ["Check insights monthly", "Set up call tracking to attribute phone leads to GBP", "Monitor queries — what searches are triggering your listing?", "Watch for competitor activity in your area"],
+  },
+];
+
+const faqs = [
+  { q: "Do I need a physical storefront to have a Google Business Profile?", a: "No. Service-area businesses (like tradies, cleaners, or mobile services) can hide their address and instead specify the suburbs or regions they serve. You still appear in local search results for those areas." },
+  { q: "How long does it take to verify a Google Business Profile?", a: "Phone and email verification can be instant. Postcard verification typically takes 5–14 business days. Video verification is available for some business types and is usually same-day." },
+  { q: "Why isn't my business showing up in the Google Maps 3-Pack?", a: "The 3-Pack is determined by relevance, distance, and prominence. If you're not appearing, common causes are: incomplete profile, wrong primary category, few reviews, no website, or strong competition in your area. We offer a GBP audit that pinpoints exactly what's holding you back." },
+  { q: "Can I manage multiple locations from one account?", a: "Yes. Google Business Profile supports multi-location management. You can manage all your locations from one account, with bulk verification available for businesses with 10+ locations." },
+  { q: "Should I respond to negative reviews?", a: "Always. A professional, calm response to a negative review often impresses potential customers more than the negative review damages. Acknowledge the issue, apologise if warranted, and offer to resolve it offline. Never argue or be defensive." },
+  { q: "Do you offer Google Business Profile management?", a: "Yes. We offer ongoing GBP management as part of our local SEO service — weekly posts, review response, photo updates, and monthly reporting. Ask us about bundling GBP management with your website maintenance plan." },
+];
 ---
-<Layout title="Google Business Profile Guide for Auckland Businesses" description="Learn how to set up and optimise your Google Business Profile for local visibility in Auckland and NZ: categories, NAP, photos, reviews, posts, tracking." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Digital Marketing</p>
-        <h1>Google Business Profile Setup & Optimisation</h1>
-        <p class="hero-sub">Learn how to set up and optimise your Google Business Profile for local visibility in Auckland and NZ: categories, NAP, photos, reviews, posts, tracking.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="Google Business Profile Guide for Auckland Businesses"
+  description="Learn how to set up and optimise your Google Business Profile for local visibility in Auckland and NZ: categories, NAP, photos, reviews, posts, tracking."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="gbp-hero">
+    <div class="container gbp-hero-inner">
+      <div>
+        <p class="gbp-eyebrow">Google Business Profile Guide</p>
+        <h1>Set up your Google Business Profile. Get found in Auckland.</h1>
+        <p class="gbp-hero-sub">A complete step-by-step guide to creating, completing, and optimising your Google Business Profile — the single most important free tool for local search visibility.</p>
+        <div class="gbp-hero-actions">
+          <a href="#steps" class="gbp-btn-primary">Read the Guide ↓</a>
+          <a href="/website-designer-auckland/" class="gbp-btn-secondary">Get Expert Help</a>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/12/google-business-profile-setup-optimisation-auckland.png" alt="Google Business Profile Setup & Optimisation" loading="lazy" />
+      <div class="gbp-hero-badge-wrap">
+        <div class="gbp-hero-card">
+          <p class="gbp-card-label">Free resource</p>
+          <p class="gbp-card-title">Complete GBP setup for Auckland businesses</p>
+          <ul class="gbp-card-list">
+            <li><span>✓</span> 7-step setup checklist</li>
+            <li><span>✓</span> Category selection tips</li>
+            <li><span>✓</span> Review strategy</li>
+            <li><span>✓</span> Common mistakes to avoid</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/12/google-business-profile-setup-optimisation-auckland.png" alt="Google Business Profile setup checklist for an Auckland small business" loading="lazy"> 
+  <StatsRow items={stats} />
 
-Educational guide for Auckland and NZ small businesses. Related: <a href="/">web design Auckland</a>
-
-
- <p>
- If you serve customers in Auckland (or anywhere in New Zealand), your Google Business Profile (GBP) is one of the fastest ways to improve local visibility on Google Search and Maps.
- This page is a practical, step-by-step guide you can follow without tools, plugins, or jargon.
- </p>
-
-<strong>Before you start</strong><br>
- If your business is home-based or you travel to customers, you can hide your address and use a service area instead.
- If you’re a storefront, make sure your signage and address match exactly what customers see.
-
-
+  <!-- Guide steps -->
+  <section class="section" id="steps">
+    <div class="container gbp-steps-wrap">
+      <SectionHeader
+        eyebrow="Step-by-Step Guide"
+        title="7 steps to a fully optimised Google Business Profile."
+        subtitle="Follow these steps in order — each one builds on the last."
+      />
+      <div class="gbp-steps">
+        {steps.map(({ num, title, content, tips }) => (
+          <div class="gbp-step">
+            <div class="gbp-step-num">{num}</div>
+            <div class="gbp-step-body">
+              <h3 class="gbp-step-title">{title}</h3>
+              <p class="gbp-step-content" set:html={content} />
+              <div class="gbp-step-tips">
+                <p class="gbp-tips-label">✦ Key tips</p>
+                <ul>
+                  {tips.map((tip) => <li>{tip}</li>)}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="faq-inner">
-      <h2>Frequently Asked Questions</h2>
-      <details class="faq-item">
-        <summary>Photos: what “good” looks like</summary>
-        <div class="faq-answer"><p>Clear, real, recent. Avoid stock photos. Add location cues when it makes sense (job sites, suburbs, recognisable areas).</p>
- 
- Real proofRecency</div>
-      </details>
-      <details class="faq-item">
-        <summary>Reviews: ask without being awkward</summary>
-        <div class="faq-answer"><p>Ask right after a good outcome. Send one link. Make it easy. Don’t “gate” reviews or offer incentives.</p>
- 
- ReputationConversion</div>
-      </details>
-      <details class="faq-item">
-        <summary>Spam and bad edits: protect your listing</summary>
-        <div class="faq-answer"><p>Use owner-level access for you only. Add managers sparingly. Monitor edits, hours changes, and suspicious category updates.</p>
- 
- SecurityAccuracy</div>
-      </details>
-      <details class="faq-item">
-        <summary>GBP metrics to watch</summary>
-        <div class="faq-answer"><ul>
- <li><strong>Searches:</strong> what terms triggered your listing (brand vs non-brand).</li>
- <li><strong>Actions:</strong> calls, website clicks, direction requests, messages.</li>
- <li><strong>Photo performance:</strong> which photos attract views.</li>
- <li><strong>Best times:</strong> when customers call or message.</li>
- </ul></div>
-      </details>
-      <details class="faq-item">
-        <summary>Tracking tip (simple but powerful)</summary>
-        <div class="faq-answer"><p>
- Add UTM tracking to your GBP website link so you can see GBP traffic in analytics.
- If you’re using GA4, it will show up as a source/medium like <em>google / organic</em> with your campaign name.
- </p>
- <p>Example URL format (edit to match your site):</p>
- <pre class="kwd-code">https://www.yourdomain.co.nz/?utm_source=google&utm_medium=organic&utm_campaign=gbp</pre></div>
-      </details>
-      <details class="faq-item">
-        <summary>Duplicate listings</summary>
-        <div class="faq-answer"><p>Two profiles for the same business splits reviews, confuses Google, and can tank visibility. Claim and merge or remove duplicates.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Wrong category</summary>
-        <div class="faq-answer"><p>If your primary category is wrong, you’ll attract the wrong searches. Fix category before you worry about anything else.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Stock photos and vague content</summary>
-        <div class="faq-answer"><p>Generic photos and generic descriptions rarely convert. Real photos and specific services do.</p>
+  <!-- Do it for you CTA -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <div class="gbp-diy-card">
+        <div>
+          <p class="gbp-diy-eyebrow">Want it done for you?</p>
+          <h2 class="gbp-diy-title">We set up and manage your GBP as part of our local SEO service.</h2>
+          <p class="gbp-diy-desc">If you'd rather hand this off to an expert, we handle the full GBP setup, photo uploads, weekly posts, review strategy, and monthly reporting — bundled with your local SEO plan.</p>
+        </div>
+        <div class="gbp-diy-actions">
+          <a href="/local-seo-for-auckland-small-businesses/" class="gbp-diy-btn-primary">See Local SEO Plans</a>
+          <a href="/website-designer-auckland/" class="gbp-diy-btn-secondary">Book a Free Consult</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<strong>Want a second set of eyes?</strong><br>
- If you want help improving your wider online presence, start here:
- 
- <a href="/">website design Auckland</a>
- <a href="/website-designer-auckland/">Contact Kiwi Web Design</a>
- 
- This page is educational. Any links above are for readers who want more context.</div>
-      </details>
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Google Business Profile Questions"
+        subtitle="Common questions from Auckland businesses about GBP setup and optimisation."
+      />
     </div>
   </section>
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Need help with your Google Business Profile?"
+    subtitle="We set up and optimise GBP as part of our local SEO service — get in touch for a free audit."
+    ctaPrimary={{ text: "Get a Free GBP Audit", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Local SEO Services", href: "/local-seo-for-auckland-small-businesses/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  /* Hero */
+  .gbp-hero {
+    background: var(--kwd-dark);
+    padding: 5rem 0;
+  }
+  .gbp-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .gbp-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 1rem;
+  }
+  .gbp-hero h1 { font-size: clamp(1.9rem, 3.5vw, 3rem); color: #fff; line-height: 1.1; margin-bottom: 1.25rem; }
+  .gbp-hero-sub { font-size: 0.95rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 2rem; max-width: 500px; }
+  .gbp-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .gbp-btn-primary {
+    display: inline-block; background: var(--kwd-yellow); color: var(--kwd-dark);
+    padding: 0.875rem 2rem; border-radius: 8px; font-weight: 700; font-size: 0.875rem;
+    text-transform: uppercase; letter-spacing: 0.07em; transition: background 0.2s;
+  }
+  .gbp-btn-primary:hover { background: var(--kwd-gold); }
+  .gbp-btn-secondary {
+    display: inline-block; color: rgba(255,255,255,0.65); padding: 0.875rem 1.5rem;
+    font-size: 0.875rem; font-weight: 600; transition: color 0.2s;
+  }
+  .gbp-btn-secondary:hover { color: #fff; }
+
+  .gbp-hero-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding: 2rem;
+  }
+  .gbp-card-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-yellow); margin-bottom: 0.5rem; }
+  .gbp-card-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 1.25rem; line-height: 1.4; }
+  .gbp-card-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+  .gbp-card-list li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: rgba(255,255,255,0.8); }
+  .gbp-card-list span { color: var(--kwd-yellow); font-weight: 700; }
+
+  /* Steps */
+  .gbp-steps-wrap { max-width: 860px; margin-inline: auto; }
+  .gbp-steps { display: flex; flex-direction: column; gap: 0; margin-top: 2.5rem; }
+  .gbp-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    align-items: start;
+  }
+  .gbp-step:last-child { border-bottom: none; }
+  .gbp-step-num {
+    font-family: var(--kwd-font-heading);
+    font-size: 3rem;
+    color: var(--kwd-cream);
+    line-height: 1;
+    text-align: center;
+    background: var(--kwd-dark);
+    border-radius: 14px;
+    padding: 0.5rem 0;
+    flex-shrink: 0;
+  }
+  .gbp-step-title { font-family: var(--kwd-font-body); font-size: 1.1rem; font-weight: 700; color: var(--kwd-dark); margin: 0 0 0.75rem; }
+  .gbp-step-content { font-size: 0.9rem; color: var(--kwd-brown); line-height: 1.7; margin: 0 0 1.25rem; }
+  .gbp-step-content strong { color: var(--kwd-dark); }
+  .gbp-step-tips {
+    background: var(--kwd-cream);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+  .gbp-tips-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .gbp-step-tips ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+  .gbp-step-tips li { font-size: 0.83rem; color: var(--kwd-dark); padding-left: 1.1rem; position: relative; line-height: 1.5; }
+  .gbp-step-tips li::before { content: "→"; position: absolute; left: 0; color: var(--kwd-brown); }
+
+  /* DYI card */
+  .gbp-diy-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+  }
+  .gbp-diy-eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--kwd-yellow); margin-bottom: 0.5rem; }
+  .gbp-diy-title { font-size: clamp(1.25rem, 2vw, 1.75rem); color: #fff; margin-bottom: 0.75rem; }
+  .gbp-diy-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin: 0; max-width: 580px; }
+  .gbp-diy-actions { display: flex; flex-direction: column; gap: 0.75rem; flex-shrink: 0; }
+  .gbp-diy-btn-primary {
+    display: inline-block; background: var(--kwd-yellow); color: var(--kwd-dark);
+    padding: 0.875rem 1.75rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.07em; text-align: center;
+    white-space: nowrap; transition: background 0.2s;
+  }
+  .gbp-diy-btn-primary:hover { background: var(--kwd-gold); }
+  .gbp-diy-btn-secondary {
+    display: inline-block; color: rgba(255,255,255,0.6); font-size: 0.875rem;
+    font-weight: 600; text-align: center; transition: color 0.2s;
+  }
+  .gbp-diy-btn-secondary:hover { color: #fff; }
+
+  @media (max-width: 900px) {
+    .gbp-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .gbp-step { grid-template-columns: 60px 1fr; }
+    .gbp-step-num { font-size: 2rem; }
+    .gbp-diy-card { grid-template-columns: 1fr; gap: 2rem; }
+    .gbp-diy-actions { flex-direction: row; flex-wrap: wrap; }
+  }
+  @media (max-width: 580px) {
+    .gbp-step { grid-template-columns: 1fr; }
+    .gbp-step-num { width: 60px; font-size: 1.75rem; }
   }
 </style>

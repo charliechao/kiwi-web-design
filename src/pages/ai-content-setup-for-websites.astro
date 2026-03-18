@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -10,207 +17,274 @@ const schema = {
       "name": "AI Content Setup for Websites",
       "description": "Set up AI content workflows for your website: tone, templates, internal links, SEO structure, and a review process built for NZ small businesses.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/ai-content-setup-for-websites/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/ai-content-setup-for-websites/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/ai-content-setup-for-websites/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "AI Content Setup for Websites"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "AI Content Setup" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const services = [
+  {
+    icon: "🎙️",
+    title: "Brand Voice & Tone Guide",
+    desc: "A documented guide to how your business sounds in writing — formal or casual, direct or warm, technical or plain-English. Given to any AI tool as a system prompt so every output sounds like you.",
+    items: ["Tone & voice documentation", "Example sentences & patterns", "What to avoid list", "AI system prompt template"],
+  },
+  {
+    icon: "📋",
+    title: "Content Templates",
+    desc: "Reusable AI prompt templates for your most common content types: service page updates, blog posts, social captions, email newsletters, and FAQs.",
+    items: ["Service page template", "Blog post prompt", "Social caption template", "FAQ generation prompt"],
+  },
+  {
+    icon: "🔗",
+    title: "Internal Linking Strategy",
+    desc: "A documented internal linking map so when AI tools generate content, they know which pages to link to — and every piece of content reinforces your SEO architecture.",
+    items: ["Pillar-to-cluster link map", "Anchor text guidelines", "Priority page hierarchy", "AI linking instructions"],
+  },
+  {
+    icon: "🔍",
+    title: "SEO Content Structure",
+    desc: "Templates that bake SEO into every AI-generated piece: correct heading hierarchy, keyword placement, meta title/description patterns, and schema-ready formatting.",
+    items: ["H1–H3 structure templates", "Meta title formula", "Keyword placement guide", "Schema-ready FAQ format"],
+  },
+  {
+    icon: "✅",
+    title: "AI Review Workflow",
+    desc: "A practical human-review checklist so AI-generated content gets fact-checked, personalised, and quality-assured before it goes live on your site.",
+    items: ["Content review checklist", "Fact-check protocol", "Brand voice check", "Pre-publish SEO review"],
+  },
+  {
+    icon: "🛠️",
+    title: "Tool Setup & Training",
+    desc: "We set up ChatGPT, Claude, or your preferred AI tool with custom instructions, saved prompts, and a short training session so your team can use it confidently from day one.",
+    items: ["Custom AI instructions setup", "Saved prompt library", "1-hour training session", "Written usage guide"],
+  },
+];
+
+const whyIt = [
+  { icon: "⏱️", title: "Save hours each week", desc: "AI can draft a blog post in minutes — but without the right setup it sounds generic and off-brand. The right templates fix that." },
+  { icon: "📣", title: "Stay consistent on every channel", desc: "Your website, blog, and social all sound the same when they're driven by the same voice guide and templates." },
+  { icon: "🔍", title: "Generate content that actually ranks", desc: "Most AI content fails SEO because it ignores heading structure, keyword intent, and internal linking. Our templates fix this at the source." },
+  { icon: "👤", title: "Still sounds like you", desc: "Good AI content isn't detectable as AI — because it's been trained on your voice, reviewed by a human, and personalised for your audience." },
+];
+
+const process = [
+  { step: "1", title: "Brand & Content Audit", desc: "We review your existing website copy, any brand guidelines you have, and your target audience to understand your voice before we document it." },
+  { step: "2", title: "Voice Guide & Templates", desc: "We write your brand voice guide and create a library of AI prompt templates tailored to your content types." },
+  { step: "3", title: "SEO Structure Setup", desc: "We create content structure templates and an internal linking map that bake SEO into everything your AI tool generates." },
+  { step: "4", title: "Tool Setup & Handover", desc: "We configure your AI tool with custom instructions, walk your team through the workflow, and hand over the written guide." },
+];
+
+const faqs = [
+  { q: "Which AI tools do you set this up for?", a: "We primarily set up workflows for ChatGPT (OpenAI) and Claude (Anthropic), as these are the most widely used by small businesses. We can adapt the setup for Gemini, Copilot, or any tool your team prefers." },
+  { q: "Do I need any technical knowledge to use the AI tools after setup?", a: "No. We set everything up with simple prompts and a written guide that anyone can follow. If you can paste text into a chat box, you can use the workflow." },
+  { q: "Will Google penalise AI-generated content?", a: "Google has stated it doesn't penalise AI content — it penalises low-quality content. Content that's accurate, useful, and well-structured ranks fine regardless of how it was produced. Our templates and review checklist are designed to ensure quality, not just speed." },
+  { q: "How is this different from just using ChatGPT myself?", a: "Using ChatGPT without setup produces generic, off-brand, SEO-unfriendly content. Our setup gives you a customised system prompt with your brand voice, SEO-structured templates, an internal linking map, and a review checklist — so every output is consistent, on-brand, and built to rank." },
+  { q: "Can you also write the content for me?", a: "Yes. If you'd prefer us to produce content rather than set up your team to do it, our copywriting service handles that. We also offer a hybrid — we set up the system and produce the first 2–3 pieces as examples." },
+  { q: "How much does AI content setup cost?", a: "Our AI content setup package is a one-off engagement starting from $490 + GST. It includes the brand voice guide, prompt template library, SEO structure templates, internal linking map, and a 1-hour training session. Ongoing content production is available separately." },
+];
 ---
-<Layout title="AI Content Setup for Websites" description="Set up AI content workflows for your website: tone, templates, internal links, SEO structure, and a review process built for NZ small businesses." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Website Services</p>
-        <h1>AI Content Setup for Websites</h1>
-        <p class="hero-sub">Set up AI content workflows for your website: tone, templates, internal links, SEO structure, and a review process built for NZ small businesses.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="AI Content Setup for Websites | Auckland Small Business AI Workflows"
+  description="Set up AI content workflows for your website: tone, templates, internal links, SEO structure, and a review process built for NZ small businesses."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/ai-content-setup-for-websites/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="AI Content Setup"
+    title="Use AI to create content that sounds like you — and ranks."
+    subtitle="We set up your AI content workflow: brand voice guide, prompt templates, SEO structure, internal linking map, and a review process. Your team produces great content in a fraction of the time."
+    badgeText="One-off setup from $490"
+    ctaPrimary={{ text: "Book a Free Consult", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See What's Included", href: "#services" }}
+    centered={true}
+  />
+
+  <!-- Why it matters -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Why It Matters"
+        title="AI content without a system produces junk. With a system, it's a superpower."
+        subtitle="The difference between good and bad AI content is the setup — not the tool."
+      />
+      <div class="aics-why-grid">
+        {whyIt.map(({ icon, title, desc }) => (
+          <div class="aics-why-card">
+            <span class="aics-why-icon">{icon}</span>
+            <h3 class="aics-why-title">{title}</h3>
+            <p class="aics-why-desc">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What's Included"
+        title="Everything in the AI content setup."
+        subtitle="A complete system — not just a ChatGPT account."
+      />
+      <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <!-- Before / After -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Before vs After"
+        title="What changes with proper AI content setup."
+        light={true}
+      />
+      <div class="aics-ba-grid">
+        <div class="aics-ba-col aics-ba-col--before">
+          <p class="aics-ba-label">Without setup</p>
+          <ul>
+            <li>Generic, off-brand content</li>
+            <li>Wrong keywords and structure</li>
+            <li>No internal links</li>
+            <li>Team doesn't know which prompts to use</li>
+            <li>Every output needs heavy editing</li>
+            <li>Google flags as thin content</li>
+          </ul>
+        </div>
+        <div class="aics-ba-col aics-ba-col--after">
+          <p class="aics-ba-label aics-ba-label--after">With our setup</p>
+          <ul>
+            <li>Consistent brand voice on every draft</li>
+            <li>SEO-structured headings and keywords baked in</li>
+            <li>Correct internal links suggested automatically</li>
+            <li>Saved prompts for every content type</li>
+            <li>Review checklist for fast quality approval</li>
+            <li>Content that ranks and reads like it was human-written</li>
+          </ul>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/01/ai-content-setup-websites-auckland-kiwi-web-design.png" alt="AI Content Setup for Websites" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<p>For Auckland and NZ small businesses</p>
- 
- <p>
- If you want AI to help you publish faster without damaging quality, you need a setup: clear tone rules, page templates,
- internal linking, and a review process. This page shows exactly what we set up so content stays consistent and search-friendly.
- </p>
-
-<a href="/">web design Auckland</a>
- <a href="/">website design Auckland</a>
- <a href="/website-designer-auckland/">Contact for setup</a>
-
-
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="Four steps to a working AI content system."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="faq-inner">
-      <h2>Frequently Asked Questions</h2>
-      <details class="faq-item">
-        <summary>Publishing workflow + tracking</summary>
-        <div class="faq-answer"><p>Draft, edit, upload, then run on-page checks (titles, headings, links). We track what’s published and what to improve next.</p>
- 
- ProcessOn-page QAIteration
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="AI Content Questions Answered"
+        subtitle="Common questions from Auckland businesses about setting up AI content workflows."
+      />
+    </div>
+  </section>
 
-<strong>Selected:</strong> Click any card above to see what you’re focusing on.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Step 1: Content foundations (1 session)</summary>
-        <div class="faq-answer"><ol>
- <li>Confirm your core services, service areas, and “money pages”.</li>
- <li>Define tone rules, banned phrases, and proof points you can actually back up.</li>
- <li>Create a simple keyword map: each page has one job and one target intent.</li>
- <li>Lock internal link destinations (home, service pages, contact).</li>
- </ol>
- Output: voice guide + page map + link rules.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Step 2: Templates + prompt pack</summary>
-        <div class="faq-answer"><ol>
- <li>Build page templates for your main content types (service, location, blog, FAQ).</li>
- <li>Create prompts that produce your structure and tone by default.</li>
- <li>Add “review hooks”: what the AI must ask for if info is missing.</li>
- <li>Set do-not-hallucinate rules for pricing, timelines, and claims.</li>
- </ol>
- Output: templates + prompts your team can reuse.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Step 3: Workflow + QA checklist</summary>
-        <div class="faq-answer"><ol>
- <li>Draft → human edit → publish.</li>
- <li>On-page checks: title length, H1 only, internal links, image alt text.</li>
- <li>Add schema where it’s useful (FAQPage, Service, Organization).</li>
- <li>Track performance and improve the pages that matter most.</li>
- </ol>
- Output: publishing checklist + tracking approach.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Step 4: Pilot content (optional)</summary>
-        <div class="faq-answer"><ol>
- <li>Create 2 to 4 pages or posts using the setup.</li>
- <li>Review output quality and tighten rules where needed.</li>
- <li>Turn the best-performing format into your default template.</li>
- </ol>
- Output: proven format you can repeat confidently.</div>
-      </details>
-    </div>
-  </section>
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
+  <CTABanner
+    variant="yellow"
+    title="Ready to produce content 5× faster — without sacrificing quality?"
+    subtitle="One-off setup from $490 — we'll have your AI content system ready in a week."
+    ctaPrimary={{ text: "Book a Free Consult", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See AI SEO Too", href: "/ai-seo-for-auckland-small-businesses/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .aics-why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .aics-why-card {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .aics-why-icon { font-size: 1.75rem; }
+  .aics-why-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .aics-why-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
+
+  .aics-ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .aics-ba-col {
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.04);
+  }
+  .aics-ba-col--after {
+    background: rgba(251,232,166,0.07);
+    border-color: rgba(251,232,166,0.2);
+  }
+  .aics-ba-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 1.25rem;
+  }
+  .aics-ba-label--after { color: var(--kwd-yellow); }
+  .aics-ba-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .aics-ba-col ul li {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    padding-left: 1.4rem;
+    position: relative;
+  }
+  .aics-ba-col--before li { color: rgba(255,255,255,0.5); }
+  .aics-ba-col--before li::before { content: "✗"; position: absolute; left: 0; color: rgba(255,255,255,0.25); font-weight: 700; }
+  .aics-ba-col--after li { color: rgba(255,255,255,0.82); }
+  .aics-ba-col--after li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-yellow); font-weight: 700; }
+
+  @media (max-width: 900px) {
+    .aics-why-grid { grid-template-columns: repeat(2, 1fr); }
+    .aics-ba-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 580px) {
+    .aics-why-grid { grid-template-columns: 1fr; }
   }
 </style>

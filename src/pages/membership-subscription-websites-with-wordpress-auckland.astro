@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,147 +14,248 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/membership-subscription-websites-with-wordpress-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/membership-subscription-websites-with-wordpress-auckland/",
-      "name": "Membership &amp; Subscription Websites with WordPress (Auckland)",
-      "description": "Build a professional membership or subscription website in Auckland. Perfect for clubs, training sites, and business association",
+      "name": "Membership & Subscription Websites with WordPress (Auckland)",
+      "description": "Build a professional membership or subscription website in Auckland. Perfect for clubs, training sites, and business associations.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/membership-subscription-websites-with-wordpress-auckland/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/membership-subscription-websites-with-wordpress-auckland/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/membership-subscription-websites-with-wordpress-auckland/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Membership &amp; Subscription Websites with WordPress (Auckland)"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Membership & Subscription Websites" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const features = [
+  {
+    icon: "🔐",
+    title: "Gated Content & Member Access",
+    desc: "Restrict pages, posts, downloads, and entire sections of your site to registered members only. Free, paid, or tiered access levels.",
+    items: ["Content restriction by page", "Free vs paid tiers", "Member-only downloads", "Drip content release"],
+  },
+  {
+    icon: "💳",
+    title: "Recurring Subscription Payments",
+    desc: "Monthly or annual subscription billing through Stripe — automatic renewals, failed payment handling, and member self-service cancellation.",
+    items: ["Stripe recurring billing", "Monthly & annual plans", "Failed payment recovery", "Member self-service portal"],
+  },
+  {
+    icon: "🎓",
+    title: "Online Courses & Learning",
+    desc: "Structured course content with lessons, modules, quizzes, and progress tracking — ideal for coaches, trainers, and educators.",
+    items: ["Course builder", "Lesson progress tracking", "Quizzes & assessments", "Completion certificates"],
+  },
+  {
+    icon: "👥",
+    title: "Member Directory",
+    desc: "A searchable directory of members — great for associations, networks, and community platforms where members want to connect.",
+    items: ["Searchable profiles", "Member map", "Category filtering", "Profile self-editing"],
+  },
+  {
+    icon: "💬",
+    title: "Member Community & Forums",
+    desc: "Private discussion forums or community spaces for members — a high-retention feature that makes membership feel valuable.",
+    items: ["Private forums", "Member-to-member messaging", "Activity feeds", "Moderation tools"],
+  },
+  {
+    icon: "📧",
+    title: "Member Lifecycle Emails",
+    desc: "Automated email sequences for new members (welcome series), expired members (renewal reminders), and disengaged members (re-engagement campaigns).",
+    items: ["Welcome sequences", "Renewal reminders", "Re-engagement campaigns", "Mailchimp / Klaviyo integration"],
+  },
+];
+
+const useCases = [
+  { icon: "🏋️", title: "Fitness & Wellness", desc: "Online training programs, workout libraries, nutrition guides — members pay monthly for ongoing access to your content." },
+  { icon: "📚", title: "Online Education", desc: "Courses, workshops, and learning communities. Student progress tracking, quizzes, and certificates." },
+  { icon: "🤝", title: "Industry Associations", desc: "Member directories, resources, events, and forums for professional networks and industry groups." },
+  { icon: "💼", title: "Business Coaching", desc: "Gated resource libraries, group coaching replays, community forums — packaged as a monthly membership." },
+  { icon: "🎨", title: "Creative Clubs", desc: "Subscription access to design assets, templates, fonts, illustrations, or photography for creative professionals." },
+  { icon: "🍷", title: "Subscription Boxes / Clubs", desc: "Wine clubs, book clubs, product subscriptions — recurring payment plus member-only offers and content." },
+];
+
+const plugins = [
+  { name: "MemberPress", best: "Best overall — courses, content restriction, subscriptions", notes: "Our first recommendation for most membership sites" },
+  { name: "Paid Memberships Pro", best: "Associations, directories, complex tiers", notes: "Open-source core, very flexible" },
+  { name: "LearnDash", best: "Online courses and training programmes specifically", notes: "Best LMS for complex course structures" },
+  { name: "Restrict Content Pro", best: "Simple content restriction + subscriptions", notes: "Lightweight, good for basic setups" },
+];
+
+const process = [
+  { step: "1", title: "Membership Model Design", desc: "We map out your tier structure, what's gated vs free, your pricing model, and the member journey from sign-up to renewal." },
+  { step: "2", title: "Plugin Selection & Setup", desc: "We select and configure the right membership plugin — MemberPress, Paid Memberships Pro, or LearnDash — and set up all tiers and access rules." },
+  { step: "3", title: "Content, Payments & Emails", desc: "We populate initial content, integrate Stripe for recurring payments, and set up automated welcome and renewal email sequences." },
+  { step: "4", title: "Test & Launch", desc: "We test the full member journey — sign-up, payment, access, and cancellation — then launch and train you on managing members." },
+];
+
+const faqs = [
+  { q: "What's the best WordPress plugin for membership sites?", a: "For most membership sites, we recommend MemberPress — it handles content restriction, subscription payments, and online courses in one plugin with excellent documentation. For associations with member directories, Paid Memberships Pro is more flexible. For pure course-focused platforms, LearnDash is the best dedicated LMS." },
+  { q: "Can members pay monthly by credit card?", a: "Yes. We integrate Stripe for recurring monthly or annual payments — automatic renewal, failed payment retry, and member self-service cancellation are all handled automatically." },
+  { q: "Can I offer a free tier alongside paid tiers?", a: "Yes. Most membership plugins support multiple tiers including a free registered tier. This is a common structure — free members get limited access and see upgrade prompts for premium content." },
+  { q: "Is a membership site harder to manage than a regular WordPress site?", a: "Day-to-day management is straightforward — adding content, approving members, viewing payments. The complexity is in the initial setup of tiers and access rules, which we handle. We provide documentation and training so you can manage it confidently from day one." },
+  { q: "Can I drip-release content to new members?", a: "Yes. Drip content (releasing content on a schedule after sign-up) is supported by MemberPress and LearnDash. This is great for courses — you release Module 1 on day 1, Module 2 on day 8, etc. — to keep members engaged and reduce early cancellations." },
+  { q: "How much does a membership website cost?", a: "A basic membership site (one paid tier, content restriction, Stripe payments) starts from $2,490 + GST. A full course platform with multiple tiers, quizzes, and email sequences typically runs $3,500–$5,000 + GST. We give you a fixed quote based on your requirements." },
+];
 ---
-<Layout title="Membership & Subscription Websites with WordPress (Auckland)" description="Build a professional membership or subscription website in Auckland. Perfect for clubs, training sites, and business association" schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">WordPress Services</p>
-        <h1>Membership & Subscription Websites with WordPress (Auckland)</h1>
-        <p class="hero-sub">Build a professional membership or subscription website in Auckland. Perfect for clubs, training sites, and business association</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="Membership & Subscription Websites with WordPress Auckland"
+  description="Build a professional membership or subscription website in Auckland. Perfect for clubs, training sites, and business associations."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/membership-subscription-websites-with-wordpress-auckland/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Membership Websites Auckland"
+    title="Turn your knowledge into recurring revenue."
+    subtitle="WordPress membership and subscription websites for Auckland businesses — gated content, recurring payments, online courses, member directories, and community forums."
+    badgeText="From $2,490 + GST"
+    ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Use Cases", href: "#usecases" }}
+  />
+
+  <!-- Use cases -->
+  <section class="section" style="background: var(--kwd-cream);" id="usecases">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Who It's For"
+        title="Membership sites across industries."
+        subtitle="Any business that creates ongoing value can build a membership model around it."
+      />
+      <div class="mem-usecases">
+        {useCases.map(({ icon, title, desc }) => (
+          <div class="mem-uc">
+            <span class="mem-uc-icon">{icon}</span>
+            <h3 class="mem-uc-title">{title}</h3>
+            <p class="mem-uc-desc">{desc}</p>
+          </div>
+        ))}
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/membership-website-wordpress-auckland.png" alt="Membership & Subscription Websites with WordPress (Auckland)" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What's Included"
+        title="Everything a membership site needs."
+        subtitle="From payment processing to community features — all built in WordPress."
+      />
+      <ServiceGrid items={features} cols={3} />
+    </div>
+  </section>
+
+  <!-- Plugins -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Membership Plugins"
+        title="The right tool for your membership model."
+        light={true}
+        subtitle="We work with all major WordPress membership plugins and choose based on your specific requirements."
+      />
+      <div class="mem-plugins">
+        {plugins.map(({ name, best, notes }) => (
+          <div class="mem-plugin">
+            <strong class="mem-plugin-name">{name}</strong>
+            <p class="mem-plugin-best">{best}</p>
+            <span class="mem-plugin-notes">{notes}</span>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="From concept to launch in 2–4 weeks."
+        subtitle="A structured build process for membership sites."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Membership Site Questions Answered"
+        subtitle="Common questions from Auckland businesses about WordPress membership sites."
+      />
     </div>
   </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to launch your membership site?"
+    subtitle="Free consultation — we'll design your membership model and give you a fixed quote."
+    ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See eCommerce Options", href: "/ecommerce-website-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .mem-usecases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .mem-uc {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .mem-uc-icon { font-size: 1.75rem; }
+  .mem-uc-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .mem-uc-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
+
+  .mem-plugins {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .mem-plugin {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .mem-plugin-name { font-size: 0.95rem; font-weight: 700; color: var(--kwd-yellow); }
+  .mem-plugin-best { font-size: 0.83rem; color: rgba(255,255,255,0.75); line-height: 1.55; margin: 0; }
+  .mem-plugin-notes { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 0.25rem; }
+
+  @media (max-width: 900px) {
+    .mem-usecases { grid-template-columns: repeat(2, 1fr); }
+    .mem-plugins { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 580px) {
+    .mem-usecases { grid-template-columns: 1fr; }
+    .mem-plugins { grid-template-columns: 1fr; }
   }
 </style>

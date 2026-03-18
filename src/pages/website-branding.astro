@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,175 +14,236 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/website-branding/",
       "url": "https://www.kiwiwebdesign.co.nz/website-branding/",
-      "name": "Website Branding",
-      "description": "Brand first, website second Website Branding for Small Businesses in Auckland A website works best when your brand is clear. Website branding is about aligning your logo, colours, fonts and messaging so your site feels consistent, professional and easy to recognise. Kiwi small businesses often grow fast and the brand falls behind. This service helps [&hellip;]",
+      "name": "Website Branding Auckland | Brand Identity for Small Businesses",
+      "description": "Brand first, website second. Website branding for small businesses in Auckland — logo, colours, fonts, and messaging that make your site feel consistent and professional.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/website-branding/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/website-branding/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/website-branding/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Website Branding"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Website Branding" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const services = [
+  {
+    icon: "🔷",
+    title: "Logo Design",
+    desc: "A professional logo that works across digital and print — your website, business cards, uniforms, vehicle wraps, and social profiles. Supplied in all formats.",
+    items: ["Primary logo + variations", "PNG, SVG, PDF files", "Light & dark versions", "Icon/favicon version"],
+  },
+  {
+    icon: "🎨",
+    title: "Colour Palette",
+    desc: "A defined colour system — primary, secondary, and accent colours — with HEX, RGB, and CMYK values so every touchpoint looks consistent.",
+    items: ["Primary & secondary colours", "HEX / RGB / CMYK codes", "Accessibility contrast check", "Usage guidance"],
+  },
+  {
+    icon: "✍️",
+    title: "Typography System",
+    desc: "Paired font choices — a heading font and a body font — that reflect your brand personality and are optimised for web performance.",
+    items: ["Heading & body font pair", "Scale & sizing guide", "Web font setup (Google Fonts)", "Print font alternatives"],
+  },
+  {
+    icon: "📣",
+    title: "Brand Voice & Messaging",
+    desc: "Your tagline, value proposition, and core messaging framework — so everyone in your business communicates consistently.",
+    items: ["Tagline / strapline", "Elevator pitch", "Key messages by audience", "Tone of voice guide"],
+  },
+  {
+    icon: "📋",
+    title: "Brand Style Guide",
+    desc: "A single reference document covering your logo usage rules, colour palette, typography, imagery style, and tone of voice.",
+    items: ["Logo usage rules (do/don't)", "Colour & font guide", "Imagery & photography style", "Social media templates"],
+  },
+  {
+    icon: "🌐",
+    title: "Brand Implementation",
+    desc: "We apply your new brand consistently across your WordPress site — colours, fonts, button styles, and imagery — so the site and the brand are perfectly aligned.",
+    items: ["WordPress theme branding", "CSS variables setup", "Component styling", "Favicon & OG image"],
+  },
+];
+
+const whyBrandFirst = [
+  { icon: "🔄", title: "Rebrand without rebuild", desc: "A well-documented brand system means you can update your site's look in minutes — not weeks — because everything is defined and consistent." },
+  { icon: "✅", title: "Consistency builds trust", desc: "When your site, cards, social, and signage all match, customers perceive you as more established and professional — even if you're a one-person operation." },
+  { icon: "🎯", title: "Design decisions get easier", desc: "With a defined colour and typography system, every future design decision is faster because the rules are already set." },
+  { icon: "📸", title: "Photography looks intentional", desc: "A brand guide defines the style of photography that fits your brand — so stock photos and your own images all feel cohesive." },
+];
+
+const process = [
+  { step: "1", title: "Discovery & Moodboard", desc: "We start with a brand questionnaire and a visual moodboard session — presenting 2–3 direction options with example logos, colours, and fonts." },
+  { step: "2", title: "Logo Concepts", desc: "We design 2–3 logo concepts based on your chosen direction. You select one and we refine it through up to 2 rounds of revisions." },
+  { step: "3", title: "Full Brand System", desc: "We develop the colour palette, typography pair, brand voice guide, and style guide around your approved logo." },
+  { step: "4", title: "Delivery & Implementation", desc: "We deliver all files (PNG, SVG, PDF) with a brand style guide — and if you're building a site with us, we apply the brand immediately." },
+];
+
+const faqs = [
+  { q: "Do I need branding before building a website?", a: "Ideally, yes. A website built without a defined brand can feel inconsistent and is harder to maintain. That said, we often do them together — designing the brand and applying it to the site as a single engagement. This is usually the most efficient approach." },
+  { q: "What if I already have a logo but nothing else?", a: "We work from your existing logo and build out the full brand system around it — colour palette, typography, messaging, and style guide. We'll assess whether the logo itself holds up at web sizes or needs refining." },
+  { q: "What file formats will I receive?", a: "You receive your logo in PNG (transparent background), SVG (vector, scalable), and PDF formats. This covers digital, web, and print use cases. We also supply a web-optimised favicon and an OG (Open Graph) image for social sharing." },
+  { q: "Can you redesign my existing brand?", a: "Yes. We do full rebrands and brand refreshes. A rebrand retains your business name and builds a new visual identity from scratch. A refresh updates your existing logo and colour palette while preserving recognisability." },
+  { q: "How much does branding cost?", a: "Our starter branding package (logo + colour palette + typography) starts from $690 + GST. A full brand system (logo + style guide + messaging) runs $1,200–$1,800 + GST. When combined with a website build, we offer bundled pricing." },
+];
 ---
-<Layout title="Website Branding" description="Brand first, website second Website Branding for Small Businesses in Auckland A website works best when your brand is clear. Website branding is about aligning your logo, colours, fonts and messaging so your site feels consistent, professional and easy to recognise. Kiwi small businesses often grow fast and the brand falls behind. This service helps [...]" schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Website Services</p>
-        <h1>Website Branding for Small Businesses in Auckland</h1>
-        <p class="hero-sub">Brand first, website second Website Branding for Small Businesses in Auckland A website works best when your brand is clear. Website branding is about aligning your logo, colours, fonts and messaging so your site feels consistent, professional and easy to recognise. Kiwi small businesses often grow fast and the brand falls behind. This service helps [...]</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="Website Branding Auckland | Brand Identity for Small Businesses"
+  description="Brand first, website second. Website branding for small businesses in Auckland — logo, colours, fonts, and messaging that make your site feel consistent and professional."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/website-branding/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Website Branding Auckland"
+    title="Brand first. Website second. Always."
+    subtitle="A website works best when your brand is clear. Logo, colours, fonts, and messaging — defined, documented, and applied consistently across every touchpoint."
+    badgeText="From $690 + GST"
+    ctaPrimary={{ text: "Get a Branding Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See What's Included", href: "#services" }}
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-196644-196644.jpg"
+    imgAlt="Website branding Auckland small business"
+  />
+
+  <!-- Why brand first -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Why It Matters"
+        title="Your brand is the foundation your website is built on."
+        subtitle="Kiwi small businesses often grow fast and the brand falls behind. This service helps you catch up — and stay consistent."
+      />
+      <div class="brand-why-grid">
+        {whyBrandFirst.map(({ icon, title, desc }) => (
+          <div class="brand-why-card">
+            <span class="bwc-icon">{icon}</span>
+            <h3 class="bwc-title">{title}</h3>
+            <p class="bwc-desc">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Branding Services"
+        title="Everything in a complete brand system."
+        subtitle="From your first logo to a full brand guide — we cover every element of consistent brand identity."
+      />
+      <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <!-- Brand vs no-brand -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="With vs Without"
+        title="What a defined brand does for your website."
+        light={true}
+      />
+      <div class="brand-compare">
+        <div class="brand-compare-col brand-compare-col--without">
+          <p class="bcc-label">Without a brand system</p>
+          <ul>
+            <li>Inconsistent colours across pages</li>
+            <li>Multiple fonts that clash</li>
+            <li>Generic stock photos that don't fit</li>
+            <li>Hard to brief any designer or developer</li>
+            <li>Looks different on social vs the website</li>
+            <li>Every update takes longer without clear rules</li>
+          </ul>
+        </div>
+        <div class="brand-compare-col brand-compare-col--with">
+          <p class="bcc-label bcc-label--good">With a brand system</p>
+          <ul>
+            <li>Every page feels intentionally designed</li>
+            <li>One font pair — consistent across everything</li>
+            <li>Photography style guide makes every image fit</li>
+            <li>Any designer can pick up and apply your brand</li>
+            <li>Website, social, and print all look cohesive</li>
+            <li>Fast design decisions — the rules are already set</li>
+          </ul>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/website-branding-auckland-kiwi-web-design.jpg" alt="Website Branding for Small Businesses in Auckland" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/website-branding-auckland-kiwi-web-design.jpg" alt="Website branding workshop for a small Auckland business" loading="lazy"> 
-
-Brand first, website second
- 
- <p>
- A website works best when your brand is clear. Website branding is about aligning your logo, colours,
- fonts and messaging so your site feels consistent, professional and easy to recognise.
- </p>
- <p>
- Kiwi small businesses often grow fast and the brand falls behind. This service helps you tidy up your
- website brand before you invest more into design, content or ads.
- </p>
- <p>
- If you want your site to stand out in search and in tools like ChatGPT, your brand story and visuals
- need to be clear and consistent across your pages.
- </p>
-
-<strong>Who this service is for</strong>
- <p>
- This website branding service is designed for small businesses in Auckland and across New Zealand.
- It works well if:
- </p>
- 
- You have a logo but no clear style
- Your website looks “patched together”
- You are planning a new or refreshed site
- You want stronger trust and consistency
-
-
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="From discovery to delivery in 1–2 weeks."
+        subtitle="A focused, collaborative process for clear branding outcomes."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Branding Questions Answered"
+        subtitle="Common questions from Auckland small business owners about brand identity."
+      />
     </div>
   </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to build a brand that matches your ambition?"
+    subtitle="Get a fixed quote for your branding project — logo, style guide, and messaging included."
+    ctaPrimary={{ text: "Get a Branding Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "Bundle With a Website", href: "/small-business-website-design-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .brand-why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
   }
+  .brand-why-card { background: #fff; border: 1.5px solid rgba(0,0,0,0.07); border-radius: 14px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .bwc-icon { font-size: 1.75rem; }
+  .bwc-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .bwc-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
+
+  .brand-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+  .brand-compare-col { border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); }
+  .brand-compare-col--with { background: rgba(251,232,166,0.07); border-color: rgba(251,232,166,0.2); }
+  .bcc-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-bottom: 1.25rem; }
+  .bcc-label--good { color: var(--kwd-yellow); }
+  .brand-compare-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+  .brand-compare-col li { font-size: 0.875rem; line-height: 1.5; padding-left: 1.4rem; position: relative; }
+  .brand-compare-col--without li { color: rgba(255,255,255,0.5); }
+  .brand-compare-col--without li::before { content: "✗"; position: absolute; left: 0; color: rgba(255,255,255,0.25); font-weight: 700; }
+  .brand-compare-col--with li { color: rgba(255,255,255,0.82); }
+  .brand-compare-col--with li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-yellow); font-weight: 700; }
+
+  @media (max-width: 900px) {
+    .brand-why-grid { grid-template-columns: repeat(2, 1fr); }
+    .brand-compare { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 580px) { .brand-why-grid { grid-template-columns: 1fr; } }
 </style>

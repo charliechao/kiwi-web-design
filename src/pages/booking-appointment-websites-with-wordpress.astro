@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,236 +14,274 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/booking-appointment-websites-with-wordpress/",
       "url": "https://www.kiwiwebdesign.co.nz/booking-appointment-websites-with-wordpress/",
-      "name": "Booking &amp; Appointment Websites with WordPress",
+      "name": "Booking & Appointment Websites with WordPress",
       "description": "Get an affordable WordPress booking website for your salon, tradie, or consulting business in Auckland. Accept bookings & payments online with Kiwi Web Design.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/booking-appointment-websites-with-wordpress/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/booking-appointment-websites-with-wordpress/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/booking-appointment-websites-with-wordpress/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Booking &amp; Appointment Websites with WordPress"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Booking & Appointment Websites" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const features = [
+  {
+    icon: "📅",
+    title: "Online Booking Calendar",
+    desc: "A self-service booking calendar that lets customers choose their date, time, and service — without calling you.",
+    items: ["Real-time availability", "Service duration rules", "Buffer time between bookings", "Timezone handling"],
+  },
+  {
+    icon: "💳",
+    title: "Online Payment at Booking",
+    desc: "Collect deposits or full payment at the time of booking. Reduces no-shows and secures your time before the appointment.",
+    items: ["Stripe & PayPal support", "Deposit or full payment", "Automatic receipts", "Refund management"],
+  },
+  {
+    icon: "📱",
+    title: "Automated Reminders",
+    desc: "Email and SMS reminders sent automatically before appointments — reducing no-shows without any manual work.",
+    items: ["24-hour email reminder", "SMS reminder (optional)", "Follow-up email post-booking", "Cancellation notifications"],
+  },
+  {
+    icon: "👤",
+    title: "Staff & Resource Management",
+    desc: "For businesses with multiple staff or rooms — each team member has their own calendar and customers can book with a specific person.",
+    items: ["Individual staff calendars", "Room / resource booking", "Staff availability rules", "Admin overview calendar"],
+  },
+  {
+    icon: "🔗",
+    title: "Calendar Integrations",
+    desc: "Sync bookings to Google Calendar so you always know what's in your diary — no double-handling.",
+    items: ["Google Calendar sync", "Outlook sync", "Two-way sync support", "iCal export"],
+  },
+  {
+    icon: "📊",
+    title: "Booking Analytics",
+    desc: "See which services are booked most, where customers are coming from, and your no-show rate — so you can make data-informed decisions.",
+    items: ["Booking volume reports", "Revenue tracking", "Source attribution", "No-show tracking"],
+  },
+];
+
+const useCases = [
+  { icon: "💆", name: "Salons & beauty clinics", plugin: "Trafft / Bookly", detail: "Service menu, staff selection, deposit at booking, SMS reminders" },
+  { icon: "⚕️", name: "Healthcare & clinics", plugin: "Trafft / Simply Schedule", detail: "HIPAA-aware setup, intake forms, multiple practitioners" },
+  { icon: "🔧", name: "Tradies (quote bookings)", plugin: "WPForms / Gravity Forms", detail: "Date/time preference form, job type, address capture" },
+  { icon: "⚖️", name: "Consultants & coaches", plugin: "Simply Schedule / Amelia", detail: "Zoom link auto-generated, Stripe payment, package booking" },
+  { icon: "🏋️", name: "Fitness & yoga studios", plugin: "Trafft / Amelia", detail: "Class schedules, multiple bookings per slot, membership tiers" },
+  { icon: "🐾", name: "Pet services", plugin: "Bookly Pro", detail: "Pet information collection, multiple pets, staff preference" },
+];
+
+const plugins = [
+  { name: "Trafft", best: "Best overall — salons, clinics, multi-staff", free: false },
+  { name: "Amelia", best: "Events + appointments, feature-rich", free: false },
+  { name: "Simply Schedule Appointments", best: "Simple, clean, consults & coaching", free: true },
+  { name: "Bookly Pro", best: "High-volume salons, NZ payment support", free: false },
+  { name: "WPForms + Stripe", best: "Quote request + payment, tradies", free: false },
+];
+
+const process = [
+  { step: "1", title: "Requirements & Plugin Selection", desc: "We review your services, staff, and booking workflow to select the right plugin and configuration for your specific business model." },
+  { step: "2", title: "Calendar & Services Setup", desc: "We configure your services, durations, pricing, staff calendars, and availability rules within the booking plugin." },
+  { step: "3", title: "Payment & Reminders", desc: "We integrate your payment gateway, set up automated email and SMS reminders, and connect to Google Calendar." },
+  { step: "4", title: "Test & Train", desc: "We run test bookings end-to-end, verify payment flow and notifications, and train you on managing your calendar day-to-day." },
+];
+
+const faqs = [
+  { q: "Which WordPress booking plugin do you recommend?", a: "It depends on your business type. For salons and clinics, Trafft or Amelia are excellent. For consultants and coaches, Simply Schedule Appointments is clean and easy. For tradies needing a quote-request form rather than real-time booking, WPForms with Stripe works well. We recommend based on your specific needs and budget." },
+  { q: "Can customers pay a deposit at the time of booking?", a: "Yes. All major booking plugins support deposit requirements — either a fixed amount or a percentage of the service price. This is very effective at reducing no-shows and is standard for salons, clinics, and consulting businesses." },
+  { q: "Will this integrate with my Google Calendar?", a: "Yes. All plugins we recommend support Google Calendar sync — new bookings appear automatically in your diary and availability is kept in sync." },
+  { q: "Can I have different staff with their own availability?", a: "Yes. Multi-staff booking is supported by Trafft, Amelia, and Bookly Pro. Each team member has their own calendar, hours, and service list. Customers can select a specific staff member or be assigned automatically." },
+  { q: "Can I accept bookings for classes or group sessions?", a: "Yes. Amelia and Trafft support event and group bookings with a maximum capacity per session. This works well for yoga, fitness, and training businesses." },
+  { q: "How much does a booking website cost?", a: "A booking website with a single-staff calendar, 1 payment method, and email reminders starts from $1,490 + GST. Multi-staff setups, SMS reminders, and complex configurations are quoted based on scope. We give you a fixed price before we start." },
+];
 ---
-<Layout title="Booking & Appointment Websites with WordPress" description="Get an affordable WordPress booking website for your salon, tradie, or consulting business in Auckland. Accept bookings & payments online with Kiwi Web Design." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">WordPress Services</p>
-        <h1>Booking & Appointment Websites with WordPress</h1>
-        <p class="hero-sub">Get an affordable WordPress booking website for your salon, tradie, or consulting business in Auckland. Accept bookings & payments online with Kiwi Web Design.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="Booking & Appointment Websites with WordPress Auckland"
+  description="Get an affordable WordPress booking website for your salon, tradie, or consulting business in Auckland. Accept bookings & payments online with Kiwi Web Design."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/booking-appointment-websites-with-wordpress/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Booking Websites Auckland"
+    title="Let your website take bookings while you work."
+    subtitle="WordPress booking websites for Auckland salons, clinics, consultants, and tradies — online calendar, payment, and automated reminders. No more back-and-forth on the phone."
+    badgeText="From $1,490 + GST"
+    ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Features", href: "#features" }}
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-1181533-1181533.jpg"
+    imgAlt="Booking appointment website WordPress Auckland"
+  />
+
+  <!-- Features -->
+  <section class="section" style="background: var(--kwd-cream);" id="features">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Booking Features"
+        title="Everything your booking system needs."
+        subtitle="Self-service booking that works for you — and for your customers."
+      />
+      <ServiceGrid items={features} cols={3} />
+    </div>
+  </section>
+
+  <!-- Use cases -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Who It's For"
+        title="We've built booking sites for these businesses."
+        light={true}
+        subtitle="Different industries have different booking requirements — we configure the right setup for yours."
+      />
+      <div class="book-usecases">
+        {useCases.map(({ icon, name, plugin, detail }) => (
+          <div class="book-uc">
+            <div class="book-uc-top">
+              <span class="book-uc-icon">{icon}</span>
+              <strong class="book-uc-name">{name}</strong>
+            </div>
+            <span class="book-uc-plugin">{plugin}</span>
+            <p class="book-uc-detail">{detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Plugin comparison -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Booking Plugins"
+        title="Which plugin is right for you?"
+        subtitle="We work with all major WordPress booking plugins and recommend based on your specific requirements."
+      />
+      <div class="book-plugins">
+        <div class="book-plugins-table">
+          <div class="book-plugins-header">
+            <span>Plugin</span>
+            <span>Best for</span>
+            <span>Pricing</span>
+          </div>
+          {plugins.map(({ name, best, free }) => (
+            <div class="book-plugins-row">
+              <strong class="book-plugin-name">{name}</strong>
+              <span class="book-plugin-best">{best}</span>
+              <span class:list={['book-plugin-price', !free && 'book-plugin-price--paid']}>
+                {free ? 'Free / freemium' : 'Paid licence'}
+              </span>
+            </div>
+          ))}
         </div>
-      </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/booking-appointment-wordpress-auckland.jpg" alt="Booking & Appointment Websites with WordPress" loading="lazy" />
+        <p class="book-plugins-note">We recommend the right plugin for your business — and the plugin licence cost is separate from our build fee. We'll give you the total cost upfront.</p>
       </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<h2>Make it easy for your customers to book your services online.
-Kiwi Web Design builds affordable and smart WordPress booking websites for salons, tradies, consultants, and service businesses across Auckland.</h2> 
-
-<a href="/web-design-auckland/">
- 
- Free Quote
- 
- </a>
-
-<img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/booking-appointment-wordpress-auckland.jpg" alt="Online booking and appointment website for Auckland small businesses" loading="lazy"> 
-
-<h3><strong>Why Every Small Business Needs an Online Booking System</strong></h3><p>If you’re running a salon, cleaning business, consultancy, or any service that relies on appointments — managing bookings manually can get messy. Missed calls, double bookings, and endless text confirmations can waste your time and cost you customers.</p><p>With a WordPress booking website, you can automate your appointments, send reminders, and take payments online — all while you focus on doing the work you love.</p><hr><h3><strong>Online Booking Solutions for Salons &amp; Beauty Businesses</strong></h3><p>Let your clients book their next haircut, facial, or massage anytime — even when you’re closed.<br>A WordPress booking system can:</p><ul><li><p>Show available time slots automatically</p></li><li><p>Send email/SMS reminders</p></li><li><p>Accept deposits or full payments upfront</p></li><li><p>Integrate with Google Calendar or Square</p></li></ul><p>That means fewer no-shows and a smoother client experience — perfect for busy Auckland beauty salons and spas.</p><hr><h3><strong>Appointment Websites for Tradies &amp; Home Services</strong></h3><p>Electricians, plumbers, cleaners, or lawn care pros — a booking website saves you hours each week.<br>Imagine clients booking their preferred date and time directly from your website. You get instant notifications, job details, and the ability to approve or reschedule with one click.</p><p>We can also set up quote request forms or service menus so clients know exactly what they’re booking.</p><hr><h3><strong>Consultants, Tutors &amp; Health Professionals</strong></h3><p>Whether you’re a business coach, personal trainer, or physiotherapist — booking automation means fewer emails back and forth.<br>You can offer:</p><ul><li><p>1-on-1 or group bookings</p></li><li><p>Paid sessions via Stripe or PayPal</p></li><li><p>Zoom/Google Meet integration</p></li><li><p>Automatic confirmations and follow-ups</p></li></ul><p>Your clients will appreciate the convenience, and you’ll save hours every week.</p><hr><h3><strong>Smart Features for Modern Businesses</strong></h3><p>Our WordPress booking websites include:</p><ul><li><p>Mobile-friendly calendars and dashboards</p></li><li><p>Automated reminders and cancellations</p></li><li><p>Integration with WooCommerce or Stripe</p></li><li><p>Dashboard analytics for appointments and revenue</p></li></ul><p>All set up so you can easily manage your business from your phone or laptop.</p><hr><h3><strong>Real Results for Auckland Businesses</strong></h3><p>Our clients report:</p><ul><li><p>40% fewer missed appointments</p></li><li><p>60% more repeat customers</p></li><li><p>100% more time to focus on their actual service</p></li></ul><p>No more messy spreadsheets or message trails — just a clean, automated system that works for you.</p><hr><h4><strong>Ready to grow your business with a smarter website?</strong></h4><p><br>At Kiwi Web Design, we build affordable, high-performing booking websites for Auckland businesses.<br><a href="/website-designer-auckland/">Contact us today</a> to get started.</p><blockquote><p>“We don’t just design your website — we set you up for ongoing success.”</p></blockquote><blockquote><p><strong>Related Services:</strong><br><a href="/affordable-web-design-auckland/">Affordable Web Design Auckland</a><br><a href="/web-designs-auckland/">Ecommerce Website Design Auckland</a><br><a href="/web-design-auckland/">Contact Kiwi Web Design</a></p></blockquote> 
-
-<meta itemprop="serviceType" content="Booking & Appointment Websites with WordPress">
- <meta itemprop="provider" content="Kiwi Web Design">
- <meta itemprop="areaServed" content="Auckland, New Zealand">
- <table>
- <tr>
- <th>Feature</th>
- <th>Benefit</th>
- </tr>
- <tr>
- <td>Online Booking Calendar</td>
- <td>Customers can book anytime — even outside business hours.</td>
- </tr>
- <tr>
- <td>Automated Email & SMS Reminders</td>
- <td>Reduce no-shows and improve client reliability.</td>
- </tr>
- <tr>
- <td>Integrated Payments</td>
- <td>Take deposits or full payments via Stripe or WooCommerce.</td>
- </tr>
- <tr>
- <td>Calendar Sync</td>
- <td>Sync with Google Calendar or Outlook for instant updates.</td>
- </tr>
- <tr>
- <td>Mobile Friendly Dashboard</td>
- <td>Manage your bookings from your phone or laptop.</td>
- </tr>
- <tr>
- <td>Analytics & Reports</td>
- <td>Track appointments, revenue, and repeat customers easily.</td>
- </tr>
- </table>
- 
- <a href="/website-designer-auckland/">Get a Free Quote</a>
-
-<details>
- <summary>Can I take payments directly through my booking website?</summary>
- 
- <p>Yes. Your WordPress booking site can connect to Stripe, PayPal, or WooCommerce to accept deposits or full payments during booking.</p>
- 
-</details>
-
-<details>
- <summary>Is this suitable for salons and spas?</summary>
- 
- <p>Absolutely. We’ve built many salon and spa websites that allow clients to choose services, staff, and time slots with automatic reminders and payments.</p>
- 
-</details>
-
-<details>
- <summary>Can tradies use this to manage job bookings?</summary>
- 
- <p>Yes. Tradies can let clients request times, confirm or reschedule jobs, and even sync appointments with their phone calendar.</p>
- 
-</details>
-
-<details>
- <summary>What if I already have a website?</summary>
- 
- <p>We can integrate a booking system into your existing WordPress website without rebuilding it from scratch.</p>
- 
-</details>
-
-<details>
- <summary>Can I manage everything from my phone?</summary>
- 
- <p>Yes. Your booking dashboard is mobile responsive, so you can confirm, cancel, or reschedule appointments on the go.</p>
- 
-</details>
-
-<details>
- <summary>Do you provide training after setup?</summary>
- 
- <p>We provide a short handover session to show you how to manage your calendar, notifications, and reports.</p>
- 
-</details>
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="From brief to taking bookings in 1–2 weeks."
+        subtitle="A straightforward four-step process to get your booking system live."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Booking Website Questions Answered"
+        subtitle="Common questions from Auckland businesses about WordPress booking systems."
+      />
     </div>
   </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to take bookings online 24/7?"
+    subtitle="Free consultation — we'll recommend the right booking setup for your business and give you a fixed quote."
+    ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Web Design Packages", href: "/small-business-website-design-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .book-usecases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
   }
+  .book-uc {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .book-uc-top { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.25rem; }
+  .book-uc-icon { font-size: 1.4rem; }
+  .book-uc-name { font-size: 0.9rem; font-weight: 700; color: #fff; }
+  .book-uc-plugin { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--kwd-yellow); }
+  .book-uc-detail { font-size: 0.83rem; color: rgba(255,255,255,0.6); line-height: 1.55; margin: 0; }
+
+  .book-plugins { margin-top: 2rem; }
+  .book-plugins-table { border: 1.5px solid rgba(0,0,0,0.08); border-radius: 14px; overflow: hidden; }
+  .book-plugins-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background: var(--kwd-dark);
+    padding: 0.875rem 1.25rem;
+    gap: 1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.5);
+  }
+  .book-plugins-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 0.875rem 1.25rem;
+    gap: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    align-items: center;
+  }
+  .book-plugins-row:hover { background: rgba(0,0,0,0.02); }
+  .book-plugin-name { font-size: 0.9rem; font-weight: 700; color: var(--kwd-dark); }
+  .book-plugin-best { font-size: 0.84rem; color: var(--kwd-brown); }
+  .book-plugin-price { font-size: 0.8rem; color: var(--kwd-brown); }
+  .book-plugin-price--paid { color: var(--kwd-dark); font-weight: 600; }
+  .book-plugins-note { font-size: 0.82rem; color: var(--kwd-brown); margin-top: 1rem; }
+
+  @media (max-width: 900px) {
+    .book-usecases { grid-template-columns: repeat(2, 1fr); }
+    .book-plugins-header, .book-plugins-row { grid-template-columns: 1fr 1.5fr; }
+    .book-plugins-header span:last-child, .book-plugin-price { display: none; }
+  }
+  @media (max-width: 580px) { .book-usecases { grid-template-columns: 1fr; } }
 </style>
