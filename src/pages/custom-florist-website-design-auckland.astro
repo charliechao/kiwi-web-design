@@ -1,300 +1,254 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CTABanner from '../components/CTABanner.astro';
 
 const stats = [
-  { num: "45%", label: "Increase in online orders" },
-  { num: "100%", label: "Mobile-optimised checkout" },
-  { num: "3 weeks", label: "From brief to launch" }
+  { fig: "+45%", label: "Increase in online orders" },
+  { fig: "100%", label: "Mobile-optimised checkout" },
+  { fig: "3 weeks", label: "From brief to launch" },
 ];
 
-const faqs = [
-  { q: "How does the delivery date customisation work for weather-affected products?", a: "The site uses a smart date selector that opens or closes delivery slots based on real harvesting and picking conditions. If weather delays occur, unavailable dates are hidden and customers can choose the next available date, so orders keep flowing without marking products \"Sold Out.\"" },
-  { q: "Can the website enforce cut-off times for next-day delivery?", a: "Yes. We set automated order cut-offs (e.g., 3 pm) the day before picking or dispatch. After the cut-off, the system prevents same-day/next-day options and moves customers to the next available date." },
-  { q: "How do minimum and maximum order rules help profitability?", a: "Minimums protect margins on small orders (e.g., $100 trade minimum), while maximums cap demand during peak periods (like Valentine's week) to prevent overselling and keep operations smooth." },
-  { q: "Do I need a native app for trade clients to order quickly?", a: "No. We implement a PWA-style \"add-to-home-screen\" experience. It looks and feels like an app, links directly to a trade-only ordering page, and avoids app-store fees and costly updates." },
-  { q: "What SEO tactics were used to grow search visibility?", a: "We publish regular blog content, add structured data (schema markup) to products and posts, and integrate email and social campaigns that drive traffic and backlinks—improving click-through rates and rankings." },
-  { q: "What is schema markup and why does it matter?", a: "Schema markup is code that helps search engines understand your pages. It enables rich results (like photos, ratings, or availability) in Google, which typically boosts click-through rates and engagement." }
+const deliverables = [
+  "WooCommerce store",
+  "4-category product catalogue",
+  "Smart delivery date selector",
+  "Trade portal with PWA shortcut",
+  "Automated order confirmations",
+  "Mobile-first checkout",
 ];
 
-const gallery = [
-  "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/florist-website-design-auckland-kiwiwebdesign.jpg",
-  "https://www.kiwiwebdesign.co.nz/wp-content/uploads/kwd-logo.png"
-];
-
-const schema = {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.kiwiwebdesign.co.nz/custom-florist-website-design-auckland/","url":"https://www.kiwiwebdesign.co.nz/custom-florist-website-design-auckland/","name":"Florist Website Design Auckland – Kiwi Web Design Case Study","description":"See how Kiwi Web Design helped an Auckland florist grow sales with a custom website featuring smart delivery scheduling, SEO, and WooCommerce.","inLanguage":"en-NZ","isPartOf":{"@id":"https://www.kiwiwebdesign.co.nz/#website"},"breadcrumb":{"@id":"https://www.kiwiwebdesign.co.nz/custom-florist-website-design-auckland/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://www.kiwiwebdesign.co.nz/custom-florist-website-design-auckland/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.kiwiwebdesign.co.nz/"},{"@type":"ListItem","position":2,"name":"Auckland Florist"}]},{"@type":"Organization","@id":"https://www.kiwiwebdesign.co.nz/#organization","name":"Kiwi Web Design","url":"https://www.kiwiwebdesign.co.nz/"}]};
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/custom-florist-website-design-auckland/",
+      "url": "https://www.kiwiwebdesign.co.nz/custom-florist-website-design-auckland/",
+      "name": "Auckland Florist — Website Case Study | Kiwi Web Design",
+      "description": "How Kiwi Web Design built a custom WooCommerce store for an Auckland florist with smart delivery scheduling, a trade portal, and a 45% lift in online orders.",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/custom-florist-website-design-auckland/#breadcrumb" }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.kiwiwebdesign.co.nz/custom-florist-website-design-auckland/#case-study",
+      "name": "Case Study: Auckland Florist",
+      "description": "How Kiwi Web Design helped an Auckland florist grow online sales with a WooCommerce store, smart delivery date scheduling, and a trade ordering portal.",
+      "url": "https://www.kiwiwebdesign.co.nz/custom-florist-website-design-auckland/",
+      "creator": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "about": { "@type": "LocalBusiness", "name": "Auckland Florist", "address": { "@type": "PostalAddress", "addressLocality": "Auckland", "addressCountry": "NZ" } },
+      "genre": "Case Study",
+      "keywords": "florist website design Auckland, WooCommerce florist, online flower ordering"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/custom-florist-website-design-auckland/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Auckland Florist" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "url": "https://www.kiwiwebdesign.co.nz"
+    }
+  ]
+};
 ---
 
 <Layout
-  title="Florist Website Design Auckland – Kiwi Web Design Case Study"
-  description="See how Kiwi Web Design helped an Auckland florist grow sales with a custom website featuring smart delivery scheduling, SEO, and WooCommerce."
+  title="Auckland Florist — Website Case Study | Kiwi Web Design"
+  description="How Kiwi Web Design built a custom WooCommerce store for an Auckland florist with smart delivery scheduling, a trade portal, and a 45% lift in online orders."
   canonicalURL="https://www.kiwiwebdesign.co.nz/custom-florist-website-design-auckland/"
   schema={schema}
 >
 
   <!-- Hero -->
-  <section class="cs-hero section-dark">
-    <div class="container cs-hero-inner">
-      <div class="cs-hero-text">
-        <p class="cs-eyebrow">Case Study — Retail — Floral & Gift</p>
-        <h1>Custom Florist Website Design Auckland</h1>
-        <p class="cs-hero-desc">See how Kiwi Web Design helped an Auckland florist grow sales with a custom website featuring smart delivery scheduling, SEO, and WooCommerce.</p>
-        <div class="cs-hero-stats">
-          {stats.map(({ num, label }) => (
-            <div class="cs-stat">
-              <span class="cs-stat-num">{num}</span>
-              <span class="cs-stat-label">{label}</span>
-            </div>
-          ))}
-        </div>
-        <a href="/website-designer-auckland/" class="btn-primary">Get a Free Consultation</a>
-      </div>
-      <div class="cs-hero-image">
-        <img
-          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/florist-website-design-auckland-kiwiwebdesign.jpg"
-          alt="Auckland Florist website by Kiwi Web Design Auckland"
-          width="700"
-          height="500"
-          loading="eager"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- About + Challenge -->
-  <section class="section">
-    <div class="container cs-two-col">
-      <div class="cs-about">
-        <h2>About the Client</h2>
-        <p class="cs-client-tag">Auckland Florist — Retail — Floral & Gift</p>
-      </div>
-      
-    </div>
-  </section>
-
-  <!-- Our Solution -->
-  
-
-  <!-- Results stats -->
-  <section class="section section-dark">
+  <section class="cs-hero">
     <div class="container">
-      <h2>Results</h2>
-      
-      <div class="cs-stats-grid">
-        {stats.map(({ num, label }) => (
-          <div class="cs-result-card">
-            <span class="cs-result-num">{num}</span>
-            <span class="cs-result-label">{label}</span>
+      <div class="cs-hero-inner">
+        <div class="cs-hero-text">
+          <div class="cs-tags">
+            <span class="cs-tag">Case Study</span>
+            <span class="cs-industry">Retail — Floral & Gift</span>
+          </div>
+          <h1>Auckland Florist — 45% More Online Orders</h1>
+          <p>Phone and in-person orders were the only channel — no online store, no delivery scheduling, no trade portal. We built a WooCommerce store that handles all three, live in three weeks.</p>
+        </div>
+        <div class="cs-hero-img">
+          <img
+            src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/florist-website-design-auckland-kiwiwebdesign.jpg"
+            alt="Auckland Florist website by Kiwi Web Design"
+            width="700"
+            height="500"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="cs-stat-strip">
+      <div class="container cs-stat-grid">
+        {stats.map(s => (
+          <div class="cs-stat-item">
+            <span class="cs-stat-fig">{s.fig}</span>
+            <span class="cs-stat-lbl">{s.label}</span>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Gallery -->
-  {gallery.length > 0 && (
-    <section class="section section-cream">
-      <div class="container">
-        <h2>Project Gallery</h2>
-        <div class="cs-gallery">
-          {gallery.map((src) => (
-            <img
-              src={src}
-              alt="Auckland Florist website screenshot"
-              width="700"
-              height="450"
-              loading="lazy"
-              class="cs-gallery-img"
-            />
-          ))}
+  <!-- Overview -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <div class="cs-overview">
+        <div class="cs-client-card">
+          <div class="cs-client-row">
+            <span class="cs-client-label">Client</span>
+            <span class="cs-client-value">Auckland Florist</span>
+          </div>
+          <div class="cs-client-row">
+            <span class="cs-client-label">Industry</span>
+            <span class="cs-client-value">Retail — Floral & Gift</span>
+          </div>
+          <div class="cs-client-row">
+            <span class="cs-client-label">Location</span>
+            <span class="cs-client-value">Auckland, New Zealand</span>
+          </div>
+          <div class="cs-client-row">
+            <span class="cs-client-label">Project Type</span>
+            <span class="cs-client-value">eCommerce Website Build</span>
+          </div>
+          <div class="cs-client-row">
+            <span class="cs-client-label">Timeline</span>
+            <span class="cs-client-value">3 weeks</span>
+          </div>
+        </div>
+        <div class="cs-overview-body">
+          <p class="cs-sub-eyebrow">Project Overview</p>
+          <h2>A local florist with a loyal following — and no online store.</h2>
+          <p>This Auckland florist had strong word-of-mouth and repeat trade customers, but all ordering was done in person or by phone. With wholesale and retail customers on different pricing tiers, and seasonal availability varying week to week, they needed a smarter solution than phone-only.</p>
+          <p>The goal: an online store where retail customers could browse and order at any time, and trade clients could access wholesale pricing through a private portal — without adding admin work for the owner.</p>
         </div>
       </div>
-    </section>
-  )}
-
-  <!-- Testimonial -->
-  
-
-  <!-- FAQ -->
-  {faqs.length > 0 && (
-    <section class="section section-cream">
-      <div class="container cs-narrow">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-list">
-          {faqs.map(({ q, a }) => (
-            <details class="faq-item">
-              <summary>{q}</summary>
-              <p>{a}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- CTA -->
-  <section class="section section-dark text-center">
-    <div class="container cs-narrow">
-      <h2>Ready for your own success story?</h2>
-      <p>Book a free consultation with Kiwi Web Design and let's talk about growing your Auckland business online.</p>
-      <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
     </div>
   </section>
+
+  <!-- Challenge -->
+  <section class="section">
+    <div class="container cs-content-narrow">
+      <p class="cs-sub-eyebrow">The Challenge</p>
+      <h2 class="cs-section-h2">Seasonal availability and two different customer types made this build complex.</h2>
+      <p class="cs-section-p">Flower availability changes week to week based on what's in season, what's been harvested, and weather conditions. A standard WooCommerce setup with "in stock / out of stock" wasn't going to work — they needed a delivery date selector that could hide unavailable dates without marking products as sold out entirely.</p>
+      <p class="cs-section-p">Trade customers — event stylists, wedding planners, hospitality venues — needed to order in bulk at wholesale pricing, but those prices shouldn't be visible to retail customers. Handling two customer tiers with different catalogues and pricing on the same site required a role-based access approach.</p>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container cs-content-narrow">
+      <p class="cs-sub-eyebrow">What We Built</p>
+      <h2 class="cs-section-h2">A WooCommerce store with smart scheduling and a trade portal.</h2>
+      <p class="cs-section-p">We built a WooCommerce store with four product categories and a smart delivery date picker. Available dates are set by the owner each week based on stock — customers can only select open slots, which prevents overselling during busy periods like Valentine's Day without requiring manual product management.</p>
+      <p class="cs-section-p">Trade customers get a private portal accessible via a PWA-style home screen shortcut — it looks and works like an app, links directly to the trade catalogue with wholesale pricing, and cuts ordering time significantly for repeat buyers.</p>
+      <div class="cs-deliverables">
+        {deliverables.map(d => <span class="cs-chip">{d}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshot -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <div class="cs-screenshot-wrap">
+        <img
+          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/florist-website-design-auckland-kiwiwebdesign.jpg"
+          alt="Auckland Florist WooCommerce website by Kiwi Web Design"
+          width="1200"
+          height="700"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <p class="cs-sub-eyebrow cs-sub-eyebrow-light">The Results</p>
+      <h2 class="cs-section-h2 cs-section-h2-light">Online orders up 45% within the first month.</h2>
+      <p class="cs-section-p cs-section-p-light">The store launched and immediately shifted a significant volume of orders online — reducing phone call time and capturing after-hours orders that previously went to competitors. The trade portal shortened the wholesale ordering process from a phone call to a two-minute checkout.</p>
+      <div class="cs-results-grid">
+        {stats.map(s => (
+          <div class="cs-result-card">
+            <div class="cs-result-fig">{s.fig}</div>
+            <div class="cs-result-label">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Need an online store that handles complex ordering?"
+    subtitle="Free consultation — we'll show you exactly how an eCommerce build would work for your business."
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "See More Case Studies", href: "/testimonials-reviews/" }}
+  />
 
 </Layout>
 
 <style>
-  /* Hero */
-  .cs-hero { padding: 5rem 0; }
-  .cs-hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  .cs-eyebrow {
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--kwd-yellow);
-    margin-bottom: 0.75rem;
-  }
-  .cs-hero h1 { color: var(--kwd-white); font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 1rem; }
-  .cs-hero-desc { color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 1.05rem; }
-  .cs-hero-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  .cs-stat { display: flex; flex-direction: column; }
-  .cs-stat-num { font-size: 1.6rem; font-weight: 800; color: var(--kwd-yellow); font-family: var(--kwd-font-heading); line-height: 1; }
-  .cs-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.65); margin-top: 0.2rem; }
-  .cs-hero-image img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-  }
-
-  /* Two-col layout */
-  .cs-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-  }
-  .cs-two-col h2 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); margin-bottom: 0.75rem; }
-  .cs-client-tag {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--kwd-brown);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 0.75rem;
-  }
-
-  /* Narrow container for content sections */
-  .cs-narrow { max-width: 820px; }
-  .cs-narrow h2 { margin-bottom: 1rem; }
-
-  /* Results */
-  .cs-results-intro { color: rgba(255,255,255,0.75); margin-bottom: 2.5rem; max-width: 700px; }
-  .cs-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  .cs-result-card {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.13);
-    border-radius: 10px;
-    padding: 1.75rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-  .cs-result-num { font-size: 2.2rem; font-weight: 800; color: var(--kwd-yellow); font-family: var(--kwd-font-heading); line-height: 1; }
-  .cs-result-label { font-size: 0.875rem; color: rgba(255,255,255,0.7); }
-
-  /* Gallery */
-  .cs-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.25rem;
-    margin-top: 2rem;
-  }
-  .cs-gallery-img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-    border: 1px solid rgba(0,0,0,0.08);
-  }
-
-  /* Testimonial */
-  .cs-quote {
-    background: var(--kwd-cream);
-    border-left: 5px solid var(--kwd-yellow);
-    border-radius: 0 10px 10px 0;
-    padding: 2rem 2.5rem;
-    margin: 0;
-  }
-  .cs-quote p {
-    font-size: 1.1rem;
-    font-style: italic;
-    line-height: 1.7;
-    color: var(--kwd-dark);
-    margin: 0 0 1rem;
-  }
-  .cs-quote cite { font-size: 0.875rem; font-weight: 600; color: var(--kwd-brown); font-style: normal; }
-
-  /* FAQ */
-  .faq-list { display: grid; gap: 0.75rem; margin-top: 2rem; }
-  .faq-item {
-    background: var(--kwd-white);
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .faq-item summary {
-    padding: 1rem 1.25rem;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95rem;
-    list-style: none;
-    position: relative;
-    padding-right: 2.5rem;
-  }
-  .faq-item summary::after {
-    content: "+";
-    position: absolute;
-    right: 1.25rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--kwd-brown);
-  }
-  .faq-item[open] summary::after { content: "−"; }
-  .faq-item p { padding: 0 1.25rem 1rem; margin: 0; font-size: 0.9rem; color: var(--kwd-brown); }
-
-  /* CTA */
-  .text-center { text-align: center; }
-  .section-dark.text-center h2 { color: var(--kwd-white); }
-  .section-dark.text-center p { color: rgba(255,255,255,0.75); margin-bottom: 2rem; max-width: 560px; margin-inline: auto; }
-
-  /* Responsive */
+  .cs-hero { background: var(--kwd-dark); padding: 5rem 0 0; }
+  .cs-hero-inner { display: grid; grid-template-columns: 55% 45%; gap: 3rem; align-items: center; padding-bottom: 3rem; }
+  .cs-hero-inner.no-img { grid-template-columns: 1fr; max-width: 760px; }
+  .cs-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+  .cs-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.3rem 0.85rem; border-radius: 999px; background: var(--kwd-yellow); color: var(--kwd-dark); }
+  .cs-industry { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.3rem 0.85rem; border-radius: 999px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); }
+  .cs-hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(2rem, 4vw, 3rem); color: #fff; line-height: 1.15; margin-bottom: 1rem; }
+  .cs-hero-text p { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.7; }
+  .cs-hero-img img { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; display: block; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .cs-stat-strip { border-top: 1px solid rgba(255,255,255,0.1); }
+  .cs-stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .cs-stat-item { padding: 1.5rem 2rem; border-right: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 0.25rem; }
+  .cs-stat-item:last-child { border-right: none; }
+  .cs-stat-fig { font-family: var(--kwd-font-heading); font-size: 2.25rem; color: var(--kwd-yellow); line-height: 1; }
+  .cs-stat-lbl { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.4; }
+  .cs-overview { display: grid; grid-template-columns: 260px 1fr; gap: 3.5rem; align-items: start; }
+  .cs-client-card { background: #fff; border: 1.5px solid rgba(0,0,0,0.07); border-radius: 14px; padding: 1.75rem; }
+  .cs-client-row { margin-bottom: 1rem; }
+  .cs-client-row:last-child { margin-bottom: 0; }
+  .cs-client-label { display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.2rem; }
+  .cs-client-value { font-size: 0.9rem; color: var(--kwd-dark); font-weight: 600; line-height: 1.4; }
+  .cs-sub-eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--kwd-brown); margin-bottom: 0.75rem; }
+  .cs-sub-eyebrow-light { color: var(--kwd-yellow); }
+  .cs-overview-body h2 { font-family: var(--kwd-font-heading); font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--kwd-dark); line-height: 1.2; margin-bottom: 0.75rem; }
+  .cs-overview-body p { font-size: 0.9375rem; color: var(--kwd-brown); line-height: 1.75; margin-bottom: 0.75rem; }
+  .cs-section-h2 { font-family: var(--kwd-font-heading); font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--kwd-dark); line-height: 1.2; margin-bottom: 0.75rem; }
+  .cs-section-h2-light { color: #fff; }
+  .cs-section-p { font-size: 0.9375rem; color: var(--kwd-brown); line-height: 1.75; margin-bottom: 0.75rem; }
+  .cs-section-p-light { color: rgba(255,255,255,0.7); }
+  .cs-content-narrow { max-width: 760px; }
+  .cs-deliverables { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .cs-chip { font-size: 0.8rem; font-weight: 600; padding: 0.4rem 1rem; border-radius: 999px; background: var(--kwd-dark); color: #fff; }
+  .cs-results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+  .cs-result-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 2rem 1.5rem; text-align: center; }
+  .cs-result-fig { font-family: var(--kwd-font-heading); font-size: 2.75rem; color: var(--kwd-yellow); line-height: 1; margin-bottom: 0.5rem; }
+  .cs-result-label { font-size: 0.875rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+  .cs-screenshot-wrap { margin-top: 2rem; }
+  .cs-screenshot-wrap img { width: 100%; border-radius: 12px; border: 1.5px solid rgba(0,0,0,0.07); display: block; box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
   @media (max-width: 900px) {
     .cs-hero-inner { grid-template-columns: 1fr; }
-    .cs-hero-image { display: none; }
-    .cs-two-col { grid-template-columns: 1fr; }
-    .cs-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .cs-hero-img { display: none; }
+    .cs-overview { grid-template-columns: 1fr; }
   }
-  @media (max-width: 600px) {
-    .cs-gallery { grid-template-columns: 1fr; }
-    .cs-stats-grid { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 640px) {
+    .cs-stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .cs-stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .cs-stat-item:last-child { border-bottom: none; }
   }
 </style>
