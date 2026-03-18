@@ -108,11 +108,11 @@ const process = [
 ];
 
 const faqs = [
-  { q: "Can I update my menu myself after the site is built?", a: "Yes — and this is one of the key reasons we build menus as HTML pages rather than PDFs. Updating a menu takes about 2 minutes in WordPress. You change the text, hit publish, and the live site reflects the update immediately. No design skills required." },
-  { q: "Do you integrate with OpenTable or reservation systems?", a: "Yes. We can embed an OpenTable booking widget, a Resy widget, or use a standalone WordPress booking plugin depending on your setup. All options give you real-time availability management and automatic confirmation emails." },
-  { q: "Can you help us rank for 'restaurants near me' searches?", a: "Yes. Local restaurant SEO is about your Google Business Profile as much as your website. We optimise both: structured menu pages with schema markup, NAP consistency, photo quality in your GBP, and review management. 'Best Italian restaurant Auckland CBD' type searches are winnable with the right setup." },
-  { q: "We have multiple locations — can one website cover all of them?", a: "Yes. Multi-location restaurant websites are something we build with individual location pages for each site — separate addresses, hours, menus, and booking links. Each location page is individually optimised for local search in its area." },
-  { q: "How much does a restaurant website cost?", a: "A restaurant website with a menu page, gallery, about section, and reservation integration starts from $1,490 + GST. Sites with a functions page, multi-location pages, or custom reservation builds run $1,990–$2,990 + GST. All quotes are fixed price." },
+  { q: "Can I update my menu myself after the site is built?", a: "Yes — and this is one of the key reasons we build menus as HTML pages rather than PDFs. Updating a menu takes about 2 minutes in WordPress. You change the text, hit publish, and the live site reflects the update immediately. No design skills required. We build on <a href=\"/wordpress-website-design-auckland/\">WordPress</a> so you're always in control." },
+  { q: "Do you integrate with OpenTable or reservation systems?", a: "Yes. We can embed an OpenTable booking widget, a Resy widget, or use a standalone <a href=\"/booking-appointment-websites-with-wordpress/\">WordPress booking plugin</a> depending on your setup. All options give you real-time availability management and automatic confirmation emails." },
+  { q: "Can you help us rank for 'restaurants near me' searches?", a: "Yes. <a href=\"/local-seo-for-auckland-small-businesses/\">Local restaurant SEO</a> is about your Google Business Profile as much as your website. We optimise both: structured menu pages with schema markup, NAP consistency, photo quality in your GBP, and review management. 'Best Italian restaurant Auckland CBD' type searches are winnable with the right setup." },
+  { q: "We have multiple locations — can one website cover all of them?", a: "Yes. Multi-location restaurant websites are something we build with individual location pages for each site — separate addresses, hours, menus, and booking links. Each location page is individually optimised for <a href=\"/local-seo-for-auckland-small-businesses/\">local search</a> in its area." },
+  { q: "How much does a restaurant website cost?", a: "A restaurant website with a menu page, gallery, about section, and reservation integration starts from $1,490 + GST. View our <a href=\"/small-business-website-design-auckland/\">web design packages</a> for full pricing. Sites with a functions page, multi-location pages, or custom reservation builds run $1,990–$2,990 + GST. All quotes are fixed price." },
 ];
 ---
 
@@ -207,6 +207,20 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design</a>
+        <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO</a>
+        <a href="/booking-appointment-websites-with-wordpress/" class="rps-link">Booking Websites</a>
+        <a href="/google-ads/" class="rps-link">Google Ads</a>
+        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress</a>
+      </div>
+    </div>
+  </section>
+
   <CTABanner
     variant="yellow"
     title="Ready for a website that fills your tables?"
@@ -259,6 +273,11 @@ const faqs = [
   .is-fig { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: var(--kwd-yellow); flex-shrink: 0; min-width: 72px; line-height: 1; }
   .is-label { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
 
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
   @media (max-width: 900px) {
     .ind-callout { grid-template-columns: 1fr; gap: 2.5rem; }
   }
