@@ -14,8 +14,8 @@ const schema = {
   "@graph": [
     {
       "@type": "Blog",
-      "@id": "https://www.kiwiwebdesign.co.nz/blog/",
-      "url": "https://www.kiwiwebdesign.co.nz/blog/",
+      "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/",
+      "url": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/",
       "name": "Free Resources to Help Kiwi Small Businesses",
       "description": "Web design, SEO, and online marketing guides for Auckland small businesses.",
       "inLanguage": "en-NZ",
@@ -23,7 +23,7 @@ const schema = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.kiwiwebdesign.co.nz/blog/#breadcrumb",
+      "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
         { "@type": "ListItem", "position": 2, "name": "Blog" }
@@ -46,7 +46,7 @@ function formatDate(date: Date) {
 <Layout
   title="Free web design resources for small businesses in Auckland"
   description="Web design, SEO, and online marketing guides for Auckland small businesses. Free resources from Kiwi Web Design."
-  canonicalURL="https://www.kiwiwebdesign.co.nz/blog/"
+  canonicalURL="https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/"
   schema={schema}
 >
 
@@ -64,7 +64,7 @@ function formatDate(date: Date) {
         {posts.map((post: CollectionEntry<'blog'>) => (
           <article class="post-card">
             {post.data.image && (
-              <a href={`/blog/${post.slug}/`} tabindex="-1" aria-hidden="true">
+              <a href={`/affordable-web-design-auckland/${post.slug}/`} tabindex="-1" aria-hidden="true">
                 <img
                   src={post.data.image}
                   alt={post.data.title}
@@ -80,10 +80,10 @@ function formatDate(date: Date) {
                 {formatDate(post.data.pubDate)}
               </time>
               <h2 class="post-title">
-                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+                <a href={`/affordable-web-design-auckland/${post.slug}/`}>{post.data.title}</a>
               </h2>
               <p class="post-desc">{post.data.description}</p>
-              <a href={`/blog/${post.slug}/`} class="read-more">Read More →</a>
+              <a href={`/affordable-web-design-auckland/${post.slug}/`} class="read-more">Read More →</a>
             </div>
           </article>
         ))}
