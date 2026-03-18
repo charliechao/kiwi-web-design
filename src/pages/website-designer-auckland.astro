@@ -64,7 +64,7 @@ const reviews = [
       <div class="contact-info">
         <p class="contact-eyebrow">Get in Touch</p>
         <h1>Let's build something that generates leads.</h1>
-        <p class="contact-lead">Whether you're ready to get started or just have questions — reach out. We'll always give you honest advice, even if that means pointing you somewhere else.</p>
+        <p class="contact-lead">Whether you're ready to get started or just have questions — reach out. We'll always give you honest advice about what your business needs, even if that means pointing you somewhere else. Not sure what you need? See our <a href="/solutions-auckland-kiwi-web-design/" class="cl-link">full services overview</a> or our <a href="/website-design-process-in-auckland/" class="cl-link">design process</a>.</p>
 
         <ul class="contact-details">
           <li>
@@ -166,6 +166,21 @@ const reviews = [
         </form>
       </div>
 
+    </div>
+  </section>
+
+  <!-- Popular starting points -->
+  <section class="related-strip">
+    <div class="container">
+      <p class="rps-label">Popular starting points</p>
+      <div class="rps-links">
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design Packages</a>
+        <a href="/seo-auckland/" class="rps-link">SEO Services</a>
+        <a href="/google-ads/" class="rps-link">Google Ads</a>
+        <a href="/wordpress-maintenance-auckland/" class="rps-link">WordPress Maintenance</a>
+        <a href="/ecommerce-website-auckland/" class="rps-link">eCommerce Websites</a>
+        <a href="/faq/" class="rps-link">FAQ</a>
+      </div>
     </div>
   </section>
 
@@ -384,6 +399,15 @@ const reviews = [
   .cf-stat { display: flex; flex-direction: column; gap: 0.2rem; }
   .cf-num  { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: var(--kwd-dark); }
   .cf-label { font-size: 0.75rem; color: var(--kwd-brown); text-transform: uppercase; letter-spacing: 0.07em; }
+
+  .cl-link { color: var(--kwd-yellow); text-decoration: underline; font-weight: 600; }
+  .cl-link:hover { opacity: 0.8; }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
 
   @media (max-width: 960px) {
     .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }

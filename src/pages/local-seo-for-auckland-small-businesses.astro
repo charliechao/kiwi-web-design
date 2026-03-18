@@ -94,10 +94,10 @@ const process = [
 const faqs = [
   { q: "What is local SEO and why does my Auckland business need it?", a: "Local SEO is the process of optimising your online presence to appear in location-based searches — like 'plumber Auckland' or 'café near me'. If your business serves customers in specific Auckland areas, local SEO is often the highest-ROI digital investment you can make." },
   { q: "How long does local SEO take to work in Auckland?", a: "Most Auckland businesses see improvements in map pack visibility within 4–8 weeks for less competitive niches. Highly competitive industries like trades, legal, or dental may take 3–6 months to see significant movement. Results then compound over time." },
-  { q: "What's the difference between local SEO and general SEO?", a: "Local SEO focuses on appearing for searches with geographic intent ('near me', suburb names, city names). It heavily weights your Google Business Profile, local citations, and reviews. General SEO focuses on national or topical visibility without a geographic filter." },
+  { q: "What's the difference between local SEO and general SEO?", a: "Local SEO focuses on appearing for searches with geographic intent ('near me', suburb names, city names). It heavily weights your Google Business Profile, local citations, and reviews. Our broader <a href=\"/seo-auckland/\">SEO services Auckland</a> covers national or topical visibility without a geographic filter — many businesses benefit from both." },
   { q: "Do I need a physical address to do local SEO in Auckland?", a: "Not necessarily. Service-area businesses (like plumbers or cleaners) can do local SEO without a public address by configuring a service area in Google Business Profile. However, businesses with a physical location generally have an easier time ranking in the map pack." },
   { q: "How important are Google reviews for local SEO?", a: "Very important. Google uses review quantity, quality, and recency as ranking signals for map pack results. Beyond rankings, reviews also directly influence whether customers choose you. We help you build a sustainable, authentic review acquisition process." },
-  { q: "Can you help with Google Business Profile suspension or reinstatement?", a: "Yes. If your GBP has been suspended, we can help diagnose the reason and submit a reinstatement request with the right supporting documentation. This is a common issue and usually resolvable with the right approach." },
+  { q: "Can you help with Google Business Profile suspension or reinstatement?", a: "Yes. If your GBP has been suspended, we can help diagnose the reason and submit a reinstatement request with the right supporting documentation. This is a common issue and usually resolvable with the right approach. For a full walkthrough of setup and optimisation, see our <a href=\"/google-business-profile-guide-for-auckland-businesses/\">Google Business Profile guide for Auckland businesses</a>." },
 ];
 ---
 
@@ -128,8 +128,8 @@ const faqs = [
         <div class="local-why-text">
           <p class="local-eyebrow">Why It Matters</p>
           <h2>Auckland customers search local — are you showing up?</h2>
-          <p>When someone in Ponsonby, Remuera, or Henderson searches for your services, Google surfaces the most locally relevant results first. Businesses that appear in the Google Maps 3-Pack capture the majority of clicks — and the majority of enquiries.</p>
-          <p>If your competitors are showing up and you're not, you're invisible to a significant portion of your potential customers. Local SEO fixes that.</p>
+          <p>When someone in <a href="/central-auckland-web-design/">Ponsonby</a>, Remuera, or <a href="/west-auckland-web-design/">Henderson</a> searches for your services, Google surfaces the most locally relevant results first. Businesses that appear in the Google Maps 3-Pack capture the majority of clicks — and the majority of enquiries.</p>
+          <p>If your competitors are showing up and you're not, you're invisible to a significant portion of your potential customers. Local SEO — combined with a well-built <a href="/small-business-website-design-auckland/">small business website</a> — is how you fix that.</p>
         </div>
         <div class="local-why-card-wrap">
           <div class="local-why-card">
@@ -181,7 +181,12 @@ const faqs = [
         subtitle="From Central Auckland to the North Shore, East Auckland, West Auckland, and South Auckland — wherever your customers are."
       />
       <div class="local-suburbs">
-        {["Central Auckland", "North Shore", "West Auckland", "East Auckland", "South Auckland", "Ponsonby", "Grey Lynn", "Remuera", "Mt Eden", "Henderson", "Pakuranga", "Manukau"].map((area) => (
+        <a href="/central-auckland-web-design/" class="local-suburb-tag local-suburb-link">Central Auckland</a>
+        <a href="/north-shore-website-design/" class="local-suburb-tag local-suburb-link">North Shore</a>
+        <a href="/west-auckland-web-design/" class="local-suburb-tag local-suburb-link">West Auckland</a>
+        <a href="/east-auckland-web-design/" class="local-suburb-tag local-suburb-link">East Auckland</a>
+        <a href="/south-auckland-web-design/" class="local-suburb-tag local-suburb-link">South Auckland</a>
+        {["Ponsonby", "Grey Lynn", "Remuera", "Mt Eden", "Henderson", "Pakuranga", "Manukau"].map((area) => (
           <span class="local-suburb-tag">{area}</span>
         ))}
       </div>
@@ -192,6 +197,20 @@ const faqs = [
   <section class="section" style="background: var(--kwd-cream);">
     <div class="container" style="max-width: 860px;">
       <FAQAccordion items={faqs} title="Local SEO Questions Answered" subtitle="Common questions from Auckland business owners about local search." />
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/seo-auckland/" class="rps-link">SEO Services Auckland</a>
+        <a href="/google-business-profile-guide-for-auckland-businesses/" class="rps-link">Google Business Profile Guide</a>
+        <a href="/google-ads/" class="rps-link">Google Ads Auckland</a>
+        <a href="/analytics-reporting-for-auckland-small-business-websites/" class="rps-link">Analytics &amp; Reporting</a>
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design Auckland</a>
+      </div>
     </div>
   </section>
 
@@ -252,6 +271,14 @@ const faqs = [
     border-radius: 100px;
     border: 1px solid rgba(0,0,0,0.08);
   }
+
+  .local-suburb-link { text-decoration: none; color: var(--kwd-dark); }
+  .local-suburb-link:hover { background: var(--kwd-dark); color: #fff; border-color: var(--kwd-dark); }
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
 
   @media (max-width: 860px) {
     .local-why { grid-template-columns: 1fr; gap: 2.5rem; }

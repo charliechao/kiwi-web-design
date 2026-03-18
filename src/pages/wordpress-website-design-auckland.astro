@@ -121,12 +121,12 @@ const process = [
 ];
 
 const faqs = [
-  { q: "Why WordPress instead of Wix or Squarespace?", a: "WordPress gives you complete ownership and control. You can move hosts, change agencies, and fully export your data. Wix and Squarespace are proprietary platforms — if they change pricing or shut down, you lose everything. WordPress also has far superior SEO capabilities and can grow into complex functionality (bookings, eCommerce, memberships) as your business scales." },
-  { q: "Is WordPress hard to use?", a: "Modern WordPress (with the block editor) is very easy to update. We include a handover session so you can update text, images, and add simple pages without any technical knowledge. For anything more complex, we're available to help." },
-  { q: "Do I need to worry about WordPress security?", a: "WordPress security is manageable with the right setup — and we handle all of it for you. We configure security plugins, limit login attempts, keep everything updated, and recommend our maintenance plan to keep things secure ongoing. The vast majority of WordPress hacks target outdated, unmanaged sites." },
+  { q: "Why WordPress instead of Wix or Squarespace?", a: "WordPress gives you complete ownership and control. You can move hosts, change agencies, and fully export your data. Wix and Squarespace are proprietary platforms — if they change pricing or shut down, you lose everything. WordPress also has far superior SEO capabilities and can grow into complex functionality (<a href=\"/booking-appointment-websites-with-wordpress/\">online bookings</a>, <a href=\"/woocommerce-website-design-auckland/\">eCommerce via WooCommerce</a>, <a href=\"/membership-subscription-websites-with-wordpress-auckland/\">memberships</a>) as your business scales." },
+  { q: "Is WordPress hard to use?", a: "Modern WordPress (with the block editor) is very easy to update. We include a <a href=\"/website-training-and-handover/\">structured handover session</a> so you can update text, images, and add simple pages without any technical knowledge. For anything more complex, we're available to help." },
+  { q: "Do I need to worry about WordPress security?", a: "WordPress security is manageable with the right setup — and we handle all of it for you. We configure security plugins, limit login attempts, keep everything updated, and recommend our <a href=\"/wordpress-maintenance-auckland/\">WordPress maintenance plan</a> to keep things secure ongoing. The vast majority of WordPress hacks target outdated, unmanaged sites." },
   { q: "What theme do you build on?", a: "We primarily build on lightweight, performance-focused foundations like GeneratePress or a custom theme. We avoid heavy page-builder themes (like Divi or Elementor) that slow down load times and create technical debt. Performance and maintainability are our priorities." },
-  { q: "Can you migrate my existing website to WordPress?", a: "Yes. We handle full migrations from Wix, Squarespace, Weebly, or older WordPress installations. We preserve your content, redirects, and SEO during the process." },
-  { q: "What does a WordPress website cost in Auckland?", a: "Our WordPress packages start from $1,290 + GST for a 5-page site. Growth packages run $2,490–$3,500, and eCommerce sites start from $3,990. We give you a fixed quote upfront — no surprises." },
+  { q: "Can you migrate my existing website to WordPress?", a: "Yes. We handle full <a href=\"/wordpress-website-rebuilds-auckland/\">WordPress website rebuilds and migrations</a> from Wix, Squarespace, Weebly, or older WordPress installations. We preserve your content, redirects, and SEO during the process." },
+  { q: "What does a WordPress website cost in Auckland?", a: "Our <a href=\"/small-business-website-design-auckland/\">WordPress packages start from $1,290 + GST</a> for a 5-page site. Growth packages run $2,490–$3,500, and eCommerce sites start from $3,990. We give you a fixed quote upfront — no surprises." },
 ];
 
 const reviews = [
@@ -253,6 +253,21 @@ const reviews = [
     </div>
   </section>
 
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/wordpress-maintenance-auckland/" class="rps-link">WordPress Maintenance</a>
+        <a href="/wordpress-website-rebuilds-auckland/" class="rps-link">WordPress Rebuilds</a>
+        <a href="/woocommerce-website-design-auckland/" class="rps-link">WooCommerce Design</a>
+        <a href="/wordpress-seo-optimisation/" class="rps-link">WordPress SEO</a>
+        <a href="/website-training-and-handover/" class="rps-link">Training &amp; Handover</a>
+        <a href="/wordpress-plugins-for-small-businesses-in-auckland/" class="rps-link">WordPress Plugins Guide</a>
+      </div>
+    </div>
+  </section>
+
   <CTABanner
     variant="yellow"
     title="Ready to get a fast, modern WordPress site?"
@@ -313,6 +328,12 @@ const reviews = [
   .wp-tick { font-size: 1.1rem; color: var(--kwd-yellow); }
   .wp-cross { font-size: 1.1rem; color: rgba(255,255,255,0.25); }
   .wp-partial { font-size: 0.82rem; color: rgba(255,255,255,0.45); }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
 
   @media (max-width: 700px) {
     .wp-compare-table { min-width: 500px; }

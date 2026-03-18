@@ -115,8 +115,8 @@ const faqs = [
   { q: "How many products can the website handle?", a: "Both platforms handle thousands of products. Our standard packages include setup for up to 20 products. We can quote for larger catalogues — the additional cost is mainly for the time to populate and organise the products." },
   { q: "Can you set up AfterPay or Laybuy?", a: "Yes. We set up Buy Now Pay Later options including AfterPay, Laybuy, and Zip as part of your payment gateway configuration. These are popular with NZ shoppers and can meaningfully increase average order value." },
   { q: "Do you handle the product photography?", a: "We don't provide product photography, but we advise on image specifications (dimensions, file size, background) so your existing photos look great on the site. Good product imagery is one of the biggest drivers of conversion, so we'll give you honest guidance." },
-  { q: "Will my store show up on Google?", a: "We set up your store with SEO foundations — product schema markup, optimised meta titles and descriptions, proper heading structure, and sitemap submission. Ongoing SEO or Google Shopping Ads are available as separate services." },
-  { q: "How much does an eCommerce website cost in Auckland?", a: "Our eCommerce packages start from $3,990 + GST including store design, product setup (up to 20 products), payment gateway integration, and NZ shipping configuration. Larger catalogues or custom features are quoted separately." },
+  { q: "Will my store show up on Google?", a: "We set up your store with SEO foundations — product schema markup, optimised meta titles and descriptions, proper heading structure, and sitemap submission. For ongoing organic growth, our <a href=\"/seo-for-ecommerce/\">eCommerce SEO service</a> and <a href=\"/google-ads/\">Google Shopping Ads management</a> are available as separate engagements." },
+  { q: "How much does an eCommerce website cost in Auckland?", a: "Our eCommerce packages start from $3,990 + GST including store design, product setup (up to 20 products), payment gateway integration, and NZ shipping configuration. For smaller businesses, our <a href=\"/small-business-website-design-auckland/\">web design packages from $1,290</a> cover non-eCommerce sites. Larger catalogues or custom features are quoted separately." },
 ];
 ---
 
@@ -207,6 +207,20 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/woocommerce-website-design-auckland/" class="rps-link">WooCommerce Design</a>
+        <a href="/shopify-website-design-auckland/" class="rps-link">Shopify Design</a>
+        <a href="/seo-for-ecommerce/" class="rps-link">eCommerce SEO</a>
+        <a href="/google-ads/" class="rps-link">Google Shopping Ads</a>
+        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress Web Design</a>
+      </div>
+    </div>
+  </section>
+
   <CTABanner
     variant="yellow"
     title="Ready to start selling online?"
@@ -290,6 +304,12 @@ const faqs = [
     transition: opacity 0.2s;
   }
   .ec-platform-link:hover { opacity: 0.65; }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
 
   @media (max-width: 760px) {
     .ec-platforms { grid-template-columns: 1fr; }

@@ -201,13 +201,13 @@ const portfolio = [
 
 const faqs = [
   { q: "How much does a small business website cost in Auckland?", a: "Our packages start from $1,290 for a 5-page lead-focused website. More complex projects with e-commerce, bookings, or custom features are priced accordingly. You'll always know the cost upfront — no surprises." },
-  { q: "Will my website actually generate enquiries?", a: "A website alone doesn't guarantee leads. That's why we design around conversion: clear calls to action, trust signals, and buyer-intent structure. Combined with SEO or Google Ads, your site becomes a lead-generation system." },
+  { q: "Will my website actually generate enquiries?", a: "A website alone doesn't guarantee leads. That's why we design around conversion: clear calls to action, trust signals, and buyer-intent structure. Combined with <a href=\"/seo-auckland/\">SEO</a> or <a href=\"/google-ads/\">Google Ads</a>, your site becomes a lead-generation system." },
   { q: "How long does SEO take to show results in Auckland?", a: "Most Auckland businesses see early movement in 2–3 months, with stronger results building over 6–12 months. We focus on local buyer keywords that matter, not vanity traffic." },
-  { q: "Do you offer websites, SEO, and Google Ads together?", a: "Yes, and combining all three is our most effective approach. The website handles conversion, SEO builds long-term visibility, and Google Ads drives immediate demand." },
+  { q: "Do you offer websites, SEO, and Google Ads together?", a: "Yes, and combining all three is our most effective approach. The website handles conversion, <a href=\"/seo-auckland/\">SEO builds long-term visibility</a>, and <a href=\"/google-ads/\">Google Ads drives immediate demand</a>." },
   { q: "How fast can you build a website?", a: "Most projects are live in 2–3 weeks. We're upfront if anything will take longer and keep you informed throughout the process." },
-  { q: "Do you work with tradies and service businesses?", a: "Yes — regularly. We work with plumbers, electricians, builders, cleaners, and other service businesses across Auckland. Our focus is making it easy for customers to find and contact you." },
-  { q: "Can you migrate my existing website from Wix or Squarespace?", a: "Yes. We can rebuild and improve your site on WordPress, preserving important content and significantly improving performance, SEO, and conversion." },
-  { q: "Why choose Kiwi Web Design over other Auckland agencies?", a: "Free in-person consultations, transparent pricing, AI-assisted efficiency, and a genuine focus on leads rather than aesthetics. We deliver premium results at 50–70% less than traditional agencies." },
+  { q: "Do you work with tradies and service businesses?", a: "Yes — regularly. Our <a href=\"/tradie-website-design-auckland/\">tradie website design</a> work covers plumbers, electricians, builders, cleaners, and other service businesses across Auckland. Our focus is making it easy for customers to find and contact you." },
+  { q: "Can you migrate my existing website from Wix or Squarespace?", a: "Yes. Our <a href=\"/wordpress-website-rebuilds-auckland/\">WordPress website rebuild service</a> migrates and improves your site, preserving important content and significantly improving performance, SEO, and conversion." },
+  { q: "Why choose Kiwi Web Design over other Auckland agencies?", a: "Free in-person consultations, transparent pricing, AI-assisted efficiency, and a genuine focus on leads rather than aesthetics. See our <a href=\"/website-design-process-in-auckland/\">design process</a> and <a href=\"/about-us/\">our story</a> — we deliver premium results at 50–70% less than traditional agencies." },
 ];
 ---
 
@@ -405,6 +405,21 @@ const faqs = [
         <div>
           <FAQAccordion items={faqs} title="" />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Related services ── -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 900px;">
+      <p class="rps-label">Explore our services</p>
+      <div class="rps-links">
+        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress Websites</a>
+        <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO Auckland</a>
+        <a href="/ecommerce-website-auckland/" class="rps-link">eCommerce Websites</a>
+        <a href="/tradie-website-design-auckland/" class="rps-link">Tradie Websites</a>
+        <a href="/wordpress-maintenance-auckland/" class="rps-link">WordPress Maintenance</a>
+        <a href="/website-hosting-auckland/" class="rps-link">Website Hosting</a>
       </div>
     </div>
   </section>
@@ -657,6 +672,13 @@ const faqs = [
   }
   .faq-sidebar-title { font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--kwd-dark); line-height: 1.2; margin-bottom: 0.75rem; }
   .faq-sidebar-sub  { font-size: 0.9rem; color: var(--kwd-brown); line-height: 1.65; margin: 0; }
+
+  /* ── Related strip ── */
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
 
   /* ── Responsive ── */
   @media (max-width: 1024px) {
