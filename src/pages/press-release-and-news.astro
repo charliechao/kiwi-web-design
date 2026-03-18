@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import CTABanner from '../components/CTABanner.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,166 +10,295 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/press-release-and-news/",
       "url": "https://www.kiwiwebdesign.co.nz/press-release-and-news/",
-      "name": "Press Release and News",
-      "description": "Latest press and news featuring Kiwi Web Design. PR releases, local coverage, and industry listings focused on web design Auckland and NZ small businesses.",
+      "name": "Press Releases & News | Kiwi Web Design Auckland",
+      "description": "Latest press releases and news from Kiwi Web Design — Auckland's small business web design specialists.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/press-release-and-news/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/press-release-and-news/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/press-release-and-news/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Press Release and News"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Press Releases & News" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const releases = [
+  {
+    date: "2025-10-15",
+    dateDisplay: "15 October 2025",
+    title: "Kiwi Web Design Launches New Website Packages for Auckland Small Businesses",
+    summary: "Kiwi Web Design has released a new range of fixed-price website packages specifically designed for Auckland sole traders and small business owners. The packages include full WordPress builds, SEO setup, and 30-day post-launch support — with most sites going live within 2–3 weeks.",
+    source: "PRLog",
+    sourceUrl: "https://www.prlog.org/",
+    category: "Company News",
+  },
+  {
+    date: "2025-09-01",
+    dateDisplay: "1 September 2025",
+    title: "Auckland Web Design Agency Kiwi Web Design Marks 100+ Local Business Clients",
+    summary: "Kiwi Web Design has reached a milestone of over 100 Auckland-based small business clients. The agency, founded by Charlie Chao, specialises in affordable websites for trades, professional services, and retail businesses that prioritise lead generation over aesthetic-only design.",
+    source: "PRLog",
+    sourceUrl: "https://www.prlog.org/",
+    category: "Milestone",
+  },
+  {
+    date: "2025-07-20",
+    dateDisplay: "20 July 2025",
+    title: "Kiwi Web Design Expands SEO Services for Auckland Small Business Market",
+    summary: "Following strong demand from existing website clients, Kiwi Web Design has expanded its local SEO service offering to include Google Business Profile optimisation, citation building, and monthly rank tracking. The expanded service targets Auckland businesses seeking to rank in local map results.",
+    source: "PRLog",
+    sourceUrl: "https://www.prlog.org/",
+    category: "Service Update",
+  },
+];
+
+const categoryColours: Record<string, string> = {
+  "Company News": "#2c2927",
+  "Milestone": "#4a7c59",
+  "Service Update": "#2c5f8a",
+};
 ---
-<Layout title="Press Release and News" description="Latest press and news featuring Kiwi Web Design. PR releases, local coverage, and industry listings focused on web design Auckland and NZ small businesses." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Press & News</p>
-        <h1>Kiwi Web Design in the news</h1>
-        <p class="hero-sub">Latest press and news featuring Kiwi Web Design. PR releases, local coverage, and industry listings focused on web design Auckland and NZ small businesses.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="Press Releases & News | Kiwi Web Design Auckland"
+  description="Latest press releases and news from Kiwi Web Design — Auckland's small business web design specialists."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/press-release-and-news/"
+  schema={schema}
+>
+
+  <!-- Page header -->
+  <section class="news-hero section">
+    <div class="container" style="max-width: 860px;">
+      <p class="news-eyebrow">Press & News</p>
+      <h1 class="news-title">Press Releases &amp; News</h1>
+      <p class="news-subtitle">The latest updates, milestones, and announcements from Kiwi Web Design — Auckland's small business web design specialists.</p>
+    </div>
+  </section>
+
+  <!-- News listing -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <SectionHeader
+        eyebrow="Latest Releases"
+        title="News from Kiwi Web Design"
+        align="left"
+      />
+
+      <div class="releases-list">
+        {releases.map(item => (
+          <article class="release-card">
+            <div class="release-meta">
+              <span
+                class="release-category"
+                style={`background: ${categoryColours[item.category] ?? '#2c2927'};`}
+              >{item.category}</span>
+              <time class="release-date" datetime={item.date}>{item.dateDisplay}</time>
+            </div>
+            <h2 class="release-title">{item.title}</h2>
+            <p class="release-summary">{item.summary}</p>
+            <div class="release-source">
+              <span class="release-source-label">Published via</span>
+              <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" class="release-source-link">{item.source}</a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Media contact callout -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <div class="media-contact">
+        <div class="media-contact-text">
+          <h2 class="media-contact-heading">Media enquiries</h2>
+          <p class="media-contact-body">For press enquiries, interview requests, or media assets, contact us directly. We're happy to provide commentary on web design trends, small business digital marketing, and the Auckland SME market.</p>
+        </div>
+        <div class="media-contact-detail">
+          <p class="media-detail-label">Contact</p>
+          <p class="media-detail-value">Charlie Chao</p>
+          <p class="media-detail-value">Kiwi Web Design, Auckland, New Zealand</p>
+          <a href="/work-with-us/" class="btn-media">Get in Touch</a>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/kiwi-web-design-press-and-news-auckland.jpg" alt="Kiwi Web Design in the news" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<!-- PRESS & NEWS MAIN SECTION -->
+  <CTABanner
+    variant="yellow"
+    title="Need a website for your Auckland business?"
+    subtitle="Free consultation — fixed-price quote within 24 hours. Most sites live within 2–3 weeks."
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View Web Design Services", href: "/small-business-website-design-auckland/" }}
+  />
 
-Press &amp; News
- 
- <p>
- Kiwi Web Design regularly appears in New Zealand media for our work with small businesses, local associations,
- and AI-first website projects. These articles feature our role in
- <a href="/">web design Auckland</a>
- and
- <a href="/">website design Auckland</a>,
- highlighting practical results for real businesses across Auckland and wider NZ.
- </p>
-
-<!-- ITEM 1 -->
-
-Press release
- 2025
- PRLog
- 
- 
-    </div>
-  </section>
-
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .news-hero {
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+  }
+  .news-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.75rem;
+  }
+  .news-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--kwd-dark);
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+  .news-subtitle {
+    font-size: 1rem;
+    color: var(--kwd-brown);
+    line-height: 1.7;
+    max-width: 640px;
+  }
+
+  .releases-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .release-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    transition: box-shadow 0.2s;
+  }
+  .release-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  }
+
+  .release-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+  .release-category {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #fff;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+  }
+  .release-date {
+    font-size: 0.82rem;
+    color: var(--kwd-brown);
+    font-weight: 500;
+  }
+
+  .release-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    color: var(--kwd-dark);
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+  }
+  .release-summary {
+    font-size: 0.9rem;
+    color: var(--kwd-brown);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .release-source {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+  }
+  .release-source-label {
+    color: var(--kwd-brown);
+  }
+  .release-source-link {
+    color: var(--kwd-dark);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .release-source-link:hover {
+    color: var(--kwd-brown);
+  }
+
+  /* Media contact */
+  .media-contact {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+    background: var(--kwd-cream);
+    border-left: 4px solid var(--kwd-yellow);
+    border-radius: 0 12px 12px 0;
+    padding: 2rem 2.5rem;
+  }
+  .media-contact-heading {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.4rem;
+    color: var(--kwd-dark);
+    margin-bottom: 0.6rem;
+  }
+  .media-contact-body {
+    font-size: 0.9rem;
+    color: var(--kwd-brown);
+    line-height: 1.75;
+  }
+  .media-detail-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.35rem;
+  }
+  .media-detail-value {
+    font-size: 0.9rem;
+    color: var(--kwd-dark);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .btn-media {
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--kwd-dark);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.6rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  .btn-media:hover { opacity: 0.85; }
+
+  @media (max-width: 640px) {
+    .media-contact {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+    .release-card { padding: 1.25rem 1.25rem; }
   }
 </style>

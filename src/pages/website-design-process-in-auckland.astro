@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,172 +13,230 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/website-design-process-in-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/website-design-process-in-auckland/",
-      "name": "Website Design Process in Auckland",
-      "description": "Our simple 6-step web design process for Auckland businesses: discover, plan, design, build, launch, and grow.",
+      "name": "Website Design Process Auckland | How We Build Sites | Kiwi Web Design",
+      "description": "Our 6-step web design process for Auckland businesses: discover, plan, design, build, launch, and support. Simple, transparent, and fast — most sites launch in 2–3 weeks.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/website-design-process-in-auckland/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/website-design-process-in-auckland/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/website-design-process-in-auckland/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Website Design Process in Auckland"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Website Design Process Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const steps = [
+  {
+    step: "1",
+    title: "Discovery Call",
+    desc: "A free 30-minute conversation to understand your business, goals, and what you need from your website. We ask the right questions so nothing gets missed.",
+  },
+  {
+    step: "2",
+    title: "Scope & Quote",
+    desc: "We document exactly what we're building — pages, features, integrations — and give you a fixed-price quote. No hourly billing, no scope creep surprises.",
+  },
+  {
+    step: "3",
+    title: "Design",
+    desc: "A custom design built in your brand's colours, fonts, and style. We present it for your feedback before any development begins — changes are easiest at this stage.",
+  },
+  {
+    step: "4",
+    title: "Build",
+    desc: "Development on a private staging URL so you can see the real site before it goes live. We build for speed, mobile, and SEO from the start.",
+  },
+  {
+    step: "5",
+    title: "Review & Launch",
+    desc: "Two structured rounds of feedback, then a full pre-launch checklist. On launch day, we go live, set up Search Console, and verify everything is working correctly.",
+  },
+  {
+    step: "6",
+    title: "Training & Support",
+    desc: "A handover session covering how to manage your site, followed by 30 days of post-launch support. You leave knowing how to make updates yourself.",
+  },
+];
+
+const principles = [
+  { label: "Fixed pricing", body: "You get a written quote before we start. We don't charge by the hour or add extras later. The price we quote is the price you pay." },
+  { label: "Your content, your ownership", body: "Everything we build is yours — the domain, the hosting account, the code. We don't use proprietary platforms that lock you in." },
+  { label: "Built for results", body: "Every design decision — layout, CTAs, page structure — is made with conversions in mind. A site that looks good but doesn't generate enquiries hasn't done its job." },
+  { label: "Fast turnaround", body: "Most small business sites launch within 2–3 weeks of project start. We don't let builds drag on — we keep momentum." },
+];
+
+const faqs = [
+  { q: "How long does the whole process take?", a: "Most small business sites launch in 2–3 weeks once content is ready. Larger sites or eCommerce builds may take 3–5 weeks depending on scope. We'll give you a specific timeline at the quoting stage so you can plan accordingly." },
+  { q: "What do you need from me to get started?", a: "Your logo, brand preferences (colours, fonts, examples you like), the list of pages you need, and any existing content or photos. If you don't have professional photos, we can use high-quality stock imagery. If your content isn't fully ready, we can work around your timeline." },
+  { q: "Can I request changes during the build?", a: "Yes. We include structured feedback rounds at design stage and again during staging — two rounds of revisions at each stage. Changes are always easier before development starts, which is why we get design sign-off first." },
+  { q: "What happens after launch?", a: "You get 30 days of post-launch support at no extra charge — for bug fixes, content tweaks, or questions about managing the site. After that, ongoing support is available through our maintenance plans." },
+  { q: "Will I be able to update the site myself?", a: "Yes. We build on WordPress with a straightforward editing setup. At handover we show you how to update text, add images, publish blog posts, and manage your enquiry forms. Most clients can handle day-to-day updates confidently within the first session." },
+  { q: "Do you work with clients outside Auckland?", a: "Yes. While most of our clients are Auckland-based, we work with businesses throughout New Zealand. Discovery calls and reviews happen over video call — the process is the same regardless of location." },
+];
 ---
-<Layout title="Website Design Process in Auckland" description="Our simple 6-step web design process for Auckland businesses: discover, plan, design, build, launch, and grow." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Our Process</p>
-        <h1>Our 6-Step Web Design Process — Simple, Fast, and Stress-Free</h1>
-        <p class="hero-sub">Our simple 6-step web design process for Auckland businesses: discover, plan, design, build, launch, and grow.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="Website Design Process Auckland | How We Build Sites | Kiwi Web Design"
+  description="Our 6-step web design process for Auckland businesses: discover, plan, design, build, launch, and support. Simple, transparent, and fast — most sites launch in 2–3 weeks."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/website-design-process-in-auckland/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Our Process"
+    title="Simple. Transparent. Fast."
+    subtitle="Six clear steps from first call to launch day. Most Auckland small business sites go live within 2–3 weeks — with no hidden costs and no surprises."
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/web-design-process-kiwi-web-design-auckland.jpg"
+    imgAlt="Web design process at Kiwi Web Design Auckland"
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View Web Design", href: "/small-business-website-design-auckland/" }}
+  />
+
+  <!-- Steps -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="Six steps from conversation to launch."
+        subtitle="Every project follows the same clear process — you always know what's happening next."
+      />
+      <div style="margin-top: 2.5rem;">
+        <ProcessSteps items={steps} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <SectionHeader
+        eyebrow="How We Work"
+        title="What makes our process different."
+        align="left"
+      />
+      <div class="principles-list">
+        {principles.map(({ label, body }) => (
+          <div class="principle">
+            <strong class="principle-label">{label}</strong>
+            <p class="principle-body">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline callout -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <div class="timeline-grid">
+        <div class="timeline-item">
+          <span class="timeline-num">Day 1</span>
+          <span class="timeline-label">Discovery call & scoping</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-num">Days 2–5</span>
+          <span class="timeline-label">Design presented for review</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-num">Days 6–14</span>
+          <span class="timeline-label">Build on staging, content loaded</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-num">Days 15–18</span>
+          <span class="timeline-label">Review rounds & refinement</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-num">Day 21</span>
+          <span class="timeline-label">Launch day</span>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/web-design-process-kiwi-web-design-auckland.jpg" alt="Our 6-Step Web Design Process — Simple, Fast, and Stress-Free" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Process Questions Answered"
+        subtitle="Common questions from Auckland business owners about how the build works."
+      />
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="faq-inner">
-      <h2>Frequently Asked Questions</h2>
-      <details class="faq-item">
-        <summary>How long does the whole process take?</summary>
-        <div class="faq-answer"><p>Most small business sites launch in <strong>2–3 weeks</strong> once content is ready. Larger sites or eCommerce builds may take 3–5 weeks depending on scope and approvals.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>What do you need from me to get started?</summary>
-        <div class="faq-answer"><p>Your logo, brand preferences, sitemap priorities, and any existing content or photos. Don’t worry—if you don’t have these, we’ll guide you and can help create what’s needed.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Can I request revisions during the process?</summary>
-        <div class="faq-answer"><p>Yes. We include structured feedback rounds at wireframe, design, and staging stages to keep everything on track.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Do you provide support after launch?</summary>
-        <div class="faq-answer"><p>Absolutely. We offer affordable maintenance and SEO plans to keep your site secure, fast, and growing.</p>
+  <CTABanner
+    variant="yellow"
+    title="Ready to start? It begins with a free call."
+    subtitle="Book a 30-minute discovery call and we'll scope your project, answer your questions, and give you a fixed-price quote."
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View Packages", href: "/small-business-website-design-auckland/" }}
+  />
 
-<p>
- <a href="/web-design-auckland/">Get a Quote</a>
- </p></div>
-      </details>
-    </div>
-  </section>
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .principles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .principle {
+    padding: 1.25rem 1.5rem;
+    background: var(--kwd-cream);
+    border-left: 4px solid var(--kwd-yellow);
+    border-radius: 0 10px 10px 0;
+  }
+  .principle-label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin-bottom: 0.35rem;
+  }
+  .principle-body {
+    font-size: 0.9rem;
+    color: var(--kwd-brown);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .timeline-item {
+    padding: 1.75rem 1.25rem;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .timeline-item:last-child { border-right: none; }
+  .timeline-num {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.2rem;
+    color: var(--kwd-yellow);
+    line-height: 1;
+  }
+  .timeline-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.45;
+  }
+  @media (max-width: 860px) {
+    .timeline-grid { grid-template-columns: repeat(2, 1fr); }
+    .timeline-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .timeline-item:last-child { border-bottom: none; }
   }
 </style>

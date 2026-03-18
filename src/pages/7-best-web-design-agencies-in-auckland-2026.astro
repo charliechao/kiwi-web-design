@@ -1,167 +1,570 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CTABanner from '../components/CTABanner.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Article",
+      "@id": "https://www.kiwiwebdesign.co.nz/7-best-web-design-agencies-in-auckland-2026/#article",
+      "headline": "7 Best Web Design Agencies in Auckland (2026)",
+      "description": "An independent review of the top web design agencies in Auckland for 2026, evaluated on small business suitability, pricing transparency, local support, and results.",
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-03-01",
+      "inLanguage": "en-NZ",
+      "author": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "publisher": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "mainEntityOfPage": "https://www.kiwiwebdesign.co.nz/7-best-web-design-agencies-in-auckland-2026/"
+    },
+    {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/7-best-web-design-agencies-in-auckland-2026/",
       "url": "https://www.kiwiwebdesign.co.nz/7-best-web-design-agencies-in-auckland-2026/",
-      "name": "7 Best Web Design Agencies in Auckland (2026)",
-      "description": "Looking for the best web design agencies in Auckland? We've vetted the top 7 designers for 2025. See why Kiwi Web Design is ranked #1 for SMEs and local performance.",
+      "name": "7 Best Web Design Agencies in Auckland (2026) | Kiwi Web Design",
+      "description": "Independent review of Auckland's top web design agencies for 2026 — evaluated on small business suitability, pricing, turnaround, local support, and real-world results.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/7-best-web-design-agencies-in-auckland-2026/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/7-best-web-design-agencies-in-auckland-2026/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/7-best-web-design-agencies-in-auckland-2026/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "7 Best Web Design Agencies in Auckland (2026)"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "7 Best Web Design Agencies in Auckland (2026)" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const agencies = [
+  {
+    rank: 1,
+    name: "Kiwi Web Design",
+    url: "https://www.kiwiwebdesign.co.nz",
+    tagline: "Best for Auckland small businesses and tradies",
+    best: "SMEs, tradies, local service businesses",
+    pricing: "From ~$1,500. Fixed price, no surprises.",
+    timeline: "2–3 weeks typical",
+    support: "Auckland-based, direct contact",
+    summary: "Kiwi Web Design is an Auckland-based boutique agency run by Charlie Chao, specialising in lead-generating websites for small businesses across trades, professional services, hospitality, and retail. Every build is custom, fixed-price, and completed in 2–3 weeks — a pace most larger agencies can't match.",
+    strengths: ["Fixed-price quotes — no hourly billing", "Fast turnaround (2–3 weeks)", "Strong local SEO and conversion focus", "Training and handover included with every build", "Auckland-based support, not offshore helpdesks"],
+    verdict: "Our top pick for Auckland SMEs. The combination of affordable pricing, fast delivery, real SEO knowledge, and genuinely local support makes Kiwi Web Design the standout choice for small businesses that need results, not a premium agency experience.",
+    featured: true,
+  },
+  {
+    rank: 2,
+    name: "Devotion",
+    url: "https://www.devotion.co.nz",
+    tagline: "Mid-market digital agency with strong UX capability",
+    best: "Mid-size businesses, eCommerce, enterprise",
+    pricing: "Project-based, mid-to-premium range",
+    timeline: "4–8 weeks typical",
+    support: "Auckland office, account management",
+    summary: "Devotion is an established Auckland digital agency covering web design, UX, and digital strategy. They work primarily with mid-market and corporate clients and have a strong track record in eCommerce and complex builds.",
+    strengths: ["Strong UX and research capability", "Full digital strategy offering", "Enterprise-grade project management", "eCommerce experience"],
+    verdict: "A solid choice for businesses with bigger budgets that need a full-service agency approach with UX depth. Less suitable for small businesses on tight timelines or budgets.",
+    featured: false,
+  },
+  {
+    rank: 3,
+    name: "Zeald",
+    url: "https://www.zeald.com",
+    tagline: "NZ-wide web design with conversion focus",
+    best: "SMEs, service businesses, NZ-wide",
+    pricing: "Subscription-based plans available",
+    timeline: "Varies by plan and scope",
+    support: "NZ-wide team, account management",
+    summary: "Zeald is one of New Zealand's larger web design businesses, operating nationwide with a strong focus on conversion optimisation and results. They offer subscription-based website plans that suit some businesses, though the ongoing commitment isn't for everyone.",
+    strengths: ["Conversion optimisation focus", "Proven NZ-wide track record", "Structured process and reporting", "Ongoing support plans"],
+    verdict: "A credible option for NZ small businesses, particularly those who prefer an ongoing managed model. The subscription approach means lower upfront cost but a long-term commitment.",
+    featured: false,
+  },
+  {
+    rank: 4,
+    name: "Webstudio",
+    url: "https://www.webstudio.co.nz",
+    tagline: "Auckland agency covering design and digital marketing",
+    best: "SMEs and growing businesses",
+    pricing: "Mid-range, project-based",
+    timeline: "4–6 weeks typical",
+    support: "Auckland-based team",
+    summary: "Webstudio is a long-standing Auckland agency with experience across web design, eCommerce, and digital marketing. They work with a range of business sizes and have a team that covers both design and digital strategy.",
+    strengths: ["Combined design and marketing capability", "eCommerce experience", "Established Auckland presence", "Broad service range"],
+    verdict: "A reasonable choice for businesses looking to bundle web design with ongoing digital marketing support. More suitable for businesses with longer-term budget commitments.",
+    featured: false,
+  },
+  {
+    rank: 5,
+    name: "Networld Media Group",
+    url: "https://www.networld.co.nz",
+    tagline: "Long-established Auckland web and hosting provider",
+    best: "Small businesses, local service businesses",
+    pricing: "Competitive, range of packages",
+    timeline: "Varies",
+    support: "Auckland-based",
+    summary: "Networld is one of Auckland's longer-standing web design and hosting companies, serving local small businesses for over two decades. They offer design, hosting, and domain management as a bundled service.",
+    strengths: ["Long Auckland track record", "Bundled hosting and design", "Local knowledge", "Straightforward service offering"],
+    verdict: "Suitable for businesses who want a simple, local provider for both website and hosting. Less cutting-edge design capability than newer specialists but reliable for basic business websites.",
+    featured: false,
+  },
+  {
+    rank: 6,
+    name: "DNA Design",
+    url: "https://www.dna.co.nz",
+    tagline: "Enterprise-focused digital transformation agency",
+    best: "Large businesses, government, enterprise",
+    pricing: "Premium, enterprise-level",
+    timeline: "Extended project timelines",
+    support: "Multi-team account management",
+    summary: "DNA Design is a large-scale digital agency working primarily with enterprise clients and government organisations in New Zealand. Their projects involve complex system integrations, large content platforms, and organisation-wide digital transformation.",
+    strengths: ["Enterprise project capability", "Government and large org experience", "Complex integration work", "Established NZ reputation"],
+    verdict: "Not suitable for small businesses — their focus, pricing, and process are designed for enterprise clients with large budgets and extended timelines. Listed for completeness.",
+    featured: false,
+  },
+  {
+    rank: 7,
+    name: "Reload Media",
+    url: "https://www.reloadmedia.com.au",
+    tagline: "Trans-Tasman digital marketing with web capability",
+    best: "Businesses wanting combined web and paid media",
+    pricing: "Mid-to-premium, project + retainer",
+    timeline: "Project-dependent",
+    support: "AU primary, NZ clients served",
+    summary: "Reload Media is a trans-Tasman digital agency with strong paid media and SEO capability alongside web design. They serve NZ clients from their Australian base and are better known for performance marketing than web builds.",
+    strengths: ["Strong paid media and SEO capability", "Data-driven approach", "Trans-Tasman presence", "Full digital marketing offering"],
+    verdict: "Worth considering if you want web design bundled with a sophisticated paid media strategy and have the budget for a premium retainer model. Less ideal if you just need a well-built website.",
+    featured: false,
+  },
+];
 ---
-<Layout title="7 Best Web Design Agencies in Auckland (2026)" description="Looking for the best web design agencies in Auckland? We've vetted the top 7 designers for 2025. See why Kiwi Web Design is ranked #1 for SMEs and local performance." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Industry Guide</p>
-        <h1>Expert Guide: Top 7 Web Design Agencies in Auckland</h1>
-        <p class="hero-sub">Looking for the best web design agencies in Auckland? We've vetted the top 7 designers for 2025. See why Kiwi Web Design is ranked #1 for SMEs and local performance.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="7 Best Web Design Agencies in Auckland (2026) | Kiwi Web Design"
+  description="Independent review of Auckland's top web design agencies for 2026 — evaluated on small business suitability, pricing, turnaround, local support, and real-world results."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/7-best-web-design-agencies-in-auckland-2026/"
+  schema={schema}
+>
+
+  <!-- Article header -->
+  <section class="article-header">
+    <div class="container article-header-inner">
+      <div class="article-meta">
+        <span class="article-tag">Industry Guide</span>
+        <span class="article-date">Updated March 2026</span>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/01/pexels-cottonbro-5083413.jpg" alt="Expert Guide: Top 7 Web Design Agencies in Auckland" loading="lazy" />
+      <h1 class="article-title">7 Best Web Design Agencies in Auckland (2026)</h1>
+      <p class="article-subtitle">An independent review of Auckland's top web design agencies, evaluated on small business suitability, pricing transparency, turnaround time, and real-world results.</p>
+      <div class="article-criteria">
+        <span class="criteria-label">Evaluated on:</span>
+        <span class="criteria-item">SME suitability</span>
+        <span class="criteria-item">Pricing transparency</span>
+        <span class="criteria-item">Turnaround speed</span>
+        <span class="criteria-item">Local support</span>
+        <span class="criteria-item">SEO & conversion focus</span>
       </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<!-- 
- TOP 7 WEB DESIGN AGENCIES - WORDPRESS/ELEMENTOR VERSION
- Copy and paste this entire code block into an Elementor HTML widget.
- Fonts (DM Serif Display, Poppins) should be loaded in your WordPress theme.
--->
-
-Updated for January 2025 • Independent Review of Auckland Digital Agencies
-
-
- <p>Navigating the crowded Auckland market to find a developer that delivers performance, aesthetics, and
- ROI. We've vetted the best in the business so you don't have to.</p>
-
-⚖️
- 
- 
+  <!-- TOC -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <p class="toc-heading">Jump to agency:</p>
+      <ol class="toc-list">
+        {agencies.map(a => (
+          <li><a href={`#agency-${a.rank}`}>{a.rank}. {a.name} — {a.tagline}</a></li>
+        ))}
+      </ol>
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- Agency entries -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      {agencies.map(a => (
+        <article class:list={['agency-entry', a.featured && 'agency-entry--featured']} id={`agency-${a.rank}`}>
+          <div class="agency-header">
+            <div class="agency-rank-wrap">
+              <span class="agency-rank">#{a.rank}</span>
+              {a.featured && <span class="agency-badge">Our Top Pick</span>}
+            </div>
+            <div>
+              <h2 class="agency-name">{a.name}</h2>
+              <p class="agency-tagline">{a.tagline}</p>
+            </div>
+          </div>
+
+          <p class="agency-summary">{a.summary}</p>
+
+          <div class="agency-meta-grid">
+            <div class="agency-meta-item">
+              <span class="agency-meta-label">Best for</span>
+              <span class="agency-meta-value">{a.best}</span>
+            </div>
+            <div class="agency-meta-item">
+              <span class="agency-meta-label">Pricing</span>
+              <span class="agency-meta-value">{a.pricing}</span>
+            </div>
+            <div class="agency-meta-item">
+              <span class="agency-meta-label">Timeline</span>
+              <span class="agency-meta-value">{a.timeline}</span>
+            </div>
+            <div class="agency-meta-item">
+              <span class="agency-meta-label">Support</span>
+              <span class="agency-meta-value">{a.support}</span>
+            </div>
+          </div>
+
+          <div class="agency-strengths">
+            <p class="agency-strengths-label">Key strengths</p>
+            <ul>
+              {a.strengths.map(s => <li>{s}</li>)}
+            </ul>
+          </div>
+
+          <div class:list={['agency-verdict', a.featured && 'agency-verdict--featured']}>
+            <strong>Our verdict:</strong> {a.verdict}
+          </div>
+
+          {a.featured && (
+            <a href="/work-with-us/" class="agency-cta-btn">Work With Kiwi Web Design →</a>
+          )}
+        </article>
+      ))}
     </div>
   </section>
+
+  <!-- Comparison table -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <h2 class="compare-heading">Quick comparison</h2>
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Agency</th>
+              <th>Best for</th>
+              <th>Price range</th>
+              <th>Speed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {agencies.map(a => (
+              <tr class:list={[a.featured && 'compare-row--featured']}>
+                <td><strong>{a.name}</strong> {a.featured && <span class="compare-tag">Top Pick</span>}</td>
+                <td>{a.best}</td>
+                <td>{a.pricing.split('.')[0]}</td>
+                <td>{a.timeline}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Looking for an Auckland web designer?"
+    subtitle="Free consultation — we'll show you exactly what we'd build for your business and give you a fixed price upfront."
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View Our Work", href: "/testimonials-reviews/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  /* Article header */
+  .article-header {
+    background: var(--kwd-dark);
+    padding: 5rem 0 3.5rem;
+  }
+  .article-header-inner {
+    max-width: 860px;
+  }
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .article-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+  }
+  .article-date {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+  }
+  .article-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .article-subtitle {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+    max-width: 680px;
+  }
+  .article-criteria {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .criteria-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .criteria-item {
+    font-size: 0.78rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* TOC */
+  .toc-heading {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.75rem;
+  }
+  .toc-list {
+    list-style: decimal;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .toc-list a {
+    font-size: 0.9rem;
+    color: var(--kwd-dark);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .toc-list a:hover { text-decoration: underline; }
+
+  /* Agency entries */
+  .agency-entry {
+    border: 1.5px solid rgba(0,0,0,0.08);
+    border-radius: 18px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    background: #fff;
+  }
+  .agency-entry--featured {
+    border-color: var(--kwd-yellow);
+    background: #fffdf3;
+  }
+  .agency-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .agency-rank-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+  .agency-rank {
+    font-family: var(--kwd-font-heading);
+    font-size: 2rem;
+    color: var(--kwd-brown);
+    line-height: 1;
+  }
+  .agency-entry--featured .agency-rank { color: var(--kwd-dark); }
+  .agency-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    white-space: nowrap;
+  }
+  .agency-name {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.5rem;
+    color: var(--kwd-dark);
+    margin: 0 0 0.2rem;
+    line-height: 1.2;
+  }
+  .agency-tagline {
+    font-size: 0.85rem;
+    color: var(--kwd-brown);
+    margin: 0;
+    font-style: italic;
+  }
+  .agency-summary {
+    font-size: 0.9375rem;
+    color: #444;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+  .agency-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    background: rgba(0,0,0,0.03);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  .agency-entry--featured .agency-meta-grid { background: rgba(251,232,166,0.2); }
+  .agency-meta-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.25rem;
+  }
+  .agency-meta-value {
+    font-size: 0.82rem;
+    color: var(--kwd-dark);
+    font-weight: 600;
+    line-height: 1.45;
+  }
+  .agency-strengths {
+    margin-bottom: 1.25rem;
+  }
+  .agency-strengths-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.5rem;
+  }
+  .agency-strengths ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .agency-strengths li {
+    font-size: 0.85rem;
+    color: var(--kwd-dark);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .agency-strengths li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--kwd-brown);
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+  .agency-verdict {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: #444;
+    padding: 1rem 1.25rem;
+    background: rgba(0,0,0,0.04);
+    border-radius: 8px;
+    margin-bottom: 0;
+  }
+  .agency-verdict--featured {
+    background: rgba(251,232,166,0.35);
+    color: var(--kwd-dark);
+  }
+  .agency-verdict strong { color: var(--kwd-dark); }
+  .agency-cta-btn {
+    display: inline-block;
+    margin-top: 1.25rem;
+    background: var(--kwd-dark);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .agency-cta-btn:hover { background: var(--kwd-brown); }
+
+  /* Compare table */
+  .compare-heading {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.5rem;
+    color: var(--kwd-dark);
+    margin-bottom: 1.25rem;
+  }
+  .compare-table-wrap { overflow-x: auto; }
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.87rem;
+  }
+  .compare-table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background: var(--kwd-dark);
+    color: #fff;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .compare-table td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    color: #444;
+    vertical-align: top;
+  }
+  .compare-row--featured td {
+    background: #fffdf3;
+    color: var(--kwd-dark);
+  }
+  .compare-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 700px) {
+    .agency-meta-grid { grid-template-columns: repeat(2, 1fr); }
+    .article-criteria { gap: 0.4rem; }
   }
 </style>

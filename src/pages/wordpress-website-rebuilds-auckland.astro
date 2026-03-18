@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,164 +14,198 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-website-rebuilds-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/wordpress-website-rebuilds-auckland/",
-      "name": "WordPress Website Rebuilds Auckland",
-      "description": "Is it time to rebuild your WordPress site? Kiwi Web Design helps Auckland businesses rebuild fast, modern, and AI-ready websites that convert.",
+      "name": "WordPress Website Rebuilds Auckland | Kiwi Web Design",
+      "description": "Is it time to rebuild your WordPress site? Kiwi Web Design helps Auckland businesses rebuild fast, modern websites that generate enquiries. Free audit included.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/wordpress-website-rebuilds-auckland/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/wordpress-website-rebuilds-auckland/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-website-rebuilds-auckland/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "WordPress Website Rebuilds Auckland"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Website Rebuilds Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const signs = [
+  { icon: "🐌", title: "Your site loads slowly", desc: "If your site takes more than 3 seconds to load on mobile, you're losing visitors before they even see your business. Slow sites rank lower and convert worse." },
+  { icon: "📱", title: "It doesn't work on mobile", desc: "Over 60% of web traffic is mobile. A site that forces visitors to pinch-zoom or scroll sideways is losing you enquiries every day." },
+  { icon: "🔒", title: "You can't update it yourself", desc: "If changing a phone number or adding a new service requires calling a developer, you're paying for something that should be simple." },
+  { icon: "📉", title: "It's not generating enquiries", desc: "A website that looks good but doesn't get enquiries has a conversion problem — weak CTAs, poor structure, or missing trust signals. That's fixable." },
+];
+
+const included = [
+  {
+    icon: "🎨",
+    title: "Fresh Design",
+    desc: "A new design built for your current brand, industry, and goals — not a template swap. Mobile-first and built to convert visitors into enquiries.",
+    items: ["Custom layout", "Mobile-first design", "Brand-matched styling", "CTA optimisation"],
+  },
+  {
+    icon: "⚡",
+    title: "Performance Rebuild",
+    desc: "Clean code, optimised images, fast hosting, and proper caching — so your new site loads in under 2 seconds and scores well on Core Web Vitals.",
+    items: ["Core Web Vitals optimised", "Image optimisation", "Clean plugin setup", "Fast managed hosting"],
+  },
+  {
+    icon: "🔍",
+    title: "SEO Foundation",
+    desc: "301 redirects from old URLs, proper page structure, schema markup, and Search Console setup — so your existing rankings transfer and new ones build.",
+    items: ["301 redirect mapping", "Page title & meta setup", "Schema markup", "Search Console submission"],
+  },
+  {
+    icon: "🔒",
+    title: "Security Setup",
+    desc: "SSL certificate, firewall, login protection, and daily backups configured from day one — so your new site is protected before it even goes live.",
+    items: ["SSL certificate", "Firewall & WAF", "Login hardening", "Daily backups"],
+  },
+  {
+    icon: "📝",
+    title: "Content Migration",
+    desc: "All your existing pages, images, and content moved across to the new build — organised cleanly and with any outdated content updated or removed.",
+    items: ["Page content transfer", "Image migration", "URL structure review", "Navigation rebuild"],
+  },
+  {
+    icon: "🎓",
+    title: "Training & Handover",
+    desc: "A structured handover session so you can manage your new site yourself — and every login credential documented and handed to you.",
+    items: ["WordPress training", "Content editing walkthrough", "Credentials handover", "Follow-up support"],
+  },
+];
+
+const rebuildProcess = [
+  { step: "1", title: "Free Audit", desc: "We review your existing site and identify exactly what's holding it back — speed, SEO, conversion, security. No obligation." },
+  { step: "2", title: "Scope & Quote", desc: "We scope the rebuild based on your pages, requirements, and goals. A fixed-price quote with no surprises." },
+  { step: "3", title: "Build on Staging", desc: "The new site is built on a private staging URL so you can review it fully before anything goes live." },
+  { step: "4", title: "Review & Refine", desc: "Two structured rounds of feedback to refine the design and content until everything is right." },
+  { step: "5", title: "Launch", desc: "We migrate the new site live, set up all redirects, and submit to Google Search Console. Your old site URL stays intact." },
+  { step: "6", title: "Training & Support", desc: "A handover session covering how to manage your new site, plus 30 days of post-launch support." },
+];
+
+const faqs = [
+  { q: "How long does a WordPress rebuild take?", a: "Most small business site rebuilds take 2–3 weeks from project start to launch. Larger sites with more pages or custom functionality may take 3–5 weeks. We'll give you a specific timeline at the scoping stage." },
+  { q: "Will I lose my Google rankings if I rebuild?", a: "Not if it's done correctly. We map all your existing URLs, set up 301 redirects for any that change, and submit the new sitemap to Google Search Console. In most cases, rankings are maintained or improve — because the new site is better structured and faster." },
+  { q: "Do I have to use WordPress?", a: "No — we build on WordPress as our default because it's what most clients already have and it's easy to manage. But if there's a reason to use a different platform, we can discuss alternatives." },
+  { q: "Can you rebuild a site that was built by someone else?", a: "Yes. We can rebuild any WordPress site regardless of who originally built it. We start with a full audit so we understand what's there and what's worth keeping." },
+  { q: "What happens to my existing hosting and domain?", a: "Your domain stays in your name and continues pointing to your existing site throughout the build. On launch day, we update the DNS to point to the new site. Hosting can be moved to our managed servers or stay where it is — we'll advise based on performance." },
+];
 ---
-<Layout title="WordPress Website Rebuilds Auckland" description="Is it time to rebuild your WordPress site? Kiwi Web Design helps Auckland businesses rebuild fast, modern, and AI-ready websites that convert." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">WordPress Services</p>
-        <h1>WordPress Website Rebuilds Auckland</h1>
-        <p class="hero-sub">Is it time to rebuild your WordPress site? Kiwi Web Design helps Auckland businesses rebuild fast, modern, and AI-ready websites that convert.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="WordPress Website Rebuilds Auckland | Kiwi Web Design"
+  description="Is it time to rebuild your WordPress site? Kiwi Web Design helps Auckland businesses rebuild fast, modern websites that generate enquiries. Free audit included."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/wordpress-website-rebuilds-auckland/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="WordPress Rebuilds"
+    title="Your site is holding your business back. Let's fix that."
+    subtitle="WordPress website rebuilds for Auckland businesses — faster load times, better mobile experience, and a design built to convert visitors into enquiries."
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/wordpress-website-rebuilds-auckland.jpg"
+    imgAlt="WordPress website rebuild for Auckland small business"
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View Web Design", href: "/small-business-website-design-auckland/" }}
+  />
+
+  <!-- Signs you need a rebuild -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Signs It's Time"
+        title="When a refresh isn't enough."
+        subtitle="Some problems are symptoms of a deeper issue — a site that was built wrong or is too old to fix efficiently."
+      />
+      <div class="rebuild-signs">
+        {signs.map(({ icon, title, desc }) => (
+          <div class="rebuild-sign">
+            <span class="rebuild-sign-icon">{icon}</span>
+            <div>
+              <strong class="rebuild-sign-title">{title}</strong>
+              <p class="rebuild-sign-desc">{desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/wordpress-website-rebuilds-auckland.jpg" alt="WordPress Website Rebuilds Auckland" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-
+  <!-- What's included -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What's Included"
+        title="Every rebuild. Not just a new coat of paint."
+        subtitle="A rebuild with Kiwi Web Design covers everything — design, performance, SEO, security, content, and training."
+      />
+      <ServiceGrid items={included} cols={3} />
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="faq-inner">
-      <h2>Frequently Asked Questions</h2>
-      <details class="faq-item">
-        <summary>Our Rebuild Process</summary>
-        <div class="faq-answer"><p><br>We follow a simple, transparent process that keeps you involved at every step:</p><ol><li><p>Website audit &amp; consultation (free)</p></li><li><p>Design mockups &amp; sitemap review</p></li><li><p>Development on a test domain</p></li><li><p>Launch &amp; training on how to manage your new site</p></li></ol><p>All rebuilds include SEO setup, security configuration, and free hosting for the first year.</p><hr></div>
-      </details>
-      <details class="faq-item">
-        <summary>Results You Can Expect</summary>
-        <div class="faq-answer"><p><br>Businesses that rebuild with Kiwi Web Design typically see:</p><ul><li><p>Faster load speeds (2–3× faster than before)</p></li><li><p>Higher search rankings in Auckland and NZ</p></li><li><p>Better visitor engagement and conversion rates</p></li><li><p>Easier content updates without technical help</p></li></ul><hr></div>
-      </details>
-      <details class="faq-item">
-        <summary>Ready to Rebuild Your Website?</summary>
-        <div class="faq-answer"><p><br>If your site feels outdated, slow, or impossible to update, it’s time for a rebuild.<br>At Kiwi Web Design, we make it simple and affordable to start fresh with a modern WordPress website that works for you.</p><p>Ready to grow your business with a smarter website?<br>At Kiwi Web Design, we build affordable, high-performing websites for Auckland businesses.<br><a href="/website-designer-auckland/">Contact us today</a> to get started.</p><blockquote><p>“We don’t just design your website — we set you up for ongoing success.”</p></blockquote><blockquote><p><strong>Related Services:</strong><br><a href="/affordable-web-design-auckland/">Affordable Web Design Auckland</a><br><a href="/web-designs-auckland/">Ecommerce Website Design Auckland</a><br><a href="/web-design-auckland/">Contact Kiwi Web Design</a></p></blockquote></div>
-      </details>
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Our Process"
+        title="From audit to launch — simple and transparent."
+        subtitle="Six clear steps. You know what's happening at every stage."
+      />
+      <ProcessSteps items={rebuildProcess} />
     </div>
   </section>
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Rebuild Questions Answered"
+        subtitle="Common questions from Auckland business owners considering a WordPress rebuild."
+      />
     </div>
   </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Free site audit — no obligation."
+    subtitle="We'll review your current site and tell you exactly what's holding it back. Takes 24 hours."
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View Web Design Packages", href: "/small-business-website-design-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .rebuild-signs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .rebuild-sign {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .rebuild-sign-icon { font-size: 1.75rem; flex-shrink: 0; width: 2.25rem; text-align: center; }
+  .rebuild-sign-title { display: block; font-size: 0.9rem; font-weight: 700; color: var(--kwd-dark); margin-bottom: 0.35rem; }
+  .rebuild-sign-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
+
+  @media (max-width: 700px) {
+    .rebuild-signs { grid-template-columns: 1fr; }
   }
 </style>

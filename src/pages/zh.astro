@@ -1,0 +1,556 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/",
+      "url": "https://www.kiwiwebdesign.co.nz/zh/",
+      "name": "奥克兰网页设计 | 中文服务 | Kiwi Web Design",
+      "description": "奥克兰华人网页设计专家。为新西兰华人中小企业提供专业网站建设、SEO优化和Google广告服务。价格透明，快速交付。",
+      "inLanguage": "zh-Hans",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/zh/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "中文服务" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "url": "https://www.kiwiwebdesign.co.nz/"
+    }
+  ]
+};
+
+const services = [
+  {
+    icon: "🌐",
+    title: "网站建设",
+    desc: "为奥克兰华人企业定制专业WordPress网站。设计精美，加载快速，在手机和电脑上完美显示。",
+    items: ["固定价格报价", "2-3周完成交付", "移动端优先设计", "SEO基础设置"],
+  },
+  {
+    icon: "🔍",
+    title: "本地SEO优化",
+    desc: "帮助您的企业在Google搜索结果中排名靠前。针对奥克兰本地市场优化，吸引更多潜在客户。",
+    items: ["关键词研究分析", "Google商家资料优化", "本地引用建设", "每月排名报告"],
+  },
+  {
+    icon: "📣",
+    title: "Google广告",
+    desc: "精准投放Google广告，让您的企业出现在搜索结果首页。按效果付费，控制广告预算。",
+    items: ["广告账户设置", "关键词竞价策略", "广告文案撰写", "效果数据追踪"],
+  },
+  {
+    icon: "📧",
+    title: "企业邮箱设置",
+    desc: "为您的企业配置专业邮箱（Microsoft 365或Google Workspace），提升企业形象和可信度。",
+    items: ["Microsoft 365配置", "Google Workspace设置", "所有设备同步", "DNS记录配置"],
+  },
+];
+
+const reasons = [
+  {
+    num: "01",
+    title: "了解华人市场",
+    body: "我们深度了解奥克兰华人商业环境，能够帮助您的企业在本地华人社区和更广泛的新西兰市场建立专业形象。",
+  },
+  {
+    num: "02",
+    title: "透明定价，无隐性收费",
+    body: "项目开始前提供书面固定价格报价。不按小时计费，不添加额外费用。报价即最终价格。",
+  },
+  {
+    num: "03",
+    title: "快速交付，本地支持",
+    body: "大多数小企业网站2-3周内上线。我们是奥克兰本地团队，有问题直接联系，无需等待海外客服。",
+  },
+  {
+    num: "04",
+    title: "网站您完全拥有",
+    body: "我们交付的网站完全归您所有——域名、主机账户、代码全部归您。不使用任何锁定您的专有平台。",
+  },
+];
+
+const faqs = [
+  {
+    q: "网站建设费用是多少？",
+    a: "一个标准的5-8页小企业网站价格在$1,500-$2,500 NZD之间。具体价格取决于页面数量、功能需求（如预约系统、电商功能）等。我们会在项目开始前提供详细的固定价格报价。",
+  },
+  {
+    q: "建设网站需要多长时间？",
+    a: "大多数小企业网站在内容（文字和图片）准备好后，2-3周内可以上线。更复杂的网站或电商网站需要3-5周。我们会在报价阶段给出具体时间表。",
+  },
+  {
+    q: "我需要准备哪些内容？",
+    a: "您需要提供：企业Logo、品牌颜色偏好、需要的页面列表，以及相关文字和图片。如果没有专业照片，我们可以使用高质量的版权图片。",
+  },
+  {
+    q: "网站建成后我能自己更新内容吗？",
+    a: "可以。我们使用WordPress系统，并提供培训。网站交付后，您可以自行更新文字、添加图片、发布博客文章，无需依赖开发人员。",
+  },
+  {
+    q: "你们只服务华人客户吗？",
+    a: "不是。Kiwi Web Design为所有奥克兰小企业提供服务，包括各行各业的华人和非华人企业主。我们理解华人企业主的需求，同时也具备服务更广泛客户群的能力。",
+  },
+];
+---
+
+<Layout
+  title="奥克兰网页设计 | 中文服务 | Kiwi Web Design"
+  description="奥克兰华人网页设计专家。为新西兰华人中小企业提供专业网站建设、SEO优化和Google广告服务。价格透明，快速交付。"
+  canonicalURL="https://www.kiwiwebdesign.co.nz/zh/"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="zh-hero">
+    <div class="container zh-hero-inner">
+      <div class="zh-hero-text">
+        <p class="zh-eyebrow">奥克兰华人网页设计服务</p>
+        <h1 class="zh-title">专业网站，让您的<br />生意脱颖而出。</h1>
+        <p class="zh-subtitle">为奥克兰华人中小企业提供专业网站建设、SEO优化和数字营销服务。价格透明，快速交付，本地团队支持。</p>
+        <div class="zh-hero-btns">
+          <a href="/work-with-us/" class="btn-zh-primary">免费咨询</a>
+          <a href="/small-business-website-design-auckland/" class="btn-zh-outline">查看服务详情</a>
+        </div>
+        <p class="zh-note">大多数网站2-3周内上线 · 固定价格，无隐性收费</p>
+      </div>
+      <div class="zh-hero-stats">
+        <div class="zh-stat">
+          <span class="zh-stat-num">100+</span>
+          <span class="zh-stat-lbl">奥克兰企业客户</span>
+        </div>
+        <div class="zh-stat">
+          <span class="zh-stat-num">2–3</span>
+          <span class="zh-stat-lbl">周平均交付时间</span>
+        </div>
+        <div class="zh-stat">
+          <span class="zh-stat-num">固定</span>
+          <span class="zh-stat-lbl">价格，不按小时计费</span>
+        </div>
+        <div class="zh-stat">
+          <span class="zh-stat-num">本地</span>
+          <span class="zh-stat-lbl">奥克兰团队支持</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <div class="zh-section-header">
+        <p class="zh-section-eyebrow">我们的服务</p>
+        <h2 class="zh-section-title">一站式数字营销解决方案</h2>
+        <p class="zh-section-subtitle">从网站建设到搜索优化，我们帮助奥克兰华人企业在网上建立专业形象，吸引更多客户。</p>
+      </div>
+      <div class="zh-services-grid">
+        {services.map(svc => (
+          <div class="zh-service-card">
+            <span class="zh-service-icon">{svc.icon}</span>
+            <h3 class="zh-service-title">{svc.title}</h3>
+            <p class="zh-service-desc">{svc.desc}</p>
+            <ul class="zh-service-list">
+              {svc.items.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Why KWD -->
+  <section class="section">
+    <div class="container zh-about-wrap">
+      <div class="zh-about-text">
+        <p class="zh-section-eyebrow" style="color: var(--kwd-brown);">关于我们</p>
+        <h2 class="zh-about-title">Kiwi Web Design — 奥克兰本地网页设计团队</h2>
+        <p class="zh-about-body">Kiwi Web Design由Charlie Chao创立，专注于为奥克兰小企业和个体经营者提供高性价比的网站建设和数字营销服务。</p>
+        <p class="zh-about-body">我们不是大型代理公司——我们是一个小型本地团队，直接与客户沟通，提供更快的响应速度和更好的性价比。每个项目都有固定价格报价、明确的时间表，以及完整的网站管理培训。</p>
+        <p class="zh-about-body">无论您是餐饮、零售、贸易、专业服务还是其他行业，我们都有丰富的相关经验，帮助您的企业在线上取得成功。</p>
+        <a href="/work-with-us/" class="btn-zh-dark">预约免费咨询</a>
+      </div>
+      <div class="zh-reasons">
+        {reasons.map(r => (
+          <div class="zh-reason">
+            <span class="zh-reason-num">{r.num}</span>
+            <div>
+              <h3 class="zh-reason-title">{r.title}</h3>
+              <p class="zh-reason-body">{r.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container" style="max-width: 860px;">
+      <div class="zh-section-header" style="color: #fff;">
+        <p class="zh-section-eyebrow" style="color: var(--kwd-yellow);">服务行业</p>
+        <h2 class="zh-section-title" style="color: #fff;">各行各业，皆有经验</h2>
+        <p class="zh-section-subtitle" style="color: rgba(255,255,255,0.7);">我们为奥克兰各行业的华人企业提供服务，包括但不限于：</p>
+      </div>
+      <div class="zh-industries">
+        {["餐饮与外卖", "零售与电商", "建筑与装修", "美容与护理", "专业服务", "教育与培训", "进出口贸易", "房产中介", "汽车服务", "健康与保健"].map(ind => (
+          <span class="zh-industry-chip">{ind}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 760px;">
+      <div class="zh-section-header">
+        <p class="zh-section-eyebrow">常见问题</p>
+        <h2 class="zh-section-title">您可能想了解的</h2>
+      </div>
+      <div class="zh-faqs">
+        {faqs.map(faq => (
+          <details class="zh-faq-item">
+            <summary class="zh-faq-q">{faq.q}</summary>
+            <p class="zh-faq-a">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="准备好让您的企业在网上脱颖而出了吗？"
+    subtitle="免费咨询，24小时内提供固定价格报价。欢迎通过下方联系我们。"
+    ctaPrimary={{ text: "免费咨询", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "查看网页设计服务", href: "/small-business-website-design-auckland/" }}
+  />
+
+</Layout>
+
+<style>
+  /* Hero */
+  .zh-hero {
+    background: var(--kwd-dark);
+    color: #fff;
+    padding: 5rem 0 4rem;
+  }
+  .zh-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .zh-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-yellow);
+    margin-bottom: 0.85rem;
+  }
+  .zh-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+    line-height: 1.2;
+    margin-bottom: 0.85rem;
+  }
+  .zh-subtitle {
+    font-size: 0.975rem;
+    line-height: 1.75;
+    opacity: 0.82;
+    margin-bottom: 1.75rem;
+  }
+  .zh-hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .btn-zh-primary {
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-zh-primary:hover { opacity: 0.9; }
+  .btn-zh-outline {
+    border: 2px solid rgba(255,255,255,0.5);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-zh-outline:hover { border-color: rgba(255,255,255,0.8); }
+  .zh-note {
+    font-size: 0.78rem;
+    opacity: 0.6;
+    margin: 0;
+  }
+
+  /* Hero stats */
+  .zh-hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .zh-stat {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .zh-stat-num {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.85rem;
+    color: var(--kwd-yellow);
+    line-height: 1;
+  }
+  .zh-stat-lbl {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.4;
+  }
+
+  /* Section headers */
+  .zh-section-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+  }
+  .zh-section-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.6rem;
+  }
+  .zh-section-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    color: var(--kwd-dark);
+    line-height: 1.25;
+    margin-bottom: 0.65rem;
+  }
+  .zh-section-subtitle {
+    font-size: 0.9rem;
+    color: var(--kwd-brown);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Services grid */
+  .zh-services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .zh-service-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    padding: 1.75rem;
+    transition: box-shadow 0.2s;
+  }
+  .zh-service-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  .zh-service-icon {
+    font-size: 1.75rem;
+    display: block;
+    margin-bottom: 0.85rem;
+  }
+  .zh-service-title {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.1rem;
+    color: var(--kwd-dark);
+    margin-bottom: 0.5rem;
+  }
+  .zh-service-desc {
+    font-size: 0.875rem;
+    color: var(--kwd-brown);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .zh-service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .zh-service-list li {
+    font-size: 0.82rem;
+    color: var(--kwd-dark);
+    font-weight: 600;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .zh-service-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--kwd-brown);
+  }
+
+  /* About section */
+  .zh-about-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .zh-about-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+    color: var(--kwd-dark);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  .zh-about-body {
+    font-size: 0.9rem;
+    color: var(--kwd-brown);
+    line-height: 1.8;
+    margin-bottom: 0.9rem;
+  }
+  .btn-zh-dark {
+    display: inline-block;
+    margin-top: 0.5rem;
+    background: var(--kwd-dark);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  .btn-zh-dark:hover { opacity: 0.85; }
+
+  /* Reasons */
+  .zh-reasons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .zh-reason {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .zh-reason-num {
+    flex-shrink: 0;
+    font-family: var(--kwd-font-heading);
+    font-size: 1.35rem;
+    color: var(--kwd-yellow);
+    line-height: 1.2;
+    background: var(--kwd-dark);
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-top: 0.1rem;
+  }
+  .zh-reason-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin-bottom: 0.3rem;
+  }
+  .zh-reason-body {
+    font-size: 0.85rem;
+    color: var(--kwd-brown);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Industries */
+  .zh-industries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+  }
+  .zh-industry-chip {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.1);
+    border: 1.5px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* FAQ */
+  .zh-faqs {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 2rem;
+  }
+  .zh-faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .zh-faq-q {
+    cursor: pointer;
+    padding: 1.1rem 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--kwd-dark);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.5;
+  }
+  .zh-faq-q::-webkit-details-marker { display: none; }
+  .zh-faq-q::after {
+    content: "+";
+    font-size: 1.4rem;
+    color: var(--kwd-brown);
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+  .zh-faq-item[open] .zh-faq-q::after { content: "−"; }
+  .zh-faq-a {
+    font-size: 0.9rem;
+    color: var(--kwd-brown);
+    line-height: 1.75;
+    padding: 0 0 1.25rem;
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    .zh-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .zh-about-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    .zh-hero-stats { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .zh-services-grid { grid-template-columns: 1fr; }
+  }
+</style>

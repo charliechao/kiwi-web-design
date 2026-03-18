@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,38 +8,25 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/thank-you/",
       "url": "https://www.kiwiwebdesign.co.nz/thank-you/",
-      "name": "Thank You",
-      "description": "Thank you for choosing Kiwi Web Design for your Auckland web design needs! Our expert team delivers lead-generating websites tailored to you.",
+      "name": "Thank You | Kiwi Web Design Auckland",
+      "description": "Thanks for getting in touch with Kiwi Web Design. We'll be back to you within 24 hours.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/thank-you/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/thank-you/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/thank-you/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Thank You"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Thank You" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
+      "url": "https://www.kiwiwebdesign.co.nz/",
       "logo": {
         "@type": "ImageObject",
         "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
@@ -46,14 +34,279 @@ const schema = {
     }
   ]
 };
+
+const nextSteps = [
+  {
+    step: "1",
+    heading: "Check your inbox",
+    body: "We'll send a confirmation email shortly. Check your spam folder if you don't see it within a few minutes.",
+  },
+  {
+    step: "2",
+    heading: "We'll be in touch within 24 hours",
+    body: "Charlie will review your enquiry and reach out to arrange a free 30-minute discovery call at a time that suits you.",
+  },
+  {
+    step: "3",
+    heading: "We'll scope and quote your project",
+    body: "After the call, we'll provide a fixed-price quote with a clear scope and timeline — usually within 24 hours.",
+  },
+];
 ---
-<Layout title="Thank You" description="Thank you for choosing Kiwi Web Design for your Auckland web design needs! Our expert team delivers lead-generating websites tailored to you." schema={schema}>
-  <section style="background:var(--kwd-dark);color:var(--kwd-white);text-align:center;padding:6rem 1.5rem 5rem;">
-    <div style="max-width:600px;margin:0 auto;">
-      <p style="font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--kwd-yellow);font-weight:700;margin:0 0 1rem;">Thank You</p>
-      <h1 style="font-family:var(--kwd-font-heading);font-size:clamp(2rem,5vw,3rem);margin:0 0 1rem;">Thanks for reaching out!</h1>
-      <p style="font-size:1.1rem;opacity:.85;margin:0 0 2.5rem;line-height:1.65;">We'll get back to you within 24 hours. In the meantime, feel free to explore our work.</p>
-      <a href="/" style="background:var(--kwd-yellow);color:var(--kwd-dark);padding:.75rem 2rem;border-radius:6px;font-weight:700;text-decoration:none;display:inline-block;">Back to Home</a>
+
+<Layout
+  title="Thank You | Kiwi Web Design Auckland"
+  description="Thanks for getting in touch with Kiwi Web Design. We'll be back to you within 24 hours."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/thank-you/"
+  schema={schema}
+>
+
+  <!-- Confirmation hero -->
+  <section class="ty-hero">
+    <div class="ty-hero-inner">
+      <div class="ty-icon" aria-hidden="true">✓</div>
+      <p class="ty-eyebrow">Message received</p>
+      <h1 class="ty-title">Thanks for reaching out!</h1>
+      <p class="ty-subtitle">We'll get back to you within 24 hours. Here's what happens next.</p>
     </div>
   </section>
+
+  <!-- Next steps -->
+  <section class="section ty-steps-section">
+    <div class="container ty-steps-wrap">
+      <h2 class="ty-steps-heading">What happens next</h2>
+      <div class="ty-steps">
+        {nextSteps.map(item => (
+          <div class="ty-step">
+            <div class="ty-step-num">{item.step}</div>
+            <div class="ty-step-content">
+              <h3 class="ty-step-heading">{item.heading}</h3>
+              <p class="ty-step-body">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Explore links -->
+  <section class="section ty-explore-section">
+    <div class="container ty-explore-wrap">
+      <h2 class="ty-explore-heading">While you wait, explore</h2>
+      <div class="ty-links">
+        <a href="/small-business-website-design-auckland/" class="ty-link-card">
+          <span class="ty-link-icon">🌐</span>
+          <div>
+            <strong class="ty-link-title">Web Design Services</strong>
+            <span class="ty-link-desc">See what's included in every build</span>
+          </div>
+          <span class="ty-link-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="/testimonials-reviews/" class="ty-link-card">
+          <span class="ty-link-icon">⭐</span>
+          <div>
+            <strong class="ty-link-title">Client Reviews</strong>
+            <span class="ty-link-desc">What Auckland businesses say about us</span>
+          </div>
+          <span class="ty-link-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="/website-design-process-in-auckland/" class="ty-link-card">
+          <span class="ty-link-icon">📋</span>
+          <div>
+            <strong class="ty-link-title">Our Process</strong>
+            <span class="ty-link-desc">How we take a site from brief to launch</span>
+          </div>
+          <span class="ty-link-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="/affordable-web-design-auckland/" class="ty-link-card">
+          <span class="ty-link-icon">💰</span>
+          <div>
+            <strong class="ty-link-title">Pricing & Packages</strong>
+            <span class="ty-link-desc">Fixed-price web design from $1,500</span>
+          </div>
+          <span class="ty-link-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <div class="ty-back">
+        <a href="/" class="ty-back-link">← Back to homepage</a>
+      </div>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  /* Hero */
+  .ty-hero {
+    background: var(--kwd-dark);
+    color: #fff;
+    text-align: center;
+    padding: 5rem 1.5rem 4.5rem;
+  }
+  .ty-hero-inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .ty-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  .ty-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 0.6rem;
+  }
+  .ty-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+  }
+  .ty-subtitle {
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  /* Next steps */
+  .ty-steps-section {
+    background: var(--kwd-cream);
+  }
+  .ty-steps-wrap {
+    max-width: 700px;
+  }
+  .ty-steps-heading {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.5rem;
+    color: var(--kwd-dark);
+    margin-bottom: 2rem;
+  }
+  .ty-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .ty-step {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+  }
+  .ty-step-num {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--kwd-dark);
+    color: var(--kwd-yellow);
+    font-family: var(--kwd-font-heading);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.1rem;
+  }
+  .ty-step-heading {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin-bottom: 0.35rem;
+  }
+  .ty-step-body {
+    font-size: 0.875rem;
+    color: var(--kwd-brown);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Explore links */
+  .ty-explore-section {
+    background: #fff;
+  }
+  .ty-explore-wrap {
+    max-width: 700px;
+  }
+  .ty-explore-heading {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.5rem;
+    color: var(--kwd-dark);
+    margin-bottom: 1.5rem;
+  }
+  .ty-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+    margin-bottom: 2.5rem;
+  }
+  .ty-link-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.1rem 1.25rem;
+    background: var(--kwd-cream);
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .ty-link-card:hover {
+    border-color: var(--kwd-yellow);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  }
+  .ty-link-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+  .ty-link-card > div {
+    flex: 1;
+    min-width: 0;
+  }
+  .ty-link-title {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin-bottom: 0.15rem;
+  }
+  .ty-link-desc {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--kwd-brown);
+    line-height: 1.4;
+  }
+  .ty-link-arrow {
+    font-size: 1rem;
+    color: var(--kwd-brown);
+    flex-shrink: 0;
+  }
+  .ty-back {
+    text-align: center;
+  }
+  .ty-back-link {
+    font-size: 0.875rem;
+    color: var(--kwd-brown);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .ty-back-link:hover { color: var(--kwd-dark); }
+
+  @media (max-width: 580px) {
+    .ty-links { grid-template-columns: 1fr; }
+  }
+</style>
