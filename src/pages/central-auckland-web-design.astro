@@ -1,332 +1,236 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
 
-const included = [
-  "Responsive WordPress website (mobile, tablet, desktop)",
-  "SEO-ready structure to rank on Google",
-  "Free in-person or online consultation",
-  "Contact forms and click-to-call buttons",
-  "Fast turnaround — most sites live in 2–3 weeks",
-  "Transparent pricing from $1,290 — no hidden fees"
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/central-auckland-web-design/",
+      "url": "https://www.kiwiwebdesign.co.nz/central-auckland-web-design/",
+      "name": "Central Auckland Web Design | CBD, Ponsonby, Parnell & Newmarket",
+      "description": "Web design for central Auckland businesses. Serving the CBD, Ponsonby, Grey Lynn, Parnell, Newmarket, and Mount Eden. Competitive websites for NZ's most demanding market.",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/central-auckland-web-design/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/central-auckland-web-design/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Central Auckland Web Design" }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "url": "https://www.kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Auckland",
+        "addressRegion": "Auckland",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland CBD" },
+        { "@type": "Place", "name": "Ponsonby, Auckland" },
+        { "@type": "Place", "name": "Grey Lynn, Auckland" },
+        { "@type": "Place", "name": "Parnell, Auckland" },
+        { "@type": "Place", "name": "Newmarket, Auckland" },
+        { "@type": "Place", "name": "Mount Eden, Auckland" },
+        { "@type": "Place", "name": "Kingsland, Auckland" }
+      ],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -36.8523,
+        "longitude": 174.7691
+      }
+    }
+  ]
+};
+
+const services = [
+  {
+    icon: "🏢",
+    title: "Corporate & Professional Services",
+    desc: "CBD and Parnell professional services firms — consultancies, law firms, accountants, financial advisers — compete in NZ's most saturated market. We build sites that communicate credibility and convert at the highest possible rate.",
+    items: ["Authority-first design", "Service/practice area pages", "Team profile pages", "B2B-focused copy and CTAs"],
+  },
+  {
+    icon: "🍽️",
+    title: "Hospitality — CBD to Ponsonby",
+    desc: "Central Auckland hospitality is intensely competitive. Ponsonby Road restaurants, CBD bars, and Newmarket cafes all compete for the same diners. A website that loads fast, shows your menu, and takes reservations is the minimum threshold.",
+    items: ["HTML menu (not PDF)", "Online reservations", "Food photography showcase", "Function enquiry page"],
+  },
+  {
+    icon: "🛍️",
+    title: "Retail & Fashion",
+    desc: "Newmarket, Parnell, and Grey Lynn boutiques are competing with international online retailers. A well-built website — and optionally a WooCommerce store — keeps local customers buying local.",
+    items: ["Product showcase or shop", "Lookbook / gallery", "Click & collect", "Instagram integration"],
+  },
+  {
+    icon: "🎯",
+    title: "Google Ads — Central Auckland",
+    desc: "Central Auckland Google Ads are the most expensive in NZ — competitive categories can run $15–$40+ per click. We build campaigns that maximise quality score and conversion rate so every dollar works harder.",
+    items: ["Quality Score optimisation", "Dedicated landing pages per campaign", "Negative keyword management", "Conversion tracking"],
+  },
+  {
+    icon: "🔍",
+    title: "CBD & Suburb SEO",
+    desc: "Ranking in central Auckland requires more sophisticated SEO than the suburbs. Higher competition means more content depth, stronger link profiles, and technical SEO that's been done properly from the ground up.",
+    items: ["Technical SEO foundations", "Content depth (1,500+ word pages)", "Ponsonby / Newmarket suburb targeting", "Competitor gap analysis"],
+  },
+  {
+    icon: "🏨",
+    title: "Tourism & Accommodation",
+    desc: "Auckland CBD hotels, boutique accommodation, and tourism operators compete for direct bookings against OTAs. We build booking-capable sites with schema markup that Google uses to display rich results.",
+    items: ["Direct booking integration", "Hotel or activity schema", "Guest review showcase", "Tour and itinerary pages"],
+  },
+];
+
+const areas = [
+  { name: "Auckland CBD", note: "NZ's commercial centre. Every industry, highest competition, highest stakes." },
+  { name: "Ponsonby & Grey Lynn", note: "Premium hospitality, boutique retail, creative and professional services." },
+  { name: "Parnell", note: "Heritage precinct — galleries, restaurants, and established professional firms." },
+  { name: "Newmarket", note: "Retail and fashion hub. High foot traffic and strong digital search intent." },
+  { name: "Mount Eden & Kingsland", note: "Neighbourhood commercial strips. Independent hospitality and services." },
+  { name: "Grafton & Epsom", note: "Medical, legal, and educational precinct. High-trust services and specialists." },
 ];
 
 const faqs = [
-  { q: "How much does a website cost for a small business in Central Auckland?", a: "Most small businesses start with an affordable one-page website and grow into a multi-page site as needed. We’ll recommend the right option based on your goals and budget, with clear pricing before we begin." },
-  { q: "Do you write the content or do I need to provide it?", a: "We can draft the core copy (headlines, service blurbs, calls-to-action) and structure it for SEO. You’re welcome to provide notes, testimonials, and photos, and we’ll tidy everything up for the web." },
-  { q: "How long will my website take to build?", a: "Simple sites are typically launched within a couple of weeks from content sign-off. Larger sites with more pages or features may take longer—we’ll give you a clear timeline up front." },
-  { q: "Can you help with SEO for Central Auckland searches?", a: "Yes. Every build includes on-page SEO basics such as metadata, headings, internal links, image optimisation, and local schema. We can also add ongoing SEO to help you rank for competitive Auckland keywords." },
-  { q: "What about hosting, updates, and security?", a: "We offer reliable hosting and optional maintenance with updates, backups, and security monitoring. Prefer to manage it yourself? No problem—we’ll set you up with simple instructions." },
-  { q: "Do you work with eCommerce and bookings?", a: "Absolutely. We build WooCommerce and booking-enabled sites with payment gateways, shipping rules, and product or service add-ons tailored for NZ businesses." }
+  { q: "Central Auckland has massive agencies. Why would I use Kiwi Web Design?", a: "Central Auckland agencies typically charge $15,000–$50,000+ for the same website we build from $1,990 + GST. That premium goes to account managers, project coordinators, and office rent — not to the quality of your site. You work directly with Charlie, and the output is the same quality website at a fraction of the price." },
+  { q: "Is Google Ads viable for a small CBD business given the high CPCs?", a: "It depends on your margins and conversion rate. For a law firm or financial adviser where a single client is worth $5,000+, even a $30 CPC campaign is viable if the landing page converts. For a café competing on $15 coffees, Google Ads is usually not the right play — SEO and Google Business Profile are a better investment." },
+  { q: "Can you help a Ponsonby restaurant get more Google visibility?", a: "Yes. Ponsonby restaurant SEO combines Google Business Profile optimisation (photos, reviews, menu URL, regular posts), an HTML menu page on your website (which Google can index and understand), and local citation consistency. These three things together make a meaningful difference to where you appear in local restaurant searches." },
+  { q: "We're a CBD startup — we need a website fast. How fast is fast?", a: "A simple brochure site or launch page can be live in 5–7 business days. A full multi-page site with services, about, and contact sections typically takes 2–3 weeks. If speed is your primary constraint, tell us in the discovery call and we'll prioritise accordingly." },
+  { q: "We've had bad experiences with Auckland web agencies. What's different here?", a: "No account managers, no scope creep, no 'we'll add that for an extra $500'. You get a fixed price before we start, direct communication with Charlie throughout, and a clean handover at launch. If something isn't right, we fix it — not add it to a new quote." },
 ];
-
-const suburbs = [
-  "Auckland CBD",
-  "Grey Lynn",
-  "Ponsonby",
-  "Parnell",
-  "Newmarket",
-  "Mt Eden",
-  "Remuera"
-];
-
-const schema = {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.kiwiwebdesign.co.nz/central-auckland-web-design/","url":"https://www.kiwiwebdesign.co.nz/central-auckland-web-design/","name":"Central Auckland Web Design","description":"Affordable, high-performing websites for Central Auckland small businesses. Fast builds, SEO-ready, local support from Kiwi Web Design.","inLanguage":"en-NZ","isPartOf":{"@id":"https://www.kiwiwebdesign.co.nz/#website"},"breadcrumb":{"@id":"https://www.kiwiwebdesign.co.nz/central-auckland-web-design/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://www.kiwiwebdesign.co.nz/central-auckland-web-design/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.kiwiwebdesign.co.nz/"},{"@type":"ListItem","position":2,"name":"Central Auckland Web Design"}]},{"@type":"LocalBusiness","name":"Kiwi Web Design","url":"https://www.kiwiwebdesign.co.nz/","telephone":"+6421431337","address":{"@type":"PostalAddress","streetAddress":"147 Great North Road, Grey Lynn","addressLocality":"Auckland","postalCode":"1021","addressCountry":"NZ"},"areaServed":"Central Auckland"}]};
 ---
 
 <Layout
-  title="Central Auckland Web Design"
-  description="Affordable, high-performing websites for Central Auckland small businesses. Fast builds, SEO-ready, local support from Kiwi Web Design."
+  title="Central Auckland Web Design | CBD, Ponsonby, Parnell & Newmarket"
+  description="Web design for central Auckland businesses. Serving the CBD, Ponsonby, Grey Lynn, Parnell, Newmarket, and Mount Eden. Competitive websites for NZ's most demanding market."
   canonicalURL="https://www.kiwiwebdesign.co.nz/central-auckland-web-design/"
   schema={schema}
 >
 
   <!-- Hero -->
-  <section class="loc-hero section-dark">
-    <div class="container loc-hero-inner">
-      <div class="loc-hero-text">
-        <p class="loc-eyebrow">Auckland Web Design — Central Auckland</p>
-        <h1>Central Auckland Web Design</h1>
-        <p class="loc-subhead">Affordable, high-performing websites for Central Auckland small businesses. Fast builds, SEO-ready, local support from Kiwi Web Design.</p>
-        <div class="loc-hero-btns">
-          <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
-          <a href="/small-business-website-design-auckland/" class="btn-outline">View Packages</a>
+  <section class="loc-hero">
+    <div class="container">
+      <div class="loc-hero-inner">
+        <div class="loc-hero-text">
+          <p class="loc-hero-eyebrow">Central Auckland Web Design</p>
+          <h1>In central Auckland, your website is always competing with the best.</h1>
+          <p class="loc-hero-sub">Web design for Auckland CBD, Ponsonby, Parnell, Newmarket, and Grey Lynn. NZ's most competitive market demands professional design, sharp copy, and SEO that's been done properly from the ground up.</p>
+          <div class="loc-hero-btns">
+            <a href="/website-designer-auckland/" class="loc-btn-primary">Get a Free Quote</a>
+            <a href="/small-business-website-design-auckland/" class="loc-btn-outline">View Packages</a>
+          </div>
+        </div>
+        <div class="loc-hero-card">
+          <p class="lhc-label">Serving Central Auckland</p>
+          <ul class="lhc-areas">
+            <li>Auckland CBD</li>
+            <li>Ponsonby & Grey Lynn</li>
+            <li>Parnell</li>
+            <li>Newmarket</li>
+            <li>Mount Eden</li>
+            <li>Kingsland & Grafton</li>
+          </ul>
+          <p class="lhc-note">Remote-first. In-person meetings available for CBD and central Auckland clients.</p>
         </div>
       </div>
-      <div class="loc-hero-image">
-        <img
-          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Auckland-CBD.jpg"
-          alt="Central Auckland web design by Kiwi Web Design Auckland"
-          width="700"
-          height="460"
-          loading="eager"
-        />
+    </div>
+  </section>
+
+  <!-- Central Auckland context -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="The Central Auckland Market"
+        title="NZ's most competitive digital market — and the most rewarding to get right."
+        subtitle="The CBD and inner suburbs are where NZ's most sophisticated consumers, businesses, and decision-makers are concentrated. Getting your online presence right here has an outsized return."
+      />
+      <div class="loc-context">
+        <div class="loc-context-text">
+          <p>Central Auckland is where NZ's most competitive categories play out: corporate services, hospitality, retail, and professional services all competing for clients who have abundant alternatives and high standards.</p>
+          <p>The bar for what a 'good' website looks like in central Auckland is set by the well-funded agencies and established brands operating here. A small business in Ponsonby or the CBD is implicitly judged against that standard — not against what the average NZ small business website looks like.</p>
+          <p>That doesn't mean you need to spend $30,000. It means you need a professional who understands the market and builds to the right standard. We do that — at small business prices.</p>
+        </div>
+        <div class="loc-areas-grid">
+          {areas.map(({ name, note }) => (
+            <div class="loc-area-card">
+              <strong class="lac-name">{name}</strong>
+              <p class="lac-note">{note}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Intro + Why Us -->
+  <!-- Services -->
   <section class="section">
-    <div class="container loc-two-col">
-      <div>
-        <h2>Web Design for Central Auckland Businesses</h2>
-        <p>At Kiwi Web Design, we help small businesses in Central Auckland build professional websites that attract local customers and generate real enquiries. Based in Grey Lynn, we work with businesses across all of Auckland — in-person or online.</p>
-        
-      </div>
-      <div>
-        <h2>What's Included</h2>
-        <ul class="loc-included">
-          {included.map((item) => <li>{item}</li>)}
-        </ul>
-        <a href="/website-designer-auckland/" class="btn-primary">Get a Free Quote</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Suburbs served -->
-  <section class="section section-cream">
     <div class="container">
-      <h2>Areas We Serve in Central Auckland</h2>
-      <p>We build websites for businesses across all of Central Auckland, including:</p>
-      <div class="loc-suburbs">
-        {suburbs.map((s) => <span class="loc-suburb">{s}</span>)}
-        <span class="loc-suburb">+ all surrounding areas</span>
-      </div>
-    </div>
-  </section>
-
-  
-
-  <!-- Gallery -->
-  <section class="section section-dark">
-    <div class="container">
-      <h2>Recent Work for Auckland Businesses</h2>
-      <div class="loc-gallery">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Auckland-CBD-1024x693.jpg" alt="Web design example — Kiwi Web Design Auckland" width="700" height="450" loading="lazy" />
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Auckland-CBD-768x520.jpg" alt="Web design example — Kiwi Web Design Auckland" width="700" height="450" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Trust strip -->
-  <section class="section section-cream">
-    <div class="container loc-trust-strip">
-      <div class="loc-trust-card">
-        <span class="loc-trust-num">$1,290</span>
-        <span class="loc-trust-label">Packages from</span>
-      </div>
-      <div class="loc-trust-card">
-        <span class="loc-trust-num">2–3 wks</span>
-        <span class="loc-trust-label">Typical delivery</span>
-      </div>
-      <div class="loc-trust-card">
-        <span class="loc-trust-num">Free</span>
-        <span class="loc-trust-label">Consultation</span>
-      </div>
-      <div class="loc-trust-card">
-        <span class="loc-trust-num">50+</span>
-        <span class="loc-trust-label">Projects delivered</span>
-      </div>
+      <SectionHeader
+        eyebrow="Services"
+        title="What central Auckland businesses need online."
+        subtitle="From CBD corporate sites to Ponsonby restaurant websites — built for the most demanding market in NZ."
+      />
+      <ServiceGrid items={services} cols={3} />
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section">
-    <div class="container loc-narrow">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
-        {faqs.map(({ q, a }) => (
-          <details class="faq-item">
-            <summary>{q}</summary>
-            <p>{a}</p>
-          </details>
-        ))}
-      </div>
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Central Auckland Web Design Questions"
+        subtitle="What CBD, Ponsonby, and Newmarket businesses ask about working with us."
+      />
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section section-dark text-center">
-    <div class="container loc-narrow">
-      <h2>Ready for a website that works for your Central Auckland business?</h2>
-      <p>Book a free consultation with Kiwi Web Design — in person or online.</p>
-      <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
-    </div>
-  </section>
+  <CTABanner
+    variant="yellow"
+    title="Build a central Auckland website that competes."
+    subtitle="Free consultation — we'll tell you exactly what it takes to stand out in your specific market."
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Our Work", href: "/testimonials-reviews/" }}
+  />
 
 </Layout>
 
 <style>
-  /* Hero */
-  .loc-hero { padding: 5rem 0; }
-  .loc-hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  .loc-eyebrow {
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--kwd-yellow);
-    margin-bottom: 0.75rem;
-  }
-  .loc-hero h1 { color: var(--kwd-white); margin-bottom: 1rem; }
-  .loc-subhead { color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 1.05rem; }
-  .loc-hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-outline {
-    display: inline-block;
-    border: 2px solid rgba(255,255,255,0.35);
-    color: var(--kwd-white);
-    padding: 0.7rem 1.5rem;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: border-color 0.2s, background 0.2s;
-  }
-  .btn-outline:hover { border-color: var(--kwd-yellow); background: rgba(255,255,255,0.05); }
-  .loc-hero-image img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-  }
-
-  /* Two-col */
-  .loc-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-  .loc-two-col h2 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); margin-bottom: 1rem; }
-  .loc-two-col p { color: var(--kwd-brown); line-height: 1.8; margin-bottom: 1rem; }
-
-  /* Included list */
-  .loc-included {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 2rem;
-    display: grid;
-    gap: 0.6rem;
-  }
-  .loc-included li {
-    padding-left: 1.5rem;
-    position: relative;
-    font-size: 0.95rem;
-    color: var(--kwd-brown);
-  }
-  .loc-included li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--kwd-dark);
-    font-weight: 700;
-  }
-
-  /* Suburbs */
-  .loc-suburbs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 1.5rem;
-  }
-  .loc-suburb {
-    background: var(--kwd-white);
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 999px;
-    padding: 0.35rem 0.9rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-
-  /* Narrow */
-  .loc-narrow { max-width: 820px; }
-  .loc-narrow h2 { margin-bottom: 1.25rem; }
-  .loc-narrow p { color: var(--kwd-brown); line-height: 1.8; }
-
-  /* Gallery */
-  .section-dark h2 { color: var(--kwd-white); }
-  .loc-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.25rem;
-    margin-top: 2rem;
-  }
-  .loc-gallery img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-  }
-
-  /* Trust strip */
-  .loc-trust-strip {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    text-align: center;
-  }
-  .loc-trust-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-  .loc-trust-num {
-    font-size: 2rem;
-    font-weight: 800;
-    font-family: var(--kwd-font-heading);
-    color: var(--kwd-dark);
-    line-height: 1;
-  }
-  .loc-trust-label { font-size: 0.82rem; color: var(--kwd-brown); text-transform: uppercase; letter-spacing: 0.06em; }
-
-  /* FAQ */
-  .faq-list { display: grid; gap: 0.75rem; margin-top: 2rem; }
-  .faq-item {
-    background: var(--kwd-white);
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .faq-item summary {
-    padding: 1rem 1.25rem;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95rem;
-    list-style: none;
-    position: relative;
-    padding-right: 2.5rem;
-  }
-  .faq-item summary::after {
-    content: "+";
-    position: absolute;
-    right: 1.25rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--kwd-brown);
-  }
-  .faq-item[open] summary::after { content: "−"; }
-  .faq-item p { padding: 0 1.25rem 1rem; margin: 0; font-size: 0.9rem; color: var(--kwd-brown); }
-
-  /* CTA */
-  .text-center { text-align: center; }
-  .section-dark.text-center h2 { color: var(--kwd-white); }
-  .section-dark.text-center p { color: rgba(255,255,255,0.75); margin-bottom: 2rem; max-width: 520px; margin-inline: auto; }
-
-  /* Responsive */
+  .loc-hero { background: var(--kwd-dark); color: #fff; padding: 4rem 0 3.5rem; }
+  .loc-hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: start; }
+  .loc-hero-eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--kwd-yellow); margin: 0 0 1rem; }
+  .loc-hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.75rem, 3.5vw, 2.75rem); line-height: 1.18; margin: 0 0 1.1rem; color: #fff; }
+  .loc-hero-sub { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.65; max-width: 540px; margin: 0 0 2rem; }
+  .loc-hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .loc-btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: 0.75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.95rem; }
+  .loc-btn-outline { border: 2px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.85); padding: 0.75rem 1.75rem; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+  .loc-hero-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 1.75rem; min-width: 220px; flex-shrink: 0; }
+  .lhc-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-yellow); margin: 0 0 0.875rem; }
+  .lhc-areas { list-style: none; padding: 0; margin: 0 0 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .lhc-areas li { font-size: 0.875rem; color: rgba(255,255,255,0.82); padding-left: 1.1rem; position: relative; }
+  .lhc-areas li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-yellow); font-size: 0.72rem; top: 0.15rem; }
+  .lhc-note { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin: 0; line-height: 1.55; }
+  .loc-context { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; align-items: start; }
+  .loc-context-text p { font-size: 0.9rem; color: var(--kwd-brown); line-height: 1.75; margin-bottom: 0.875rem; }
+  .loc-areas-grid { display: flex; flex-direction: column; gap: 0.75rem; }
+  .loc-area-card { background: #fff; border: 1.5px solid rgba(0,0,0,0.07); border-radius: 10px; padding: 0.875rem 1.125rem; }
+  .lac-name { font-size: 0.875rem; font-weight: 700; color: var(--kwd-dark); display: block; margin-bottom: 0.2rem; }
+  .lac-note { font-size: 0.78rem; color: var(--kwd-brown); margin: 0; line-height: 1.5; }
   @media (max-width: 900px) {
     .loc-hero-inner { grid-template-columns: 1fr; }
-    .loc-hero-image { display: none; }
-    .loc-two-col { grid-template-columns: 1fr; }
-    .loc-trust-strip { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 600px) {
-    .loc-trust-strip { grid-template-columns: repeat(2, 1fr); }
-    .loc-gallery { grid-template-columns: 1fr; }
+    .loc-hero-card { display: none; }
+    .loc-context { grid-template-columns: 1fr; }
   }
 </style>

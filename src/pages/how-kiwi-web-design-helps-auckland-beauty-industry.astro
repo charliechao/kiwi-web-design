@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,197 +14,255 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckland-beauty-industry/",
       "url": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckland-beauty-industry/",
-      "name": "How Kiwi Web Design Helps Auckland Beauty industry",
-      "description": "Web design Auckland services for beauty clinics. We build modern websites, local SEO, and Google Ads that increase bookings and enquiries.",
+      "name": "Web Design for Auckland Salons & Beauty Businesses | Kiwi Web Design",
+      "description": "WordPress websites for Auckland salons, clinics, and beauty businesses. Online booking, portfolio galleries, and automated reminders that reduce no-shows.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckland-beauty-industry/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckland-beauty-industry/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckland-beauty-industry/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "How Kiwi Web Design Helps Auckland Beauty industry"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://www.kiwiwebdesign.co.nz/industries-we-serve-in-auckland/" },
+        { "@type": "ListItem", "position": 3, "name": "Beauty Industry" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz"
     }
   ]
 };
+
+const painPoints = [
+  {
+    icon: "📱",
+    title: "Bookings come through DMs and it's chaotic",
+    desc: "Managing appointment requests across Instagram DMs, Facebook messages, and texts means hours of back-and-forth every week. Bookings get missed. Double-ups happen. You're running the salon and a booking service simultaneously.",
+  },
+  {
+    icon: "📸",
+    title: "Your best work is buried on Instagram",
+    desc: "Your Instagram portfolio is stunning — but Instagram controls who sees it, the algorithm changes, and you can't get found on Google from it. Your work deserves to live somewhere you own.",
+  },
+  {
+    icon: "😤",
+    title: "No-shows are costing you real money",
+    desc: "A client who doesn't show for a 90-minute colour appointment costs you $150+ in lost revenue and a time slot you can't fill. Automated SMS and email reminders with deposit requirements reduce no-shows by up to 70%.",
+  },
+  {
+    icon: "🏷️",
+    title: "Clients don't know your full service menu",
+    desc: "Many clients only know about the service they first booked. A well-structured services page — with descriptions, durations, and prices — introduces clients to treatments they didn't know you offered.",
+  },
+];
+
+const solutions = [
+  {
+    icon: "📅",
+    title: "Online Booking System",
+    desc: "A self-service booking calendar integrated into your website. Clients choose their service, stylist, date and time — without calling or messaging you. Bookings land in your calendar automatically.",
+    items: ["Trafft or Bookly Pro integration", "Service menu with durations", "Staff selection", "Real-time availability"],
+  },
+  {
+    icon: "💳",
+    title: "Deposits at Booking",
+    desc: "Require a deposit at the time of booking — a fixed amount or percentage of the service price. Automatically reduces no-shows and secures your time before the appointment.",
+    items: ["Stripe payment integration", "Deposit % or fixed amount", "Automatic receipt to client", "Cancellation policy enforcement"],
+  },
+  {
+    icon: "📲",
+    title: "Automated SMS & Email Reminders",
+    desc: "Reminders sent automatically 24–48 hours before the appointment — reducing no-shows without any manual work from you or your team.",
+    items: ["24-hr email reminder", "SMS reminder (optional)", "Cancellation link included", "Follow-up after appointment"],
+  },
+  {
+    icon: "🖼️",
+    title: "Portfolio Gallery",
+    desc: "A beautiful, filterable gallery of your work — organised by service type (colour, cuts, lash, brows, nails). Owned by you, not Instagram. Optimised to load fast on mobile.",
+    items: ["Category-filtered gallery", "Before/after comparisons", "Mobile-optimised", "Easy to update yourself"],
+  },
+  {
+    icon: "💅",
+    title: "Services & Pricing Page",
+    desc: "A clearly structured services page with treatment descriptions, durations, and indicative prices — so clients know what to expect before they book.",
+    items: ["Service categories", "Duration display", "Price ranges", "Add-on services"],
+  },
+  {
+    icon: "⭐",
+    title: "Review Integration",
+    desc: "Connect your Google reviews or embed a Trustpilot/Facebook feed so new clients see real social proof on your site — not just on Google.",
+    items: ["Google review feed", "Star rating display", "Schema markup for rich snippets", "Review request automation"],
+  },
+];
+
+const process = [
+  { step: "1", title: "Discovery Call", desc: "We learn your services, team structure, booking workflow, and the visual aesthetic you want — whether that's minimal and luxury, warm and welcoming, or bold and editorial." },
+  { step: "2", title: "Design & Portfolio Setup", desc: "We design your site and set up your gallery structure. You supply your portfolio images (we'll advise on what works best) and we build the visual showcase around them." },
+  { step: "3", title: "Booking & Payment Setup", desc: "We configure your booking plugin with your services, staff calendars, deposit rules, and automated reminder messages." },
+  { step: "4", title: "Launch & Train", desc: "Site goes live. We walk you through managing your own bookings, updating services, and adding new portfolio images — everything from your phone if needed." },
+];
+
+const faqs = [
+  { q: "Which booking plugin do you use for beauty businesses?", a: "For salons with multiple staff, Trafft is our first recommendation — it handles staff calendars, multiple services, deposits, and SMS reminders in one plugin. For sole operators, Bookly Pro is a strong choice. We recommend based on your team size and service complexity." },
+  { q: "Can I require a deposit before the booking is confirmed?", a: "Yes. Deposit requirements are built into the booking plugins we use. You can set a fixed deposit amount or a percentage of the service price. The client pays by card at the time of booking, and the deposit is automatically deducted from the final payment." },
+  { q: "Can I update my services and prices myself after the site is built?", a: "Yes. Both the service menu and gallery are designed to be manageable by you. We give you a walkthrough at launch and a short screen-recording. Most salon owners can manage their own content within a few minutes of training." },
+  { q: "Do you work with beauty businesses outside the CBD?", a: "Yes. We work with salons and beauty clinics across Auckland — North Shore, East Auckland, South Auckland, West Auckland, and the wider region. Everything is handled remotely." },
+  { q: "How much does a beauty salon website cost?", a: "A beauty site with online booking, a gallery, services page, and automated reminders starts from $1,690 + GST. If you need multi-staff booking with SMS reminders and Stripe deposits, the investment is typically $1,990–$2,490 + GST. We give you a fixed quote before we start." },
+];
 ---
-<Layout title="How Kiwi Web Design Helps Auckland Beauty industry" description="Web design Auckland services for beauty clinics. We build modern websites, local SEO, and Google Ads that increase bookings and enquiries." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Industry Solutions</p>
-        <h1>Web Design That MakesAuckland's Beauty Industry Shine</h1>
-        <p class="hero-sub">Web design Auckland services for beauty clinics. We build modern websites, local SEO, and Google Ads that increase bookings and enquiries.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="Web Design for Auckland Salons & Beauty Businesses | Kiwi Web Design"
+  description="WordPress websites for Auckland salons, clinics, and beauty businesses. Online booking, portfolio galleries, and automated reminders that reduce no-shows."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckland-beauty-industry/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Web Design for Beauty Businesses"
+    title="Stop managing bookings by DM. Let your website do it."
+    subtitle="WordPress websites for Auckland salons, hair studios, and beauty clinics — online booking with deposits, automated reminders that cut no-shows, and a portfolio gallery that's actually yours."
+    ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See What's Included", href: "#solutions" }}
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/beauty-salon-website-auckland.jpg"
+    imgAlt="Beauty salon website design Auckland"
+  />
+
+  <!-- Pain points -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="The Challenge"
+        title="Running a salon shouldn't mean running a booking service."
+        subtitle="The biggest problems beauty businesses face online — and why they're costing you time and money."
+      />
+      <div class="ind-pain-grid">
+        {painPoints.map(({ icon, title, desc }) => (
+          <div class="ind-pain-card">
+            <span class="ipc-icon">{icon}</span>
+            <h3 class="ipc-title">{title}</h3>
+            <p class="ipc-desc">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="section" id="solutions">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Build"
+        title="A website that fills your calendar automatically."
+        subtitle="Every feature a modern Auckland beauty business needs to take bookings online and showcase their work."
+      />
+      <ServiceGrid items={solutions} cols={3} />
+    </div>
+  </section>
+
+  <!-- No-shows callout -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <div class="ind-callout">
+        <div class="ind-callout-text">
+          <p class="ind-callout-eyebrow">The No-Show Problem</p>
+          <h2>One no-show per day is $30,000+ in lost revenue annually.</h2>
+          <p>A single missed 90-minute appointment is around $150 in lost revenue — a slot you can't give to a paying client. Over a year, even two no-shows per week costs a salon over $15,000 in lost bookings.</p>
+          <p>The fix is simple: automated reminders the night before, combined with a deposit requirement at booking. Clients who've paid a deposit almost never no-show. It's the single most impactful change a beauty business can make to its booking workflow.</p>
+        </div>
+        <div class="ind-callout-stats">
+          <div class="ind-stat"><span class="is-fig">70%</span><span class="is-label">reduction in no-shows when a deposit is required at booking</span></div>
+          <div class="ind-stat"><span class="is-fig">40%</span><span class="is-label">of bookings are made outside business hours — when your phone isn't answered</span></div>
+          <div class="ind-stat"><span class="is-fig">3×</span><span class="is-label">more services booked per client when a clear service menu is visible online</span></div>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" alt="Web Design That MakesAuckland's Beauty Industry Shine" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<!-- ==============================
- BEAUTY INDUSTRY PAGE - WordPress Elementor Version
- Kiwi Web Design | Web Design for Auckland Beauty Industry
- Paste entire contents into an Elementor HTML Widget
- ============================== -->
-
-<!-- Schema: LocalBusiness -->
-
-<!-- Schema: Service -->
-
-<!-- Schema: FAQPage -->
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<!-- HERO -->
-
-💄Auckland's Trusted Agency for the Beauty Industry
- 
- <p><strong>Kiwi Web Design</strong> builds gorgeous, booking-driven websites for Auckland's beauty
- industry. From salons and spas to skincare clinics and lash studios — we help beauty businesses
- attract more clients, fill more appointment slots, and grow online.</p>
- <a href="/website-designer-auckland/">
- Get a Free Consultation
- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
- stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
- <path d="M5 12h14M12 5l7 7-7 7" />
- </svg>
- </a>
- 
- <figure>
- <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" alt="Premium Auckland beauty salon interior — Kiwi Web Design builds websites for the beauty industry" loading="lazy">
- </figure>
-
-<!-- STATS -->
-
-85%
- Of clients search online before booking a beauty treatment
-
-72%
- Book beauty services from their phone
-
-3X
- More bookings with a professional website
-
-60%
- Prefer online booking over calling
-
-<!-- WHY BEAUTY BUSINESSES NEED A WEBSITE -->
-
-Why Your Beauty Business Needs a Great Website
- 
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How We Work"
+        title="From first call to taking bookings in 2 weeks."
+        subtitle="A practical build process designed around how busy beauty businesses actually work."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Beauty Business Website Questions"
+        subtitle="What Auckland salon owners ask before starting a project with us."
+      />
     </div>
   </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to fill your calendar without the back-and-forth?"
+    subtitle="Free consultation — we'll show you exactly how online booking would work for your salon."
+    ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Booking Website Options", href: "/booking-appointment-websites-with-wordpress/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .ind-pain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .ind-pain-card {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .ipc-icon { font-size: 1.75rem; }
+  .ipc-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .ipc-desc { font-size: 0.875rem; color: var(--kwd-brown); line-height: 1.65; margin: 0; }
+
+  .ind-callout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .ind-callout-eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--kwd-yellow); margin-bottom: 0.75rem; }
+  .ind-callout-text h2 { font-size: clamp(1.4rem, 2.5vw, 1.875rem); color: #fff; margin-bottom: 0.75rem; line-height: 1.25; }
+  .ind-callout-text p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 0.75rem; }
+  .ind-callout-stats { display: flex; flex-direction: column; gap: 1rem; }
+  .ind-stat {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .is-fig { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: var(--kwd-yellow); flex-shrink: 0; min-width: 72px; line-height: 1; }
+  .is-label { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+  @media (max-width: 900px) {
+    .ind-callout { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+  @media (max-width: 640px) {
+    .ind-pain-grid { grid-template-columns: 1fr; }
   }
 </style>

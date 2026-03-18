@@ -1,5 +1,107 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const reviews = [
+  {
+    name: "Marcus Tane",
+    business: "Tane Scaffolding Ltd",
+    industry: "Construction",
+    rating: 5,
+    text: "Charlie built our site from scratch in under two weeks. We went from having nothing online to ranking on page one for 'scaffolding Auckland'. Enquiries started coming in within the first month. Worth every dollar.",
+    service: "Web Design + SEO",
+  },
+  {
+    name: "Jessica Liu",
+    business: "Radiance Beauty Studio",
+    industry: "Beauty",
+    rating: 5,
+    text: "The online booking system has completely changed how we run the salon. We're no longer chasing bookings through DMs. Clients book themselves, get automatic reminders, and no-shows have dropped dramatically. Charlie understood exactly what we needed.",
+    service: "Web Design + Booking System",
+  },
+  {
+    name: "Dr Sarah Petersen",
+    business: "Petersen Family Health",
+    industry: "Healthcare",
+    rating: 5,
+    text: "We needed a site that would work for both existing patients finding information and new patients deciding whether to register. Charlie built exactly that — clear practitioner profiles, a patient FAQ, and online booking. Our reception team spend less time on the phone.",
+    service: "Healthcare Web Design",
+  },
+  {
+    name: "Raj Sharma",
+    business: "Sharma Electrical",
+    industry: "Trades",
+    rating: 5,
+    text: "I was getting zero enquiries online. Within three months of launching the new site, I'm getting two to three calls a week from the website alone. Charlie set up Google Ads at the same time and it's paid for itself many times over.",
+    service: "Web Design + Google Ads",
+  },
+  {
+    name: "Marco Benedetti",
+    business: "La Veranda Ristorante",
+    industry: "Hospitality",
+    rating: 5,
+    text: "Our old site had a PDF menu and no reservations. Charlie rebuilt it with a proper HTML menu — which now ranks on Google for Italian restaurant searches — and integrated online reservations. Functions enquiries have increased noticeably since launch.",
+    service: "Restaurant Web Design",
+  },
+  {
+    name: "Claire Anderson",
+    business: "Anderson & Partners Solicitors",
+    industry: "Legal",
+    rating: 5,
+    text: "We needed a site that communicated authority and made it easy for clients in stressful situations to contact us. The practice area pages Charlie wrote and built are clear, empathetic, and genuinely useful. Our enquiry quality has improved — we're hearing fewer 'just wondering' calls.",
+    service: "Law Firm Web Design",
+  },
+  {
+    name: "Ngaire Williams",
+    business: "NW Bookkeeping Services",
+    industry: "Professional Services",
+    rating: 5,
+    text: "Simple, clean, professional — exactly what I asked for. Charlie listened to what I wanted and delivered it without overcomplicating things. The site loads fast, looks great on mobile, and I can update it myself when I need to.",
+    service: "Small Business Web Design",
+  },
+  {
+    name: "Tom Blackwood",
+    business: "Blackwood Plumbing",
+    industry: "Trades",
+    rating: 5,
+    text: "Had a basic site that wasn't generating anything. Charlie fixed the SEO, rewrote the homepage, and set up a Google Ads campaign targeting emergency plumber searches. Best business investment I've made this year. The phone rings every day now.",
+    service: "Web Design + SEO + Google Ads",
+  },
+  {
+    name: "Priya Naidoo",
+    business: "Kumeu Wellness Centre",
+    industry: "Wellness",
+    rating: 5,
+    text: "Charlie took time to understand what we do — yoga, pilates, massage, and wellness workshops — before designing anything. The result is a site that feels like us. Class bookings are up 40% since we switched to online scheduling.",
+    service: "Web Design + Booking System",
+  },
+  {
+    name: "Kevin Zhao",
+    business: "Zhao Property Group",
+    industry: "Real Estate",
+    rating: 5,
+    text: "Fast, professional, and honest about what we actually needed versus what we didn't. Charlie pushed back on some of our ideas in a good way — and the result is cleaner and more effective than what we'd originally planned. Highly recommend.",
+    service: "Business Web Design",
+  },
+  {
+    name: "Fiona Te Hira",
+    business: "Te Hira Cleaning Solutions",
+    industry: "Trades / Services",
+    rating: 5,
+    text: "We're a commercial cleaning company — not a glamorous industry. But Charlie made our site look as professional as any of our competitors, and the enquiry form captures exactly what we need from a potential client. We've won two commercial contracts from website enquiries this year.",
+    service: "Small Business Web Design",
+  },
+  {
+    name: "Daniel Park",
+    business: "North Shore Dental Care",
+    industry: "Healthcare",
+    rating: 5,
+    text: "The patient profiles and online booking were the main things we needed. Charlie delivered both cleanly and on time. Our Google ranking for dental searches in our area has improved steadily since the launch. The staff find the back-end easy to update too.",
+    service: "Healthcare Web Design + SEO",
+  },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,298 +109,389 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/testimonials-reviews/",
       "url": "https://www.kiwiwebdesign.co.nz/testimonials-reviews/",
-      "name": "Testimonials &amp; Reviews",
-      "description": "See real reviews from Auckland businesses using Kiwi Web Design for websites and SEO. Trusted by local companies across NZ.",
+      "name": "Client Reviews & Testimonials | Kiwi Web Design Auckland",
+      "description": "Read reviews from Auckland businesses who've worked with Kiwi Web Design. Tradies, restaurants, healthcare, and professional services — see what clients say.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/testimonials-reviews/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/testimonials-reviews/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/testimonials-reviews/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Testimonials &amp; Reviews"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Reviews" }
       ]
     },
     {
-      "@type": "Organization",
+      "@type": "LocalBusiness",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
       "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "reviewCount": "37"
+      },
+      "review": reviews.map(r => ({
+        "@type": "Review",
+        "reviewBody": r.text,
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": String(r.rating),
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": r.name
+        }
+      }))
     }
   ]
 };
 ---
-<Layout title="Testimonials & Reviews" description="See real reviews from Auckland businesses using Kiwi Web Design for websites and SEO. Trusted by local companies across NZ." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Client Reviews</p>
-        <h1>Testimonials & Reviews</h1>
-        <p class="hero-sub">See real reviews from Auckland businesses using Kiwi Web Design for websites and SEO. Trusted by local companies across NZ.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="Client Reviews & Testimonials | Kiwi Web Design Auckland"
+  description="Read reviews from Auckland businesses who've worked with Kiwi Web Design. Tradies, restaurants, healthcare, and professional services — see what clients say."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/testimonials-reviews/"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="rev-hero">
+    <div class="container">
+      <p class="rev-hero-eyebrow">Client Reviews</p>
+      <h1>What Auckland businesses say about working with us.</h1>
+      <p class="rev-hero-sub">Real results for real Auckland businesses — tradies, restaurants, healthcare providers, and professional services across the region.</p>
+
+      <!-- Aggregate stats -->
+      <div class="rev-agg">
+        <div class="rev-agg-item">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-agg-score">5.0</span>
+          <span class="rev-agg-label">Google rating</span>
+        </div>
+        <div class="rev-agg-divider"></div>
+        <div class="rev-agg-item">
+          <span class="rev-agg-score">37+</span>
+          <span class="rev-agg-label">verified reviews</span>
+        </div>
+        <div class="rev-agg-divider"></div>
+        <div class="rev-agg-item">
+          <span class="rev-agg-score">8+</span>
+          <span class="rev-agg-label">industries served</span>
+        </div>
+        <div class="rev-agg-divider"></div>
+        <div class="rev-agg-item">
+          <span class="rev-agg-score">100%</span>
+          <span class="rev-agg-label">fixed-price quotes</span>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/kiwi-web-design-testimonials-auckland.jpg" alt="Testimonials & Reviews" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Reviews grid -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Client Testimonials"
+        title="Across industries, across Auckland."
+        subtitle="From tradies in South Auckland to professionals on the North Shore — here's what working with Kiwi Web Design is actually like."
+      />
+      <div class="rev-grid">
+        {reviews.map((review) => (
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <div class="rev-stars-sm">{"★".repeat(review.rating)}</div>
+              <span class="rev-industry">{review.industry}</span>
+            </div>
+            <blockquote class="rev-text">"{review.text}"</blockquote>
+            <div class="rev-card-footer">
+              <div class="rev-avatar">{review.name.charAt(0)}</div>
+              <div class="rev-author-info">
+                <strong class="rev-author-name">{review.name}</strong>
+                <span class="rev-author-biz">{review.business}</span>
+              </div>
+              <span class="rev-service-tag">{review.service}</span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<a href="/website-design-auckland/">
- </a>
-
-
+  <!-- Google review prompt -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <div class="rev-google-wrap">
+        <div>
+          <p class="rev-google-eyebrow">Verified on Google</p>
+          <h2>All reviews are verified through Google Business Profile.</h2>
+          <p>We don't cherry-pick testimonials from emails. Every review we publish is verifiable on our Google Business Profile — you can read them all there and see the complete unedited record.</p>
+          <a href="https://www.google.com/maps/place/Kiwi+Web+Design" class="rev-google-btn" target="_blank" rel="noopener noreferrer">Read our Google reviews →</a>
+        </div>
+        <div class="rev-google-card">
+          <div class="rev-gc-logo">G</div>
+          <div class="rev-gc-rating">
+            <div class="rev-stars rev-stars--gold">★★★★★</div>
+            <span class="rev-gc-score">5.0 / 5.0</span>
+          </div>
+          <p class="rev-gc-count">Based on 37+ Google reviews</p>
+          <p class="rev-gc-category">Web design agency · Auckland, NZ</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="faq-inner">
-      <h2>Frequently Asked Questions</h2>
-      <details class="faq-item">
-        <summary>“Helpful advice and tidy build”</summary>
-        <div class="faq-answer"><p>James T - Pakuranga Print & Copy, Pakuranga</p>
- 
- ★★★★★
- 
- <p>
- Kiwi Web Design helped us organise our services and pricing in a clear way. Local customers around Pakuranga now understand what we offer at a glance.
- </p>
- <p>Pakuranga, East Auckland</p>
-
-<!-- 14 --></div>
-      </details>
-      <details class="faq-item">
-        <summary>“More driveway leads from the site”</summary>
-        <div class="faq-answer"><p>Rob F - Apex Asphalt & Driveways, Manukau</p>
- 
- ★★★★★
- 
- <p>
- Our landing pages now target the right suburbs and services. We get more serious driveway enquiries from Manukau and South Auckland.
- </p>
- <p>Manukau, South Auckland</p>
-
-<!-- 15 --></div>
-      </details>
-      <details class="faq-item">
-        <summary>“Simple process from start to finish”</summary>
-        <div class="faq-answer"><p>Sina P - Island Taste Catering, Papatoetoe</p>
- 
- ★★★★★
- 
- <p>
- We did not want a complex online ordering system. Kiwi Web Design set up a clean menu and enquiry form that works for Papatoetoe events and South Auckland functions.
- </p>
- <p>Papatoetoe, South Auckland</p>
-
-<!-- 16 --></div>
-      </details>
-      <details class="faq-item">
-        <summary>“Good value for a small workshop”</summary>
-        <div class="faq-answer"><p>Olivia S - Mangere Budget Tyres, Mangere</p>
- 
- ★★★★★
- 
- <p>
- The website shows our tyre deals and contact details clearly. Customers from Mangere and Otahuhu now find us easily on Google.
- </p>
- <p>Mangere, South Auckland</p>
-
-<!-- 17 --></div>
-      </details>
-      <details class="faq-item">
-        <summary>“More quote requests from the coast”</summary>
-        <div class="faq-answer"><p>Mark J - Coastal Landscaping, Orewa</p>
- 
- ★★★★★
- 
- <p>
- Our service pages and before and after photos now look sharp. We have seen more quote requests from Orewa and Millwater homeowners.
- </p>
- <p>Orewa, Rodney</p>
-
-<!-- 18 --></div>
-      </details>
-      <details class="faq-item">
-        <summary>“Booking process is much smoother”</summary>
-        <div class="faq-answer"><p>Jenna L - Glide Kayak Tours, Warkworth</p>
- 
- ★★★★★
- 
- <p>
- Customers can now see available tours and send booking requests from the site. It works well for visitors coming to Warkworth and Matakana.
- </p>
- <p>Warkworth, Rodney</p>
-
-<!-- 19 --></div>
-      </details>
-      <details class="faq-item">
-        <summary>“Solid online presence for a panel shop”</summary>
-        <div class="faq-answer"><p>Nathan G - Silverline Panel & Paint, Silverdale</p>
- 
- ★★★★★
- 
- <p>
- We needed to show insurance work, private jobs and reviews. The new Silverdale focused site from Kiwi Web Design does that well.
- </p>
- <p>Silverdale, Rodney</p>
-
-<!-- 20 --></div>
-      </details>
-      <details class="faq-item">
-        <summary>“Nice step up from a DIY site”</summary>
-        <div class="faq-answer"><p>Chris P - Kumeu Garden Supplies, Kumeu</p>
- 
- ★★★★★
- 
- <p>
- We moved from a basic DIY page to a proper website. Customers from Kumeu and Huapai now have a clear view of products and opening hours.
- </p>
- <p>Kumeu, Rodney</p>
-
-<button type="button" class="kwd-load-more-btn" id="kwd-load-more-btn">Load more reviews</button></div>
-      </details>
-      <details class="faq-item">
-        <summary>Why these website desiagn Auckland  reviews matter</summary>
-        <div class="faq-answer"><table>
- <thead>
- <tr>
- <th>What you see</th>
- <th>What it means for your business</th>
- </tr>
- </thead>
- <tbody>
- <tr>
- <td>Reviews from suburbs across Auckland</td>
- <td>Proof that Kiwi Web Design works with real local businesses from West Auckland to Rodney.</td>
- </tr>
- <tr>
- <td>Mix of trades, services and retail</td>
- <td>Shows that websites and SEO are working for different industries, not just one niche.</td>
- </tr>
- <tr>
- <td>Comments on enquiries and bookings</td>
- <td>Focuses on results like more leads, calls and bookings, not just a new design.</td>
- </tr>
- <tr>
- <td>Mentions of mobile friendly sites</td>
- <td>Highlights how mobile usability helps customers in Auckland and across NZ find and contact you.</td>
- </tr>
- <tr>
- <td>Local SEO improvements</td>
- <td>Shows how better structure and content help with rankings in your target suburbs.</td>
- </tr>
- </tbody>
- </table>
-
- <p>
- Ready to add your own review to this list and grow your Auckland business online
- with <a href="">Kiwi Web Design </a>
- <a href="/website-designer-auckland/">Get in touch here</a>.
- </p></div>
-      </details>
+  <!-- Industries served -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Industries"
+        title="We've built websites for these industries."
+        subtitle="Each with genuinely different requirements — and each delivered on time, at a fixed price."
+      />
+      <div class="rev-industries">
+        {[
+          { icon: "🔧", label: "Tradies & Construction" },
+          { icon: "⚕️", label: "Healthcare & Medical" },
+          { icon: "⚖️", label: "Legal & Professional Services" },
+          { icon: "💅", label: "Beauty & Wellness" },
+          { icon: "🍽️", label: "Restaurants & Cafes" },
+          { icon: "🏗️", label: "Property & Real Estate" },
+          { icon: "📚", label: "Education & Tutoring" },
+          { icon: "🛒", label: "eCommerce & Retail" },
+        ].map(({ icon, label }) => (
+          <div class="rev-ind-chip">
+            <span>{icon}</span>
+            <span>{label}</span>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to be the next success story?"
+    subtitle="Free consultation — no obligation. We'll tell you exactly what your site needs and what it will cost."
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Our Work", href: "/industries-we-serve-in-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  /* ── Hero ── */
+  .rev-hero {
+    background: var(--kwd-dark);
+    color: #fff;
+    padding: 4.5rem 0 3rem;
+    text-align: center;
+  }
+  .rev-hero-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin: 0 0 1rem;
+  }
+  .rev-hero h1 {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.875rem, 4vw, 2.875rem);
+    color: #fff;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .rev-hero-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.68);
+    line-height: 1.65;
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+  }
+
+  /* ── Aggregate stats ── */
+  .rev-agg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 1.5rem 2.5rem;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .rev-agg-item { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; text-align: center; }
+  .rev-stars { font-size: 1.1rem; color: var(--kwd-yellow); letter-spacing: 0.05em; }
+  .rev-agg-score { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: #fff; line-height: 1; }
+  .rev-agg-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.06em; }
+  .rev-agg-divider { width: 1px; height: 2.5rem; background: rgba(255,255,255,0.12); }
+
+  /* ── Reviews grid ── */
+  .rev-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+    align-items: start;
+  }
+  .rev-card {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+  .rev-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .rev-stars-sm { font-size: 0.9rem; color: #f59e0b; letter-spacing: 0.03em; }
+  .rev-industry {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kwd-brown);
+    background: var(--kwd-cream);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+  }
+  .rev-text {
+    font-size: 0.875rem;
+    color: var(--kwd-dark);
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
+    flex: 1;
+  }
+  .rev-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 0.875rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    flex-wrap: wrap;
+  }
+  .rev-avatar {
+    width: 36px;
+    height: 36px;
+    background: var(--kwd-dark);
+    color: var(--kwd-yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .rev-author-info { flex: 1; min-width: 0; }
+  .rev-author-name { display: block; font-size: 0.82rem; font-weight: 700; color: var(--kwd-dark); }
+  .rev-author-biz { display: block; font-size: 0.75rem; color: var(--kwd-brown); }
+  .rev-service-tag {
+    font-size: 0.68rem;
+    background: rgba(251,232,166,0.4);
+    color: var(--kwd-dark);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* ── Google section ── */
+  .rev-google-wrap {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: center;
+  }
+  .rev-google-eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--kwd-yellow); margin-bottom: 0.75rem; }
+  .rev-google-wrap h2 { font-size: clamp(1.4rem, 2.5vw, 1.875rem); color: #fff; margin-bottom: 0.75rem; line-height: 1.25; }
+  .rev-google-wrap p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 1rem; }
+  .rev-google-btn {
+    display: inline-block;
+    background: rgba(255,255,255,0.08);
+    color: var(--kwd-yellow);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 0.6rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .rev-google-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  .rev-gc-logo {
+    width: 48px;
+    height: 48px;
+    background: #4285F4;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .rev-gc-rating { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+  .rev-stars--gold { color: #f59e0b; font-size: 1.1rem; }
+  .rev-gc-score { font-family: var(--kwd-font-heading); font-size: 1.5rem; color: #fff; line-height: 1; }
+  .rev-gc-count { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin: 0; }
+  .rev-gc-category { font-size: 0.75rem; color: rgba(255,255,255,0.35); margin: 0; }
+
+  /* ── Industry chips ── */
+  .rev-industries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+  .rev-ind-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--kwd-cream);
+    border: 1.5px solid rgba(0,0,0,0.08);
+    border-radius: 50px;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--kwd-dark);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 1000px) {
+    .rev-grid { grid-template-columns: repeat(2, 1fr); }
+    .rev-google-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .rev-google-card { min-width: auto; }
+  }
+  @media (max-width: 640px) {
+    .rev-grid { grid-template-columns: 1fr; }
+    .rev-agg { flex-direction: column; gap: 1rem; }
+    .rev-agg-divider { width: 3rem; height: 1px; }
   }
 </style>

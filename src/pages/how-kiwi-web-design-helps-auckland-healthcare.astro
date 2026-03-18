@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,199 +14,253 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckland-healthcare/",
       "url": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckland-healthcare/",
-      "name": "How Kiwi Web Design Helps Auckland Healthcare",
-      "description": "Web design Auckland services for healthcare clinics. We build professional websites, SEO, and Google Ads that help attract and inform patients.",
+      "name": "Web Design for Auckland Healthcare & Medical Practices | Kiwi Web Design",
+      "description": "WordPress websites for Auckland medical centres, specialists, and allied health providers. Practitioner profiles, appointment booking, and patient-centred design.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckland-healthcare/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckland-healthcare/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckland-healthcare/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "How Kiwi Web Design Helps Auckland Healthcare"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://www.kiwiwebdesign.co.nz/industries-we-serve-in-auckland/" },
+        { "@type": "ListItem", "position": 3, "name": "Healthcare" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz"
     }
   ]
 };
+
+const painPoints = [
+  {
+    icon: "📞",
+    title: "Appointment booking is still 100% by phone",
+    desc: "Your receptionist fields the same calls all day: 'Can I see Dr Smith on Tuesday?' or 'What's your ACC process?'. Online appointment booking and a well-structured FAQ page reduce call volume significantly — freeing up front desk time for patients who actually need it.",
+  },
+  {
+    icon: "👥",
+    title: "Patients can't find the right practitioner",
+    desc: "A patient referred to your clinic for physiotherapy, or choosing a GP for their family, wants to understand who they'll be seeing. Individual practitioner profiles with qualifications, areas of focus, and a brief bio build confidence before the first appointment.",
+  },
+  {
+    icon: "🌐",
+    title: "New patients can't find you at all",
+    desc: "People relocating to a new Auckland suburb, or looking for a specialist within their insurance network, search Google before asking a GP for a referral. If your Google Business Profile is sparse and your website isn't optimised for local search, you're invisible.",
+  },
+  {
+    icon: "📋",
+    title: "Patient information is scattered and outdated",
+    desc: "Downloadable intake forms, ACC information, after-hours instructions, and referral processes are often buried in PDFs or on pages that haven't been updated since 2019. Patients form their first impression of your practice from your website — outdated information is a red flag.",
+  },
+];
+
+const solutions = [
+  {
+    icon: "👨‍⚕️",
+    title: "Practitioner Profile Pages",
+    desc: "Individual pages for each doctor, specialist, or allied health practitioner — photo, qualifications, areas of focus, languages spoken, and a human bio. Patients book with confidence when they know who they're seeing.",
+    items: ["Professional headshot", "Qualifications & registration", "Specialty / treatment focus", "Languages spoken"],
+  },
+  {
+    icon: "📅",
+    title: "Online Appointment Booking",
+    desc: "Self-service booking for patient appointments — with practitioner selection, appointment type, and confirmation by email. Reduces phone volume and lets patients book at 11pm if needed.",
+    items: ["Simply Schedule or Trafft", "Practitioner selection", "Appointment type (new/returning)", "Automated confirmation + reminder"],
+  },
+  {
+    icon: "📄",
+    title: "Patient Information Hub",
+    desc: "A clear, well-organised patient information section: new patient registration, ACC forms, after-hours options, referral process, fees, and frequently asked questions. Saves your front desk answering the same questions repeatedly.",
+    items: ["Downloadable intake forms", "ACC process overview", "Fees & insurance information", "After-hours instructions"],
+  },
+  {
+    icon: "♿",
+    title: "Accessible, Inclusive Design",
+    desc: "Healthcare websites serve a broad population — including older patients, those with low digital literacy, and people with visual impairments. We design for clarity, readability, and accessibility standards (WCAG AA).",
+    items: ["High contrast text", "Large, readable typography", "WCAG AA compliance", "Screen reader friendly"],
+  },
+  {
+    icon: "🔍",
+    title: "Local Healthcare SEO",
+    desc: "Patients searching 'physio near me' or 'GP accepting new patients East Auckland' rely on Google to find a provider. We optimise your site and Google Business Profile so you show up when patients are looking.",
+    items: ["MedicalOrganization schema", "Google Business Profile setup", "Suburb-specific page content", "Health condition keyword targeting"],
+  },
+  {
+    icon: "🔒",
+    title: "Privacy & Compliance",
+    desc: "Healthcare websites handle sensitive information. We ensure secure contact forms, a compliant privacy policy, no unsecured patient data capture, and appropriate disclaimers for health content.",
+    items: ["SSL security", "Privacy Act compliant policy", "Secure form handling", "Health content disclaimers"],
+  },
+];
+
+const process = [
+  { step: "1", title: "Discovery & Stakeholder Brief", desc: "We meet with your practice manager or principal to understand your patient profile, service mix, practitioner roster, and what patients currently find confusing or missing on your current site." },
+  { step: "2", title: "Structure & Content Planning", desc: "We map your site architecture: practitioner pages, services/specialties, patient info sections, and booking flow. We identify what content you need to provide and what we can draft." },
+  { step: "3", title: "Build & Accessibility Review", desc: "We build your site with healthcare-appropriate design — clean, clinical confidence. We run an accessibility check and test the patient information sections thoroughly." },
+  { step: "4", title: "Launch & Staff Training", desc: "We launch and train your front desk or practice manager on updating the site — adding new practitioners, updating fees, uploading forms — so you're never dependent on us for routine changes." },
+];
+
+const faqs = [
+  { q: "Can patients book appointments directly through the website?", a: "Yes. We integrate booking plugins (Simply Schedule Appointments or Trafft) that allow patients to select a practitioner, appointment type, and time. New patient vs returning patient options can be handled separately. All bookings generate confirmation emails and reminders automatically." },
+  { q: "Can you build a website for a multi-practitioner clinic?", a: "Yes. Multi-practitioner healthcare sites are a common build for us. Each practitioner has an individual profile page, and the booking system routes to the correct calendar. We can accommodate GPs, specialists, and allied health practitioners on the same site." },
+  { q: "Do you handle patient data securely?", a: "We do not build systems that store clinical patient data — that's the role of your practice management software. What we do ensure is that all contact forms use SSL, we don't embed unsecured data capture, and your privacy policy accurately reflects how you handle patient information under the NZ Privacy Act." },
+  { q: "Can you add a downloadable patient intake form to our website?", a: "Yes. We can add downloadable PDF forms, and also online intake forms where patients fill out details before their appointment. For the latter, responses go to your designated email or practice management system — not stored on the website." },
+  { q: "How much does a healthcare website cost?", a: "A single-practitioner healthcare website starts from $1,490 + GST. A multi-practitioner clinic with individual profiles, online booking, and patient information hub typically runs $2,490–$3,500 + GST depending on practitioner count and scope. We quote by scope, not by hourly rate." },
+];
 ---
-<Layout title="How Kiwi Web Design Helps Auckland Healthcare" description="Web design Auckland services for healthcare clinics. We build professional websites, SEO, and Google Ads that help attract and inform patients." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Industry Solutions</p>
-        <h1>Professional Web Designfor Auckland Healthcare</h1>
-        <p class="hero-sub">Web design Auckland services for healthcare clinics. We build professional websites, SEO, and Google Ads that help attract and inform patients.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="Web Design for Auckland Healthcare & Medical Practices | Kiwi Web Design"
+  description="WordPress websites for Auckland medical centres, specialists, and allied health providers. Practitioner profiles, appointment booking, and patient-centred design."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckland-healthcare/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Web Design for Healthcare"
+    title="A website that patients trust before they walk through your door."
+    subtitle="WordPress websites for Auckland GPs, specialists, and allied health practices. Practitioner profiles, online appointment booking, accessible design, and patient information that actually helps people find you."
+    ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See What's Included", href: "#solutions" }}
+  />
+
+  <!-- Pain points -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="The Challenge"
+        title="Healthcare websites need to work harder than most."
+        subtitle="Patients look for very specific signals before booking with a practice. Most healthcare websites fail to provide them."
+      />
+      <div class="ind-pain-grid">
+        {painPoints.map(({ icon, title, desc }) => (
+          <div class="ind-pain-card">
+            <span class="ipc-icon">{icon}</span>
+            <h3 class="ipc-title">{title}</h3>
+            <p class="ipc-desc">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="section" id="solutions">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Build"
+        title="Everything a modern Auckland healthcare practice needs online."
+        subtitle="From practitioner profiles to patient information hubs — built for clarity, trust, and accessibility."
+      />
+      <ServiceGrid items={solutions} cols={3} />
+    </div>
+  </section>
+
+  <!-- Trust callout -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <div class="ind-callout">
+        <div class="ind-callout-text">
+          <p class="ind-callout-eyebrow">Why It Matters</p>
+          <h2>Patients research their healthcare providers more carefully than almost any other purchase.</h2>
+          <p>Choosing a GP, a physio, or a specialist is a high-trust decision. Patients read reviews, look up practitioner credentials, and check that the practice accepts new patients — all before they call.</p>
+          <p>A healthcare website needs to answer those questions clearly: who are your practitioners, what do they specialise in, are you accepting new patients, and how do I book? Every missing answer is a potential patient who calls a competitor instead.</p>
+        </div>
+        <div class="ind-callout-stats">
+          <div class="ind-stat"><span class="is-fig">77%</span><span class="is-label">of patients use online search before choosing a healthcare provider</span></div>
+          <div class="ind-stat"><span class="is-fig">60%</span><span class="is-label">of patients prefer to book appointments online if given the option</span></div>
+          <div class="ind-stat"><span class="is-fig">30%</span><span class="is-label">reduction in front desk call volume when a patient FAQ page is well-maintained</span></div>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Professional Web Designfor Auckland Healthcare" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<!-- ==============================
- HEALTHCARE PAGE - WordPress Elementor Version
- Kiwi Web Design | Web Design for Auckland Healthcare
- Paste entire contents into an Elementor HTML Widget
- ============================== -->
-
-<!-- Schema: LocalBusiness -->
-
-<!-- Schema: Service -->
-
-<!-- Schema: FAQPage -->
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<!-- ===== HTML CONTENT (scoped under .main-body) ===== -->
-
-<!-- HERO -->
-
-🏥Auckland's Trusted Agency for Healthcare
- 
- <p><strong>Kiwi Web Design</strong> builds patient-focused, SEO-optimised websites for Auckland's
- healthcare sector. From clinics and dentists to physios and specialists — we help medical
- practices attract more patients, build trust, and grow online.</p>
- <a href="/website-designer-auckland/">
- Get a Free Consultation
- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
- stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
- <path d="M5 12h14M12 5l7 7-7 7" />
- </svg>
- </a>
- 
- <figure>
- <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Modern Auckland healthcare clinic with professional website on display – Kiwi Web Design for healthcare" loading="lazy">
- </figure>
-
-<!-- STATS -->
-
-77%
- Of patients search online before booking a healthcare appointment
-
-83%
- Want to book appointments online
-
-3X
- More patient enquiries with a professional site
-
-71%
- Of health searches happen on mobile
-
-<!-- WHY HEALTHCARE NEEDS A WEBSITE -->
-
-Why Your Practice Needs a Great Website
- 
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How We Work"
+        title="A process designed around busy healthcare practices."
+        subtitle="We work around your schedule — minimal time required from clinical staff."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Healthcare Website Questions Answered"
+        subtitle="What Auckland medical practices ask before starting a project with us."
+      />
     </div>
   </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to modernise your practice's online presence?"
+    subtitle="Free consultation — we'll review your current site and identify the highest-impact improvements."
+    ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See All Industries", href: "/industries-we-serve-in-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .ind-pain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .ind-pain-card {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .ipc-icon { font-size: 1.75rem; }
+  .ipc-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .ipc-desc { font-size: 0.875rem; color: var(--kwd-brown); line-height: 1.65; margin: 0; }
+
+  .ind-callout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .ind-callout-eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--kwd-yellow); margin-bottom: 0.75rem; }
+  .ind-callout-text h2 { font-size: clamp(1.4rem, 2.5vw, 1.875rem); color: #fff; margin-bottom: 0.75rem; line-height: 1.25; }
+  .ind-callout-text p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 0.75rem; }
+  .ind-callout-stats { display: flex; flex-direction: column; gap: 1rem; }
+  .ind-stat {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .is-fig { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: var(--kwd-yellow); flex-shrink: 0; min-width: 72px; line-height: 1; }
+  .is-label { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+  @media (max-width: 900px) {
+    .ind-callout { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+  @media (max-width: 640px) {
+    .ind-pain-grid { grid-template-columns: 1fr; }
   }
 </style>

@@ -1,336 +1,236 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
 
-const included = [
-  "Responsive WordPress website (mobile, tablet, desktop)",
-  "SEO-ready structure to rank on Google",
-  "Free in-person or online consultation",
-  "Contact forms and click-to-call buttons",
-  "Fast turnaround — most sites live in 2–3 weeks",
-  "Transparent pricing from $1,290 — no hidden fees"
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/west-auckland-web-design/",
+      "url": "https://www.kiwiwebdesign.co.nz/west-auckland-web-design/",
+      "name": "West Auckland Web Design | Websites for Henderson, Kumeu & Titirangi",
+      "description": "Web design for West Auckland independent businesses. Serving Henderson, New Lynn, Kumeu, Titirangi, and West Auckland. WordPress websites that reflect your identity.",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/west-auckland-web-design/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/west-auckland-web-design/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "West Auckland Web Design" }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "url": "https://www.kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Auckland",
+        "addressRegion": "Auckland",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Henderson, Auckland" },
+        { "@type": "Place", "name": "New Lynn, Auckland" },
+        { "@type": "Place", "name": "Kumeu, Auckland" },
+        { "@type": "Place", "name": "Titirangi, Auckland" },
+        { "@type": "Place", "name": "Glen Eden, Auckland" },
+        { "@type": "Place", "name": "Swanson, Auckland" },
+        { "@type": "Place", "name": "West Auckland" }
+      ],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -36.8768,
+        "longitude": 174.6071
+      }
+    }
+  ]
+};
+
+const services = [
+  {
+    icon: "🍷",
+    title: "Wineries & Artisan Food",
+    desc: "Kumeu and the West Auckland wine region is a national destination. Wineries, olive growers, and artisan food producers need websites that capture their story, showcase their products, and drive cellar door visits or online orders.",
+    items: ["Winery/cellar door design", "Wine club membership", "Online shop (WooCommerce)", "Story and heritage content"],
+  },
+  {
+    icon: "☕",
+    title: "Independent Cafes & Restaurants",
+    desc: "West Auckland's independent café scene has a character that chains can't replicate. Your website should reflect that — warm, authentic, and very different from a corporate Squarespace template.",
+    items: ["Menu page (HTML, not PDF)", "Online ordering links", "Community event listing", "Google Business setup"],
+  },
+  {
+    icon: "🔧",
+    title: "Trades & Construction",
+    desc: "Henderson and New Lynn are trade hubs. Builders, plumbers, and electricians in West Auckland compete for a growing residential market — and many still rely on word of mouth alone. A website changes the math.",
+    items: ["Service area pages", "Project gallery", "Quote request form", "Emergency availability"],
+  },
+  {
+    icon: "🧘",
+    title: "Wellness & Creative Services",
+    desc: "West Auckland has a strong wellness, yoga, and creative services culture. Massage therapists, yoga studios, photographers, and designers benefit from booking systems and portfolio showcases built into a cohesive brand.",
+    items: ["Class or service booking", "Portfolio gallery", "Brand-aligned design", "Membership options"],
+  },
+  {
+    icon: "🔍",
+    title: "Local SEO — West Auckland",
+    desc: "West Auckland suburbs — Henderson, Kumeu, Titirangi — have distinct local search markets. Suburb-targeted content and a maintained Google Business Profile puts independent West Auckland businesses in front of local searchers.",
+    items: ["Suburb-targeted pages", "Google Business Profile", "Local citations", "Review generation"],
+  },
+  {
+    icon: "🛍️",
+    title: "Independent Retail",
+    desc: "West Auckland's independent retailers — gift shops, homewares, clothing boutiques — compete with online chains and out-of-area shopping. A proper website with an online presence, or even a basic WooCommerce store, levels the playing field.",
+    items: ["Product catalogue", "Online shop option", "Click & collect", "Social media integration"],
+  },
+];
+
+const areas = [
+  { name: "Henderson", note: "West Auckland's commercial centre. Trades, retail, and professional services hub." },
+  { name: "New Lynn", note: "Mixed commercial and residential. Strong local services and growing retail." },
+  { name: "Kumeu & Huapai", note: "Wine country and rural lifestyle. Artisan food, wineries, and rural services." },
+  { name: "Titirangi", note: "Creative, artisan, independent. Cafes, galleries, wellness, and niche services." },
+  { name: "Glen Eden", note: "Established residential suburb. Trades, healthcare, and community services." },
+  { name: "Swanson & Ranui", note: "Outer west. Growing residential areas with emerging local services." },
 ];
 
 const faqs = [
-  { q: "How much does web design in West Auckland cost?", a: "Our websites for West Auckland small businesses start from $1,290. Every package includes a responsive WordPress site, basic SEO, and a free consultation." },
-  { q: "How long does it take to build a website?", a: "Most projects are completed in 2–3 weeks from the discovery call to go-live, depending on how quickly you can provide content." },
-  { q: "Do you come to us for the consultation?", a: "Yes — we offer free in-person meetings anywhere in West Auckland and across Auckland, as well as online consultations." },
-  { q: "Can you redesign an existing website?", a: "Absolutely. We regularly migrate businesses from Wix, Squarespace, or old WordPress sites to a fast, modern build." },
-  { q: "Do you offer ongoing support?", a: "Yes. We have affordable monthly maintenance plans to keep your site secure, updated, and performing well." }
+  { q: "We're a small winery in Kumeu — what does our website need?", a: "A Kumeu winery website typically needs: a strong visual story (your vineyard, your wines, your people), a wine catalogue with tasting notes, cellar door information and opening hours, a wine club sign-up, and optionally an online shop. We build all of this in WordPress — and it's manageable by a non-technical person once it's live." },
+  { q: "West Auckland has a strong independent character — can you capture that in a design?", a: "Yes — and we think this is one of the most interesting briefs we get. West Auckland independent businesses often have a distinct visual and tonal identity that corporate templates don't accommodate. We work from your aesthetic cues (your space, your product, your vibe) and design something that actually reflects you." },
+  { q: "We're a tradie based in Henderson. What's the most important thing our website should do?", a: "Generate phone calls from people in your service area who are searching right now. That means: a clear headline with your service and area, a phone number prominently placed, a before/after gallery of your work, and a contact form. Then local SEO and Google Business Profile maintenance to put you in front of people searching 'plumber Henderson' or 'builder West Auckland'." },
+  { q: "Can you build a website that includes an online shop for our artisan products?", a: "Yes. WooCommerce (WordPress's eCommerce plugin) is what we use for product sales. For a small artisan range (under 50 products), it's simple to set up and manage yourself after handover. For a larger range with variants, stock management, and multiple fulfilment options, we scope the build accordingly." },
+  { q: "How much does a West Auckland business website cost?", a: "Same pricing as everywhere — starting from $990 + GST for a professional brochure site. eCommerce, booking systems, and winery sites with online shops are quoted by scope. All quotes are fixed price." },
 ];
-
-const suburbs = [
-  "Henderson",
-  "New Lynn",
-  "Avondale",
-  "Glen Eden",
-  "Swanson",
-  "Ranui",
-  "Massey"
-];
-
-const schema = {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.kiwiwebdesign.co.nz/west-auckland-web-design/","url":"https://www.kiwiwebdesign.co.nz/west-auckland-web-design/","name":"West Auckland Web Design","description":"Looking for affordable web design in West Auckland? Kiwi Web Design builds professional, mobile-friendly websites for small businesses from $1,290.","inLanguage":"en-NZ","isPartOf":{"@id":"https://www.kiwiwebdesign.co.nz/#website"},"breadcrumb":{"@id":"https://www.kiwiwebdesign.co.nz/west-auckland-web-design/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://www.kiwiwebdesign.co.nz/west-auckland-web-design/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.kiwiwebdesign.co.nz/"},{"@type":"ListItem","position":2,"name":"West Auckland Web Design"}]},{"@type":"LocalBusiness","name":"Kiwi Web Design","url":"https://www.kiwiwebdesign.co.nz/","telephone":"+6421431337","address":{"@type":"PostalAddress","streetAddress":"147 Great North Road, Grey Lynn","addressLocality":"Auckland","postalCode":"1021","addressCountry":"NZ"},"areaServed":"West Auckland"}]};
 ---
 
 <Layout
-  title="West Auckland Web Design"
-  description="Looking for affordable web design in West Auckland? Kiwi Web Design builds professional, mobile-friendly websites for small businesses from $1,290."
+  title="West Auckland Web Design | Websites for Henderson, Kumeu & Titirangi"
+  description="Web design for West Auckland independent businesses. Serving Henderson, New Lynn, Kumeu, Titirangi, and West Auckland. WordPress websites that reflect your identity."
   canonicalURL="https://www.kiwiwebdesign.co.nz/west-auckland-web-design/"
   schema={schema}
 >
 
   <!-- Hero -->
-  <section class="loc-hero section-dark">
-    <div class="container loc-hero-inner">
-      <div class="loc-hero-text">
-        <p class="loc-eyebrow">Auckland Web Design — West Auckland</p>
-        <h1>West Auckland Web Design</h1>
-        <p class="loc-subhead">Looking for affordable web design in West Auckland? Kiwi Web Design builds professional, mobile-friendly websites for small businesses from $1,290.</p>
-        <div class="loc-hero-btns">
-          <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
-          <a href="/small-business-website-design-auckland/" class="btn-outline">View Packages</a>
+  <section class="loc-hero">
+    <div class="container">
+      <div class="loc-hero-inner">
+        <div class="loc-hero-text">
+          <p class="loc-hero-eyebrow">West Auckland Web Design</p>
+          <h1>West Auckland's independent businesses deserve a website as unique as they are.</h1>
+          <p class="loc-hero-sub">Web design for Henderson, Kumeu, Titirangi, New Lynn, and across West Auckland. Wineries, cafes, trades, and wellness businesses — we build sites that actually reflect your character, not a generic template.</p>
+          <div class="loc-hero-btns">
+            <a href="/website-designer-auckland/" class="loc-btn-primary">Get a Free Quote</a>
+            <a href="/small-business-website-design-auckland/" class="loc-btn-outline">View Packages</a>
+          </div>
+        </div>
+        <div class="loc-hero-card">
+          <p class="lhc-label">Serving West Auckland</p>
+          <ul class="lhc-areas">
+            <li>Henderson</li>
+            <li>New Lynn</li>
+            <li>Kumeu & Huapai</li>
+            <li>Titirangi</li>
+            <li>Glen Eden</li>
+            <li>Swanson & Ranui</li>
+          </ul>
+          <p class="lhc-note">Remote-first. In-person consultations available for West Auckland clients.</p>
         </div>
       </div>
-      <div class="loc-hero-image">
-        <img
-          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/West-Auckland.jpg"
-          alt="West Auckland web design by Kiwi Web Design Auckland"
-          width="700"
-          height="460"
-          loading="eager"
-        />
-      </div>
     </div>
   </section>
 
-  <!-- Intro + Why Us -->
-  <section class="section">
-    <div class="container loc-two-col">
-      <div>
-        <h2>Web Design for West Auckland Businesses</h2>
-        <p>Most small business websites start from around $1,290 + GST at Kiwi Web Design. The final price depends on the number of pages, features, and design complexity — but we’ll always give you a fixed quote upfront.</p>
-        <p>We’re proud to be a small, local Auckland agency that genuinely cares about our clients’ success. Our approach is personal — not just another online order form or chatbot. You’ll work directly with a dedicated designer who listens, advises, and helps you every step of the way. Here’s what sets us apart: Whether you need a simple service website or a full eCommerce store, we’ll tailor a package to fit your goals and budget.</p>
-      </div>
-      <div>
-        <h2>What's Included</h2>
-        <ul class="loc-included">
-          {included.map((item) => <li>{item}</li>)}
-        </ul>
-        <a href="/website-designer-auckland/" class="btn-primary">Get a Free Quote</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Suburbs served -->
-  <section class="section section-cream">
+  <!-- West Auckland context -->
+  <section class="section" style="background: var(--kwd-cream);">
     <div class="container">
-      <h2>Areas We Serve in West Auckland</h2>
-      <p>We build websites for businesses across all of West Auckland, including:</p>
-      <div class="loc-suburbs">
-        {suburbs.map((s) => <span class="loc-suburb">{s}</span>)}
-        <span class="loc-suburb">+ all surrounding areas</span>
+      <SectionHeader
+        eyebrow="The West Auckland Market"
+        title="West Auckland's identity is its competitive advantage — online."
+        subtitle="The West's independent spirit is its strongest brand asset. Customers choose West Auckland businesses specifically because they're not chains. Your website needs to communicate that from the first click."
+      />
+      <div class="loc-context">
+        <div class="loc-context-text">
+          <p>Titirangi's cafes don't look or feel like Starbucks — and that's why people drive there. Kumeu wineries aren't just selling wine, they're selling a place and a story. Henderson tradies are often one-person operations with decades of craft behind them.</p>
+          <p>The challenge for West Auckland independent businesses is that many rely almost entirely on word of mouth and social media — both of which work, until they don't. A well-built website adds a third channel that works 24/7: organic Google search.</p>
+          <p>We build websites for West Auckland businesses that capture their specific identity and convert local searchers into customers. No generic templates — every site we build starts with who you actually are.</p>
+        </div>
+        <div class="loc-areas-grid">
+          {areas.map(({ name, note }) => (
+            <div class="loc-area-card">
+              <strong class="lac-name">{name}</strong>
+              <p class="lac-note">{note}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SEO section -->
+  <!-- Services -->
   <section class="section">
-    <div class="container loc-narrow">
-      <h2>Local SEO for West Auckland</h2>
-      <p>Yes! Every website we build includes basic SEO setup, and we also offer ongoing SEO packages to help your site rank better in local Auckland searches.</p>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section class="section section-dark">
     <div class="container">
-      <h2>Recent Work for Auckland Businesses</h2>
-      <div class="loc-gallery">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/West-Auckland-768x432.jpg" alt="Web design example — Kiwi Web Design Auckland" width="700" height="450" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Trust strip -->
-  <section class="section section-cream">
-    <div class="container loc-trust-strip">
-      <div class="loc-trust-card">
-        <span class="loc-trust-num">$1,290</span>
-        <span class="loc-trust-label">Packages from</span>
-      </div>
-      <div class="loc-trust-card">
-        <span class="loc-trust-num">2–3 wks</span>
-        <span class="loc-trust-label">Typical delivery</span>
-      </div>
-      <div class="loc-trust-card">
-        <span class="loc-trust-num">Free</span>
-        <span class="loc-trust-label">Consultation</span>
-      </div>
-      <div class="loc-trust-card">
-        <span class="loc-trust-num">50+</span>
-        <span class="loc-trust-label">Projects delivered</span>
-      </div>
+      <SectionHeader
+        eyebrow="Services"
+        title="What West Auckland businesses actually need from a website."
+        subtitle="From Kumeu wine clubs to Henderson tradie sites — built around your specific business model."
+      />
+      <ServiceGrid items={services} cols={3} />
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section">
-    <div class="container loc-narrow">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
-        {faqs.map(({ q, a }) => (
-          <details class="faq-item">
-            <summary>{q}</summary>
-            <p>{a}</p>
-          </details>
-        ))}
-      </div>
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="West Auckland Web Design Questions"
+        subtitle="What Henderson, Kumeu, and Titirangi business owners ask about working with us."
+      />
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section section-dark text-center">
-    <div class="container loc-narrow">
-      <h2>Ready for a website that works for your West Auckland business?</h2>
-      <p>Book a free consultation with Kiwi Web Design — in person or online.</p>
-      <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
-    </div>
-  </section>
+  <CTABanner
+    variant="yellow"
+    title="Ready to build a website that's as genuine as your business?"
+    subtitle="Free consultation — we'll design something that actually reflects who you are."
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Our Work", href: "/testimonials-reviews/" }}
+  />
 
 </Layout>
 
 <style>
-  /* Hero */
-  .loc-hero { padding: 5rem 0; }
-  .loc-hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  .loc-eyebrow {
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--kwd-yellow);
-    margin-bottom: 0.75rem;
-  }
-  .loc-hero h1 { color: var(--kwd-white); margin-bottom: 1rem; }
-  .loc-subhead { color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 1.05rem; }
-  .loc-hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-outline {
-    display: inline-block;
-    border: 2px solid rgba(255,255,255,0.35);
-    color: var(--kwd-white);
-    padding: 0.7rem 1.5rem;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: border-color 0.2s, background 0.2s;
-  }
-  .btn-outline:hover { border-color: var(--kwd-yellow); background: rgba(255,255,255,0.05); }
-  .loc-hero-image img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-  }
-
-  /* Two-col */
-  .loc-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-  .loc-two-col h2 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); margin-bottom: 1rem; }
-  .loc-two-col p { color: var(--kwd-brown); line-height: 1.8; margin-bottom: 1rem; }
-
-  /* Included list */
-  .loc-included {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 2rem;
-    display: grid;
-    gap: 0.6rem;
-  }
-  .loc-included li {
-    padding-left: 1.5rem;
-    position: relative;
-    font-size: 0.95rem;
-    color: var(--kwd-brown);
-  }
-  .loc-included li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--kwd-dark);
-    font-weight: 700;
-  }
-
-  /* Suburbs */
-  .loc-suburbs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 1.5rem;
-  }
-  .loc-suburb {
-    background: var(--kwd-white);
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 999px;
-    padding: 0.35rem 0.9rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-
-  /* Narrow */
-  .loc-narrow { max-width: 820px; }
-  .loc-narrow h2 { margin-bottom: 1.25rem; }
-  .loc-narrow p { color: var(--kwd-brown); line-height: 1.8; }
-
-  /* Gallery */
-  .section-dark h2 { color: var(--kwd-white); }
-  .loc-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.25rem;
-    margin-top: 2rem;
-  }
-  .loc-gallery img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-  }
-
-  /* Trust strip */
-  .loc-trust-strip {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    text-align: center;
-  }
-  .loc-trust-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-  .loc-trust-num {
-    font-size: 2rem;
-    font-weight: 800;
-    font-family: var(--kwd-font-heading);
-    color: var(--kwd-dark);
-    line-height: 1;
-  }
-  .loc-trust-label { font-size: 0.82rem; color: var(--kwd-brown); text-transform: uppercase; letter-spacing: 0.06em; }
-
-  /* FAQ */
-  .faq-list { display: grid; gap: 0.75rem; margin-top: 2rem; }
-  .faq-item {
-    background: var(--kwd-white);
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .faq-item summary {
-    padding: 1rem 1.25rem;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95rem;
-    list-style: none;
-    position: relative;
-    padding-right: 2.5rem;
-  }
-  .faq-item summary::after {
-    content: "+";
-    position: absolute;
-    right: 1.25rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--kwd-brown);
-  }
-  .faq-item[open] summary::after { content: "−"; }
-  .faq-item p { padding: 0 1.25rem 1rem; margin: 0; font-size: 0.9rem; color: var(--kwd-brown); }
-
-  /* CTA */
-  .text-center { text-align: center; }
-  .section-dark.text-center h2 { color: var(--kwd-white); }
-  .section-dark.text-center p { color: rgba(255,255,255,0.75); margin-bottom: 2rem; max-width: 520px; margin-inline: auto; }
-
-  /* Responsive */
+  .loc-hero { background: var(--kwd-dark); color: #fff; padding: 4rem 0 3.5rem; }
+  .loc-hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: start; }
+  .loc-hero-eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--kwd-yellow); margin: 0 0 1rem; }
+  .loc-hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.75rem, 3.5vw, 2.75rem); line-height: 1.18; margin: 0 0 1.1rem; color: #fff; }
+  .loc-hero-sub { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.65; max-width: 540px; margin: 0 0 2rem; }
+  .loc-hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .loc-btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: 0.75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.95rem; }
+  .loc-btn-outline { border: 2px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.85); padding: 0.75rem 1.75rem; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+  .loc-hero-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 1.75rem; min-width: 220px; flex-shrink: 0; }
+  .lhc-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-yellow); margin: 0 0 0.875rem; }
+  .lhc-areas { list-style: none; padding: 0; margin: 0 0 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .lhc-areas li { font-size: 0.875rem; color: rgba(255,255,255,0.82); padding-left: 1.1rem; position: relative; }
+  .lhc-areas li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-yellow); font-size: 0.72rem; top: 0.15rem; }
+  .lhc-note { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin: 0; line-height: 1.55; }
+  .loc-context { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; align-items: start; }
+  .loc-context-text p { font-size: 0.9rem; color: var(--kwd-brown); line-height: 1.75; margin-bottom: 0.875rem; }
+  .loc-areas-grid { display: flex; flex-direction: column; gap: 0.75rem; }
+  .loc-area-card { background: #fff; border: 1.5px solid rgba(0,0,0,0.07); border-radius: 10px; padding: 0.875rem 1.125rem; }
+  .lac-name { font-size: 0.875rem; font-weight: 700; color: var(--kwd-dark); display: block; margin-bottom: 0.2rem; }
+  .lac-note { font-size: 0.78rem; color: var(--kwd-brown); margin: 0; line-height: 1.5; }
   @media (max-width: 900px) {
     .loc-hero-inner { grid-template-columns: 1fr; }
-    .loc-hero-image { display: none; }
-    .loc-two-col { grid-template-columns: 1fr; }
-    .loc-trust-strip { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 600px) {
-    .loc-trust-strip { grid-template-columns: repeat(2, 1fr); }
-    .loc-gallery { grid-template-columns: 1fr; }
+    .loc-hero-card { display: none; }
+    .loc-context { grid-template-columns: 1fr; }
   }
 </style>

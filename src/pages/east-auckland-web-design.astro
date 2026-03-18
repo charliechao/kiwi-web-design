@@ -1,332 +1,236 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
 
-const included = [
-  "Responsive WordPress website (mobile, tablet, desktop)",
-  "SEO-ready structure to rank on Google",
-  "Free in-person or online consultation",
-  "Contact forms and click-to-call buttons",
-  "Fast turnaround — most sites live in 2–3 weeks",
-  "Transparent pricing from $1,290 — no hidden fees"
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/east-auckland-web-design/",
+      "url": "https://www.kiwiwebdesign.co.nz/east-auckland-web-design/",
+      "name": "East Auckland Web Design | Websites for Howick, Botany & Pakuranga",
+      "description": "Professional web design for East Auckland businesses. Serving Howick, Botany, Pakuranga, and Flat Bush. Affordable WordPress websites that generate local enquiries.",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/east-auckland-web-design/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/east-auckland-web-design/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "East Auckland Web Design" }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "url": "https://www.kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Auckland",
+        "addressRegion": "Auckland",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Howick, Auckland" },
+        { "@type": "Place", "name": "Botany, Auckland" },
+        { "@type": "Place", "name": "Pakuranga, Auckland" },
+        { "@type": "Place", "name": "Flat Bush, Auckland" },
+        { "@type": "Place", "name": "Bucklands Beach, Auckland" },
+        { "@type": "Place", "name": "Beachlands, Auckland" },
+        { "@type": "Place", "name": "East Auckland" }
+      ],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -36.8985,
+        "longitude": 174.9184
+      }
+    }
+  ]
+};
+
+const services = [
+  {
+    icon: "📚",
+    title: "Education & Tutoring",
+    desc: "East Auckland has one of Auckland's highest concentrations of tutoring centres and educational services. Parents research thoroughly before choosing. A clean, professional website with results, qualifications, and enrolment paths builds the trust that converts.",
+    items: ["Subject and level pages", "Tutor profiles", "Enrolment enquiry form", "Parent testimonials"],
+  },
+  {
+    icon: "⚕️",
+    title: "Medical, Dental & Allied Health",
+    desc: "East Auckland communities are health-conscious and research-driven. Medical, dental, and allied health practices in Howick and Botany need practitioner profiles, online booking, and patient information that instils confidence.",
+    items: ["Practitioner profiles", "Online appointment booking", "Patient information hub", "Healthcare SEO"],
+  },
+  {
+    icon: "🏠",
+    title: "Property & Real Estate",
+    desc: "East Auckland's property market is active and well-serviced. Whether you're an agent, property manager, or building inspector, buyers and tenants in the area research online extensively before making contact.",
+    items: ["Property listing integration", "Agent profiles", "Market commentary blog", "Suburb-specific content"],
+  },
+  {
+    icon: "🍜",
+    title: "Restaurants & Hospitality",
+    desc: "From Botany Town Centre to Howick Village, East Auckland's restaurant scene is competitive. Online menus, reservation capability, and function enquiry pages help you fill tables from local searches.",
+    items: ["HTML menu pages", "Table reservation", "Function enquiry form", "Google Business integration"],
+  },
+  {
+    icon: "🔍",
+    title: "Local SEO — East Auckland",
+    desc: "East Auckland residents search by suburb — Howick, Botany, Pakuranga, Flat Bush. We build suburb-specific content that puts your business in front of the right local searchers.",
+    items: ["Suburb landing pages", "Google Business Profile", "East Auckland citations", "Competitor gap analysis"],
+  },
+  {
+    icon: "🏪",
+    title: "Professional & Trade Services",
+    desc: "Accountants, lawyers, and tradespeople serving East Auckland residential clients compete in a market where the quality of your website signals the quality of your work. We build sites that hold up to scrutiny.",
+    items: ["Service area pages", "Credentials display", "Enquiry forms", "Review integration"],
+  },
+];
+
+const areas = [
+  { name: "Howick", note: "Established suburb with village character. Services, healthcare, and hospitality." },
+  { name: "Botany", note: "Major retail and business hub. High-traffic location with strong service demand." },
+  { name: "Pakuranga", note: "Professional and commercial centre. High concentration of services and trades." },
+  { name: "Flat Bush", note: "Rapidly growing newer suburb with young families and emerging local services." },
+  { name: "Bucklands & Half Moon Bay", note: "Coastal, affluent. Premium services and niche hospitality." },
+  { name: "Beachlands & Maraetai", note: "Semi-rural coastal communities. Local services with growing residential base." },
 ];
 
 const faqs = [
-  { q: "How much does web design in East Auckland cost?", a: "Our website packages start from affordable rates for small businesses. Each quote is fixed and based on your goals, features, and timeline." },
-  { q: "Can you help me appear on Google for East Auckland searches?", a: "Yes! Every site we build includes SEO basics, schema markup, and suburb-specific keywords to help you rank for “East Auckland” searches." },
-  { q: "Do you offer website maintenance?", a: "Absolutely. We provide ongoing care plans covering updates, backups, and security so your website stays fast and reliable year-round." },
-  { q: "Can you redesign my existing website?", a: "Yes, we can refresh your site with a new layout, improved performance, and SEO-friendly structure — all without losing your content or rankings." },
-  { q: "How long will it take to build my new site?", a: "Most websites are completed within 2–3 weeks, depending on how quickly you provide content and feedback. We keep you updated every step of the way." },
-  { q: "Do you work with all industries in East Auckland?", a: "Yes — from tradies to retailers and service professionals. We tailor the design, copy, and SEO strategy for your specific industry and audience." }
+  { q: "East Auckland is competitive — can you help us stand out?", a: "Yes. The East Auckland market is well-served by competition in most categories — healthcare, education, and professional services in particular. Standing out requires a combination of genuine quality content (practice area pages, service descriptions, real practitioner information) and local SEO that targets the specific suburbs your clients come from." },
+  { q: "We run a tutoring centre in Botany. What does our website need?", a: "East Auckland tutoring centres benefit from clearly structured subject and year-level pages, tutor credentials and bio pages, a prominent enrolment enquiry form, and parent testimonials. Google ranks tutoring businesses that have detailed, specific content about what they teach — not just a generic 'we help students succeed' homepage." },
+  { q: "Can you build a website that works for both Howick locals and wider Auckland?", a: "Yes. We often build sites with a hybrid approach: suburb-specific landing pages for local search, alongside broader service pages that work for region-wide searches. The content and targeting are planned in the discovery phase." },
+  { q: "Do East Auckland clients have higher design expectations?", a: "East Auckland has one of Auckland's highest median household incomes. Clients are accustomed to quality — they notice when a website looks cheap or outdated. A professionally designed site signals credibility and justifies premium pricing. We build to that standard." },
+  { q: "How quickly can you build a website for an East Auckland business?", a: "Most builds take 2–4 weeks. For simpler brochure sites, we can often go live in under 2 weeks. We agree on a timeline in the discovery call and stick to it." },
 ];
-
-const suburbs = [
-  "Botany",
-  "Howick",
-  "Pakuranga",
-  "Flat Bush",
-  "Bucklands Beach",
-  "Half Moon Bay",
-  "Dannemora"
-];
-
-const schema = {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.kiwiwebdesign.co.nz/east-auckland-web-design/","url":"https://www.kiwiwebdesign.co.nz/east-auckland-web-design/","name":"East Auckland Web Design","description":"Professional, affordable web design for East Auckland businesses. Mobile-friendly sites with local SEO and fast turnaround from Kiwi Web Design.","inLanguage":"en-NZ","isPartOf":{"@id":"https://www.kiwiwebdesign.co.nz/#website"},"breadcrumb":{"@id":"https://www.kiwiwebdesign.co.nz/east-auckland-web-design/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://www.kiwiwebdesign.co.nz/east-auckland-web-design/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.kiwiwebdesign.co.nz/"},{"@type":"ListItem","position":2,"name":"East Auckland Web Design"}]},{"@type":"LocalBusiness","name":"Kiwi Web Design","url":"https://www.kiwiwebdesign.co.nz/","telephone":"+6421431337","address":{"@type":"PostalAddress","streetAddress":"147 Great North Road, Grey Lynn","addressLocality":"Auckland","postalCode":"1021","addressCountry":"NZ"},"areaServed":"East Auckland"}]};
 ---
 
 <Layout
-  title="East Auckland Web Design"
-  description="Professional, affordable web design for East Auckland businesses. Mobile-friendly sites with local SEO and fast turnaround from Kiwi Web Design."
+  title="East Auckland Web Design | Websites for Howick, Botany & Pakuranga"
+  description="Professional web design for East Auckland businesses. Serving Howick, Botany, Pakuranga, and Flat Bush. Affordable WordPress websites that generate local enquiries."
   canonicalURL="https://www.kiwiwebdesign.co.nz/east-auckland-web-design/"
   schema={schema}
 >
 
   <!-- Hero -->
-  <section class="loc-hero section-dark">
-    <div class="container loc-hero-inner">
-      <div class="loc-hero-text">
-        <p class="loc-eyebrow">Auckland Web Design — East Auckland</p>
-        <h1>East Auckland Web Design</h1>
-        <p class="loc-subhead">Professional, affordable web design for East Auckland businesses. Mobile-friendly sites with local SEO and fast turnaround from Kiwi Web Design.</p>
-        <div class="loc-hero-btns">
-          <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
-          <a href="/small-business-website-design-auckland/" class="btn-outline">View Packages</a>
+  <section class="loc-hero">
+    <div class="container">
+      <div class="loc-hero-inner">
+        <div class="loc-hero-text">
+          <p class="loc-hero-eyebrow">East Auckland Web Design</p>
+          <h1>East Auckland clients research before they call. Your website has to hold up.</h1>
+          <p class="loc-hero-sub">Web design for Howick, Botany, Pakuranga, Flat Bush, and East Auckland. In one of Auckland's most well-educated catchments, a professional online presence isn't optional — it's expected.</p>
+          <div class="loc-hero-btns">
+            <a href="/website-designer-auckland/" class="loc-btn-primary">Get a Free Quote</a>
+            <a href="/small-business-website-design-auckland/" class="loc-btn-outline">View Packages</a>
+          </div>
+        </div>
+        <div class="loc-hero-card">
+          <p class="lhc-label">Serving East Auckland</p>
+          <ul class="lhc-areas">
+            <li>Howick</li>
+            <li>Botany</li>
+            <li>Pakuranga</li>
+            <li>Flat Bush</li>
+            <li>Bucklands Beach</li>
+            <li>Beachlands</li>
+          </ul>
+          <p class="lhc-note">Remote-first. In-person consultations available for East Auckland clients.</p>
         </div>
       </div>
-      <div class="loc-hero-image">
-        <img
-          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Botany.jpg"
-          alt="East Auckland web design by Kiwi Web Design Auckland"
-          width="700"
-          height="460"
-          loading="eager"
-        />
+    </div>
+  </section>
+
+  <!-- East Auckland context -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="The East Auckland Market"
+        title="East Auckland residents are among Auckland's most research-driven buyers."
+        subtitle="High household incomes, high educational attainment, and community-oriented purchasing decisions mean East Auckland clients form opinions about your business from your website before they've had any other contact."
+      />
+      <div class="loc-context">
+        <div class="loc-context-text">
+          <p>Howick and Botany represent one of Auckland's most education-focused, family-oriented markets. Parents in this area research tutoring centres, dentists, GPs, and childcare providers with the same thoroughness they'd apply to a major purchase.</p>
+          <p>That behaviour extends to most purchase and service decisions. An accountant in Howick, a physio in Pakuranga, a restaurant in Botany — each competes in a market where clients compare several options online before choosing. Your website's quality, content clarity, and user experience are direct proxies for service quality in the client's mind.</p>
+          <p>We build East Auckland websites that answer the questions a discerning local client would ask — and remove every barrier to making contact.</p>
+        </div>
+        <div class="loc-areas-grid">
+          {areas.map(({ name, note }) => (
+            <div class="loc-area-card">
+              <strong class="lac-name">{name}</strong>
+              <p class="lac-note">{note}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Intro + Why Us -->
+  <!-- Services -->
   <section class="section">
-    <div class="container loc-two-col">
-      <div>
-        <h2>Web Design for East Auckland Businesses</h2>
-        <p>At Kiwi Web Design, we help small businesses in East Auckland build professional websites that attract local customers and generate real enquiries. Based in Grey Lynn, we work with businesses across all of Auckland — in-person or online.</p>
-        
-      </div>
-      <div>
-        <h2>What's Included</h2>
-        <ul class="loc-included">
-          {included.map((item) => <li>{item}</li>)}
-        </ul>
-        <a href="/website-designer-auckland/" class="btn-primary">Get a Free Quote</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Suburbs served -->
-  <section class="section section-cream">
     <div class="container">
-      <h2>Areas We Serve in East Auckland</h2>
-      <p>We build websites for businesses across all of East Auckland, including:</p>
-      <div class="loc-suburbs">
-        {suburbs.map((s) => <span class="loc-suburb">{s}</span>)}
-        <span class="loc-suburb">+ all surrounding areas</span>
-      </div>
-    </div>
-  </section>
-
-  
-
-  <!-- Gallery -->
-  <section class="section section-dark">
-    <div class="container">
-      <h2>Recent Work for Auckland Businesses</h2>
-      <div class="loc-gallery">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Botany-1024x614.jpg" alt="Web design example — Kiwi Web Design Auckland" width="700" height="450" loading="lazy" />
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Botany-768x461.jpg" alt="Web design example — Kiwi Web Design Auckland" width="700" height="450" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Trust strip -->
-  <section class="section section-cream">
-    <div class="container loc-trust-strip">
-      <div class="loc-trust-card">
-        <span class="loc-trust-num">$1,290</span>
-        <span class="loc-trust-label">Packages from</span>
-      </div>
-      <div class="loc-trust-card">
-        <span class="loc-trust-num">2–3 wks</span>
-        <span class="loc-trust-label">Typical delivery</span>
-      </div>
-      <div class="loc-trust-card">
-        <span class="loc-trust-num">Free</span>
-        <span class="loc-trust-label">Consultation</span>
-      </div>
-      <div class="loc-trust-card">
-        <span class="loc-trust-num">50+</span>
-        <span class="loc-trust-label">Projects delivered</span>
-      </div>
+      <SectionHeader
+        eyebrow="Services"
+        title="What East Auckland businesses need from a website."
+        subtitle="Industry-specific features for the most common business types in the East Auckland market."
+      />
+      <ServiceGrid items={services} cols={3} />
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section">
-    <div class="container loc-narrow">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
-        {faqs.map(({ q, a }) => (
-          <details class="faq-item">
-            <summary>{q}</summary>
-            <p>{a}</p>
-          </details>
-        ))}
-      </div>
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="East Auckland Web Design Questions"
+        subtitle="What Howick, Botany, and Pakuranga businesses ask about working with us."
+      />
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section section-dark text-center">
-    <div class="container loc-narrow">
-      <h2>Ready for a website that works for your East Auckland business?</h2>
-      <p>Book a free consultation with Kiwi Web Design — in person or online.</p>
-      <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
-    </div>
-  </section>
+  <CTABanner
+    variant="yellow"
+    title="Build a website East Auckland clients will trust."
+    subtitle="Free consultation — no obligation. Fixed-price quote within 24 hours."
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Our Process", href: "/our-process/" }}
+  />
 
 </Layout>
 
 <style>
-  /* Hero */
-  .loc-hero { padding: 5rem 0; }
-  .loc-hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  .loc-eyebrow {
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--kwd-yellow);
-    margin-bottom: 0.75rem;
-  }
-  .loc-hero h1 { color: var(--kwd-white); margin-bottom: 1rem; }
-  .loc-subhead { color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 1.05rem; }
-  .loc-hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-outline {
-    display: inline-block;
-    border: 2px solid rgba(255,255,255,0.35);
-    color: var(--kwd-white);
-    padding: 0.7rem 1.5rem;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: border-color 0.2s, background 0.2s;
-  }
-  .btn-outline:hover { border-color: var(--kwd-yellow); background: rgba(255,255,255,0.05); }
-  .loc-hero-image img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-  }
-
-  /* Two-col */
-  .loc-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-  .loc-two-col h2 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); margin-bottom: 1rem; }
-  .loc-two-col p { color: var(--kwd-brown); line-height: 1.8; margin-bottom: 1rem; }
-
-  /* Included list */
-  .loc-included {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 2rem;
-    display: grid;
-    gap: 0.6rem;
-  }
-  .loc-included li {
-    padding-left: 1.5rem;
-    position: relative;
-    font-size: 0.95rem;
-    color: var(--kwd-brown);
-  }
-  .loc-included li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--kwd-dark);
-    font-weight: 700;
-  }
-
-  /* Suburbs */
-  .loc-suburbs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 1.5rem;
-  }
-  .loc-suburb {
-    background: var(--kwd-white);
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 999px;
-    padding: 0.35rem 0.9rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-
-  /* Narrow */
-  .loc-narrow { max-width: 820px; }
-  .loc-narrow h2 { margin-bottom: 1.25rem; }
-  .loc-narrow p { color: var(--kwd-brown); line-height: 1.8; }
-
-  /* Gallery */
-  .section-dark h2 { color: var(--kwd-white); }
-  .loc-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.25rem;
-    margin-top: 2rem;
-  }
-  .loc-gallery img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-  }
-
-  /* Trust strip */
-  .loc-trust-strip {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    text-align: center;
-  }
-  .loc-trust-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-  .loc-trust-num {
-    font-size: 2rem;
-    font-weight: 800;
-    font-family: var(--kwd-font-heading);
-    color: var(--kwd-dark);
-    line-height: 1;
-  }
-  .loc-trust-label { font-size: 0.82rem; color: var(--kwd-brown); text-transform: uppercase; letter-spacing: 0.06em; }
-
-  /* FAQ */
-  .faq-list { display: grid; gap: 0.75rem; margin-top: 2rem; }
-  .faq-item {
-    background: var(--kwd-white);
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .faq-item summary {
-    padding: 1rem 1.25rem;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95rem;
-    list-style: none;
-    position: relative;
-    padding-right: 2.5rem;
-  }
-  .faq-item summary::after {
-    content: "+";
-    position: absolute;
-    right: 1.25rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--kwd-brown);
-  }
-  .faq-item[open] summary::after { content: "−"; }
-  .faq-item p { padding: 0 1.25rem 1rem; margin: 0; font-size: 0.9rem; color: var(--kwd-brown); }
-
-  /* CTA */
-  .text-center { text-align: center; }
-  .section-dark.text-center h2 { color: var(--kwd-white); }
-  .section-dark.text-center p { color: rgba(255,255,255,0.75); margin-bottom: 2rem; max-width: 520px; margin-inline: auto; }
-
-  /* Responsive */
+  .loc-hero { background: var(--kwd-dark); color: #fff; padding: 4rem 0 3.5rem; }
+  .loc-hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: start; }
+  .loc-hero-eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--kwd-yellow); margin: 0 0 1rem; }
+  .loc-hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.75rem, 3.5vw, 2.75rem); line-height: 1.18; margin: 0 0 1.1rem; color: #fff; }
+  .loc-hero-sub { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.65; max-width: 540px; margin: 0 0 2rem; }
+  .loc-hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .loc-btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: 0.75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.95rem; }
+  .loc-btn-outline { border: 2px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.85); padding: 0.75rem 1.75rem; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+  .loc-hero-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 1.75rem; min-width: 220px; flex-shrink: 0; }
+  .lhc-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-yellow); margin: 0 0 0.875rem; }
+  .lhc-areas { list-style: none; padding: 0; margin: 0 0 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .lhc-areas li { font-size: 0.875rem; color: rgba(255,255,255,0.82); padding-left: 1.1rem; position: relative; }
+  .lhc-areas li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-yellow); font-size: 0.72rem; top: 0.15rem; }
+  .lhc-note { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin: 0; line-height: 1.55; }
+  .loc-context { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; align-items: start; }
+  .loc-context-text p { font-size: 0.9rem; color: var(--kwd-brown); line-height: 1.75; margin-bottom: 0.875rem; }
+  .loc-areas-grid { display: flex; flex-direction: column; gap: 0.75rem; }
+  .loc-area-card { background: #fff; border: 1.5px solid rgba(0,0,0,0.07); border-radius: 10px; padding: 0.875rem 1.125rem; }
+  .lac-name { font-size: 0.875rem; font-weight: 700; color: var(--kwd-dark); display: block; margin-bottom: 0.2rem; }
+  .lac-note { font-size: 0.78rem; color: var(--kwd-brown); margin: 0; line-height: 1.5; }
   @media (max-width: 900px) {
     .loc-hero-inner { grid-template-columns: 1fr; }
-    .loc-hero-image { display: none; }
-    .loc-two-col { grid-template-columns: 1fr; }
-    .loc-trust-strip { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 600px) {
-    .loc-trust-strip { grid-template-columns: repeat(2, 1fr); }
-    .loc-gallery { grid-template-columns: 1fr; }
+    .loc-hero-card { display: none; }
+    .loc-context { grid-template-columns: 1fr; }
   }
 </style>

@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,289 +14,253 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckand-lawyers/",
       "url": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckand-lawyers/",
-      "name": "How Kiwi Web Design Helps Auckand Lawyers",
-      "description": "Web design Auckland services tailored for lawyers. We build professional websites, SEO, and Google Ads that generate qualified legal enquiries.",
+      "name": "Web Design for Auckland Lawyers & Law Firms | Kiwi Web Design",
+      "description": "Website design for Auckland solicitors and law firms. Professionally built WordPress sites with practice area pages, consultation booking, and Google Ads landing pages.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckand-lawyers/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckand-lawyers/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckand-lawyers/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "How Kiwi Web Design Helps Auckand Lawyers"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://www.kiwiwebdesign.co.nz/industries-we-serve-in-auckland/" },
+        { "@type": "ListItem", "position": 3, "name": "Law Firms" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz"
     }
   ]
 };
+
+const painPoints = [
+  {
+    icon: "⚖️",
+    title: "Your site looks like a free template from 2015",
+    desc: "Potential clients are Googling you before they call. A generic, cluttered website signals that your firm isn't established — even if you've been practising for 20 years. First impressions in law are everything.",
+  },
+  {
+    icon: "📞",
+    title: "You're still fielding enquiries the slow way",
+    desc: "Phone tag with prospective clients who want a 'quick question' answered costs you hours every week. A website with a proper enquiry form — matter type, brief description, urgency — filters time-wasters before they reach you.",
+  },
+  {
+    icon: "🔍",
+    title: "You're invisible for the searches that matter",
+    desc: "Someone searching 'commercial lawyer Auckland' or 'employment lawyer North Shore' will call whoever appears first. If that's not you, it's a competitor. Legal is one of the highest-value categories in Google Ads — and it's unforgiving to those without a presence.",
+  },
+  {
+    icon: "🏛️",
+    title: "Your practice areas aren't clearly communicated",
+    desc: "A homepage that says 'full service law firm' tells a client nothing. Dedicated practice area pages — each written for that specific type of client and their specific anxiety — convert far better than a generic capabilities list.",
+  },
+];
+
+const solutions = [
+  {
+    icon: "🏛️",
+    title: "Practice Area Pages",
+    desc: "Dedicated pages for each area of law you practise — written for the person searching, not for other lawyers. Each page addresses the client's specific situation and drives them toward a consultation.",
+    items: ["Family law, property, commercial, employment", "Written in plain English (not legalese)", "FAQ sections per practice area", "Optimised for specific search terms"],
+  },
+  {
+    icon: "📋",
+    title: "Consultation Enquiry Forms",
+    desc: "Structured intake forms that capture matter type, a brief description, and preferred contact time — so you and your secretary know exactly what's coming before you pick up the phone.",
+    items: ["Matter type dropdown", "Brief description field", "Urgency indicator", "Email + phone to your practice"],
+  },
+  {
+    icon: "👤",
+    title: "Solicitor Profile Pages",
+    desc: "Individual pages for each solicitor — photo, credentials, areas of practice, admitted year, and a personal statement. Clients choose lawyers they trust; trust starts with a face and a background.",
+    items: ["Professional headshots (brief on specs)", "Credentials and admissions", "Practice areas per solicitor", "Direct contact option"],
+  },
+  {
+    icon: "📣",
+    title: "Google Ads Landing Pages",
+    desc: "High-stakes legal searches convert best on focused landing pages — not homepages. We build dedicated pages for each campaign: 'car accident claim Auckland', 'property dispute lawyer', and so on.",
+    items: ["Ad-to-page message match", "Single clear CTA (consultation)", "Trust signals above the fold", "Google Ads conversion tracking"],
+  },
+  {
+    icon: "🔍",
+    title: "Legal SEO Foundations",
+    desc: "Local SEO for your practice areas and geographic areas. Schema markup (LegalService, Attorney) so Google understands exactly what you offer and where you serve.",
+    items: ["LegalService schema markup", "Google Business Profile optimisation", "Location + practice area pages", "Citation building"],
+  },
+  {
+    icon: "🔒",
+    title: "Trust & Compliance",
+    desc: "A law firm website needs to reinforce trust at every point. We include all the elements that establish credibility: accreditations, society memberships, secure forms, and a professional privacy policy.",
+    items: ["NZLS accreditation display", "Secure contact forms (SSL)", "Privacy policy (GDPR/NZ Privacy Act)", "Professional colour and typography"],
+  },
+];
+
+const process = [
+  { step: "1", title: "Discovery Call", desc: "We learn your practice areas, ideal client profile, and what differentiates your firm. We discuss tone — some firms are formal and established, others are approachable and modern." },
+  { step: "2", title: "Structure & Copy", desc: "We plan your practice area pages, solicitor profiles, and enquiry form structure. Copywriting is available as an add-on — plain-English legal copy that speaks to clients, not peers." },
+  { step: "3", title: "Design & Build", desc: "We build in WordPress with a professional, trustworthy aesthetic — dark navy or charcoal tones, clean typography, structured layouts that communicate authority." },
+  { step: "4", title: "Launch & Ads Setup", desc: "Site goes live with full SEO foundations. If Google Ads are part of the scope, we set up campaigns and landing pages simultaneously." },
+];
+
+const faqs = [
+  { q: "Do you have experience building websites for law firms specifically?", a: "Yes. Legal websites have specific requirements: practice area page structure, solicitor profiles, intake forms, and trust signals that matter to people making high-stakes decisions. We've built sites for Auckland solicitors across family law, commercial, property, and employment practice areas." },
+  { q: "Can you write the copy for our practice area pages?", a: "Yes. We offer copywriting as an add-on. Legal copy needs to be written for the person in the situation — not for other lawyers. We write in plain English that addresses the client's concern, explains your approach, and ends with a clear call to action. SEO keyword research is included." },
+  { q: "We have multiple solicitors — can each have their own page?", a: "Yes. Solicitor profile pages are standard for multi-partner firms. Each page includes a professional photo, admitted year, practice areas, credentials, and a brief personal statement. We can also route enquiries to the appropriate solicitor based on the matter type selected." },
+  { q: "Do you handle Google Ads for law firms?", a: "Yes. Legal is one of the most competitive — and most rewarding — categories in Google Ads. We manage campaigns for Auckland law firms including keyword strategy, ad copy, and dedicated landing pages per practice area. We charge a management fee separate from the build." },
+  { q: "How much does a law firm website cost?", a: "A professional law firm website (5–8 pages, solicitor profiles, intake form, SEO foundations) starts from $1,990 + GST. Larger multi-solicitor firms with extensive practice area pages are quoted by scope. We give you a fixed price before starting." },
+];
 ---
-<Layout title="How Kiwi Web Design Helps Auckand Lawyers" description="Web design Auckland services tailored for lawyers. We build professional websites, SEO, and Google Ads that generate qualified legal enquiries." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Industry Solutions</p>
-        <h1>Professional Web Designfor Auckland Lawyers</h1>
-        <p class="hero-sub">Web design Auckland services tailored for lawyers. We build professional websites, SEO, and Google Ads that generate qualified legal enquiries.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="Web Design for Auckland Lawyers & Law Firms | Kiwi Web Design"
+  description="Website design for Auckland solicitors and law firms. Professionally built WordPress sites with practice area pages, consultation booking, and Google Ads landing pages."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/how-kiwi-web-design-helps-auckand-lawyers/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Web Design for Law Firms"
+    title="Your website should win clients before you've spoken a word."
+    subtitle="Auckland solicitors and law firms rely on first impressions. We build WordPress websites that communicate authority, structure practice area content for search, and convert enquiries into consultations."
+    ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See What's Included", href: "#solutions" }}
+  />
+
+  <!-- Why legal websites are different -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="The Challenge"
+        title="Legal clients judge before they call."
+        subtitle="People searching for a lawyer are often in a stressful situation. Their first interaction with your firm is your website — and they're deciding whether to trust you within seconds."
+      />
+      <div class="ind-pain-grid">
+        {painPoints.map(({ icon, title, desc }) => (
+          <div class="ind-pain-card">
+            <span class="ipc-icon">{icon}</span>
+            <h3 class="ipc-title">{title}</h3>
+            <p class="ipc-desc">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="section" id="solutions">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Build"
+        title="Every element of a high-converting law firm website."
+        subtitle="From practice area pages to Google Ads landing pages — built to turn searches into consultations."
+      />
+      <ServiceGrid items={solutions} cols={3} />
+    </div>
+  </section>
+
+  <!-- Authority callout -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <div class="ind-callout">
+        <div class="ind-callout-text">
+          <p class="ind-callout-eyebrow">Why It Matters</p>
+          <h2>Legal clients don't shop by price — they shop by trust.</h2>
+          <p>A prospective client searching for an employment lawyer after being dismissed, or a property buyer needing conveyancing advice, is not comparing hourly rates on your homepage. They're looking for signals that you're competent, established, and will handle their matter properly.</p>
+          <p>Your website needs to communicate that within the first five seconds. That means a clean, authoritative design, clear practice area pages written for the person in their situation, and visible trust signals — credentials, accreditations, and real solicitor profiles.</p>
+        </div>
+        <div class="ind-callout-stats">
+          <div class="ind-stat"><span class="is-fig">73%</span><span class="is-label">of people research a lawyer online before making first contact</span></div>
+          <div class="ind-stat"><span class="is-fig">4×</span><span class="is-label">higher conversion rate from practice-specific landing pages vs homepage</span></div>
+          <div class="ind-stat"><span class="is-fig">#1</span><span class="is-label">Legal is among the highest-value Google Ads categories in New Zealand</span></div>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/legal-website-auckland-3-e1771448878227.jpg" alt="Professional Web Designfor Auckland Lawyers" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<!-- ==============================
- LAWYERS PAGE - WordPress Elementor Version
- Kiwi Web Design | Web Design for Auckland Lawyers
- Paste entire contents into an Elementor HTML Widget
- ============================== -->
-
-<!-- Schema: LocalBusiness -->
-
-<!-- Schema: Service -->
-
-<!-- Schema: FAQPage -->
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<!-- ===== HTML CONTENT (scoped under .main-body) ===== -->
-
-<!-- HERO -->
-
-⚖️Auckland's Trusted Agency for Law Firms
- 
- <p><strong>Kiwi Web Design</strong> builds stunning, SEO-optimised websites for Auckland law firms.
- We help small practices attract more clients, build trust online, and grow — with web design,
- SEO, and Google Ads tailored to the legal industry.</p>
- <a href="/website-designer-auckland/">
- Get a Free Consultation
- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
- stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
- <path d="M5 12h14M12 5l7 7-7 7" />
- </svg>
- </a>
- 
- <figure>
- <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80" alt="Modern law office in Auckland with professional website displayed on screen – Kiwi Web Design for lawyers" loading="lazy">
- </figure>
-
-<!-- STATS -->
-
-87%
- Of people research a lawyer online before hiring
-
-75%
- Judge credibility based on website design
-
-3X
- More client enquiries with a professional site
-
-62%
- Of legal searches are on mobile devices
-
-<!-- WHY LAWYERS NEED A WEBSITE -->
-
-Why Your Law Firm Needs a Great Website
- 
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How We Work"
+        title="From brief to live site in 2–3 weeks."
+        subtitle="We understand that busy solicitors don't have hours to spend on website meetings."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="faq-inner">
-      <h2>Frequently Asked Questions</h2>
-      <details class="faq-item">
-        <summary>North Shore Property Law</summary>
-        <div class="faq-answer">Property & Conveyancing — Takapuna
-
-$45
- Cost per Lead
-
-+340%
- ROI
-
-24
- Leads/Month
-
-<p>Google Ads campaign with a custom landing page generates 24+ qualified leads per month at
- just $45 each.</p>
-
-<!-- SERVICES -->
-
-What We Offer Auckland Law Firms</div>
-      </details>
-      <details class="faq-item">
-        <summary>Law Firm Website Design</summary>
-        <div class="faq-answer"><p>Bespoke, mobile-responsive websites that reflect your firm's professionalism and convert
- visitors.</p>
- <ul>
- <li>Custom design &amp; branding</li>
- <li>Practice area pages</li>
- <li>Team profiles &amp; credentials</li>
- <li>Contact forms &amp; click-to-call</li>
- </ul>
-
-🔍</div>
-      </details>
-      <details class="faq-item">
-        <summary>SEO for Lawyers Auckland</summary>
-        <div class="faq-answer"><p>Rank on Google when Auckland residents search for legal services in your practice area.</p>
- <ul>
- <li>Local SEO &amp; Google Maps</li>
- <li>Practice-specific keyword targeting</li>
- <li>Content strategy &amp; blog</li>
- <li>Monthly reporting</li>
- </ul>
-
-📣</div>
-      </details>
-      <details class="faq-item">
-        <summary>Google Ads for Law Firms</summary>
-        <div class="faq-answer"><p>Instant visibility with targeted pay-per-click campaigns that generate qualified leads.</p>
- <ul>
- <li>High-intent keyword targeting</li>
- <li>Custom landing pages</li>
- <li>Call tracking &amp; analytics</li>
- <li>Budget optimisation</li>
- </ul>
-
-<!-- COMPARISON TABLE -->
-
-Compare Your Options</div>
-      </details>
-      <details class="faq-item">
-        <summary>Free Consultation</summary>
-        <div class="faq-answer"><p>We learn about your firm, practice areas, target clients, and goals. No obligation.</p>
-
-2</div>
-      </details>
-      <details class="faq-item">
-        <summary>Design & Strategy</summary>
-        <div class="faq-answer"><p>We create a custom design mockup and SEO/Ads strategy tailored to your legal niche.</p>
-
-3</div>
-      </details>
-      <details class="faq-item">
-        <summary>Build & Optimise</summary>
-        <div class="faq-answer"><p>We build your website, implement SEO, and set up Google Ads if applicable.</p>
-
-4</div>
-      </details>
-      <details class="faq-item">
-        <summary>Launch & Grow</summary>
-        <div class="faq-answer"><p>Your site goes live. We monitor performance and refine strategy for ongoing growth.</p>
-
-<!-- TESTIMONIALS -->
-
-What Lawyers Say About Us</div>
-      </details>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Law Firm Website Questions Answered"
+        subtitle="What Auckland solicitors ask before starting a project with us."
+      />
     </div>
   </section>
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to build a site your clients will trust?"
+    subtitle="Free consultation — we'll review your current site and tell you exactly what needs to change."
+    ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See All Industries", href: "/industries-we-serve-in-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .ind-pain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .ind-pain-card {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .ipc-icon { font-size: 1.75rem; }
+  .ipc-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .ipc-desc { font-size: 0.875rem; color: var(--kwd-brown); line-height: 1.65; margin: 0; }
+
+  .ind-callout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .ind-callout-eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--kwd-yellow); margin-bottom: 0.75rem; }
+  .ind-callout-text h2 { font-size: clamp(1.4rem, 2.5vw, 1.875rem); color: #fff; margin-bottom: 0.75rem; line-height: 1.25; }
+  .ind-callout-text p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 0.75rem; }
+  .ind-callout-stats { display: flex; flex-direction: column; gap: 1rem; }
+  .ind-stat {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .is-fig { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: var(--kwd-yellow); flex-shrink: 0; min-width: 72px; line-height: 1; }
+  .is-label { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+  @media (max-width: 900px) {
+    .ind-callout { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+  @media (max-width: 640px) {
+    .ind-pain-grid { grid-template-columns: 1fr; }
   }
 </style>
