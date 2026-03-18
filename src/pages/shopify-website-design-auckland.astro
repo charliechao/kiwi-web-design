@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -10,161 +17,276 @@ const schema = {
       "name": "Shopify Website Design Auckland",
       "description": "Kiwi Web Design builds beautiful, high-converting Shopify websites for Auckland businesses. Local team, fast turnaround.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/shopify-website-design-auckland/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/shopify-website-design-auckland/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/shopify-website-design-auckland/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Shopify Website Design Auckland"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Shopify Website Design Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const services = [
+  {
+    icon: "🎨",
+    title: "Custom Shopify Theme",
+    desc: "We customise a high-performance Shopify theme to match your brand — your colours, fonts, imagery, and product layout — not a generic out-of-the-box look.",
+    items: ["Theme customisation", "Brand-matched design", "Mobile-first layout", "Fast-loading storefront"],
+  },
+  {
+    icon: "🛍️",
+    title: "Product Setup & Optimisation",
+    desc: "We set up your product catalogue with variants, collections, smart filters, and SEO-optimised product descriptions.",
+    items: ["Collections & tags", "Product variants", "Metafields", "SEO product titles & descriptions"],
+  },
+  {
+    icon: "💳",
+    title: "Shopify Payments & NZ Setup",
+    desc: "Shopify Payments now works in NZ — we activate it along with AfterPay, Laybuy, and any other gateways relevant to your audience.",
+    items: ["Shopify Payments (NZD)", "AfterPay / Laybuy", "PayPal Express", "Manual payment options"],
+  },
+  {
+    icon: "📦",
+    title: "Shipping & Fulfilment",
+    desc: "NZ shipping profiles, rural delivery surcharges, free shipping thresholds, and courier integrations to match how you fulfil orders.",
+    items: ["NZ shipping profiles", "Rural delivery rules", "Click & collect", "Courier app integrations"],
+  },
+  {
+    icon: "📈",
+    title: "Conversion Rate Optimisation",
+    desc: "We design product pages, collection pages, and the checkout flow to convert browsers into buyers — every layout decision is tested and intentional.",
+    items: ["Trust badges & social proof", "Cart abandonment recovery", "Upsell & cross-sell", "CRO-focused layouts"],
+  },
+  {
+    icon: "🔗",
+    title: "App Integrations & Automation",
+    desc: "Connect your Shopify store to Klaviyo, Mailchimp, Xero, loyalty apps, review platforms, and more through the Shopify App Store.",
+    items: ["Klaviyo email flows", "Xero accounting sync", "Loyalty & rewards", "Review apps (Okendo, Yotpo)"],
+  },
+];
+
+const shopifyStrengths = [
+  { icon: "⚡", title: "Easiest to manage day-to-day", desc: "Adding products, processing orders, and running discounts is intuitive. No technical knowledge needed." },
+  { icon: "📱", title: "Excellent mobile app", desc: "Manage your entire store from your phone — view orders, update products, process refunds on the go." },
+  { icon: "🌐", title: "Multi-channel selling", desc: "Sell on Instagram, Facebook, TikTok Shop, Google Shopping, and Amazon from one dashboard." },
+  { icon: "🔒", title: "Hosted & maintained by Shopify", desc: "No server management, no updates to worry about. Shopify handles platform security and uptime." },
+];
+
+const process = [
+  { step: "1", title: "Discovery & Strategy", desc: "We understand your products, brand, and target customer. We recommend the right theme and plan the store structure together." },
+  { step: "2", title: "Design & Customise", desc: "We customise your chosen theme — homepage, collection pages, product pages, and cart — to match your brand and optimise for conversion." },
+  { step: "3", title: "Products, Payments & Shipping", desc: "We populate your catalogue, configure Shopify Payments and BNPL options, set up NZ shipping profiles, and test the full checkout flow." },
+  { step: "4", title: "Launch & Train", desc: "We connect your domain, set up Analytics, and walk you through the Shopify admin so you can manage everything confidently from day one." },
+];
+
+const faqs = [
+  { q: "Is Shopify available in New Zealand?", a: "Yes. Shopify is fully available in NZ and Shopify Payments (their built-in payment gateway) now works for NZ merchants, accepting NZD credit and debit cards. You can also add AfterPay, Laybuy, and PayPal as additional gateways." },
+  { q: "How much does Shopify cost per month?", a: "Shopify plans start at $49 USD/month (Basic), $132 (Shopify), and $399 (Advanced). This is on top of our design fee and any app subscriptions. For businesses on tight margins or lower volume, WooCommerce may be more cost-effective — we'll advise honestly." },
+  { q: "Can you migrate my existing store to Shopify?", a: "Yes. We handle migrations from WooCommerce, Wix, Squarespace Commerce, and other platforms. Products, customers, and order history can typically be migrated. URL redirects are set up to preserve SEO." },
+  { q: "What theme do you use?", a: "We primarily work with high-performance themes like Dawn (Shopify's own), Prestige, or Impulse depending on your brand and product type. We don't use cheap third-party themes with bloated code." },
+  { q: "Can Shopify handle large product catalogues?", a: "Yes. Shopify scales extremely well for large catalogues. If you have thousands of SKUs or complex variant structures, Shopify is often a better choice than WooCommerce due to its more reliable inventory management." },
+  { q: "What's the difference between a Shopify build and a Shopify template?", a: "A Shopify template (from their Theme Store) is what everyone gets by default. We customise the theme to match your brand — your fonts, colours, homepage layout, product page structure — so your store looks and functions differently from competitors using the same theme." },
+];
 ---
-<Layout title="Shopify Website Design Auckland" description="Kiwi Web Design builds beautiful, high-converting Shopify websites for Auckland businesses. Local team, fast turnaround." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Platform Services</p>
-        <h1>Shopify Website Design Auckland — eCommerce That Sells</h1>
-        <p class="hero-sub">Kiwi Web Design builds beautiful, high-converting Shopify websites for Auckland businesses. Local team, fast turnaround.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="Shopify Website Design Auckland | High-Converting Shopify Stores"
+  description="Kiwi Web Design builds beautiful, high-converting Shopify websites for Auckland businesses. Local team, fast turnaround."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/shopify-website-design-auckland/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Shopify Website Design Auckland"
+    title="Shopify stores designed to convert — not just to look good."
+    subtitle="Custom Shopify design for Auckland businesses. We customise high-performance themes, configure NZ payments, set up shipping, and train you to manage it all yourself."
+    badgeText="From $3,990 + GST"
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "Compare Platforms", href: "/ecommerce-website-auckland/" }}
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-5632376-5632376.jpg"
+    imgAlt="Shopify website design Auckland"
+  />
+
+  <!-- Why Shopify -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Why Shopify"
+        title="Where Shopify genuinely excels."
+        subtitle="Shopify isn't the right choice for everyone — but when it is, it's excellent. Here's what it does best."
+      />
+      <div class="shopify-strengths">
+        {shopifyStrengths.map(({ icon, title, desc }) => (
+          <div class="shopify-strength">
+            <span class="ss-icon">{icon}</span>
+            <h3 class="ss-title">{title}</h3>
+            <p class="ss-desc">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Build"
+        title="Complete Shopify store setup."
+        subtitle="From theme customisation to checkout — every element built for your brand and your customers."
+      />
+      <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <!-- Shopify vs WooCommerce -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Honest Comparison"
+        title="Shopify or WooCommerce — which is right for you?"
+        light={true}
+        subtitle="We build both. Here's our honest take on which suits which type of business."
+      />
+      <div class="shopify-compare-grid">
+        <div class="shopify-compare-col shopify-compare-col--shopify">
+          <h3>Choose Shopify if...</h3>
+          <ul>
+            <li>You want the easiest day-to-day management</li>
+            <li>You're selling primarily on social / multi-channel</li>
+            <li>You have a large, fast-growing product catalogue</li>
+            <li>You want a mobile app to manage orders on the go</li>
+            <li>You don't need deep content / blogging capability</li>
+          </ul>
+        </div>
+        <div class="shopify-compare-col shopify-compare-col--woo">
+          <h3>Choose WooCommerce if...</h3>
+          <ul>
+            <li>You want zero monthly platform fees</li>
+            <li>You need content marketing alongside your store</li>
+            <li>You want complete design and technical control</li>
+            <li>You need NZ-specific payment gateways (POLi, etc.)</li>
+            <li>You're integrating with NZ-specific tools (Xero, etc.)</li>
+          </ul>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/shopify-website-design-auckland-laptop-kiwi-web-design.jpg" alt="Shopify Website Design Auckland — eCommerce That Sells" loading="lazy" />
-      </div>
+      <p class="shopify-compare-note">Still unsure? <a href="/website-designer-auckland/">Book a free consultation</a> — we'll recommend the right option for your specific situation.</p>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="From brief to launch in 2–4 weeks."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="faq-inner">
-      <h2>Frequently Asked Questions</h2>
-      <details class="faq-item">
-        <summary>How much does a Shopify website cost in Auckland?</summary>
-        <div class="faq-answer"><p>A small Shopify store typically costs between <strong>$1,490 – $3,490 NZD</strong>. Prices depend on your theme choice, number of products, and any custom app integrations. Kiwi Web Design provides transparent quotes with no surprise add-ons.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Can I manage my Shopify store myself?</summary>
-        <div class="faq-answer"><p>Yes — that’s one of Shopify’s biggest advantages. After launch, you can easily add products, track orders, and update your store content through an intuitive dashboard.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Do you handle Shopify SEO and analytics setup?</summary>
-        <div class="faq-answer"><p>Absolutely. Every Shopify project includes basic SEO setup, Google Analytics, and Search Console integration so your store can start ranking from day one.</p></div>
-      </details>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Shopify Questions Answered"
+        subtitle="Common questions from Auckland businesses about Shopify."
+      />
     </div>
   </section>
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to launch your Shopify store?"
+    subtitle="Free consultation — we'll recommend the right platform and give you a fixed quote."
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See WooCommerce Instead", href: "/woocommerce-website-design-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .shopify-strengths {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .shopify-strength {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .ss-icon { font-size: 1.75rem; }
+  .ss-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .ss-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
+
+  .shopify-compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .shopify-compare-col {
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .shopify-compare-col--shopify { background: rgba(255,255,255,0.06); }
+  .shopify-compare-col--woo { background: rgba(251,232,166,0.08); border-color: rgba(251,232,166,0.2); }
+  .shopify-compare-col h3 {
+    font-family: var(--kwd-font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 1rem;
+  }
+  .shopify-compare-col--woo h3 { color: var(--kwd-yellow); }
+  .shopify-compare-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .shopify-compare-col li {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.72);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .shopify-compare-col li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-yellow); font-weight: 700; }
+  .shopify-compare-note {
+    text-align: center;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2rem;
+  }
+  .shopify-compare-note a { color: var(--kwd-yellow); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .shopify-strengths { grid-template-columns: repeat(2, 1fr); }
+    .shopify-compare-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 580px) {
+    .shopify-strengths { grid-template-columns: 1fr; }
   }
 </style>

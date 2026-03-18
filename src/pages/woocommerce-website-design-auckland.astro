@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -10,144 +17,273 @@ const schema = {
       "name": "WooCommerce Website Design Auckland",
       "description": "Fast, secure WooCommerce stores for Auckland businesses. NZ payments, shipping & GST set up. Affordable and built to sell.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/woocommerce-website-design-auckland/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/woocommerce-website-design-auckland/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/woocommerce-website-design-auckland/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "WooCommerce Website Design Auckland"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "WooCommerce Website Design Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const services = [
+  {
+    icon: "🏗️",
+    title: "Custom WooCommerce Design",
+    desc: "A storefront designed around your brand — not a generic template. Category pages, product pages, and checkout flow all custom-built for conversion.",
+    items: ["Custom WordPress theme", "Brand-matched design", "Mobile-first storefront", "Conversion-optimised layouts"],
+  },
+  {
+    icon: "💳",
+    title: "NZ Payment Setup",
+    desc: "All the payment methods your NZ customers expect — Stripe, PayPal, AfterPay, Laybuy, Zip, POLi, and bank transfer.",
+    items: ["Stripe & PayPal", "AfterPay / Laybuy / Zip", "POLi internet banking", "Manual / bank transfer"],
+  },
+  {
+    icon: "📦",
+    title: "Shipping & Delivery",
+    desc: "NZ shipping rules configured from day one — flat rates, weight-based, free shipping thresholds, rural delivery surcharges, and click-and-collect.",
+    items: ["NZ courier rates", "Rural delivery rules", "Free shipping thresholds", "Click & collect option"],
+  },
+  {
+    icon: "🧾",
+    title: "GST & Invoicing",
+    desc: "GST-inclusive pricing, automatic invoice generation, tax reports, and correct NZ tax class configuration for all products.",
+    items: ["GST-inclusive display", "Automated invoice emails", "Tax class configuration", "GST reporting"],
+  },
+  {
+    icon: "🔌",
+    title: "Integrations & Plugins",
+    desc: "Connect your store to the tools you already use — accounting (Xero, MYOB), email marketing, loyalty programs, and more.",
+    items: ["Xero / MYOB integration", "Mailchimp / Klaviyo", "Loyalty & rewards", "Live chat / support"],
+  },
+  {
+    icon: "📊",
+    title: "Analytics & Tracking",
+    desc: "GA4 eCommerce tracking, Google Ads conversion events, and Facebook Pixel — so you know exactly what's selling and where buyers come from.",
+    items: ["GA4 eCommerce events", "Google Ads tracking", "Facebook / Meta Pixel", "Revenue reporting"],
+  },
+];
+
+const nzSetup = [
+  { icon: "🏦", label: "Stripe (NZD)", desc: "Card payments in NZD with instant setup" },
+  { icon: "💸", label: "AfterPay", desc: "Buy now pay later — popular with NZ shoppers" },
+  { icon: "🏷️", label: "Laybuy", desc: "NZ-founded BNPL, popular for fashion & lifestyle" },
+  { icon: "🏧", label: "POLi", desc: "Direct bank transfer for customers avoiding card fees" },
+  { icon: "📬", label: "NZ Post / CourierPost", desc: "Rate tables for NZ domestic shipping" },
+  { icon: "🌏", label: "Rural delivery", desc: "Automatic rural surcharge rules" },
+  { icon: "🏪", label: "Click & Collect", desc: "Local pickup option for Auckland customers" },
+  { icon: "🧾", label: "GST 15%", desc: "GST-inclusive pricing with NZ tax class" },
+];
+
+const process = [
+  { step: "1", title: "Discovery & Planning", desc: "We understand your products, pricing, fulfilment model, and growth plans. We plan the store structure and get sign-off before building." },
+  { step: "2", title: "Design & Prototype", desc: "We design your storefront — homepage, category pages, product templates, and checkout. You review on a staging URL before we proceed." },
+  { step: "3", title: "Build, Integrate & QA", desc: "We build the store, configure payment gateways, shipping zones, GST, and run end-to-end purchase flow testing on all devices." },
+  { step: "4", title: "Launch & Handover", desc: "We migrate to your domain, configure Analytics and Search Console, and train you on daily store management." },
+];
+
+const faqs = [
+  { q: "Why WooCommerce over Shopify?", a: "WooCommerce is the right choice if you want full ownership with no monthly platform fee, maximum design flexibility, and the ability to build rich content alongside your store. It also has superior NZ payment gateway support and integrates natively with WordPress — so your blog, landing pages, and store are one unified website." },
+  { q: "Is WooCommerce hard to manage?", a: "Not for day-to-day tasks. Adding products, processing orders, and checking reports is straightforward. We include a handover training session, and the WordPress block editor makes content management easy. Anything technical (updates, new features) is handled under our maintenance plan." },
+  { q: "How many products can WooCommerce handle?", a: "WooCommerce scales to tens of thousands of products with the right hosting. Our standard packages include up to 20 products. Larger catalogues are quoted separately — the cost is mainly the time to populate and organise them." },
+  { q: "Can you migrate my existing store to WooCommerce?", a: "Yes. We handle full migrations from Shopify, Wix eCommerce, Squarespace Commerce, or other platforms — preserving products, customer data, and order history where possible." },
+  { q: "Do you set up the Xero integration?", a: "Yes. We set up the Xero WooCommerce integration so orders, invoices, and payments sync automatically. Same for MYOB if that's your accounting platform." },
+  { q: "What does a WooCommerce store cost?", a: "Our WooCommerce store packages start from $3,990 + GST for up to 20 products. This includes store design, payment gateway setup, NZ shipping configuration, GST setup, and Analytics. We give you a fixed quote upfront." },
+];
 ---
-<Layout title="WooCommerce Website Design Auckland" description="Fast, secure WooCommerce stores for Auckland businesses. NZ payments, shipping & GST set up. Affordable and built to sell." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Platform Services</p>
-        <h1>WooCommerce Website Design Auckland</h1>
-        <p class="hero-sub">Fast, secure WooCommerce stores for Auckland businesses. NZ payments, shipping & GST set up. Affordable and built to sell.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="WooCommerce Website Design Auckland | NZ Online Stores"
+  description="Fast, secure WooCommerce stores for Auckland businesses. NZ payments, shipping & GST set up. Affordable and built to sell."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/woocommerce-website-design-auckland/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="WooCommerce Auckland"
+    title="WooCommerce stores built for the NZ market."
+    subtitle="Custom WooCommerce websites with NZ payment gateways (AfterPay, POLi, Laybuy), NZ shipping rules, and GST configured from day one. You own the store outright — no monthly platform fee."
+    badgeText="From $3,990 + GST"
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "Compare Platforms", href: "/ecommerce-website-auckland/" }}
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-5632376-5632376.jpg"
+    imgAlt="WooCommerce website design Auckland"
+  />
+
+  <!-- Services -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Build"
+        title="Complete WooCommerce store setup."
+        subtitle="Everything your store needs from design to launch — NZ-specific out of the box."
+      />
+      <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <!-- NZ Setup -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="NZ-Ready Setup"
+        title="Built for New Zealand from day one."
+        light={true}
+        subtitle="We configure every NZ-specific element as standard — no extra cost, no add-ons."
+      />
+      <div class="woo-nz-grid">
+        {nzSetup.map(({ icon, label, desc }) => (
+          <div class="woo-nz-item">
+            <span class="woo-nz-icon">{icon}</span>
+            <div>
+              <strong class="woo-nz-label">{label}</strong>
+              <p class="woo-nz-desc">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WooCommerce vs Shopify callout -->
+  <section class="section">
+    <div class="container">
+      <div class="woo-vs-card">
+        <div class="woo-vs-left">
+          <p class="woo-vs-eyebrow">WooCommerce vs Shopify</p>
+          <h2>Own your store completely.</h2>
+          <p>Shopify charges a monthly platform fee ($49–$399 NZD/month) on top of transaction fees. WooCommerce has no platform fee — you pay for hosting and that's it. Over 3 years, that's a significant saving for a growing store.</p>
+          <p>Beyond cost, WooCommerce gives you complete control — move hosts, change agencies, extend with any plugin. You're not locked into a proprietary ecosystem.</p>
+          <a href="/ecommerce-website-auckland/" class="woo-vs-link">Compare all eCommerce options →</a>
+        </div>
+        <div class="woo-vs-right">
+          <div class="woo-vs-compare">
+            {[
+              ["Monthly platform fee", "None", "$49–$399/mo"],
+              ["Transaction fees (own gateway)", "0%", "0.5–2%"],
+              ["Design flexibility", "Total", "Limited by theme"],
+              ["NZ payment options", "All of them", "Shopify Payments + limited"],
+              ["Content / SEO capability", "Full WordPress", "Basic"],
+              ["You own the store", "Yes", "Shopify owns the data"],
+            ].map(([feature, woo, shopify]) => (
+              <div class="woo-vs-row">
+                <span class="woo-vs-feature">{feature}</span>
+                <span class="woo-vs-good">{woo}</span>
+                <span class="woo-vs-neutral">{shopify}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/woocommerce-website-auckland.png" alt="WooCommerce Website Design Auckland" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="From brief to first sale in 2–4 weeks."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="WooCommerce Questions Answered"
+        subtitle="Common questions from Auckland businesses about building with WooCommerce."
+      />
     </div>
   </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to launch your WooCommerce store?"
+    subtitle="Free consultation — we'll plan your store, give you a fixed quote, and have it live in 2–4 weeks."
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Shopify Instead", href: "/shopify-website-design-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .woo-nz-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .woo-nz-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .woo-nz-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .woo-nz-label { display: block; font-size: 0.875rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
+  .woo-nz-desc { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin: 0; line-height: 1.4; }
+
+  .woo-vs-card {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    background: var(--kwd-dark);
+    border-radius: 20px;
+    padding: 3rem;
+    color: #fff;
+    align-items: start;
+  }
+  .woo-vs-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 0.75rem;
+  }
+  .woo-vs-left h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); color: #fff; margin-bottom: 0.75rem; }
+  .woo-vs-left p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 0.75rem; }
+  .woo-vs-link { font-size: 0.875rem; font-weight: 700; color: var(--kwd-yellow); }
+
+  .woo-vs-compare { display: flex; flex-direction: column; gap: 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+  .woo-vs-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    align-items: center;
+  }
+  .woo-vs-row:last-child { border-bottom: none; }
+  .woo-vs-row:hover { background: rgba(255,255,255,0.03); }
+  .woo-vs-feature { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+  .woo-vs-good { font-size: 0.82rem; font-weight: 700; color: var(--kwd-yellow); }
+  .woo-vs-neutral { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+
+  @media (max-width: 960px) {
+    .woo-nz-grid { grid-template-columns: repeat(2, 1fr); }
+    .woo-vs-card { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+  @media (max-width: 580px) {
+    .woo-nz-grid { grid-template-columns: 1fr; }
   }
 </style>

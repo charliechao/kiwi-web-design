@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,156 +14,233 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-seo-optimisation/",
       "url": "https://www.kiwiwebdesign.co.nz/wordpress-seo-optimisation/",
-      "name": "WordPress SEO Optimisation",
+      "name": "WordPress SEO Optimisation Auckland | Rank Higher on Google",
       "description": "Expert WordPress SEO and schema optimisation in Auckland to help your website rank higher on Google and AI search.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/wordpress-seo-optimisation/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/wordpress-seo-optimisation/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-seo-optimisation/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "WordPress SEO Optimisation"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress SEO Optimisation" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const services = [
+  {
+    icon: "⚙️",
+    title: "Technical SEO",
+    desc: "The behind-the-scenes work that Google requires before it will rank your site. We fix crawl errors, site speed, mobile issues, and structured data.",
+    items: ["Core Web Vitals optimisation", "XML sitemap & robots.txt", "Crawl error resolution", "Canonical tags & redirects"],
+  },
+  {
+    icon: "🏷️",
+    title: "On-Page Optimisation",
+    desc: "Every page optimised with the right keywords, heading structure, meta tags, and internal linking to signal relevance to Google.",
+    items: ["Title tag & meta description", "H1–H3 heading structure", "Keyword placement", "Internal linking strategy"],
+  },
+  {
+    icon: "🔗",
+    title: "Schema Markup",
+    desc: "Structured data (JSON-LD) that tells Google exactly what your site is about — and helps you appear in rich results, AI Overviews, and featured snippets.",
+    items: ["Organisation schema", "LocalBusiness schema", "Service & Product schema", "FAQ & How-To schema"],
+  },
+  {
+    icon: "📄",
+    title: "Content Optimisation",
+    desc: "Existing content audited and rewritten for target keywords and search intent — without sacrificing readability or brand voice.",
+    items: ["Content gap analysis", "Keyword-to-page mapping", "Title & copy rewrites", "Word count & depth analysis"],
+  },
+  {
+    icon: "⚡",
+    title: "WordPress Speed Optimisation",
+    desc: "Page speed is a Google ranking factor and a conversion factor. We optimise your WordPress install for Core Web Vitals performance.",
+    items: ["Image compression & WebP", "Plugin audit & cleanup", "Caching setup", "Database optimisation"],
+  },
+  {
+    icon: "🤖",
+    title: "AI Search Optimisation",
+    desc: "AI Overviews, ChatGPT search, and Perplexity are changing how people find businesses. We structure your content to be cited by AI systems.",
+    items: ["AI-citability content structure", "llms.txt setup", "Conversational keyword targeting", "Entity-based SEO"],
+  },
+];
+
+const auditItems = [
+  "Technical SEO health check (crawlability, indexability, speed)",
+  "Keyword ranking audit (where you rank now and for what)",
+  "On-page SEO audit (titles, headings, content, internal links)",
+  "Schema markup review (what's present, what's missing)",
+  "Competitor gap analysis (what they rank for that you don't)",
+  "Google Search Console setup & error review",
+  "Core Web Vitals assessment",
+  "Prioritised action list with estimated impact",
+];
+
+const process = [
+  { step: "1", title: "SEO Audit", desc: "We audit your current WordPress site — technical health, keyword positions, on-page factors, schema, and competitor gaps. You get a prioritised report." },
+  { step: "2", title: "Strategy & Roadmap", desc: "We map out which fixes and optimisations will have the biggest impact for your specific business and competitive landscape." },
+  { step: "3", title: "Implementation", desc: "We implement all on-site changes — technical fixes, schema markup, title tags, heading structure, speed optimisation, and content updates." },
+  { step: "4", title: "Monitor & Report", desc: "We track keyword rankings, organic traffic, and Search Console data. Monthly reports show progress and next-step recommendations." },
+];
+
+const faqs = [
+  { q: "What is WordPress SEO optimisation?", a: "It's the process of configuring your WordPress site so that Google can correctly crawl, understand, and rank your content. This includes technical fixes (speed, crawlability), on-page optimisation (titles, headings, keywords), schema markup, and content improvements — all working together." },
+  { q: "Is SEO different for WordPress compared to other platforms?", a: "WordPress has specific SEO advantages (flexibility, full control over code and content) and specific pitfalls (plugin bloat, speed issues, duplicate content from categories/tags). We know the WordPress SEO landscape well and address both." },
+  { q: "What is schema markup and why does it matter?", a: "Schema markup is structured data (in JSON-LD format) that tells Google exactly what your page, business, products, and reviews are. It enables rich results (star ratings, FAQ dropdowns, price displays) in search results and helps AI systems like Google's AI Overviews and ChatGPT cite your content correctly." },
+  { q: "How long does WordPress SEO take to show results?", a: "Technical fixes and schema can show results in 2–4 weeks. Keyword ranking improvements typically take 3–6 months for most industries. Highly competitive niches may take 6–12 months. We give you an honest timeline based on your specific situation." },
+  { q: "Do you use the Yoast SEO plugin?", a: "We typically use Yoast SEO or Rank Math — both are excellent and serve different use cases. We configure whichever plugin is right for your site (or install it fresh if you don't have one) as part of the optimisation work." },
+  { q: "Can you optimise an existing WordPress site or only new ones?", a: "Both. We frequently do SEO optimisation on existing sites — auditing what's there, fixing what's broken, and improving what's underperforming. We also build SEO in as a foundation for every new WordPress site we create." },
+];
 ---
-<Layout title="WordPress SEO Optimisation" description="Expert WordPress SEO and schema optimisation in Auckland to help your website rank higher on Google and AI search." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">WordPress Services</p>
-        <h1>WordPress SEO Optimisation Auckland</h1>
-        <p class="hero-sub">Expert WordPress SEO and schema optimisation in Auckland to help your website rank higher on Google and AI search.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="WordPress SEO Optimisation Auckland | Rank Higher on Google"
+  description="Expert WordPress SEO and schema optimisation in Auckland to help your website rank higher on Google and AI search."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/wordpress-seo-optimisation/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="WordPress SEO Optimisation Auckland"
+    title="Get your WordPress site ranking on Google — and AI search."
+    subtitle="Technical SEO, schema markup, on-page optimisation, and speed improvements for WordPress sites. We fix what Google and AI systems need to rank and cite your content."
+    ctaPrimary={{ text: "Get an SEO Audit", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "Full SEO Services", href: "/seo-auckland/" }}
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/seo-3007488_1280-3007488.jpg"
+    imgAlt="WordPress SEO optimisation Auckland"
+  />
+
+  <!-- Services -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="WordPress SEO Services"
+        title="Everything Google needs to rank your WordPress site."
+        subtitle="We cover every layer of WordPress SEO — from technical foundations to AI search visibility."
+      />
+      <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <!-- What an audit includes -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <div class="wpco-audit-wrap">
+        <div class="wpco-audit-text">
+          <p class="wpco-eyebrow">Free Audit</p>
+          <h2>Start with a WordPress SEO audit.</h2>
+          <p>Before we recommend any changes, we audit your existing site. You get a clear picture of where you stand — and a prioritised list of what to fix first for the biggest impact.</p>
+          <a href="/website-designer-auckland/" class="wpco-audit-btn">Book a Free SEO Audit →</a>
         </div>
+        <ul class="wpco-audit-list">
+          {auditItems.map((item) => (
+            <li>
+              <span class="wpco-check">✓</span>
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/WordPress-SEO-Auckland.jpg" alt="WordPress SEO Optimisation Auckland" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-
+  <!-- Process -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="Audit, strategy, implement, report."
+        subtitle="A clear four-step process for improving your WordPress SEO."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="faq-inner">
-      <h2>Frequently Asked Questions</h2>
-      <details class="faq-item">
-        <summary>Long-Term SEO Benefits for Your Business</summary>
-        <div class="faq-answer"><p><br>Once your WordPress site is fully optimised, you’ll see measurable improvements in visibility, traffic, and local search performance. That means more calls, more customers, and a stronger presence in Auckland’s competitive market.</p><hr><h4><strong>Ready to grow your business with a smarter website?</strong></h4><p><br>At Kiwi Web Design, we build affordable, high-performing websites for Auckland businesses.<br><a href="/website-designer-auckland/">Contact us today</a> to get started.</p><blockquote><p>“We don’t just design your website — we set you up for ongoing success.”</p></blockquote><blockquote><p><strong>Related Services:</strong><br><a href="/affordable-web-design-auckland/">Affordable Web Design Auckland</a><br><a href="/web-designs-auckland/">Ecommerce Website Design Auckland</a><br><a href="/web-design-auckland/">Contact Kiwi Web Design</a></p></blockquote></div>
-      </details>
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="WordPress SEO Questions Answered"
+        subtitle="Common questions from Auckland businesses about improving their WordPress site's rankings."
+      />
     </div>
   </section>
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to rank higher on Google?"
+    subtitle="Get a free WordPress SEO audit — we'll show you exactly what's holding your site back."
+    ctaPrimary={{ text: "Get a Free SEO Audit", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See All SEO Services", href: "/seo-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .wpco-audit-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .wpco-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 0.75rem;
+  }
+  .wpco-audit-text h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); color: #fff; margin-bottom: 0.75rem; }
+  .wpco-audit-text p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 1.5rem; }
+  .wpco-audit-btn {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: background 0.2s;
+  }
+  .wpco-audit-btn:hover { background: var(--kwd-gold); }
+  .wpco-audit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 1.75rem;
+  }
+  .wpco-audit-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+  }
+  .wpco-check { color: var(--kwd-yellow); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  @media (max-width: 860px) {
+    .wpco-audit-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
   }
 </style>

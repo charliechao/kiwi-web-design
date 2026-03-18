@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,268 +10,260 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/faq/",
       "url": "https://www.kiwiwebdesign.co.nz/faq/",
-      "name": "FAQ",
+      "name": "FAQ | Web Design Auckland — Kiwi Web Design",
       "description": "All the questions you have about website design in Auckland. Kiwi Web Design helps you to answer them. On time, on budget and affordable.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/faq/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/faq/#breadcrumb" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/faq/#faqpage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How much does a website cost in Auckland?", "acceptedAnswer": { "@type": "Answer", "text": "Our websites start from $1,290 + GST for a 5-page WordPress site. Growth packages run $2,490–$3,500, and eCommerce stores start from $3,990. We give you a fixed quote upfront — no surprises." } },
+        { "@type": "Question", "name": "How long does it take to build a website?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects are complete in 2–3 weeks from when we receive your content and brief. More complex sites with custom features may take 4–6 weeks." } },
+        { "@type": "Question", "name": "Do you offer free consultations?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All consultations are free — in person in Grey Lynn, or on a video call. We talk first before any quoting." } }
+      ]
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/faq/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "FAQ"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "FAQ" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const categories = [
+  {
+    id: "pricing",
+    label: "Pricing & Packages",
+    icon: "💰",
+    faqs: [
+      { q: "How much does a website cost in Auckland?", a: "Our websites start from $1,290 + GST for a 5-page WordPress site. Growth packages run $2,490–$3,500 depending on complexity. eCommerce stores start from $3,990. We give you a fixed quote upfront — no surprises, no hidden extras." },
+      { q: "What's included in the website price?", a: "Every package includes: custom WordPress design, mobile-responsive layout, contact form, basic SEO setup (meta tags, sitemap, Search Console), SSL certificate, and a handover training session. Additional services like copywriting, ongoing SEO, and hosting are quoted separately." },
+      { q: "Do you charge monthly fees?", a: "Not for the website build — that's a one-off cost. After launch, you'll need hosting (from $49/mo), and we recommend a maintenance plan (from $99/mo) to keep your site updated and secure. These are optional but strongly recommended." },
+      { q: "Do you offer payment plans?", a: "We typically structure payment as 50% upfront and 50% on launch. For larger projects, we can discuss milestone-based payment structures. Get in touch to discuss what works for your situation." },
+      { q: "Why are your prices lower than some other agencies?", a: "We're a lean, local team without the overhead of a large agency. We don't have account managers, project managers, and layers of process between you and the person doing the work. You pay for the output, not the structure." },
+    ],
+  },
+  {
+    id: "process",
+    label: "Process & Timeline",
+    icon: "📋",
+    faqs: [
+      { q: "How long does it take to build a website?", a: "Most projects are complete in 2–3 weeks from when we receive your content and sign-off on the brief. Complex sites with custom features or large content volumes may take 4–6 weeks. We'll give you a timeline upfront and stick to it." },
+      { q: "What do I need to provide?", a: "Ideally: your logo, brand colours, text content for each page, and any photos you want to use. We help with content guidance and structure throughout, and can provide copywriting or photography sourcing as add-ons." },
+      { q: "How do revisions work?", a: "Starter packages include 1 round of revisions; Growth packages include 2 rounds. A 'round' means one consolidated set of feedback after reviewing the staging site. Additional revision rounds can be arranged at our hourly rate." },
+      { q: "Do you offer in-person meetings?", a: "Yes. We're based at 147 Great North Road, Grey Lynn. We're happy to meet in person anywhere in Auckland, or on a video call if that's easier. We start every project with a conversation — not a quote form." },
+      { q: "What happens after my website launches?", a: "We set up Google Analytics and Search Console, submit your sitemap to Google, and walk you through how to make basic updates yourself. After that, you can manage it independently, or take up one of our maintenance and hosting plans." },
+    ],
+  },
+  {
+    id: "technical",
+    label: "Technical & Platform",
+    icon: "⚙️",
+    faqs: [
+      { q: "What platform do you build on?", a: "We primarily build on WordPress — the world's most popular CMS, powering 43% of all websites. For eCommerce, we build on WooCommerce (WordPress) or Shopify depending on your requirements." },
+      { q: "Will I be able to update my website myself?", a: "Yes. WordPress's block editor (Gutenberg) makes updating text, images, and pages straightforward — no technical knowledge needed. We include a handover training session with every build." },
+      { q: "Can you redesign my existing website?", a: "Yes. We do full WordPress rebuilds, redesigns, and migrations from Wix, Squarespace, old WordPress themes, and other platforms. We preserve your content and SEO during the migration." },
+      { q: "Do you build Wix or Squarespace websites?", a: "No. We recommend WordPress because you own your site completely — no monthly platform fees, no lock-in, and maximum flexibility for SEO and future growth. We're happy to explain why in a free consultation." },
+      { q: "Do you do custom development?", a: "Yes. We build custom WordPress plugins, WooCommerce extensions, and custom integrations. If your project requires something beyond standard WordPress capability, let's talk about what's needed." },
+    ],
+  },
+  {
+    id: "seo",
+    label: "SEO & Marketing",
+    icon: "🔍",
+    faqs: [
+      { q: "Does my website come with SEO?", a: "Every website includes basic SEO foundations — proper meta titles and descriptions, sitemap, robots.txt, heading structure, schema markup, and Search Console setup. Ongoing SEO (monthly keyword targeting, content, and link building) is a separate service." },
+      { q: "How long does SEO take to work?", a: "For local and less competitive searches, you might see improvements in 4–8 weeks. For competitive industries, 3–6 months is more realistic. SEO is a long-term investment — results compound over time rather than arriving all at once." },
+      { q: "Do you manage Google Ads?", a: "Yes. We offer full Google Ads management including campaign setup, keyword research, ad copy, conversion tracking, and monthly reporting. Setup from $499, management from $399/month." },
+      { q: "Can you help with Google Business Profile?", a: "Yes. We include a basic GBP setup with website builds. Ongoing GBP management (posts, review responses, Q&A) is available as part of our local SEO service." },
+      { q: "What is local SEO and do I need it?", a: "Local SEO is the process of appearing in Google Maps and local search results for your suburb and service area. If you serve customers in specific Auckland areas, local SEO is often the highest-ROI investment you can make." },
+    ],
+  },
+  {
+    id: "hosting",
+    label: "Hosting & Maintenance",
+    icon: "🔧",
+    faqs: [
+      { q: "Do I need to host my website with you?", a: "No — you can host anywhere. But we strongly recommend our managed hosting for sites we've built, because we know your setup, can troubleshoot quickly, and ensure the right WordPress stack is configured." },
+      { q: "What is managed WordPress hosting?", a: "Managed WordPress hosting means we handle server management, WordPress updates, security monitoring, daily backups, and performance optimisation — rather than a generic shared hosting plan where you're on your own." },
+      { q: "What happens if my website gets hacked?", a: "Under our Standard and Premium maintenance plans, malware removal and site restoration are covered. We respond quickly, clean the infection, and harden the site to prevent reoccurrence." },
+      { q: "Do I need a maintenance plan?", a: "You don't have to have one — but we strongly recommend it. Outdated WordPress plugins are the #1 cause of website hacks. A maintenance plan keeps your site updated, monitored, and backed up so you don't face an emergency." },
+      { q: "Can you take over maintenance of a site you didn't build?", a: "Yes. We start with a site audit to understand what's there, identify any issues, and then bring it under our care plan. We do this regularly for clients who've had bad experiences with previous developers." },
+    ],
+  },
+  {
+    id: "ecommerce",
+    label: "eCommerce",
+    icon: "🛒",
+    faqs: [
+      { q: "WooCommerce or Shopify — which should I choose?", a: "WooCommerce if you want full ownership, no monthly platform fees, and the ability to scale with complex content or NZ-specific integrations. Shopify if you want the easiest possible day-to-day management and excellent multi-channel selling. We build both and will recommend based on your situation." },
+      { q: "Can you set up AfterPay and Laybuy?", a: "Yes. We configure AfterPay, Laybuy, Zip, and POLi as standard for NZ eCommerce stores. Buy Now Pay Later options are popular with NZ shoppers and can meaningfully increase average order value." },
+      { q: "Do your eCommerce prices include GST configuration?", a: "Yes. GST-inclusive pricing, NZ tax class setup, and automated invoice generation are all included in our eCommerce builds as standard." },
+      { q: "Can you migrate my existing store to WooCommerce?", a: "Yes. We handle full migrations from Shopify, Wix eCommerce, Squarespace Commerce, and old WooCommerce installations. Products, customers, and order history are migrated where possible." },
+    ],
+  },
+];
 ---
-<Layout title="FAQ" description="All the questions you have about website design in Auckland. Kiwi Web Design helps you to answer them. On time, on budget and affordable." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Help & Support</p>
-        <h1>Frequently Asked Questions — Web Design Auckland</h1>
-        <p class="hero-sub">All the questions you have about website design in Auckland. Kiwi Web Design helps you to answer them. On time, on budget and affordable.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="FAQ | Web Design Auckland — Kiwi Web Design"
+  description="All the questions you have about website design in Auckland. Kiwi Web Design helps you to answer them. On time, on budget and affordable."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/faq/"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="faq-page-hero">
+    <div class="container faq-hero-inner">
+      <p class="faq-hero-eyebrow">Help & Support</p>
+      <h1>Frequently Asked Questions</h1>
+      <p class="faq-hero-sub">Every common question about web design, SEO, pricing, and our process — answered honestly. Can't find what you need? <a href="/website-designer-auckland/">Get in touch →</a></p>
+
+      <!-- Category nav -->
+      <div class="faq-cat-nav">
+        {categories.map(({ id, label, icon }) => (
+          <a href={`#${id}`} class="faq-cat-btn">
+            <span>{icon}</span>
+            <span>{label}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ sections -->
+  <section class="section">
+    <div class="container faq-page-wrap">
+      {categories.map(({ id, label, icon, faqs }) => (
+        <div class="faq-category" id={id}>
+          <div class="faq-category-header">
+            <span class="faq-cat-icon">{icon}</span>
+            <h2 class="faq-cat-title">{label}</h2>
+          </div>
+          <FAQAccordion items={faqs} title="" />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Still have questions -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container faq-still-wrap">
+      <div class="faq-still-text">
+        <h2>Still have questions?</h2>
+        <p>We're always happy to have a conversation before you commit to anything. No pressure, no sales pitch — just honest advice about what your business needs.</p>
+      </div>
+      <div class="faq-still-contact">
+        <a href="/website-designer-auckland/" class="faq-still-btn-primary">Book a Free Consult</a>
+        <div class="faq-still-direct">
+          <a href="mailto:Hi@KiwiWebDesign.co.nz">Hi@KiwiWebDesign.co.nz</a>
+          <a href="tel:+64210396580">021 039 6580</a>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/web-design-process-kiwi-web-design-auckland.jpg" alt="Frequently Asked Questions — Web Design Auckland" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<p>
- <a href="/website-design-auckland/">Auckland tradies</a>,
- <a href="/affordable-web-design-auckland/">small business</a> owners,
- and <a href="/web-designs-auckland/">eCommerce</a> teams ask us these questions all the time — here’s what you can expect when we build your site.
- </p>
+  <CTABanner
+    variant="yellow"
+    title="Ready to get started?"
+    subtitle="Free consultation — in person in Grey Lynn or on a video call. We'll answer all your questions and give you a fixed quote."
+    ctaPrimary={{ text: "Book a Free Consult", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Our Services", href: "/solutions-auckland-kiwi-web-design/" }}
+  />
 
-<details>
- <summary>How much does a website cost in Auckland?</summary>
- 
- <p>Most small business sites we build start from $1,290. eCommerce or larger sites typically range from $2,000–$3,000 depending on pages, features, and content. We’ll send a fixed, transparent quote before we start — no surprises.</p>
- 
- </details>
-
- <details>
- <summary>How long does it take to build a website?</summary>
- 
- <p>For most tradies and small business websites, our turnaround is about 2–3 weeks including design, content setup, testing, and revisions. Complex/eCommerce builds can take a little longer — we’ll give you a realistic timeline on day one.</p>
- 
- </details>
-
- <details>
- <summary>Do you design websites for tradies?Tradies</summary>
- 
- <p>Absolutely. We’ve built sites for builders, plumbers, electricians, painters, and scaffolding companies across Auckland. Pages are simple, fast, and built to get calls. See our <a href="/website-design-auckland/">Tradie Web Design page</a>.</p>
- 
- </details>
-
- <details>
- <summary>Can you build an online store for my business?eCommerce</summary>
- 
- <p>Yes — we build WordPress + WooCommerce stores so you can add products, manage orders, and take payments with ease. If you’re starting out, we’ll help with categories, product photos, and shipping rules.</p>
- 
- </details>
-
- <details>
- <summary>Will my website show up on Google?</summary>
- 
- <p>Yes. We follow <a href="https://www.google.com">Google</a>-friendly on-page best practices (fast load, clean structure, mobile-first, schema, and metadata) so your site is ready to rank from day one. We also guide your <a href="https://www.google.com">Google</a> Business Profile and basic copy to target “web design Auckland” naturally.</p>
- 
- </details>
-
- <details>
- <summary>Do you work with small businesses only?</summary>
- 
- <p>We specialise in Auckland small businesses and tradies that want a professional site without agency-level pricing. We’re nimble, local, and practical — perfect for growing companies that need results, not jargon.</p>
- 
- </details>
-
- <details>
- <summary>Can I update my website myself later?</summary>
- 
- <p>100%. We build on WordPress so you can edit text, images, services, and prices without touching code. We’ll record a quick handover or show you live how to make changes.</p>
- 
- </details>
-
- <details>
- <summary>Do you help with domain, email, and hosting?</summary>
- 
- <p>Yes. We can register your .co.nz domain, set up email, and place you on fast, reliable local hosting. Prefer to bring your own? No worries — we’ll deploy wherever you like.</p>
- 
- </details>
-
- <details>
- <summary>Are your websites mobile-friendly?</summary>
- 
- <p>Every site we build is responsive — great on phones, tablets, and desktops. With most Auckland visitors browsing on mobile, we prioritise speed, tap targets, and legible typography.</p>
- 
- </details>
-
- <details>
- <summary>Can you redesign my old website?</summary>
- 
- <p>Absolutely. We can refresh your current content with a modern layout or rebuild from scratch if that’s the better value. Expect cleaner visuals, clearer messaging, and more enquiries.</p>
- 
- </details>
-
- <details>
- <summary>What if I don’t know what content to write?</summary>
- 
- <p>We’ll guide your page structure and provide copy prompts that fit your industry. Short on time? We can help tidy your wording so it’s clear and customer-friendly.</p>
- 
- </details>
-
- <details>
- <summary>Do you meet clients in person?Auckland-wide</summary>
- 
- <p>Yes — we’re Auckland-based and can meet locally, or jump on Zoom. We regularly work from <a href="https://nsrodney.org.nz/">Rodney</a>, <a href="https://en.wikipedia.org/wiki/Waitakere_City">Waitākere</a>, <a href="https://www.explorenorthshore.nz/">North Shore</a>, <a href="https://heartofthecity.co.nz/">Auckland CBD</a>, <a href="https://www.aucklandeastcommunitynetwork.org.nz/">East</a> & <a href="https://www.nzherald.co.nz/topic/south-auckland/">South Auckland</a>.</p>
- 
- </details>
-
- <details>
- <summary>Do you offer website maintenance after launch?</summary>
- 
- <p>Yes. We provide affordable monthly care (updates, backups, security checks, and small content edits). Or we can train you to self-manage and jump in on request.</p>
- 
- </details>
-
- <details>
- <summary>Why choose Kiwi Web Design?</summary>
- 
- <p>We’re a local, family-run team focused on affordability, transparency, and quick turnaround. No fluff — just a good-looking site that helps Auckland customers find and trust you.</p>
- 
- </details>
-
- <details>
- <summary>How do we get started?</summary>
- 
- <p>Easy — contact us or call 021 039 6580. We’ll have a quick chat about your goals, suggest the right package, and send a free, no-pressure quote.</p>
- 
- </details>
-
-<h2>Ready to build your Auckland website?</h2>
- <p>Choose the package that fits your business and lean on our local team for friendly advice, fast turnaround, and a site that works as hard as you do.</p>
- <ul>
- <li><a href="/website-design-auckland/">Tradie Web Design</a></li>
- <li><a href="/web-designs-auckland/">eCommerce Web Design</a></li>
- <li><a href="/affordable-web-design-auckland/">Affordable Web Design Auckland</a></li>
- </ul>
- <a href="/website-designer-auckland/">Contact us</a>
- <p>We cover Rodney, Waitākere, North Shore, Auckland CBD, and East & South Auckland — onsite or over Zoom.</p>
-
-<!-- If your theme blocks inline scripts, move the JSON-LD into the site header -->
-    </div>
-  </section>
-
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  /* Hero */
+  .faq-page-hero {
+    background: var(--kwd-dark);
+    padding: 5rem 0 4rem;
+  }
+  .faq-hero-inner { max-width: 780px; margin-inline: auto; text-align: center; }
+  .faq-hero-eyebrow {
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--kwd-yellow); margin-bottom: 1rem;
+  }
+  .faq-page-hero h1 { font-size: clamp(2.25rem, 5vw, 3.75rem); color: #fff; line-height: 1.1; margin-bottom: 1rem; }
+  .faq-hero-sub { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 2.5rem; }
+  .faq-hero-sub a { color: var(--kwd-yellow); font-weight: 600; }
+
+  /* Category nav */
+  .faq-cat-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+  }
+  .faq-cat-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+  }
+  .faq-cat-btn:hover { background: rgba(255,255,255,0.14); color: #fff; }
+
+  /* FAQ sections */
+  .faq-page-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    max-width: 860px;
+  }
+  .faq-category-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--kwd-cream);
+  }
+  .faq-cat-icon { font-size: 1.75rem; }
+  .faq-cat-title { font-size: clamp(1.25rem, 2vw, 1.75rem); color: var(--kwd-dark); margin: 0; }
+
+  /* Still have questions */
+  .faq-still-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .faq-still-text h2 { font-size: clamp(1.25rem, 2vw, 1.75rem); margin-bottom: 0.5rem; }
+  .faq-still-text p { font-size: 0.9rem; color: var(--kwd-brown); max-width: 480px; }
+  .faq-still-contact { display: flex; flex-direction: column; gap: 0.75rem; flex-shrink: 0; }
+  .faq-still-btn-primary {
+    display: inline-block; background: var(--kwd-dark); color: #fff;
+    padding: 0.875rem 2rem; border-radius: 8px; font-weight: 700; font-size: 0.875rem;
+    text-transform: uppercase; letter-spacing: 0.07em; text-align: center;
+    transition: background 0.2s;
+  }
+  .faq-still-btn-primary:hover { background: #3e3633; }
+  .faq-still-direct { display: flex; flex-direction: column; gap: 0.25rem; }
+  .faq-still-direct a { font-size: 0.875rem; font-weight: 600; color: var(--kwd-dark); transition: opacity 0.2s; }
+  .faq-still-direct a:hover { opacity: 0.65; }
+
+  @media (max-width: 760px) {
+    .faq-still-wrap { flex-direction: column; align-items: flex-start; }
   }
 </style>

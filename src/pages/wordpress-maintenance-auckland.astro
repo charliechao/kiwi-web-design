@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,149 +13,362 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/",
-      "name": "WordPress maintenance",
-      "description": "Keep your website fast, secure, and up to date with Kiwi Web Design’s WordPress maintenance services. We offer affordable monthly plans.",
+      "name": "WordPress Maintenance Auckland | Managed WordPress Care Plans",
+      "description": "Keep your website fast, secure, and up to date with Kiwi Web Design's WordPress maintenance services. We offer affordable monthly plans.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "WordPress maintenance"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Maintenance Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const risks = [
+  { icon: "🦠", title: "90% of hacked WordPress sites had outdated plugins", desc: "Outdated plugins are the number one attack vector for WordPress. A single unpatched plugin can compromise your entire site — customer data, contact forms, everything." },
+  { icon: "📉", title: "Slow sites lose customers and rankings", desc: "A 1-second delay reduces conversions by 7%. Old WordPress installs accumulate bloat that slows load times. Regular maintenance keeps things running fast." },
+  { icon: "💔", title: "Broken sites happen without warning", desc: "A plugin update conflict can take your site offline in seconds. Without backups, that means rebuilding from scratch. With daily backups, it means a 5-minute restore." },
+  { icon: "⚠️", title: "Google flags insecure sites", desc: "Expired SSLs, outdated PHP, and security vulnerabilities can trigger browser warnings — 'This site may be unsafe' — that kill your traffic and conversions overnight." },
+];
+
+const maintenancePlans = [
+  {
+    name: "Basic",
+    price: "$99/mo",
+    note: "+ GST",
+    desc: "Core maintenance for sites that just need to stay secure and up to date.",
+    items: [
+      "Monthly WordPress core updates",
+      "Monthly plugin & theme updates",
+      "Daily backups (14-day retention)",
+      "SSL monitoring",
+      "Uptime monitoring",
+      "Monthly status report",
+    ],
+    highlight: false,
+    href: "/website-designer-auckland/",
+  },
+  {
+    name: "Standard",
+    price: "$199/mo",
+    note: "+ GST",
+    desc: "Full maintenance plus hosting and 2 hours of content changes every month.",
+    items: [
+      "Everything in Basic",
+      "Managed WordPress hosting",
+      "2 hours content changes/mo",
+      "Security scanning & firewall",
+      "Daily backups (30-day retention)",
+      "Priority support response",
+      "Google Analytics summary",
+    ],
+    highlight: true,
+    tag: "Most Popular",
+    href: "/website-designer-auckland/",
+  },
+  {
+    name: "Premium",
+    price: "$349/mo",
+    note: "+ GST",
+    desc: "For businesses that need more hands-on support, regular content updates, and SEO reporting.",
+    items: [
+      "Everything in Standard",
+      "4 hours content changes/mo",
+      "Monthly SEO health check",
+      "Performance optimisation",
+      "Staging site for testing",
+      "Same-day support response",
+      "Quarterly strategy review",
+    ],
+    highlight: false,
+    href: "/website-designer-auckland/",
+  },
+];
+
+const services = [
+  {
+    icon: "🔄",
+    title: "Core & Plugin Updates",
+    desc: "We apply WordPress core, plugin, and theme updates monthly — testing on a staging environment first to catch any conflicts before they affect your live site.",
+    items: ["WordPress core updates", "Plugin updates (all)", "Theme updates", "Pre-update backups"],
+  },
+  {
+    icon: "💾",
+    title: "Daily Backups",
+    desc: "Automated daily backups stored offsite. If anything goes wrong — a bad update, a hack, accidental deletion — we can restore your site to any point in the retention window.",
+    items: ["Daily automated backups", "Offsite storage", "30-day retention (Standard+)", "One-click restore"],
+  },
+  {
+    icon: "🔒",
+    title: "Security Monitoring",
+    desc: "Continuous malware scanning, login protection, firewall rules, and SSL certificate management. If a threat is detected, we respond immediately.",
+    items: ["Malware scanning", "Firewall configuration", "Login protection", "SSL certificate management"],
+  },
+  {
+    icon: "⚡",
+    title: "Performance Maintenance",
+    desc: "Database cleaning, cache configuration, image optimisation, and PHP version management to keep your site loading fast month after month.",
+    items: ["Database optimisation", "Cache management", "Image compression", "PHP version management"],
+  },
+  {
+    icon: "📊",
+    title: "Monthly Reporting",
+    desc: "A simple monthly report showing uptime, security scan results, updates applied, and Google Analytics highlights — so you always know what's happening.",
+    items: ["Uptime report", "Security scan summary", "Updates log", "Traffic overview"],
+  },
+  {
+    icon: "🛎️",
+    title: "Priority Support",
+    desc: "Got something wrong or need a quick fix? As a maintenance client you get priority support — typically responded to within a few hours on business days.",
+    items: ["Priority email support", "Same/next business day response", "Issue diagnosis", "Emergency fix included"],
+  },
+];
+
+const faqs = [
+  { q: "Do I need a maintenance plan if I have a new website?", a: "Yes — actually a new site is the ideal time to start. Updates are released constantly for WordPress core, plugins, and themes. Without regular maintenance, security vulnerabilities accumulate quickly. The first 6–12 months are when most sites become vulnerable if left unattended." },
+  { q: "What happens if my site gets hacked while I'm on a plan?", a: "Under our Standard and Premium plans, malware removal is covered. We'll investigate, clean the infection, harden the site, and restore from a backup if necessary — at no extra charge beyond your plan." },
+  { q: "Can you maintain a WordPress site you didn't build?", a: "Yes. We can take over maintenance of any WordPress site — built by us or anyone else. We'll start with an audit to understand the current state of the site, plugins, and any issues before adding it to our care plan." },
+  { q: "Is there a lock-in contract?", a: "No. All plans run month-to-month. You can cancel with 30 days notice. We don't believe in trapping clients — we'd rather earn your continued business." },
+  { q: "What's the difference between the Standard plan and the Monthly Subscription?", a: "They're essentially the same thing — the Standard plan is our Monthly Subscription product. It includes managed hosting, security, updates, daily backups, 2 hours of content changes, and priority support for $199/month + GST." },
+  { q: "What counts as a 'content change'?", a: "Text updates, image swaps, adding or removing pages, menu changes, price updates, adding blog posts — anything that doesn't require custom development. Major new features or redesigns are quoted separately." },
+];
 ---
-<Layout title="WordPress maintenance" description="Keep your website fast, secure, and up to date with Kiwi Web Design’s WordPress maintenance services. We offer affordable monthly plans." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Website Care</p>
-        <h1>Why Your WordPress Site Needs Regular Maintenance</h1>
-        <p class="hero-sub">Keep your website fast, secure, and up to date with Kiwi Web Design’s WordPress maintenance services. We offer affordable monthly plans.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="WordPress Maintenance Auckland | Managed WordPress Care Plans"
+  description="Keep your website fast, secure, and up to date with Kiwi Web Design's WordPress maintenance services. We offer affordable monthly plans."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="WordPress Maintenance Auckland"
+    title="Your WordPress site needs regular care. We do it for you."
+    subtitle="Managed WordPress maintenance plans for Auckland businesses — updates, security, backups, and support handled monthly so you never have to think about it."
+    badgeText="From $99/month + GST"
+    ctaPrimary={{ text: "Get a Care Plan", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Plans", href: "#plans" }}
+    centered={true}
+  />
+
+  <!-- Risk section -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="The Risk of Neglect"
+        title="What happens to unmanaged WordPress sites."
+        subtitle="It's not a question of if — it's a question of when. These are the real costs of skipping maintenance."
+      />
+      <div class="maint-risks">
+        {risks.map(({ icon, title, desc }) => (
+          <div class="maint-risk">
+            <span class="maint-risk-icon">{icon}</span>
+            <div>
+              <strong class="maint-risk-title">{title}</strong>
+              <p class="maint-risk-desc">{desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/wordpress-website-maintenance-kiwi-web-design-auckland.jpg" alt="Why Your WordPress Site Needs Regular Maintenance" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section class="section" id="plans">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Care Plans"
+        title="Simple, flat-fee monthly plans."
+        subtitle="No lock-in contracts. Cancel anytime with 30 days notice."
+      />
+      <div class="maint-plans">
+        {maintenancePlans.map((plan) => (
+          <div class:list={['maint-plan', plan.highlight && 'maint-plan--featured']}>
+            {plan.tag && <span class="maint-plan-tag">{plan.tag}</span>}
+            <p class="maint-plan-name">{plan.name}</p>
+            <div class="maint-plan-price-wrap">
+              <span class="maint-plan-price">{plan.price}</span>
+              <span class="maint-plan-note">{plan.note}</span>
+            </div>
+            <p class="maint-plan-desc">{plan.desc}</p>
+            <ul class="maint-plan-list">
+              {plan.items.map((item) => <li>{item}</li>)}
+            </ul>
+            <a href={plan.href} class:list={['maint-plan-btn', plan.highlight && 'maint-plan-btn--featured']}>
+              Get Started
+            </a>
+          </div>
+        ))}
       </div>
+      <p class="maint-plans-note">All plans exclude GST. No lock-in — cancel anytime with 30 days notice. <a href="/website-designer-auckland/">Questions? Get in touch →</a></p>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/wordpress-website-maintenance-kiwi-web-design-auckland.jpg" alt="WordPress logo representing website maintenance and hosting services in Auckland by Kiwi Web Design" loading="lazy"> 
-
-
+  <!-- Services breakdown -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What's Included"
+        title="Every service. Explained."
+        subtitle="We don't hide anything in the fine print. Here's exactly what we do each month."
+      />
+      <ServiceGrid items={services} cols={3} />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Maintenance Questions Answered"
+        subtitle="Common questions from Auckland business owners about WordPress maintenance."
+      />
     </div>
   </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Stop worrying about your WordPress site."
+    subtitle="Get a care plan today — we'll audit your site and have it under management within 48 hours."
+    ctaPrimary={{ text: "Get a Care Plan", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Monthly Subscription", href: "/monthly-subscription/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .maint-risks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .maint-risk {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .maint-risk-icon { font-size: 1.75rem; flex-shrink: 0; width: 2.25rem; text-align: center; }
+  .maint-risk-title { display: block; font-size: 0.9rem; font-weight: 700; color: var(--kwd-dark); margin-bottom: 0.35rem; }
+  .maint-risk-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
+
+  /* Plans */
+  .maint-plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+    margin-top: 2.5rem;
+  }
+  .maint-plan {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.08);
+    border-radius: 18px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .maint-plan--featured {
+    background: var(--kwd-dark);
+    border-color: var(--kwd-dark);
+  }
+  .maint-plan-tag {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+  }
+  .maint-plan-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin: 0 0 0.5rem;
+  }
+  .maint-plan--featured .maint-plan-name { color: rgba(255,255,255,0.5); }
+  .maint-plan-price-wrap { display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.75rem; }
+  .maint-plan-price {
+    font-family: var(--kwd-font-heading);
+    font-size: 2.25rem;
+    color: var(--kwd-dark);
+    line-height: 1;
+  }
+  .maint-plan--featured .maint-plan-price { color: var(--kwd-yellow); }
+  .maint-plan-note { font-size: 0.8rem; color: var(--kwd-brown); }
+  .maint-plan--featured .maint-plan-note { color: rgba(255,255,255,0.45); }
+  .maint-plan-desc { font-size: 0.85rem; color: var(--kwd-brown); line-height: 1.6; margin: 0 0 1.25rem; }
+  .maint-plan--featured .maint-plan-desc { color: rgba(255,255,255,0.6); }
+  .maint-plan-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+  .maint-plan-list li {
+    font-size: 0.84rem;
+    color: var(--kwd-dark);
+    padding-left: 1.3rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .maint-plan-list li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-brown); font-weight: 700; }
+  .maint-plan--featured .maint-plan-list li { color: rgba(255,255,255,0.8); }
+  .maint-plan--featured .maint-plan-list li::before { color: var(--kwd-yellow); }
+  .maint-plan-btn {
+    display: block;
+    text-align: center;
+    padding: 0.875rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--kwd-cream);
+    color: var(--kwd-dark);
+    transition: background 0.2s;
+  }
+  .maint-plan-btn:hover { background: #e8e7da; }
+  .maint-plan-btn--featured { background: var(--kwd-yellow); }
+  .maint-plan-btn--featured:hover { background: var(--kwd-gold); }
+  .maint-plans-note {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--kwd-brown);
+    margin-top: 1.5rem;
+  }
+  .maint-plans-note a { color: var(--kwd-dark); font-weight: 600; }
+
+  @media (max-width: 960px) {
+    .maint-plans { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+    .maint-risks { grid-template-columns: 1fr; }
   }
 </style>

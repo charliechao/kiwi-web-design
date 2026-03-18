@@ -1,5 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import StatsRow from '../components/StatsRow.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,289 +15,283 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/",
-      "name": "eCommerce Website",
+      "name": "eCommerce Website Design Auckland | Online Stores for NZ Businesses",
       "description": "Looking for a powerful, affordable ecommerce website in Auckland? Kiwi Web Design builds secure, mobile-friendly online stores with fast turnaround and local support.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "eCommerce Website"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "eCommerce Website Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const stats = [
+  { number: "$5.8B", label: "NZ eCommerce revenue in 2024" },
+  { number: "67%", label: "of NZ consumers shop online regularly" },
+  { number: "From $3,990", label: "eCommerce website packages" },
+  { number: "2–4 wks", label: "Typical store launch time" },
+];
+
+const included = [
+  {
+    icon: "🛒",
+    title: "Product Catalogue Setup",
+    desc: "We set up your product catalogue with categories, attributes, variations, and descriptions. Up to 20 products included in standard packages.",
+    items: ["Product pages & descriptions", "Categories & tags", "Product variations (size, colour)", "Image galleries per product"],
+  },
+  {
+    icon: "💳",
+    title: "NZ Payment Gateways",
+    desc: "We integrate the payment gateways NZ customers trust — Stripe, PayPal, POLi, AfterPay, Laybuy, and bank transfer options.",
+    items: ["Stripe (cards)", "PayPal", "AfterPay / Laybuy", "Direct bank transfer"],
+  },
+  {
+    icon: "📦",
+    title: "Shipping & Fulfilment",
+    desc: "NZ-specific shipping setup including flat rate, free shipping thresholds, weight-based rules, and courier integrations.",
+    items: ["NZ flat rate shipping", "Free shipping thresholds", "Rural delivery surcharges", "Click & Collect option"],
+  },
+  {
+    icon: "🧾",
+    title: "GST & Tax Handling",
+    desc: "GST-inclusive pricing, tax-exclusive displays, invoice generation, and correct NZ tax configuration out of the box.",
+    items: ["GST-inclusive pricing", "Tax reports", "Invoice emails to customers", "NZ tax class setup"],
+  },
+  {
+    icon: "📊",
+    title: "Analytics & Conversion Tracking",
+    desc: "GA4 eCommerce tracking, Google Search Console, and conversion events so you know exactly what's selling and where traffic comes from.",
+    items: ["GA4 eCommerce tracking", "Google Ads conversion events", "Revenue reporting", "Funnel analysis"],
+  },
+  {
+    icon: "🔒",
+    title: "Security & Performance",
+    desc: "SSL, PCI-compliant payment processing, daily backups, and a fast-loading storefront that keeps customers from bouncing before they buy.",
+    items: ["SSL certificate", "PCI-compliant checkout", "Daily backups", "CDN & speed optimisation"],
+  },
+];
+
+const platforms = [
+  {
+    name: "WooCommerce",
+    tag: "WordPress-based",
+    icon: "🟦",
+    pros: ["You own everything — no monthly platform fee", "Total design flexibility", "55,000+ plugins", "WP content marketing built in", "Best for NZ payment variety"],
+    best: "Best for: businesses wanting full ownership, content-driven stores, or complex product variations.",
+    href: "/woocommerce-website-design-auckland/",
+  },
+  {
+    name: "Shopify",
+    tag: "Hosted platform",
+    icon: "🟩",
+    pros: ["Easiest to manage yourself", "Excellent for fashion / DTC brands", "Built-in multi-channel selling", "Shopify Payments available in NZ", "App ecosystem for scaling"],
+    best: "Best for: product-focused brands wanting ease of use and rapid scaling.",
+    href: "/shopify-website-design-auckland/",
+  },
+];
+
+const process = [
+  { step: "1", title: "Strategy & Platform Choice", desc: "We discuss your products, your customers, and your fulfilment model. Together we choose the right platform (WooCommerce or Shopify) and plan the store structure." },
+  { step: "2", title: "Design & UX", desc: "We design your storefront — homepage, category pages, product pages, and checkout flow — optimised for conversion on mobile and desktop." },
+  { step: "3", title: "Build, Integrate & Test", desc: "We build the store, set up payment gateways, shipping rules, GST, and test every element of the purchase flow end-to-end before launch." },
+  { step: "4", title: "Launch & Train", desc: "We go live, configure Analytics, and walk you through adding products, processing orders, and managing your store day-to-day." },
+];
+
+const faqs = [
+  { q: "WooCommerce or Shopify — which should I choose?", a: "It depends on your priorities. WooCommerce gives you full ownership with no ongoing platform fees and maximum flexibility. Shopify is easier to manage day-to-day and has excellent multi-channel capabilities. We'll recommend the right one based on your product range, technical comfort, and growth plans." },
+  { q: "How many products can the website handle?", a: "Both platforms handle thousands of products. Our standard packages include setup for up to 20 products. We can quote for larger catalogues — the additional cost is mainly for the time to populate and organise the products." },
+  { q: "Can you set up AfterPay or Laybuy?", a: "Yes. We set up Buy Now Pay Later options including AfterPay, Laybuy, and Zip as part of your payment gateway configuration. These are popular with NZ shoppers and can meaningfully increase average order value." },
+  { q: "Do you handle the product photography?", a: "We don't provide product photography, but we advise on image specifications (dimensions, file size, background) so your existing photos look great on the site. Good product imagery is one of the biggest drivers of conversion, so we'll give you honest guidance." },
+  { q: "Will my store show up on Google?", a: "We set up your store with SEO foundations — product schema markup, optimised meta titles and descriptions, proper heading structure, and sitemap submission. Ongoing SEO or Google Shopping Ads are available as separate services." },
+  { q: "How much does an eCommerce website cost in Auckland?", a: "Our eCommerce packages start from $3,990 + GST including store design, product setup (up to 20 products), payment gateway integration, and NZ shipping configuration. Larger catalogues or custom features are quoted separately." },
+];
 ---
-<Layout title="eCommerce Website" description="Looking for a powerful, affordable ecommerce website in Auckland? Kiwi Web Design builds secure, mobile-friendly online stores with fast turnaround and local support." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">eCommerce</p>
-        <h1>eCommerce Website Design</h1>
-        <p class="hero-sub">Looking for a powerful, affordable ecommerce website in Auckland? Kiwi Web Design builds secure, mobile-friendly online stores with fast turnaround and local support.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="eCommerce Website Design Auckland | Online Stores for NZ Businesses"
+  description="Looking for a powerful, affordable ecommerce website in Auckland? Kiwi Web Design builds secure, mobile-friendly online stores with fast turnaround and local support."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="eCommerce Website Auckland"
+    title="An online store built to sell. Not just to look good."
+    subtitle="Affordable eCommerce websites for Auckland businesses — WooCommerce and Shopify stores with NZ payments, shipping, and GST configured from day one."
+    badgeText="From $3,990 + GST"
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "Choose Your Platform", href: "#platform" }}
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-5632376-5632376.jpg"
+    imgAlt="eCommerce website design Auckland"
+  />
+
+  <StatsRow items={stats} />
+
+  <!-- Platform choice -->
+  <section class="section" style="background: var(--kwd-cream);" id="platform">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Choose Your Platform"
+        title="WooCommerce or Shopify — we build both."
+        subtitle="Two great platforms, each with different strengths. We'll help you choose the right one for your business."
+      />
+      <div class="ec-platforms">
+        {platforms.map(({ name, tag, icon, pros, best, href }) => (
+          <div class="ec-platform">
+            <div class="ec-platform-top">
+              <span class="ec-platform-icon">{icon}</span>
+              <div>
+                <h3 class="ec-platform-name">{name}</h3>
+                <span class="ec-platform-tag">{tag}</span>
+              </div>
+            </div>
+            <ul class="ec-platform-pros">
+              {pros.map((pro) => (
+                <li><span class="ec-check">✓</span>{pro}</li>
+              ))}
+            </ul>
+            <p class="ec-platform-best">{best}</p>
+            <a href={href} class="ec-platform-link">Learn more about {name} →</a>
+          </div>
+        ))}
       </div>
-      <div class="hero-img">
-        <img src="https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?auto=format&amp;fit=crop&amp;q=80&amp;w=800&amp;ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzU5OTU3MDY5fA&amp;ixlib=rb-4.1.0" alt="eCommerce Website Design" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<h4>Affordable online store solutions
-
-</h4> 
-
- 
-
-<p>Selling online should be simple, effective, and <a href="/affordable-web-design-auckland/">affordable</a>. At Kiwi Web Design, we build eCommerce websites that make it easy for your customers to browse, buy, and come back for more. See <a href="/affordable-web-design-auckland/website-cost-new-zealand-small-business/">how much it costs</a> here.</p> 
-
-<a href="/wordpress-maintenance-auckland/">
- <svg aria-hidden="true" class="e-font-icon-svg e-far-keyboard" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M528 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h480c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm8 336c0 4.411-3.589 8-8 8H48c-4.411 0-8-3.589-8-8V112c0-4.411 3.589-8 8-8h480c4.411 0 8 3.589 8 8v288zM170 270v-28c0-6.627-5.373-12-12-12h-28c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12zm96 0v-28c0-6.627-5.373-12-12-12h-28c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12zm96 0v-28c0-6.627-5.373-12-12-12h-28c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12zm96 0v-28c0-6.627-5.373-12-12-12h-28c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12zm-336 82v-28c0-6.627-5.373-12-12-12H82c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12zm384 0v-28c0-6.627-5.373-12-12-12h-28c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12zM122 188v-28c0-6.627-5.373-12-12-12H82c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12zm96 0v-28c0-6.627-5.373-12-12-12h-28c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12zm96 0v-28c0-6.627-5.373-12-12-12h-28c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12zm96 0v-28c0-6.627-5.373-12-12-12h-28c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12zm96 0v-28c0-6.627-5.373-12-12-12h-28c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12zm-98 158v-16c0-6.627-5.373-12-12-12H180c-6.627 0-12 5.373-12 12v16c0 6.627 5.373 12 12 12h216c6.627 0 12-5.373 12-12z"></path></svg> </a>
-
-<h3>
- <a href="/wordpress-maintenance-auckland/">
- Why Choose Our eCommerce Websites </a>
- </h3>
- 
- <p>
- Running an online store requires more than just good looks. We design WordPress and WooCommerce websites that are fast, secure, and easy to manage. You’ll get a site tailored to your products, with smooth navigation and a checkout process that helps increase sales. </p>
-
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-shopping-bag" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M352 160v-32C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128v32H0v272c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V160h-96zm-192-32c0-35.29 28.71-64 64-64s64 28.71 64 64v32H160v-32zm160 120c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm-192 0c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24z"></path></svg> 
-
-<h3>
- 
- Key Features Included 
- </h3>
- 
- <p>
- Every eCommerce website we build comes with the essentials you need to start selling: <br>
-
-Mobile-friendly design so customers can shop anywhere <br>
-
-Easy product management for adding, editing, or removing items <br>
-
-Secure payment gateway integration <br>
-
-SEO-ready structure to improve your visibility on Google<br>
-
-Options for shipping, tax, and stock management </p>
-
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-money-check" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M0 448c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V128H0v320zm448-208c0-8.84 7.16-16 16-16h96c8.84 0 16 7.16 16 16v32c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-32zm0 120c0-4.42 3.58-8 8-8h112c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H456c-4.42 0-8-3.58-8-8v-16zM64 264c0-4.42 3.58-8 8-8h304c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H72c-4.42 0-8-3.58-8-8v-16zm0 96c0-4.42 3.58-8 8-8h176c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H72c-4.42 0-8-3.58-8-8v-16zM624 32H16C7.16 32 0 39.16 0 48v48h640V48c0-8.84-7.16-16-16-16z"></path></svg> 
-
-<h3>
- 
- Flexible for Growth 
- </h3>
- 
- <p>
- Your online store should grow with your business. Whether you want to add more products, integrate booking systems, or expand to international customers, we set up your website so it can scale without expensive rebuilds. </p>
-
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-globe" viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z"></path></svg> 
-
-<h3>
- 
- Transparent Pricing 
- </h3>
- 
- <p>
- Our eCommerce websites start from $3,490, offering a cost-effective solution without cutting corners. You’ll know exactly what’s included before we begin, so there are no hidden costs or surprises down the line. </p>
-
-<h2>Ecommerce Web Design Auckland</h2>
- <p>We guide <a href="https://en.wikipedia.org/wiki/Auckland">Auckland</a> retailers through every step of launching or upgrading a local online store, blending compelling design with the practical tools needed to sell with confidence.</p>
-
- <ul>
- <li>Mobile friendly storefronts that look sharp on every device</li>
- <li>Fast checkout flows to keep customers moving</li>
- <li>Local shipping and tax setup tailored to New Zealand</li>
- <li>Easy product updates you can manage in minutes</li>
- </ul>
-
-<figure>
- <picture>
- <img src="https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?auto=format&amp;fit=crop&amp;q=80&amp;w=800&amp;ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzU5OTU3MDY5fA&amp;ixlib=rb-4.1.0" alt="Retailer working on a laptop to manage an ecommerce website." loading="lazy">
- </picture>
- Photo by Shoper on Unsplash
- </figure>
- <figure>
- <picture>
- <img src="https://images.unsplash.com/photo-1599658880436-c61792e70672?auto=format&amp;fit=crop&amp;q=80&amp;w=800&amp;ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzU5OTU3MDc5fA&amp;ixlib=rb-4.1.0" alt="Person using a MacBook to review online store analytics." loading="lazy">
- </picture>
- Photo by Myriam Jessier on Unsplash
- </figure>
- <figure>
- <picture>
- <img src="https://images.unsplash.com/photo-1664455340023-214c33a9d0bd?auto=format&amp;fit=crop&amp;q=80&amp;w=800&amp;ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzU5OTU3MDgyfA&amp;ixlib=rb-4.1.0" alt="Small shopping cart toy symbolising ecommerce logistics." loading="lazy">
- </picture>
- Photo by Shutter Speed on Unsplash
- </figure>
- <figure>
- <picture>
- <img src="https://plus.unsplash.com/premium_photo-1684785618727-378a3a5e91c5?auto=format&amp;fit=crop&amp;q=80&amp;w=800&amp;ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzU5OTU3MDg4fA&amp;ixlib=rb-4.1.0" alt="Curated flatlay of retail products ready for online sales." loading="lazy">
- </picture>
- Photo by Philip Oroni on Unsplash
- </figure>
-
-<svg width="20" height="20" viewBox="0 0 24 24" role="presentation" aria-hidden="true">
- <path d="M4 12h16M4 16h12M4 8h8" stroke="#000" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
- </svg>
- 
- <h3>Local setup done right</h3>
- <p>We configure <a href="https://www.ird.govt.nz/gst">GST</a>, NZ shipping zones, and payment gateways so your checkout meets Auckland customer expectations from day one.</p>
-
-<svg width="20" height="20" viewBox="0 0 24 24" role="presentation" aria-hidden="true">
- <path d="M5 12l4 4 10-10" stroke="#000" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
- </svg>
- 
- <h3>Conversion focused</h3>
- <p>Lean <a href="https://www.reddit.com/r/UXDesign/">UX</a>, speedy page loads, and pared-back checkout steps help shoppers add to cart and complete their order without friction.</p>
-
-<svg width="20" height="20" viewBox="0 0 24 24" role="presentation" aria-hidden="true">
- <path d="M8 8h8M8 12h5M6 4h12a2 2 0 0 1 2 2v12l-4-3-4 3-4-3-4 3V6a2 2 0 0 1 2-2z" stroke="#000" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
- </svg>
- 
- <h3>Owner friendly</h3>
- <p>We leave you with product editing guides and team training so you can update inventory, imagery, and promos without waiting on support.</p>
-
-<h3>Our process</h3>
- <p>Clear milestones keep your launch predictable and collaborative.</p>
-
-<strong>1. Plan</strong>
- <p>We map audience goals, product priorities, and the integrations that will streamline operations.</p>
-
-<strong>2. Build</strong>
- <p>Design and develop the storefront theme with accessible navigation and mobile-first layouts.</p>
-
-<strong>3. Populate</strong>
- <p>Content, imagery, and collections are loaded with tidy metadata and smart product structures.</p>
-
-<strong>4. Launch</strong>
- <p>We test payments, fulfilment, and analytics so you can go live knowing every workflow connects.</p>
-
-<h3>Everything your store needs</h3>
- <ul>
- <li><a href="https://woocommerce.com/">WooCommerce</a> or Shopify guidance tailored to your niche</li>
-
- <li>Click &amp; collect and delivery options ready for local shoppers</li>
- <li>NZ tax and GST configuration without the guesswork</li>
- <li>Payment gateways including Stripe, PayPal, and invoicing on order</li>
- <li>Product variations, bundles, and flexible shipping rules</li>
- <li>Analytics and tracking setup aligned with your marketing</li>
- </ul>
-
-<h3>Built for Auckland growth</h3>
- <p>Our ecommerce web design Auckland team keeps your voice local while delivering online store development in Auckland that converts browsers into loyal customers and supports long-term retail growth.</p>
+  <!-- What's included -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What's Included"
+        title="Everything ready for launch on day one."
+        subtitle="NZ-specific setup included as standard — not as an afterthought."
+      />
+      <ServiceGrid items={included} cols={3} />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="From first call to first sale."
+        light={true}
+        subtitle="A clear four-step build process so you know what to expect at every stage."
+      />
+      <ProcessSteps items={process} dark={true} />
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="eCommerce Questions Answered"
+        subtitle="Common questions from Auckland businesses before building their online store."
+      />
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to start selling online?"
+    subtitle="Free consultation — we'll recommend the right platform and give you a fixed quote."
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "Compare WooCommerce & Shopify", href: "/woocommerce-website-design-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .ec-platforms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .ec-platform {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.08);
+    border-radius: 18px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .ec-platform-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .ec-platform-icon { font-size: 2rem; }
+  .ec-platform-name {
+    font-family: var(--kwd-font-body);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin: 0 0 0.2rem;
+  }
+  .ec-platform-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kwd-brown);
+    background: var(--kwd-cream);
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+  }
+  .ec-platform-pros {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+  .ec-platform-pros li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--kwd-dark);
+  }
+  .ec-check { color: var(--kwd-brown); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .ec-platform-best {
+    font-size: 0.82rem;
+    color: var(--kwd-brown);
+    font-style: italic;
+    line-height: 1.5;
+    padding: 0.75rem 1rem;
+    background: var(--kwd-cream);
+    border-radius: 8px;
+    margin: 0;
+  }
+  .ec-platform-link {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    transition: opacity 0.2s;
+  }
+  .ec-platform-link:hover { opacity: 0.65; }
+
+  @media (max-width: 760px) {
+    .ec-platforms { grid-template-columns: 1fr; }
   }
 </style>

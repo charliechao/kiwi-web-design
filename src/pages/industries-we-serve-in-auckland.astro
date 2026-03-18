@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import CTABanner from '../components/CTABanner.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,147 +10,370 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/industries-we-serve-in-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/industries-we-serve-in-auckland/",
-      "name": "Industries We Serve in Auckland",
+      "name": "Industries We Serve in Auckland | Web Design for Every Business",
       "description": "Kiwi Web Design builds affordable websites for tradies, eCommerce, and small businesses across Auckland and NZ. See the industries we serve.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/industries-we-serve-in-auckland/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/industries-we-serve-in-auckland/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/industries-we-serve-in-auckland/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Industries We Serve in Auckland"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Industries We Serve" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const industries = [
+  {
+    icon: "🔧",
+    title: "Trades & Construction",
+    desc: "Websites built around the phone call — click-to-call, work galleries, service pages, and local SEO that gets tradies found in their suburb.",
+    tags: ["Plumbers", "Electricians", "Builders", "Roofers", "Painters", "Landscapers"],
+    href: "/tradie-website-design-auckland/",
+    linkLabel: "Tradie web design →",
+  },
+  {
+    icon: "💆",
+    title: "Beauty & Wellness",
+    desc: "Booking-integrated sites for salons, spas, and clinics. Showcasing services, staff, and pricing in a way that keeps your chair full.",
+    tags: ["Hair salons", "Beauty clinics", "Spas", "Massage", "Nail studios", "Cosmetic clinics"],
+    href: "/page_how-kiwi-web-design-helps-auckland-beauty-industry/",
+    linkLabel: "Beauty industry →",
+  },
+  {
+    icon: "🍽️",
+    title: "Restaurants & Hospitality",
+    desc: "Menu pages, online reservations, Google Maps integration, and event pages. Helping Auckland eateries get found and fill tables.",
+    tags: ["Restaurants", "Cafés", "Bars", "Catering", "Food trucks", "Bakeries"],
+    href: "/page_how-kiwi-web-design-helps-auckland-restaurants/",
+    linkLabel: "Restaurant web design →",
+  },
+  {
+    icon: "⚕️",
+    title: "Healthcare & Medical",
+    desc: "Professional, patient-focused websites for healthcare providers. Online booking, service pages, and trust-building design.",
+    tags: ["Physiotherapy", "Dentistry", "GPs", "Naturopathy", "Psychology", "Optometry"],
+    href: "/page_how-kiwi-web-design-helps-auckland-healthcare/",
+    linkLabel: "Healthcare web design →",
+  },
+  {
+    icon: "⚖️",
+    title: "Professional Services",
+    desc: "Authority-building websites for lawyers, accountants, and consultants. Designed to win new clients from organic search.",
+    tags: ["Law firms", "Accountants", "Financial advisors", "Consultants", "Engineers", "Architects"],
+    href: "/page_how-kiwi-web-design-helps-auckand-lawyers/",
+    linkLabel: "Professional services →",
+  },
+  {
+    icon: "🛒",
+    title: "eCommerce & Retail",
+    desc: "WooCommerce and Shopify stores built to convert. Product pages, payment gateways, NZ shipping, and GST setup.",
+    tags: ["Fashion", "Homewares", "Food & drink", "Health products", "Electronics", "Sports"],
+    href: "/ecommerce-website-auckland/",
+    linkLabel: "eCommerce web design →",
+  },
+  {
+    icon: "🏋️",
+    title: "Fitness & Sports",
+    desc: "Class schedules, membership sign-ups, and booking integrations for gyms, studios, and personal trainers.",
+    tags: ["Gyms", "Yoga studios", "CrossFit", "Personal trainers", "Martial arts", "Dance studios"],
+    href: "/small-business-website-design-auckland/",
+    linkLabel: "View packages →",
+  },
+  {
+    icon: "🏠",
+    title: "Property & Real Estate",
+    desc: "Listing pages, investment guides, and lead capture for property managers, agents, and real estate businesses.",
+    tags: ["Property management", "Real estate agents", "Developers", "Conveyancers", "Valuers"],
+    href: "/small-business-website-design-auckland/",
+    linkLabel: "View packages →",
+  },
+  {
+    icon: "📚",
+    title: "Education & Training",
+    desc: "Course pages, enrolment forms, and LMS integrations for tutors, training providers, and educational institutions.",
+    tags: ["Tutors", "Training providers", "Language schools", "Coaching", "Online courses"],
+    href: "/small-business-website-design-auckland/",
+    linkLabel: "View packages →",
+  },
+  {
+    icon: "🚗",
+    title: "Automotive & Mechanical",
+    desc: "Service booking, vehicle listings, and local SEO for mechanics, car dealers, and automotive service businesses.",
+    tags: ["Mechanics", "Panel beaters", "Car dealers", "Detailing", "Tyres", "WOF centres"],
+    href: "/small-business-website-design-auckland/",
+    linkLabel: "View packages →",
+  },
+  {
+    icon: "🧹",
+    title: "Cleaning & Property Services",
+    desc: "Quote request forms, service area pages, and before/after galleries for cleaning and property maintenance businesses.",
+    tags: ["Residential cleaning", "Commercial cleaning", "Window cleaning", "Pest control", "Gardening"],
+    href: "/tradie-website-design-auckland/",
+    linkLabel: "View packages →",
+  },
+  {
+    icon: "🐾",
+    title: "Animal & Pet Services",
+    desc: "Booking-friendly sites for vets, groomers, dog trainers, and boarding facilities — mobile-optimised and appointment-ready.",
+    tags: ["Veterinary clinics", "Dog grooming", "Pet boarding", "Dog training", "Pet shops"],
+    href: "/small-business-website-design-auckland/",
+    linkLabel: "View packages →",
+  },
+];
+
+const whyIndustryKnowledge = [
+  { icon: "🎯", title: "Industry-specific conversion patterns", desc: "A tradie site needs a prominent phone number. A salon needs a booking button. A law firm needs a trust-building design. We know the difference." },
+  { icon: "🔍", title: "Right keywords for your sector", desc: "We understand the search terms each industry uses — and build your site around the queries your specific customers are typing into Google." },
+  { icon: "📸", title: "Relevant imagery and content", desc: "We source and structure content that resonates with your customers and positions your business correctly in your industry." },
+  { icon: "🗺️", title: "Local Auckland market knowledge", desc: "We understand the Auckland market — the suburbs, the competition, and the customer expectations in different sectors." },
+];
 ---
-<Layout title="Industries We Serve in Auckland" description="Kiwi Web Design builds affordable websites for tradies, eCommerce, and small businesses across Auckland and NZ. See the industries we serve." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Industries</p>
-        <h1>Industries We Serve in Auckland</h1>
-        <p class="hero-sub">Kiwi Web Design builds affordable websites for tradies, eCommerce, and small businesses across Auckland and NZ. See the industries we serve.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="Industries We Serve in Auckland | Web Design for Every Business"
+  description="Kiwi Web Design builds affordable websites for tradies, eCommerce, and small businesses across Auckland and NZ. See the industries we serve."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/industries-we-serve-in-auckland/"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="ind-hero">
+    <div class="container ind-hero-inner">
+      <p class="ind-eyebrow">Industries We Serve</p>
+      <h1>We know your industry.<br />We know what converts.</h1>
+      <p class="ind-hero-sub">Every industry has different customer expectations, different search patterns, and different conversion triggers. We've built websites across Auckland's most common business sectors — and we bring that knowledge to every project.</p>
+      <div class="ind-hero-actions">
+        <a href="/website-designer-auckland/" class="ind-btn-primary">Book a Free Consult</a>
+        <a href="#industries" class="ind-btn-secondary">Browse Industries ↓</a>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Auckland-Businesses.jpg" alt="Industries We Serve in Auckland" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Industries grid -->
+  <section class="section" id="industries">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Industries"
+        title="Sectors we've built for."
+        subtitle="Click through to see specific pages, case studies, and what we build differently for each industry."
+      />
+      <div class="ind-grid">
+        {industries.map(({ icon, title, desc, tags, href, linkLabel }) => (
+          <div class="ind-card">
+            <span class="ind-icon">{icon}</span>
+            <h3 class="ind-title">{title}</h3>
+            <p class="ind-desc">{desc}</p>
+            <div class="ind-tags">
+              {tags.map((tag) => <span class="ind-tag">{tag}</span>)}
+            </div>
+            <a href={href} class="ind-link">{linkLabel}</a>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-
+  <!-- Why industry knowledge matters -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Why It Matters"
+        title="Industry knowledge makes the difference."
+        light={true}
+        subtitle="A generic website builder doesn't know your customers. We do."
+      />
+      <div class="ind-why-grid">
+        {whyIndustryKnowledge.map(({ icon, title, desc }) => (
+          <div class="ind-why-item">
+            <span class="ind-why-icon">{icon}</span>
+            <h3 class="ind-why-title">{title}</h3>
+            <p class="ind-why-desc">{desc}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- Industries not listed -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container ind-not-listed">
+      <div>
+        <h2>Don't see your industry?</h2>
+        <p>We build websites for all kinds of Auckland businesses. If your industry isn't listed, get in touch — we've probably built something similar, or we're happy to learn about your sector.</p>
+      </div>
+      <a href="/website-designer-auckland/" class="ind-not-listed-btn">Get in Touch →</a>
     </div>
   </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to get a website built for your industry?"
+    subtitle="Free consultation — we'll apply our industry knowledge to help you get the most from your website."
+    ctaPrimary={{ text: "Book a Free Consult", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "View All Services", href: "/solutions-auckland-kiwi-web-design/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .ind-hero {
+    background: var(--kwd-dark);
+    padding: 5rem 0;
+    text-align: center;
+  }
+  .ind-hero-inner { max-width: 720px; margin-inline: auto; }
+  .ind-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 1rem;
+  }
+  .ind-hero h1 {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+  .ind-hero-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+  .ind-hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .ind-btn-primary {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: background 0.2s;
+  }
+  .ind-btn-primary:hover { background: var(--kwd-gold); }
+  .ind-btn-secondary {
+    display: inline-block;
+    color: rgba(255,255,255,0.65);
+    padding: 0.875rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .ind-btn-secondary:hover { color: #fff; }
+
+  /* Industry grid */
+  .ind-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .ind-card {
+    background: var(--kwd-cream);
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .ind-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-2px); }
+  .ind-icon { font-size: 2rem; }
+  .ind-title { font-family: var(--kwd-font-body); font-size: 1rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .ind-desc { font-size: 0.84rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; flex: 1; }
+  .ind-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.25rem;
+  }
+  .ind-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: rgba(0,0,0,0.06);
+    color: var(--kwd-dark);
+    padding: 0.2rem 0.55rem;
+    border-radius: 100px;
+  }
+  .ind-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin-top: 0.5rem;
+    transition: opacity 0.2s;
+  }
+  .ind-link:hover { opacity: 0.65; }
+
+  /* Why it matters */
+  .ind-why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .ind-why-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .ind-why-icon { font-size: 1.75rem; }
+  .ind-why-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: #fff; margin: 0; }
+  .ind-why-desc { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.6; margin: 0; }
+
+  /* Not listed */
+  .ind-not-listed {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .ind-not-listed h2 { font-size: clamp(1.25rem, 2vw, 1.75rem); margin-bottom: 0.5rem; }
+  .ind-not-listed p { font-size: 0.9rem; color: var(--kwd-brown); max-width: 560px; }
+  .ind-not-listed-btn {
+    display: inline-block;
+    background: var(--kwd-dark);
+    color: #fff;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    white-space: nowrap;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  .ind-not-listed-btn:hover { background: #3e3633; }
+
+  @media (max-width: 960px) {
+    .ind-grid { grid-template-columns: repeat(2, 1fr); }
+    .ind-why-grid { grid-template-columns: repeat(2, 1fr); }
+    .ind-not-listed { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 580px) {
+    .ind-grid { grid-template-columns: 1fr; }
+    .ind-why-grid { grid-template-columns: 1fr; }
   }
 </style>

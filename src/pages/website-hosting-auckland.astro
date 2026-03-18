@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,147 +13,337 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/website-hosting-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/website-hosting-auckland/",
-      "name": "Website Hosting Auckland",
-      "description": "ast, secure, managed website hosting for Auckland small businesses. Daily backups, SSL, performance tuning & local support. Get reliable hosting today.",
+      "name": "Website Hosting Auckland | Managed WordPress Hosting NZ",
+      "description": "Fast, secure, managed website hosting for Auckland small businesses. Daily backups, SSL, performance tuning & local support. Get reliable hosting today.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/website-hosting-auckland/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/website-hosting-auckland/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/website-hosting-auckland/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Website Hosting Auckland"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Website Hosting Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const hostingPlans = [
+  {
+    name: "Starter",
+    price: "$49/mo",
+    note: "+ GST",
+    desc: "Fast, reliable hosting for straightforward WordPress sites.",
+    items: [
+      "NZ-based server",
+      "SSL certificate included",
+      "Daily backups (14-day)",
+      "Uptime monitoring",
+      "WordPress optimised stack",
+      "Email support",
+    ],
+    highlight: false,
+    href: "/website-designer-auckland/",
+  },
+  {
+    name: "Managed",
+    price: "$99/mo",
+    note: "+ GST",
+    desc: "Hosting plus WordPress maintenance — updates, security, and monitoring included.",
+    items: [
+      "Everything in Starter",
+      "Daily backups (30-day)",
+      "Monthly WP core + plugin updates",
+      "Security scanning & firewall",
+      "Performance caching setup",
+      "Priority support",
+      "Monthly status report",
+    ],
+    highlight: true,
+    tag: "Recommended",
+    href: "/website-designer-auckland/",
+  },
+  {
+    name: "Full Care",
+    price: "$199/mo",
+    note: "+ GST",
+    desc: "Hosting, maintenance, and 2 hours of content changes every month.",
+    items: [
+      "Everything in Managed",
+      "2 hours content changes/mo",
+      "Google Analytics summary",
+      "Same-day support response",
+      "Staging environment",
+      "Quarterly performance review",
+    ],
+    highlight: false,
+    href: "/website-designer-auckland/",
+  },
+];
+
+const features = [
+  {
+    icon: "🇳🇿",
+    title: "NZ-Based Servers",
+    desc: "Your site is hosted on servers in New Zealand — giving NZ visitors faster load times than overseas hosting providers.",
+    items: ["Local NZ servers", "Low latency for NZ traffic", "GDPR & NZ Privacy Act aligned", "NZ support hours"],
+  },
+  {
+    icon: "⚡",
+    title: "Performance Stack",
+    desc: "We use a WordPress-optimised hosting stack with server-side caching, CDN, and PHP 8.x — so your site loads fast from day one.",
+    items: ["LiteSpeed / Redis cache", "Global CDN", "PHP 8.x", "HTTP/3 support"],
+  },
+  {
+    icon: "🔒",
+    title: "Security & SSL",
+    desc: "SSL certificates, automatic HTTPS, WordPress firewall, and malware scanning — your site is protected at the server level, not just the application level.",
+    items: ["Free SSL certificate", "Automatic HTTPS redirect", "Server-level firewall", "Malware scanning"],
+  },
+  {
+    icon: "💾",
+    title: "Daily Backups",
+    desc: "Automated daily backups with offsite storage. If anything goes wrong, we restore your site to any point within the retention window in minutes.",
+    items: ["Daily automated backups", "Offsite storage", "14–30 day retention", "One-click restore"],
+  },
+  {
+    icon: "📈",
+    title: "Uptime Monitoring",
+    desc: "24/7 uptime monitoring alerts us the moment your site goes down. We investigate and resolve issues before you even notice.",
+    items: ["24/7 uptime checks", "Instant downtime alerts", "Response within 1–2 hours", "Incident logging"],
+  },
+  {
+    icon: "🛎️",
+    title: "Local Support",
+    desc: "You're dealing with Charlie in Auckland — not an overseas helpdesk. Fast, personal support from someone who knows your site.",
+    items: ["Auckland-based support", "Email & phone support", "Priority for managed clients", "No ticket system"],
+  },
+];
+
+const reasons = [
+  { icon: "❌", label: "Cheap hosting (Godaddy, HostGator, etc.)", issues: ["Overseas servers — slow NZ load times", "Shared resources with thousands of sites", "No WordPress optimisation", "Minimal support when things go wrong"] },
+  { icon: "✅", label: "Kiwi Web Design managed hosting", issues: ["NZ-based servers", "Isolated, optimised environment", "WordPress-specific stack", "Local support that knows your site"] },
+];
+
+const faqs = [
+  { q: "Why not just use a cheap hosting provider?", a: "Cheap hosting (like GoDaddy, HostGator, or Bluehost) puts your site on shared servers with thousands of other sites, often overseas. You get slow NZ load times, no real support, and no WordPress optimisation. The $5–$15/month you save costs you in lost leads from a slow, insecure site." },
+  { q: "Do you host non-WordPress sites?", a: "Our managed hosting is optimised for WordPress. For other technologies (static sites, custom apps), get in touch and we'll advise on the right hosting solution." },
+  { q: "Can I migrate from my current host?", a: "Yes. We handle full WordPress migrations — files, databases, and DNS updates. We run the new site in parallel before cutting over to ensure zero downtime." },
+  { q: "What happens if my site goes down?", a: "Our monitoring alerts us immediately. We investigate and resolve hosting issues as a priority — typically within 1–2 hours during business hours. For critical issues, we're on it as fast as possible." },
+  { q: "Is the SSL certificate really free?", a: "Yes. SSL certificates (Let's Encrypt) are included in all hosting plans at no extra cost. We manage renewal automatically so you never have to worry about an expired SSL." },
+  { q: "Can I keep my existing email if I move hosting?", a: "Yes. Website hosting and email hosting are separate. We migrate your website without touching your email setup. If you want business email hosting too, we can quote for that separately." },
+];
 ---
-<Layout title="Website Hosting Auckland" description="ast, secure, managed website hosting for Auckland small businesses. Daily backups, SSL, performance tuning & local support. Get reliable hosting today." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Website Services</p>
-        <h1>Website Hosting Auckland</h1>
-        <p class="hero-sub">ast, secure, managed website hosting for Auckland small businesses. Daily backups, SSL, performance tuning & local support. Get reliable hosting today.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="Website Hosting Auckland | Managed WordPress Hosting NZ"
+  description="Fast, secure, managed website hosting for Auckland small businesses. Daily backups, SSL, performance tuning & local support. Get reliable hosting today."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/website-hosting-auckland/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Website Hosting Auckland"
+    title="Fast, NZ-based hosting managed by people who know your site."
+    subtitle="Managed WordPress hosting for Auckland small businesses. NZ servers, daily backups, SSL, security, and support from a local team — not an overseas helpdesk."
+    badgeText="From $49/month + GST"
+    ctaPrimary={{ text: "Get a Hosting Plan", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Plans", href: "#plans" }}
+    centered={true}
+  />
+
+  <!-- Why managed hosting -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Why It Matters"
+        title="Cheap hosting costs you more than you save."
+        subtitle="The difference between managed NZ hosting and a $10/month shared plan isn't just speed — it's customer experience, security, and lost leads."
+      />
+      <div class="hosting-compare">
+        {reasons.map(({ icon, label, issues }) => (
+          <div class:list={['hosting-compare-col', icon === '✅' && 'hosting-compare-col--good']}>
+            <div class="hosting-compare-header">
+              <span>{icon}</span>
+              <strong>{label}</strong>
+            </div>
+            <ul>
+              {issues.map((issue) => <li>{issue}</li>)}
+            </ul>
+          </div>
+        ))}
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Website-Hosting-Auckland.jpg" alt="Website Hosting Auckland" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section class="section" id="plans">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Hosting Plans"
+        title="Simple, flat-fee hosting plans."
+        subtitle="NZ-based, WordPress-optimised, fully managed. No lock-in contracts."
+      />
+      <div class="hosting-plans">
+        {hostingPlans.map((plan) => (
+          <div class:list={['hosting-plan', plan.highlight && 'hosting-plan--featured']}>
+            {plan.tag && <span class="hosting-plan-tag">{plan.tag}</span>}
+            <p class="hosting-plan-name">{plan.name}</p>
+            <div class="hosting-plan-price-wrap">
+              <span class="hosting-plan-price">{plan.price}</span>
+              <span class="hosting-plan-note">{plan.note}</span>
+            </div>
+            <p class="hosting-plan-desc">{plan.desc}</p>
+            <ul class="hosting-plan-list">
+              {plan.items.map((item) => <li>{item}</li>)}
+            </ul>
+            <a href={plan.href} class:list={['hosting-plan-btn', plan.highlight && 'hosting-plan-btn--featured']}>
+              Get Started
+            </a>
+          </div>
+        ))}
       </div>
+      <p class="hosting-plans-note">All plans exclude GST. No lock-in — cancel anytime with 30 days notice.</p>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-
+  <!-- Features -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What's Included"
+        title="Everything in our hosting stack."
+        subtitle="Server-level features that give your website the performance and security it deserves."
+      />
+      <ServiceGrid items={features} cols={3} />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Hosting Questions Answered"
+        subtitle="Common questions about moving to managed NZ hosting."
+      />
     </div>
   </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to move to fast, managed NZ hosting?"
+    subtitle="Free migration — we'll move your site over and have it running faster in 48 hours."
+    ctaPrimary={{ text: "Get a Hosting Plan", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Maintenance Plans", href: "/wordpress-maintenance-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .hosting-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .hosting-compare-col {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 1.75rem;
+  }
+  .hosting-compare-col--good {
+    background: var(--kwd-dark);
+    border-color: var(--kwd-dark);
+  }
+  .hosting-compare-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin-bottom: 1.25rem;
+  }
+  .hosting-compare-col--good .hosting-compare-header { color: #fff; }
+  .hosting-compare-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .hosting-compare-col li {
+    font-size: 0.875rem;
+    color: var(--kwd-brown);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .hosting-compare-col li::before { content: "—"; position: absolute; left: 0; color: #c0b8b4; }
+  .hosting-compare-col--good li { color: rgba(255,255,255,0.75); }
+  .hosting-compare-col--good li::before { content: "✓"; color: var(--kwd-yellow); font-weight: 700; }
+
+  .hosting-plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+    margin-top: 2.5rem;
+  }
+  .hosting-plan {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.08);
+    border-radius: 18px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .hosting-plan--featured { background: var(--kwd-dark); border-color: var(--kwd-dark); }
+  .hosting-plan-tag {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+  }
+  .hosting-plan-name { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin: 0 0 0.5rem; }
+  .hosting-plan--featured .hosting-plan-name { color: rgba(255,255,255,0.5); }
+  .hosting-plan-price-wrap { display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.75rem; }
+  .hosting-plan-price { font-family: var(--kwd-font-heading); font-size: 2.25rem; color: var(--kwd-dark); line-height: 1; }
+  .hosting-plan--featured .hosting-plan-price { color: var(--kwd-yellow); }
+  .hosting-plan-note { font-size: 0.8rem; color: var(--kwd-brown); }
+  .hosting-plan--featured .hosting-plan-note { color: rgba(255,255,255,0.45); }
+  .hosting-plan-desc { font-size: 0.85rem; color: var(--kwd-brown); line-height: 1.6; margin: 0 0 1.25rem; }
+  .hosting-plan--featured .hosting-plan-desc { color: rgba(255,255,255,0.6); }
+  .hosting-plan-list { list-style: none; padding: 0; margin: 0 0 1.75rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+  .hosting-plan-list li { font-size: 0.84rem; color: var(--kwd-dark); padding-left: 1.3rem; position: relative; }
+  .hosting-plan-list li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-brown); font-weight: 700; }
+  .hosting-plan--featured .hosting-plan-list li { color: rgba(255,255,255,0.8); }
+  .hosting-plan--featured .hosting-plan-list li::before { color: var(--kwd-yellow); }
+  .hosting-plan-btn { display: block; text-align: center; padding: 0.875rem; border-radius: 8px; font-weight: 700; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.06em; background: var(--kwd-cream); color: var(--kwd-dark); transition: background 0.2s; }
+  .hosting-plan-btn:hover { background: #e8e7da; }
+  .hosting-plan-btn--featured { background: var(--kwd-yellow); }
+  .hosting-plan-btn--featured:hover { background: var(--kwd-gold); }
+  .hosting-plans-note { text-align: center; font-size: 0.82rem; color: var(--kwd-brown); margin-top: 1.5rem; }
+
+  @media (max-width: 960px) {
+    .hosting-plans { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+    .hosting-compare { grid-template-columns: 1fr; }
   }
 </style>
