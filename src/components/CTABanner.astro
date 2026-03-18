@@ -1,0 +1,119 @@
+---
+interface CTAButton {
+  text: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  ctaPrimary: CTAButton;
+  ctaSecondary?: CTAButton;
+  variant?: 'dark' | 'yellow' | 'cream';
+}
+
+const { title, subtitle, ctaPrimary, ctaSecondary, variant = 'dark' } = Astro.props;
+---
+
+<section class:list={['cta-section', `cta-${variant}`]}>
+  <div class="container cta-inner">
+    <div class="cta-text">
+      <h2 class="cta-title">{title}</h2>
+      {subtitle && <p class="cta-subtitle">{subtitle}</p>}
+    </div>
+    <div class="cta-buttons">
+      <a href={ctaPrimary.href} class="cta-btn-primary">{ctaPrimary.text}</a>
+      {ctaSecondary && (
+        <a href={ctaSecondary.href} class="cta-btn-secondary">{ctaSecondary.text}</a>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    padding: 5rem 0;
+  }
+  .cta-dark   { background: var(--kwd-dark); }
+  .cta-yellow { background: var(--kwd-yellow); }
+  .cta-cream  { background: var(--kwd-cream); }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-text { flex: 1; min-width: 260px; }
+
+  .cta-title {
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    margin-bottom: 0.5rem;
+    line-height: 1.15;
+  }
+  .cta-dark   .cta-title  { color: #fff; }
+  .cta-yellow .cta-title  { color: var(--kwd-dark); }
+  .cta-cream  .cta-title  { color: var(--kwd-dark); }
+
+  .cta-subtitle {
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.6;
+  }
+  .cta-dark   .cta-subtitle { color: rgba(255,255,255,0.65); }
+  .cta-yellow .cta-subtitle { color: var(--kwd-brown); }
+  .cta-cream  .cta-subtitle { color: var(--kwd-brown); }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .cta-btn-primary {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .cta-dark   .cta-btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); }
+  .cta-dark   .cta-btn-primary:hover { background: var(--kwd-gold); transform: translateY(-1px); }
+  .cta-yellow .cta-btn-primary { background: var(--kwd-dark); color: #fff; }
+  .cta-yellow .cta-btn-primary:hover { background: #3e3633; transform: translateY(-1px); }
+  .cta-cream  .cta-btn-primary { background: var(--kwd-dark); color: #fff; }
+  .cta-cream  .cta-btn-primary:hover { background: #3e3633; transform: translateY(-1px); }
+
+  .cta-btn-secondary {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .cta-dark   .cta-btn-secondary {
+    border: 2px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.8);
+  }
+  .cta-dark   .cta-btn-secondary:hover { border-color: var(--kwd-yellow); color: var(--kwd-yellow); }
+  .cta-yellow .cta-btn-secondary { border: 2px solid var(--kwd-dark); color: var(--kwd-dark); }
+  .cta-yellow .cta-btn-secondary:hover { background: rgba(0,0,0,0.08); }
+  .cta-cream  .cta-btn-secondary { border: 2px solid var(--kwd-dark); color: var(--kwd-dark); }
+  .cta-cream  .cta-btn-secondary:hover { background: rgba(0,0,0,0.05); }
+
+  @media (max-width: 680px) {
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>

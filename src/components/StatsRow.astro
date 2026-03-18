@@ -1,0 +1,81 @@
+---
+interface StatItem {
+  number: string;
+  label: string;
+  sublabel?: string;
+}
+
+interface Props {
+  items: StatItem[];
+  dark?: boolean;
+  accent?: boolean; // yellow background
+}
+
+const { items, dark = false, accent = false } = Astro.props;
+---
+
+<div class:list={['stats-wrap', dark && 'stats-dark', accent && 'stats-accent']}>
+  <div class="stats-grid">
+    {items.map(({ number, label, sublabel }) => (
+      <div class="stat-item">
+        <span class="stat-num">{number}</span>
+        <span class="stat-label">{label}</span>
+        {sublabel && <span class="stat-sublabel">{sublabel}</span>}
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .stats-wrap {
+    padding: 4rem 0;
+    background: #fff;
+  }
+  .stats-dark   { background: var(--kwd-dark); }
+  .stats-accent { background: var(--kwd-cream); }
+
+  .stats-grid {
+    max-width: var(--kwd-container);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .stat-num {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    color: var(--kwd-dark);
+  }
+  .stats-dark .stat-num   { color: var(--kwd-yellow); }
+  .stats-accent .stat-num { color: var(--kwd-dark); }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--kwd-brown);
+    font-weight: 500;
+    max-width: 160px;
+    line-height: 1.4;
+  }
+  .stats-dark .stat-label { color: rgba(255,255,255,0.62); }
+
+  .stat-sublabel {
+    font-size: 0.75rem;
+    color: var(--kwd-brown);
+    opacity: 0.7;
+  }
+
+  @media (max-width: 600px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

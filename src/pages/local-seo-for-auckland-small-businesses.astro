@@ -1,5 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import StatsRow from '../components/StatsRow.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -8,177 +16,244 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/",
       "url": "https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/",
       "name": "Local SEO for Auckland Small Businesses",
-      "description": "📍 Auckland&#8217;s Local SEO Specialists Dominate Local Search inAuckland with Local SEO 46% of all Google searches have local intent. When Auckland customers search &#8220;near me&#8221; or for services in their area, Kiwi Web Design makes sure your business appears at the top — in Google Maps, the local 3-Pack, and organic results. Free Local [&hellip;]",
+      "description": "Auckland's local SEO specialists. Dominate local search in Auckland with local SEO — Google Maps, 3-Pack, and organic results.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Local SEO for Auckland Small Businesses"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Local SEO Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz"
     }
   ]
 };
+
+const localStats = [
+  { number: "46%", label: "of Google searches have local intent" },
+  { number: "78%", label: "of local mobile searches lead to a purchase within 24 hrs" },
+  { number: "70%", label: "of clicks go to the top 3 Google Maps results" },
+  { number: "500%", label: "growth in 'near me' searches over 5 years" },
+];
+
+const localServices = [
+  {
+    icon: "📍",
+    title: "Google Business Profile",
+    desc: "Your GBP is the single most important local SEO asset. We optimise every element — categories, services, photos, posts, and reviews — to maximise your map pack visibility.",
+    items: ["Complete profile setup & optimisation", "Service area configuration", "Photo strategy", "Weekly posts & Q&A management"],
+  },
+  {
+    icon: "🗺️",
+    title: "Map Pack Rankings",
+    desc: "The 3-Pack at the top of Google Maps results captures 70% of local clicks. We build the signals needed to earn and hold those positions.",
+    items: ["Local ranking factor optimisation", "Proximity signal building", "Review acquisition strategy", "Competitor displacement"],
+  },
+  {
+    icon: "📋",
+    title: "Local Citations",
+    desc: "Consistent NAP (Name, Address, Phone) across directories builds trust and authority. We build and fix citations across NZ-relevant directories.",
+    items: ["NZ directory submissions", "Citation consistency audit & fix", "Industry-specific directories", "Ongoing citation monitoring"],
+  },
+  {
+    icon: "⭐",
+    title: "Review Strategy",
+    desc: "Online reviews influence both rankings and buyer decisions. We help you build a systematic process for collecting and managing reviews across Google, Facebook, and Yelp.",
+    items: ["Review request workflows", "Response management", "Review monitoring", "Reputation protection"],
+  },
+  {
+    icon: "🏙️",
+    title: "Local Content & Pages",
+    desc: "Location-specific landing pages that rank for suburb-level searches. We create pages targeting the specific Auckland areas your customers come from.",
+    items: ["Auckland suburb landing pages", "Local keyword optimisation", "Hyperlocal content", "Internal linking strategy"],
+  },
+  {
+    icon: "🔗",
+    title: "Local Link Building",
+    desc: "Links from local Auckland businesses, associations, and media build geographic authority that map pack rankings depend on.",
+    items: ["Local business partnerships", "Chamber & association listings", "NZ news & media mentions", "Community sponsorship"],
+  },
+];
+
+const process = [
+  { step: "1", title: "Local SEO Audit", desc: "We assess your current local visibility: GBP status, citation consistency, reviews, and local ranking positions." },
+  { step: "2", title: "Keyword & Competitor Research", desc: "We find the local search terms your customers use and analyse how your top competitors are ranking." },
+  { step: "3", title: "On-Site & Off-Site Optimisation", desc: "We fix your GBP, build citations, create local content, and earn local links — all systematically." },
+  { step: "4", title: "Review & Reporting", desc: "Monthly reports tracking your map pack positions, organic rankings, and the enquiries generated." },
+];
+
+const faqs = [
+  { q: "What is local SEO and why does my Auckland business need it?", a: "Local SEO is the process of optimising your online presence to appear in location-based searches — like 'plumber Auckland' or 'café near me'. If your business serves customers in specific Auckland areas, local SEO is often the highest-ROI digital investment you can make." },
+  { q: "How long does local SEO take to work in Auckland?", a: "Most Auckland businesses see improvements in map pack visibility within 4–8 weeks for less competitive niches. Highly competitive industries like trades, legal, or dental may take 3–6 months to see significant movement. Results then compound over time." },
+  { q: "What's the difference between local SEO and general SEO?", a: "Local SEO focuses on appearing for searches with geographic intent ('near me', suburb names, city names). It heavily weights your Google Business Profile, local citations, and reviews. General SEO focuses on national or topical visibility without a geographic filter." },
+  { q: "Do I need a physical address to do local SEO in Auckland?", a: "Not necessarily. Service-area businesses (like plumbers or cleaners) can do local SEO without a public address by configuring a service area in Google Business Profile. However, businesses with a physical location generally have an easier time ranking in the map pack." },
+  { q: "How important are Google reviews for local SEO?", a: "Very important. Google uses review quantity, quality, and recency as ranking signals for map pack results. Beyond rankings, reviews also directly influence whether customers choose you. We help you build a sustainable, authentic review acquisition process." },
+  { q: "Can you help with Google Business Profile suspension or reinstatement?", a: "Yes. If your GBP has been suspended, we can help diagnose the reason and submit a reinstatement request with the right supporting documentation. This is a common issue and usually resolvable with the right approach." },
+];
 ---
-<Layout title="Local SEO for Auckland Small Businesses" description="📍 Auckland’s Local SEO Specialists Dominate Local Search inAuckland with Local SEO 46% of all Google searches have local intent. When Auckland customers search “near me” or for services in their area, Kiwi Web Design makes sure your business appears at the top — in Google Maps, the local 3-Pack, and organic results. Free Local [...]" schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Digital Marketing</p>
-        <h1>Dominate Local Search inAuckland with Local SEO</h1>
-        <p class="hero-sub">📍 Auckland’s Local SEO Specialists Dominate Local Search inAuckland with Local SEO 46% of all Google searches have local intent. When Auckland customers search “near me” or for services in their area, Kiwi Web Design makes sure your business appears at the top — in Google Maps, the local 3-Pack, and organic results. Free Local [...]</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="Local SEO for Auckland Small Businesses"
+  description="Auckland's local SEO specialists. Dominate local search — Google Maps, the 3-Pack, and organic results. Free local SEO audit for Auckland businesses."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Local SEO Auckland"
+    title="Dominate local search. Be found first."
+    subtitle="46% of all Google searches have local intent. We make sure Auckland customers searching for your services find your business first — in Google Maps, the 3-Pack, and organic results."
+    ctaPrimary={{ text: "Get a Free Local SEO Audit", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "Our SEO Services", href: "/seo-auckland/" }}
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/Auckland.jpg"
+    imgAlt="Auckland local SEO — dominate local search results"
+  />
+
+  <!-- Local search stats -->
+  <StatsRow items={localStats} accent={true} />
+
+  <!-- Why local SEO matters -->
+  <section class="section">
+    <div class="container">
+      <div class="local-why">
+        <div class="local-why-text">
+          <p class="local-eyebrow">Why It Matters</p>
+          <h2>Auckland customers search local — are you showing up?</h2>
+          <p>When someone in Ponsonby, Remuera, or Henderson searches for your services, Google surfaces the most locally relevant results first. Businesses that appear in the Google Maps 3-Pack capture the majority of clicks — and the majority of enquiries.</p>
+          <p>If your competitors are showing up and you're not, you're invisible to a significant portion of your potential customers. Local SEO fixes that.</p>
+        </div>
+        <div class="local-why-card-wrap">
+          <div class="local-why-card">
+            <span class="lwc-icon">🗺️</span>
+            <h3>Google Maps 3-Pack</h3>
+            <p>The top 3 map results appear above all organic listings. Appearing here puts your business in front of customers before they even scroll.</p>
+          </div>
+          <div class="local-why-card">
+            <span class="lwc-icon">📱</span>
+            <h3>Mobile Local Searches</h3>
+            <p>78% of local mobile searches result in a purchase within 24 hours. Being visible at the moment of intent is everything.</p>
+          </div>
+          <div class="local-why-card">
+            <span class="lwc-icon">⭐</span>
+            <h3>Reviews Drive Decisions</h3>
+            <p>Customers compare reviews before calling. A strong review profile builds trust that converts views into enquiries.</p>
+          </div>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/Auckland.jpg" alt="Dominate Local Search inAuckland with Local SEO" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Our Local SEO Services"
+        title="Everything needed to dominate Auckland local search."
+        subtitle="A comprehensive local SEO approach targeting map pack, organic, and directory visibility."
+      />
+      <ServiceGrid items={localServices} cols={3} />
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader eyebrow="Our Process" title="How we improve your local visibility." light={true} />
+      <ProcessSteps items={process} dark={true} />
+    </div>
+  </section>
+
+  <!-- Auckland suburbs -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Coverage"
+        title="We serve businesses across all of Auckland."
+        subtitle="From Central Auckland to the North Shore, East Auckland, West Auckland, and South Auckland — wherever your customers are."
+      />
+      <div class="local-suburbs">
+        {["Central Auckland", "North Shore", "West Auckland", "East Auckland", "South Auckland", "Ponsonby", "Grey Lynn", "Remuera", "Mt Eden", "Henderson", "Pakuranga", "Manukau"].map((area) => (
+          <span class="local-suburb-tag">{area}</span>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<!-- LOCAL SEO AUCKLAND - WordPress Elementor Version | Kiwi Web Design -->
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-📍Auckland's Local SEO Specialists
- 
- <p><strong>46% of all Google searches have local intent.</strong> When Auckland customers search
- "near me" or for services in their area, Kiwi Web Design makes sure your business appears at the
- top — in Google Maps, the local 3-Pack, and organic results.</p>
- <a href="/website-designer-auckland/">Free Local SEO
- Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
- stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
- <path d="M5 12h14M12 5l7 7-7 7" />
- </svg></a>
- 
- <figure><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80" alt="Auckland business appearing in Google Maps local search results — local SEO by Kiwi Web Design" loading="lazy">
- </figure>
-
-46%
- Of Google searches have local intent
-
-78%
- Of local mobile searches lead to a purchase within 24hrs
-
-3-Pack
- Top 3 Google Maps results get 70% of clicks
-
-500%
- "Near me" searches have grown 500% in 5 years
-
-Why Auckland Businesses Need Local SEO
- 
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion items={faqs} title="Local SEO Questions Answered" subtitle="Common questions from Auckland business owners about local search." />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
+  <CTABanner
+    variant="yellow"
+    title="Ready to show up first in Auckland local search?"
+    subtitle="Get a free local SEO audit — we'll show you exactly where you stand and what to do next."
+    ctaPrimary={{ text: "Get a Free Local SEO Audit", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "All SEO Services", href: "/seo-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .local-why {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .local-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.75rem;
+  }
+  .local-why-text h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); margin-bottom: 1rem; }
+  .local-why-text p { font-size: 0.95rem; color: var(--kwd-brown); line-height: 1.7; }
+
+  .local-why-card-wrap { display: flex; flex-direction: column; gap: 1rem; }
+  .local-why-card {
+    background: var(--kwd-cream);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .lwc-icon { font-size: 1.5rem; }
+  .local-why-card h3 { font-family: var(--kwd-font-body); font-size: 1rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .local-why-card p { font-size: 0.875rem; color: var(--kwd-brown); margin: 0; line-height: 1.6; }
+
+  .local-suburbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  .local-suburb-tag {
+    display: inline-block;
+    background: var(--kwd-cream);
+    color: var(--kwd-dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 100px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  @media (max-width: 860px) {
+    .local-why { grid-template-columns: 1fr; gap: 2.5rem; }
   }
 </style>

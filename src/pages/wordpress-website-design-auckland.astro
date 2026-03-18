@@ -1,5 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import StatsRow from '../components/StatsRow.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import TestimonialGrid from '../components/TestimonialGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -10,161 +19,302 @@ const schema = {
       "name": "WordPress Website Design Auckland",
       "description": "Kiwi Web Design builds fast, modern, and affordable WordPress sites small businesses can easily manage in Auckland.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/wordpress-website-design-auckland/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/wordpress-website-design-auckland/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-website-design-auckland/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "WordPress Website Design Auckland"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Website Design Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const wpStats = [
+  { number: "43%", label: "of all websites worldwide run on WordPress" },
+  { number: "2–3 wks", label: "typical build and delivery time" },
+  { number: "100%", label: "client ownership — your site, your data" },
+  { number: "From $1,290", label: "WordPress website packages" },
+];
+
+const wpAdvantages = [
+  {
+    icon: "🧩",
+    title: "You Own It Completely",
+    desc: "Unlike Wix or Squarespace, WordPress gives you full ownership of your website and data. You can move hosts, change agencies, or manage it yourself — no lock-in.",
+    items: ["Portable to any host", "Full data export", "No platform fees", "Works with any developer"],
+  },
+  {
+    icon: "⚡",
+    title: "Fast & SEO-Optimised",
+    desc: "We build WordPress sites with performance in mind — caching, image compression, minimal plugins, and proper heading structure for better Google rankings.",
+    items: ["Sub-2 second load times", "Google Core Web Vitals", "SEO plugin setup (Yoast)", "Schema markup"],
+  },
+  {
+    icon: "✏️",
+    title: "Easy to Update Yourself",
+    desc: "WordPress's block editor (Gutenberg) means updating your own content is as simple as editing a Google Doc. No developer needed for text and image changes.",
+    items: ["Visual block editor", "No coding required", "Add pages & posts yourself", "Included training session"],
+  },
+  {
+    icon: "🔌",
+    title: "Powerful Plugin Ecosystem",
+    desc: "55,000+ plugins extend WordPress's functionality. Bookings, e-commerce, memberships, forms, live chat — almost anything your business needs already exists.",
+    items: ["Booking systems", "WooCommerce eCommerce", "Membership / gating", "CRM integrations"],
+  },
+  {
+    icon: "📱",
+    title: "Fully Mobile Responsive",
+    desc: "Every WordPress site we build is tested across devices. Mobile-first design ensures your site looks and performs perfectly on phones, tablets, and desktops.",
+    items: ["Mobile-first layouts", "Touch-friendly navigation", "Fast mobile load", "Cross-device tested"],
+  },
+  {
+    icon: "🔒",
+    title: "Secure by Default",
+    desc: "We implement WordPress security best practices from day one — hardened configuration, security plugins, SSL, and regular update schedules.",
+    items: ["SSL certificate", "Login protection", "Security plugin setup", "Regular updates schedule"],
+  },
+];
+
+const wpServices = [
+  {
+    icon: "🎨",
+    title: "Custom WordPress Design",
+    desc: "Brand-matched custom themes — not off-the-shelf templates. Your site looks unique and reflects your business.",
+    items: ["Custom theme development", "Brand integration", "UX/UI strategy", "Mobile-first build"],
+  },
+  {
+    icon: "🛒",
+    title: "WooCommerce Stores",
+    desc: "Full eCommerce setup on WordPress. Product management, payment gateways, shipping rules, and order notifications.",
+    items: ["Product catalogue setup", "Payment gateway integration", "Shipping configuration", "Inventory management"],
+  },
+  {
+    icon: "📋",
+    title: "WordPress Rebuilds",
+    desc: "Old, slow, or hacked WordPress site? We rebuild it from scratch on modern foundations while preserving your content and SEO.",
+    items: ["Content migration", "SEO preservation", "Speed optimisation", "Security hardening"],
+  },
+  {
+    icon: "🔧",
+    title: "WordPress Maintenance",
+    desc: "Ongoing updates, security monitoring, backups, and support so your site stays fast and secure after launch.",
+    items: ["Monthly updates", "Daily backups", "Security monitoring", "Priority support"],
+    href: "/wordpress-maintenance-auckland/",
+  },
+];
+
+const process = [
+  { step: "1", title: "Discover & Plan", desc: "We talk through your goals, customers, and content needs. Then we plan the site structure and propose a design direction." },
+  { step: "2", title: "Design & Approve", desc: "We design your homepage and key pages in a staging environment. You review and request changes before we build everything out." },
+  { step: "3", title: "Build & Test", desc: "We build the full site, set up plugins, configure forms, test on all devices, and optimise for speed." },
+  { step: "4", title: "Launch & Train", desc: "We go live, set up Analytics and Search Console, and train you on updating your own content." },
+];
+
+const faqs = [
+  { q: "Why WordPress instead of Wix or Squarespace?", a: "WordPress gives you complete ownership and control. You can move hosts, change agencies, and fully export your data. Wix and Squarespace are proprietary platforms — if they change pricing or shut down, you lose everything. WordPress also has far superior SEO capabilities and can grow into complex functionality (bookings, eCommerce, memberships) as your business scales." },
+  { q: "Is WordPress hard to use?", a: "Modern WordPress (with the block editor) is very easy to update. We include a handover session so you can update text, images, and add simple pages without any technical knowledge. For anything more complex, we're available to help." },
+  { q: "Do I need to worry about WordPress security?", a: "WordPress security is manageable with the right setup — and we handle all of it for you. We configure security plugins, limit login attempts, keep everything updated, and recommend our maintenance plan to keep things secure ongoing. The vast majority of WordPress hacks target outdated, unmanaged sites." },
+  { q: "What theme do you build on?", a: "We primarily build on lightweight, performance-focused foundations like GeneratePress or a custom theme. We avoid heavy page-builder themes (like Divi or Elementor) that slow down load times and create technical debt. Performance and maintainability are our priorities." },
+  { q: "Can you migrate my existing website to WordPress?", a: "Yes. We handle full migrations from Wix, Squarespace, Weebly, or older WordPress installations. We preserve your content, redirects, and SEO during the process." },
+  { q: "What does a WordPress website cost in Auckland?", a: "Our WordPress packages start from $1,290 + GST for a 5-page site. Growth packages run $2,490–$3,500, and eCommerce sites start from $3,990. We give you a fixed quote upfront — no surprises." },
+];
+
+const reviews = [
+  { name: "Zane Barrett", company: "Barrett Access Scaffolding", text: "Charlie built our new WordPress site in under 3 weeks. It looks great, runs fast, and I can update it myself now. Best investment we've made online." },
+  { name: "Jack", company: "Show Me Shorts", text: "The WordPress site they built for us is clean, fast, and easy to manage. Charlie explained everything at handover and we've had no issues." },
+  { name: "Steven Liu", company: "Client", text: "Outstanding experience. The design is clean, modern, and user-friendly — exactly what I was hoping for." },
+];
 ---
-<Layout title="WordPress Website Design Auckland" description="Kiwi Web Design builds fast, modern, and affordable WordPress sites small businesses can easily manage in Auckland." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Platform Services</p>
-        <h1>WordPress Website Design Auckland — Beautiful, Fast, and Easy to Manage</h1>
-        <p class="hero-sub">Kiwi Web Design builds fast, modern, and affordable WordPress sites small businesses can easily manage in Auckland.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="WordPress Website Design Auckland | Fast, Modern WordPress Sites"
+  description="Kiwi Web Design builds fast, modern, and affordable WordPress sites small businesses can easily manage in Auckland."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/wordpress-website-design-auckland/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="WordPress Website Design Auckland"
+    title="WordPress websites built for performance and growth."
+    subtitle="Fast, modern, and fully managed WordPress sites for Auckland small businesses. You own it completely — no lock-in, no platform fees."
+    badgeText="From $1,290 + GST"
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Our Process", href: "#process" }}
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-196644-196644.jpg"
+    imgAlt="WordPress website design Auckland"
+  />
+
+  <!-- Stats -->
+  <StatsRow items={wpStats} />
+
+  <!-- Why WordPress -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Why WordPress"
+        title="The world's most trusted website platform — for good reason."
+        subtitle="43% of all websites run on WordPress. Here's why it's the right choice for your Auckland business."
+      />
+      <ServiceGrid items={wpAdvantages} cols={3} />
+    </div>
+  </section>
+
+  <!-- WordPress vs alternatives -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Platform Comparison"
+        title="WordPress vs the alternatives."
+        light={true}
+        subtitle="Why we recommend WordPress over Wix, Squarespace, and other website builders."
+      />
+      <div class="wp-compare">
+        <div class="wp-compare-table">
+          <div class="wp-ct-header">
+            <div class="wp-ct-col wp-ct-feature">Feature</div>
+            <div class="wp-ct-col wp-ct-good">WordPress</div>
+            <div class="wp-ct-col wp-ct-bad">Wix / Squarespace</div>
+          </div>
+          {[
+            ["You own your website", true, false],
+            ["Can move to any host", true, false],
+            ["No monthly platform fees", true, false],
+            ["SEO flexibility", true, "Limited"],
+            ["eCommerce (WooCommerce)", true, "Basic only"],
+            ["Plugin ecosystem (55,000+)", true, false],
+            ["Developer community", true, "Small"],
+            ["Scales to enterprise", true, false],
+          ].map(([feature, wp, alt]) => (
+            <div class="wp-ct-row">
+              <div class="wp-ct-col wp-ct-feature">{feature}</div>
+              <div class="wp-ct-col wp-ct-good">
+                {wp === true ? <span class="wp-tick">✓</span> : <span class="wp-partial">{wp}</span>}
+              </div>
+              <div class="wp-ct-col wp-ct-bad">
+                {alt === false ? <span class="wp-cross">✗</span> : <span class="wp-partial">{alt}</span>}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/wordpress-website-design-auckland-kiwi-web-design.jpg" alt="WordPress Website Design Auckland — Beautiful, Fast, and Easy to Manage" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-
+  <!-- Services -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Our WordPress Services"
+        title="Everything from builds to ongoing maintenance."
+        subtitle="Whether you need a new site, a rebuild, or ongoing care — we cover the full WordPress lifecycle."
+      />
+      <ServiceGrid items={wpServices} cols={2} />
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="faq-inner">
-      <h2>Frequently Asked Questions</h2>
-      <details class="faq-item">
-        <summary>How much does a WordPress website cost in Auckland?</summary>
-        <div class="faq-answer"><p>Most small business WordPress websites cost between <strong>$1,290 – $2,490 NZD</strong>, depending on the design and content requirements. Kiwi Web Design offers transparent, fixed pricing with no hidden fees.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Can I edit my WordPress website myself?</summary>
-        <div class="faq-answer"><p>Yes. We use Elementor and WordPress’s block editor so you can easily change text, photos, and pages without needing a developer.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Do you provide hosting and maintenance?</summary>
-        <div class="faq-answer"><p>We can host and maintain your site on secure NZ-based servers with ongoing backups, updates, and support from just $39 per month.</p></div>
-      </details>
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);" id="process">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="From brief to live in 2–3 weeks."
+        subtitle="A clear, four-step process so you always know what's happening next."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader eyebrow="Client Reviews" title="What Auckland businesses say about our WordPress work." />
+      <TestimonialGrid items={reviews} cols={3} />
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="WordPress Questions Answered"
+        subtitle="Common questions from Auckland businesses about building on WordPress."
+      />
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to get a fast, modern WordPress site?"
+    subtitle="Free consultation — we'll plan your site structure, recommend the right package, and give you a fixed quote."
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "View Pricing", href: "/small-business-website-design-auckland/#packages" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  /* Comparison table */
+  .wp-compare {
+    margin-top: 2.5rem;
+    overflow-x: auto;
+  }
+  .wp-compare-table {
+    min-width: 600px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .wp-ct-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    background: rgba(255,255,255,0.08);
+    padding: 0.875rem 1.25rem;
+    gap: 1rem;
+  }
+  .wp-ct-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 0.75rem 1.25rem;
+    gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .wp-ct-row:hover { background: rgba(255,255,255,0.03); }
+  .wp-ct-col {
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+  }
+  .wp-ct-feature { color: rgba(255,255,255,0.8); }
+  .wp-ct-good {
+    color: var(--kwd-yellow);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .wp-ct-bad {
+    color: rgba(255,255,255,0.4);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .wp-tick { font-size: 1.1rem; color: var(--kwd-yellow); }
+  .wp-cross { font-size: 1.1rem; color: rgba(255,255,255,0.25); }
+  .wp-partial { font-size: 0.82rem; color: rgba(255,255,255,0.45); }
+
+  @media (max-width: 700px) {
+    .wp-compare-table { min-width: 500px; }
   }
 </style>

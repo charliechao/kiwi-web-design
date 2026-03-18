@@ -1,0 +1,81 @@
+---
+interface StepItem {
+  step: string;
+  title: string;
+  desc: string;
+}
+
+interface Props {
+  items: StepItem[];
+  dark?: boolean;
+}
+
+const { items, dark = false } = Astro.props;
+---
+
+<div class:list={['process-grid', dark && 'process-dark']}>
+  {items.map(({ step, title, desc }) => (
+    <div class="process-step">
+      <div class="step-num">{step}</div>
+      <div class="step-body">
+        <h3 class="step-title">{title}</h3>
+        <p class="step-desc">{desc}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+
+  .process-step {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .step-num {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-family: var(--kwd-font-heading);
+    font-size: 1.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .process-dark .step-num {
+    background: rgba(251, 232, 166, 0.15);
+    color: var(--kwd-yellow);
+    border: 2px solid rgba(251, 232, 166, 0.3);
+  }
+
+  .step-title {
+    font-size: 1.1rem;
+    color: var(--kwd-dark);
+    margin: 0 0 0.4rem;
+    font-family: var(--kwd-font-body);
+    font-weight: 700;
+  }
+  .process-dark .step-title { color: #fff; }
+
+  .step-desc {
+    font-size: 0.9rem;
+    color: var(--kwd-brown);
+    margin: 0;
+    line-height: 1.65;
+  }
+  .process-dark .step-desc { color: rgba(255,255,255,0.62); }
+
+  @media (max-width: 600px) {
+    .process-grid { grid-template-columns: 1fr; }
+  }
+</style>

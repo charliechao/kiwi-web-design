@@ -1,0 +1,57 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  align?: 'left' | 'center';
+  light?: boolean; // true = white text (for dark backgrounds)
+}
+
+const { eyebrow, title, subtitle, align = 'center', light = false } = Astro.props;
+---
+
+<div class:list={['section-header', align === 'center' && 'sh-center', light && 'sh-light']}>
+  {eyebrow && <p class="sh-eyebrow">{eyebrow}</p>}
+  <h2 class="sh-title">{title}</h2>
+  {subtitle && <p class="sh-subtitle">{subtitle}</p>}
+</div>
+
+<style>
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  .sh-center {
+    text-align: center;
+    max-width: 680px;
+    margin-inline: auto;
+    margin-bottom: 3rem;
+  }
+
+  .sh-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.6rem;
+  }
+  .sh-light .sh-eyebrow { color: var(--kwd-yellow); }
+
+  .sh-title {
+    color: var(--kwd-dark);
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    line-height: 1.15;
+  }
+  .sh-light .sh-title { color: #fff; }
+
+  .sh-subtitle {
+    font-size: 1.05rem;
+    color: var(--kwd-brown);
+    margin: 0;
+    max-width: 600px;
+    line-height: 1.7;
+  }
+  .sh-center .sh-subtitle { margin-inline: auto; }
+  .sh-light .sh-subtitle  { color: rgba(255,255,255,0.68); }
+</style>

@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import CTABanner from '../components/CTABanner.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -10,186 +13,553 @@ const schema = {
       "name": "Work with Us",
       "description": "Work with Kiwi Web Design on Auckland and NZ projects. Freelancers, developers, designers, and SEO partners for website design Auckland clients.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/work-with-us/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/work-with-us/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/work-with-us/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Work with Us"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Work with Us" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const roles = [
+  {
+    icon: "💻",
+    title: "WordPress Developer",
+    desc: "Custom theme development, plugin work, WooCommerce, or complex build projects. You're comfortable in PHP, Git, and the WP ecosystem.",
+    skills: ["PHP / WordPress", "Custom themes & plugins", "WooCommerce", "Git / version control"],
+    type: "Freelance / Project",
+  },
+  {
+    icon: "🎨",
+    title: "UI/UX Designer",
+    desc: "You design beautiful, conversion-focused web interfaces. Figma is your tool of choice, and you understand how design translates to code.",
+    skills: ["Figma", "Conversion-focused design", "Mobile-first", "Component systems"],
+    type: "Freelance / Project",
+  },
+  {
+    icon: "📈",
+    title: "SEO Specialist",
+    desc: "Technical SEO, local SEO, or content strategy. You get results, not just rankings, and you understand the Auckland market.",
+    skills: ["Technical SEO", "Local SEO / GBP", "Link building", "Content strategy"],
+    type: "Freelance / Ongoing",
+  },
+  {
+    icon: "✍️",
+    title: "Copywriter",
+    desc: "Web copy that converts. You write for real people and search engines without sounding robotic. NZ / Auckland market familiarity a plus.",
+    skills: ["Web copy & landing pages", "SEO copywriting", "Brand voice", "NZ English"],
+    type: "Freelance / Project",
+  },
+  {
+    icon: "📣",
+    title: "Google Ads Specialist",
+    desc: "You run search and display campaigns that generate real leads, not just clicks. Conversion tracking and reporting are your baseline.",
+    skills: ["Google Search Ads", "Conversion tracking", "Bid strategy", "Reporting"],
+    type: "Freelance / Ongoing",
+  },
+  {
+    icon: "🤝",
+    title: "Referral Partner",
+    desc: "Accountant, business coach, or other professional who works with Auckland small businesses? We pay referral commissions for introductions that become clients.",
+    skills: ["Small business network", "Client referrals", "Professional services"],
+    type: "Referral",
+  },
+];
+
+const values = [
+  { icon: "🚀", title: "Quality Over Volume", desc: "We take on projects we can do well. We'd rather do fewer projects and do them properly than rush through volume work." },
+  { icon: "💬", title: "Clear Communication", desc: "No ghosting, no vague briefs. We scope clearly, pay on time, and give feedback that's actionable." },
+  { icon: "🧠", title: "Shared Ownership", desc: "We want people who genuinely care about the outcome — not just the deliverable. Client success is the shared goal." },
+  { icon: "🌏", title: "Based in Auckland", desc: "We prefer working with people who understand the Auckland / NZ market, though remote collaboration is absolutely fine." },
+];
 ---
-<Layout title="Work with Us" description="Work with Kiwi Web Design on Auckland and NZ projects. Freelancers, developers, designers, and SEO partners for website design Auckland clients." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Work with Us</p>
-        <h1>Work with Kiwi Web Design</h1>
-        <p class="hero-sub">Work with Kiwi Web Design on Auckland and NZ projects. Freelancers, developers, designers, and SEO partners for website design Auckland clients.</p>
-        <div class="hero-btns">
-          <a href="#contact-form" class="btn-primary">Send Introduction</a>
-          <a href="/about-us/" class="btn-outline">About Us</a>
+
+<Layout
+  title="Work with Us | Partner with Kiwi Web Design Auckland"
+  description="Work with Kiwi Web Design on Auckland and NZ projects. Freelancers, developers, designers, and SEO partners for website design Auckland clients."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/work-with-us/"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="wwu-hero">
+    <div class="container wwu-hero-inner">
+      <div class="wwu-hero-content">
+        <p class="wwu-eyebrow">Work with Kiwi Web Design</p>
+        <h1>Join our network of freelancers and partners.</h1>
+        <p class="wwu-hero-lead">We're always looking to work with talented developers, designers, SEO specialists, copywriters, and referral partners on Auckland-focused projects.</p>
+        <div class="wwu-hero-actions">
+          <a href="#apply" class="wwu-hero-btn-primary">Send an Introduction</a>
+          <a href="#roles" class="wwu-hero-btn-secondary">See Open Roles ↓</a>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/work-with-us-kiwi-web-design-auckland.jpg" alt="Work with Kiwi Web Design" loading="lazy" />
+      <div class="wwu-hero-card">
+        <p class="wwu-hc-label">What we offer collaborators</p>
+        <ul class="wwu-hc-list">
+          <li><span>✓</span> Real project work with Auckland clients</li>
+          <li><span>✓</span> Clear briefs and scope upfront</li>
+          <li><span>✓</span> On-time payment — no chasing invoices</li>
+          <li><span>✓</span> Long-term relationships over one-offs</li>
+          <li><span>✓</span> Referral commissions for introductions</li>
+          <li><span>✓</span> Flexible, remote-friendly collaboration</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/work-with-us-kiwi-web-design-auckland.jpg" alt="" loading="lazy"> 
-
-<!-- WORK WITH US MAIN SECTION -->
-
-Careers &amp; collaboration
- 
- <p>
- We are building a small, sharp team and network of collaborators who care about results for
- <a href="/">web design Auckland</a>
- and
- <a href="/">website design Auckland</a>.
- If you are a designer, developer, SEO specialist, or content person who enjoys working with small businesses,
- this page explains how to work with us.
- </p>
-
-<!-- STEP 1 -->
- 
- Step 1
- Introduce
- 
+  <!-- Roles -->
+  <section class="section" style="background: var(--kwd-cream);" id="roles">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Who We're Looking For"
+        title="Current collaboration opportunities."
+        subtitle="Freelance and project-based roles across design, development, SEO, and copywriting."
+      />
+      <div class="wwu-roles">
+        {roles.map(({ icon, title, desc, skills, type }) => (
+          <div class="wwu-role-card">
+            <div class="wwu-role-top">
+              <span class="wwu-role-icon">{icon}</span>
+              <span class="wwu-role-type">{type}</span>
+            </div>
+            <h3 class="wwu-role-title">{title}</h3>
+            <p class="wwu-role-desc">{desc}</p>
+            <div class="wwu-role-skills">
+              {skills.map((skill) => (
+                <span class="wwu-role-skill">{skill}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <section class="contact-section" id="contact-form">
-    <div class="contact-inner">
-      <h2>Get in touch with us</h2>
-      <p>Send us a short introduction and we'll get back to you within 24 hours.</p>
-      <form action="/api/contact" method="POST" class="contact-form">
-        <div class="form-group">
-          <label for="name">Your name <span style="color:red">*</span></label>
-          <input type="text" id="name" name="name" required placeholder="Jane Smith" autocomplete="name" />
-        </div>
-        <div class="form-group">
-          <label for="email">Email address <span style="color:red">*</span></label>
-          <input type="email" id="email" name="email" required placeholder="jane@example.com" autocomplete="email" />
-        </div>
-        <div class="form-group">
-          <label for="role">Your role / skills</label>
-          <input type="text" id="role" name="role" placeholder="e.g. WordPress Developer, SEO Specialist, Designer" />
-        </div>
-        <div class="form-group">
-          <label for="portfolio">Portfolio or LinkedIn URL</label>
-          <input type="url" id="portfolio" name="portfolio" placeholder="https://yourwebsite.com" />
-        </div>
-        <div class="form-group">
-          <label for="message">Tell us about yourself <span style="color:red">*</span></label>
-          <textarea id="message" name="message" required placeholder="Share your background, favourite types of projects, availability, and how you prefer to work..."></textarea>
-        </div>
-        <div class="form-submit">
-          <button type="submit" class="btn-primary">Send Introduction</button>
-        </div>
-      </form>
+  <!-- What we value -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Value"
+        title="How we work with our partners."
+        light={true}
+        subtitle="The culture we try to bring to every collaboration."
+      />
+      <div class="wwu-values">
+        {values.map(({ icon, title, desc }) => (
+          <div class="wwu-value">
+            <span class="wwu-value-icon">{icon}</span>
+            <h3 class="wwu-value-title">{title}</h3>
+            <p class="wwu-value-desc">{desc}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
+
+  <!-- Application form -->
+  <section class="section" id="apply">
+    <div class="container">
+      <div class="wwu-apply-wrap">
+        <div class="wwu-apply-info">
+          <p class="wwu-apply-eyebrow">Get in Touch</p>
+          <h2>Send us an introduction.</h2>
+          <p>Tell us a bit about your background, what you do, and what kind of work you're looking for. We'll be in touch if there's a good fit — and we'll keep your details for future projects.</p>
+          <div class="wwu-apply-contact">
+            <p>Prefer to email directly?</p>
+            <a href="mailto:Hi@KiwiWebDesign.co.nz">Hi@KiwiWebDesign.co.nz</a>
+          </div>
+        </div>
+        <div class="wwu-apply-form-wrap">
+          <form class="wwu-form" name="work-with-us" method="POST" action="/api/contact">
+            <input type="hidden" name="form_type" value="work-with-us" />
+            <div class="wwu-form-row">
+              <label class="wwu-form-label">
+                Your Name <span class="req">*</span>
+                <input type="text" name="name" placeholder="e.g. Alex Chen" required />
+              </label>
+            </div>
+            <div class="wwu-form-row wwu-form-row-2">
+              <label class="wwu-form-label">
+                Email <span class="req">*</span>
+                <input type="email" name="email" placeholder="you@yourdomain.com" required />
+              </label>
+              <label class="wwu-form-label">
+                Phone / Mobile
+                <input type="tel" name="mobile" placeholder="021 000 0000" />
+              </label>
+            </div>
+            <div class="wwu-form-row">
+              <label class="wwu-form-label">
+                What do you do? <span class="req">*</span>
+                <select name="role" required>
+                  <option value="">Select a role...</option>
+                  <option value="developer">WordPress Developer</option>
+                  <option value="designer">UI/UX Designer</option>
+                  <option value="seo">SEO Specialist</option>
+                  <option value="copywriter">Copywriter</option>
+                  <option value="ads">Google Ads Specialist</option>
+                  <option value="referral">Referral Partner</option>
+                  <option value="other">Other</option>
+                </select>
+              </label>
+            </div>
+            <div class="wwu-form-row">
+              <label class="wwu-form-label">
+                Portfolio or LinkedIn URL
+                <input type="url" name="portfolio" placeholder="https://yourportfolio.com" />
+              </label>
+            </div>
+            <div class="wwu-form-row">
+              <label class="wwu-form-label">
+                Tell us about yourself <span class="req">*</span>
+                <textarea name="message" rows="5" placeholder="What do you do, what kind of work are you looking for, and why would we be a good fit?..." required></textarea>
+              </label>
+            </div>
+            <button type="submit" class="wwu-form-submit">Send Introduction →</button>
+            <p class="wwu-form-privacy">We respect your privacy. Your details are never shared or sold.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="cream"
+    title="Looking to hire us instead?"
+    subtitle="If you're a business looking for web design, SEO, or Google Ads — we'd love to hear from you."
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Our Services", href: "/small-business-website-design-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  /* Hero */
+  .wwu-hero {
+    background: var(--kwd-dark);
+    padding: 5rem 0;
+  }
+  .wwu-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .wwu-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 1rem;
+  }
+  .wwu-hero-content h1 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+  .wwu-hero-lead {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+  }
+  .wwu-hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .wwu-hero-btn-primary {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: background 0.2s;
+  }
+  .wwu-hero-btn-primary:hover { background: var(--kwd-gold); }
+  .wwu-hero-btn-secondary {
+    display: inline-block;
+    color: rgba(255,255,255,0.7);
+    padding: 0.875rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .wwu-hero-btn-secondary:hover { color: #fff; }
+
+  .wwu-hero-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding: 2rem;
+  }
+  .wwu-hc-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1.25rem;
+  }
+  .wwu-hc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .wwu-hc-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+  }
+  .wwu-hc-list span {
+    color: var(--kwd-yellow);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Roles grid */
+  .wwu-roles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .wwu-role-card {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .wwu-role-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+  .wwu-role-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .wwu-role-icon { font-size: 1.75rem; }
+  .wwu-role-type {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kwd-brown);
+    background: var(--kwd-cream);
+    padding: 0.25rem 0.6rem;
+    border-radius: 100px;
+  }
+  .wwu-role-title {
+    font-family: var(--kwd-font-body);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin: 0;
+  }
+  .wwu-role-desc {
+    font-size: 0.85rem;
+    color: var(--kwd-brown);
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+  }
+  .wwu-role-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+  .wwu-role-skill {
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: var(--kwd-cream);
+    color: var(--kwd-dark);
+    padding: 0.25rem 0.6rem;
+    border-radius: 100px;
+    border: 1px solid rgba(0,0,0,0.07);
+  }
+
+  /* Values */
+  .wwu-values {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .wwu-value {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .wwu-value-icon { font-size: 1.75rem; }
+  .wwu-value-title {
+    font-family: var(--kwd-font-body);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+  }
+  .wwu-value-desc {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Apply section */
+  .wwu-apply-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .wwu-apply-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.75rem;
+  }
+  .wwu-apply-info h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+  .wwu-apply-info p {
+    font-size: 0.95rem;
+    color: var(--kwd-brown);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+  .wwu-apply-contact {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+  .wwu-apply-contact p {
+    font-size: 0.8rem;
+    color: var(--kwd-brown);
+    margin-bottom: 0.3rem;
+  }
+  .wwu-apply-contact a {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    transition: opacity 0.2s;
+  }
+  .wwu-apply-contact a:hover { opacity: 0.7; }
+
+  /* Form */
+  .wwu-form-wrap {
+    background: var(--kwd-cream);
+    border-radius: 20px;
+    padding: 2.5rem;
+  }
+  .wwu-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .wwu-form-row {}
+  .wwu-form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .wwu-form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--kwd-dark);
+  }
+  .req { color: #d83b3b; }
+  .wwu-form-label input,
+  .wwu-form-label select,
+  .wwu-form-label textarea {
+    padding: 0.75rem 1rem;
+    border: 1.5px solid rgba(0,0,0,0.12);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: var(--kwd-font-body);
+    color: var(--kwd-dark);
+    background: #fff;
+    transition: border-color 0.2s;
+  }
+  .wwu-form-label input:focus,
+  .wwu-form-label select:focus,
+  .wwu-form-label textarea:focus {
+    outline: none;
+    border-color: var(--kwd-dark);
+  }
+  .wwu-form-label textarea { resize: vertical; min-height: 120px; }
+  .wwu-form-submit {
+    background: var(--kwd-dark);
+    color: #fff;
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: var(--kwd-font-body);
+  }
+  .wwu-form-submit:hover { background: #3e3633; }
+  .wwu-form-privacy {
+    font-size: 0.75rem;
+    color: var(--kwd-brown);
+    text-align: center;
+    margin: 0;
+    opacity: 0.75;
+  }
+
+  @media (max-width: 960px) {
+    .wwu-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .wwu-roles { grid-template-columns: repeat(2, 1fr); }
+    .wwu-values { grid-template-columns: repeat(2, 1fr); }
+    .wwu-apply-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    .wwu-form-row-2 { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 580px) {
+    .wwu-roles { grid-template-columns: 1fr; }
+    .wwu-values { grid-template-columns: 1fr; }
   }
 </style>

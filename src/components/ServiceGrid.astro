@@ -1,0 +1,147 @@
+---
+interface ServiceItem {
+  icon?: string;
+  title: string;
+  desc: string;
+  items?: string[];
+  href?: string;
+  tag?: string;
+}
+
+interface Props {
+  items: ServiceItem[];
+  cols?: 2 | 3 | 4;
+  dark?: boolean;
+}
+
+const { items, cols = 3, dark = false } = Astro.props;
+---
+
+<div class:list={['sg-grid', `sg-cols-${cols}`, dark && 'sg-dark']}>
+  {items.map(({ icon, title, desc, items: bullets, href, tag }) => (
+    <div class="sg-card">
+      {tag && <span class="sg-tag">{tag}</span>}
+      {icon && <div class="sg-icon">{icon}</div>}
+      <h3 class="sg-title">{title}</h3>
+      <p class="sg-desc">{desc}</p>
+      {bullets && bullets.length > 0 && (
+        <ul class="sg-list">
+          {bullets.map((b) => <li>{b}</li>)}
+        </ul>
+      )}
+      {href && (
+        <a href={href} class="sg-link">Learn more →</a>
+      )}
+    </div>
+  ))}
+</div>
+
+<style>
+  .sg-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .sg-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .sg-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .sg-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+  .sg-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .sg-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+
+  .sg-dark .sg-card {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.1);
+  }
+
+  .sg-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-dark);
+    background: var(--kwd-yellow);
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    align-self: flex-start;
+  }
+
+  .sg-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .sg-title {
+    font-size: 1.15rem;
+    color: var(--kwd-dark);
+    margin: 0;
+    font-family: var(--kwd-font-body);
+    font-weight: 700;
+  }
+  .sg-dark .sg-title { color: #fff; }
+
+  .sg-desc {
+    font-size: 0.9rem;
+    color: var(--kwd-brown);
+    margin: 0;
+    line-height: 1.65;
+    flex: 1;
+  }
+  .sg-dark .sg-desc { color: rgba(255,255,255,0.65); }
+
+  .sg-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.25rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1;
+  }
+  .sg-list li {
+    font-size: 0.875rem;
+    color: var(--kwd-brown);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .sg-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--kwd-dark);
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+  .sg-dark .sg-list li { color: rgba(255,255,255,0.65); }
+  .sg-dark .sg-list li::before { color: var(--kwd-yellow); }
+
+  .sg-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--kwd-dark);
+    margin-top: 0.25rem;
+    transition: color 0.2s;
+  }
+  .sg-link:hover { color: var(--kwd-brown); }
+  .sg-dark .sg-link { color: var(--kwd-yellow); }
+
+  @media (max-width: 900px) {
+    .sg-cols-3, .sg-cols-4 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 580px) {
+    .sg-cols-2, .sg-cols-3, .sg-cols-4 { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,86 @@
+---
+interface ReviewItem {
+  name: string;
+  company: string;
+  text: string;
+  stars?: number;
+}
+
+interface Props {
+  items: ReviewItem[];
+  cols?: 2 | 3;
+}
+
+const { items, cols = 2 } = Astro.props;
+---
+
+<div class:list={['tg-grid', `tg-cols-${cols}`]}>
+  {items.map(({ name, company, text, stars = 5 }) => (
+    <div class="tg-card">
+      <div class="tg-stars" aria-label={`${stars} out of 5 stars`}>
+        {'★'.repeat(stars)}
+      </div>
+      <blockquote class="tg-quote">
+        <p>"{text}"</p>
+      </blockquote>
+      <div class="tg-attribution">
+        <span class="tg-name">{name}</span>
+        <span class="tg-sep">·</span>
+        <span class="tg-company">{company}</span>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .tg-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .tg-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .tg-cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+  .tg-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    transition: box-shadow 0.2s;
+  }
+  .tg-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.09); }
+
+  .tg-stars {
+    color: #f5a523;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .tg-quote {
+    margin: 0;
+    flex: 1;
+  }
+  .tg-quote p {
+    font-size: 0.9rem;
+    color: var(--kwd-brown);
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .tg-attribution {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+  }
+  .tg-name    { font-weight: 700; color: var(--kwd-dark); }
+  .tg-sep     { color: var(--kwd-brown); opacity: 0.5; }
+  .tg-company { color: var(--kwd-brown); }
+
+  @media (max-width: 720px) {
+    .tg-cols-2, .tg-cols-3 { grid-template-columns: 1fr; }
+  }
+</style>

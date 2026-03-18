@@ -1,5 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import StatsRow from '../components/StatsRow.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import TestimonialGrid from '../components/TestimonialGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -10,223 +18,164 @@ const schema = {
       "url": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/",
       "name": "Affordable Web Design in Auckland for Small Businesses",
       "description": "Affordable web design in Auckland for tradies and small businesses. WordPress packages from $1,290, free in-person consults, delivery in 2 to 3 weeks.",
-      "datePublished": "2025-09-02T05:14:25+00:00",
-      "dateModified": "2026-02-24T07:53:35+00:00",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "primaryImageOfPage": { "@id": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/#primaryimage" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/#breadcrumb" }
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/#primaryimage",
-      "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-211856-211856.jpg",
-      "width": 130,
-      "height": 130,
-      "caption": "Affordable web design services for small businesses in Auckland, created by Kiwi Web Design."
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "Affordable Web Design Auckland" }
+        { "@type": "ListItem", "position": 2, "name": "Small Business Web Design Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "alternateName": "Web Design Auckland",
-      "url": "https://www.kiwiwebdesign.co.nz/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png",
-        "width": 512,
-        "height": 512
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
 
+const stats = [
+  { number: "From $1,290", label: "One-time website packages" },
+  { number: "2–3 wks", label: "Typical delivery time" },
+  { number: "50+", label: "Auckland businesses helped" },
+  { number: "4.9★", label: "Average Google rating" },
+];
+
 const included = [
-  "A responsive WordPress site that looks great on phones, tablets, and desktops",
-  "SEO-ready structure to help your site show up on Google",
-  "Free consultation (in person or online) to understand your goals",
-  "Fast turnaround with AI-powered tools to save you time and money",
-];
-
-const industries = [
   {
-    name: "How We Help Trades",
-    img: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/g9554e254a3deda0f4e0d191733f0a80e83092bd51e07c6bd164691af8ea9c90b53820097badbed62a4494dd5b32fc136695cdb73860356f52358effc887c6e83_1280-2672184-e1758395116775.jpg",
-    imgAlt: "Trades website design Auckland – plumber, roofer, landscaper",
-    desc: "If your phone is not ringing enough and you are not sure how to get more leads online, you are not alone. We work with Kiwi tradies across Auckland, including plumbers, roofers, landscapers, and HVAC companies, to improve their Google rankings, drive the right traffic, and turn that traffic into real enquiries and booked jobs.",
-    link: "/tradie-website-design-auckland/",
-  },
-  {
-    name: "How We Help eCommerce",
-    img: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/woocommerce-website-auckland.png",
-    imgAlt: "WooCommerce Website Design Auckland – Kiwi Web Design",
-    desc: "Consistent, high-intent traffic and strong conversion rates are what drive a successful eCommerce business. At Kiwi Web Design, we help B2B and B2C online stores increase visibility and turn visitors into customers through performance-focused website design, technical SEO, and targeted Google Ads campaigns.",
-    link: "/ecommerce-website-auckland/",
-  },
-  {
-    name: "How We Help Lawyers",
-    img: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/legal-website-auckland-3-e1771448878227.jpg",
-    imgAlt: "FL Legal website hero banner designed by Kiwi Web Design Auckland",
-    desc: "We help law firms attract the right clients by improving their visibility in Google search, building trust through a professional and credible online presence, and turning website visitors into consultation enquiries through conversion-focused website design, local SEO, and targeted Google Ads campaigns.",
-    link: "/how-kiwi-web-design-helps-auckand-lawyers/",
-  },
-  {
-    name: "How We Help Healthcare",
-    img: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/02/pexels-karola-g-4386466.jpg",
-    imgAlt: "Healthcare clinic website design and SEO services in Auckland helping attract new patients",
-    desc: "Healthcare providers need to build trust while handling sensitive information with care. We help clinics and healthcare operators strengthen their online presence, communicate clearly and professionally, and attract the right patients through compliant website design, local SEO, and targeted digital campaigns that respect both privacy and reputation.",
-    link: "/how-kiwi-web-design-helps-auckland-healthcare/",
-  },
-  {
-    name: "How We Help Beauty Industry",
-    img: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/02/beauty-salon-website-design-seo-auckland.jpg",
-    imgAlt: "Beauty salon website design and SEO services in Auckland helping increase bookings",
-    desc: "We help beauty salons, cosmetic clinics, and aesthetic professionals attract more bookings by improving their visibility on Google, building a premium and trustworthy online presence, and turning website visitors into appointment enquiries through conversion-focused website design, local SEO, and targeted Google Ads campaigns.",
-    link: "/how-kiwi-web-design-helps-auckland-beauty-industry/",
-  },
-  {
-    name: "How We Help Restaurants",
-    img: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/02/restaurant-website-design-seo-auckland.jpg",
-    imgAlt: "Restaurant website design and local SEO services in Auckland driving more bookings",
-    desc: "We help restaurants increase bookings and walk-ins by improving their visibility on Google, strengthening their local presence, and turning online searches into reservations, calls, and delivery orders through conversion-focused website design, local SEO, and targeted Google Ads campaigns.",
-    link: "/how-kiwi-web-design-helps-auckland-restaurants/",
-  },
-];
-
-const howWeDoIt = [
-  {
-    icon: "🌐",
-    title: "Websites from $1,290",
-    desc: "Our packages start at just $1,290, giving small businesses a clear, affordable path to a professional online presence. You'll know the cost upfront, with no hidden extras.",
-  },
-  {
-    icon: "📅",
-    title: "Completed in 2–3 Weeks",
-    desc: "Most projects are launched in as little as 2–3 weeks. This means you can start attracting customers quickly without waiting months for your site to go live.",
-  },
-  {
-    icon: "📍",
-    title: "Based in Grey Lynn, Auckland",
-    desc: "We're proudly local, working out of 147 Great North Road in Grey Lynn. That makes it easy to meet face-to-face if you prefer, or we can connect online for convenience.",
-  },
-  {
-    icon: "🤝",
-    title: "In-Person or Online Consultations",
-    desc: "Every client gets a free consultation, either at your place, our office, or online. We'll take the time to understand your goals before you commit to anything.",
-  },
-  {
-    icon: "🔧",
-    title: "Focused on Tradies, eCommerce & Small Businesses",
-    desc: "Our experience covers industries like trades, online stores, and local small businesses. From scaffolding companies to dental clinics, we build websites tailored to your sector.",
+    icon: "🎨",
+    title: "Custom Design",
+    desc: "No cookie-cutter templates. Your website is designed around your brand, your customers, and your goals — so it looks and feels like you.",
+    items: ["Brand-matched colours & fonts", "Mobile-first layouts", "Modern, clean aesthetics", "Competitor differentiation"],
   },
   {
     icon: "⚡",
-    title: "WordPress Specialists with SEO Basics Included",
-    desc: "We build on WordPress, the world's most trusted platform for small business websites. Every build includes SEO-friendly structure so your site can be found in Google and AI searches.",
+    title: "Built on WordPress",
+    desc: "WordPress powers 43% of the web. It's reliable, flexible, and easy for you to update. No lock-in, no proprietary systems you can't control.",
+    items: ["Easy content editing", "Plugin ecosystem", "WooCommerce ready", "Scales as you grow"],
+  },
+  {
+    icon: "🔍",
+    title: "SEO-Ready From Day One",
+    desc: "Every page we build is structured for search engines. Speed, mobile performance, schema markup, and proper heading structure — all standard.",
+    items: ["Fast page speed", "Proper meta tags", "Schema markup", "Google Search Console setup"],
+  },
+  {
+    icon: "📱",
+    title: "Mobile Optimised",
+    desc: "Over 60% of your traffic is on mobile. We build mobile-first and test across devices so your site works perfectly on every screen.",
+    items: ["Responsive layouts", "Touch-friendly navigation", "Mobile page speed", "Cross-device testing"],
+  },
+  {
+    icon: "🔒",
+    title: "Secure & Reliable",
+    desc: "SSL certificates, regular backups, security hardening, and managed hosting. We handle the technical side so you can focus on your business.",
+    items: ["SSL included", "Daily backups", "Uptime monitoring", "WordPress security hardening"],
+  },
+  {
+    icon: "📞",
+    title: "Lead-Generation Focus",
+    desc: "Your website should be working for you 24/7. We design with clear calls-to-action, fast-loading pages, and conversion-tested layouts.",
+    items: ["CTA strategy", "Contact form setup", "Click-to-call integration", "Enquiry tracking"],
   },
 ];
 
-const steps = [
+const industries = [
+  { icon: "🔧", title: "Tradies", desc: "Plumbers, electricians, builders, painters. We know what converts for trade businesses in Auckland." },
+  { icon: "💆", title: "Beauty & Wellness", desc: "Salons, spas, clinics. Booking-integrated sites that showcase your services and keep the chair full." },
+  { icon: "🍽️", title: "Restaurants & Cafés", desc: "Menu pages, booking links, Google Maps integration. Hungry customers find you first." },
+  { icon: "⚕️", title: "Healthcare", desc: "Physios, dentists, GPs. HIPAA-aware design with online booking and clear service pages." },
+  { icon: "⚖️", title: "Professional Services", desc: "Lawyers, accountants, consultants. Authority-building design that wins the trust of new clients." },
+  { icon: "🛒", title: "eCommerce & Retail", desc: "WooCommerce and Shopify stores built to sell. Product pages, checkout flow, and payment gateway setup." },
+];
+
+const process = [
+  { step: "1", title: "Free Discovery Call", desc: "We start with a conversation — not a quote. We learn about your business, your customers, and what success looks like for you." },
+  { step: "2", title: "Strategy & Wireframe", desc: "We map out the site structure, page layout, and content plan. You approve the direction before any design begins." },
+  { step: "3", title: "Design & Build", desc: "We design and build your site in WordPress. You get a staging link to review and request changes before launch." },
+  { step: "4", title: "Launch & Handover", desc: "We go live, set up Google Search Console and Analytics, and walk you through how to make basic updates yourself." },
+];
+
+const packages = [
   {
-    num: "1",
-    title: "Discovery Call",
-    sub: "Needs, goals, timelines",
-    desc: "We hold a short discovery call to understand your service areas in Auckland, what success looks like, and what your customers need. This shapes the plan for web design in Auckland that suits your budget and timeline.",
-    points: [
-      "Goals, audience, and key offers for Auckland customers.",
-      "Sitemap outline and content priorities that match local searches.",
-      "Timeline and responsibilities so the project runs smoothly.",
+    name: "Starter",
+    price: "From $1,290",
+    note: "+ GST",
+    desc: "Perfect for sole traders and small businesses that need a professional online presence fast.",
+    items: [
+      "Up to 5 pages",
+      "Custom WordPress design",
+      "Mobile responsive",
+      "Contact form",
+      "Basic SEO setup",
+      "Google Analytics",
+      "1 round of revisions",
     ],
-    deliverables: ["One-page brief and sitemap", "Content outline and local keyword map"],
-    duration: "30 to 45 minutes",
-    cta: "Book a discovery call",
-    ctaHref: "/website-designer-auckland/",
+    cta: "Get a Quote",
+    href: "/website-designer-auckland/",
+    highlight: false,
   },
   {
-    num: "2",
-    title: "Build on WordPress",
-    sub: "Pages, SEO, performance",
-    desc: "We build your site on WordPress using clean structure, fast hosting, and on-page SEO. The goal is simple: help Auckland businesses get found and get enquiries.",
-    points: [
-      "Page templates and reusable blocks for easy updates.",
-      "SEO basics done: titles, meta, headings, internal links.",
-      "Speed and mobile checks across common devices.",
+    name: "Growth",
+    price: "From $2,490",
+    note: "+ GST",
+    desc: "For businesses ready to invest in a website that actively generates leads and grows with them.",
+    items: [
+      "Up to 10 pages",
+      "Custom WordPress design",
+      "Mobile responsive",
+      "Lead-gen conversion setup",
+      "Full SEO optimisation",
+      "Google Analytics + Search Console",
+      "2 rounds of revisions",
+      "Booking / enquiry integration",
+      "1 month post-launch support",
     ],
-    deliverables: ["Staging site and test plan", "Performance pass with core checks"],
-    duration: "5 to 10 days",
-    cta: "Request a build quote",
-    ctaHref: "/website-designer-auckland/",
+    cta: "Get a Quote",
+    href: "/website-designer-auckland/",
+    highlight: true,
+    tag: "Most Popular",
   },
   {
-    num: "3",
-    title: "Review & Launch",
-    sub: "Testing, training, go live",
-    desc: "We review content, polish details, then launch. You get handover, quick training, and a short report so your team is ready from day one.",
-    points: [
-      "Final checks, redirects, and basic analytics.",
-      "Handover and short training for updates.",
-      "Optional support plan for ongoing improvements in Auckland.",
+    name: "eCommerce",
+    price: "From $3,990",
+    note: "+ GST",
+    desc: "WooCommerce stores ready to sell. Product management, payment gateway, and order notifications.",
+    items: [
+      "WooCommerce setup",
+      "Up to 20 products",
+      "Payment gateway integration",
+      "Shipping configuration",
+      "Product SEO",
+      "Order management training",
+      "2 rounds of revisions",
+      "2 months post-launch support",
     ],
-    deliverables: ["Launch checklist and go-live window", "Simple performance snapshot"],
-    duration: "Monthly",
-    cta: "See support plans",
-    ctaHref: "/#Services",
+    cta: "Get a Quote",
+    href: "/website-designer-auckland/",
+    highlight: false,
   },
 ];
 
 const faqs = [
-  {
-    q: "How much does affordable web design in Auckland cost?",
-    a: "At Kiwi Web Design, websites for Auckland tradies and small businesses start from $1,290. Packages include a modern WordPress site, mobile-friendly design, and essential features to help you get found online.",
-  },
-  {
-    q: "What's included in your affordable website packages?",
-    a: "Our packages cover design, setup, basic SEO, contact forms, and hosting integration. You also get a free in-person consultation anywhere in Auckland so we can plan your site around your business needs.",
-  },
-  {
-    q: "How long will it take to build my website?",
-    a: "Most affordable web design projects are completed in 2–3 weeks. Timeframes depend on how quickly content and photos are provided, but we keep the process simple for busy Auckland business owners.",
-  },
-  {
-    q: "Do you only work with tradies?",
-    a: "No, while tradies are our specialty, we design websites for a wide range of Auckland small businesses, from retail to professional services.",
-  },
-  {
-    q: "Can you redesign my current website?",
-    a: "Yes. We often move Auckland businesses from older platforms like Wix or Squarespace to WordPress. This improves speed, flexibility, and SEO while keeping costs affordable.",
-  },
-  {
-    q: "Do you offer ongoing support once the website is live?",
-    a: "Absolutely. We provide training, hosting support, and affordable monthly maintenance plans so your site stays secure and up to date.",
-  },
-  {
-    q: "Can you add e-commerce or booking features?",
-    a: "Absolutely. Whether you're launching an online store or need bookings, memberships, or inventory management, we can build a fully tailored solution. Leveraging our AI‑first workflows, we integrate secure payment gateways, shopping carts, and any custom functionality your business requires — all at affordable costs.",
-  },
-  {
-    q: "Can you help with SEO as well as web design?",
-    a: "Definitely. We offer an affordable SEO add-on for local rankings and ongoing growth.",
-  },
-  {
-    q: "Do you provide free in-person consultation?",
-    a: "Yes. We can meet with you in person for free to discuss your website needs, if you are based in Auckland. Outside Auckland, we can provide free consultation through phone, email or online meetings.",
-  },
-  {
-    q: "How can you provide such affordable prices without sacrificing quality and services?",
-    a: "We're affordable — not cheap. We never compromise on quality. By embracing an AI-first approach in everything we do, we've built a streamlined, highly efficient workflow. This allows us to deliver the same (or better) results as traditional agencies at a fraction of the cost. We simply pass those savings directly on to you.",
-  },
-  {
-    q: "Why choose your agency over other Auckland providers?",
-    a: "We offer free in-person or online consultations before you commit to anything. We combine AI-driven efficiency with local Auckland knowledge. Get premium-looking, fully-customised websites at up to 50–70% lower cost. Enjoy transparent pricing, fast turnaround, and full support. We pass the savings directly to you — no hidden fees, no compromises.",
-  },
+  { q: "How much does a website cost for a small business in Auckland?", a: "Our packages start from $1,290 + GST for a 5-page WordPress website. Growth packages typically run $2,490–$3,500 depending on complexity. eCommerce sites start from $3,990. We give you a fixed quote upfront — no surprises." },
+  { q: "How long does it take to build a website?", a: "Most projects are completed in 2–3 weeks from when we receive your content. More complex sites with custom features may take 4–6 weeks. We'll give you a timeline upfront and stick to it." },
+  { q: "Do I need to provide content?", a: "Ideally yes — you know your business best. But we help with content guidance, structure, and can write copy for you as an add-on. We also source or licence stock images if needed." },
+  { q: "Will I be able to update the website myself?", a: "Yes. WordPress is designed for non-developers. We include a handover session so you can update text, images, and add pages without needing us. We also offer ongoing maintenance plans if you'd prefer we handle it." },
+  { q: "Do you offer hosting and maintenance?", a: "Yes. We offer managed WordPress hosting from $49/month and a monthly maintenance plan that includes updates, backups, security, and 2 hours of content changes. Ask us about bundling it with your build." },
+  { q: "Can you redesign my existing website?", a: "Yes. We do full WordPress rebuilds, redesigns, and migrations from other platforms (like Wix, Squarespace, or old WordPress themes). We preserve your SEO and content during the process." },
+];
+
+const reviews = [
+  { name: "Zane Barrett", company: "Barrett Access Scaffolding", text: "From the first call, Charlie understood exactly what we needed. The site was live in 2 weeks and we got our first enquiry the day after launch." },
+  { name: "Jack", company: "Show Me Shorts", text: "Really easy to work with. The process was clear, the timeline was met, and the end result looks way better than what we had before." },
+  { name: "Steven Liu", company: "Client", text: "Outstanding experience. The design is clean, modern, and user-friendly — exactly what I was hoping for." },
+  { name: "Gina Dellabarca", company: "Client", text: "Comprehensive and helpful. Clear information, great communication, and delivered exactly on time." },
 ];
 ---
 
@@ -237,73 +186,47 @@ const faqs = [
   schema={schema}
 >
 
-  <!-- Hero -->
-  <section class="hero section-dark">
+  <PageHero
+    eyebrow="Small Business Web Design Auckland"
+    title="Websites built to generate leads. Not just look good."
+    subtitle="Affordable WordPress websites for Auckland small businesses and tradies — from $1,290, delivered in 2–3 weeks, with a free in-person consult."
+    badgeText="From $1,290 + GST"
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "View Packages", href: "#packages" }}
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-211856-211856.jpg"
+    imgAlt="Affordable web design for Auckland small businesses"
+  />
+
+  <!-- Stats -->
+  <StatsRow items={stats} />
+
+  <!-- What's included -->
+  <section class="section" style="background: var(--kwd-cream);">
     <div class="container">
-      <h1>Affordable Website Design Auckland</h1>
-      <p class="subheading">Servicing Auckland wide, including Rodney, Waitakere, Northshore, Auckland CBD, East and South Auckland. Affordable package from $1,290.</p>
-      <a href="/website-designer-auckland/" class="btn-primary">Free Consultation</a>
+      <SectionHeader
+        eyebrow="What's Included"
+        title="Everything your business needs. Nothing you don't."
+        subtitle="Every website we build includes these fundamentals — because cutting corners costs you leads."
+      />
+      <ServiceGrid items={included} cols={3} />
     </div>
   </section>
 
-  <!-- Why Small Businesses Choose Us + office image -->
-  <section class="section section-dark hero-panels">
-    <div class="container panels-grid">
-      <div class="panel-image">
-        <img
-          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/office1-1024x683.jpg"
-          alt="Kiwi Web Design Auckland office"
-          width="1024"
-          height="683"
-          loading="lazy"
-        />
-      </div>
-      <div class="panel-text">
-        <h2>Why Small Businesses Choose Us</h2>
-        <p>A professional website helps your business get found, build trust, and win new customers. At Kiwi Web Design, we create affordable, high-quality website designs in Auckland that are designed for small businesses across Auckland and New Zealand. Our goal is to make it simple for you to showcase your services, attract local customers, and grow online without unnecessary costs. We offer free in-person consultations for Auckland businesses.</p>
-        <a href="/website-designer-auckland/" class="btn-primary">Book Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- What's Included + office image -->
-  <section class="section section-dark hero-panels">
-    <div class="container panels-grid panels-grid-reverse">
-      <div class="panel-text">
-        <h2>What's Included</h2>
-        <p>When you choose our affordable business website design package, you'll get:</p>
-        <ul class="included-list">
-          {included.map((item) => <li>{item}</li>)}
-        </ul>
-        <a href="/website-designer-auckland/" class="btn-primary">Book Now</a>
-      </div>
-      <div class="panel-image">
-        <img
-          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/office2-1024x683.jpg"
-          alt="Website design consultation in Auckland"
-          width="1024"
-          height="683"
-          loading="lazy"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- Industries We Work With -->
-  <section class="section section-cream">
+  <!-- Industries -->
+  <section class="section" style="background: var(--kwd-dark);">
     <div class="container">
-      <h2>Industries We Work With</h2>
-      <p class="section-intro">Build effective websites, SEO and Google Ads to help Auckland small businesses generate leads.</p>
-      <div class="industries-grid">
-        {industries.map(({ name, img, imgAlt, desc, link }) => (
-          <div class="industry-card">
-            <a href={link}>
-              <img src={img} alt={imgAlt} width="586" height="391" loading="lazy" class="industry-img" />
-            </a>
-            <div class="industry-body">
-              <h3>{name}</h3>
-              <p>{desc}</p>
-              <a href={link} class="learn-more">Learn more →</a>
+      <SectionHeader
+        eyebrow="Industries We Serve"
+        title="We know your industry. We know what converts."
+        light={true}
+      />
+      <div class="sbwd-industries">
+        {industries.map(({ icon, title, desc }) => (
+          <div class="sbwd-ind-card">
+            <span class="sbwd-ind-icon">{icon}</span>
+            <div>
+              <strong class="sbwd-ind-title">{title}</strong>
+              <p class="sbwd-ind-desc">{desc}</p>
             </div>
           </div>
         ))}
@@ -311,397 +234,240 @@ const faqs = [
     </div>
   </section>
 
-  <!-- How We Do It -->
-  <section class="section section-dark">
-    <div class="container">
-      <h2>How We Do It</h2>
-      <div class="how-grid">
-        {howWeDoIt.map(({ icon, title, desc }) => (
-          <div class="how-card">
-            <div class="how-icon">{icon}</div>
-            <h3>{title}</h3>
-            <p>{desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Process -->
+  <!-- Process -->
   <section class="section">
     <div class="container">
-      <h2>Our Process for Auckland Businesses</h2>
-      <p class="section-intro">A simple three-step path made for Auckland businesses. We start with a discovery call, build on WordPress, then review and launch. Clear, quick, and focused on results.</p>
-      <div class="process-steps">
-        {steps.map(({ num, title, sub, desc, points, deliverables, duration, cta, ctaHref }) => (
-          <div class="process-step">
-            <div class="step-header">
-              <span class="step-num">{num}</span>
-              <div>
-                <div class="step-title">{title}</div>
-                <div class="step-sub">{sub}</div>
-              </div>
+      <SectionHeader
+        eyebrow="How It Works"
+        title="Simple process. Predictable results."
+        subtitle="We keep things clear and collaborative — you always know what's happening and what's next."
+      />
+      <ProcessSteps items={process} />
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section class="section" style="background: var(--kwd-cream);" id="packages">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Packages & Pricing"
+        title="Transparent pricing. No hidden extras."
+        subtitle="Fixed-price quotes before we start. You'll always know the total cost."
+      />
+      <div class="sbwd-packages">
+        {packages.map((pkg) => (
+          <div class:list={['sbwd-pkg', pkg.highlight && 'sbwd-pkg--featured']}>
+            {pkg.tag && <span class="sbwd-pkg-tag">{pkg.tag}</span>}
+            <p class="sbwd-pkg-name">{pkg.name}</p>
+            <div class="sbwd-pkg-price-wrap">
+              <span class="sbwd-pkg-price">{pkg.price}</span>
+              <span class="sbwd-pkg-note">{pkg.note}</span>
             </div>
-            <div class="step-body">
-              <div class="step-main">
-                <h3>Step {num}: {title}</h3>
-                <p>{desc}</p>
-                <ul class="step-points">
-                  {points.map((p) => <li>{p}</li>)}
-                </ul>
-              </div>
-              <div class="step-card">
-                <strong>Deliverables</strong>
-                <ul class="deliverables-list">
-                  {deliverables.map((d) => <li>{d}</li>)}
-                </ul>
-              </div>
-            </div>
-            <div class="step-footer">
-              <a href={ctaHref} class="btn-primary">{cta}</a>
-              <span class="step-duration">Typical duration: {duration}</span>
-            </div>
+            <p class="sbwd-pkg-desc">{pkg.desc}</p>
+            <ul class="sbwd-pkg-list">
+              {pkg.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            <a href={pkg.href} class:list={['sbwd-pkg-btn', pkg.highlight && 'sbwd-pkg-btn--featured']}>{pkg.cta}</a>
           </div>
         ))}
       </div>
-      <div class="process-trust">
-        <span class="trust-check">✓</span>
-        <div>
-          <strong>Made for Auckland</strong><br />
-          <span>Clear communication, quick turnarounds, and friendly support for Auckland businesses.</span>
-        </div>
-      </div>
+      <p class="sbwd-pkg-note-bottom">All prices exclude GST. Custom quotes available for larger or complex projects. <a href="/website-designer-auckland/">Get in touch →</a></p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader eyebrow="Client Reviews" title="What Auckland small businesses say about us." />
+      <TestimonialGrid items={reviews} cols={2} />
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section section-cream">
-    <div class="container">
-      <h2>FAQ</h2>
-      <div class="faq-list">
-        {faqs.map(({ q, a }) => (
-          <details class="faq-item">
-            <summary>{q}</summary>
-            <p>{a}</p>
-          </details>
-        ))}
-      </div>
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Web Design Questions Answered"
+        subtitle="Common questions from Auckland small business owners before getting started."
+      />
     </div>
   </section>
 
-  <!-- Regional links -->
-  <section class="section">
-    <div class="container">
-      <h2>Serving All of Auckland</h2>
-      <ul class="region-list">
-        <li><a href="/north-shore-website-design/">North Shore</a></li>
-        <li><a href="/west-auckland-web-design/">West Auckland</a></li>
-        <li><a href="/central-auckland-web-design/">Central Auckland</a></li>
-        <li><a href="/east-auckland-web-design/">East Auckland</a></li>
-        <li><a href="/south-auckland-web-design/">South Auckland</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section section-dark text-center">
-    <div class="container">
-      <h2>Ready for an affordable website that actually works?</h2>
-      <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
-    </div>
-  </section>
+  <CTABanner
+    variant="yellow"
+    title="Ready to get a website that generates leads?"
+    subtitle="Free consultation — we'll give you honest advice and a fixed quote before we start."
+    ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "Learn About SEO Too", href: "/seo-auckland/" }}
+  />
 
 </Layout>
 
 <style>
-  /* Hero */
-  .hero { padding: 5rem 0 3rem; }
-  .hero h1 { color: var(--kwd-white); }
-  .subheading {
-    font-family: var(--kwd-font-body);
-    font-size: 1.05rem;
-    font-weight: 400;
-    color: rgba(255,255,255,0.75);
-    max-width: 680px;
-    margin-bottom: 2rem;
-  }
-
-  /* Hero panels (Why Choose Us + What's Included) */
-  .hero-panels { padding-top: 0; }
-  .panels-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-    align-items: center;
-  }
-  .panels-grid-reverse {
-    grid-template-columns: 1fr 2fr;
-  }
-  .panel-image img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-  }
-  .panel-text h2 { color: var(--kwd-white); margin-bottom: 1rem; }
-  .panel-text p { color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; }
-
-  /* Included list */
-  .included-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem;
-    display: grid;
-    gap: 0.6rem;
-  }
-  .included-list li {
-    padding-left: 1.5rem;
-    position: relative;
-    color: rgba(255,255,255,0.85);
-    font-size: 0.95rem;
-  }
-  .included-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--kwd-yellow);
-    font-weight: 700;
-  }
-
-  /* Industries */
-  .section-intro {
-    color: var(--kwd-brown);
-    margin-bottom: 2rem;
-    max-width: 640px;
-  }
-  .industries-grid {
+  /* Industries grid */
+  .sbwd-industries {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .industry-card {
-    background: var(--kwd-white);
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.08);
-    display: flex;
-    flex-direction: column;
-  }
-  .industry-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-  }
-  .industry-body {
-    padding: 1.25rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .industry-body h3 { font-size: 1rem; margin-bottom: 0.5rem; }
-  .industry-body p { font-size: 0.875rem; color: var(--kwd-brown); margin-bottom: 1rem; flex: 1; }
-  .learn-more { font-size: 0.875rem; font-weight: 600; color: var(--kwd-dark); }
-
-  /* How We Do It */
-  .how-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 1.25rem;
     margin-top: 2rem;
   }
-  .how-card {
+  .sbwd-ind-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
     background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 10px;
-    padding: 1.75rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 1.5rem;
   }
-  .how-icon { font-size: 2rem; margin-bottom: 0.75rem; }
-  .how-card h3 { color: var(--kwd-yellow); font-size: 1rem; margin-bottom: 0.5rem; }
-  .how-card p { color: rgba(255,255,255,0.75); font-size: 0.9rem; }
+  .sbwd-ind-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+    width: 2.5rem;
+    text-align: center;
+  }
+  .sbwd-ind-title {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+  .sbwd-ind-desc {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.55;
+    margin: 0;
+  }
 
-  /* Process */
-  .process-steps {
+  /* Packages */
+  .sbwd-packages {
     display: grid;
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
     margin-top: 2.5rem;
   }
-  .process-step {
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 12px;
+  .sbwd-pkg {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.08);
+    border-radius: 18px;
     padding: 2rem;
-    background: var(--kwd-white);
-  }
-  .step-header {
+    position: relative;
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.25rem;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    flex-direction: column;
+    gap: 0;
   }
-  .step-num {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
+  .sbwd-pkg--featured {
     background: var(--kwd-dark);
-    color: var(--kwd-yellow);
-    font-weight: 800;
-    font-size: 1.1rem;
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
+    border-color: var(--kwd-dark);
   }
-  .step-title { font-weight: 700; font-size: 1.05rem; }
-  .step-sub { font-size: 0.85rem; color: var(--kwd-brown); }
-  .step-body {
-    display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 2rem;
-    margin-bottom: 1.5rem;
+  .sbwd-pkg-tag {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+    align-self: flex-start;
   }
-  .step-main h3 { margin-bottom: 0.75rem; }
-  .step-main p { color: var(--kwd-brown); margin-bottom: 1rem; }
-  .step-points {
+  .sbwd-pkg-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin: 0 0 0.5rem;
+  }
+  .sbwd-pkg--featured .sbwd-pkg-name { color: rgba(255,255,255,0.5); }
+  .sbwd-pkg-price-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+  .sbwd-pkg-price {
+    font-family: var(--kwd-font-heading);
+    font-size: 2rem;
+    color: var(--kwd-dark);
+    line-height: 1;
+  }
+  .sbwd-pkg--featured .sbwd-pkg-price { color: var(--kwd-yellow); }
+  .sbwd-pkg-note {
+    font-size: 0.8rem;
+    color: var(--kwd-brown);
+  }
+  .sbwd-pkg--featured .sbwd-pkg-note { color: rgba(255,255,255,0.45); }
+  .sbwd-pkg-desc {
+    font-size: 0.85rem;
+    color: var(--kwd-brown);
+    line-height: 1.6;
+    margin: 0 0 1.25rem;
+  }
+  .sbwd-pkg--featured .sbwd-pkg-desc { color: rgba(255,255,255,0.6); }
+  .sbwd-pkg-list {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: grid;
+    margin: 0 0 1.75rem;
+    display: flex;
+    flex-direction: column;
     gap: 0.5rem;
+    flex: 1;
   }
-  .step-points li {
-    padding-left: 1.4rem;
+  .sbwd-pkg-list li {
+    font-size: 0.85rem;
+    color: var(--kwd-dark);
+    padding-left: 1.3rem;
     position: relative;
-    font-size: 0.9rem;
   }
-  .step-points li::before {
+  .sbwd-pkg-list li::before {
     content: "✓";
     position: absolute;
     left: 0;
     color: var(--kwd-brown);
     font-weight: 700;
   }
-  .step-card {
-    background: var(--kwd-cream);
+  .sbwd-pkg--featured .sbwd-pkg-list li { color: rgba(255,255,255,0.8); }
+  .sbwd-pkg--featured .sbwd-pkg-list li::before { color: var(--kwd-yellow); }
+  .sbwd-pkg-btn {
+    display: block;
+    text-align: center;
+    padding: 0.875rem;
     border-radius: 8px;
-    padding: 1.25rem;
-    align-self: start;
-  }
-  .step-card strong { display: block; margin-bottom: 0.75rem; }
-  .deliverables-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: 0.5rem;
-  }
-  .deliverables-list li {
-    padding-left: 1.4rem;
-    position: relative;
-    font-size: 0.875rem;
-    color: var(--kwd-brown);
-  }
-  .deliverables-list li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: var(--kwd-dark);
-  }
-  .step-footer {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid rgba(0,0,0,0.08);
-  }
-  .step-duration { font-size: 0.85rem; color: var(--kwd-brown); }
-  .process-trust {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
-    background: var(--kwd-cream);
-    border-radius: 10px;
-    padding: 1.25rem 1.5rem;
-  }
-  .trust-check {
-    font-size: 1.4rem;
-    color: var(--kwd-dark);
     font-weight: 700;
-    flex-shrink: 0;
-  }
-  .process-trust span { font-size: 0.9rem; color: var(--kwd-brown); }
-
-  /* FAQ */
-  .faq-list { display: grid; gap: 0.75rem; margin-top: 2rem; }
-  .faq-item {
-    background: var(--kwd-white);
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .faq-item summary {
-    padding: 1.1rem 1.25rem;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95rem;
-    list-style: none;
-    position: relative;
-    padding-right: 2.5rem;
-  }
-  .faq-item summary::after {
-    content: "+";
-    position: absolute;
-    right: 1.25rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--kwd-brown);
-    transition: transform 0.2s;
-  }
-  .faq-item[open] summary::after { content: "−"; }
-  .faq-item p {
-    padding: 0 1.25rem 1.1rem;
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--kwd-brown);
-  }
-
-  /* Regional */
-  .region-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
-  }
-  .region-list a {
-    display: inline-block;
-    padding: 0.4rem 1rem;
-    background: var(--kwd-cream);
-    border-radius: 999px;
     font-size: 0.875rem;
-    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--kwd-cream);
+    color: var(--kwd-dark);
     transition: background 0.2s;
   }
-  .region-list a:hover { background: var(--kwd-yellow); }
-
-  .text-center { text-align: center; }
-
-  /* Responsive */
-  @media (max-width: 900px) {
-    .industries-grid { grid-template-columns: repeat(2, 1fr); }
-    .how-grid { grid-template-columns: repeat(2, 1fr); }
-    .step-body { grid-template-columns: 1fr; }
+  .sbwd-pkg-btn:hover { background: #e8e7da; }
+  .sbwd-pkg-btn--featured {
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
   }
-  @media (max-width: 768px) {
-    .panels-grid,
-    .panels-grid-reverse { grid-template-columns: 1fr; }
-    .panel-image { display: none; }
-    .industries-grid { grid-template-columns: 1fr; }
-    .how-grid { grid-template-columns: 1fr; }
+  .sbwd-pkg-btn--featured:hover { background: var(--kwd-gold); }
+  .sbwd-pkg-note-bottom {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--kwd-brown);
+    margin-top: 1.5rem;
+  }
+  .sbwd-pkg-note-bottom a { color: var(--kwd-dark); font-weight: 600; }
+
+  @media (max-width: 960px) {
+    .sbwd-industries { grid-template-columns: repeat(2, 1fr); }
+    .sbwd-packages { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+  }
+  @media (max-width: 600px) {
+    .sbwd-industries { grid-template-columns: 1fr; }
   }
 </style>

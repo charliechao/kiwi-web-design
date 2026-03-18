@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import TestimonialGrid from '../components/TestimonialGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -10,8 +17,6 @@ const schema = {
       "url": "https://www.kiwiwebdesign.co.nz/google-ads/",
       "name": "Google Ads Management Auckland | Google Ads for Small Business",
       "description": "Get more calls and enquiries with practical Google Ads management for Auckland small businesses. Setup from NZ$499 with clear reporting and conversion tracking.",
-      "datePublished": "2025-09-02T05:12:14+00:00",
-      "dateModified": "2026-03-11T05:38:01+00:00",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/google-ads/#breadcrumb" }
@@ -28,39 +33,103 @@ const schema = {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png",
-        "width": 512,
-        "height": 512
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
 
-const features = [
+const adServices = [
   {
-    title: "Why Use Google Ads",
-    desc: "Google Ads puts your business in front of customers at the exact moment they are searching for your service. For Auckland small businesses, that makes it one of the most cost-effective ways to generate leads fast.",
+    icon: "🔍",
+    title: "Search Campaigns",
+    desc: "Appear at the top of Google when people search for exactly what you offer. We build tightly-targeted campaigns that put you in front of high-intent buyers.",
+    items: ["Keyword research & match type strategy", "Competitor gap analysis", "Negative keyword lists", "Ad copy A/B testing"],
   },
   {
-    title: "Our Approach",
-    desc: "We set up campaigns with tight targeting, negative keywords, and conversion tracking so every dollar you spend is working hard. No wasted ad spend, clear reporting every month.",
+    icon: "🏙️",
+    title: "Local Service Ads",
+    desc: "Appear in Google's verified local results — Google Guaranteed or Google Screened. Ideal for service businesses that want maximum local visibility.",
+    items: ["LSA setup and verification", "Budget optimisation", "Review generation support", "Lead quality tracking"],
   },
   {
-    title: "What You Get",
-    desc: "Campaign setup, keyword research, ad copywriting, landing page advice, conversion tracking, and monthly performance reports — all included from NZ$499 setup.",
+    icon: "🎯",
+    title: "Remarketing",
+    desc: "Re-engage visitors who left without converting. We show targeted ads to people who've already shown interest in your business.",
+    items: ["Audience list creation", "Display remarketing", "YouTube remarketing", "Dynamic ad creative"],
   },
+  {
+    icon: "📊",
+    title: "Conversion Tracking",
+    desc: "Know exactly which ads are generating calls, form submissions, and revenue. We set up complete conversion tracking so every dollar is accountable.",
+    items: ["Google Tag Manager setup", "Call tracking", "Form submission tracking", "eCommerce revenue tracking"],
+  },
+  {
+    icon: "🛒",
+    title: "Shopping Ads",
+    desc: "For eCommerce businesses — get your products visible at the top of Google Shopping results with well-structured feed management.",
+    items: ["Google Merchant Center setup", "Product feed optimisation", "Smart Shopping campaigns", "ROAS optimisation"],
+  },
+  {
+    icon: "📈",
+    title: "Campaign Optimisation",
+    desc: "Ongoing management to continuously improve performance. We test, analyse, and refine — reducing cost per lead while increasing volume.",
+    items: ["Monthly performance reviews", "Bid strategy optimisation", "Quality score improvement", "Ad schedule fine-tuning"],
+  },
+];
+
+const whyUs = [
+  {
+    icon: "🚫",
+    title: "No Wasted Ad Spend",
+    desc: "We use tight keyword targeting, comprehensive negative keyword lists, and conversion-focused landing pages to make sure your budget reaches buyers — not browsers.",
+  },
+  {
+    icon: "📍",
+    title: "Built for Auckland Businesses",
+    desc: "Local market knowledge means your campaigns target the right Auckland suburbs and regions. No generic national templates — every campaign is built for your specific audience.",
+  },
+  {
+    icon: "🔎",
+    title: "Transparent Reporting",
+    desc: "You'll know exactly what's happening with your ads every month. Clear reports showing spend, leads, cost-per-lead, and what we're doing to improve.",
+  },
+  {
+    icon: "🏁",
+    title: "Fast Setup — Results Fast",
+    desc: "Unlike SEO, Google Ads can generate leads within days of going live. We set up campaigns quickly and correctly so you don't wait months for results.",
+  },
+];
+
+const process = [
+  { step: "1", title: "Free Ads Audit", desc: "We review your existing campaigns (or assess your market from scratch) and identify the biggest opportunities." },
+  { step: "2", title: "Campaign Strategy", desc: "We build a campaign plan: keywords, ad copy, landing pages, budgets, and bidding strategy tailored to your goals." },
+  { step: "3", title: "Setup & Launch", desc: "Campaigns built, conversion tracking installed, and ads live — typically within 5 business days of briefing." },
+  { step: "4", title: "Manage & Optimise", desc: "Ongoing monthly management: testing, bidding adjustments, negative keywords, and reporting to continuously improve ROI." },
 ];
 
 const industries = [
   "Trades (plumbers, electricians, builders)",
-  "eCommerce & retail",
-  "Law firms",
   "Healthcare & dental",
-  "Beauty & wellness",
+  "Law firms & professional services",
+  "Beauty & wellness salons",
   "Restaurants & hospitality",
+  "eCommerce & retail",
+  "Cleaning & property services",
+  "Automotive & mechanical",
+];
+
+const reviews = [
+  { name: "Zane Barrett", company: "Barrett Access Scaffolding", text: "Charlie ran our Google Ads campaign and the enquiries started coming within the first week. Clear reporting, zero jargon, and they actually care about results." },
+  { name: "Jack", company: "Show Me Shorts", text: "They set up our ads properly from the start — tracked conversions, managed the budget carefully, and the ROI has been solid. Exactly what we needed." },
+];
+
+const faqs = [
+  { q: "How quickly can Google Ads start generating leads?", a: "Typically within 24–72 hours of a campaign going live. This is one of the key advantages of Google Ads over SEO — you can start generating enquiries immediately once your ads are approved and running." },
+  { q: "How much does Google Ads management cost?", a: "Our management fee starts from $399/month on top of your ad spend. The total cost depends on your budget and campaign complexity. We recommend a minimum ad spend of $500/month for most Auckland service businesses to see meaningful results." },
+  { q: "What ad spend budget do I need?", a: "For most Auckland service businesses, $500–$1,500/month in ad spend is a good starting point. Highly competitive industries like legal or trades may require more. We'll be honest with you upfront about what budget is needed to compete in your market." },
+  { q: "Should I run Google Ads or focus on SEO?", a: "Both serve different purposes. Google Ads delivers immediate leads but requires ongoing spend. SEO takes longer but earns free traffic that compounds over time. For most growing Auckland businesses, we recommend both — Ads first for quick wins while SEO builds." },
+  { q: "Can you take over my existing Google Ads account?", a: "Yes. We can audit and take over management of your existing campaigns, or we can set up a fresh account if you're starting from scratch. Either way, we'll start with an audit to understand what's working and what isn't." },
+  { q: "What's your management fee structure?", a: "We charge a flat monthly management fee rather than a percentage of spend. This means our incentive is to maximise your results — not to encourage you to spend more on ads. Setup is from NZ$499, then monthly management from $399." },
 ];
 ---
 
@@ -71,128 +140,200 @@ const industries = [
   schema={schema}
 >
 
-  <!-- Hero -->
-  <section class="hero section-dark">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <h1>Google Ads Management for Auckland Small Businesses</h1>
-        <p class="lead">Get more calls, quote requests, and leads from customers already searching for what you do.</p>
-        <p class="price-badge">Setup from NZ$499</p>
-        <a href="/website-designer-auckland/" class="btn-primary">Get Started</a>
-      </div>
-      <div class="hero-image">
-        <img
-          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/g9554e254a3deda0f4e0d191733f0a80e83092bd51e07c6bd164691af8ea9c90b53820097badbed62a4494dd5b32fc136695cdb73860356f52358effc887c6e83_1280-2672184-e1758395116775.jpg"
-          alt="Google Ads management for Auckland businesses"
-          width="586"
-          height="328"
-          loading="eager"
-        />
-      </div>
+  <PageHero
+    eyebrow="Google Ads Auckland"
+    title="Get more leads this week with Google Ads."
+    subtitle="Targeted Google Ads campaigns for Auckland small businesses. We set up, manage, and optimise campaigns that send high-intent traffic to pages built to convert."
+    badgeText="Setup from NZ$499"
+    ctaPrimary={{ text: "Book a Free Consultation", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "How It Works", href: "#process" }}
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/g9554e254a3deda0f4e0d191733f0a80e83092bd51e07c6bd164691af8ea9c90b53820097badbed62a4494dd5b32fc136695cdb73860356f52358effc887c6e83_1280-2672184-e1758395116775.jpg"
+    imgAlt="Google Ads management for Auckland businesses"
+  />
+
+  <!-- Why Google Ads -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Why Google Ads"
+        title="The fastest way to generate leads in Auckland."
+        subtitle="Google Ads puts your business at the top of search results at the exact moment your customers are looking — and you only pay when they click."
+      />
+      <ServiceGrid items={whyUs} cols={2} />
     </div>
   </section>
 
-  <!-- Features -->
+  <!-- Services -->
   <section class="section">
     <div class="container">
-      <div class="features-grid">
-        {features.map(({ title, desc }) => (
-          <div class="feature-card">
-            <h3>{title}</h3>
-            <p>{desc}</p>
+      <SectionHeader
+        eyebrow="Our Services"
+        title="Complete Google Ads management."
+        subtitle="From campaign setup to ongoing optimisation — everything needed to run profitable Google Ads."
+      />
+      <ServiceGrid items={adServices} cols={3} />
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader eyebrow="Industries" title="Industries we run Google Ads for." light={true} />
+      <div class="ga-industries">
+        {industries.map((item) => (
+          <div class="ga-industry-item">
+            <span class="ga-check">✓</span>
+            <span>{item}</span>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Industries -->
-  <section class="section section-cream">
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);" id="process">
     <div class="container">
-      <h2>Industries We Work With</h2>
-      <ul class="industry-list">
-        {industries.map((item) => <li>{item}</li>)}
-      </ul>
+      <SectionHeader
+        eyebrow="How It Works"
+        title="From brief to live in 5 business days."
+        subtitle="We move fast so you can start generating leads without delay."
+      />
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section section-dark text-center">
+  <!-- Pricing callout -->
+  <section class="section">
     <div class="container">
-      <h2>Ready to get more leads this week?</h2>
-      <p>Google Ads can put you in front of customers today. Book a free consultation and we'll tell you exactly what's possible for your business.</p>
-      <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
+      <div class="ga-pricing-card">
+        <div class="ga-pricing-left">
+          <p class="ga-pricing-eyebrow">Pricing</p>
+          <h2 class="ga-pricing-title">Straightforward, flat-fee management.</h2>
+          <p class="ga-pricing-desc">We charge a flat monthly management fee — not a percentage of your ad spend. That means our incentive is always to maximise your results, not your spend.</p>
+          <div class="ga-pricing-tiers">
+            <div class="ga-tier">
+              <span class="ga-tier-price">From $499</span>
+              <span class="ga-tier-label">One-time campaign setup</span>
+            </div>
+            <div class="ga-tier">
+              <span class="ga-tier-price">From $399/mo</span>
+              <span class="ga-tier-label">Ongoing management fee</span>
+            </div>
+            <div class="ga-tier">
+              <span class="ga-tier-price">$500+/mo</span>
+              <span class="ga-tier-label">Recommended ad spend (separate)</span>
+            </div>
+          </div>
+        </div>
+        <div class="ga-pricing-right">
+          <h3>What's included in management:</h3>
+          <ul>
+            <li>Keyword research & campaign structure</li>
+            <li>Ad copywriting & creative</li>
+            <li>Landing page recommendations</li>
+            <li>Conversion tracking setup</li>
+            <li>Negative keyword management</li>
+            <li>Bid optimisation</li>
+            <li>Monthly performance report</li>
+            <li>Direct access to your account manager</li>
+          </ul>
+          <a href="/website-designer-auckland/" class="ga-cta-btn">Get a Free Quote</a>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- Testimonials -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader eyebrow="Client Reviews" title="What our Google Ads clients say." />
+      <TestimonialGrid items={reviews} cols={2} />
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion items={faqs} title="Google Ads Questions Answered" subtitle="Common questions from Auckland businesses about running Google Ads." />
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to get more leads this week?"
+    subtitle="Book a free consultation and we'll tell you exactly what's possible for your business with Google Ads."
+    ctaPrimary={{ text: "Book a Free Consultation", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "Learn About SEO Too", href: "/seo-auckland/" }}
+  />
 
 </Layout>
 
 <style>
-  .hero { padding: 6rem 0; }
-  .hero-inner {
+  .ga-industries {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .ga-industry-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.8);
+  }
+  .ga-check { color: var(--kwd-yellow); font-weight: 700; flex-shrink: 0; }
+
+  .ga-pricing-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+    gap: 4rem;
+    background: var(--kwd-dark);
+    border-radius: 20px;
+    padding: 3rem;
+    color: #fff;
   }
-  .hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    display: block;
+  .ga-pricing-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 0.75rem;
   }
-  .hero h1 { color: var(--kwd-white); max-width: 720px; }
-  .lead { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 600px; margin-bottom: 1rem; }
-  .price-badge {
+  .ga-pricing-title { font-size: clamp(1.5rem, 2.5vw, 2rem); color: #fff; margin-bottom: 0.75rem; }
+  .ga-pricing-desc { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 2rem; }
+  .ga-pricing-tiers { display: flex; flex-direction: column; gap: 1rem; }
+  .ga-tier { display: flex; flex-direction: column; gap: 0.2rem; padding: 1rem; background: rgba(255,255,255,0.07); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); }
+  .ga-tier-price { font-family: var(--kwd-font-heading); font-size: 1.6rem; color: var(--kwd-yellow); }
+  .ga-tier-label { font-size: 0.8rem; color: rgba(255,255,255,0.55); }
+  .ga-pricing-right h3 { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .ga-pricing-right ul { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .ga-pricing-right li { font-size: 0.875rem; color: rgba(255,255,255,0.72); padding-left: 1.25rem; position: relative; }
+  .ga-pricing-right li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-yellow); font-weight: 700; }
+  .ga-cta-btn {
     display: inline-block;
     background: var(--kwd-yellow);
     color: var(--kwd-dark);
-    padding: 0.3rem 1rem;
-    border-radius: 999px;
+    padding: 0.875rem 2rem;
+    border-radius: 6px;
     font-weight: 700;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: background 0.2s;
   }
-  .text-center { text-align: center; }
+  .ga-cta-btn:hover { background: var(--kwd-gold); }
 
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+  @media (max-width: 900px) {
+    .ga-industries { grid-template-columns: repeat(2, 1fr); }
+    .ga-pricing-card { grid-template-columns: 1fr; gap: 2.5rem; }
   }
-  .feature-card {
-    border: 2px solid var(--kwd-cream);
-    border-radius: 8px;
-    padding: 1.75rem;
-  }
-  .feature-card h3 { margin-bottom: 0.75rem; }
-  .feature-card p { color: var(--kwd-brown); font-size: 0.95rem; margin: 0; }
-
-  .industry-list {
-    columns: 2;
-    gap: 2rem;
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0 0;
-  }
-  .industry-list li {
-    padding: 0.5rem 0 0.5rem 1.5rem;
-    position: relative;
-    font-size: 0.95rem;
-    break-inside: avoid;
-  }
-  .industry-list li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: var(--kwd-brown);
-    font-weight: 700;
-  }
-
-  @media (max-width: 768px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-image { display: none; }
-    .features-grid { grid-template-columns: 1fr; }
-    .industry-list { columns: 1; }
+  @media (max-width: 580px) {
+    .ga-industries { grid-template-columns: 1fr; }
   }
 </style>

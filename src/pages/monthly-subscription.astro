@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -10,178 +16,445 @@ const schema = {
       "name": "Monthly Subscription",
       "description": "Pay monthly instead of a lump sum. $199/mo (excl. GST) includes hosting, updates, security, and 2 hrs changes. Auckland small-business friendly.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/monthly-subscription/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/monthly-subscription/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/monthly-subscription/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Monthly Subscription"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Monthly Subscription" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const included = [
+  {
+    icon: "🌐",
+    title: "Managed Hosting",
+    desc: "Fast, reliable WordPress hosting on New Zealand servers. Uptime monitoring, CDN, and performance optimisation included.",
+    items: ["NZ-based server", "99.9% uptime SLA", "CDN included", "Uptime monitoring"],
+  },
+  {
+    icon: "🔒",
+    title: "Security & Backups",
+    desc: "Daily backups, malware scanning, firewall protection, and SSL certificate management. Your site is protected around the clock.",
+    items: ["Daily backups (30-day retention)", "SSL management", "Malware scanning", "WordPress firewall"],
+  },
+  {
+    icon: "🔄",
+    title: "WordPress Updates",
+    desc: "Core WordPress, theme, and plugin updates applied monthly and tested before going live. No more broken sites from update conflicts.",
+    items: ["Core WordPress updates", "Plugin updates", "Theme updates", "Pre-update backups"],
+  },
+  {
+    icon: "✏️",
+    title: "2 Hours Content Changes",
+    desc: "Need to update your prices, swap an image, add a new team member, or change your opening hours? We handle it for you.",
+    items: ["Text & copy updates", "Image swaps", "Page additions", "Menu / price updates"],
+  },
+  {
+    icon: "📊",
+    title: "Monthly Report",
+    desc: "A simple monthly summary showing your site's traffic, top pages, and key performance metrics. Know how your site is performing.",
+    items: ["Google Analytics summary", "Top traffic sources", "Top performing pages", "Month-on-month comparison"],
+  },
+  {
+    icon: "🛎️",
+    title: "Priority Support",
+    desc: "Got a question or something's gone wrong? As a subscriber you get priority response — typically within a few hours on business days.",
+    items: ["Priority email support", "Same-day response (biz hours)", "Issue diagnosis", "Emergency fix guarantee"],
+  },
+];
+
+const comparisonItems = [
+  { label: "Managed WordPress hosting", included: true },
+  { label: "SSL certificate", included: true },
+  { label: "Daily backups (30-day retention)", included: true },
+  { label: "Security monitoring & malware scanning", included: true },
+  { label: "Monthly WordPress core + plugin updates", included: true },
+  { label: "2 hours content changes per month", included: true },
+  { label: "Monthly performance report", included: true },
+  { label: "Priority support response", included: true },
+  { label: "Uptime monitoring", included: true },
+  { label: "No lock-in contract", included: true },
+];
+
+const faqs = [
+  { q: "Do I need to have my website built by you to use the subscription?", a: "Usually yes — we manage sites we've built or migrated to our hosting environment. If you have an existing WordPress site on another host, we can migrate it over as part of the setup. Get in touch and we'll let you know if it's compatible." },
+  { q: "Is there a minimum contract period?", a: "No lock-in. The subscription runs month-to-month. You can cancel at any time with 30 days notice. We don't believe in trapping clients — we'd rather earn your continued business." },
+  { q: "What if I need more than 2 hours of changes in a month?", a: "Additional hours are billed at our standard hourly rate of $120/hr + GST. We'll always let you know if a request is going to exceed your monthly allocation before we start." },
+  { q: "What happens if my site goes down?", a: "We monitor uptime 24/7. If your site goes offline, we're alerted immediately and will investigate and resolve it as a priority — typically within 1–2 hours during business hours." },
+  { q: "Does the subscription include SEO?", a: "The subscription covers hosting, maintenance, updates, and minor content changes. SEO is a separate service. We offer local SEO and WordPress SEO packages that can be bundled with your subscription. Ask us about a combined plan." },
+  { q: "Can I upgrade later if I want more support?", a: "Yes. We can customise a plan with additional change hours, monthly blog publishing, or SEO management if your needs grow. Just ask." },
+];
 ---
-<Layout title="Monthly Subscription" description="Pay monthly instead of a lump sum. $199/mo (excl. GST) includes hosting, updates, security, and 2 hrs changes. Auckland small-business friendly." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Pricing</p>
-        <h1>Want to pay monthly rather than a lump‑sum payment?</h1>
-        <p class="hero-sub">Pay monthly instead of a lump sum. $199/mo (excl. GST) includes hosting, updates, security, and 2 hrs changes. Auckland small-business friendly.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
+
+<Layout
+  title="Monthly Subscription | Managed WordPress Hosting & Maintenance Auckland"
+  description="Pay monthly instead of a lump sum. $199/mo (excl. GST) includes hosting, updates, security, and 2 hrs changes. Auckland small-business friendly."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/monthly-subscription/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Monthly Subscription"
+    title="Your website. Taken care of. Every month."
+    subtitle="Managed WordPress hosting, security, updates, and 2 hours of content changes — all for a single monthly fee. No surprises, no lock-in."
+    badgeText="$199/mo + GST"
+    ctaPrimary={{ text: "Get Started", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See What's Included", href: "#included" }}
+    centered={true}
+  />
+
+  <!-- Main plan card -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <div class="ms-plan-card">
+        <div class="ms-plan-left">
+          <p class="ms-plan-eyebrow">The Plan</p>
+          <h2 class="ms-plan-title">Managed Website Subscription</h2>
+          <p class="ms-plan-desc">One flat monthly fee covers everything your website needs to stay fast, secure, and up to date. You focus on running your business — we handle the tech.</p>
+          <div class="ms-plan-price-row">
+            <span class="ms-plan-price">$199</span>
+            <div class="ms-plan-price-detail">
+              <span class="ms-plan-per">/month</span>
+              <span class="ms-plan-gst">excl. GST</span>
+            </div>
+          </div>
+          <p class="ms-plan-note">No lock-in contract. Cancel with 30 days notice.</p>
+          <a href="/website-designer-auckland/" class="ms-plan-btn">Get Started →</a>
+        </div>
+        <div class="ms-plan-right">
+          <p class="ms-plan-list-label">What's included every month:</p>
+          <ul class="ms-plan-checklist">
+            {comparisonItems.map(({ label }) => (
+              <li>
+                <span class="ms-check">✓</span>
+                {label}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/wordpress-website-rebuilds-auckland.jpg" alt="Want to pay monthly rather than a lump‑sum payment?" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Feature breakdown -->
+  <section class="section" id="included">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Service Breakdown"
+        title="Everything included. Explained."
+        subtitle="We don't hide things in the fine print. Here's exactly what you get each month."
+      />
+      <ServiceGrid items={included} cols={3} />
+    </div>
+  </section>
+
+  <!-- Why it matters -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <div class="ms-why-grid">
+        <div class="ms-why-text">
+          <p class="ms-why-eyebrow">Why It Matters</p>
+          <h2>A neglected website costs you more than a managed one.</h2>
+          <p>Outdated plugins are the #1 cause of WordPress hacks. Slow hosting means Google ranks you lower. An unmaintained site sends the wrong signal to potential customers.</p>
+          <p>For $199/month, you get the peace of mind that your site is secure, backed up, and professionally maintained — without having to think about it.</p>
+        </div>
+        <div class="ms-why-stats">
+          <div class="ms-why-stat">
+            <span class="ms-why-num">97%</span>
+            <span class="ms-why-label">of WordPress hacks are due to outdated plugins or themes</span>
+          </div>
+          <div class="ms-why-stat">
+            <span class="ms-why-num">1s</span>
+            <span class="ms-why-label">delay in page load time reduces conversions by 7%</span>
+          </div>
+          <div class="ms-why-stat">
+            <span class="ms-why-num">30 days</span>
+            <span class="ms-why-label">of backups retained — we can restore to any point</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<!-- HERO / INTRO -->
-
-Pay Monthly Website – Auckland & NZ
- 
- <p>Consider our <strong>$199/month</strong> website subscription plan (excl. GST). Built for small businesses that want a professional WordPress site with ongoing care, without the big upfront bill.</p>
-
-<a href="/contact">Get started – $199/month</a>
- <a href="/#Portfolios">See our web design work</a>
-
-<p>Minimum 24‑month term. After the term, the website is yours to keep. Cancel anytime after the term with 30 days’ notice.</p>
-
-<!-- PRICING CARD -->
-
-$199
- / month (+ GST)
- 
- Managed WordPress • Hosting • Care • Updates • Support
- 
- <ul>
- <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Design & Build</strong> – Up to 5 pages, brand‑matched layout and styling.</li>
- <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Mobile & SEO‑ready</strong> – Fast, responsive, basic on‑page SEO at launch.</li>
- <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Managed hosting + SSL</strong> on NZ servers for speed & reliability.</li>
- <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Weekly backups & updates</strong> – WordPress core + plugins maintained.</li>
- <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Security & uptime monitoring</strong> – 24/7 checks with rapid response.</li>
- <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Content updates</strong> – Up to <strong>2 hours/month</strong> (text, images, small sections).</li>
- <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Ongoing SEO tune‑ups</strong> – Light improvements on 1 key page/month.</li>
- <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Monthly performance report</strong> – Uptime, speed & maintenance summary.</li>
- <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Priority support</strong> – Response within <strong>48 hours</strong>.</li>
- <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Quarterly check‑in</strong> – Plan improvements with a 30‑minute call.</li>
- </ul>
- Excludes complex features (e.g. e‑commerce, bookings, memberships) – quoted separately. Minimum 24‑month term.
-
-<!-- TABLE SECTION -->
-
-
+  <!-- Add-ons -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Optional Add-Ons"
+        title="Level up your subscription."
+        subtitle="Bundle extra services alongside your managed hosting for a combined monthly rate."
+      />
+      <div class="ms-addons">
+        <div class="ms-addon">
+          <span class="ms-addon-icon">🔍</span>
+          <div>
+            <strong>Local SEO Management</strong>
+            <p>Monthly Google Business Profile optimisation, citation management, and local ranking reports.</p>
+            <span class="ms-addon-price">From +$299/mo</span>
+          </div>
+        </div>
+        <div class="ms-addon">
+          <span class="ms-addon-icon">✍️</span>
+          <div>
+            <strong>Monthly Blog Post</strong>
+            <p>One SEO-optimised blog post per month written, formatted, and published for you.</p>
+            <span class="ms-addon-price">From +$199/mo</span>
+          </div>
+        </div>
+        <div class="ms-addon">
+          <span class="ms-addon-icon">⏱️</span>
+          <div>
+            <strong>Extra Change Hours</strong>
+            <p>Need more than 2 hours? Add a bank of prepaid hours at a discounted rate.</p>
+            <span class="ms-addon-price">$100/hr (5hr block)</span>
+          </div>
+        </div>
+        <div class="ms-addon">
+          <span class="ms-addon-icon">📣</span>
+          <div>
+            <strong>Google Ads Management</strong>
+            <p>Full campaign management including setup, optimisation, and monthly reporting.</p>
+            <span class="ms-addon-price">From +$399/mo</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Subscription Questions Answered"
+        subtitle="Common questions about the monthly plan before signing up."
+      />
     </div>
   </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Ready to take website maintenance off your plate?"
+    subtitle="Get started today — we'll migrate your site and have it under management within 48 hours."
+    ctaPrimary={{ text: "Get Started", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Web Design Packages", href: "/small-business-website-design-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  /* Plan card */
+  .ms-plan-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    background: var(--kwd-dark);
+    border-radius: 20px;
+    padding: 3rem;
+    color: #fff;
+  }
+  .ms-plan-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 0.75rem;
+  }
+  .ms-plan-title {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+  .ms-plan-desc {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .ms-plan-price-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+  .ms-plan-price {
+    font-family: var(--kwd-font-heading);
+    font-size: 3.5rem;
+    color: var(--kwd-yellow);
+    line-height: 1;
+  }
+  .ms-plan-price-detail {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+  }
+  .ms-plan-per {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+  }
+  .ms-plan-gst {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+  }
+  .ms-plan-note {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 1.75rem;
+  }
+  .ms-plan-btn {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: background 0.2s;
+  }
+  .ms-plan-btn:hover { background: var(--kwd-gold); }
+
+  /* Right checklist */
+  .ms-plan-list-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 1.25rem;
+  }
+  .ms-plan-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+  .ms-plan-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.8);
+  }
+  .ms-check {
+    color: var(--kwd-yellow);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Why section */
+  .ms-why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .ms-why-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 0.75rem;
+  }
+  .ms-why-text h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  .ms-why-text p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+  .ms-why-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .ms-why-stat {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .ms-why-num {
+    font-family: var(--kwd-font-heading);
+    font-size: 2rem;
+    color: var(--kwd-yellow);
+    flex-shrink: 0;
+    min-width: 80px;
+  }
+  .ms-why-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+  }
+
+  /* Add-ons */
+  .ms-addons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .ms-addon {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .ms-addon-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    width: 2.25rem;
+    text-align: center;
+  }
+  .ms-addon strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--kwd-dark);
+    margin-bottom: 0.3rem;
+  }
+  .ms-addon p {
+    font-size: 0.82rem;
+    color: var(--kwd-brown);
+    line-height: 1.55;
+    margin: 0 0 0.6rem;
+  }
+  .ms-addon-price {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+  }
+
+  @media (max-width: 900px) {
+    .ms-plan-card { grid-template-columns: 1fr; gap: 2.5rem; }
+    .ms-why-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .ms-addons { grid-template-columns: 1fr; }
   }
 </style>

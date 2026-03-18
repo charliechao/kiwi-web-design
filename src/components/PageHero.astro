@@ -1,0 +1,157 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  badgeText?: string;
+  ctaPrimary: { text: string; href: string };
+  ctaSecondary?: { text: string; href: string };
+  imgSrc?: string;
+  imgAlt?: string;
+  centered?: boolean;
+}
+
+const {
+  eyebrow,
+  title,
+  subtitle,
+  badgeText,
+  ctaPrimary,
+  ctaSecondary,
+  imgSrc,
+  imgAlt = '',
+  centered = false,
+} = Astro.props;
+---
+
+<section class="hero-section">
+  <div class="container">
+    <div class:list={['hero-inner', imgSrc ? 'hero-split' : centered ? 'hero-centered' : 'hero-left']}>
+      <div class="hero-text">
+        {eyebrow && <p class="hero-eyebrow">{eyebrow}</p>}
+        <h1 class="hero-title">{title}</h1>
+        {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+        {badgeText && <p class="hero-badge">{badgeText}</p>}
+        <div class="hero-ctas">
+          <a href={ctaPrimary.href} class="btn-hero-primary">{ctaPrimary.text}</a>
+          {ctaSecondary && (
+            <a href={ctaSecondary.href} class="btn-hero-secondary">{ctaSecondary.text}</a>
+          )}
+        </div>
+        <slot />
+      </div>
+      {imgSrc && (
+        <div class="hero-image-wrap">
+          <img src={imgSrc} alt={imgAlt} width="640" height="480" loading="eager" class="hero-img" />
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    background: var(--kwd-dark);
+    padding: 5rem 0 4.5rem;
+  }
+
+  .hero-inner {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+  .hero-split  { grid-template-columns: 1fr 1fr; }
+  .hero-left   { max-width: 780px; }
+  .hero-centered { max-width: 780px; margin-inline: auto; text-align: center; }
+  .hero-centered .hero-ctas { justify-content: center; }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    color: #fff;
+    margin-bottom: 1.25rem;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.72);
+    max-width: 580px;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .hero-centered .hero-subtitle { margin-inline: auto; }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .btn-hero-primary {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.875rem 2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-hero-primary:hover { background: var(--kwd-gold); transform: translateY(-1px); }
+
+  .btn-hero-secondary {
+    display: inline-block;
+    border: 2px solid rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.85);
+    padding: 0.875rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .btn-hero-secondary:hover {
+    border-color: var(--kwd-yellow);
+    color: var(--kwd-yellow);
+  }
+
+  .hero-image-wrap { position: relative; }
+  .hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 32px 64px rgba(0,0,0,0.4);
+  }
+
+  @media (max-width: 860px) {
+    .hero-split { grid-template-columns: 1fr; }
+    .hero-image-wrap { display: none; }
+  }
+</style>
