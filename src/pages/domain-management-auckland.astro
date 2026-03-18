@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,162 +13,176 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/domain-management-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/domain-management-auckland/",
-      "name": "Domain Management Auckland",
-      "description": "Domain management Auckland for small businesses. We handle renewals, DNS, transfers and ownership so your website and email stay online without stress.",
+      "name": "Domain Management Auckland | DNS, Renewals & Transfers",
+      "description": "Domain management Auckland — we handle renewals, DNS configuration, transfers, and ownership so your website and email stay connected without stress.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/domain-management-auckland/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/domain-management-auckland/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/domain-management-auckland/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Domain Management Auckland"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Domain Management Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const services = [
+  {
+    icon: "🔄",
+    title: "Domain Renewals",
+    desc: "We monitor your domain expiry dates and handle renewals before they lapse — so you never lose your domain name through a forgotten invoice.",
+    items: ["Expiry monitoring", "Automatic renewal setup", "Renewal reminders", "Multi-year registration"],
+  },
+  {
+    icon: "⚙️",
+    title: "DNS Configuration",
+    desc: "DNS records point your domain to the right place — your website, email, Google tools, and third-party services. We configure and manage them correctly.",
+    items: ["A & CNAME records", "MX records for email", "TXT records (SPF, DKIM)", "Subdomain setup"],
+  },
+  {
+    icon: "↔️",
+    title: "Domain Transfers",
+    desc: "Moving your domain to a new registrar or taking ownership from a previous provider. We handle the transfer process start to finish with minimal downtime.",
+    items: ["Registrar transfers", "Auth code management", "WHOIS update", "Ownership transfer"],
+  },
+  {
+    icon: "🏠",
+    title: "Domain Registration",
+    desc: "Need a new domain? We research availability, recommend the best option (.co.nz, .nz, .com), and register it under your name — you always own it.",
+    items: [".co.nz & .nz registration", ".com & .net registration", "Availability research", "Ownership in your name"],
+  },
+  {
+    icon: "🔒",
+    title: "Domain Security",
+    desc: "Domain lock prevents unauthorised transfers. WHOIS privacy protects your personal contact details. Both are simple but often overlooked.",
+    items: ["Domain lock enabled", "WHOIS privacy", "Transfer authorisation", "Hijack prevention"],
+  },
+  {
+    icon: "📧",
+    title: "Email DNS Setup",
+    desc: "Your domain's DNS needs to be correctly configured for email to work reliably. We set up MX, SPF, DKIM, and DMARC records to ensure deliverability.",
+    items: ["MX record configuration", "SPF setup", "DKIM configuration", "DMARC policy"],
+  },
+];
+
+const faqs = [
+  { q: "What happens if I forget to renew my domain?", a: "Your website goes offline and your email stops working. After the grace period (usually 30 days), the domain enters redemption — expensive to recover — and then becomes available for anyone to register. If a competitor or domain squatter registers your domain name, getting it back can be very costly. This is why active monitoring matters." },
+  { q: "Who should own my domain?", a: "You should — always. Your domain is a business asset. It should be registered in your name or your company's name, not your web designer's name. We register all domains under client ownership and never hold them on your behalf in a way that creates dependency." },
+  { q: "Can you take over management of a domain I already have?", a: "Yes. If your domain is currently with a registrar you have access to, we can manage the DNS and renewals. If you need to transfer it, we handle that process too. We just need the login credentials or auth code from your current provider." },
+  { q: "What's the difference between a domain and hosting?", a: "Your domain is your address (e.g. yourbusiness.co.nz). Hosting is where your website files live. They're separate things managed separately. DNS records in your domain settings are what connect the domain to your hosting. Getting this wrong is one of the most common causes of email and website outages." },
+  { q: "How long does a domain transfer take?", a: ".co.nz transfers are fast — usually completed within a few hours. International .com transfers take up to 5 days due to registrar processes. We'll keep you updated throughout." },
+];
 ---
-<Layout title="Domain Management Auckland" description="Domain management Auckland for small businesses. We handle renewals, DNS, transfers and ownership so your website and email stay online without stress." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Website Services</p>
-        <h1>Domain Management Auckland</h1>
-        <p class="hero-sub">Domain management Auckland for small businesses. We handle renewals, DNS, transfers and ownership so your website and email stay online without stress.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="Domain Management Auckland | DNS, Renewals & Transfers"
+  description="Domain management Auckland — we handle renewals, DNS configuration, transfers, and ownership so your website and email stay connected without stress."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/domain-management-auckland/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Domain Management"
+    title="Your domain sorted — renewals, DNS, and transfers handled."
+    subtitle="Domain management for Auckland small businesses. We keep your domain renewed, your DNS configured correctly, and your website and email pointing where they should."
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/domain-management-auckland-kiwi-web-design.jpg"
+    imgAlt="Domain management for Auckland small businesses"
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View All Services", href: "/small-business-website-design-auckland/" }}
+  />
+
+  <!-- Services -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Handle"
+        title="Everything your domain needs to work properly."
+        subtitle="Most domain problems come from neglected renewals or incorrect DNS. We handle both."
+      />
+      <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <!-- Why it matters -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <SectionHeader
+        eyebrow="Why It Matters"
+        title="A forgotten renewal can take down your entire business."
+        align="left"
+      />
+      <div class="domain-body">
+        <p>Your domain name is the foundation of your online presence. Everything else — your website, your email, your Google Business Profile, your brand — depends on it staying active and correctly configured.</p>
+        <p>The most common domain problems we see: expired domains that took the website and email down together; incorrect DNS records from a poorly configured setup that made email unreliable; and domains registered in a previous web designer's name with no easy way to take ownership back.</p>
+        <p>We manage your domain as part of your overall website setup — keeping track of renewal dates, maintaining correct DNS records as services change, and ensuring you always own and control your domain outright.</p>
+        <ul class="domain-checklist">
+          <li>All domains registered and owned by you</li>
+          <li>Renewal monitoring and proactive reminders</li>
+          <li>DNS updated as your services change</li>
+          <li>Can manage existing domains you already own</li>
+        </ul>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/domain-management-auckland-kiwi-web-design.jpg" alt="Domain Management Auckland" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/domain-management-auckland-kiwi-web-design.jpg" alt="Kiwi Web Design specialist managing domain settings for an Auckland small business" loading="lazy"> 
-
-Service
- Domain Management Auckland
- 
- <h1>Domain Management Auckland for Small Businesses</h1>
- <p>Keep your domain names safe, renewed on time, and correctly connected to your website, email, and marketing tools.</p>
- <p>
- If you already work with us for 
- <a href="/">web design Auckland</a> 
- or 
- <a href="/">website design Auckland</a>, 
- this domain management service keeps everything in one place.
- </p>
-
-
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Domain Questions Answered"
+        subtitle="Common questions from Auckland business owners about domain management."
+      />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
+  <CTABanner
+    variant="yellow"
+    title="Not sure who controls your domain?"
+    subtitle="Free consultation — we'll check your domain situation and make sure everything's in order."
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View All Services", href: "/small-business-website-design-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .domain-body p {
+    font-size: 0.9375rem;
+    color: var(--kwd-brown);
+    line-height: 1.75;
+    margin-bottom: 0.9rem;
+  }
+  .domain-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .domain-checklist li {
+    font-size: 0.9rem;
+    color: var(--kwd-dark);
+    font-weight: 600;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .domain-checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--kwd-brown);
+    font-weight: 700;
   }
 </style>

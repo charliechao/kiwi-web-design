@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,153 +13,177 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/website-backup-and-restoration-for-auckland-small-businesses/",
       "url": "https://www.kiwiwebdesign.co.nz/website-backup-and-restoration-for-auckland-small-businesses/",
-      "name": "Website backup and restoration for Auckland small businesses",
-      "description": "A practical guide to website backup and restoration for Auckland small businesses. Learn risks, backup methods, and recovery steps.",
+      "name": "Website Backup & Restoration Auckland | Data Recovery | Kiwi Web Design",
+      "description": "Automated daily website backups and fast restoration for Auckland businesses. Never lose your website — we keep secure offsite copies ready to restore.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/website-backup-and-restoration-for-auckland-small-businesses/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/website-backup-and-restoration-for-auckland-small-businesses/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/website-backup-and-restoration-for-auckland-small-businesses/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Website backup and restoration for Auckland small businesses"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Website Backup & Restoration Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const scenarios = [
+  { icon: "🦠", title: "Malware infection", desc: "A plugin vulnerability lets attackers in. Without a clean backup, you're facing a manual rebuild. With one, you're restored in minutes." },
+  { icon: "🔄", title: "Bad plugin update", desc: "A plugin update conflicts with your theme and breaks the site. A daily backup means you roll back to yesterday and carry on." },
+  { icon: "✂️", title: "Accidental deletion", desc: "Someone deletes the wrong page, product, or media file. If it happened yesterday, your backup has it." },
+  { icon: "🖥️", title: "Server failure", desc: "Hosting providers have outages, hardware failures, and occasionally lose data. An offsite backup means you're never dependent on a single server." },
+];
+
+const services = [
+  {
+    icon: "💾",
+    title: "Daily Automated Backups",
+    desc: "Your full site — files and database — backed up automatically every 24 hours without any action required from you. Set it once, runs forever.",
+    items: ["Full file backup", "Database backup", "Automated scheduling", "Zero manual effort"],
+  },
+  {
+    icon: "☁️",
+    title: "Offsite Storage",
+    desc: "Backups stored on separate infrastructure from your hosting — so a server failure or account compromise doesn't take your backups down with the site.",
+    items: ["Cloud storage (separate provider)", "Encrypted transfer", "Geographic redundancy", "Independent of hosting"],
+  },
+  {
+    icon: "📅",
+    title: "Retention History",
+    desc: "We keep multiple restore points — not just yesterday's backup but a rolling history. Go back 14 or 30 days depending on your plan.",
+    items: ["14-day retention (Basic)", "30-day retention (Standard+)", "Multiple restore points", "Version history"],
+  },
+  {
+    icon: "⚡",
+    title: "Fast Restoration",
+    desc: "When something goes wrong, we restore your site quickly — usually within a few hours of the request. No waiting days for a recovery process.",
+    items: ["One-click restore", "Point-in-time recovery", "Partial restore (files or DB)", "Same-day response"],
+  },
+  {
+    icon: "✅",
+    title: "Backup Verification",
+    desc: "We check that backups are actually completing and that restore files are valid — not just that a job ran. Broken backups are useless when you need them.",
+    items: ["Completion monitoring", "File integrity checks", "Alert on backup failure", "Test restores"],
+  },
+  {
+    icon: "📋",
+    title: "Backup Reporting",
+    desc: "Monthly status reports include a backup log so you can see that protection is running. No news means no problems — but you'll always know.",
+    items: ["Monthly backup log", "Storage usage", "Retention summary", "Success/failure status"],
+  },
+];
+
+const faqs = [
+  { q: "Doesn't my hosting company back up my site?", a: "Most shared hosting plans include server-level backups, but they're often weekly, stored on the same server, and may not include the database. If your hosting account is compromised or suspended, you may lose access to those backups too. An independent daily backup with offsite storage is a separate safety net." },
+  { q: "How long does a restore take?", a: "A full site restore from backup typically takes 1–3 hours depending on site size and what went wrong. Partial restores (just the database or just specific files) can be faster. We aim to respond to urgent restore requests the same day." },
+  { q: "How far back can I restore?", a: "Basic plan clients have 14 days of history; Standard and Premium clients have 30 days. So if something went wrong three weeks ago and you didn't notice until today, a Standard plan gives you the ability to restore to a point before the problem occurred." },
+  { q: "Do I need backups if my site doesn't change often?", a: "Yes. The threat isn't just accidental changes — it's malware infections, server failures, and hosting account issues. These can happen to any site regardless of how frequently content is updated." },
+  { q: "Is backup included in your maintenance plans?", a: "Yes. Daily backups with offsite storage are included in all maintenance plans. The retention period varies by plan — 14 days on Basic, 30 days on Standard and Premium." },
+];
 ---
-<Layout title="Website backup and restoration for Auckland small businesses" description="A practical guide to website backup and restoration for Auckland small businesses. Learn risks, backup methods, and recovery steps." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Website Care</p>
-        <h1>Website Backup and Restoration for Auckland Small Businesses</h1>
-        <p class="hero-sub">A practical guide to website backup and restoration for Auckland small businesses. Learn risks, backup methods, and recovery steps.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="Website Backup & Restoration Auckland | Data Recovery | Kiwi Web Design"
+  description="Automated daily website backups and fast restoration for Auckland businesses. Never lose your website — we keep secure offsite copies ready to restore."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/website-backup-and-restoration-for-auckland-small-businesses/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Website Backups"
+    title="Never lose your website — even if something goes wrong."
+    subtitle="Automated daily backups with offsite storage and fast restoration for Auckland small businesses. Because rebuilding from scratch is never the answer."
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/12/website-backup-restoration-auckland-guide.jpeg"
+    imgAlt="Website backup and restoration service for Auckland small businesses"
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View Maintenance Plans", href: "/wordpress-maintenance-auckland/" }}
+  />
+
+  <!-- When you need it -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="When Backups Save You"
+        title="Things go wrong. Backups mean it's not a disaster."
+        subtitle="These are the real situations where a daily backup makes the difference between a 5-minute fix and a major problem."
+      />
+      <div class="scenario-grid">
+        {scenarios.map(({ icon, title, desc }) => (
+          <div class="scenario-card">
+            <span class="scenario-icon">{icon}</span>
+            <div>
+              <strong class="scenario-title">{title}</strong>
+              <p class="scenario-desc">{desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/12/website-backup-restoration-auckland-guide.jpeg" alt="Website Backup and Restoration for Auckland Small Businesses" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/12/website-backup-restoration-auckland-guide.jpeg" alt="Website backup and restoration guide for Auckland small businesses" loading="lazy"> 
-
-
-
- <p>Website failures happen. A backup and recovery plan protects your business from data loss, outages, or security incidents. This guide is for Auckland small businesses that handle their own websites or rely on platforms like WordPress, Shopify, or Namecheap hosting.</p>
-
- 
+  <!-- Services -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Provide"
+        title="Daily backups, offsite storage, fast restores."
+        subtitle="Everything you need to recover from any site problem quickly and completely."
+      />
+      <ServiceGrid items={services} cols={3} />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Backup & Restoration Questions"
+        subtitle="Common questions from Auckland business owners about website backups."
+      />
     </div>
   </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Is your website being backed up properly?"
+    subtitle="Free consultation — we'll check your current backup situation and show you what's actually in place."
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View Maintenance Plans", href: "/wordpress-maintenance-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .scenario-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .scenario-icon { font-size: 1.75rem; flex-shrink: 0; width: 2.25rem; text-align: center; }
+  .scenario-title { display: block; font-size: 0.9rem; font-weight: 700; color: var(--kwd-dark); margin-bottom: 0.35rem; }
+  .scenario-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
+
+  @media (max-width: 700px) {
+    .scenario-grid { grid-template-columns: 1fr; }
   }
 </style>

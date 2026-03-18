@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,167 +13,176 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/email-setup-business-email-hosting/",
       "url": "https://www.kiwiwebdesign.co.nz/email-setup-business-email-hosting/",
-      "name": "Email Setup &amp; Business Email Hosting",
-      "description": "Business email setup and hosting for Auckland and NZ small businesses. We configure Microsoft 365, Google Workspace, DNS and devices so email works properly.",
+      "name": "Business Email Setup & Hosting Auckland | Microsoft 365 & Google Workspace",
+      "description": "Professional business email setup for Auckland businesses. We configure Microsoft 365 or Google Workspace, DNS records, and all devices — done right the first time.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/email-setup-business-email-hosting/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/email-setup-business-email-hosting/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/email-setup-business-email-hosting/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Email Setup &amp; Business Email Hosting"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Business Email Setup & Hosting" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const services = [
+  {
+    icon: "💼",
+    title: "Microsoft 365 Setup",
+    desc: "Microsoft 365 Business configured end to end — accounts, domain verification, DNS records, and Outlook on every device. Includes Word, Excel, and Teams.",
+    items: ["Account creation", "Domain verification", "DNS record configuration", "Outlook on all devices"],
+  },
+  {
+    icon: "🔵",
+    title: "Google Workspace Setup",
+    desc: "Google Workspace configured — Gmail with your domain, Drive, Calendar, and Meet. We handle domain verification and DNS so everything works from day one.",
+    items: ["Gmail with custom domain", "Drive & Calendar", "DNS configuration", "Multi-device setup"],
+  },
+  {
+    icon: "⚙️",
+    title: "DNS Configuration",
+    desc: "Email DNS is easy to get wrong. We configure MX, SPF, DKIM, and DMARC records correctly — which means your emails land in the inbox, not the spam folder.",
+    items: ["MX records", "SPF configuration", "DKIM setup", "DMARC policy"],
+  },
+  {
+    icon: "📱",
+    title: "Device Setup",
+    desc: "We configure email on your phone, tablet, and desktop — iOS, Android, Windows, or Mac. You won't need to figure out server settings or app configurations.",
+    items: ["Phone setup (iOS & Android)", "Desktop client setup", "Tablet configuration", "Sync verification"],
+  },
+  {
+    icon: "↔️",
+    title: "Email Migration",
+    desc: "Moving from an old email system or shared hosting email to Microsoft 365 or Google Workspace? We migrate your existing emails across so nothing is lost.",
+    items: ["Full mailbox migration", "Contact import", "Calendar migration", "Zero downtime transfer"],
+  },
+  {
+    icon: "👥",
+    title: "Team Email Setup",
+    desc: "Multiple team members, shared mailboxes, group addresses like info@ or sales@ — we configure your email structure to suit how your business actually works.",
+    items: ["Multiple user accounts", "Shared mailboxes", "Group/alias addresses", "Admin access setup"],
+  },
+];
+
+const faqs = [
+  { q: "What's wrong with using Gmail or a free email account?", a: "A gmail.com or yahoo.com address looks unprofessional — especially in B2B and trade environments where clients are choosing between providers. A professional email address (you@yourbusiness.co.nz) builds credibility and trust. It also gives you more control: if a team member leaves, you own the account, not them." },
+  { q: "Microsoft 365 or Google Workspace — which should I choose?", a: "Both are excellent. Microsoft 365 suits businesses that already use Office apps (Word, Excel, PowerPoint) heavily or work in environments where Word documents are the standard. Google Workspace suits businesses that prefer browser-based tools, use Chrome, and want seamless integration with Google Analytics, Search Console, and Ads. We can advise based on how you work." },
+  { q: "Why do my emails sometimes go to spam?", a: "Usually because your domain's DNS isn't correctly configured — specifically SPF, DKIM, or DMARC records are missing or wrong. These records tell receiving mail servers that your email is legitimate. We fix this as part of any email setup." },
+  { q: "Can you migrate my existing emails from my old system?", a: "Yes. We migrate full mailbox contents — emails, contacts, calendar events — from most providers. The migration is done in a way that keeps your existing email accessible throughout the process." },
+  { q: "Can you set up email if you didn't build my website?", a: "Yes. Email setup is independent of who built your website. We just need access to your domain's DNS settings to configure the required records. This is usually done through your domain registrar's control panel." },
+];
 ---
-<Layout title="Email Setup & Business Email Hosting" description="Business email setup and hosting for Auckland and NZ small businesses. We configure Microsoft 365, Google Workspace, DNS and devices so email works properly." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Website Services</p>
-        <h1>Email Setup & Hosting | web design Auckland</h1>
-        <p class="hero-sub">Business email setup and hosting for Auckland and NZ small businesses. We configure Microsoft 365, Google Workspace, DNS and devices so email works properly.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="Business Email Setup & Hosting Auckland | Microsoft 365 & Google Workspace"
+  description="Professional business email setup for Auckland businesses. We configure Microsoft 365 or Google Workspace, DNS records, and all devices — done right the first time."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/email-setup-business-email-hosting/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Business Email Setup"
+    title="Professional email on your own domain — set up properly."
+    subtitle="Microsoft 365 and Google Workspace setup for Auckland businesses. We configure everything — accounts, DNS, devices — so your business email works reliably from day one."
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/email-setup-business-email-hosting-auckland.png"
+    imgAlt="Business email setup and hosting for Auckland small businesses"
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View All Services", href: "/small-business-website-design-auckland/" }}
+  />
+
+  <!-- Services -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Set Up"
+        title="Everything from accounts to devices — handled."
+        subtitle="A complete business email setup means more than just creating an account. Here's what we configure."
+      />
+      <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <!-- Why it matters -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <SectionHeader
+        eyebrow="Why It Matters"
+        title="Your email address is your first impression."
+        align="left"
+      />
+      <div class="email-body">
+        <p>Using a Gmail, Hotmail, or ISP email address for your business immediately signals that you're not fully established. A professional email address — name@yourbusiness.co.nz — builds credibility from the first contact and keeps all your business communications under your control.</p>
+        <p>Beyond the address itself, incorrect DNS configuration causes deliverability problems: emails land in spam folders, Microsoft and Google block outbound messages, or email simply doesn't arrive. We configure SPF, DKIM, and DMARC records correctly so your emails reach their destination.</p>
+        <p>We handle the setup from start to finish — choosing the right platform, creating accounts, configuring DNS, and getting everything working on your phone and desktop. You won't need to touch a server settings page.</p>
+        <ul class="email-checklist">
+          <li>Works for sole traders through to multi-person teams</li>
+          <li>Microsoft 365 or Google Workspace — your choice</li>
+          <li>Configured on all your devices</li>
+          <li>Can bundle with website build or domain management</li>
+        </ul>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/email-setup-business-email-hosting-auckland.png" alt="Email Setup & Hosting | web design Auckland" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/email-setup-business-email-hosting-auckland.png" alt="Business email setup and hosting for small businesses in Auckland" loading="lazy"> 
-
-<h1>Email Setup & Business Email Hosting</h1>
- <p>
- Professional email on your own domain for Auckland and NZ small businesses.
- </p>
- <p>
- We set up and manage business email on your domain, configure DNS, and make sure it works on all your devices.
- Ideal if you want a smooth, low stress setup handled locally.
- </p>
- <p>
- Already working with us on 
- <a href="/">web design Auckland</a> 
- or 
- <a href="/">website design Auckland</a>? 
- We can bundle email setup with your website project.
- </p>
-
-<!-- What we set up -->
- 
- 
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Business Email Questions"
+        subtitle="Common questions from Auckland business owners about professional email setup."
+      />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
+  <CTABanner
+    variant="yellow"
+    title="Ready for a professional email address?"
+    subtitle="Free consultation — we'll recommend the right platform and handle the whole setup for you."
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View All Services", href: "/small-business-website-design-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .email-body p {
+    font-size: 0.9375rem;
+    color: var(--kwd-brown);
+    line-height: 1.75;
+    margin-bottom: 0.9rem;
+  }
+  .email-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .email-checklist li {
+    font-size: 0.9rem;
+    color: var(--kwd-dark);
+    font-weight: 600;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .email-checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--kwd-brown);
+    font-weight: 700;
   }
 </style>

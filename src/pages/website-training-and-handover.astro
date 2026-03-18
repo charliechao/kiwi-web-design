@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,157 +13,176 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/website-training-and-handover/",
       "url": "https://www.kiwiwebdesign.co.nz/website-training-and-handover/",
-      "name": "Website Training and Handover",
-      "description": "Clear website training and full handover included with every new build. Learn how to manage your WordPress site confidently.",
+      "name": "Website Training & Handover Auckland | Learn to Manage Your Site",
+      "description": "Structured website training and full handover included with every Kiwi Web Design build. Learn to update your WordPress site confidently with local, in-person support.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/website-training-and-handover/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/website-training-and-handover/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/website-training-and-handover/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Website Training and Handover"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Website Training & Handover" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const trainingItems = [
+  {
+    icon: "📝",
+    title: "Page & Content Editing",
+    desc: "How to update text, images, and content on any page — including the homepage, service pages, and about page — using the WordPress block editor.",
+    items: ["Block editor basics", "Text & image editing", "Page structure changes", "Saving & publishing"],
+  },
+  {
+    icon: "✍️",
+    title: "Blog & News Posts",
+    desc: "How to write, format, and publish blog posts — including categories, tags, featured images, and SEO settings using Yoast or RankMath.",
+    items: ["Creating new posts", "Categories & tags", "Featured images", "SEO title & meta"],
+  },
+  {
+    icon: "📸",
+    title: "Media Library",
+    desc: "Uploading, organising, and managing images and files. We cover image sizing, alt text, and how to keep your media library tidy.",
+    items: ["Uploading images", "Image sizing guidelines", "Alt text for SEO", "File management"],
+  },
+  {
+    icon: "📋",
+    title: "Forms & Enquiries",
+    desc: "Where your enquiry form submissions go, how to view them, and how to follow up. We also show you how to update form fields if your requirements change.",
+    items: ["Form submission inbox", "Email notification setup", "Form field edits", "Spam filter settings"],
+  },
+  {
+    icon: "🔧",
+    title: "Plugin Basics",
+    desc: "What the key plugins on your site do, when to update them, and what to do if an update causes something to look wrong.",
+    items: ["Key plugins explained", "Safe update process", "What not to delete", "When to call us"],
+  },
+  {
+    icon: "📦",
+    title: "Full Credentials Handover",
+    desc: "Every login and access credential for your site — WordPress admin, hosting, domain, Google tools — documented and handed over to you securely.",
+    items: ["WordPress admin access", "Hosting credentials", "Domain registrar access", "Google tools access"],
+  },
+];
+
+const faqs = [
+  { q: "Is training included with every website build?", a: "Yes. We include a structured handover session with every new website build. We don't just launch the site and disappear — we walk you through managing it so you're confident from day one." },
+  { q: "What format is the training?", a: "We prefer in-person or video call sessions so we can walk through your actual site together. We also provide written notes or a short video recording of the session you can refer back to later. The format is flexible — whatever works best for you." },
+  { q: "What if I forget how to do something after the training?", a: "That's normal. We include follow-up support after handover — if you get stuck on something we covered, just reach out and we'll help. For ongoing content management support, our maintenance plans include hours for content changes each month." },
+  { q: "Do I need to be technical to manage my WordPress site?", a: "No. We configure your site so that day-to-day management — updating text, adding images, publishing blog posts — is straightforward. We avoid unnecessary complexity and make sure the tools you need are easy to find." },
+  { q: "What if my team needs to be trained as well?", a: "We can train multiple team members, either together or separately. If you need training for several people, let us know and we'll structure the session accordingly." },
+];
 ---
-<Layout title="Website Training and Handover" description="Clear website training and full handover included with every new build. Learn how to manage your WordPress site confidently." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Website Services</p>
-        <h1>Website Training and Handover</h1>
-        <p class="hero-sub">Clear website training and full handover included with every new build. Learn how to manage your WordPress site confidently.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="Website Training & Handover Auckland | Learn to Manage Your Site"
+  description="Structured website training and full handover included with every Kiwi Web Design build. Learn to update your WordPress site confidently with local, in-person support."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/website-training-and-handover/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Training & Handover"
+    title="Your website — and the confidence to manage it yourself."
+    subtitle="Every website we build includes a structured handover session and full credentials transfer. We make sure you know how to update your site before we call it done."
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/website-training-handover-kiwiwebdesign.jpg"
+    imgAlt="Website training and handover session for new WordPress site"
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View Web Design Services", href: "/small-business-website-design-auckland/" }}
+  />
+
+  <!-- What we cover -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Cover"
+        title="A thorough handover — not a five-minute walkthrough."
+        subtitle="We cover everything you'll actually use, in plain English, at your own pace."
+      />
+      <ServiceGrid items={trainingItems} cols={3} />
+    </div>
+  </section>
+
+  <!-- Why it matters -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <SectionHeader
+        eyebrow="Why It Matters"
+        title="Your site should work for you — not make you dependent on us."
+        align="left"
+      />
+      <div class="training-body">
+        <p>Too many web designers hand over a completed site with a login and a wave. Six months later, the client either can't make basic updates or is paying for every small change because they were never shown how.</p>
+        <p>We take the opposite approach. Training and handover is built into every project. By the end of our session, you'll know how to update your site's content, publish blog posts, manage images, and handle your enquiry forms — without needing to call us every time.</p>
+        <p>You'll also have every login credential for every system your site depends on: WordPress, hosting, domain registrar, Google Search Console, Google Analytics. All documented, all in your hands.</p>
+        <ul class="training-checklist">
+          <li>Included with every new website build</li>
+          <li>In-person or video call — your preference</li>
+          <li>Written notes or session recording provided</li>
+          <li>Follow-up support included after handover</li>
+        </ul>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/website-training-handover-kiwiwebdesign.jpg" alt="Website Training and Handover" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/website-training-handover-kiwiwebdesign.jpg" alt="Website training and handover session for new WordPress site" loading="lazy"> 
-
-<h1>Website Training and Handover for Your New Website</h1>
-
- <p>
- When your website is ready to launch, you receive structured training and a complete handover so you can manage your site confidently. This service is included with every website we build.
- </p>
-
-<!-- Card 1 -->
- 
- 
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Training & Handover Questions"
+        subtitle="Common questions from Auckland business owners about the handover process."
+      />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
+  <CTABanner
+    variant="yellow"
+    title="Ready for a website you can actually manage?"
+    subtitle="Free consultation — we'll show you how the build process works and what the handover includes."
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View Web Design Services", href: "/small-business-website-design-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .training-body p {
+    font-size: 0.9375rem;
+    color: var(--kwd-brown);
+    line-height: 1.75;
+    margin-bottom: 0.9rem;
+  }
+  .training-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .training-checklist li {
+    font-size: 0.9rem;
+    color: var(--kwd-dark);
+    font-weight: 600;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .training-checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--kwd-brown);
+    font-weight: 700;
   }
 </style>

@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,178 +13,177 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-themes-for-auckland-small-businesses/",
       "url": "https://www.kiwiwebdesign.co.nz/wordpress-themes-for-auckland-small-businesses/",
-      "name": "WordPress themes for Auckland small businesses",
-      "description": "Theme review, selection, and customisation for Auckland small businesses. Improve speed, stability, and user experience.",
+      "name": "WordPress Theme Selection & Customisation Auckland | Kiwi Web Design",
+      "description": "WordPress theme selection and customisation for Auckland small businesses. We choose a fast, flexible theme and configure it for your brand, SEO, and content needs.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/wordpress-themes-for-auckland-small-businesses/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/wordpress-themes-for-auckland-small-businesses/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-themes-for-auckland-small-businesses/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "WordPress themes for Auckland small businesses"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Theme Selection & Customisation Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const themeProblems = [
+  { icon: "🐌", title: "Slow load times", desc: "Bloated themes load dozens of unused scripts and styles. On mobile, this can mean 5+ second load times — and visitors who leave before the page renders." },
+  { icon: "💔", title: "Hard to update without breaking", desc: "Some themes are so complex that any content edit risks breaking the layout. Owners end up afraid to touch their own site." },
+  { icon: "⚠️", title: "Abandoned and vulnerable", desc: "Premium theme marketplaces are full of themes that looked great in 2019 but haven't been updated since. Outdated themes are a security risk." },
+  { icon: "📱", title: "Poor mobile experience", desc: "A theme that looks fine on desktop can be a mess on mobile — wrapping poorly, sizing incorrectly, or requiring pinch-to-zoom to read." },
+];
+
+const services = [
+  {
+    icon: "🔍",
+    title: "Theme Selection",
+    desc: "We assess your business type, content needs, and performance requirements to recommend the right theme — lightweight, well-maintained, and flexible enough for your use case.",
+    items: ["Business type assessment", "Performance benchmarking", "Maintenance record check", "Compatibility review"],
+  },
+  {
+    icon: "🎨",
+    title: "Brand Customisation",
+    desc: "Colours, fonts, logo, button styles, and layout — configured to match your brand and visual identity without requiring code changes every time something needs updating.",
+    items: ["Colour palette setup", "Font selection & loading", "Logo & header config", "Button & link styles"],
+  },
+  {
+    icon: "📱",
+    title: "Mobile Optimisation",
+    desc: "We test and configure the theme across multiple device sizes — ensuring text is readable, navigation works cleanly, and CTAs are tappable on all screen widths.",
+    items: ["Responsive breakpoints", "Mobile navigation", "Typography scaling", "CTA sizing & placement"],
+  },
+  {
+    icon: "⚡",
+    title: "Performance Configuration",
+    desc: "Theme settings adjusted for speed: disabling unused scripts, configuring font loading, enabling lazy loading, and removing features that add weight without adding value.",
+    items: ["Unused scripts disabled", "Font loading optimised", "Lazy load configured", "Bloat removed"],
+  },
+  {
+    icon: "🔍",
+    title: "SEO Foundation",
+    desc: "Theme-level SEO settings: heading hierarchy, schema markup support, Open Graph meta, and clean HTML output — the foundation your SEO plugin needs to work properly.",
+    items: ["Heading structure audit", "Schema compatibility", "Open Graph support", "Clean HTML output"],
+  },
+  {
+    icon: "🔄",
+    title: "Theme Audits",
+    desc: "Already have a theme that's causing problems? We audit your current theme for performance, security, and update status — and recommend whether to fix it or replace it.",
+    items: ["Current theme audit", "Speed assessment", "Security check", "Recommendation report"],
+  },
+];
+
+const faqs = [
+  { q: "Should I use a free or premium WordPress theme?", a: "Free themes from the official WordPress repository can be excellent — GeneratePress and Astra are well-maintained, fast, and flexible. Premium themes from marketplaces like ThemeForest vary wildly in quality and are often bloated. The key factors are: active maintenance, update frequency, performance benchmarks, and whether the developer has a track record. We can recommend specific themes for your use case." },
+  { q: "What's wrong with page builder themes?", a: "Nothing inherently — but many page builder themes (built around Elementor, WPBakery, or Divi) are very slow, generate messy code, and create dependency on the builder. If the builder is discontinued or has a major security issue, your entire site design is at risk. We prefer themes that work with the native WordPress block editor for most small business sites." },
+  { q: "Can I change my theme without rebuilding the whole site?", a: "Switching themes typically affects the visual layout significantly — the content (text, images, pages) stays in place, but headers, footers, and design elements need to be reconfigured in the new theme. It's a significant project, not a one-click change. We can assess your specific situation and give you a realistic picture of what's involved." },
+  { q: "How often should a WordPress theme be updated?", a: "A well-maintained theme releases updates regularly — at minimum when major WordPress versions are released. If your theme hasn't had an update in 12+ months and you're running the latest version of WordPress, that's a compatibility and security risk. We check update history before recommending any theme." },
+  { q: "Can you improve my existing theme rather than replacing it?", a: "Often, yes. Performance issues can be addressed through caching and script management, styling issues through CSS overrides, and layout issues through configuration. A full theme replacement is only necessary if the theme is fundamentally unsuitable or abandoned. We'll tell you honestly which situation you're in." },
+];
 ---
-<Layout title="WordPress themes for Auckland small businesses" description="Theme review, selection, and customisation for Auckland small businesses. Improve speed, stability, and user experience." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">WordPress Resources</p>
-        <h1>WordPress Theme Selection and Customisation for Auckland Small Businesses</h1>
-        <p class="hero-sub">Theme review, selection, and customisation for Auckland small businesses. Improve speed, stability, and user experience.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="WordPress Theme Selection & Customisation Auckland | Kiwi Web Design"
+  description="WordPress theme selection and customisation for Auckland small businesses. We choose a fast, flexible theme and configure it for your brand, SEO, and content needs."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/wordpress-themes-for-auckland-small-businesses/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="WordPress Themes"
+    title="A theme that's fast, flexible, and actually fits your business."
+    subtitle="Theme selection and customisation for Auckland small businesses. We find the right foundation, configure it for your brand and performance needs, and make sure it stays manageable."
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/wordpress-theme-selection-auckland-kiwiwebdesign.png"
+    imgAlt="WordPress theme selection and customisation for Auckland small businesses"
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View Web Design Services", href: "/small-business-website-design-auckland/" }}
+  />
+
+  <!-- Common problems -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Common Theme Problems"
+        title="Why many Auckland sites underperform — and how we fix it."
+        subtitle="These are the most common theme-related issues we see on existing sites."
+      />
+      <div class="theme-problems-grid">
+        {themeProblems.map(({ icon, title, desc }) => (
+          <div class="theme-problem-card">
+            <span class="theme-problem-icon">{icon}</span>
+            <div>
+              <strong class="theme-problem-title">{title}</strong>
+              <p class="theme-problem-desc">{desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/wordpress-theme-selection-auckland-kiwiwebdesign.png" alt="WordPress Theme Selection and Customisation for Auckland Small Businesses" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-WordPress theme support for Auckland small businesses
- 
- <p>Get a fast, stable WordPress theme that fits the way your business actually works, not just how a demo site looks.</p>
- <p>Many Auckland businesses come to us with the same problems. Bloated themes, slow loading on mobile, layouts that are hard to change, and updates that break things.</p>
- <p>We help you choose and customise a theme that supports your content, SEO, and future marketing plans without locking you into something that is painful to manage.</p>
- <ul>
- <li>Trades and services that need clear calls to action and fast enquiry forms.</li>
- <li>Cafes, local shops, and studios that care about mobile speed and simple updates.</li>
- <li>Professional services that need a clean, trustworthy layout that works with SEO.</li>
- </ul>
- 
- <a href="/website-designer-auckland/">Talk about your theme</a>
- <a href="/">View web design Auckland work</a>
-
-Performance snapshot
- Home page load on mobile
- 
- After theme clean up
-
-Theme checklist
- Speed, updates, plugins, layout, page builder, SEO basics
- Reviewed before launch
-
-For Auckland businesses
- Local search focus, contact options, map visibility, trust signals
- Built for local leads
-
-Owner friendly
- Update text and images without breaking the layout you paid for
- Training included
-
-
+  <!-- Services -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Do"
+        title="Selection, customisation, and optimisation."
+        subtitle="A theme that performs well and represents your brand starts with the right choices."
+      />
+      <ServiceGrid items={services} cols={3} />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="WordPress Theme Questions"
+        subtitle="Common questions from Auckland business owners about choosing and managing WordPress themes."
+      />
     </div>
   </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Is your theme holding your site back?"
+    subtitle="Free consultation — we'll assess your current theme and tell you exactly what it's costing you in speed, security, and flexibility."
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View Web Design Services", href: "/small-business-website-design-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .theme-problems-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .theme-problem-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .theme-problem-icon { font-size: 1.75rem; flex-shrink: 0; width: 2.25rem; text-align: center; }
+  .theme-problem-title { display: block; font-size: 0.9rem; font-weight: 700; color: var(--kwd-dark); margin-bottom: 0.35rem; }
+  .theme-problem-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
+
+  @media (max-width: 700px) {
+    .theme-problems-grid { grid-template-columns: 1fr; }
   }
 </style>

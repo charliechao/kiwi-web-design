@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,172 +13,176 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/analytics-reporting-for-auckland-small-business-websites/",
       "url": "https://www.kiwiwebdesign.co.nz/analytics-reporting-for-auckland-small-business-websites/",
-      "name": "Analytics &amp; Reporting  for Auckland Small Business Websites",
-      "description": "Learn how Auckland small businesses can use GA4 and other analytics tools to track traffic, leads and marketing results on their websites.",
+      "name": "Website Analytics & Reporting Auckland | Kiwi Web Design",
+      "description": "GA4 and Google Search Console set up, conversion tracking, and monthly reporting for Auckland small businesses. Know exactly what your website is doing.",
       "inLanguage": "en-NZ",
-      "isPartOf": {
-        "@id": "https://www.kiwiwebdesign.co.nz/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://www.kiwiwebdesign.co.nz/analytics-reporting-for-auckland-small-business-websites/#breadcrumb"
-      }
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/analytics-reporting-for-auckland-small-business-websites/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/analytics-reporting-for-auckland-small-business-websites/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.kiwiwebdesign.co.nz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Analytics &amp; Reporting  for Auckland Small Business Websites"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Website Analytics & Reporting Auckland" }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
-      }
+      "url": "https://www.kiwiwebdesign.co.nz/"
     }
   ]
 };
+
+const services = [
+  {
+    icon: "📊",
+    title: "GA4 Setup & Configuration",
+    desc: "Google Analytics 4 installed and configured correctly — with events, goals, and conversion tracking set up so you're capturing the data that actually matters to your business.",
+    items: ["GA4 property setup", "Event configuration", "Goal & conversion tracking", "Cross-device tracking"],
+  },
+  {
+    icon: "🔍",
+    title: "Google Search Console",
+    desc: "Search Console connected, sitemap submitted, and coverage issues resolved. See exactly which search queries are bringing people to your site — and which pages are underperforming.",
+    items: ["Property verification", "Sitemap submission", "Coverage error fixes", "Search query analysis"],
+  },
+  {
+    icon: "📞",
+    title: "Conversion Tracking",
+    desc: "Track what matters: form submissions, phone call clicks, quote requests, bookings, and purchases. Know which traffic sources are actually generating leads.",
+    items: ["Form submission tracking", "Phone click tracking", "Button & CTA tracking", "eCommerce conversion setup"],
+  },
+  {
+    icon: "📋",
+    title: "Monthly Reporting",
+    desc: "A plain-English monthly report covering traffic, top pages, search queries, conversions, and any changes worth noting. No jargon, no dashboards to figure out — just the key numbers.",
+    items: ["Traffic overview", "Top performing pages", "Keyword & query data", "Conversion summary"],
+  },
+  {
+    icon: "🔗",
+    title: "Campaign Tracking",
+    desc: "UTM parameters configured for all your campaigns — Google Ads, social media, email — so you can see exactly which channels are driving leads and at what cost.",
+    items: ["UTM setup & templates", "Google Ads linking", "Campaign attribution", "Source/medium reporting"],
+  },
+  {
+    icon: "⚡",
+    title: "Analytics Audits",
+    desc: "Already have analytics set up but not sure if it's working properly? We audit your existing setup, find tracking gaps, and fix anything that's recording incorrectly.",
+    items: ["Existing GA4 audit", "Duplicate tracking check", "Data accuracy review", "Tag Manager audit"],
+  },
+];
+
+const faqs = [
+  { q: "Do I need analytics if I already have a website?", a: "Yes — without analytics, you're flying blind. You won't know how many people visit your site, where they come from, which pages they read, or whether they're converting into enquiries. Analytics is the foundation of any data-driven marketing decision." },
+  { q: "What's the difference between GA4 and Google Search Console?", a: "GA4 measures what happens on your website — how many visitors, which pages they read, how long they stay, and whether they complete goals like filling out a form. Google Search Console measures how your site appears in Google search results — which keywords you rank for, how many impressions and clicks you get, and any indexing issues. Both are essential and both are free." },
+  { q: "Is GA4 hard to understand?", a: "The raw GA4 interface can be confusing if you're not familiar with it. That's why we send a simplified monthly report that pulls out the most important numbers — traffic, top pages, conversions, and search queries — in a format that's easy to read and act on." },
+  { q: "Can you set up analytics on a site you didn't build?", a: "Yes. We can install and configure GA4, Search Console, and conversion tracking on any website — WordPress, Shopify, Squarespace, or custom-built. We just need access to the site's admin or codebase." },
+  { q: "How do I know if my tracking is working correctly?", a: "We verify every tracking setup by testing all conversions manually before signing off. If you already have tracking in place, our audit checks for duplicate pageviews, missing goals, incorrect filters, and other common problems that corrupt your data." },
+];
 ---
-<Layout title="Analytics & Reporting  for Auckland Small Business Websites" description="Learn how Auckland small businesses can use GA4 and other analytics tools to track traffic, leads and marketing results on their websites." schema={schema}>
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Website Services</p>
-        <h1>Analytics & reporting for Auckland small business websites</h1>
-        <p class="hero-sub">Learn how Auckland small businesses can use GA4 and other analytics tools to track traffic, leads and marketing results on their websites.</p>
-        <div class="hero-btns">
-          <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-          <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Packages</a>
-        </div>
+
+<Layout
+  title="Website Analytics & Reporting Auckland | Kiwi Web Design"
+  description="GA4 and Google Search Console set up, conversion tracking, and monthly reporting for Auckland small businesses. Know exactly what your website is doing."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/analytics-reporting-for-auckland-small-business-websites/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Analytics & Reporting"
+    title="Know exactly what your website is doing — and why."
+    subtitle="GA4 setup, conversion tracking, Google Search Console, and monthly plain-English reporting for Auckland small businesses. Stop guessing, start deciding."
+    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/12/analytics-reporting-auckland-small-business-websites.jpg"
+    imgAlt="Website analytics dashboard for Auckland small business"
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View SEO Services", href: "/seo-auckland/" }}
+  />
+
+  <!-- Services -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Set Up"
+        title="Everything you need to measure what matters."
+        subtitle="From basic traffic tracking to full conversion attribution — we set it up once and it runs forever."
+      />
+      <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <!-- Why it matters -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <SectionHeader
+        eyebrow="Why Analytics Matter"
+        title="You can't improve what you can't measure."
+        align="left"
+      />
+      <div class="analytics-body">
+        <p>Most Auckland small business websites have analytics installed but not properly configured. GA4 fires a script, records some pageviews, and that's it — no goals, no conversion tracking, no idea which contact form submissions actually came from organic search versus a Facebook ad.</p>
+        <p>Proper analytics setup means you know: which pages generate the most enquiries, which traffic source delivers the highest-quality leads, which blog posts are bringing in organic search traffic, and whether that SEO investment is actually working.</p>
+        <p>We set up the full stack — GA4 with proper conversion events, Google Search Console connected and verified, campaign UTMs configured — and then send you a simple monthly report covering the numbers you need to make decisions.</p>
+        <ul class="analytics-checklist">
+          <li>Works with any website — WordPress, Shopify, or custom</li>
+          <li>Monthly plain-English report included</li>
+          <li>All tracking verified before handover</li>
+          <li>Can integrate with Google Ads for full attribution</li>
+        </ul>
       </div>
-      <div class="hero-img">
-        <img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/12/analytics-reporting-auckland-small-business-websites.jpg" alt="Analytics & reporting for Auckland small business websites" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="prose">
-<img src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/12/analytics-reporting-auckland-small-business-websites.jpg" alt="Analytics dashboard for an Auckland small business website" loading="lazy"> 
-
-<!-- Hero -->
-
-Education for Auckland small businesses
- Guide · Website analytics and reporting
- 
- <p>
- This page explains how to use GA4 and other analytics tools to understand how people
- find and use your website, so you can make better marketing decisions.
- </p>
- <p>
- It is written for owners and managers of small businesses in Auckland who want clear,
- practical steps instead of analytics jargon.
- </p>
-
-Focus
- Traffic, enquiries, calls
-
-Tools
- GA4, Search Console, heatmaps, dashboards
-
-For
- Service, retail, trades, local organisations
-
-
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Analytics Questions Answered"
+        subtitle="Common questions from Auckland business owners about website tracking and reporting."
+      />
     </div>
   </section>
 
-  <section class="cta-strip">
-    <h2>Ready to grow your business online?</h2>
-    <p>Let's build something that works for you. Free consultation, no obligation.</p>
-    <div class="cta-btns">
-      <a href="/website-designer-auckland/#contact" class="btn-primary">Book Free Consultation</a>
-      <a href="/small-business-website-design-auckland/#packages" class="btn-outline">View Our Packages</a>
-    </div>
-  </section>
+  <CTABanner
+    variant="yellow"
+    title="Ready to understand your website traffic?"
+    subtitle="Free consultation — we'll check your current tracking setup and show you what's missing."
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View SEO Services", href: "/seo-auckland/" }}
+  />
+
 </Layout>
 
 <style>
-  /* ── hero ── */
-  .hero { background: var(--kwd-dark); color: var(--kwd-white); padding: 4rem 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 3rem; align-items: center; }
-  .hero-text { flex: 1; min-width: 0; }
-  .eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kwd-yellow); font-weight: 700; margin: 0 0 .6rem; }
-  .hero-text h1 { font-family: var(--kwd-font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 1rem; line-height: 1.2; }
-  .hero-sub { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 0 2rem; line-height: 1.65; }
-  .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn-primary { background: var(--kwd-yellow); color: var(--kwd-dark); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .btn-outline { border: 2px solid rgba(255,255,255,.6); color: var(--kwd-white); padding: .75rem 1.75rem; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; font-size: .95rem; }
-  .hero-img { flex: 0 0 42%; }
-  .hero-img img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 380px; display: block; }
-  /* ── prose content ── */
-  .page-content { padding: 3.5rem 0; }
-  .prose { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-  .prose h1 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 1rem; color: var(--kwd-dark); }
-  .prose h2 { font-family: var(--kwd-font-heading); font-size: 1.6rem; margin: 2.5rem 0 .75rem; color: var(--kwd-dark); border-bottom: 2px solid var(--kwd-yellow); padding-bottom: .3rem; }
-  .prose h3 { font-family: var(--kwd-font-heading); font-size: 1.2rem; margin: 1.75rem 0 .5rem; color: var(--kwd-dark); }
-  .prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 .4rem; color: #222; }
-  .prose h5, .prose h6 { font-size: .95rem; font-weight: 700; margin: 1rem 0 .35rem; color: #333; }
-  .prose p { margin: 0 0 1rem; line-height: 1.75; color: #333; }
-  .prose ul { padding-left: 1.4rem; margin: 0 0 1rem; list-style: disc; }
-  .prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-  .prose li { margin-bottom: .4rem; line-height: 1.65; color: #333; }
-  .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.75rem 0; display: block; }
-  .prose blockquote { border-left: 4px solid var(--kwd-yellow); padding: .75rem 1.25rem; margin: 1.75rem 0; background: #f8f6f0; font-style: italic; color: #444; border-radius: 0 6px 6px 0; }
-  .prose a { color: var(--kwd-dark); text-decoration: underline; font-weight: 600; }
-  .prose a:hover { color: var(--kwd-brown); }
-  .prose strong { color: var(--kwd-dark); }
-  .prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: .9rem; overflow-x: auto; display: block; }
-  .prose th, .prose td { padding: .65rem 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-  .prose th { background: var(--kwd-dark); color: var(--kwd-white); }
-  .prose tr:nth-child(even) td { background: #fafafa; }
-  /* ── faq ── */
-  .faq-section { background: var(--kwd-cream); padding: 4rem 0; }
-  .faq-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-  .faq-inner > h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 2rem; color: var(--kwd-dark); }
-  .faq-item { border-bottom: 1px solid #d8d0c0; }
-  .faq-item summary { cursor: pointer; padding: 1.1rem 0; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--kwd-dark); }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--kwd-yellow); flex-shrink: 0; margin-left: .75rem; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-answer { padding: .25rem 0 1.25rem; line-height: 1.7; color: #444; }
-  .faq-answer p { margin: 0 0 .6rem; }
-  .faq-answer ul, .faq-answer ol { padding-left: 1.3rem; margin: 0 0 .6rem; }
-  /* ── cta ── */
-  .cta-strip { background: var(--kwd-dark); color: var(--kwd-white); text-align: center; padding: 4rem 1.5rem; }
-  .cta-strip h2 { font-family: var(--kwd-font-heading); font-size: 2rem; margin: 0 0 .75rem; }
-  .cta-strip p { opacity: .85; margin: 0 0 2rem; font-size: 1.05rem; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
-  /* ── contact form ── */
-  .contact-section { padding: 4rem 0; background: var(--kwd-cream); }
-  .contact-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-  .contact-inner h2 { font-family: var(--kwd-font-heading); font-size: 1.8rem; margin: 0 0 .5rem; color: var(--kwd-dark); }
-  .contact-inner > p { margin: 0 0 2rem; color: #555; line-height: 1.65; }
-  .contact-form { display: grid; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-weight: 600; font-size: .9rem; color: var(--kwd-dark); }
-  .form-group input, .form-group textarea, .form-group select { padding: .7rem 1rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #fff; transition: border-color .2s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--kwd-yellow); }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { margin-top: .5rem; }
-  /* ── responsive ── */
-  @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; }
-    .hero-img { display: none; }
-    .hero-text h1 { font-size: 1.75rem; }
+  .analytics-body p {
+    font-size: 0.9375rem;
+    color: var(--kwd-brown);
+    line-height: 1.75;
+    margin-bottom: 0.9rem;
+  }
+  .analytics-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .analytics-checklist li {
+    font-size: 0.9rem;
+    color: var(--kwd-dark);
+    font-weight: 600;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .analytics-checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--kwd-brown);
+    font-weight: 700;
   }
 </style>
