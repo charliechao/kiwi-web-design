@@ -78,7 +78,7 @@ const trainingItems = [
 const faqs = [
   { q: "Is training included with every website build?", a: "Yes. We include a structured handover session with every new website build. We don't just launch the site and disappear — we walk you through managing it so you're confident from day one." },
   { q: "What format is the training?", a: "We prefer in-person or video call sessions so we can walk through your actual site together. We also provide written notes or a short video recording of the session you can refer back to later. The format is flexible — whatever works best for you." },
-  { q: "What if I forget how to do something after the training?", a: "That's normal. We include follow-up support after handover — if you get stuck on something we covered, just reach out and we'll help. For ongoing content management support, our maintenance plans include hours for content changes each month." },
+  { q: "What if I forget how to do something after the training?", a: "That's normal. We include follow-up support after handover — if you get stuck on something we covered, just reach out and we'll help. For ongoing content management support, our <a href=\"/wordpress-maintenance-auckland/\">WordPress maintenance plans</a> include hours for content changes each month." },
   { q: "Do I need to be technical to manage my WordPress site?", a: "No. We configure your site so that day-to-day management — updating text, adding images, publishing blog posts — is straightforward. We avoid unnecessary complexity and make sure the tools you need are easy to find." },
   { q: "What if my team needs to be trained as well?", a: "We can train multiple team members, either together or separately. If you need training for several people, let us know and we'll structure the session accordingly." },
 ];
@@ -123,7 +123,7 @@ const faqs = [
       />
       <div class="training-body">
         <p>Too many web designers hand over a completed site with a login and a wave. Six months later, the client either can't make basic updates or is paying for every small change because they were never shown how.</p>
-        <p>We take the opposite approach. Training and handover is built into every project. By the end of our session, you'll know how to update your site's content, publish blog posts, manage images, and handle your enquiry forms — without needing to call us every time.</p>
+        <p>We take the opposite approach. Training and handover is built into every <a href="/wordpress-website-design-auckland/" class="tr-link">WordPress website build</a>. By the end of our session, you'll know how to update your site's content, publish blog posts, manage images, and handle your enquiry forms — without needing to call us every time.</p>
         <p>You'll also have every login credential for every system your site depends on: WordPress, hosting, domain registrar, Google Search Console, Google Analytics. All documented, all in your hands.</p>
         <ul class="training-checklist">
           <li>Included with every new website build</li>
@@ -143,6 +143,20 @@ const faqs = [
         title="Training & Handover Questions"
         subtitle="Common questions from Auckland business owners about the handover process."
       />
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress Web Design</a>
+        <a href="/wordpress-maintenance-auckland/" class="rps-link">WordPress Maintenance</a>
+        <a href="/website-hosting-auckland/" class="rps-link">Website Hosting</a>
+        <a href="/website-copywriting-auckland/" class="rps-link">Website Copywriting</a>
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design Packages</a>
+      </div>
     </div>
   </section>
 
@@ -185,4 +199,12 @@ const faqs = [
     color: var(--kwd-brown);
     font-weight: 700;
   }
+  .tr-link { color: var(--kwd-dark); font-weight: 600; text-decoration: underline; }
+  .tr-link:hover { opacity: 0.75; }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
 </style>

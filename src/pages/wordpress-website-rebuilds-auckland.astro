@@ -94,10 +94,10 @@ const rebuildProcess = [
 
 const faqs = [
   { q: "How long does a WordPress rebuild take?", a: "Most small business site rebuilds take 2–3 weeks from project start to launch. Larger sites with more pages or custom functionality may take 3–5 weeks. We'll give you a specific timeline at the scoping stage." },
-  { q: "Will I lose my Google rankings if I rebuild?", a: "Not if it's done correctly. We map all your existing URLs, set up 301 redirects for any that change, and submit the new sitemap to Google Search Console. In most cases, rankings are maintained or improve — because the new site is better structured and faster." },
+  { q: "Will I lose my Google rankings if I rebuild?", a: "Not if it's done correctly. We map all your existing URLs, set up 301 redirects for any that change, and submit the new sitemap to Google Search Console. In most cases, rankings are maintained or improve — because the new site is better structured and faster. We also pair rebuilds with <a href=\"/wordpress-seo-optimisation/\">WordPress SEO optimisation</a> to maximise ranking gains." },
   { q: "Do I have to use WordPress?", a: "No — we build on WordPress as our default because it's what most clients already have and it's easy to manage. But if there's a reason to use a different platform, we can discuss alternatives." },
   { q: "Can you rebuild a site that was built by someone else?", a: "Yes. We can rebuild any WordPress site regardless of who originally built it. We start with a full audit so we understand what's there and what's worth keeping." },
-  { q: "What happens to my existing hosting and domain?", a: "Your domain stays in your name and continues pointing to your existing site throughout the build. On launch day, we update the DNS to point to the new site. Hosting can be moved to our managed servers or stay where it is — we'll advise based on performance." },
+  { q: "What happens to my existing hosting and domain?", a: "Your domain stays in your name and continues pointing to your existing site throughout the build. On launch day, we update the DNS to point to the new site. Hosting can be moved to our <a href=\"/website-hosting-auckland/\">managed NZ hosting</a> or stay where it is — we'll advise based on performance." },
 ];
 ---
 
@@ -175,6 +175,20 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress Web Design</a>
+        <a href="/wordpress-maintenance-auckland/" class="rps-link">WordPress Maintenance</a>
+        <a href="/website-hosting-auckland/" class="rps-link">Website Hosting</a>
+        <a href="/wordpress-seo-optimisation/" class="rps-link">WordPress SEO</a>
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design Packages</a>
+      </div>
+    </div>
+  </section>
+
   <CTABanner
     variant="yellow"
     title="Free site audit — no obligation."
@@ -204,6 +218,12 @@ const faqs = [
   .rebuild-sign-icon { font-size: 1.75rem; flex-shrink: 0; width: 2.25rem; text-align: center; }
   .rebuild-sign-title { display: block; font-size: 0.9rem; font-weight: 700; color: var(--kwd-dark); margin-bottom: 0.35rem; }
   .rebuild-sign-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
 
   @media (max-width: 700px) {
     .rebuild-signs { grid-template-columns: 1fr; }

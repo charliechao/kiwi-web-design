@@ -79,7 +79,7 @@ const faqs = [
   { q: "Do I need analytics if I already have a website?", a: "Yes — without analytics, you're flying blind. You won't know how many people visit your site, where they come from, which pages they read, or whether they're converting into enquiries. Analytics is the foundation of any data-driven marketing decision." },
   { q: "What's the difference between GA4 and Google Search Console?", a: "GA4 measures what happens on your website — how many visitors, which pages they read, how long they stay, and whether they complete goals like filling out a form. Google Search Console measures how your site appears in Google search results — which keywords you rank for, how many impressions and clicks you get, and any indexing issues. Both are essential and both are free." },
   { q: "Is GA4 hard to understand?", a: "The raw GA4 interface can be confusing if you're not familiar with it. That's why we send a simplified monthly report that pulls out the most important numbers — traffic, top pages, conversions, and search queries — in a format that's easy to read and act on." },
-  { q: "Can you set up analytics on a site you didn't build?", a: "Yes. We can install and configure GA4, Search Console, and conversion tracking on any website — WordPress, Shopify, Squarespace, or custom-built. We just need access to the site's admin or codebase." },
+  { q: "Can you set up analytics on a site you didn't build?", a: "Yes. We can install and configure GA4, Search Console, and conversion tracking on any website — <a href=\"/wordpress-website-design-auckland/\">WordPress</a>, <a href=\"/shopify-website-design-auckland/\">Shopify</a>, Squarespace, or custom-built. We just need access to the site's admin or codebase." },
   { q: "How do I know if my tracking is working correctly?", a: "We verify every tracking setup by testing all conversions manually before signing off. If you already have tracking in place, our audit checks for duplicate pageviews, missing goals, incorrect filters, and other common problems that corrupt your data." },
 ];
 ---
@@ -123,7 +123,7 @@ const faqs = [
       />
       <div class="analytics-body">
         <p>Most Auckland small business websites have analytics installed but not properly configured. GA4 fires a script, records some pageviews, and that's it — no goals, no conversion tracking, no idea which contact form submissions actually came from organic search versus a Facebook ad.</p>
-        <p>Proper analytics setup means you know: which pages generate the most enquiries, which traffic source delivers the highest-quality leads, which blog posts are bringing in organic search traffic, and whether that SEO investment is actually working.</p>
+        <p>Proper analytics setup means you know: which pages generate the most enquiries, which traffic source delivers the highest-quality leads, which blog posts are bringing in organic search traffic, and whether that <a href="/seo-auckland/">SEO</a> or <a href="/google-ads/">Google Ads</a> investment is actually working.</p>
         <p>We set up the full stack — GA4 with proper conversion events, Google Search Console connected and verified, campaign UTMs configured — and then send you a simple monthly report covering the numbers you need to make decisions.</p>
         <ul class="analytics-checklist">
           <li>Works with any website — WordPress, Shopify, or custom</li>
@@ -143,6 +143,20 @@ const faqs = [
         title="Analytics Questions Answered"
         subtitle="Common questions from Auckland business owners about website tracking and reporting."
       />
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/seo-auckland/" class="rps-link">SEO Services Auckland</a>
+        <a href="/google-ads/" class="rps-link">Google Ads Management</a>
+        <a href="/wordpress-seo-optimisation/" class="rps-link">WordPress SEO</a>
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design Packages</a>
+        <a href="/wordpress-maintenance-auckland/" class="rps-link">WordPress Maintenance</a>
+      </div>
     </div>
   </section>
 
@@ -185,4 +199,10 @@ const faqs = [
     color: var(--kwd-brown);
     font-weight: 700;
   }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
 </style>
