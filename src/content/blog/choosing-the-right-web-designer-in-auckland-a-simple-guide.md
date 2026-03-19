@@ -80,13 +80,13 @@ Web design is more than aesthetics. Ask if they offer:
 - **Content Strategy:** Copywriting, imagery, multimedia integration.
 
 
-- **E‑commerce & Integrations:** Shopify, WooCommerce, payment gateways, booking tools.
+- **E‑commerce & Integrations:** [Shopify](/shopify-website-design-auckland/), [WooCommerce](/woocommerce-website-design-auckland/), payment gateways, [booking tools](/booking-appointment-websites-with-wordpress/).
 
 
 - **Maintenance & Support:** Security updates, backups, technical troubleshooting.
 
 
-Kiwi Web Design provides end-to-end **web design** solutions—so you won’t need to juggle multiple vendors.
+Kiwi Web Design provides end-to-end [**web design** solutions](/small-business-website-design-auckland/) — including [SEO](/seo-auckland/) and [website copywriting](/website-copywriting-auckland/) — so you won’t need to juggle multiple vendors.
 
 
 ## 5. Prioritize Communication & Process
@@ -104,7 +104,7 @@ A smooth project flow hinges on clear communication:
 - **Feedback Loops:** What’s the process for revisions and approvals?
 
 
-Our process at [www.kiwiwebdesign.co.nz](https://www.kiwiwebdesign.co.nz) includes weekly check‑ins and a shared project board—so you’re never left wondering where things stand.
+Our [web design process](/website-design-process-in-auckland/) includes weekly check‑ins and a shared project board — so you’re never left wondering where things stand. [Learn more about us](/about-us/) and how we work.
 
 
 ## 6. Compare Pricing & Value
@@ -167,4 +167,4 @@ Their answers will reveal their expertise and professionalism.
 Choosing the right web designer in Auckland sets the foundation for your online growth. At **Kiwi Web Design**, we blend local market insight with global best practices to craft websites that convert visitors into customers.
 
 
-**Visit www.kiwiwebdesign.co.nz** today for a free consultation, and let’s build a website that drives real results for your Auckland business!
+**[Visit our contact page](/website-designer-auckland/)** today for a free consultation, and let’s build a website that drives real results for your Auckland business!

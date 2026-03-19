@@ -17,7 +17,7 @@ By Kiwi Web Design | Auckland Web Design Blog
 The way New Zealanders search online is changing. People are moving from short keyword searches in Google to full conversations with tools like ChatGPT, voice assistants like Siri, and AI search engines like Perplexity. If your business isn’t showing up when users ask questions — you’re missing out.
 
 
-At Kiwi Web Design, we’ve evolved from traditional SEO to a full **AI-first approach**, helping Auckland businesses become discoverable in today’s search landscape.
+At Kiwi Web Design, we’ve evolved from traditional [SEO in Auckland](/seo-auckland/) to a full **AI-first approach**, helping Auckland businesses become discoverable in today’s search landscape. Explore our dedicated [AI SEO service for Auckland small businesses](/ai-seo-for-auckland-small-businesses/).
 
 
 ### SEO vs AEO: What’s the Difference?
@@ -54,7 +54,7 @@ AEO stands for **Answer Engine Optimisation**. It helps your website appear as a
 ### Why This Matters for Auckland Businesses
 
 
-Whether you’re a tradie, consultant, or local shop — you need to be found when Kiwis ask questions like:
+Whether you’re a [tradie](/tradie-website-design-auckland/), consultant, or local shop — you need to be found when Kiwis ask questions like:
 
 
 - “Best web design agency in Auckland?”
@@ -78,7 +78,7 @@ We make sure you show up — not just on Google — but everywhere users are sea
 - Built on years of experience (founded by a 2015 Yoobee bootcamp grad)
 
 
-- WordPress experts with a modern AI-first workflow
+- [WordPress website design](/wordpress-website-design-auckland/) experts with a modern AI-first workflow
 
 
 - In-person consults

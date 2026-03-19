@@ -29,7 +29,7 @@ Even if you have a Facebook page, most people still expect a proper website — 
 Every day you wait to get your website built, your competitors are climbing higher on Google and winning over your potential customers.
 
 
-With an **affordable web design Auckland** service, you don’t have to spend thousands. Modern tools and AI-driven systems (like the ones we use at Kiwi Web Design) make it possible to get a professional, high-performing website at a fraction of the cost — and much faster.
+With an [**affordable web design Auckland**](/small-business-website-design-auckland/) service, you don’t have to spend thousands. Modern tools and AI-driven systems (like the ones we use at Kiwi Web Design) make it possible to get a professional, high-performing website at a fraction of the cost — and much faster.
 
 
 ## 3. Your Website Works While You Sleep
@@ -44,7 +44,7 @@ It’s like having a full-time salesperson that never complains, never takes hol
 ## 4. A Small Investment, Big Results
 
 
-The good news is that building a website doesn’t have to be expensive or complicated.At **Kiwi Web Design**, we specialise in creating **affordable web design** solutions for Auckland small businesses — especially tradies, local services, and family-run companies.
+The good news is that building a website doesn’t have to be expensive or complicated.At **Kiwi Web Design**, we specialise in creating **affordable web design** solutions for Auckland small businesses — especially [tradies](/tradie-website-design-auckland/), local services, and family-run companies. Pair your new site with [SEO services in Auckland](/seo-auckland/) to start generating consistent leads.
 
 
 You’ll get:✅ A modern, mobile-friendly website✅ Built to rank on Google✅ Set up for lead generation✅ Clear pricing and local support
@@ -53,7 +53,7 @@ You’ll get:✅ A modern, mobile-friendly website✅ Built to rank on Google✅
 ## Ready to See How Much Business You’re Missing?
 
 
-Let’s find out exactly what opportunities your business is leaving on the table.👉 **Book your FREE website audit today** and we’ll show you where you could be gaining more customers online.
+Let’s find out exactly what opportunities your business is leaving on the table.👉 **Book your FREE website audit today** and we’ll show you where you could be gaining more customers online. [Get in touch with us here](/website-designer-auckland/) to get started.
 
 
 📞 021 039 6580🌐 [www.kiwiwebdesign.co.nz](https://www.kiwiwebdesign.co.nz)✉️ hi@kiwiwebdesign.co.nz

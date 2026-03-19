@@ -37,7 +37,7 @@ If your pages are organised well and users can find what they need, you don’t 
 ### 2. Your CMS and hosting are solid
 
 
-If your site runs on modern WordPress, has no serious technical debt, and loads reasonably fast, a redesign is usually enough. Upgrading theme files, plugins, and UI is far cheaper than rebuilding.
+If your site runs on modern [WordPress](/wordpress-website-design-auckland/), has no serious technical debt, and loads reasonably fast, a redesign is usually enough. Upgrading theme files, plugins, and UI is far cheaper than rebuilding.
 
 
 ### 3. You mainly need brand updates
@@ -58,7 +58,7 @@ A redesign keeps costs down and can be done faster. The limitation is that you a
 ## When Starting From Scratch Is the Smarter Move
 
 
-A rebuild is the right call when your current website limits your growth. Many business owners avoid a rebuild because they think it takes too long or costs too much. That’s short-term thinking. A broken base costs more in the long run.
+A rebuild is the right call when your current website limits your growth. Many business owners avoid a rebuild because they think it takes too long or costs too much. That’s short-term thinking. A broken base costs more in the long run. Our [WordPress website rebuilds service](/wordpress-website-rebuilds-auckland/) is designed to make this process affordable and efficient.
 
 
 Choose a full rebuild if:
@@ -91,7 +91,7 @@ If your services, pricing, audience, or positioning have changed, your old frame
 ### 5. You want strong SEO and AI search visibility
 
 
-Modern SEO is not only about keywords. It requires clean architecture, proper schema, fast load speed, consistent internal linking, and content designed for AI search systems. Old sites struggle with this.
+Modern [SEO in Auckland](/seo-auckland/) is not only about keywords. It requires clean architecture, proper schema, fast load speed, consistent internal linking, and content designed for AI search systems. Old sites struggle with this. Our [AI SEO service](/ai-seo-for-auckland-small-businesses/) addresses these requirements from the ground up.
 
 
 ## How to Decide: A Quick Checklist
@@ -145,7 +145,7 @@ I take a straightforward approach with clients:
 - Recommend the option that actually supports your business goals.
 
 
-- Build fast, clean, and aligned with modern SEO and AI discovery.
+- Build fast, clean, and aligned with modern SEO and AI discovery. See our [website design process](/website-design-process-in-auckland/) for details.
 
 
 No unnecessary complexity. No upselling. Just the right path for your situation.

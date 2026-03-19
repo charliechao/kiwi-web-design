@@ -95,7 +95,7 @@ A slow website looks unprofessional and frustrates visitors.Make sure your hosti
 ## 8. Don’t Forget SEO Basics
 
 
-Even a great-looking website won’t help if nobody finds it.Add simple on-page SEO like:
+Even a great-looking website won’t help if nobody finds it. [SEO for Auckland businesses](/seo-auckland/) starts with the basics — add simple on-page SEO like:
 
 
 - Descriptive page titles and meta descriptions
@@ -116,7 +116,7 @@ This helps your site appear in Google when locals search for what you do.
 You don’t need a $10,000 budget to look professional online.With the right layout, clear messaging, and a touch of local SEO, your business can look every bit as polished as the big brands — at a fraction of the cost.
 
 
-At **Kiwi Web Design**, we specialise in helping **Auckland small businesses** build **affordable, professional websites** that actually bring in leads.If you’d like to upgrade your existing site or start fresh, we’d love to help.
+At **Kiwi Web Design**, we specialise in helping **Auckland small businesses** build [**affordable, professional websites**](/small-business-website-design-auckland/) that actually bring in leads. Our [WordPress website design](/wordpress-website-design-auckland/) is a popular choice for businesses that want an easy-to-manage, professional result. If you’d like to upgrade your existing site or start fresh, we’d love to help — take a look at our [website design process in Auckland](/website-design-process-in-auckland/) to see how it works.
 
 
 💬 **Get a Free Quote Today** — and let’s make your business stand out online without spending a fortune.

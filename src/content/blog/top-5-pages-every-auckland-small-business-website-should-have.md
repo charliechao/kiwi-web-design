@@ -8,7 +8,7 @@ image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/auckland-smal
 # Top 5 Pages Every Auckland Small Business Website Should Have
 
 
-Running a small business in [Auckland](https://en.wikipedia.org/wiki/Auckland)means you’re competing not just on quality and price — but also on visibility. And your website is often the first impression people get of your business. Whether you’re a local tradie, a café owner, or a service provider, having the *right* pages can turn casual browsers into paying customers.
+Running a small business in [Auckland](https://en.wikipedia.org/wiki/Auckland)means you’re competing not just on quality and price — but also on visibility. And your website is often the first impression people get of your business. Whether you’re a local tradie, a café owner, or a service provider, having the *right* pages on your [small business website](/small-business-website-design-auckland/) can turn casual browsers into paying customers.
 
 
 At **Kiwi Web Design**, we’ve helped dozens of Auckland businesses build affordable, high-performing websites — and we’ve noticed a clear pattern: the most successful sites all share five essential pages.
@@ -110,7 +110,7 @@ You’d be surprised how many Auckland websites hide their contact info. Don’t
 - Links to your social media or Google Business Profile
 
 
-💡 *Tip:* Add a short message like “We offer free quotes across Auckland — no job too small!” It helps both with conversions and local keyword optimisation.
+💡 *Tip:* Add a short message like “We offer free quotes across Auckland — no job too small!” It helps both with conversions and [local SEO for Auckland businesses](/local-seo-for-auckland-small-businesses/).
 
 
 ## 5. Testimonials or Case Studies Page – Proof That You Deliver
@@ -158,7 +158,7 @@ A regularly updated blog shows Google (and customers) that your business is acti
 Your website doesn’t need to be big — it just needs to be **smart**.Start with these five pages and make sure each one answers the most important question your visitor has: *“Can I trust this business to solve my problem?”*
 
 
-If you’re not sure whether your current site ticks all these boxes, Kiwi Web Design offers **free website audits and local SEO reviews** for Auckland businesses.
+If you’re not sure whether your current site ticks all these boxes, Kiwi Web Design offers **free website audits and local SEO reviews** for Auckland businesses. Good [website copywriting](/website-copywriting-auckland/) for each of these pages also makes a significant difference in conversions. [Get in touch](/website-designer-auckland/) to discuss your options.
 
 
 👉 [Book a Free Consultation](https://www.kiwiwebdesign.co.nz/website-designer-auckland/)Let’s make your website work harder for you — 24/7.

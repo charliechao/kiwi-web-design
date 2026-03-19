@@ -29,7 +29,7 @@ First impressions count. A clean, easy-to-use website shows people you’re seri
 ### 3. Bring Your Marketing Together
 
 
-A website gives you a home base for everything — Google search, Facebook, Instagram, email newsletters — all roads should lead back to your site. You can post updates, run specials, or publish blog tips that help boost your ranking on search engines (yes, that’s SEO in action). It’s a great way to stay visible without breaking the bank.
+A website gives you a home base for everything — Google search, Facebook, Instagram, email newsletters — all roads should lead back to your site. You can post updates, run specials, or publish blog tips that help boost your ranking on search engines (yes, that’s [SEO in Auckland](/seo-auckland/) in action). It’s a great way to stay visible without breaking the bank.
 
 
 ### 4. Make Life Easier for Your Customers
@@ -47,7 +47,7 @@ Surprisingly, plenty of small Kiwi businesses still don’t have a proper websit
 ## Final Thoughts
 
 
-A good website isn’t about being flashy — it’s about being helpful, visible, and easy to trust. Whether you’re just starting out or looking to grow, investing in a professional website can be one of the smartest moves you make for your business.
+A good website isn’t about being flashy — it’s about being helpful, visible, and easy to trust. Whether you’re just starting out or looking to grow, investing in a [professional small business website in Auckland](/small-business-website-design-auckland/) can be one of the smartest moves you make for your business.
 
 
-If you’re ready to get started (or want to refresh an old site), get in touch with our team at [Kiwi Web Design](https://www.kiwiwebdesign.co.nz). We’re local, we understand small business, and we’re here to help you shine online.
+If you’re ready to get started (or want to refresh an old site), [get in touch with our team at Kiwi Web Design](/website-designer-auckland/). We can also help with [local SEO](/local-seo-for-auckland-small-businesses/) to make sure people can actually find your new site. We’re local, we understand small business, and we’re here to help you shine online.

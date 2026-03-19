@@ -50,7 +50,7 @@ The aim is simple: help users quickly identify top-rated service businesses, whi
 ### Built With SEO and AI Discovery in Mind
 
 
-As an Auckland web design agency, we design websites for how people search today, not how they searched five years ago.
+As an [Auckland web design agency](/small-business-website-design-auckland/), we design websites for how people search today, not how they searched five years ago.
 
 
 TopRated.nz is structured to support both traditional SEO and emerging AI-driven search experiences. Pages are written clearly, organised logically, and built around real search intent, such as users looking for “top rated” services rather than generic directories.
@@ -74,10 +74,10 @@ Over time, the platform will expand into other New Zealand cities, following the
 For Kiwi Web Design, TopRated.nz also serves as a live example of how we build websites for clients.
 
 
-Everything from site structure to content clarity reflects how we approach **web design in Auckland** for small and medium-sized businesses. Instead of theory, this project demonstrates what happens when SEO, usability, and AI readiness are considered from day one.
+Everything from site structure to content clarity reflects how we approach **web design in Auckland** for small and medium-sized businesses. Our [SEO services](/seo-auckland/) and [AI SEO approach](/ai-seo-for-auckland-small-businesses/) are baked into every build from day one. Instead of theory, this project demonstrates what happens when SEO, usability, and AI readiness are considered from day one.
 
 
-If you are interested in improving your website’s visibility or building a platform designed for modern search, you can learn more about our services at **https://www.kiwiwebdesign.co.nz**.
+If you are interested in improving your website’s visibility or building a platform designed for modern search, you can learn more about our services at **https://www.kiwiwebdesign.co.nz**. You can also [learn about us](/about-us/) and how we work with Auckland businesses.
 
 
 TopRated.nz is now live, and we will continue refining and expanding the platform as search behaviour evolves.

@@ -80,7 +80,7 @@ If your website is primarily informational or lead-driven, there is no logical r
 Not all websites are the same, but many small business sites fall into this category:
 
 
-- Service websites
+- [Small business service websites](/small-business-website-design-auckland/)
 
 
 - Local business sites
@@ -89,7 +89,7 @@ Not all websites are the same, but many small business sites fall into this cate
 - Portfolio or brochure sites
 
 
-- Landing pages
+- [Landing pages](/landing-pages-funnels-on-wordpress/)
 
 
 - MVP or validation websites
@@ -116,7 +116,7 @@ If your project involves:
 - Custom systems and integrations
 
 
-- E-commerce with advanced logic
+- [eCommerce websites](/ecommerce-website-auckland/) with advanced logic
 
 
 - Ongoing experimentation and optimisation
@@ -200,7 +200,7 @@ If you are, it might be time to rethink how your website is built and what you a
 **About Kiwi Web Design**
 
 
-Kiwi Web Design is an Auckland-based web design agency specialising in AI-powered website builds for small businesses across New Zealand. We focus on fast delivery, modern design, and practical outcomes using current-generation AI tools.
+Kiwi Web Design is an Auckland-based [web design agency](/small-business-website-design-auckland/) specialising in AI-powered website builds for small businesses across New Zealand. We also offer [AI SEO optimisation](/ai-seo-for-auckland-small-businesses/) to help your new site get found in AI-driven search. We focus on fast delivery, modern design, and practical outcomes using current-generation AI tools.
 
 
 

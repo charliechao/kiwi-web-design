@@ -50,7 +50,7 @@ Most SEO agencies in New Zealand are structured around the same model: sell a mo
 
 
 
-The problem is that keyword rankings alone do not pay your bills. A plumber in South Auckland does not need to rank number one for a national keyword. They need their phone to ring from people in their service area who are ready to book.
+The problem is that keyword rankings alone do not pay your bills. A plumber in South Auckland does not need to rank number one for a national keyword. They need their phone to ring from people in their service area who are ready to book. That is what a properly structured [tradie website in Auckland](/tradie-website-design-auckland/) is designed to do.
 
 
 
@@ -90,7 +90,7 @@ Instead of chasing broad search volume, effective [SEO for Auckland small busine
 
 - High-intent, location-specific keywords — people ready to act, not just browsing
 
-- Google Business Profile optimisation to drive calls and directions
+- [Google Business Profile](/google-business-profile-guide-for-auckland-businesses/) optimisation to drive calls and directions
 
 - Service pages that convert visitors into enquiries, not just rank
 
@@ -282,7 +282,7 @@ A good SEO company should be able to explain how a top-of-funnel search leads a 
 
 
 
-We work with small businesses across Auckland, including the North Shore, West Auckland, South Auckland, and the CBD. Our office is in Grey Lynn, and we serve clients from Remuera to Manukau, Titirangi to Takapuna.
+We work with small businesses across Auckland, including the North Shore, West Auckland, South Auckland, and the CBD. Our [small business website design in Auckland](/small-business-website-design-auckland/) and SEO services are built around lead generation, not just visibility. Our office is in Grey Lynn, and we serve clients from Remuera to Manukau, Titirangi to Takapuna.
 
 
 

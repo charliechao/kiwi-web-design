@@ -44,7 +44,7 @@ Running a small business in Auckland? Your website is often the first point of c
 ### 6. Neglecting SEO Best Practices
 
 
-**Mistake:** Skipping essential on-page SEO elements like title tags, meta descriptions, and header tags.**Why It Matters:** You won’t rank well on Google, making it harder for Auckland customers to find your web design services.**How to Avoid:** Optimize each page’s keyword strategy—include “Auckland” and “web design”—use descriptive URLs, add alt text to images, and implement basic schema markup.
+**Mistake:** Skipping essential on-page SEO elements like title tags, meta descriptions, and header tags.**Why It Matters:** You won’t rank well on Google, making it harder for Auckland customers to find your web design services.**How to Avoid:** Optimize each page’s keyword strategy — our [SEO services in Auckland](/seo-auckland/) can take care of this for you, including descriptive URLs, alt text, and schema markup.
 
 
 ### 7. Outdated Design and Branding
@@ -62,7 +62,7 @@ Running a small business in Auckland? Your website is often the first point of c
 ### 9. Missing Analytics and Tracking
 
 
-**Mistake:** Not installing Google Analytics or other tracking tools to measure performance.**Why It Matters:** Without data, you can’t identify what’s working or where improvements are needed.**How to Avoid:** Set up Google Analytics and Google Search Console, define goals (like form submissions), and review reports monthly to refine your Auckland-focused web design strategy.
+**Mistake:** Not installing Google Analytics or other tracking tools to measure performance.**Why It Matters:** Without data, you can’t identify what’s working or where improvements are needed.**How to Avoid:** Set up Google Analytics and Google Search Console, define goals (like form submissions), and review reports monthly. Our [analytics and reporting service](/analytics-reporting-for-auckland-small-business-websites/) can handle this for you.
 
 
 ### 10. Lack of Fresh Content
@@ -71,7 +71,7 @@ Running a small business in Auckland? Your website is often the first point of c
 **Mistake:** Posting stagnant, outdated information without regular updates.**Why It Matters:** Search engines favour active sites, and customers want current, relevant content.**How to Avoid:** Maintain a blog—publish case studies like “How an Auckland Café Boosted Sales”—update service pages when you add new offerings, and refresh seasonal promotions.
 
 
-**Ready to Level Up Your Web Design?**Avoiding these common mistakes will help your small business stand out online, capture more leads, and build trust with Auckland customers. If you need expert **web design** solutions tailored for your market, our Auckland-based team is here to help.
+**Ready to Level Up Your Web Design?**Avoiding these common mistakes will help your small business stand out online, capture more leads, and build trust with Auckland customers. If you need expert [**small business web design** solutions tailored for your market](/small-business-website-design-auckland/), our Auckland-based team is here to help. [Get in touch today](/website-designer-auckland/).
 
 
 [Contact us today] for a free site audit and start converting more visitors into loyal clients!

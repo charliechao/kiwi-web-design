@@ -136,7 +136,7 @@ Customers expect:
 • Quick, accurate information• Clear credibility signals• Fast response times• Easy online transactions• Personalised experiences driven by AI
 
 
-A website is the only channel that allows a business to meet all of these expectations in one place. Social media alone is not enough. Email alone is not enough. A modern website backed by solid domain ownership remains the foundation of a trustworthy digital presence.
+A website is the only channel that allows a business to meet all of these expectations in one place. Social media alone is not enough. Email alone is not enough. A modern [small business website in Auckland](/small-business-website-design-auckland/) backed by solid domain ownership remains the foundation of a trustworthy digital presence.
 
 
 For many businesses, the first practical step is reviewing whether their website exists, whether it still represents their brand, and whether it meets current customer expectations.
@@ -145,10 +145,10 @@ For many businesses, the first practical step is reviewing whether their website
 ## How Kiwi Web Design can help
 
 
-Kiwi Web Design works with small businesses across New Zealand to improve their online presence. If your website is outdated, missing, or not performing, we can help you rebuild it with modern standards, local SEO, fast loading times, and AI-ready features.
+Kiwi Web Design works with small businesses across New Zealand to improve their online presence. If your website is outdated, missing, or not performing, we can help you rebuild it with modern standards, [local SEO](/local-seo-for-auckland-small-businesses/), fast loading times, and AI-ready features. For businesses on [WordPress](/wordpress-website-design-auckland/), we also offer ongoing support to keep your site secure and performing.
 
 
-If you don’t have a website at all, now is the right time to close the gap highlighted in this research.
+If you don’t have a website at all, now is the right time to close the gap highlighted in this research. See our [website design process in Auckland](/website-design-process-in-auckland/) to understand exactly what getting started looks like.
 
 
 [Get in touch](https://www.kiwiwebdesign.co.nz/website-designer-auckland/) if you want a clear, practical review of your current digital presence and a plan to improve it.

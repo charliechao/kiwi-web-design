@@ -41,13 +41,13 @@ When you rely only on Facebook or social media, you’re at the mercy of their r
 ### 5️⃣ Unlock Growth Potential
 
 
-A website is the foundation for growth. From online bookings and payments to SEO and Google Ads, your digital marketing efforts all start with a professional site. Without it, you’re limiting your ability to scale.
+A website is the foundation for growth. From [online bookings](/booking-appointment-websites-with-wordpress/) and payments to [SEO](/seo-auckland/) and [Google Ads](/google-ads/), your digital marketing efforts all start with a professional site. Without it, you’re limiting your ability to scale.
 
 
 ### ✅ Affordable Web Design in Auckland
 
 
-The best part? A professional website doesn’t need to cost a fortune. At **Kiwi Web Design**, we specialise in **affordable web design Auckland** services, with websites starting at just $1,290 and a fast 2–3 week turnaround. Using smart AI tools, we keep costs down while delivering high-quality websites for tradies, e-commerce stores, and local services.
+The best part? A professional website doesn’t need to cost a fortune. At **Kiwi Web Design**, we specialise in [**affordable web design Auckland**](/small-business-website-design-auckland/) services, with websites starting at just $1,290 and a fast 2–3 week turnaround. Using smart AI tools, we keep costs down while delivering high-quality websites for [tradies](/tradie-website-design-auckland/), [e-commerce stores](/ecommerce-website-auckland/), and local services. We also build on [WordPress](/wordpress-website-design-auckland/) for maximum flexibility.
 
 
 ### 📍 Local Support, Mt Albert Based

@@ -23,7 +23,7 @@ AI systems now summarise answers before users ever click a website.
 If your business is not structured for AI interpretation, you may not appear at all.
 
 
-This is why Kiwi Web Design is moving clients from traditional SEO to AI-driven search optimisation, also known as AEO and GEO.
+This is why Kiwi Web Design is moving clients from traditional SEO to AI-driven search optimisation, also known as AEO and GEO. Learn more about our [AI SEO service for Auckland small businesses](/ai-seo-for-auckland-small-businesses/).
 
 
 ## What Is AI-Driven Search?
@@ -155,7 +155,7 @@ We implement structured data and entity clarity so your business is recognised a
 ### 3. Local Authority Reinforcement
 
 
-For Auckland businesses, local signals are critical.We align Google Business Profile, citations, and on-site signals.
+For Auckland businesses, local signals are critical. We align [Google Business Profile](/google-business-profile-guide-for-auckland-businesses/), citations, and on-site signals.
 
 
 ### 4. Topic Clustering
@@ -173,7 +173,7 @@ Traffic without enquiries is wasted effort.Every page must connect visibility to
 ## AI Search Is Not the Future. It Is Already Here.
 
 
-Most agencies are still selling SEO as if it were 2018.
+Most agencies are still selling SEO as if it were 2018. If your [Auckland small business website design](/small-business-website-design-auckland/) isn't structured for AI interpretation, you risk losing visibility to competitors who are.
 
 
 Small businesses that adapt early gain compounding advantages.
@@ -203,16 +203,16 @@ If you are unsure, that is where we start.
 At Kiwi Web Design, we help Auckland small businesses build visibility systems that combine:
 
 
-- Technical SEO
+- [Technical SEO for Auckland businesses](/seo-auckland/)
 
 
 - AI-structured content
 
 
-- Local authority
+- [Local search authority](/local-seo-for-auckland-small-businesses/)
 
 
-- Google Ads integration where required
+- [Google Ads](/google-ads/) integration where required
 
 
 - Clear conversion strategy

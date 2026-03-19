@@ -251,7 +251,7 @@ Remember that GST, hosting, content production, and ongoing optimisation are add
 
 
 
-Starter packages deliver essentialshome, services, about, and contact pages. These are ideal for tradies, consultants, and new operators validating their offering. Expect add-ons like copywriting or photography to nudge the total toward the top of the range.
+Starter packages deliver essentials — home, services, about, and contact pages. These are ideal for [tradies](/tradie-website-design-auckland/), consultants, and new operators validating their offering. See our [small business website design packages](/small-business-website-design-auckland/) for what's included. Expect add-ons like copywriting or photography to nudge the total toward the top of the range.
 
 
 
@@ -312,12 +312,12 @@ Domains average $25 annually, with .co.nz and .nz both popular with local custom
 
 
 
-Shopify speeds up eCommerce launches with hosted infrastructure, built-in payments, and point-of-sale tie-ins. Upfront build costs often start around $6,000-$12,000, with ongoing platform fees (USD $39-$399/mo) plus paid apps for subscriptions, bundles, or loyalty.
+[Shopify](/shopify-website-design-auckland/) speeds up eCommerce launches with hosted infrastructure, built-in payments, and point-of-sale tie-ins. Upfront build costs often start around $6,000-$12,000, with ongoing platform fees (USD $39-$399/mo) plus paid apps for subscriptions, bundles, or loyalty.
 
 
 
 
-WordPress with WooCommerce suits businesses wanting flexible content, local payment gateways, and ownership of hosting. Builds range from $5,000-$15,000+ depending on product complexity and integration needs. Ongoing costs revolve around hosting, premium plugins, and maintenance.
+[WordPress with WooCommerce](/woocommerce-website-design-auckland/) suits businesses wanting flexible content, local payment gateways, and ownership of hosting. Pair it with [website hosting](/website-hosting-auckland/) for a fully managed setup. Builds range from $5,000-$15,000+ depending on product complexity and integration needs. Ongoing costs revolve around hosting, premium plugins, and maintenance.
 
 
 

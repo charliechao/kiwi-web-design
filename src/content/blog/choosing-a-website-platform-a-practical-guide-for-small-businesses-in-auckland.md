@@ -74,7 +74,7 @@ Most CMS mistakes come from thinking only about the next few months.Plan for the
 ### WordPress
 
 
-Ideal for service businesses, trades, community organisations and most local companies in Auckland.Why it works:
+Ideal for service businesses, trades, community organisations and most local companies in Auckland. Our [WordPress website design in Auckland](/wordpress-website-design-auckland/) service is built on this platform for exactly these reasons. Why it works:
 
 
 - Easy for non-technical users to update
@@ -101,7 +101,7 @@ What to be aware of:
 ### Shopify
 
 
-Best for businesses selling physical or digital products.It handles payments, products and shipping without needing extra tools.Straightforward for store owners but less flexible outside retail.
+Best for businesses selling physical or digital products. Our [Shopify website design in Auckland](/shopify-website-design-auckland/) service handles payments, products and shipping without needing extra tools. Straightforward for store owners but less flexible outside retail.
 
 
 ### Wix, Squarespace and Webflow
@@ -209,10 +209,10 @@ This avoids the common problem of rebuilding the entire website after one year b
 Based on our day-to-day work with local businesses:
 
 
-- Most service-based businesses should choose **WordPress**.
+- Most service-based businesses should choose [**WordPress**](/wordpress-website-design-auckland/).
 
 
-- Most ecommerce businesses should choose **Shopify**.
+- Most ecommerce businesses should choose [**Shopify**](/shopify-website-design-auckland/) — or consider [WooCommerce](/woocommerce-website-design-auckland/) if they want more flexibility.
 
 
 - SquareSpace/Wix are only suitable for very small, short-term projects.

@@ -26,7 +26,7 @@ To guide business owners, we’ve identified **seven of Auckland’s top web des
 ### Key Strengths & Capabilities
 
 
-Kiwi Web Design is leading the charge in Auckland as an **AI-first web design agency**. Their biggest advantage lies in their streamlined process: by using AI for planning, content drafts, and project workflows, they cut inefficiencies that would normally inflate timelines and costs. For business owners, this means lower project prices and faster turnaround. Kiwi Web Design also focuses on small businesses — from sole tradies to growing retailers — tailoring their offers to suit tight budgets without sacrificing design or functionality.
+Kiwi Web Design is leading the charge in Auckland as an **AI-first web design agency**. You can see our [small business website design packages](/small-business-website-design-auckland/) and [learn about us](/about-us/) directly on our site. Their biggest advantage lies in their streamlined process: by using AI for planning, content drafts, and project workflows, they cut inefficiencies that would normally inflate timelines and costs. For business owners, this means lower project prices and faster turnaround. Kiwi Web Design also focuses on small businesses — from sole tradies to growing retailers — tailoring their offers to suit tight budgets without sacrificing design or functionality.
 
 
 ### Practical Considerations
@@ -53,7 +53,7 @@ Clients should expect straightforward packages with clear inclusions. A starter 
 ### Who is it for
 
 
-Small businesses in Auckland who want professional websites without overspending. Tradies, e-commerce startups, and service firms will find the greatest value here. For owners who want measurable results and predictable costs, Kiwi Web Design is the top recommendation in 2026.
+Small businesses in Auckland who want professional websites without overspending. [Tradies](/tradie-website-design-auckland/), [e-commerce startups](/ecommerce-website-auckland/), and service firms will find the greatest value here. For owners who want measurable results and predictable costs, Kiwi Web Design is the top recommendation in 2026.
 
 
 ## 2) The Web Guys

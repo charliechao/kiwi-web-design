@@ -14,7 +14,7 @@ If you’re a [tradie in Auckland](https://www.kiwiwebdesign.co.nz/website-desig
 ### 1. Be Found by Locals Searching Online
 
 
-Most people searching for tradies in Auckland start with Google. If your business doesn’t have a website, or it looks outdated, they’ll likely choose a competitor. A professionally designed website, combined with strong SEO, can help you rank higher in search results and get found by people in your area.
+Most people searching for tradies in Auckland start with Google. If your business doesn’t have a website, or it looks outdated, they’ll likely choose a competitor. A professionally designed [tradie website in Auckland](/tradie-website-design-auckland/), combined with strong [local SEO](/local-seo-for-auckland-small-businesses/), can help you rank higher in search results and get found by people in your area.
 
 
 ### 2. Showcase Your Work
@@ -50,7 +50,7 @@ Many Auckland tradies still don’t have great websites. This is your chance to 
 ### Ready to Level Up?
 
 
-At our Auckland-based web design agency, we specialise in helping tradies get online, get noticed, and get more jobs. Whether you’re starting from scratch or need to upgrade your existing site, we’ll make the process easy.
+At our Auckland-based web design agency, we specialise in helping tradies get online, get noticed, and get more jobs. Whether you’re starting from scratch or need to upgrade your existing site, we’ll make the process easy. We also offer [SEO services](/seo-auckland/) specifically for trade businesses to drive consistent job enquiries.
 
 
 Let’s build a site that works as hard as you do and contact [Kiwi Web Design](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/) today.

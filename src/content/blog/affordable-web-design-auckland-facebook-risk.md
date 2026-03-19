@@ -35,13 +35,13 @@ When customers compare two businesses—one with a professional website and one 
 ### ❌ 4. Harder to Scale and Grow
 
 
-Facebook pages are limited in functionality. You can’t easily integrate online bookings, payment systems, or advanced marketing tools. A website gives you flexibility to grow your digital presence over time—whether that means SEO, e-commerce, or Google Ads.
+Facebook pages are limited in functionality. You can’t easily integrate online bookings, payment systems, or advanced marketing tools. A website gives you flexibility to grow your digital presence over time—whether that means [SEO](/seo-auckland/), [e-commerce](/ecommerce-website-auckland/), or [Google Ads](/google-ads/).
 
 
 ### ✅ The Smarter Choice: Affordable Web Design in Auckland
 
 
-The good news is you don’t need to spend a fortune. At **Kiwi Web Design**, we specialise in **affordable web design for Auckland small businesses**. Our websites start from just $1,290, with a fast turnaround of 2–3 weeks. Using smart AI tools, we cut unnecessary costs and pass the savings onto you—without sacrificing quality.
+The good news is you don’t need to spend a fortune. At **Kiwi Web Design**, we specialise in [**affordable web design for Auckland small businesses**](/small-business-website-design-auckland/). Our websites start from just $1,290, with a fast turnaround of 2–3 weeks. We also offer [local SEO](/local-seo-for-auckland-small-businesses/) to help your new site get found by customers in your area. Using smart AI tools, we cut unnecessary costs and pass the savings onto you—without sacrificing quality.
 
 
 ### 📍 Local Expertise, Mt Albert Based

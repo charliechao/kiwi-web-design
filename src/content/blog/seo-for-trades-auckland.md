@@ -14,7 +14,7 @@ If you’re a plumber, electrician, builder or roofer in Auckland, you don’t n
 You need job enquiries.
 
 
-Most trades websites look decent. Few of them generate consistent calls. The reason is simple. They were built like brochures, not lead systems.
+Most trades websites look decent. Few of them generate consistent calls. The reason is simple. They were built like brochures, not lead systems. A purpose-built [tradie website in Auckland](/tradie-website-design-auckland/) is structured from the ground up to attract job enquiries.
 
 
 This guide breaks down what actually drives enquiries in Auckland: Google Maps visibility, local rankings, service page structure, and why most trade sites never rank properly.
@@ -95,7 +95,7 @@ Your position in Google’s local 3-pack is influenced by:
 If your Google Business Profile is half set up and your website says “we offer quality services”, you will not outrank competitors who structure it properly.
 
 
-## 2. Local SEO Is Not Just “Adding Auckland”
+## 2. [Local SEO for Auckland Trades](/local-seo-for-auckland-small-businesses/) Is Not Just “Adding Auckland”
 
 
 Many trade businesses think local SEO means repeating “Auckland” on every page.
@@ -314,10 +314,10 @@ Ranking is half the battle. Conversion is the other half.
 ## 5. SEO vs Google Ads for Trades
 
 
-SEO builds long-term assets.
+[SEO for Auckland trades](/seo-auckland/) builds long-term assets.
 
 
-Google Ads generates immediate enquiries.
+[Google Ads](/google-ads/) generates immediate enquiries.
 
 
 For most Auckland trades:
@@ -362,7 +362,7 @@ Then the issue is not “SEO doesn’t work”.
 It’s structure.
 
 
-Trades who invest in proper local SEO systems consistently outrank competitors who treat their website as a digital business card.
+Trades who invest in proper [local SEO systems](/local-seo-for-auckland-small-businesses/) consistently outrank competitors who treat their website as a digital business card.
 
 
 ## Final Thought

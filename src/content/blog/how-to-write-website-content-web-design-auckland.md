@@ -11,7 +11,7 @@ image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Facebook-Post
 ### Why Most Websites Don’t Convert
 
 
-Many Auckland small-business websites *look amazing* — but struggle to turn visitors into actual enquiries.That’s not always a design problem… it’s usually a **content problem.**
+Many Auckland small-business websites *look amazing* — but struggle to turn visitors into actual enquiries. That’s not always a design problem… it’s usually a **content problem.** Professional [website copywriting in Auckland](/website-copywriting-auckland/) can make a significant difference.
 
 
 At **Kiwi Web Design**, we see this every week when local business owners come to us saying:
@@ -56,7 +56,7 @@ Aucklanders don’t want to guess whether you’re local.Make it obvious in your
 “Affordable web design in Auckland for tradies, retailers, and small businesses.”
 
 
-Simple, location-based statements help your SEO **and** give potential clients confidence that you’re nearby and ready to help.
+Simple, location-based statements help your [SEO in Auckland](/seo-auckland/) **and** give potential clients confidence that you’re nearby and ready to help.
 
 
 ### 3️⃣ Guide Visitors With a Clear Call-to-Action (CTA)
@@ -95,4 +95,4 @@ Search engines now reward clarity and helpfulness.If readers stay longer because
 ### 💡 Final Tip: Let the Pros Help
 
 
-If writing website content isn’t your thing, don’t stress.Our team at **Kiwi Web Design** can help you plan, design, and write a website that **turns visitors into real customers** — not just clicks.
+If writing website content isn’t your thing, don’t stress.Our team at **Kiwi Web Design** can help you plan, [design a website in Auckland](/small-business-website-design-auckland/), and write content that **turns visitors into real customers** — not just clicks. See our [website copywriting service](/website-copywriting-auckland/) for more detail.

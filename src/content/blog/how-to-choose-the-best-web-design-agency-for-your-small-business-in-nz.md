@@ -68,13 +68,13 @@ Your website is not “done” the day it goes live. Plugins need updating, cont
 ### A Real Example
 
 
-Last year, a small retail shop in West Auckland came to me after paying for a site they couldn’t edit without hiring a developer. We rebuilt it on WordPress, gave them a quick training session, and now they can update prices and add products themselves. Within two months, they were getting more online sales than foot traffic.
+Last year, a small retail shop in West Auckland came to me after paying for a site they couldn’t edit without hiring a developer. We rebuilt it on [WordPress](/wordpress-website-design-auckland/), gave them a [website training session](/website-training-and-handover/), and now they can update prices and add products themselves. Within two months, they were getting more online sales than foot traffic.
 
 
 ### Final Thoughts
 
 
-Whether you choose Kiwi Web Design or another Auckland web design agency, the main thing is to work with a team that listens, explains things clearly, and understands how your customers think. Take your time, ask questions, and make sure you’re getting a site that works for you — not just for their portfolio.
+Whether you choose Kiwi Web Design or another [Auckland web design agency](/small-business-website-design-auckland/), the main thing is to work with a team that listens, explains things clearly, and understands how your customers think. See our [website design process](/website-design-process-in-auckland/) and [about us page](/about-us/) to understand how we work. Take your time, ask questions, and make sure you’re getting a site that works for you — not just for their portfolio.
 
 
 If you want to talk through what’s possible for your business, get in touch with Kiwi Web Design. We can walk you through your options and give you a clear plan to get your site working as hard as you do.

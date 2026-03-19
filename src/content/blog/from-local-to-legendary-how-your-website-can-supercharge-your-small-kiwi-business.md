@@ -86,7 +86,7 @@ A website serves as your digital storefront, open 24/7 to customers near and far
 - **E-commerce Potential**: For businesses selling products, an online store enables purchases at any time, expanding your reach beyond local customers.
 
 
-- **Local SEO Advantage**: Optimizing for local searches, such as “Auckland plumber” or “Christchurch boutique,” helps you attract nearby customers, crucial for businesses relying on local foot traffic.
+- **Local SEO Advantage**: Optimizing for local searches, such as “Auckland plumber” or “Christchurch boutique,” helps you attract nearby customers, crucial for businesses relying on local foot traffic. Our [local SEO service for Auckland small businesses](/local-seo-for-auckland-small-businesses/) is built around exactly this.
 
 
 These benefits make a website an indispensable tool for small Kiwi businesses looking to grow their client base and increase sales.
@@ -173,7 +173,7 @@ Make it convenient for customers to do business with you:
 - **Online Store**: If you sell products, set up an e-commerce platform to enable online purchases. For example, a boutique could offer nationwide shipping.
 
 
-- **Booking System**: Service-based businesses, like hair salons or accountants, can use online booking tools to streamline appointments.
+- **Booking System**: Service-based businesses, like hair salons or accountants, can use [online booking tools](/booking-appointment-websites-with-wordpress/) to streamline appointments.
 
 
 - **Secure Payments**: Ensure your site uses HTTPS and complies with payment security standards to protect customer data.
@@ -256,7 +256,7 @@ To maximize your website’s effectiveness, steer clear of these pitfalls:
 ## Why Invest in Professional Web Design in Auckland?
 
 
-While DIY website builders are great, hiring a professional web design agency in Auckland can take your site to the next level. Agencies like White Rabbit or Adcelerate offer tailored solutions, including advanced SEO, custom designs, and ongoing support. This is especially valuable in Auckland’s competitive market, where a standout website can make all the difference.
+While DIY website builders are great, hiring a [professional web design agency in Auckland](/small-business-website-design-auckland/) can take your site to the next level. Combine that with [Google Ads](/google-ads/) and [SEO services](/seo-auckland/) to drive consistent traffic from day one. Agencies like White Rabbit or Adcelerate offer tailored solutions, including advanced SEO, custom designs, and ongoing support. This is especially valuable in Auckland’s competitive market, where a standout website can make all the difference.
 
 
 ## Conclusion

@@ -32,7 +32,7 @@ A well-optimised website acts as your **digital shopfront** — it’s how new c
 ### 2️⃣ Google Trusts Websites More
 
 
-Facebook pages are great for updates, but Google doesn’t treat them as a reliable business source. Websites with clear content, location info, and proper SEO structure get far more visibility.
+Facebook pages are great for updates, but Google doesn’t treat them as a reliable business source. Websites with clear content, location info, and proper [SEO structure](/seo-auckland/) get far more visibility.
 
 
 If your competitors have websites, Google sees them as more legitimate — which means they show up before you every time.
@@ -53,7 +53,7 @@ Your website never sleeps. It answers questions, collects leads, and promotes yo
 ### 5️⃣ It’s More Affordable Than You Think
 
 
-Many Auckland small business owners assume building a website will cost thousands.But at **Kiwi Web Design**, we specialise in **affordable web design Auckland** packages — starting from just **$1,290**, with most sites completed within 2–3 weeks.
+Many Auckland small business owners assume building a website will cost thousands.But at **Kiwi Web Design**, we specialise in [**affordable web design Auckland**](/small-business-website-design-auckland/) packages — starting from just **$1,290**, with most sites completed within 2–3 weeks.
 
 
 We use smart AI-assisted tools to save time and reduce costs, while still delivering clean, professional, and fast-loading websites that perform well on Google.
@@ -65,7 +65,7 @@ We use smart AI-assisted tools to save time and reduce costs, while still delive
 We’re not some overseas agency — we’re local. Based in Mt Albert, we understand the Auckland business landscape and know how to make your website appeal to local customers.
 
 
-Whether you’re a tradie, a café owner, or an e-commerce start-up, we can meet you in person or online to discuss how to get your business showing up on Google.
+Whether you’re a [tradie](/tradie-website-design-auckland/), a café owner, or an [e-commerce start-up](/ecommerce-website-auckland/), we can meet you in person or online to discuss how to get your business showing up on Google. Adding [local SEO](/local-seo-for-auckland-small-businesses/) from the start makes a major difference to how quickly you rank.
 
 
 ### 🎁 Free Consultation for Auckland Small Businesses

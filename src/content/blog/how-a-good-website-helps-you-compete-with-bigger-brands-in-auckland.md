@@ -29,7 +29,7 @@ A well-designed site says: *“We’re a real, established business that takes q
 Good design isn’t just about looks. A properly built site loads faster, is mobile-friendly, and uses structured data—things [Google](https://www.google.com/)rewards with better rankings.
 
 
-That means a local business with a strong website can appear above a national brand in Auckland search results. That’s the power of solid **web design and SEO** working together.
+That means a local business with a strong website can appear above a national brand in Auckland search results. That’s the power of solid [**web design and SEO**](/small-business-website-design-auckland/) working together.
 
 
 ### 3. Local Focus Beats Corporate Generic
@@ -38,7 +38,7 @@ That means a local business with a strong website can appear above a national br
 Big brands often use one-size-fits-all websites. You don’t have to.Your website can focus on your **local Auckland audience**—showing photos of your work around the city, listing the suburbs you serve, and using Kiwi language that resonates.
 
 
-When someone searches “plumber in New Lynn” or “web designer near me,” your locally-optimised content has a real chance of outranking larger players who don’t mention specific areas.
+When someone searches “plumber in New Lynn” or “web designer near me,” your locally-optimised content has a real chance of outranking larger players who don’t mention specific areas. This is the core principle behind [local SEO for Auckland small businesses](/local-seo-for-auckland-small-businesses/).
 
 
 ### 4. Authenticity Wins Customers
@@ -53,7 +53,7 @@ These small touches create connection and trust in ways big corporations often s
 ### 5. Automation Levels the Playing Field
 
 
-With tools like online booking forms, chat widgets, and automated follow-ups, your website can run like a 24/7 salesperson. You don’t need a large support team—you just need smart systems built into your site.
+With tools like [online booking forms](/booking-appointment-websites-with-wordpress/), chat widgets, and automated follow-ups, your website can run like a 24/7 salesperson. You don’t need a large support team—you just need smart systems built into your site.
 
 
 At **Kiwi Web Design**, we help local businesses integrate these tools so they can work efficiently and look professional without extra staff.

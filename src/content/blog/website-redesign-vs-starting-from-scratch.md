@@ -86,7 +86,7 @@ This usually applies if:
 - There is a gap between what the business wants to say and what customers need to see
 
 
-Many Auckland businesses built their first website quickly years ago, then layered fixes on top. Over time, the site becomes hard to manage, slow, and unclear. At that point, redesigning can cost almost as much as rebuilding, while still carrying old limitations.
+Many Auckland businesses built their first website quickly years ago, then layered fixes on top. Over time, the site becomes hard to manage, slow, and unclear. At that point, redesigning can cost almost as much as rebuilding, while still carrying old limitations. Our [WordPress website rebuilds service](/wordpress-website-rebuilds-auckland/) is designed specifically for businesses in this situation.
 
 
 Customer research in New Zealand shows that people value clarity and easy access to information more than businesses expect. If visitors cannot immediately understand what you do, where you operate, and how to contact you, they leave. Starting fresh allows you to rebuild around customer questions, not internal assumptions.
@@ -107,7 +107,7 @@ This changes how websites perform. People search with intent. They compare quick
 Search behaviour also reflects this density. Local keywords, suburb references, and clear service pages matter. Whether you choose a redesign or a rebuild, the end result needs to support discoverability and trust in a competitive local market.
 
 
-This is where professional web design Auckland businesses rely on becomes less about aesthetics and more about structure, messaging, and credibility.
+This is where [professional web design Auckland](/small-business-website-design-auckland/) businesses rely on becomes less about aesthetics and more about structure, messaging, and credibility.
 
 
 ## An Expert Perspective from Auckland
@@ -119,7 +119,7 @@ At [Kiwi Web Design](https://www.kiwiwebdesign.co.nz/website-designer-auckland/)
 For some clients, a redesign preserves valuable search equity and improves results quickly. For others, starting fresh removes technical and messaging debt that would otherwise slow growth for years.
 
 
-Good website design Auckland businesses invest in is not about doing more work. It is about doing the right work based on evidence, not habit.
+Good website design Auckland businesses invest in is not about doing more work. It is about doing the right work based on evidence, not habit. See our [website design process in Auckland](/website-design-process-in-auckland/) to understand how we approach this.
 
 
 ## Conclusion
