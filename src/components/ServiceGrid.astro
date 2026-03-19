@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro';
+
 interface ServiceItem {
   icon?: string;
   title: string;
@@ -21,7 +23,7 @@ const { items, cols = 3, dark = false } = Astro.props;
   {items.map(({ icon, title, desc, items: bullets, href, tag }) => (
     <div class="sg-card">
       {tag && <span class="sg-tag">{tag}</span>}
-      {icon && <div class="sg-icon">{icon}</div>}
+      {icon && <div class="sg-icon"><Icon name={icon} size={28} /></div>}
       <h3 class="sg-title">{title}</h3>
       <p class="sg-desc">{desc}</p>
       {bullets && bullets.length > 0 && (
@@ -79,8 +81,15 @@ const { items, cols = 3, dark = false } = Astro.props;
   }
 
   .sg-icon {
-    font-size: 2rem;
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--kwd-dark);
+    opacity: 0.85;
+  }
+  .sg-dark .sg-icon {
+    color: var(--kwd-yellow);
+    opacity: 1;
   }
 
   .sg-title {
