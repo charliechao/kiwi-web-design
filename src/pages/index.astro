@@ -7,6 +7,7 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import TestimonialGrid from '../components/TestimonialGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import aucklandVideo from '../assets/general/Auckland_Video.mp4';
 
 const schema = {
   "@context": "https://schema.org",
@@ -220,26 +221,10 @@ const faqs = [
 
   <!-- ── Hero ── -->
   <section class="hp-hero">
-
-    <!-- Background decoration -->
-    <svg class="hero-deco" aria-hidden="true" viewBox="0 0 800 480" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-      <!-- Dot grid -->
-      <defs>
-        <pattern id="hero-dots" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1.5" fill="#fbe8a6" fill-opacity="0.07"/>
-        </pattern>
-      </defs>
-      <rect width="800" height="480" fill="url(#hero-dots)"/>
-      <!-- Large faint circle accent -->
-      <circle cx="640" cy="240" r="260" stroke="#fbe8a6" stroke-opacity="0.05" stroke-width="1.5" fill="none"/>
-      <circle cx="640" cy="240" r="200" stroke="#fbe8a6" stroke-opacity="0.04" stroke-width="1" fill="none"/>
-      <!-- Rising line accent (suggests growth) -->
-      <path d="M60 380 L160 290 L280 240 L420 180 L560 120" stroke="#fbe8a6" stroke-opacity="0.08" stroke-width="2" stroke-linecap="round" fill="none"/>
-      <circle cx="560" cy="120" r="5" fill="#fbe8a6" fill-opacity="0.12"/>
-      <!-- Abstract screen outline -->
-      <rect x="520" y="60" width="240" height="155" rx="10" stroke="#fbe8a6" stroke-opacity="0.06" stroke-width="1.5" fill="none"/>
-      <rect x="520" y="60" width="240" height="22" rx="10" fill="#fbe8a6" fill-opacity="0.03"/>
-    </svg>
+    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+      <source src={aucklandVideo} type="video/mp4" />
+    </video>
+    <div class="hero-overlay" aria-hidden="true"></div>
 
     <div class="container hp-hero-inner">
       <div class="hp-hero-text">
@@ -253,16 +238,6 @@ const faqs = [
           <a href="/website-designer-auckland/" class="hp-btn-primary">Get a Free Quote</a>
           <a href="/small-business-website-design-auckland/" class="hp-btn-ghost">See Our Packages</a>
         </div>
-      </div>
-      <div class="hp-hero-visual">
-        <img
-          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/08/Auckland.jpg"
-          alt="Auckland city skyline — Kiwi Web Design serves all of Auckland"
-          width="640"
-          height="420"
-          loading="eager"
-          class="hp-hero-img"
-        />
         <div class="hp-trust-card">
           <div class="htc-stars">★★★★★</div>
           <p class="htc-text"><strong>4.9/5</strong> from 47 Google reviews</p>
@@ -601,25 +576,34 @@ const faqs = [
 <style>
   /* ── Hero ── */
   .hp-hero {
-    background: var(--kwd-dark);
-    padding: 5.5rem 0 4.5rem;
     position: relative;
     overflow: hidden;
+    padding: 7rem 0 6rem;
+    background: var(--kwd-dark);
   }
-  .hero-deco {
+  .hero-video {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    object-fit: cover;
     z-index: 0;
   }
-  .hp-hero-inner { position: relative; z-index: 1; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(44,41,39,0.82) 0%,
+      rgba(44,41,39,0.65) 60%,
+      rgba(44,41,39,0.45) 100%
+    );
+    z-index: 1;
+  }
   .hp-hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
   }
   .hp-eyebrow {
     font-size: 0.72rem;
@@ -639,12 +623,12 @@ const faqs = [
   .hp-accent { color: var(--kwd-yellow); }
   .hp-lead {
     font-size: 1.05rem;
-    color: rgba(255,255,255,0.72);
-    max-width: 540px;
+    color: rgba(255,255,255,0.78);
+    max-width: 580px;
     line-height: 1.7;
     margin-bottom: 2rem;
   }
-  .hp-ctas { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .hp-ctas { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
 
   .hp-btn-primary {
     display: inline-block;
@@ -676,8 +660,8 @@ const faqs = [
 
   .hp-btn-ghost {
     display: inline-block;
-    border: 2px solid rgba(255,255,255,0.3);
-    color: rgba(255,255,255,0.85);
+    border: 2px solid rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.9);
     padding: 0.875rem 2rem;
     border-radius: 6px;
     font-weight: 600;
@@ -688,29 +672,21 @@ const faqs = [
   }
   .hp-btn-ghost:hover { border-color: var(--kwd-yellow); color: var(--kwd-yellow); }
 
-  /* Hero visual */
-  .hp-hero-visual { position: relative; }
-  .hp-hero-img {
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-    display: block;
-    object-fit: cover;
-    box-shadow: 0 32px 64px rgba(0,0,0,0.45);
-  }
+  /* Trust card — frosted glass pill below CTAs */
   .hp-trust-card {
-    position: absolute;
-    bottom: -1.25rem;
-    left: -1.25rem;
-    background: #fff;
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    min-width: 200px;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 10px;
+    padding: 0.75rem 1.25rem;
   }
-  .htc-stars { color: #f5a523; font-size: 0.9rem; margin-bottom: 0.25rem; }
-  .htc-text  { font-size: 0.85rem; font-weight: 600; color: var(--kwd-dark); margin: 0 0 0.15rem; }
-  .htc-sub   { font-size: 0.75rem; color: var(--kwd-brown); margin: 0; }
+  .htc-stars { color: #f5a523; font-size: 1rem; letter-spacing: 0.05em; flex-shrink: 0; }
+  .htc-text  { font-size: 0.85rem; font-weight: 600; color: #fff; margin: 0; }
+  .htc-sub   { font-size: 0.72rem; color: rgba(255,255,255,0.65); margin: 0; }
 
   /* ── Trust bar ── */
   .trust-bar {
@@ -942,8 +918,7 @@ const faqs = [
     .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
   }
   @media (max-width: 900px) {
-    .hp-hero-inner { grid-template-columns: 1fr; }
-    .hp-hero-visual { display: none; }
+    .hp-hero { padding: 5rem 0 4rem; }
     .trust-bar-inner { gap: 1rem; }
     .tb-sep { display: none; }
     .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
