@@ -212,6 +212,20 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress</a>
+        <a href="/ecommerce-website-auckland/" class="rps-link">eCommerce</a>
+        <a href="/shopify-website-design-auckland/" class="rps-link">Shopify</a>
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design</a>
+        <a href="/seo-for-ecommerce/" class="rps-link">eCommerce SEO</a>
+      </div>
+    </div>
+  </section>
+
   <CTABanner
     variant="yellow"
     title="Ready to launch your WooCommerce store?"
@@ -286,4 +300,10 @@ const faqs = [
   @media (max-width: 580px) {
     .woo-nz-grid { grid-template-columns: 1fr; }
   }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
 </style>

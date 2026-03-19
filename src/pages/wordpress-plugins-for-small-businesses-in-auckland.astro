@@ -146,6 +146,20 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress</a>
+        <a href="/wordpress-maintenance-auckland/" class="rps-link">WP Maintenance</a>
+        <a href="/website-training-and-handover/" class="rps-link">Website Training</a>
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design</a>
+        <a href="/woocommerce-website-design-auckland/" class="rps-link">WooCommerce</a>
+      </div>
+    </div>
+  </section>
+
   <CTABanner
     variant="yellow"
     title="Is your site weighed down by too many plugins?"
@@ -185,4 +199,10 @@ const faqs = [
     color: var(--kwd-brown);
     font-weight: 700;
   }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
 </style>
