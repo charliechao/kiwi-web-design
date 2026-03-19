@@ -189,13 +189,13 @@ const reviews = [
 ];
 
 const portfolio = [
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Cleaner-e1750284778292.jpg",           alt: "Auckland cleaning company website", caption: "Top Line Services" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Building_Inspector-e1750284793590.jpg", alt: "Auckland building inspector website", caption: "Inspector Guys" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Lavaranda-e1753415431519.jpg",                   alt: "Auckland restaurant website", caption: "La Veranda Restaurant" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Legal-e1753416217381.jpg",                       alt: "Auckland law firm website", caption: "FL Legal" },
+  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Cleaner-e1750284778292.jpg",           alt: "Auckland cleaning company website", caption: "Top Line Services", href: "/topline-services-cleaning-website/" },
+  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Building_Inspector-e1750284793590.jpg", alt: "Auckland building inspector website", caption: "Inspector Guys", href: "/inspector-guys-building-inspections-website/" },
+  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Lavaranda-e1753415431519.jpg",                   alt: "Auckland restaurant website", caption: "La Veranda Restaurant", href: "/la-veranda-restaurant-website/" },
+  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Legal-e1753416217381.jpg",                       alt: "Auckland law firm website", caption: "FL Legal", href: "/fl-legal-website/" },
   { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Mt-Albert-Business-Association-Website.jpg",     alt: "Mt Albert Business Association", caption: "Mt Albert Business Assoc." },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Kiwiland-e1753410581810.jpg",                    alt: "Auckland construction company website", caption: "Kiwiland Construction" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Specialist-e1753415885359.jpg",                  alt: "Auckland medical specialist website", caption: "Melanoma NZ" },
+  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Kiwiland-e1753410581810.jpg",                    alt: "Auckland construction company website", caption: "Kiwiland Construction", href: "/kiwiland-construction-website/" },
+  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Specialist-e1753415885359.jpg",                  alt: "Auckland medical specialist website", caption: "Melanoma NZ", href: "/melanoma-specialists-website/" },
   { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/01/600-21B675F7-8EB5-45A5-99242870729DC26D.png",    alt: "TopRated.nz directory", caption: "TopRated.nz" },
 ];
 
@@ -471,11 +471,18 @@ const faqs = [
         light={true}
       />
       <div class="portfolio-grid">
-        {portfolio.map(({ src, alt, caption }) => (
-          <figure class="portfolio-item">
-            <img src={src} alt={alt} width="400" height="280" loading="lazy" class="portfolio-img" />
-            <figcaption class="portfolio-caption">{caption}</figcaption>
-          </figure>
+        {portfolio.map(({ src, alt, caption, href }) => (
+          href ? (
+            <a href={href} class="portfolio-item portfolio-item--linked">
+              <img src={src} alt={alt} width="400" height="280" loading="lazy" class="portfolio-img" />
+              <figcaption class="portfolio-caption">{caption} <span class="portfolio-arrow">→</span></figcaption>
+            </a>
+          ) : (
+            <figure class="portfolio-item">
+              <img src={src} alt={alt} width="400" height="280" loading="lazy" class="portfolio-img" />
+              <figcaption class="portfolio-caption">{caption}</figcaption>
+            </figure>
+          )
         ))}
       </div>
       <div class="portfolio-cta-wrap">
@@ -746,6 +753,10 @@ const faqs = [
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
+  .portfolio-item--linked { display: block; text-decoration: none; }
+  .portfolio-item--linked .portfolio-caption { color: rgba(255,255,255,0.65); transition: color 0.15s; }
+  .portfolio-item--linked:hover .portfolio-caption { color: var(--kwd-yellow); }
+  .portfolio-arrow { font-style: normal; opacity: 0.7; }
   .portfolio-cta-wrap { text-align: center; margin-top: 2.5rem; }
 
   /* ── Reviews trust ── */
