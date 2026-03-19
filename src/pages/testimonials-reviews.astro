@@ -164,7 +164,7 @@ const schema = {
     <div class="container">
       <p class="rev-hero-eyebrow">Client Reviews</p>
       <h1>What Auckland businesses say about working with us.</h1>
-      <p class="rev-hero-sub">Real results for real Auckland businesses — tradies, restaurants, healthcare providers, and professional services across the region.</p>
+      <p class="rev-hero-sub">Real results for real Auckland businesses — tradies, restaurants, healthcare providers, and professional services across the region. Learn more <a href="/about-us/" style="color: rgba(255,255,255,0.85); text-decoration: underline;">about us</a> and how we work.</p>
 
       <!-- Aggregate stats -->
       <div class="rev-agg">
@@ -229,7 +229,7 @@ const schema = {
         <div>
           <p class="rev-google-eyebrow">Verified on Google</p>
           <h2>All reviews are verified through Google Business Profile.</h2>
-          <p>We don't cherry-pick testimonials from emails. Every review we publish is verifiable on our Google Business Profile — you can read them all there and see the complete unedited record.</p>
+          <p>We don't cherry-pick testimonials from emails. Every review we publish is verifiable on our Google Business Profile — you can read them all there and see the complete unedited record. These clients came to us through our <a href="/small-business-website-design-auckland/">web design packages</a>, <a href="/seo-auckland/">SEO services</a>, and <a href="/website-designer-auckland/">direct enquiries</a>.</p>
           <a href="https://www.google.com/maps/place/Kiwi+Web+Design" class="rev-google-btn" target="_blank" rel="noopener noreferrer">Read our Google reviews →</a>
         </div>
         <div class="rev-google-card">
@@ -269,6 +269,20 @@ const schema = {
             <span>{label}</span>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design Packages</a>
+        <a href="/about-us/" class="rps-link">About Us</a>
+        <a href="/website-designer-auckland/" class="rps-link">Contact</a>
+        <a href="/seo-auckland/" class="rps-link">SEO Services</a>
+        <a href="/faq/" class="rps-link">FAQ</a>
       </div>
     </div>
   </section>
@@ -494,4 +508,10 @@ const schema = {
     .rev-agg { flex-direction: column; gap: 1rem; }
     .rev-agg-divider { width: 3rem; height: 1px; }
   }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
 </style>

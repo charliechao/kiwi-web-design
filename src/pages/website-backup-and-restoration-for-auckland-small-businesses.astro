@@ -83,11 +83,11 @@ const services = [
 ];
 
 const faqs = [
-  { q: "Doesn't my hosting company back up my site?", a: "Most shared hosting plans include server-level backups, but they're often weekly, stored on the same server, and may not include the database. If your hosting account is compromised or suspended, you may lose access to those backups too. An independent daily backup with offsite storage is a separate safety net." },
+  { q: "Doesn't my hosting company back up my site?", a: "Most shared hosting plans include server-level backups, but they're often weekly, stored on the same server, and may not include the database. If your hosting account is compromised or suspended, you may lose access to those backups too. An independent daily backup with offsite storage is a separate safety net. Our <a href=\"/website-hosting-auckland/\">managed WordPress hosting</a> includes daily backups as standard." },
   { q: "How long does a restore take?", a: "A full site restore from backup typically takes 1–3 hours depending on site size and what went wrong. Partial restores (just the database or just specific files) can be faster. We aim to respond to urgent restore requests the same day." },
   { q: "How far back can I restore?", a: "Basic plan clients have 14 days of history; Standard and Premium clients have 30 days. So if something went wrong three weeks ago and you didn't notice until today, a Standard plan gives you the ability to restore to a point before the problem occurred." },
   { q: "Do I need backups if my site doesn't change often?", a: "Yes. The threat isn't just accidental changes — it's malware infections, server failures, and hosting account issues. These can happen to any site regardless of how frequently content is updated." },
-  { q: "Is backup included in your maintenance plans?", a: "Yes. Daily backups with offsite storage are included in all maintenance plans. The retention period varies by plan — 14 days on Basic, 30 days on Standard and Premium." },
+  { q: "Is backup included in your maintenance plans?", a: "Yes. Daily backups with offsite storage are included in all <a href=\"/wordpress-maintenance-auckland/\">WordPress maintenance plans</a>. The retention period varies by plan — 14 days on Basic, 30 days on Standard and Premium. Backups also complement our <a href=\"/website-security-for-auckland-small-businesses/\">website security service</a> — if malware strikes, a clean restore point is your fastest recovery option." },
 ];
 ---
 
@@ -153,6 +153,20 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/wordpress-maintenance-auckland/" class="rps-link">WordPress Maintenance</a>
+        <a href="/website-hosting-auckland/" class="rps-link">Website Hosting</a>
+        <a href="/website-security-for-auckland-small-businesses/" class="rps-link">Website Security</a>
+        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress Design</a>
+        <a href="/malware-cleanup-for-auckland-small-business-websites/" class="rps-link">Malware Cleanup</a>
+      </div>
+    </div>
+  </section>
+
   <CTABanner
     variant="yellow"
     title="Is your website being backed up properly?"
@@ -186,4 +200,10 @@ const faqs = [
   @media (max-width: 700px) {
     .scenario-grid { grid-template-columns: 1fr; }
   }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
 </style>
