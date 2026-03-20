@@ -193,6 +193,30 @@ const faqs = [
     </div>
   </section>
 
+  <!-- About split: about.jpg + "why work with us" -->
+  <section class="section seo-about-section">
+    <div class="container">
+      <div class="seo-about-split">
+        <div class="seo-about-img-wrap">
+          <Image src={aboutImg} alt="SEO specialist reviewing keyword strategy for an Auckland business" width={560} height={700} class="seo-about-img" />
+        </div>
+        <div class="seo-about-content">
+          <p class="seo-about-eyebrow">Why Work With Us</p>
+          <h2>SEO built around your business, not a template.</h2>
+          <p>We don't sell packages and forget you. Every Auckland client gets a dedicated strategy based on their industry, competitors, and customer search behaviour — reviewed every single month.</p>
+          <ul class="seo-about-list">
+            <li>Free audit before any commitment</li>
+            <li>No lock-in contracts — stay because it works</li>
+            <li>Clear monthly reporting in plain English</li>
+            <li>Local Auckland knowledge, not offshore teams</li>
+            <li>Results tracked against your actual leads, not just rankings</li>
+          </ul>
+          <a href="/website-designer-auckland/" class="seo-about-btn">Book a Free SEO Audit →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing -->
   <section class="section" id="pricing">
     <div class="container">
@@ -255,10 +279,32 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Team image strip -->
-  <div class="seo-img-strip">
-    <Image src={aboutImg}  alt="Charlie from Kiwi Web Design reviewing SEO results for an Auckland client" width={800} height={540} class="seo-strip-img" />
-    <Image src={about3Img} alt="Kiwi Web Design team working on Auckland SEO strategy" width={800} height={540} class="seo-strip-img" />
+  <!-- about3.jpg: dark card with stats + team image -->
+  <div class="container seo-team-card-wrap">
+    <div class="seo-team-card">
+      <div class="seo-team-stats">
+        <p class="seo-team-eyebrow">The team behind your SEO</p>
+        <h2>Data-driven. Auckland-focused. Accountable.</h2>
+        <div class="seo-team-nums">
+          <div class="stn-item">
+            <span class="stn-num">50+</span>
+            <span class="stn-lbl">NZ businesses ranked</span>
+          </div>
+          <div class="stn-item">
+            <span class="stn-num">4.9★</span>
+            <span class="stn-lbl">Google rating</span>
+          </div>
+          <div class="stn-item">
+            <span class="stn-num">3–6 mo</span>
+            <span class="stn-lbl">Average time to results</span>
+          </div>
+        </div>
+        <a href="/website-designer-auckland/" class="seo-team-btn">Start with a Free Audit →</a>
+      </div>
+      <div class="seo-team-img-wrap">
+        <Image src={about3Img} alt="Kiwi Web Design team analysing SEO data for Auckland clients" width={800} height={540} class="seo-team-img" />
+      </div>
+    </div>
   </div>
 
   <!-- FAQ -->
@@ -308,22 +354,153 @@ const faqs = [
 </Layout>
 
 <style>
-  /* Image strip */
-  .seo-img-strip {
+  /* ── About split section (about.jpg) ── */
+  .seo-about-section { background: var(--kwd-cream); }
+  .seo-about-split {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 420px;
+    grid-template-columns: 420px 1fr;
+    gap: 4rem;
+    align-items: center;
   }
-  .seo-strip-img {
+  .seo-about-img-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+    aspect-ratio: 4/5;
+  }
+  .seo-about-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
-  @media (max-width: 640px) {
-    .seo-img-strip { grid-template-columns: 1fr; height: 320px; }
-    .seo-img-strip .seo-strip-img:last-child { display: none; }
+  .seo-about-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.75rem;
   }
+  .seo-about-content h2 {
+    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+    color: var(--kwd-dark);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .seo-about-content p {
+    font-size: 0.95rem;
+    color: var(--kwd-brown);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+  .seo-about-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .seo-about-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--kwd-dark);
+    font-weight: 500;
+  }
+  .seo-about-list li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--kwd-yellow);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c2927' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+  }
+  .seo-about-btn {
+    display: inline-block;
+    background: var(--kwd-dark);
+    color: #fff;
+    padding: 0.875rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .seo-about-btn:hover { background: #3e3633; transform: translateY(-1px); }
+
+  /* ── Team card (about3.jpg) ── */
+  .seo-team-card-wrap { padding: 0 0 4rem; }
+  .seo-team-card {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 400px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+  }
+  .seo-team-stats {
+    background: var(--kwd-dark);
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .seo-team-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin: 0;
+  }
+  .seo-team-stats h2 {
+    font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+    color: #fff;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .seo-team-nums {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 1.5rem;
+  }
+  .stn-item { display: flex; flex-direction: column; gap: 0.15rem; }
+  .stn-num { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: var(--kwd-yellow); line-height: 1; }
+  .stn-lbl { font-size: 0.78rem; color: rgba(255,255,255,0.6); }
+  .seo-team-btn {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: background 0.2s;
+    align-self: flex-start;
+  }
+  .seo-team-btn:hover { background: var(--kwd-gold); }
+  .seo-team-img-wrap { overflow: hidden; }
+  .seo-team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .seo-team-card:hover .seo-team-img { transform: scale(1.03); }
 
   .seo-statbar { background: var(--kwd-cream); padding: 2rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
   .seo-statbar-inner { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 2rem; }
@@ -415,9 +592,15 @@ const faqs = [
     .ssb-sep { display: none; }
     .seo-results { grid-template-columns: repeat(2, 1fr); }
     .seo-pkg-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+    .seo-about-split { grid-template-columns: 1fr; gap: 2rem; }
+    .seo-about-img-wrap { aspect-ratio: 16/9; max-height: 340px; }
+    .seo-team-card { grid-template-columns: 1fr; }
+    .seo-team-img-wrap { height: 280px; }
   }
   @media (max-width: 600px) {
     .seo-results { grid-template-columns: 1fr; }
+    .seo-team-stats { padding: 2rem 1.5rem; }
+    .seo-team-nums { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
   }
 </style>
 
