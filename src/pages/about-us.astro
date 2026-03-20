@@ -54,22 +54,22 @@ const schema = {
 
 const values = [
   {
-    icon: "🎯",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
     title: "Results First",
     desc: "A website that doesn't generate enquiries isn't a success — no matter how good it looks. We measure success by the leads and revenue your site generates.",
   },
   {
-    icon: "💬",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
     title: "Honest Advice",
     desc: "We'll tell you what you actually need — even if that means a smaller project than you planned, or recommending another provider. You'll never be oversold.",
   },
   {
-    icon: "⚡",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
     title: "Move Fast",
     desc: "Most of our clients are live in 2–3 weeks. We believe in getting you in front of customers quickly — then iterating — rather than spending months in planning.",
   },
   {
-    icon: "🤝",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`,
     title: "Local First",
     desc: "We're based in Grey Lynn. We meet clients in person, understand the Auckland market, and care about local business success. This isn't an overseas operation.",
   },
@@ -199,7 +199,7 @@ const reviews = [
       <div class="about-values">
         {values.map(({ icon, title, desc }) => (
           <div class="about-value">
-            <span class="about-value-icon">{icon}</span>
+            <span class="about-value-icon" set:html={icon} />
             <h3 class="about-value-title">{title}</h3>
             <p class="about-value-desc">{desc}</p>
           </div>
@@ -513,7 +513,20 @@ const reviews = [
     flex-direction: column;
     gap: 0.5rem;
   }
-  .about-value-icon { font-size: 1.75rem; }
+  .about-value-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(251,232,166,0.12);
+    border: 1px solid rgba(251,232,166,0.18);
+    border-radius: 12px;
+    color: var(--kwd-yellow);
+    flex-shrink: 0;
+    margin-bottom: 0.25rem;
+  }
+  .about-value-icon svg { width: 24px; height: 24px; }
   .about-value-title {
     font-family: var(--kwd-font-body);
     font-size: 0.95rem;
