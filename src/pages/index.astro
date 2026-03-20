@@ -256,26 +256,31 @@ const faqs = [
   <div class="trust-bar">
     <div class="container trust-bar-inner">
       <div class="tb-item">
+        <svg class="tb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
         <span class="tb-value">4.9★</span>
         <span class="tb-label">Google Reviews</span>
       </div>
       <span class="tb-sep" aria-hidden="true"></span>
       <div class="tb-item">
+        <svg class="tb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
         <span class="tb-value">50+</span>
         <span class="tb-label">Projects Delivered</span>
       </div>
       <span class="tb-sep" aria-hidden="true"></span>
       <div class="tb-item">
+        <svg class="tb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         <span class="tb-value">2–3 wks</span>
         <span class="tb-label">Average Delivery</span>
       </div>
       <span class="tb-sep" aria-hidden="true"></span>
       <div class="tb-item">
+        <svg class="tb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
         <span class="tb-value">From $1,290</span>
         <span class="tb-label">Website Pricing</span>
       </div>
       <span class="tb-sep" aria-hidden="true"></span>
       <div class="tb-item">
+        <svg class="tb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
         <span class="tb-value">Grey Lynn</span>
         <span class="tb-label">Auckland-based</span>
       </div>
@@ -443,7 +448,9 @@ const faqs = [
         title="The agency that puts your growth first."
         subtitle="We're not the biggest agency in Auckland — but we're the one that cares most about your results."
       />
-      <ServiceGrid items={whyUs} cols={2} />
+      <div class="why-us-wrap">
+        <ServiceGrid items={whyUs} cols={2} />
+      </div>
     </div>
   </section>
 
@@ -530,7 +537,12 @@ const faqs = [
             <p class="pkg-price">{price}</p>
             <p class="pkg-desc">{desc}</p>
             <ul class="pkg-features">
-              {features.map((f) => <li>{f}</li>)}
+              {features.map((f) => (
+                <li>
+                  <svg class="pkg-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                  {f}
+                </li>
+              ))}
             </ul>
             <a href="/website-designer-auckland/" class:list={['pkg-cta', highlight && 'pkg-cta-accent']}>
               Get Started →
@@ -719,10 +731,11 @@ const faqs = [
     flex-wrap: wrap;
     gap: 1.5rem;
   }
-  .tb-item { display: flex; flex-direction: column; align-items: center; gap: 0.1rem; }
+  .tb-item { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+  .tb-icon { width: 15px; height: 15px; color: var(--kwd-brown); opacity: 0.65; flex-shrink: 0; margin-bottom: 0.1rem; }
   .tb-value { font-size: 1.05rem; font-weight: 700; color: var(--kwd-dark); font-family: var(--kwd-font-heading); }
   .tb-label { font-size: 0.7rem; color: var(--kwd-brown); text-transform: uppercase; letter-spacing: 0.07em; }
-  .tb-sep   { width: 1px; height: 1.75rem; background: rgba(0,0,0,0.1); flex-shrink: 0; }
+  .tb-sep   { width: 1px; height: 2.5rem; background: rgba(0,0,0,0.1); flex-shrink: 0; }
 
   /* ── Portfolio ── */
   .portfolio-grid {
@@ -804,11 +817,11 @@ const faqs = [
   .pkg-highlight .pkg-price { color: var(--kwd-yellow); }
   .pkg-desc  { font-size: 0.875rem; color: var(--kwd-brown); margin: 0; line-height: 1.6; }
   .pkg-highlight .pkg-desc { color: rgba(255,255,255,0.62); }
-  .pkg-features { list-style: none; padding: 0; margin: 0; flex: 1; display: flex; flex-direction: column; gap: 0.4rem; }
-  .pkg-features li { font-size: 0.875rem; color: var(--kwd-brown); padding-left: 1.25rem; position: relative; line-height: 1.5; }
-  .pkg-features li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-dark); font-weight: 700; font-size: 0.8rem; }
+  .pkg-features { list-style: none; padding: 0; margin: 0; flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
+  .pkg-features li { font-size: 0.875rem; color: var(--kwd-brown); line-height: 1.5; display: flex; align-items: flex-start; gap: 0.5rem; }
+  .pkg-check { width: 14px; height: 14px; flex-shrink: 0; margin-top: 0.15em; color: var(--kwd-dark); }
   .pkg-highlight .pkg-features li { color: rgba(255,255,255,0.72); }
-  .pkg-highlight .pkg-features li::before { color: var(--kwd-yellow); }
+  .pkg-highlight .pkg-check { color: var(--kwd-yellow); }
   .pkg-cta {
     display: inline-block;
     background: var(--kwd-cream);
@@ -903,6 +916,17 @@ const faqs = [
     transition: color 0.15s;
   }
   .srv-card:hover .srv-link { color: var(--kwd-brown); }
+
+  /* ── Why-us icon badge ── */
+  .why-us-wrap :global(.sg-icon) {
+    width: 52px;
+    height: 52px;
+    background: rgba(44,41,39,0.06);
+    border-radius: 12px;
+    border: 1px solid rgba(44,41,39,0.08);
+    justify-content: center;
+    padding: 0.75rem;
+  }
 
   /* ── Process connector ── */
   .process-wrap { position: relative; }
