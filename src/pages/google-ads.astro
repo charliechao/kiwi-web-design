@@ -7,6 +7,9 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import TestimonialGrid from '../components/TestimonialGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import { Image } from 'astro:assets';
+import about3Img from '../assets/general/about3.jpg';
+import about4Img from '../assets/general/about4.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -201,6 +204,18 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Team photo band -->
+  <section class="ga-team-band">
+    <Image src={about3Img} alt="Kiwi Web Design team managing Google Ads campaigns for Auckland businesses" width={1600} height={640} class="ga-team-band-img" />
+    <div class="ga-team-band-overlay">
+      <div class="container">
+        <p class="ga-band-eyebrow">The team behind your campaigns</p>
+        <h2 class="ga-band-title">We manage every dollar like it's our own.</h2>
+        <a href="/case-study-scaffolding/" class="ga-band-link">See how we grew Barrett Scaffolding's leads by 125% →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing callout -->
   <section class="section">
     <div class="container">
@@ -247,6 +262,28 @@ const faqs = [
     <div class="container">
       <SectionHeader eyebrow="Client Reviews" title="What our Google Ads clients say." />
       <TestimonialGrid items={reviews} cols={2} />
+    </div>
+  </section>
+
+  <!-- Strategy session split -->
+  <section class="section ga-consult-section">
+    <div class="container">
+      <div class="ga-consult-split">
+        <div class="ga-consult-img-wrap">
+          <Image src={about4Img} alt="Free Google Ads strategy session with an Auckland small business" width={760} height={520} class="ga-consult-img" />
+        </div>
+        <div class="ga-consult-content">
+          <p class="ga-consult-eyebrow">Free Strategy Session</p>
+          <h2 class="ga-consult-title">We start with a plan, not a pitch.</h2>
+          <p class="ga-consult-desc">Every Google Ads engagement starts with a free audit and strategy session. We map out your market, estimate your cost-per-lead, and give you honest advice — even if Google Ads isn't the right fit for you yet.</p>
+          <ul class="ga-consult-list">
+            <li>Competitor ad analysis included</li>
+            <li>Realistic budget and CPA estimates</li>
+            <li>No obligation to proceed</li>
+          </ul>
+          <a href="/website-designer-auckland/" class="ga-consult-btn">Book Your Free Session →</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -352,6 +389,131 @@ const faqs = [
     transition: background 0.2s;
   }
   .ga-cta-btn:hover { background: var(--kwd-gold); }
+
+  /* Team photo band */
+  .ga-team-band {
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+  }
+  .ga-team-band-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    display: block;
+  }
+  .ga-team-band-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(44,41,39,0.91) 0%, rgba(44,41,39,0.7) 55%, rgba(44,41,39,0.25) 100%);
+    display: flex;
+    align-items: center;
+  }
+  .ga-band-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 0.75rem;
+  }
+  .ga-band-title {
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    color: #fff;
+    margin-bottom: 1.25rem;
+    max-width: 560px;
+  }
+  .ga-band-link {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--kwd-yellow);
+    text-decoration: none;
+    border-bottom: 1.5px solid rgba(251,232,166,0.4);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
+  .ga-band-link:hover { border-color: var(--kwd-yellow); }
+
+  /* Consultation split section */
+  .ga-consult-section { background: var(--kwd-cream); }
+  .ga-consult-split {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .ga-consult-img-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 56px rgba(44,41,39,0.14);
+    aspect-ratio: 3/2;
+  }
+  .ga-consult-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .ga-consult-img-wrap:hover .ga-consult-img { transform: scale(1.03); }
+  .ga-consult-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.75rem;
+  }
+  .ga-consult-title {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: var(--kwd-dark);
+    margin-bottom: 1rem;
+  }
+  .ga-consult-desc {
+    font-size: 0.95rem;
+    color: var(--kwd-brown);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+  .ga-consult-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .ga-consult-list li {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--kwd-dark);
+    padding-left: 1.4rem;
+    position: relative;
+  }
+  .ga-consult-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--kwd-brown);
+    font-weight: 700;
+  }
+  .ga-consult-btn {
+    display: inline-block;
+    background: var(--kwd-dark);
+    color: #fff;
+    padding: 0.875rem 1.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .ga-consult-btn:hover { background: var(--kwd-brown); }
+  @media (max-width: 860px) {
+    .ga-consult-split { grid-template-columns: 1fr; gap: 2.5rem; }
+    .ga-team-band { height: 280px; }
+  }
 
   .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
   .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
