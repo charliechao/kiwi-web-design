@@ -8,6 +8,10 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import TestimonialGrid from '../components/TestimonialGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import Icon from '../components/Icon.astro';
+import { Image } from 'astro:assets';
+import about1 from '../assets/general/about1.jpg';
+import about2 from '../assets/general/about2.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -86,12 +90,12 @@ const included = [
 ];
 
 const industries = [
-  { icon: "🔧", title: "Tradies", desc: "Plumbers, electricians, builders, painters. We know what converts for trade businesses in Auckland.", href: "/tradie-website-design-auckland/" },
-  { icon: "💆", title: "Beauty & Wellness", desc: "Salons, spas, clinics. Booking-integrated sites that showcase your services and keep the chair full.", href: "/beauty-salon-website-design-auckland/" },
-  { icon: "🍽️", title: "Restaurants & Cafés", desc: "Menu pages, booking links, Google Maps integration. Hungry customers find you first.", href: "/restaurant-website-design-auckland/" },
-  { icon: "⚕️", title: "Healthcare", desc: "Physios, dentists, GPs. HIPAA-aware design with online booking and clear service pages.", href: "/healthcare-website-design-auckland/" },
-  { icon: "⚖️", title: "Professional Services", desc: "Lawyers, accountants, consultants. Authority-building design that wins the trust of new clients.", href: "/lawyers-website-design-auckland/" },
-  { icon: "🛒", title: "eCommerce & Retail", desc: "WooCommerce and Shopify stores built to sell. Product pages, checkout flow, and payment gateway setup.", href: "/ecommerce-website-auckland/" },
+  { icon: "Wrench",        title: "Tradies",               desc: "Plumbers, electricians, builders, painters. We know what converts for trade businesses in Auckland.", href: "/tradie-website-design-auckland/" },
+  { icon: "Sparkles",      title: "Beauty & Wellness",     desc: "Salons, spas, clinics. Booking-integrated sites that showcase your services and keep the chair full.", href: "/beauty-salon-website-design-auckland/" },
+  { icon: "UtensilsCrossed", title: "Restaurants & Cafés", desc: "Menu pages, booking links, Google Maps integration. Hungry customers find you first.", href: "/restaurant-website-design-auckland/" },
+  { icon: "HeartPulse",    title: "Healthcare",             desc: "Physios, dentists, GPs. HIPAA-aware design with online booking and clear service pages.", href: "/healthcare-website-design-auckland/" },
+  { icon: "Briefcase",     title: "Professional Services",  desc: "Lawyers, accountants, consultants. Authority-building design that wins the trust of new clients.", href: "/lawyers-website-design-auckland/" },
+  { icon: "ShoppingCart",  title: "eCommerce & Retail",     desc: "WooCommerce and Shopify stores built to sell. Product pages, checkout flow, and payment gateway setup.", href: "/ecommerce-website-auckland/" },
 ];
 
 const process = [
@@ -222,7 +226,7 @@ const reviews = [
       <div class="sbwd-industries">
         {industries.map(({ icon, title, desc, href }) => (
           <a href={href} class="sbwd-ind-card">
-            <span class="sbwd-ind-icon">{icon}</span>
+            <span class="sbwd-ind-icon"><Icon name={icon} size={26} /></span>
             <div>
               <strong class="sbwd-ind-title">{title}</strong>
               <p class="sbwd-ind-desc">{desc}</p>
@@ -242,6 +246,26 @@ const reviews = [
         subtitle="We keep things clear and collaborative — you always know what's happening and what's next."
       />
       <ProcessSteps items={process} />
+    </div>
+  </section>
+
+  <!-- About photo split -->
+  <section class="sbwd-about-split">
+    <div class="sbwd-about-left">
+      <Image src={about1} alt="Charlie Chao working on a client website at the Kiwi Web Design studio, Auckland" width={900} height={620} class="sbwd-about-img" />
+      <div class="sbwd-about-overlay">
+        <p class="sbwd-about-eyebrow">Behind the work</p>
+        <h2 class="sbwd-about-headline">Local. Personal.<br/>Accountable.</h2>
+        <p class="sbwd-about-body">You deal directly with the person building your site — not an account manager. No outsourcing, no surprises, no phone tag.</p>
+        <a href="/about-us/" class="sbwd-about-link">Meet the team →</a>
+      </div>
+    </div>
+    <div class="sbwd-about-right">
+      <Image src={about2} alt="Kiwi Web Design office in Auckland — collaborative workspace" width={600} height={620} class="sbwd-about-img" />
+      <div class="sbwd-about-badge">
+        <span class="sbwd-about-badge-num">50+</span>
+        <span class="sbwd-about-badge-label">Auckland businesses helped</span>
+      </div>
     </div>
   </section>
 
@@ -310,6 +334,17 @@ const reviews = [
     </div>
   </section>
 
+  <!-- Case studies -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Client case studies</p>
+      <div class="rps-links">
+        <a href="/case-study-scaffolding/" class="rps-link">Barrett Access Scaffolding — +125% quote requests</a>
+        <a href="/beauty-touch-case-study/" class="rps-link">Beauty Touch Auckland — live in 3 weeks</a>
+      </div>
+    </div>
+  </section>
+
   <CTABanner
     variant="yellow"
     title="Ready to get a website that generates leads?"
@@ -344,10 +379,13 @@ const reviews = [
     border-color: rgba(255,255,255,0.2);
   }
   .sbwd-ind-icon {
-    font-size: 1.75rem;
     flex-shrink: 0;
     width: 2.5rem;
-    text-align: center;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--kwd-gold);
   }
   .sbwd-ind-title {
     display: block;
@@ -361,6 +399,129 @@ const reviews = [
     color: rgba(255,255,255,0.6);
     line-height: 1.55;
     margin: 0;
+  }
+
+  /* About photo split */
+  .sbwd-about-split {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    height: 520px;
+    overflow: hidden;
+  }
+  .sbwd-about-left,
+  .sbwd-about-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .sbwd-about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .sbwd-about-left:hover .sbwd-about-img,
+  .sbwd-about-right:hover .sbwd-about-img {
+    transform: scale(1.03);
+  }
+  .sbwd-about-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(44,41,39,0.88) 0%, rgba(44,41,39,0.55) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem 3rem;
+  }
+  .sbwd-about-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--kwd-gold);
+    margin: 0 0 0.6rem;
+  }
+  .sbwd-about-headline {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    color: #fff;
+    line-height: 1.1;
+    margin: 0 0 0.875rem;
+  }
+  .sbwd-about-body {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.65;
+    max-width: 340px;
+    margin: 0 0 1.25rem;
+  }
+  .sbwd-about-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kwd-yellow);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(251,232,166,0.4);
+    padding-bottom: 2px;
+    width: fit-content;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .sbwd-about-link:hover {
+    color: var(--kwd-gold);
+    border-color: var(--kwd-gold);
+  }
+  .sbwd-about-right {
+    position: relative;
+  }
+  .sbwd-about-right::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(44,41,39,0.5) 100%);
+    pointer-events: none;
+  }
+  .sbwd-about-badge {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    border-radius: 12px;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .sbwd-about-badge-num {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .sbwd-about-badge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+  @media (max-width: 768px) {
+    .sbwd-about-split {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+    .sbwd-about-left {
+      height: 400px;
+    }
+    .sbwd-about-right {
+      display: none;
+    }
   }
 
   /* Packages */
