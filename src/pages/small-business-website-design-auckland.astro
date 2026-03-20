@@ -238,33 +238,21 @@ const reviews = [
   </section>
 
   <!-- Process -->
-  <section class="section">
+  <section class="section sbwd-process-section">
     <div class="container">
-      <SectionHeader
-        eyebrow="How It Works"
-        title="Simple process. Predictable results."
-        subtitle="We keep things clear and collaborative — you always know what's happening and what's next."
-      />
-      <ProcessSteps items={process} />
-    </div>
-  </section>
-
-  <!-- About photo split -->
-  <section class="sbwd-about-split">
-    <div class="sbwd-about-left">
-      <Image src={about1} alt="Charlie Chao working on a client website at the Kiwi Web Design studio, Auckland" width={900} height={620} class="sbwd-about-img" />
-      <div class="sbwd-about-overlay">
-        <p class="sbwd-about-eyebrow">Behind the work</p>
-        <h2 class="sbwd-about-headline">Local. Personal.<br/>Accountable.</h2>
-        <p class="sbwd-about-body">You deal directly with the person building your site — not an account manager. No outsourcing, no surprises, no phone tag.</p>
-        <a href="/about-us/" class="sbwd-about-link">Meet the team →</a>
-      </div>
-    </div>
-    <div class="sbwd-about-right">
-      <Image src={about2} alt="Kiwi Web Design office in Auckland — collaborative workspace" width={600} height={620} class="sbwd-about-img" />
-      <div class="sbwd-about-badge">
-        <span class="sbwd-about-badge-num">50+</span>
-        <span class="sbwd-about-badge-label">Auckland businesses helped</span>
+      <div class="sbwd-process-split">
+        <div class="sbwd-process-content">
+          <SectionHeader
+            eyebrow="How It Works"
+            title="Simple process. Predictable results."
+            subtitle="We keep things clear and collaborative — you always know what's happening and what's next."
+          />
+          <ProcessSteps items={process} />
+        </div>
+        <div class="sbwd-process-img-wrap">
+          <Image src={about1} alt="Charlie Chao consulting with an Auckland small business owner on their website strategy" width={600} height={700} class="sbwd-process-img" />
+          <div class="sbwd-process-img-pill">Free in-person consult · Auckland-based</div>
+        </div>
       </div>
     </div>
   </section>
@@ -301,7 +289,16 @@ const reviews = [
   </section>
 
   <!-- Testimonials -->
-  <section class="section">
+  <section class="section sbwd-testimonials-section">
+    <div class="sbwd-testimonials-photo">
+      <Image src={about2} alt="Kiwi Web Design Auckland — helping small businesses grow online" width={1400} height={480} class="sbwd-tp-img" />
+      <div class="sbwd-tp-overlay">
+        <blockquote class="sbwd-tp-quote">
+          "From the first call, Charlie understood exactly what we needed. The site was live in 2 weeks and we got our first enquiry the day after launch."
+          <cite>— Zane Barrett, Barrett Access Scaffolding</cite>
+        </blockquote>
+      </div>
+    </div>
     <div class="container">
       <SectionHeader eyebrow="Client Reviews" title="What Auckland small businesses say about us." />
       <TestimonialGrid items={reviews} cols={2} />
@@ -401,127 +398,96 @@ const reviews = [
     margin: 0;
   }
 
-  /* About photo split */
-  .sbwd-about-split {
+  /* Process split with image */
+  .sbwd-process-split {
     display: grid;
-    grid-template-columns: 3fr 2fr;
-    height: 520px;
-    overflow: hidden;
+    grid-template-columns: 1fr 420px;
+    gap: 4rem;
+    align-items: start;
   }
-  .sbwd-about-left,
-  .sbwd-about-right {
+  .sbwd-process-img-wrap {
     position: relative;
+    border-radius: 18px;
     overflow: hidden;
+    box-shadow: 0 20px 60px rgba(44,41,39,0.18);
   }
-  .sbwd-about-img {
+  .sbwd-process-img {
     width: 100%;
-    height: 100%;
+    height: 480px;
     object-fit: cover;
     display: block;
-    transition: transform 0.6s ease;
   }
-  .sbwd-about-left:hover .sbwd-about-img,
-  .sbwd-about-right:hover .sbwd-about-img {
-    transform: scale(1.03);
-  }
-  .sbwd-about-overlay {
+  .sbwd-process-img-pill {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(44,41,39,0.88) 0%, rgba(44,41,39,0.55) 60%, transparent 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 2.5rem 3rem;
-  }
-  .sbwd-about-eyebrow {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--kwd-gold);
-    margin: 0 0 0.6rem;
-  }
-  .sbwd-about-headline {
-    font-family: var(--kwd-font-heading);
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
-    color: #fff;
-    line-height: 1.1;
-    margin: 0 0 0.875rem;
-  }
-  .sbwd-about-body {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.75);
-    line-height: 1.65;
-    max-width: 340px;
-    margin: 0 0 1.25rem;
-  }
-  .sbwd-about-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.82rem;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--kwd-yellow);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(251,232,166,0.4);
-    padding-bottom: 2px;
-    width: fit-content;
-    transition: color 0.2s, border-color 0.2s;
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   }
-  .sbwd-about-link:hover {
-    color: var(--kwd-gold);
-    border-color: var(--kwd-gold);
-  }
-  .sbwd-about-right {
-    position: relative;
-  }
-  .sbwd-about-right::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(44,41,39,0.5) 100%);
-    pointer-events: none;
-  }
-  .sbwd-about-badge {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 1.5rem;
-    background: var(--kwd-yellow);
-    color: var(--kwd-dark);
-    border-radius: 12px;
-    padding: 0.75rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  }
-  .sbwd-about-badge-num {
-    font-family: var(--kwd-font-heading);
-    font-size: 1.75rem;
-    font-weight: 700;
-    line-height: 1;
-  }
-  .sbwd-about-badge-label {
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    opacity: 0.75;
-    margin-top: 0.2rem;
-  }
-  @media (max-width: 768px) {
-    .sbwd-about-split {
+  @media (max-width: 960px) {
+    .sbwd-process-split {
       grid-template-columns: 1fr;
-      height: auto;
     }
-    .sbwd-about-left {
-      height: 400px;
-    }
-    .sbwd-about-right {
+    .sbwd-process-img-wrap {
       display: none;
     }
+  }
+
+  /* Testimonials photo banner */
+  .sbwd-testimonials-photo {
+    position: relative;
+    height: 340px;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+  .sbwd-tp-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+  .sbwd-tp-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(44,41,39,0.92) 0%, rgba(44,41,39,0.7) 50%, rgba(44,41,39,0.3) 100%);
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(1.5rem, 6vw, 6rem);
+  }
+  .sbwd-tp-quote {
+    max-width: 600px;
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-style: italic;
+    color: #fff;
+    line-height: 1.45;
+    margin: 0;
+    border: none;
+    padding: 0;
+  }
+  .sbwd-tp-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kwd-gold);
+    font-family: var(--kwd-font-body, 'Poppins', sans-serif);
+  }
+  @media (max-width: 640px) {
+    .sbwd-testimonials-photo { height: 260px; }
   }
 
   /* Packages */

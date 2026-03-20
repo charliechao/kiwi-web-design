@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import nsVideo from '../assets/general/ns.mp4';
 import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
@@ -122,6 +123,10 @@ const faqs = [
 
   <!-- Hero -->
   <section class="loc-hero">
+    <video class="loc-hero-video" autoplay muted loop playsinline preload="auto">
+      <source src={nsVideo} type="video/mp4" />
+    </video>
+    <div class="loc-hero-overlay" aria-hidden="true"></div>
     <div class="container">
       <div class="loc-hero-inner">
         <div class="loc-hero-text">
@@ -225,9 +230,29 @@ const faqs = [
 
 <style>
   .loc-hero {
+    position: relative;
+    overflow: hidden;
     background: var(--kwd-dark);
     color: #fff;
     padding: 4rem 0 3.5rem;
+  }
+  .loc-hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .loc-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(44,41,39,0.82) 0%, rgba(44,41,39,0.55) 100%);
+    z-index: 1;
+  }
+  .loc-hero .container {
+    position: relative;
+    z-index: 2;
   }
   .loc-hero-inner {
     display: grid;

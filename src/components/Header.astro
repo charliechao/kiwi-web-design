@@ -38,10 +38,19 @@ const navLinks = [
           </li>
         ))}
       </ul>
+      <a href="tel:+64210396580" class="btn-phone">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+        021 039 6580
+      </a>
       <a href="/website-designer-auckland/" class="btn-cta">Get a Quote</a>
     </nav>
   </div>
 </header>
+
+<!-- Mobile floating call button -->
+<a href="tel:+64210396580" class="mobile-call-btn" aria-label="Call 021 039 6580">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+</a>
 
 <style>
   header {
@@ -131,6 +140,23 @@ const navLinks = [
     color: var(--kwd-yellow);
   }
 
+  .btn-phone {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: rgba(255,255,255,0.85) !important;
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  .btn-phone:hover { color: var(--kwd-yellow) !important; }
+
+  .mobile-call-btn {
+    display: none;
+  }
+
   .btn-cta {
     background: var(--kwd-yellow) !important;
     color: var(--kwd-dark) !important;
@@ -149,6 +175,29 @@ const navLinks = [
 
   /* mobile */
   @media (max-width: 921px) {
+    .btn-phone { display: none; }
+
+    .mobile-call-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      width: 52px;
+      height: 52px;
+      background: var(--kwd-yellow);
+      color: var(--kwd-dark);
+      border-radius: 50%;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      z-index: 99;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .mobile-call-btn:hover {
+      background: var(--kwd-gold);
+      transform: scale(1.07);
+    }
+
     .nav-toggle {
       display: flex;
     }

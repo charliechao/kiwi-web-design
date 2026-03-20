@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import TestimonialGrid from '../components/TestimonialGrid.astro';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -35,10 +36,10 @@ const schema = {
 };
 
 const reasons = [
-  { icon: "💬", title: "Free Consultation", desc: "We talk first. No quotes before we understand your business, your customers, and your goals." },
-  { icon: "📍", title: "Based in Grey Lynn", desc: "147 Great North Road. Easy to meet in person anywhere in Auckland, or jump on a video call." },
-  { icon: "⚡", title: "Fast Turnaround", desc: "Most projects are live in 2–3 weeks. We move quickly and keep you informed the whole way." },
-  { icon: "💰", title: "Transparent Pricing", desc: "You'll know the total cost before we start. No hidden extras, no surprise invoices." },
+  { icon: "MessageCircle", title: "Free Consultation", desc: "We talk first. No quotes before we understand your business, your customers, and your goals." },
+  { icon: "MapPin", title: "Based in Grey Lynn", desc: "147 Great North Road. Easy to meet in person anywhere in Auckland, or jump on a video call." },
+  { icon: "Zap", title: "Fast Turnaround", desc: "Most projects are live in 2–3 weeks. We move quickly and keep you informed the whole way." },
+  { icon: "BadgeDollarSign", title: "Transparent Pricing", desc: "You'll know the total cost before we start. No hidden extras, no surprise invoices." },
 ];
 
 const reviews = [
@@ -68,21 +69,21 @@ const reviews = [
 
         <ul class="contact-details">
           <li>
-            <span class="cd-icon">✉</span>
+            <span class="cd-icon"><Icon name="Mail" size={18} /></span>
             <div>
               <span class="cd-label">Email</span>
               <a href="mailto:Hi@KiwiWebDesign.co.nz">Hi@KiwiWebDesign.co.nz</a>
             </div>
           </li>
           <li>
-            <span class="cd-icon">📞</span>
+            <span class="cd-icon"><Icon name="Phone" size={18} /></span>
             <div>
               <span class="cd-label">Call or Text</span>
               <a href="tel:+64210396580">021 039 6580</a>
             </div>
           </li>
           <li>
-            <span class="cd-icon">📍</span>
+            <span class="cd-icon"><Icon name="MapPin" size={18} /></span>
             <div>
               <span class="cd-label">Office</span>
               <a href="https://www.google.com/maps/search/?api=1&query=147+Great+North+Road+Grey+Lynn+Auckland" target="_blank" rel="noopener noreferrer">
@@ -91,7 +92,7 @@ const reviews = [
             </div>
           </li>
           <li>
-            <span class="cd-icon">📅</span>
+            <span class="cd-icon"><Icon name="CalendarDays" size={18} /></span>
             <div>
               <span class="cd-label">Book a Time</span>
               <a href="https://calendar.app.google/4ug4GCmLxd7K6uWb7" target="_blank" rel="noopener noreferrer">
@@ -104,7 +105,7 @@ const reviews = [
         <div class="contact-reasons">
           {reasons.map(({ icon, title, desc }) => (
             <div class="cr-item">
-              <span class="cr-icon">{icon}</span>
+              <span class="cr-icon"><Icon name={icon} size={20} /></span>
               <div>
                 <strong class="cr-title">{title}</strong>
                 <p class="cr-desc">{desc}</p>
@@ -294,7 +295,6 @@ const reviews = [
     gap: 0.875rem;
   }
   .cd-icon {
-    font-size: 1.15rem;
     width: 2.25rem;
     height: 2.25rem;
     background: rgba(255,255,255,0.08);
@@ -303,6 +303,7 @@ const reviews = [
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    color: var(--kwd-yellow);
   }
   .cd-label {
     display: block;
@@ -331,10 +332,15 @@ const reviews = [
     align-items: flex-start;
   }
   .cr-icon {
-    font-size: 1.25rem;
     flex-shrink: 0;
     width: 2.25rem;
-    text-align: center;
+    height: 2.25rem;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--kwd-yellow);
   }
   .cr-title { display: block; font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 0.15rem; }
   .cr-desc  { font-size: 0.82rem; color: rgba(255,255,255,0.55); margin: 0; line-height: 1.5; }
