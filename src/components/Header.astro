@@ -45,11 +45,19 @@ const navLinks = [
 
 <style>
   header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
+    background: transparent;
+    border-bottom: 2px solid transparent;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  header.scrolled {
     background: var(--kwd-dark);
-    border-bottom: 2px solid var(--kwd-yellow);
+    border-bottom-color: var(--kwd-yellow);
   }
 
   .nav-inner {
@@ -177,6 +185,13 @@ const navLinks = [
 </style>
 
 <script>
+  const header = document.querySelector('header') as HTMLElement;
+
+  // Transparent → solid on scroll
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // set correct state on page load
+
   const toggle = document.querySelector('.nav-toggle') as HTMLButtonElement;
   const nav = document.querySelector('#main-nav') as HTMLElement;
 

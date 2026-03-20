@@ -147,8 +147,7 @@ const faqs = [
     badgeText="Setup from NZ$499"
     ctaPrimary={{ text: "Book a Free Consultation", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "How It Works", href: "#process" }}
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/g9554e254a3deda0f4e0d191733f0a80e83092bd51e07c6bd164691af8ea9c90b53820097badbed62a4494dd5b32fc136695cdb73860356f52358effc887c6e83_1280-2672184-e1758395116775.jpg"
-    imgAlt="Google Ads management for Auckland businesses"
+    centered={true}
   />
 
   <!-- Why Google Ads -->
@@ -357,3 +356,24 @@ const faqs = [
     .ga-industries { grid-template-columns: 1fr; }
   }
 </style>
+
+<!-- Vanta.js GLOBE background for hero -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.globe.min.js"></script>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    VANTA.GLOBE({
+      el: '.hero-section',
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200,
+      minWidth: 200,
+      scale: 1.0,
+      scaleMobile: 0.75,
+      color: 0xf3d97a,
+      color2: 0xf3d97a,
+      backgroundColor: 0x2c2927,
+    });
+  });
+</script>
