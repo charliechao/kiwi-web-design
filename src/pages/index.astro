@@ -8,6 +8,14 @@ import TestimonialGrid from '../components/TestimonialGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import aucklandVideo from '../assets/general/Auckland_Video.mp4';
+import { Image } from 'astro:assets';
+import charlieImg from '../assets/general/Kiwi-Web-Design-Owner-Charlie.jpeg';
+import aucklandBizImg from '../assets/general/Auckland-Businesses.jpg';
+import portfolioCleaner from '../assets/general/Auckland_Cleaner-e1750284778292.jpg';
+import portfolioInspector from '../assets/general/Auckland_Building_Inspector-e1750284793590.jpg';
+import portfolioRestaurant from '../assets/general/Lavaranda-e1753415431519.jpg';
+import portfolioLegal from '../assets/general/Legal-e1753416217381.jpg';
+import portfolioMtAlbert from '../assets/general/Mt-Albert-Business-Association-Website.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -190,14 +198,14 @@ const reviews = [
 ];
 
 const portfolio = [
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Cleaner-e1750284778292.jpg",           alt: "Auckland cleaning company website", caption: "Top Line Services", href: "/topline-services-cleaning-website/" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Building_Inspector-e1750284793590.jpg", alt: "Auckland building inspector website", caption: "Inspector Guys", href: "/inspector-guys-building-inspections-website/" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Lavaranda-e1753415431519.jpg",                   alt: "Auckland restaurant website", caption: "La Veranda Restaurant", href: "/la-veranda-restaurant-website/" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Legal-e1753416217381.jpg",                       alt: "Auckland law firm website", caption: "FL Legal", href: "/fl-legal-website/" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Mt-Albert-Business-Association-Website.jpg",     alt: "Mt Albert Business Association", caption: "Mt Albert Business Assoc." },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Kiwiland-e1753410581810.jpg",                    alt: "Auckland construction company website", caption: "Kiwiland Construction", href: "/kiwiland-construction-website/" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Specialist-e1753415885359.jpg",                  alt: "Auckland medical specialist website", caption: "Melanoma NZ", href: "/melanoma-specialists-website/" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/01/600-21B675F7-8EB5-45A5-99242870729DC26D.png",    alt: "TopRated.nz directory", caption: "TopRated.nz" },
+  { img: portfolioCleaner,   alt: "Auckland cleaning company website", caption: "Top Line Services",          href: "/topline-services-cleaning-website/" },
+  { img: portfolioInspector, alt: "Auckland building inspector website", caption: "Inspector Guys",           href: "/inspector-guys-building-inspections-website/" },
+  { img: portfolioRestaurant,alt: "Auckland restaurant website",        caption: "La Veranda Restaurant",     href: "/la-veranda-restaurant-website/" },
+  { img: portfolioLegal,     alt: "Auckland law firm website",          caption: "FL Legal",                  href: "/fl-legal-website/" },
+  { img: portfolioMtAlbert,  alt: "Mt Albert Business Association",     caption: "Mt Albert Business Assoc." },
+  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Kiwiland-e1753410581810.jpg",                 alt: "Auckland construction company website", caption: "Kiwiland Construction", href: "/kiwiland-construction-website/" },
+  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Specialist-e1753415885359.jpg",               alt: "Auckland medical specialist website",   caption: "Melanoma NZ",           href: "/melanoma-specialists-website/" },
+  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/01/600-21B675F7-8EB5-45A5-99242870729DC26D.png", alt: "TopRated.nz directory",                 caption: "TopRated.nz" },
 ];
 
 const faqs = [
@@ -429,12 +437,38 @@ const faqs = [
   <!-- ── Why choose us ── -->
   <section class="section" style="background: var(--kwd-cream);">
     <div class="container">
-      <SectionHeader
-        eyebrow="Why Kiwi Web Design"
-        title="The agency that puts your growth first."
-        subtitle="We're not the biggest agency in Auckland — but we're the one that cares most about your results."
-      />
-      <ServiceGrid items={whyUs} cols={2} />
+      <div class="why-grid">
+        <div class="why-content">
+          <SectionHeader
+            eyebrow="Why Kiwi Web Design"
+            title="The agency that puts your growth first."
+            subtitle="We're not the biggest agency in Auckland — but we're the one that cares most about your results."
+            align="left"
+          />
+          <ServiceGrid items={whyUs} cols={2} />
+        </div>
+        <div class="why-img-wrap">
+          <Image src={aucklandBizImg} alt="Auckland small businesses" width={560} height={680} class="why-photo" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Meet Charlie ── -->
+  <section class="section meet-section">
+    <div class="container">
+      <div class="meet-grid">
+        <div class="meet-img-wrap">
+          <Image src={charlieImg} alt="Charlie — founder of Kiwi Web Design Auckland" width={520} height={620} class="meet-photo" />
+        </div>
+        <div class="meet-text">
+          <p class="meet-eyebrow">Who You're Working With</p>
+          <h2 class="meet-title">Local expertise.<br />No account managers.</h2>
+          <p class="meet-body">Hi, I'm Charlie — founder of Kiwi Web Design. I work directly with every client, no handoffs, no junior teams. Based in Grey Lynn, I understand Auckland's local market, what customers search for, and what actually converts.</p>
+          <p class="meet-body">Every website I build is designed around one goal: getting your business more enquiries.</p>
+          <a href="/about-us/" class="hp-btn-dark">About Us →</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -448,15 +482,21 @@ const faqs = [
         light={true}
       />
       <div class="portfolio-grid">
-        {portfolio.map(({ src, alt, caption, href }) => (
+        {portfolio.map(({ img, src, alt, caption, href }) => (
           href ? (
             <a href={href} class="portfolio-item portfolio-item--linked">
-              <img src={src} alt={alt} width="400" height="280" loading="lazy" class="portfolio-img" />
+              {img
+                ? <Image src={img} alt={alt} width={400} height={280} class="portfolio-img" />
+                : <img src={src} alt={alt} width="400" height="280" loading="lazy" class="portfolio-img" />
+              }
               <figcaption class="portfolio-caption">{caption} <span class="portfolio-arrow">→</span></figcaption>
             </a>
           ) : (
             <figure class="portfolio-item">
-              <img src={src} alt={alt} width="400" height="280" loading="lazy" class="portfolio-img" />
+              {img
+                ? <Image src={img} alt={alt} width={400} height={280} class="portfolio-img" />
+                : <img src={src} alt={alt} width="400" height="280" loading="lazy" class="portfolio-img" />
+              }
               <figcaption class="portfolio-caption">{caption}</figcaption>
             </figure>
           )
@@ -485,7 +525,7 @@ const faqs = [
           height="60"
           loading="lazy"
         />
-        <p>4.9 stars across 47 verified Google reviews</p>
+        <p>5 stars on Google</p>
       </div>
     </div>
   </section>
@@ -545,6 +585,20 @@ const faqs = [
         <div>
           <FAQAccordion items={faqs} title="" />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Areas we serve ── -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 900px;">
+      <p class="rps-label">Areas we serve</p>
+      <div class="rps-links">
+        <a href="/central-auckland-web-design/" class="rps-link">Central Auckland</a>
+        <a href="/north-shore-website-design/" class="rps-link">North Shore</a>
+        <a href="/west-auckland-web-design/" class="rps-link">West Auckland</a>
+        <a href="/east-auckland-web-design/" class="rps-link">East Auckland</a>
+        <a href="/south-auckland-web-design/" class="rps-link">South Auckland</a>
       </div>
     </div>
   </section>
@@ -938,5 +992,73 @@ const faqs = [
   @media (max-width: 600px) {
     .portfolio-grid { grid-template-columns: 1fr; }
     .reviews-trust  { flex-direction: column; align-items: flex-start; }
+  }
+
+  /* ── Why Us split ── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .why-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
+  .why-img-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    max-height: 680px;
+  }
+
+  /* ── Meet Charlie ── */
+  .meet-section { background: var(--kwd-dark); }
+  .meet-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .meet-img-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .meet-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  .meet-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 1rem;
+  }
+  .meet-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+  .meet-body {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .why-img-wrap { max-height: 320px; }
+    .meet-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .meet-img-wrap { max-height: 360px; }
+    .meet-photo { max-height: 360px; object-fit: cover; }
   }
 </style>
