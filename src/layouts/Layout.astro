@@ -12,7 +12,7 @@ interface Props {
 
 const { title, description, canonicalURL, schema } = Astro.props;
 
-const OG_IMAGE = 'https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png';
+const OG_IMAGE = 'https://www.kiwiwebdesign.co.nz/og-image.png';
 
 const resolvedCanonical = canonicalURL ?? new URL(Astro.url.pathname, Astro.site).href;
 
