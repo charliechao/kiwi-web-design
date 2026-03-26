@@ -19,9 +19,10 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/seo-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/seo-auckland/",
       "name": "SEO Services Auckland | Local SEO for Small Business | Kiwi Web Design",
-      "description": "Boost your business visibility with affordable SEO services in Auckland. Get expert help to drive traffic and grow your business.",
+      "description": "Local SEO for Auckland small businesses from $500/month. Google Maps rankings, targeted keywords, plain-English reporting. No lock-in contracts. Free audit.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/seo-auckland/#breadcrumb" }
     },
     {
@@ -36,15 +37,57 @@ const schema = {
       "@type": "LocalBusiness",
       "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness",
       "name": "Kiwi Web Design",
-      "telephone": "+64-21-039-6580",
-      "address": { "@type": "PostalAddress", "addressLocality": "Auckland", "addressCountry": "NZ" },
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47" }
+      "telephone": "+64210396580",
+      "url": "https://www.kiwiwebdesign.co.nz/"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/seo-auckland/#service",
+      "name": "SEO Services Auckland",
+      "description": "Local SEO for Auckland small businesses. Google Maps rankings, on-page optimisation, content creation, link building, and monthly reporting. From $500/month.",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness" },
+      "areaServed": { "@type": "City", "name": "Auckland" },
+      "url": "https://www.kiwiwebdesign.co.nz/seo-auckland/",
+      "offers": {
+        "@type": "Offer",
+        "price": "500",
+        "priceCurrency": "NZD",
+        "priceSpecification": { "@type": "PriceSpecification", "price": "500", "priceCurrency": "NZD", "unitCode": "MON" }
+      }
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "How long does SEO take to show results in Auckland?", "acceptedAnswer": { "@type": "Answer", "text": "3–6 months for meaningful results, with results compounding over time." } },
-        { "@type": "Question", "name": "How much does SEO cost for a small business in New Zealand?", "acceptedAnswer": { "@type": "Answer", "text": "$500–$2,500 per month depending on competition and goals." } }
+        {
+          "@type": "Question",
+          "name": "How long does SEO take to show results in Auckland?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most Auckland businesses see early movement in 2–3 months, with meaningful results building over 6–12 months. SEO compounds over time — the longer you invest, the stronger and more consistent your results." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does SEO cost for a small business in New Zealand?",
+          "acceptedAnswer": { "@type": "Answer", "text": "SEO packages start from $500/month and scale to $2,500/month depending on industry competition and scope of work. Every engagement starts with a free audit so we can quote accurately." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between local SEO and general SEO?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Local SEO targets location-based searches — 'plumber Auckland' or 'café near me'. It includes your Google Business Profile, local citations, and map pack rankings. General SEO focuses on broader national visibility without a geographic focus. Most Auckland small businesses benefit most from local SEO." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need SEO if I'm already running Google Ads?",
+          "acceptedAnswer": { "@type": "Answer", "text": "They work differently. Google Ads stops the moment you stop paying. SEO builds organic visibility that earns free clicks over time. Most businesses benefit from running both — Ads for immediate leads, SEO for long-term growth." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you guarantee first-page Google rankings?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No ethical SEO agency can guarantee specific rankings. What Kiwi Web Design guarantees is a focused, transparent effort on the signals that matter most for your local Auckland market, backed by clear monthly reporting." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with businesses outside Auckland?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Kiwi Web Design is Auckland-based but works with businesses across New Zealand. Local SEO expertise is strongest for Auckland, but technical and content SEO applies everywhere in NZ." }
+        }
       ]
     }
   ]
@@ -113,7 +156,7 @@ const faqs = [
 
 <Layout
   title="SEO Services Auckland | Local SEO for Small Business | Kiwi Web Design"
-  description="Boost your business visibility with affordable SEO services in Auckland. Get expert help to drive traffic and grow your business."
+  description="Local SEO for Auckland small businesses from $500/month. Google Maps rankings, targeted keywords, plain-English reporting. No lock-in contracts. Free audit."
   canonicalURL="https://www.kiwiwebdesign.co.nz/seo-auckland/"
   schema={schema}
 >
@@ -121,7 +164,7 @@ const faqs = [
   <PageHero
     eyebrow="SEO Services Auckland"
     title="Get found by customers actively searching for you."
-    subtitle="Affordable local SEO for Auckland small businesses. We target the keywords your customers use and build the visibility that turns searches into real enquiries."
+    subtitle="Local SEO for Auckland small businesses. We target the keywords your customers actually use and build the organic visibility that turns searches into real enquiries — from $500/month, no lock-in."
     ctaPrimary={{ text: "Get a Free SEO Audit", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "View Pricing", href: "#pricing" }}
     centered={true}
@@ -347,7 +390,7 @@ const faqs = [
   <CTABanner
     variant="yellow"
     title="Ready to rank higher and get more enquiries?"
-    subtitle="Book a free SEO audit — we'll show you exactly what's holding your site back."
+    subtitle="Book a free SEO audit — we'll show you exactly what's holding your site back. Call 021 039 6580 or request online."
     ctaPrimary={{ text: "Book a Free SEO Audit", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "View All Services", href: "/small-business-website-design-auckland/" }}
   />
