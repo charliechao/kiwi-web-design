@@ -1,5 +1,3 @@
-import { Resend } from 'resend';
-
 const OWNER_EMAIL = 'Hi@KiwiWebDesign.co.nz';
 const FROM_NOTIF  = 'KWD Contact Form <noreply@kiwiwebdesign.co.nz>';
 const FROM_REPLY  = 'Kiwi Web Design <noreply@kiwiwebdesign.co.nz>';
@@ -12,34 +10,72 @@ function json(data, status = 200) {
   });
 }
 
-export async function onRequestPost({ request, env }) {
-  // Parse form body
-  let body;
-  try { body = await request.formData(); }
-  catch { return json({ ok: false, error: 'Invalid request body.' }, 400); }
+async function sendEmail(apiKey, payload) {
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.message ?? 'Resend API error');
+  return data;
+}
 
-  const name     = (body.get('name')     ?? '').trim();
-  const email    = (body.get('email')    ?? '').trim();
-  const mobile   = (body.get('mobile')   ?? '').trim();
-  const business = (body.get('business') ?? '').trim();
-  const service  = (body.get('service')  ?? '').trim();
-  const message  = (body.get('message')  ?? '').trim();
+export async function onRequest(context) {
+  const { request, env } = context;
 
-  // Validate required fields
+  if (request.method !== 'POST') {
+    return new Response('Method Not Allowed', { status: 405 });
+  }
+
+  // Parse body — accept both form-encoded and JSON
+  let name, email, mobile, business, service, message;
+  try {
+    const ct = request.headers.get('content-type') ?? '';
+    if (ct.includes('application/json')) {
+      const b = await request.json();
+      ({ name, email, mobile, business, service, message } = b);
+    } else {
+      const b = await request.formData();
+      name     = b.get('name')     ?? '';
+      email    = b.get('email')    ?? '';
+      mobile   = b.get('mobile')   ?? '';
+      business = b.get('business') ?? '';
+      service  = b.get('service')  ?? '';
+      message  = b.get('message')  ?? '';
+    }
+  } catch {
+    return json({ ok: false, error: 'Invalid request body.' }, 400);
+  }
+
+  name     = (name     ?? '').trim();
+  email    = (email    ?? '').trim();
+  mobile   = (mobile   ?? '').trim();
+  business = (business ?? '').trim();
+  service  = (service  ?? '').trim();
+  message  = (message  ?? '').trim();
+
+  // Validate
   const missing = [];
   if (!name)    missing.push('name');
   if (!email)   missing.push('email');
   if (!mobile)  missing.push('mobile');
   if (!message) missing.push('message');
-  if (missing.length) return json({ ok: false, error: `Required fields missing: ${missing.join(', ')}.` }, 422);
-  if (!EMAIL_RE.test(email)) return json({ ok: false, error: 'Please provide a valid email address.' }, 422);
+  if (missing.length) {
+    return json({ ok: false, error: `Required fields missing: ${missing.join(', ')}.` }, 422);
+  }
+  if (!EMAIL_RE.test(email)) {
+    return json({ ok: false, error: 'Please provide a valid email address.' }, 422);
+  }
 
-  if (!env.RESEND_API_KEY) {
+  const apiKey = env.RESEND_API_KEY;
+  if (!apiKey) {
     console.error('RESEND_API_KEY not configured');
     return json({ ok: false, error: 'Server configuration error. Please call us directly.' }, 500);
   }
-
-  const resend = new Resend(env.RESEND_API_KEY);
 
   const notifHtml = `
     <h2 style="font-family:sans-serif;color:#2c2927">New Contact Form Submission</h2>
@@ -64,33 +100,25 @@ export async function onRequestPost({ request, env }) {
     </div>`;
 
   try {
-    const [notif, reply] = await Promise.all([
-      resend.emails.send({
-        from: FROM_NOTIF, to: [OWNER_EMAIL], replyTo: email,
+    await Promise.all([
+      sendEmail(apiKey, {
+        from: FROM_NOTIF,
+        to: [OWNER_EMAIL],
+        reply_to: email,
         subject: `New enquiry from ${name}${business ? ` — ${business}` : ''}`,
         html: notifHtml,
       }),
-      resend.emails.send({
-        from: FROM_REPLY, to: [email],
+      sendEmail(apiKey, {
+        from: FROM_REPLY,
+        to: [email],
         subject: 'Thanks for contacting Kiwi Web Design',
         html: replyHtml,
       }),
     ]);
 
-    if (notif.error || reply.error) {
-      const msg = notif.error?.message ?? reply.error?.message;
-      console.error('Resend error:', msg);
-      return json({ ok: false, error: 'Failed to send email. Please try calling us directly.' }, 502);
-    }
-
     return json({ ok: true });
   } catch (err) {
-    console.error('Unexpected error:', err);
-    return json({ ok: false, error: 'An unexpected error occurred. Please try again.' }, 500);
+    console.error('Resend error:', err.message);
+    return json({ ok: false, error: 'Failed to send email. Please try calling us directly.' }, 502);
   }
-}
-
-export async function onRequest(context) {
-  if (context.request.method !== 'POST') return new Response('Method Not Allowed', { status: 405 });
-  return onRequestPost(context);
 }
