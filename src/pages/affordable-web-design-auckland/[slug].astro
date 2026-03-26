@@ -438,6 +438,58 @@ const schema = {
     margin: 2.5rem 0;
   }
 
+  /* Stats / citability snippet block */
+  .prose :global(.kwd-snippet) {
+    background: var(--kwd-cream);
+    border-left: 4px solid var(--kwd-gold);
+    border-radius: 0 8px 8px 0;
+    padding: 1.5rem 1.75rem;
+    margin: 0 0 2rem;
+  }
+  .prose :global(.kwd-snippet ul) {
+    margin: 0;
+  }
+
+  /* Related reading strip */
+  .prose :global(.related-strip) {
+    margin: 3rem 0 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--kwd-cream);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .prose :global(.rps-label) {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    white-space: nowrap;
+  }
+  .prose :global(.rps-links) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .prose :global(.rps-link) {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--kwd-dark) !important;
+    text-decoration: none !important;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 20px;
+    padding: 0.3rem 0.85rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .prose :global(.rps-link:hover) {
+    border-color: var(--kwd-gold);
+    background: var(--kwd-yellow);
+  }
+
   /* ── CTA block ── */
   .post-cta {
     margin-top: 4rem;
