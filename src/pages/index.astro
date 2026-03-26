@@ -41,6 +41,7 @@ const schema = {
       "name": "Kiwi Web Design",
       "alternateName": "Web Design Auckland",
       "url": "https://www.kiwiwebdesign.co.nz/",
+      "founder": { "@id": "https://www.kiwiwebdesign.co.nz/#charlie" },
       "logo": {
         "@type": "ImageObject",
         "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png",
@@ -132,6 +133,14 @@ const schema = {
       "parentOrganization": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" }
     },
     {
+      "@type": "Person",
+      "@id": "https://www.kiwiwebdesign.co.nz/#charlie",
+      "name": "Charlie Chao",
+      "jobTitle": "Founder, Kiwi Web Design",
+      "worksFor": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "url": "https://www.kiwiwebdesign.co.nz/about-us/"
+    },
+    {
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "How much does it cost to generate leads online for a small Auckland business?", "acceptedAnswer": { "@type": "Answer", "text": "Starting from $1,290 for a lead-focused website with basic SEO." } },
@@ -182,7 +191,7 @@ const whyUs = [
   {
     icon: "📍",
     title: "Based in Grey Lynn, Auckland",
-    desc: "Genuinely local — 147 Great North Road, Grey Lynn. We understand Auckland suburbs, local search intent, and what your customers expect.",
+    desc: "147 Great North Road, Grey Lynn, Auckland 1021. Call: 021 039 6580. We understand Auckland suburbs, local search intent, and what your customers expect.",
   },
 ];
 
@@ -271,11 +280,11 @@ const reviews = [
 ];
 
 const portfolio = [
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Cleaner-e1750284778292.jpg",           alt: "Auckland cleaning company website", caption: "Top Line Services", href: "/topline-services-cleaning-website/" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Building_Inspector-e1750284793590.jpg", alt: "Auckland building inspector website", caption: "Inspector Guys", href: "/inspector-guys-building-inspections-website/" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Lavaranda-e1753415431519.jpg",                   alt: "Auckland restaurant website", caption: "La Veranda Restaurant", href: "/la-veranda-restaurant-website/" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Legal-e1753416217381.jpg",                       alt: "Auckland law firm website", caption: "FL Legal", href: "/fl-legal-website/" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Mt-Albert-Business-Association-Website.jpg",     alt: "Mt Albert Business Association", caption: "Mt Albert Business Assoc." },
+  { src: "/portfolio/topline-services.jpg",   alt: "Auckland cleaning company website", caption: "Top Line Services", href: "/topline-services-cleaning-website/" },
+  { src: "/portfolio/inspector-guys.jpg",    alt: "Auckland building inspector website", caption: "Inspector Guys", href: "/inspector-guys-building-inspections-website/" },
+  { src: "/portfolio/la-veranda.jpg",        alt: "Auckland restaurant website", caption: "La Veranda Restaurant", href: "/la-veranda-restaurant-website/" },
+  { src: "/portfolio/fl-legal.jpg",          alt: "Auckland law firm website", caption: "FL Legal", href: "/fl-legal-website/" },
+  { src: "/portfolio/mt-albert-business.jpg", alt: "Mt Albert Business Association website", caption: "Mt Albert Business Assoc." },
   { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Kiwiland-e1753410581810.jpg",                    alt: "Auckland construction company website", caption: "Kiwiland Construction", href: "/kiwiland-construction-website/" },
   { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Specialist-e1753415885359.jpg",                  alt: "Auckland medical specialist website", caption: "Melanoma NZ", href: "/melanoma-specialists-website/" },
   { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/01/600-21B675F7-8EB5-45A5-99242870729DC26D.png",    alt: "TopRated.nz directory", caption: "TopRated.nz" },
@@ -721,6 +730,35 @@ const faqs = [
       <div class="rps-links">
         <a href="/case-study-scaffolding/" class="rps-link">Barrett Access Scaffolding — +125% quote requests</a>
         <a href="/beauty-touch-case-study/" class="rps-link">Beauty Touch Auckland — live in 3 weeks</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Industries we serve ── -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 900px;">
+      <p class="rps-label">Industries we serve</p>
+      <div class="rps-links">
+        <a href="/tradie-website-design-auckland/" class="rps-link">Tradies</a>
+        <a href="/how-kiwi-web-design-helps-auckland-beauty-industry/" class="rps-link">Beauty &amp; Wellness</a>
+        <a href="/how-kiwi-web-design-helps-auckland-restaurants/" class="rps-link">Restaurants &amp; Cafés</a>
+        <a href="/how-kiwi-web-design-helps-auckland-healthcare/" class="rps-link">Healthcare</a>
+        <a href="/how-kiwi-web-design-helps-auckand-lawyers/" class="rps-link">Lawyers &amp; Professional Services</a>
+        <a href="/industries-we-serve-in-auckland/" class="rps-link">All Industries →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Areas we serve ── -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 900px;">
+      <p class="rps-label">Areas we serve</p>
+      <div class="rps-links">
+        <a href="/north-shore-website-design/" class="rps-link">North Shore</a>
+        <a href="/south-auckland-web-design/" class="rps-link">South Auckland</a>
+        <a href="/west-auckland-web-design/" class="rps-link">West Auckland</a>
+        <a href="/east-auckland-web-design/" class="rps-link">East Auckland</a>
+        <a href="/central-auckland-web-design/" class="rps-link">Central Auckland</a>
       </div>
     </div>
   </section>
