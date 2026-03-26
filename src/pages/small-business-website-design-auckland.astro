@@ -20,10 +20,11 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/",
-      "name": "Affordable Web Design in Auckland for Small Businesses",
-      "description": "Affordable web design in Auckland for tradies and small businesses. WordPress packages from $1,290, free in-person consults, delivery in 2 to 3 weeks.",
+      "name": "Small Business Website Design Auckland | From $1,290 | Kiwi Web Design",
+      "description": "Custom WordPress websites for Auckland small businesses from $1,290. Built to generate leads, live in 2–3 weeks. Free in-person consultation. Call 021 039 6580.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/#breadcrumb" }
     },
     {
@@ -35,10 +36,55 @@ const schema = {
       ]
     },
     {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/#service",
+      "name": "Small Business Website Design Auckland",
+      "description": "Custom WordPress website design for Auckland small businesses. Conversion-focused, mobile-first, delivered in 2–3 weeks from $1,290.",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness" },
+      "areaServed": { "@type": "City", "name": "Auckland" },
+      "url": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/",
+      "offers": {
+        "@type": "Offer",
+        "price": "1290",
+        "priceCurrency": "NZD",
+        "priceSpecification": { "@type": "PriceSpecification", "price": "1290", "priceCurrency": "NZD", "valueAddedTaxIncluded": false }
+      }
+    },
+    {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
       "url": "https://www.kiwiwebdesign.co.nz/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a website cost for a small business in Auckland?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Packages start from $1,290 + GST for a 5-page WordPress website. Growth packages typically run $2,490–$3,500 depending on complexity. eCommerce sites start from $3,990. Fixed quotes are provided upfront — no surprises." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to build a website?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most projects are completed in 2–3 weeks from when content is received. More complex sites with custom features may take 4–6 weeks. A timeline is provided upfront." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I be able to update the website myself?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. WordPress is designed for non-developers. A handover session is included so you can update text, images, and add pages without needing a developer. Monthly maintenance plans are also available." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer hosting and maintenance for Auckland small businesses?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Managed WordPress hosting is available from $49/month and includes updates, backups, security, and 2 hours of content changes per month." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you redesign my existing website?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Full WordPress rebuilds, redesigns, and migrations from Wix, Squarespace, or old WordPress themes are available. SEO and content are preserved during the process." }
+        }
+      ]
     }
   ]
 };
@@ -184,8 +230,8 @@ const reviews = [
 ---
 
 <Layout
-  title="Affordable Web Design in Auckland for Small Businesses"
-  description="Affordable web design in Auckland for tradies and small businesses. WordPress packages from $1,290, free in-person consults, delivery in 2 to 3 weeks."
+  title="Small Business Website Design Auckland | From $1,290 | Kiwi Web Design"
+  description="Custom WordPress websites for Auckland small businesses from $1,290. Built to generate leads, live in 2–3 weeks. Free in-person consultation. Call 021 039 6580."
   canonicalURL="https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/"
   schema={schema}
 >
@@ -342,10 +388,24 @@ const reviews = [
     </div>
   </section>
 
+  <!-- Areas we serve -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Areas we serve</p>
+      <div class="rps-links">
+        <a href="/north-shore-website-design/" class="rps-link">North Shore</a>
+        <a href="/south-auckland-web-design/" class="rps-link">South Auckland</a>
+        <a href="/west-auckland-web-design/" class="rps-link">West Auckland</a>
+        <a href="/east-auckland-web-design/" class="rps-link">East Auckland</a>
+        <a href="/central-auckland-web-design/" class="rps-link">Central Auckland</a>
+      </div>
+    </div>
+  </section>
+
   <CTABanner
     variant="yellow"
     title="Ready to get a website that generates leads?"
-    subtitle="Free consultation — we'll give you honest advice and a fixed quote before we start."
+    subtitle="Free consultation — in person or online, Auckland-wide. Call 021 039 6580 or request a quote below."
     ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "Learn About SEO Too", href: "/seo-auckland/" }}
   />
