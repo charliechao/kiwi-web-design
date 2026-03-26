@@ -8,9 +8,10 @@ interface Props {
   description: string;
   canonicalURL?: string;
   schema?: Record<string, unknown> | Record<string, unknown>[];
+  lang?: string;
 }
 
-const { title, description, canonicalURL, schema } = Astro.props;
+const { title, description, canonicalURL, schema, lang = 'en-NZ' } = Astro.props;
 
 const OG_IMAGE = 'https://www.kiwiwebdesign.co.nz/og-image.png';
 
@@ -23,7 +24,7 @@ const schemaStr = schema
 ---
 
 <!doctype html>
-<html lang="en-NZ">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

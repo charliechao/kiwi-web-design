@@ -15,35 +15,56 @@ interface Props { post: CollectionEntry<'blog'>; }
 const { post } = Astro.props;
 const { Content } = await render(post);
 
-const { title, description, pubDate, image } = post.data;
+const { title, description, pubDate, image, lang: postLang } = post.data;
 
 const canonicalURL = `https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/${post.slug}/`;
+const pageLang = postLang || 'en-NZ';
+const isChinese = pageLang.startsWith('zh');
 
 function formatDate(date: Date) {
   return date.toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
+const ogImage = image || 'https://www.kiwiwebdesign.co.nz/og-image.png';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": canonicalURL,
+      "url": canonicalURL,
+      "name": title,
+      "description": description,
+      "inLanguage": pageLang,
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness" }
+    },
     {
       "@type": "Article",
       "headline": title,
       "description": description,
       "datePublished": pubDate.toISOString(),
-      "image": image || "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png",
+      "image": {
+        "@type": "ImageObject",
+        "url": ogImage.startsWith('/') ? `https://www.kiwiwebdesign.co.nz${ogImage}` : ogImage
+      },
       "author": {
         "@type": "Person",
+        "@id": "https://www.kiwiwebdesign.co.nz/#charlie",
         "name": "Charlie Chao",
         "url": "https://www.kiwiwebdesign.co.nz/about-us/"
       },
       "publisher": {
         "@type": "Organization",
+        "@id": "https://www.kiwiwebdesign.co.nz/#organization",
         "name": "Kiwi Web Design",
         "url": "https://www.kiwiwebdesign.co.nz/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
+          "url": "https://www.kiwiwebdesign.co.nz/og-image.png",
+          "width": 1200,
+          "height": 630
         }
       },
       "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalURL }
@@ -65,6 +86,7 @@ const schema = {
   description={description}
   canonicalURL={canonicalURL}
   schema={schema}
+  lang={pageLang}
 >
 
   <!-- Reading progress bar -->
@@ -101,10 +123,21 @@ const schema = {
 
       <!-- CTA -->
       <aside class="post-cta">
-        <div class="post-cta-label">Ready to act on this?</div>
-        <h2 class="post-cta-title">Close the gap before your competitors do.</h2>
-        <p class="post-cta-sub">Get a free consultation with Kiwi Web Design — we'll review your current presence and show you exactly what's holding you back.</p>
-        <a href="/website-designer-auckland/" class="post-cta-btn">Book a Free Consultation →</a>
+        {isChinese ? (
+          <>
+            <div class="post-cta-label">准备好开始了吗？</div>
+            <h2 class="post-cta-title">立即预约，首次咨询完全免费。</h2>
+            <p class="post-cta-sub">Kiwi Web Design 由华裔创始人 Charlie 创立，可以中文沟通。我们为奥克兰小企业提供网站设计、SEO 和 Google 广告服务，帮助你快速获得更多客户。</p>
+            <a href="/website-designer-auckland/" class="post-cta-btn">立即预约免费咨询 →</a>
+          </>
+        ) : (
+          <>
+            <div class="post-cta-label">Ready to act on this?</div>
+            <h2 class="post-cta-title">Close the gap before your competitors do.</h2>
+            <p class="post-cta-sub">Get a free consultation with Kiwi Web Design — we'll review your current presence and show you exactly what's holding you back.</p>
+            <a href="/website-designer-auckland/" class="post-cta-btn">Book a Free Consultation →</a>
+          </>
+        )}
       </aside>
 
       <!-- Back -->
