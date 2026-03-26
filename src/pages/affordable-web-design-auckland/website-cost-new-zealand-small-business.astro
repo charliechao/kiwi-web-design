@@ -4,21 +4,47 @@ import Layout from '../../layouts/Layout.astro';
 const schema = [
   {
     "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/website-cost-new-zealand-small-business/",
+    "url": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/website-cost-new-zealand-small-business/",
+    "name": "Website Cost NZ (2026 Guide) | Small Business Pricing",
+    "description": "How much does a website cost in New Zealand? Real small business website prices, interactive calculator, and 2026 NZD ranges from $1,000 to $50,000+.",
+    "inLanguage": "en-NZ",
+    "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+    "about": { "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness" },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".kwd-snippet", "#kwd-website-cost-nz h1", "#kwd-website-design-cost-nz p:first-child"]
+    }
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "Article",
     "headline": "How Much Does a Website Cost in NZ? (2026 Prices & Calculator)",
     "datePublished": "2026-01-05",
     "dateModified": "2026-03-19",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.kiwiwebdesign.co.nz/og-image.png",
+      "width": 1200,
+      "height": 630
+    },
     "author": {
       "@type": "Person",
+      "@id": "https://www.kiwiwebdesign.co.nz/#charlie",
       "name": "Charlie Chao",
-      "url": "https://www.linkedin.com/in/gocharlie/"
+      "url": "https://www.kiwiwebdesign.co.nz/about-us/",
+      "sameAs": "https://www.linkedin.com/in/gocharlie/"
     },
     "publisher": {
       "@type": "Organization",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
+        "url": "https://www.kiwiwebdesign.co.nz/og-image.png",
+        "width": 1200,
+        "height": 630
       }
     },
     "mainEntityOfPage": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/website-cost-new-zealand-small-business/",
@@ -28,13 +54,7 @@ const schema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Website Design Auckland, NZ",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Kiwi Web Design",
-      "areaServed": "Auckland, New Zealand",
-      "email": "hi@kiwiwebdesign.co.nz",
-      "telephone": "+6421039658 0"
-    },
+    "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness" },
     "areaServed": "Auckland, New Zealand",
     "priceRange": "NZD 1290–15000",
     "offers": {
@@ -425,6 +445,7 @@ const schema = [
         <li><a href="/website-hosting-auckland/">Website Hosting Auckland</a></li>
         <li><a href="/wordpress-maintenance-auckland/">WordPress Maintenance Plans</a></li>
         <li><a href="/seo-auckland/">SEO Services Auckland</a></li>
+        <li><a href="/google-ads/">Google Ads Management Auckland</a></li>
         <li><a href="/tradie-website-design-auckland/">Tradie Website Design Auckland</a></li>
       </ul>
     </section>
