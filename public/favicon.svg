@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <title>KWD</title>
-  <rect width="128" height="128" rx="16" fill="#7C3AED"/>
+  <title>Kiwi Web Design</title>
+  <rect width="128" height="128" rx="16" fill="#2c2927"/>
   <text
     x="50%"
     y="54%"
     dominant-baseline="middle"
     text-anchor="middle"
-    font-family="system-ui, sans-serif"
-    font-size="52"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="80"
     font-weight="700"
-    fill="white"
-  >KWD</text>
+    fill="#fbe8a6"
+  >K</text>
 </svg>
