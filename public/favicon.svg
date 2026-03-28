@@ -1,14 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <title>Kiwi Web Design</title>
-  <circle cx="64" cy="64" r="64" fill="#1e1c1a"/>
+  <circle cx="64" cy="64" r="64" fill="#18150e"/>
   <text
     x="50%"
-    y="53%"
+    y="54%"
     dominant-baseline="middle"
     text-anchor="middle"
-    font-family="Georgia, 'Times New Roman', serif"
-    font-size="86"
-    font-weight="700"
-    fill="#f3d97a"
+    font-family="'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif"
+    font-size="88"
+    font-weight="400"
+    fill="#f4c432"
+    letter-spacing="-2"
   >K</text>
 </svg>
