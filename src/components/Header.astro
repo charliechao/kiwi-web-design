@@ -3,7 +3,12 @@ const currentPath = Astro.url.pathname;
 
 const navLinks = [
   { label: 'Web Design', href: '/small-business-website-design-auckland/' },
-  { label: 'SEO',        href: '/seo-auckland/' },
+  { label: 'SEO',        href: '/seo-auckland/', children: [
+    { label: 'AI SEO & GEO', href: '/ai-seo-for-auckland-small-businesses/' },
+    { label: 'Local SEO', href: '/local-seo-for-auckland-small-businesses/' },
+    { label: 'eCommerce SEO', href: '/seo-for-ecommerce/' },
+    { label: 'WordPress SEO', href: '/wordpress-seo-optimisation/' },
+  ]},
   { label: 'Google Ads', href: '/google-ads/' },
   { label: 'About',      href: '/about-us/' },
   { label: 'Blog',       href: '/affordable-web-design-auckland/' },
@@ -27,14 +32,29 @@ const navLinks = [
 
     <nav id="main-nav" aria-label="Main navigation">
       <ul>
-        {navLinks.map(({ label, href }) => (
-          <li>
+        {navLinks.map(({ label, href, children }) => (
+          <li class:list={[children && 'has-dropdown']}>
             <a
               href={href}
               aria-current={currentPath === href ? 'page' : undefined}
             >
               {label}
+              {children && <svg class="dd-chevron" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>}
             </a>
+            {children && (
+              <ul class="dropdown">
+                {children.map((child: {label: string; href: string}) => (
+                  <li>
+                    <a
+                      href={child.href}
+                      aria-current={currentPath === child.href ? 'page' : undefined}
+                    >
+                      {child.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>
@@ -173,6 +193,62 @@ const navLinks = [
     color: var(--kwd-dark) !important;
   }
 
+  /* dropdown */
+  .has-dropdown {
+    position: relative;
+  }
+  .has-dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .dd-chevron {
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .has-dropdown:hover .dd-chevron {
+    transform: rotate(180deg);
+  }
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    background: var(--kwd-dark);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    margin-top: 0.75rem;
+    flex-direction: column;
+    gap: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .has-dropdown:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+  }
+  .dropdown li {
+    margin: 0;
+  }
+  .dropdown a {
+    display: block;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.78rem !important;
+    text-transform: none !important;
+    letter-spacing: 0.01em !important;
+    white-space: nowrap;
+    color: rgba(255,255,255,0.7) !important;
+    transition: background 0.15s, color 0.15s;
+  }
+  .dropdown a:hover {
+    background: rgba(255,255,255,0.06);
+    color: var(--kwd-yellow) !important;
+  }
+
   /* mobile */
   @media (max-width: 921px) {
     .btn-phone { display: none; }
@@ -230,6 +306,28 @@ const navLinks = [
     nav a {
       font-size: 1rem;
     }
+
+    .dropdown {
+      position: static;
+      transform: none;
+      min-width: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0.5rem 0 0 1rem;
+      margin-top: 0.5rem;
+      opacity: 1;
+      visibility: visible;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .dropdown a {
+      padding: 0 !important;
+      font-size: 0.9rem !important;
+    }
+    .dd-chevron { display: none; }
   }
 </style>
 
