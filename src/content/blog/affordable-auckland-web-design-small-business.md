@@ -2,7 +2,6 @@
 title: "Affordable Auckland Web Design for Small Businesses: Custom Solutions That Grow With You"
 description: Explore the benefits of affordable web design Auckland to boost your business visibility and enhance user engagement.
 pubDate: 2025-09-16
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/ujfa-790x550-1.webp"
 ---
 
 # Affordable Auckland Web Design for Small Businesses: Custom Solutions That Grow With You

@@ -2,7 +2,6 @@
 title: "Kiwi Web Design Launches TopRated.nz, a New Auckland-Focused Business Directory"
 description: "Kiwi Web Design launches TopRated.nz, a new Auckland business directory built for SEO and AI search to help users find top-rated local service businesses."
 pubDate: 2026-01-21
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/01/600-21B675F7-8EB5-45A5-99242870729DC26D.png"
 ---
 
 # Kiwi Web Design Launches TopRated.nz, a New Auckland-Focused Business Directory

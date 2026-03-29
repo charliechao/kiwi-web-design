@@ -2,7 +2,6 @@
 title: "How to Set Up and Optimise Your Google Business Profile in Auckland"
 description: "Step-by-step guide to setting up and optimising your Google Business Profile in Auckland. Rank higher on Google Maps, attract local customers, and grow your NZ small business."
 pubDate: 2026-03-30
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/03/google-business-profile-auckland-setup-guide.png"
 ---
 
 # How to Set Up and Optimise Your Google Business Profile in Auckland

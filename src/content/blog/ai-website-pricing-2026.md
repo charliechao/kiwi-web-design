@@ -2,7 +2,6 @@
 title: "Are You Still Paying 2020 Prices for a Website in 2026?"
 description: "Still paying 2020 prices for a website? In 2026, AI tools like vibe coding, Claude Code and Codex make websites faster and cheaper to build. Learn why pricing has changed."
 pubDate: 2026-01-30
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/01/website-pricing-2026-ai-web-design.png"
 ---
 
 # Are You Still Paying 2020 Prices for a Website in 2026?

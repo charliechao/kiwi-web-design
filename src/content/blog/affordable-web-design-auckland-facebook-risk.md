@@ -2,7 +2,6 @@
 title: Why Relying Only on a Facebook Page Is Risky for Small Businesses in Auckland
 description: Discover why small businesses in Auckland need more than just a Facebook page. Kiwi Web Design offers affordable web design in Auckland.
 pubDate: 2025-09-22
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/Instagram-Post-Kiwi-Web-Design.png"
 ---
 
 # Why Relying Only on a Facebook Page Is Risky for Small Businesses in Auckland

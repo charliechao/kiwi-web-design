@@ -2,7 +2,6 @@
 title: "Choosing a Website Platform: A Practical Guide for Small Businesses in Auckland"
 description: "Choosing a Website Platform: A Practical Guide for Small Businesses in Auckland Most business owners focus on design first. The smarter move is to start"
 pubDate: 2025-11-24
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/choosing-website-platform-auckland-featured.jpg"
 ---
 
 # Choosing a Website Platform: A Practical Guide for Small Businesses in Auckland

@@ -2,7 +2,6 @@
 title: How AI Will Transform Small Businesses in New Zealand
 description: "Discover how AI empowers Auckland small businesses with smarter website, seamless automation, and data-driven growth enhance efficiency!"
 pubDate: 2025-06-18
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/pexels-photo-6153354-6153354-scaled.jpg"
 ---
 
 # How AI Will Transform Small Businesses in New Zealand

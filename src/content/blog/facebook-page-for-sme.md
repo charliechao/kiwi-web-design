@@ -2,7 +2,6 @@
 title: How to create a Facebook page for small Kiwi businesses
 description: "How to create a Facebook page for small Kiwi businesses If you’re a small business owner in Auckland, you’re probably always looking for ways to grow your"
 pubDate: 2025-04-30
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/05/pexels-photo-1267348-1267348-scaled-1.jpg"
 ---
 
 # How to create a Facebook page for small Kiwi businesses

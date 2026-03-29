@@ -2,7 +2,6 @@
 title: How to Make Your Website Look Professional Without Spending a Fortune
 description: Discover simple ways to make your small business website look professional on a budget. Kiwi Web Design in Auckland shares practical web design tips.
 pubDate: 2025-11-06
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/professional-website-design-on-a-budget-kiwi-web-design-auckland.jpg"
 ---
 
 # How to Make Your Website Look Professional Without Spending a Fortune
