@@ -2,7 +2,7 @@
 title: Website Redesign vs Starting from Scratch
 description: "Not sure whether to redesign your website or start from scratch? This Auckland focused guide explains the pros, risks, and best choice for small businesses in 2025."
 pubDate: 2025-12-19
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/12/website-redesign-vs-rebuild-auckland-small-business.png"
+image: "/blog/website-redesign-vs-rebuild-auckland-small-business.png"
 ---
 
 # Website Redesign vs Starting from Scratch

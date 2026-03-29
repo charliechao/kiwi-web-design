@@ -2,6 +2,7 @@
 title: "What Does a Website Cost in New Zealand? A Straightforward Guide for Small Businesses"
 description: "How much does a website cost in New Zealand? See real small business website prices, one-page vs full sites, and what you actually need to pay in 2026."
 pubDate: 2025-07-10
+image: "/blog/ChatGPT-Image-Jul-10-2025-10_12_32-AM.png"
 ---
 
 # How much does a website cost NZ (2026 Guide)

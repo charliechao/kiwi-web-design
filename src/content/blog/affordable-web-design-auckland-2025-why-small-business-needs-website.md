@@ -2,7 +2,7 @@
 title: 5 Reasons Every Small Business in Auckland Should Have a Website in 2025
 description: "In 2025, Facebook isn’t enough. Discover 5 reasons why small businesses in Auckland need a website. Kiwi Web Design provides affordable web design Auckland services starting from $1,290."
 pubDate: 2025-09-29
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/5-Reasons-Every-Small-Business-in-Auckland-Should-Have-a-Website-in-2025.jpg"
+image: "/blog/5-Reasons-Every-Small-Business-in-Auckland-Should-Have-a-Website-in-2025.jpg"
 ---
 
 # 5 Reasons Every Small Business in Auckland Should Have a Website in 2025

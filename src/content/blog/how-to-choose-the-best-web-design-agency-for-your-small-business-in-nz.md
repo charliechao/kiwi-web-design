@@ -2,7 +2,7 @@
 title: How to Choose the Best Web Design Agency for Your Small Business in NZ
 description: A website for your business is a must nowadays in New Zealand. Learn how to choose the best web design agency in Auckland New Zealand.
 pubDate: 2025-05-16
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/05/pexels-photo-375889-375889-scaled.jpg"
+image: "/blog/pexels-photo-375889-375889-scaled.jpg"
 ---
 
 # How to Choose the Best Web Design Agency for Your Small Business in NZ

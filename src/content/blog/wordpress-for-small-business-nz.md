@@ -2,7 +2,7 @@
 title: Why New Zealand Small Businesses Should Choose WordPress for Their Website
 description: "WordPress offers flexible, affordable web design for NZ small businesses. See why it’s the top choice for Auckland web design."
 pubDate: 2025-07-25
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/ChatGPT-Image-Jul-25-2025-03_34_18-PM-1.png"
+image: "/blog/ChatGPT-Image-Jul-25-2025-03_34_18-PM-1.png"
 ---
 
 # Why New Zealand Small Businesses Should Choose WordPress for Their Website

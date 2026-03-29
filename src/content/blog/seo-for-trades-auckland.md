@@ -2,7 +2,7 @@
 title: "SEO for Trades in Auckland: How to Get Consistent Job Enquiries"
 description: "SEO for Auckland trades. Rank on Google Maps, attract local customers, and get consistent job enquiries. Book a free trades lead strategy session."
 pubDate: 2026-02-17
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/02/seo-for-trades-auckland-job-enquiry.png"
+image: "/blog/seo-for-trades-auckland-job-enquiry.png"
 ---
 
 # SEO for Trades in Auckland: How to Get Consistent Job Enquiries

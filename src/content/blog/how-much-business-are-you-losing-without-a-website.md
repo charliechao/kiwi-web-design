@@ -2,7 +2,7 @@
 title: "How Much Business Are You Losing Without a Website?"
 description: Discover why having a website is essential for Auckland small businesses. Learn how our affordable web design can help you get more customers.
 pubDate: 2025-10-14
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/FB-Post.jpg"
+image: "/blog/FB-Post.jpg"
 ---
 
 # How Much Business Are You Losing Without a Website?

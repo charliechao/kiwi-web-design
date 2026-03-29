@@ -2,6 +2,7 @@
 title: 10 Essential Features Every Small Business Website in NZ Must Have
 description: "10 Essential Features Every Small Business Website in NZ Must Have In today’s digital landscape, a well-designed website is essential for small businesses"
 pubDate: 2025-05-12
+image: "/blog/pexels-photo-1714341-1714341-scaled.jpg"
 ---
 
 # 10 Essential Features Every Small Business Website in NZ Must Have

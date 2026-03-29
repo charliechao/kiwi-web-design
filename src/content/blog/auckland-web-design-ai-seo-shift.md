@@ -2,6 +2,7 @@
 title: "From SEO to AEO: How Online Search in New Zealand Is Shifting Towards AI — and What That Means for Auckland Web Design"
 description: "Learn how SEO is evolving with AI technologies. Enhance your Auckland business's visibility in today's searchable landscape."
 pubDate: 2025-09-07
+image: "/blog/SEO.jpg"
 ---
 
 # From SEO to AEO: How Online Search in New Zealand Is Shifting Towards AI — and What That Means for Auckland Web Design

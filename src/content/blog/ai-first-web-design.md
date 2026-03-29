@@ -2,6 +2,7 @@
 title: How AI Is Reshaping the Web Design Industry – A Personal Reflection
 description: Discover how AI is transforming the web design industry with real experience. learn how Kiwi Web Design leads with an AI-first approach.
 pubDate: 2025-08-08
+image: "/blog/ChatGPT-Image-Aug-8-2025-09_44_05-AM-1.png"
 ---
 
 # How AI Is Reshaping the Web Design Industry – A Personal Reflection

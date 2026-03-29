@@ -2,6 +2,7 @@
 title: How SEO helps small New Zealand businesses grow
 description: "How SEO Helps Small New Zealand Businesses Grow In today’s digital world, small businesses in New Zealand need a strong online presence to compete and"
 pubDate: 2025-05-05
+image: "/blog/pexels-photo-6155000-6155000-scaled.jpg"
 ---
 
 # How SEO Helps Small New Zealand Businesses Grow

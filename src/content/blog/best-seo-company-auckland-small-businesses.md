@@ -2,7 +2,7 @@
 title: Best SEO Company in Auckland for Small Businesses
 description: "Looking for the best SEO company in Auckland? Kiwi Web Design helps small businesses generate real leads through local SEO and Google Ads. See results, not just rankings."
 pubDate: 2026-03-03
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/03/best-seo-company-auckland-small-businesses.png"
+image: "/blog/best-seo-company-auckland-small-businesses.png"
 ---
 
 # Best SEO Company in Auckland for Small Businesses

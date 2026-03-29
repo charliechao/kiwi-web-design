@@ -2,6 +2,7 @@
 title: 5 Reasons Why Small Kiwi Businesses Need A Website
 description: "Discover 5 key reasons why small businesses in New Zealand need a website. Learn how Kiwi web design can boost visibility, trust, and sales."
 pubDate: 2025-04-27
+image: "/blog/Auckland.jpg"
 ---
 
 # 5 Reasons Why Small Kiwi Businesses Need A Website

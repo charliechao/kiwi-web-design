@@ -2,6 +2,7 @@
 title: "Website Redesign vs Starting from Scratch: What’s Right for You?"
 description: "Unsure whether to redesign your website or start fresh? Learn how to choose the right approach based on performance, goals, and long-term growth."
 pubDate: 2025-11-17
+image: "/blog/website-redesign-vs-starting-from-scratch-kiwi-web-design.jpg"
 ---
 
 # Website Redesign vs Starting from Scratch: What’s Right for You?

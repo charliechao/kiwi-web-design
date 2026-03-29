@@ -2,6 +2,7 @@
 title: Top 5 Pages Every Auckland Small Business Website Should Have
 description: Discover the 5 must-have pages that make Auckland small business websites stand out — from homepage to contact page. A local guide by Kiwi Web Design.
 pubDate: 2025-11-03
+image: "/blog/auckland-small-business-website.jpg"
 ---
 
 # Top 5 Pages Every Auckland Small Business Website Should Have

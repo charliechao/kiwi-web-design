@@ -2,7 +2,7 @@
 title: "From Local to Legendary: How Your Website Can Supercharge Your Small Kiwi Business"
 description: "From Local to Legendary: How Your Website Can Supercharge Your Small Kiwi Business In today’s digital world, a website is a must-have for small businesses"
 pubDate: 2025-05-07
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/05/pexels-photo-4348404-4348404-scaled.jpg"
+image: "/blog/pexels-photo-4348404-4348404-scaled.jpg"
 ---
 
 # From Local to Legendary: How Your Website Can Supercharge Your Small Kiwi Business

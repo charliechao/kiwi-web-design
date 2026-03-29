@@ -2,7 +2,7 @@
 title: Kiwi Web Design Ranked as an Affordable Web Design Agency in Auckland
 description: "Kiwi Web Design offers affordable web design with fast turnarounds, making professional websites accessible for local businesses."
 pubDate: 2025-09-09
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/Blue-and-White-minimalist-Instagram-Post.png"
+image: "/blog/Blue-and-White-minimalist-Instagram-Post.png"
 ---
 
 # Kiwi Web Design Ranked as an Affordable Web Design Agency in Auckland

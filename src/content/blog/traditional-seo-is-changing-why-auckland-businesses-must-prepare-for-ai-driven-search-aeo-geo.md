@@ -2,7 +2,7 @@
 title: "Traditional SEO Is Changing: Why Auckland Businesses Must Prepare for AI-Driven Search (AEO/GEO)"
 description: "Move beyond traditional SEO. Discover how AI-driven search (AEO & GEO) helps Auckland businesses gain visibility and real enquiries."
 pubDate: 2026-02-25
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/02/ai-seo-auckland-small-business-owner.png"
+image: "/blog/ai-seo-auckland-small-business-owner.png"
 ---
 
 # Traditional SEO Is Changing: Why Auckland Businesses Must Prepare for AI-Driven Search (AEO/GEO)

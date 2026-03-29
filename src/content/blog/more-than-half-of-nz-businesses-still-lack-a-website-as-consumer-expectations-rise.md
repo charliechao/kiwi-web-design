@@ -2,7 +2,7 @@
 title: More Than Half of NZ Businesses Still Lack a Website as Consumer Expectations Rise
 description: New InternetNZ data shows only 53 percent of NZ businesses have a website while consumer expectations rise. What this means for your business in 2025.
 pubDate: 2025-12-02
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/12/nz-business-website-statistics-2025-internetnz-report.png"
+image: "/blog/nz-business-website-statistics-2025-internetnz-report.png"
 ---
 
 <div class="kwd-snippet">

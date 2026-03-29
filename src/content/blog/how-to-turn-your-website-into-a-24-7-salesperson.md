@@ -2,7 +2,7 @@
 title: How to Turn Your Website into a 24/7 Salesperson
 description: "Learn how to turn your website into a 24/7 salesperson with smart design, SEO, and automation. A guide by Kiwi Web Design, Auckland web design."
 pubDate: 2025-10-28
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/how-to-turn-your-website-into-a-24-7-salesperson-kiwi-web-design.jpg"
+image: "/blog/how-to-turn-your-website-into-a-24-7-salesperson-kiwi-web-design.jpg"
 ---
 
 # How to Turn Your Website into a 24/7 Salesperson

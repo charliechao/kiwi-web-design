@@ -2,7 +2,7 @@
 title: Top 10 Web Design Mistakes Small Businesses Make (And How to Avoid Them)
 description: Avoid common web design mistakes Auckland small businesses make. Learn how to improve your website and boost your online presence.
 pubDate: 2025-06-30
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/ChatGPT-Image-Jun-30-2025-03_02_03-PM-1.png"
+image: "/blog/ChatGPT-Image-Jun-30-2025-03_02_03-PM-1.png"
 ---
 
 # Top 10 Web Design Mistakes Small Businesses Make (And How to Avoid Them)

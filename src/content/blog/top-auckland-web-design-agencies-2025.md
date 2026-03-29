@@ -2,6 +2,7 @@
 title: Top Auckland Web Design Agencies in 2025
 description: "Explore the top 5 Auckland web design agencies in 2025, with Kiwi Web Design leading through AI-driven innovation."
 pubDate: 2025-08-19
+image: "/blog/ChatGPT-Image-Aug-19-2025-11_59_18-AM.png"
 ---
 
 # Top Auckland Web Design Agencies in 2025

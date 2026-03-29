@@ -2,6 +2,7 @@
 title: How to Write Website Content That Actually Brings You Enquiries
 description: Discover how to write website content that converts visitors into enquiries. Expert tips from Kiwi Web Design
 pubDate: 2025-10-20
+image: "/blog/Facebook-Post-Support-Local-Auckland-Business.jpg"
 ---
 
 # How to Write Website Content That Actually Brings You Enquiries

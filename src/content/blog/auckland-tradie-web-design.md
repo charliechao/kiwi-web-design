@@ -2,7 +2,7 @@
 title: Why Every Auckland Tradie Needs a Professional Website
 description: "Auckland tradies—discover how professional web design can help you get found, build trust, and win more jobs."
 pubDate: 2025-06-24
-image: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/ChatGPT-Image-Jun-24-2025-11_54_50-AM-1.png"
+image: "/blog/ChatGPT-Image-Jun-24-2025-11_54_50-AM-1.png"
 ---
 
 # Why Every Auckland Tradie Needs a Professional Website
