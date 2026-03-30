@@ -6,6 +6,7 @@ import ServiceGrid from '../components/ServiceGrid.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import lawyersHeroImg from '../assets/general/Legal-e1753416217381.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -129,6 +130,8 @@ const faqs = [
     subtitle="Auckland solicitors and law firms rely on first impressions. We build WordPress websites that communicate authority, structure practice area content for search, and convert enquiries into consultations."
     ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See What's Included", href: "#solutions" }}
+    imgSrc={lawyersHeroImg.src}
+    imgAlt="Law firm website design Auckland"
   />
 
   <!-- Why legal websites are different -->

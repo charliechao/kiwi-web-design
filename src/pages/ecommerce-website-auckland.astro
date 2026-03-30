@@ -7,6 +7,7 @@ import StatsRow from '../components/StatsRow.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import ecommerceHeroImg from '../assets/general/shopping-cart-for-eCommerce-1.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -134,7 +135,7 @@ const faqs = [
     badgeText="From $3,990 + GST"
     ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "Choose Your Platform", href: "#platform" }}
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-5632376-5632376.jpg"
+    imgSrc={ecommerceHeroImg.src}
     imgAlt="eCommerce website design Auckland"
   />
 

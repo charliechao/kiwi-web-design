@@ -7,6 +7,7 @@ import StatsRow from '../components/StatsRow.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import tradieHeroImg from '../assets/general/Auckland_Plumber-e1750286113265.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -130,7 +131,7 @@ const faqs = [
     badgeText="From $1,290 + GST"
     ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See What's Included", href: "#features" }}
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-1396122-1396122.jpg"
+    imgSrc={tradieHeroImg.src}
     imgAlt="Tradie website design Auckland"
   />
 

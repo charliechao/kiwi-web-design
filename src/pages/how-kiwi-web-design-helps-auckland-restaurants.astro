@@ -6,6 +6,7 @@ import ServiceGrid from '../components/ServiceGrid.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import restaurantHeroImg from '../assets/general/restaurant-website-design-seo-auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -129,7 +130,7 @@ const faqs = [
     subtitle="WordPress websites for Auckland restaurants, cafes, and bars. Online menus that Google can read, table reservations at any hour, and a design that captures the atmosphere before a guest walks through your door."
     ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See What's Included", href: "#solutions" }}
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/la-veranda-restaurant-auckland-website.jpg"
+    imgSrc={restaurantHeroImg.src}
     imgAlt="Restaurant website design Auckland"
   />
 
