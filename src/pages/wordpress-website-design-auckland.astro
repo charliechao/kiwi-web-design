@@ -8,6 +8,7 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import TestimonialGrid from '../components/TestimonialGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/pexels-photo-4348404-4348404-scaled-1.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -150,7 +151,7 @@ const reviews = [
     badgeText="From $1,290 + GST"
     ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See Our Process", href: "#process" }}
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-196644-196644.jpg"
+    imgSrc={heroImg.src}
     imgAlt="WordPress website design Auckland"
   />
 

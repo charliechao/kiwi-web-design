@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/thumb-1.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -95,7 +96,7 @@ const faqs = [
     eyebrow="Business Email Setup"
     title="Professional email on your own domain — set up properly."
     subtitle="Microsoft 365 and Google Workspace setup for Auckland businesses. We configure everything — accounts, DNS, devices — so your business email works reliably from day one."
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/email-setup-business-email-hosting-auckland.png"
+    imgSrc={heroImg.src}
     imgAlt="Business email setup and hosting for Auckland small businesses"
     ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
     ctaSecondary={{ text: "View All Services", href: "/small-business-website-design-auckland/" }}

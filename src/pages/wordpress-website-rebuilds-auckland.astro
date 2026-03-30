@@ -6,6 +6,7 @@ import ServiceGrid from '../components/ServiceGrid.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/pexels-photo-7218525-7218525-scaled-e1758396597668.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -112,7 +113,7 @@ const faqs = [
     eyebrow="WordPress Rebuilds"
     title="Your site is holding your business back. Let's fix that."
     subtitle="WordPress website rebuilds for Auckland businesses — faster load times, better mobile experience, and a design built to convert visitors into enquiries."
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/wordpress-website-rebuilds-auckland.jpg"
+    imgSrc={heroImg.src}
     imgAlt="WordPress website rebuild for Auckland small business"
     ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
     ctaSecondary={{ text: "View Web Design", href: "/small-business-website-design-auckland/" }}

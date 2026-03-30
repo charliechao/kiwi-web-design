@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/Website-Solutsions-Auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -102,7 +103,7 @@ const faqs = [
     eyebrow="WordPress Themes"
     title="A theme that's fast, flexible, and actually fits your business."
     subtitle="Theme selection and customisation for Auckland small businesses. We find the right foundation, configure it for your brand and performance needs, and make sure it stays manageable."
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/wordpress-theme-selection-auckland-kiwiwebdesign.png"
+    imgSrc={heroImg.src}
     imgAlt="WordPress theme selection and customisation for Auckland small businesses"
     ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
     ctaSecondary={{ text: "View Web Design Services", href: "/small-business-website-design-auckland/" }}

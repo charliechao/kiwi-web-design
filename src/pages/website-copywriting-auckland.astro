@@ -6,6 +6,7 @@ import ServiceGrid from '../components/ServiceGrid.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/pexels-photo-4348404-4348404-scaled-1.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -113,7 +114,7 @@ const faqs = [
     subtitle="Professional website copywriting for Auckland small businesses — homepages, service pages, landing pages, and blog articles. Clear, conversion-focused, and SEO-structured."
     ctaPrimary={{ text: "Get a Copy Quote", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See Services", href: "#services" }}
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-3850576-3850576.jpg"
+    imgSrc={heroImg.src}
     imgAlt="Website copywriting Auckland"
   />
 

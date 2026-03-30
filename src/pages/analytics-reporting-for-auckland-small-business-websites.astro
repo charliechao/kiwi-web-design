@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/pexels-photo-8145247-8145247-scaled.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -95,7 +96,7 @@ const faqs = [
     eyebrow="Analytics & Reporting"
     title="Know exactly what your website is doing — and why."
     subtitle="GA4 setup, conversion tracking, Google Search Console, and monthly plain-English reporting for Auckland small businesses. Stop guessing, start deciding."
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/12/analytics-reporting-auckland-small-business-websites.jpg"
+    imgSrc={heroImg.src}
     imgAlt="Website analytics dashboard for Auckland small business"
     ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
     ctaSecondary={{ text: "View SEO Services", href: "/seo-auckland/" }}

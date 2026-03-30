@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/about3.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -118,7 +119,7 @@ const faqs = [
     eyebrow="Website Security"
     title="Protect your website before something goes wrong."
     subtitle="SSL, firewall, malware scanning, and login protection for Auckland small businesses. Security that runs quietly in the background — so you never have to deal with a hacked site."
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/website-security-auckland-dashboard-style.jpg"
+    imgSrc={heroImg.src}
     imgAlt="Website security monitoring dashboard for Auckland small business"
     ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
     ctaSecondary={{ text: "View Maintenance Plans", href: "/wordpress-maintenance-auckland/" }}

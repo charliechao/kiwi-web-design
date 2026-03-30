@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/about4.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -95,7 +96,7 @@ const faqs = [
     eyebrow="Training & Handover"
     title="Your website — and the confidence to manage it yourself."
     subtitle="Every website we build includes a structured handover session and full credentials transfer. We make sure you know how to update your site before we call it done."
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/website-training-handover-kiwiwebdesign.jpg"
+    imgSrc={heroImg.src}
     imgAlt="Website training and handover session for new WordPress site"
     ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
     ctaSecondary={{ text: "View Web Design Services", href: "/small-business-website-design-auckland/" }}

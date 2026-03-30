@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/thumb-1.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -102,7 +103,7 @@ const faqs = [
     eyebrow="Website Backups"
     title="Never lose your website — even if something goes wrong."
     subtitle="Automated daily backups with offsite storage and fast restoration for Auckland small businesses. Because rebuilding from scratch is never the answer."
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/12/website-backup-restoration-auckland-guide.jpeg"
+    imgSrc={heroImg.src}
     imgAlt="Website backup and restoration service for Auckland small businesses"
     ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
     ctaSecondary={{ text: "View Maintenance Plans", href: "/wordpress-maintenance-auckland/" }}

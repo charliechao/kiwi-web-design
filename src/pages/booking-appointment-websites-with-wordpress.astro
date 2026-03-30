@@ -6,6 +6,7 @@ import ServiceGrid from '../components/ServiceGrid.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/Calendar-e1756877877640.png';
 
 const schema = {
   "@context": "https://schema.org",
@@ -124,7 +125,7 @@ const faqs = [
     badgeText="From $1,490 + GST"
     ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See Features", href: "#features" }}
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-1181533-1181533.jpg"
+    imgSrc={heroImg.src}
     imgAlt="Booking appointment website WordPress Auckland"
   />
 

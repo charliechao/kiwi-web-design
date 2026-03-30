@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/about.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -97,7 +98,7 @@ const faqs = [
     eyebrow="Our Process"
     title="Simple. Transparent. Fast."
     subtitle="Six clear steps from first call to launch day. Most Auckland small business sites go live within 2–3 weeks — with no hidden costs and no surprises."
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/web-design-process-kiwi-web-design-auckland.jpg"
+    imgSrc={heroImg.src}
     imgAlt="Web design process at Kiwi Web Design Auckland"
     ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
     ctaSecondary={{ text: "View Web Design", href: "/small-business-website-design-auckland/" }}

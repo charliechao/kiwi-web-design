@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/Small-Business-Auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -106,7 +107,7 @@ const faqs = [
     eyebrow="Small Business Web Design Auckland"
     title="Affordable websites that generate real enquiries."
     subtitle="Custom WordPress websites for Auckland small businesses — built fast, designed to convert, and easy to manage. From $1,500. Most sites live in 2–3 weeks."
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/Small-Business-Auckland.jpg"
+    imgSrc={heroImg.src}
     imgAlt="Small business web design Auckland by Kiwi Web Design"
     ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
     ctaSecondary={{ text: "See Our Work", href: "/testimonials-reviews/" }}

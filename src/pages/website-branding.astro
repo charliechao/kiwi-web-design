@@ -6,6 +6,7 @@ import ServiceGrid from '../components/ServiceGrid.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/about.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -113,7 +114,7 @@ const faqs = [
     badgeText="From $690 + GST"
     ctaPrimary={{ text: "Get a Branding Quote", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See What's Included", href: "#services" }}
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/09/pexels-photo-196644-196644.jpg"
+    imgSrc={heroImg.src}
     imgAlt="Website branding Auckland small business"
   />
 

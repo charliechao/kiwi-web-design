@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/about3.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -95,7 +96,7 @@ const faqs = [
     eyebrow="WordPress Plugins"
     title="The right plugins — properly configured, nothing wasted."
     subtitle="We choose and set up the plugins your Auckland business site actually needs: security, SEO, caching, forms, and backups — configured correctly, not just installed."
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/wordpress-plugins-auckland-kiwi-web-design.webp"
+    imgSrc={heroImg.src}
     imgAlt="WordPress plugins configured for Auckland small business websites"
     ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
     ctaSecondary={{ text: "View Web Design Services", href: "/small-business-website-design-auckland/" }}

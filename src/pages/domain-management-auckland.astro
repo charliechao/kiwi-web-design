@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import heroImg from '../assets/general/pexels-photo-67112-67112.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -95,7 +96,7 @@ const faqs = [
     eyebrow="Domain Management"
     title="Your domain sorted — renewals, DNS, and transfers handled."
     subtitle="Domain management for Auckland small businesses. We keep your domain renewed, your DNS configured correctly, and your website and email pointing where they should."
-    imgSrc="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/domain-management-auckland-kiwi-web-design.jpg"
+    imgSrc={heroImg.src}
     imgAlt="Domain management for Auckland small businesses"
     ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
     ctaSecondary={{ text: "View All Services", href: "/small-business-website-design-auckland/" }}
