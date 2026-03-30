@@ -20,7 +20,8 @@ async function sendEmail(apiKey, payload) {
     body: JSON.stringify(payload),
   });
   const data = await res.json();
-  if (!res.ok) throw new Error(data.message ?? 'Resend API error');
+  console.log(`[Resend] status=${res.status} body=${JSON.stringify(data)}`);
+  if (!res.ok) throw new Error(data.message ?? JSON.stringify(data));
   return data;
 }
 

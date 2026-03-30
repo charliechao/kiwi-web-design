@@ -1,16 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
-import ServiceGrid from '../components/ServiceGrid.astro';
-import StatsRow from '../components/StatsRow.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import TestimonialGrid from '../components/TestimonialGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
-import aucklandVideo from '../assets/general/Auckland_Video.mp4';
 import { Image } from 'astro:assets';
+import aucklandVideo from '../assets/general/Auckland_Video.mp4';
 import office1 from '../assets/general/office1.jpg';
 import office2 from '../assets/general/office2.jpg';
+import beautyTouchPreview from '../assets/general/beauty-salon-website-design-seo-auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -18,287 +17,166 @@ const schema = {
     {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/",
-      "url": "https://www.kiwiwebdesign.co.nz/",
-      "name": "Auckland Web Design That Generates Leads | Kiwi Web Design",
-      "description": "Kiwi Web Design helps Auckland small businesses get more leads through conversion-focused websites, local SEO, and Google Ads. Based in Grey Lynn. From $1,290.",
-      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
-      "datePublished": "2025-04-09T22:43:08+00:00",
-      "dateModified": "2026-03-05T21:19:05+00:00",
-      "inLanguage": "en-NZ"
+      url: 'https://www.kiwiwebdesign.co.nz/',
+      name: 'Auckland Web Design That Generates Leads | Kiwi Web Design',
+      description: 'Kiwi Web Design helps Auckland small businesses get more leads through conversion-focused websites, local SEO, and Google Ads. Based in Grey Lynn. From $1,290.',
+      isPartOf: { '@id': 'https://www.kiwiwebdesign.co.nz/#website' },
+      about: { '@id': 'https://www.kiwiwebdesign.co.nz/#organization' },
+      inLanguage: 'en-NZ'
     },
     {
-      "@type": "WebSite",
-      "@id": "https://www.kiwiwebdesign.co.nz/#website",
-      "url": "https://www.kiwiwebdesign.co.nz/",
-      "name": "Kiwi Web Design",
-      "description": "Websites built to generate leads",
-      "publisher": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
-      "name": "Kiwi Web Design",
-      "alternateName": "Web Design Auckland",
-      "url": "https://www.kiwiwebdesign.co.nz/",
-      "founder": { "@id": "https://www.kiwiwebdesign.co.nz/#charlie" },
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png",
-        "width": 512,
-        "height": 512
-      },
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61559560322941",
-        "https://www.instagram.com/kiwi_web_design/",
-        "https://www.linkedin.com/company/108270459/",
-        "https://www.youtube.com/@Kiwiwebdesign",
-        "https://www.tiktok.com/@kiwi_web_design"
-      ]
-    },
-    {
-      "@type": ["LocalBusiness", "ProfessionalService"],
-      "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness",
-      "name": "Kiwi Web Design",
-      "description": "Auckland web design agency specialising in conversion-focused websites, local SEO, and Google Ads for small businesses. Based in Grey Lynn, Auckland.",
-      "url": "https://www.kiwiwebdesign.co.nz/",
-      "telephone": "+64210396580",
-      "email": "hi@kiwiwebdesign.co.nz",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "147 Great North Road",
-        "addressLocality": "Grey Lynn",
-        "addressRegion": "Auckland",
-        "postalCode": "1021",
-        "addressCountry": "NZ"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -36.8649,
-        "longitude": 174.7282
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "18:00"
-        }
-      ],
-      "areaServed": [
-        { "@type": "City", "name": "Auckland" },
-        { "@type": "Place", "name": "North Shore" },
-        { "@type": "Place", "name": "South Auckland" },
-        { "@type": "Place", "name": "West Auckland" },
-        { "@type": "Place", "name": "East Auckland" },
-        { "@type": "Place", "name": "Grey Lynn" }
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Web Design & Digital Marketing Services Auckland",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Small Business Website Design Auckland",
-              "url": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "SEO Auckland",
-              "url": "https://www.kiwiwebdesign.co.nz/seo-auckland/"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Google Ads Management Auckland",
-              "url": "https://www.kiwiwebdesign.co.nz/google-ads/"
-            }
-          }
-        ]
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "47",
-        "bestRating": "5"
-      },
-      "parentOrganization": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://www.kiwiwebdesign.co.nz/#charlie",
-      "name": "Charlie Chao",
-      "jobTitle": "Founder, Kiwi Web Design",
-      "worksFor": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
-      "url": "https://www.kiwiwebdesign.co.nz/about-us/"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "How much does it cost to generate leads online for a small Auckland business?", "acceptedAnswer": { "@type": "Answer", "text": "Starting from $1,290 for a lead-focused website with basic SEO." } },
-        { "@type": "Question", "name": "Will my website actually generate enquiries?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every site we build is designed around conversion with clear calls to action." } },
-        { "@type": "Question", "name": "How long does SEO take to bring leads?", "acceptedAnswer": { "@type": "Answer", "text": "You can expect early movement in 2 to 3 months, with stronger results building over 6-12 months." } }
-      ]
+      '@type': 'Organization',
+      '@id': 'https://www.kiwiwebdesign.co.nz/#organization',
+      name: 'Kiwi Web Design',
+      url: 'https://www.kiwiwebdesign.co.nz/',
+      telephone: '+64210396580',
+      email: 'hi@kiwiwebdesign.co.nz'
     }
   ]
 };
 
 const services = [
   {
-    icon: "🌐",
-    title: "Website Design",
-    desc: "Conversion-focused websites built for Auckland small businesses. Mobile-first, fast, and designed to turn visitors into enquiries — not just look good.",
-    href: "/small-business-website-design-auckland/",
+    icon: 'WD',
+    title: 'Website Design',
+    desc: 'Conversion-focused websites for Auckland small businesses. Fast, mobile-first, and designed to turn visits into enquiries.',
+    href: '/small-business-website-design-auckland/',
   },
   {
-    icon: "📈",
-    title: "SEO Auckland",
-    desc: "Local SEO that targets the keywords your customers actually search. We build organic visibility that brings consistent, high-intent traffic to your site.",
-    href: "/seo-auckland/",
+    icon: 'SEO',
+    title: 'SEO Auckland',
+    desc: 'Local SEO that targets the searches your customers actually make, with a structure built to bring qualified traffic.',
+    href: '/seo-auckland/',
   },
   {
-    icon: "🎯",
-    title: "Google Ads",
-    desc: "PPC campaigns built around buyer intent. We set up, manage, and optimise Google Ads so you get more calls and enquiries — without wasting ad spend.",
-    href: "/google-ads/",
-  },
-];
-
-const whyUs = [
-  {
-    icon: "💬",
-    title: "Free Consultation — In Person or Online",
-    desc: "We meet you first, learn your goals, and only then recommend a path forward. No hard sell. Your consultation can happen in Grey Lynn, anywhere in Auckland, or over video call.",
-  },
-  {
-    icon: "💰",
-    title: "Websites from $1,290",
-    desc: "We combine AI-assisted tools with local expertise to deliver premium results at 50–70% lower cost than typical Auckland web agencies. You know the price upfront.",
-  },
-  {
-    icon: "⚡",
-    title: "Live in 2–3 Weeks",
-    desc: "Most projects launch in as little as two weeks. We move fast without cutting corners, so you can start getting enquiries sooner rather than waiting months.",
-  },
-  {
-    icon: "📍",
-    title: "Based in Grey Lynn, Auckland",
-    desc: "147 Great North Road, Grey Lynn, Auckland 1021. Call: 021 039 6580. We understand Auckland suburbs, local search intent, and what your customers expect.",
+    icon: 'ADS',
+    title: 'Google Ads',
+    desc: 'Paid campaigns built around buying intent so you get more calls and quote requests without wasting ad spend.',
+    href: '/google-ads/',
   },
 ];
 
 const stats = [
-  { number: "50+", label: "Projects Completed" },
-  { number: "4.9★", label: "Average Google Rating" },
-  { number: "98%", label: "Client Satisfaction" },
-  { number: "2–3 wks", label: "Average Delivery" },
+  { number: '50+', label: 'Projects completed' },
+  { number: '4.9\u2605', label: 'Average Google rating' },
+  { number: '98%', label: 'Client satisfaction' },
+  { number: '2-3 wks', label: 'Average delivery' },
 ];
 
-const packages = [
+const whyUs = [
   {
-    name: "Launch & Get Found",
-    price: "From $1,290",
-    desc: "For new businesses that need a professional presence and early visibility online.",
-    features: [
-      "5-page lead-focused website",
-      "Mobile-first responsive design",
-      "On-page local SEO",
-      "Speed & Core Web Vitals optimisation",
-      "Contact form + click-to-call",
-      "Email & phone support",
-    ],
-    highlight: false,
-    tag: "",
+    icon: '01',
+    title: 'Free consultation, online or in person',
+    desc: 'We learn the business first, then recommend the right scope. No hard sell and no vague package logic.',
   },
   {
-    name: "Lead Growth Engine",
-    price: "From $2,690",
-    desc: "A complete system combining a high-converting website, SEO, and Google Ads setup.",
-    features: [
-      "Conversion-optimised website",
-      "Local SEO targeting buyer keywords",
-      "Google Ads campaign setup",
-      "Dedicated landing pages for ads",
-      "Conversion tracking setup",
-      "Ongoing optimisation recommendations",
-    ],
-    highlight: true,
-    tag: "Most Popular",
+    icon: '02',
+    title: 'Clear pricing from $1,290',
+    desc: 'Smaller businesses need clarity. We price for momentum, not procurement theatre.',
   },
   {
-    name: "Sales Accelerator",
-    price: "From $3,890",
-    desc: "Full-service growth through ongoing SEO, Google Ads management, and CRO.",
-    features: [
-      "Advanced conversion optimisation",
-      "Ongoing SEO + Google Ads management",
-      "Dedicated lead landing pages",
-      "Monthly performance reporting",
-      "Priority support",
-    ],
-    highlight: false,
-    tag: "",
+    icon: '03',
+    title: 'Fast launch cycles',
+    desc: 'Most projects go live in 2-3 weeks, so the site starts working before the opportunity goes cold.',
+  },
+  {
+    icon: '04',
+    title: 'Actually based in Auckland',
+    desc: 'Grey Lynn-based and tuned to local search intent, local proof, and local buying behaviour.',
   },
 ];
 
 const process = [
-  { step: "1", title: "Free Consultation", desc: "We learn about your business, your goals, and who your customers are — before recommending anything." },
-  { step: "2", title: "Strategy & Proposal", desc: "You receive a clear proposal: what we'll build, how it will generate leads, and exactly what it costs." },
-  { step: "3", title: "Design & Build", desc: "We design and build your website, SEO strategy, or ad campaigns — typically in 2–3 weeks." },
-  { step: "4", title: "Launch & Grow", desc: "Go live, start generating leads, and get ongoing support to keep improving results over time." },
+  { step: '1', title: 'Consultation', desc: 'We map the offer, the customer, and the best path to conversion before touching design.' },
+  { step: '2', title: 'Strategy', desc: 'You get a clear scope, a practical direction, and pricing that lines up with the actual work.' },
+  { step: '3', title: 'Build', desc: 'We design and build quickly, keeping the page structure focused on trust and action.' },
+  { step: '4', title: 'Launch', desc: 'The site goes live with a clear next-step plan for SEO, ads, or ongoing optimisation.' },
+];
+
+const packages = [
+  {
+    name: 'Launch & Get Found',
+    price: 'From $1,290',
+    desc: 'For new businesses that need a professional presence and early visibility online.',
+    features: ['5-page website', 'Mobile-first design', 'On-page local SEO', 'Speed optimisation', 'Contact form setup'],
+    highlight: false,
+    tag: '',
+  },
+  {
+    name: 'Lead Growth Engine',
+    price: 'From $2,690',
+    desc: 'A full lead-generation setup combining website, SEO, and Google Ads foundations.',
+    features: ['Conversion-focused website', 'Local SEO targeting buyer keywords', 'Google Ads setup', 'Landing pages', 'Tracking setup'],
+    highlight: true,
+    tag: 'Most Popular',
+  },
+  {
+    name: 'Sales Accelerator',
+    price: 'From $3,890',
+    desc: 'Ongoing SEO, Google Ads management, and conversion optimisation for faster growth.',
+    features: ['Ongoing optimisation', 'Lead landing pages', 'Monthly reporting', 'Priority support', 'Growth recommendations'],
+    highlight: false,
+    tag: '',
+  },
 ];
 
 const reviews = [
-  {
-    name: "Zane Barrett",
-    company: "Barrett Access Scaffolding",
-    text: "We recently worked with Kiwi Web Design to launch our new website, and we couldn't be happier. Professional, responsive, and they really took the time to understand our business. They even built the first scaffold cost calculator in NZ!",
-  },
-  {
-    name: "Jack",
-    company: "Show Me Shorts",
-    text: "Kiwi Web Design were fantastic to work with. From the very beginning they understood what I needed and offered smart, practical solutions. Professional, friendly, and quick to respond.",
-  },
-  {
-    name: "Steven Liu",
-    company: "Client",
-    text: "Outstanding experience with Charlie! The design is clean, modern, and user-friendly — exactly what I hoped for. Charlie's attention to detail and commitment to quality really stood out.",
-  },
-  {
-    name: "Gina Dellabarca",
-    company: "Client",
-    text: "They provided a comprehensive and helpful website audit for us. Clear information. Great communication. Highly recommended.",
-  },
+  { name: 'Zane Barrett', company: 'Barrett Access Scaffolding', text: 'Professional, responsive, and they really took the time to understand our business.' },
+  { name: 'Jack', company: 'Show Me Shorts', text: 'They understood what I needed from the beginning and offered smart, practical solutions.' },
+  { name: 'Steven Liu', company: 'Client', text: 'Clean, modern, and user-friendly. The attention to detail really stood out.' },
+  { name: 'Gina Dellabarca', company: 'Client', text: 'Clear information, great communication, and a genuinely helpful audit.' },
 ];
 
 const portfolio = [
-  { src: "/portfolio/topline-services.jpg",   alt: "Auckland cleaning company website", caption: "Top Line Services", href: "/topline-services-cleaning-website/" },
-  { src: "/portfolio/inspector-guys.jpg",    alt: "Auckland building inspector website", caption: "Inspector Guys", href: "/inspector-guys-building-inspections-website/" },
-  { src: "/portfolio/la-veranda.jpg",        alt: "Auckland restaurant website", caption: "La Veranda Restaurant", href: "/la-veranda-restaurant-website/" },
-  { src: "/portfolio/fl-legal.jpg",          alt: "Auckland law firm website", caption: "FL Legal", href: "/fl-legal-website/" },
-  { src: "/portfolio/mt-albert-business.jpg", alt: "Mt Albert Business Association website", caption: "Mt Albert Business Assoc." },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Kiwiland-e1753410581810.jpg",                    alt: "Auckland construction company website", caption: "Kiwiland Construction", href: "/kiwiland-construction-website/" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Specialist-e1753415885359.jpg",                  alt: "Auckland medical specialist website", caption: "Melanoma NZ", href: "/melanoma-specialists-website/" },
-  { src: "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/01/600-21B675F7-8EB5-45A5-99242870729DC26D.png",    alt: "TopRated.nz directory", caption: "TopRated.nz" },
+  { src: '/portfolio/topline-services.jpg', alt: 'Auckland cleaning company website', caption: 'Top Line Services', href: '/topline-services-cleaning-website/' },
+  { src: 'https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/08/30317.jpg', alt: 'Barrett Access Scaffolding website', caption: 'Barrett Access Scaffolding', href: '/case-study-scaffolding/' },
+  { src: beautyTouchPreview.src, alt: 'Beauty Touch Auckland website', caption: 'Beauty Touch Auckland', href: '/beauty-touch-case-study/' },
+  { src: '/portfolio/inspector-guys.jpg', alt: 'Auckland building inspector website', caption: 'Inspector Guys', href: '/inspector-guys-building-inspections-website/' },
+  { src: '/portfolio/la-veranda.jpg', alt: 'Auckland restaurant website', caption: 'La Veranda Restaurant', href: '/la-veranda-restaurant-website/' },
+  { src: '/portfolio/fl-legal.jpg', alt: 'Auckland law firm website', caption: 'FL Legal', href: '/fl-legal-website/' },
+  { src: 'https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Kiwiland-e1753410581810.jpg', alt: 'Kiwiland Construction website', caption: 'Kiwiland Construction', href: '/kiwiland-construction-website/' },
+  { src: 'https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Specialist-e1753415885359.jpg', alt: 'Melanoma Specialists website', caption: 'Melanoma Specialists', href: '/melanoma-specialists-website/' },
+  { src: '/portfolio/mt-albert-business.jpg', alt: 'Mt Albert Business Association website', caption: 'Mt Albert Business Assoc.' },
+  { src: '/blog/600-21B675F7-8EB5-45A5-99242870729DC26D.png', alt: 'TopRated.nz platform', caption: 'TopRated.nz', href: '/affordable-web-design-auckland/toprated-auckland-web-design/' },
 ];
 
+const portfolioLoop = [...portfolio, ...portfolio];
+
 const faqs = [
-  { q: "How much does a small business website cost in Auckland?", a: "Our packages start from $1,290 for a 5-page lead-focused website. More complex projects with e-commerce, bookings, or custom features are priced accordingly. You'll always know the cost upfront — no surprises." },
-  { q: "Will my website actually generate enquiries?", a: "A website alone doesn't guarantee leads. That's why we design around conversion: clear calls to action, trust signals, and buyer-intent structure. Combined with <a href=\"/seo-auckland/\">SEO</a> or <a href=\"/google-ads/\">Google Ads</a>, your site becomes a lead-generation system." },
-  { q: "How long does SEO take to show results in Auckland?", a: "Most Auckland businesses see early movement in 2–3 months, with stronger results building over 6–12 months. We focus on local buyer keywords that matter, not vanity traffic." },
-  { q: "Do you offer websites, SEO, and Google Ads together?", a: "Yes, and combining all three is our most effective approach. The website handles conversion, <a href=\"/seo-auckland/\">SEO builds long-term visibility</a>, and <a href=\"/google-ads/\">Google Ads drives immediate demand</a>." },
-  { q: "How fast can you build a website?", a: "Most projects are live in 2–3 weeks. We're upfront if anything will take longer and keep you informed throughout the process." },
-  { q: "Do you work with tradies and service businesses?", a: "Yes — regularly. Our <a href=\"/tradie-website-design-auckland/\">tradie website design</a> work covers plumbers, electricians, builders, cleaners, and other service businesses across Auckland. Our focus is making it easy for customers to find and contact you." },
-  { q: "Can you migrate my existing website from Wix or Squarespace?", a: "Yes. Our <a href=\"/wordpress-website-rebuilds-auckland/\">WordPress website rebuild service</a> migrates and improves your site, preserving important content and significantly improving performance, SEO, and conversion." },
-  { q: "Why choose Kiwi Web Design over other Auckland agencies?", a: "Free in-person consultations, transparent pricing, AI-assisted efficiency, and a genuine focus on leads rather than aesthetics. See our <a href=\"/website-design-process-in-auckland/\">design process</a> and <a href=\"/about-us/\">our story</a> — we deliver premium results at 50–70% less than traditional agencies." },
+  { q: 'How much does a small business website cost in Auckland?', a: 'Our packages start from $1,290 for a lead-focused website. More complex builds are priced accordingly, and you know the cost upfront.' },
+  { q: 'Will my website actually generate enquiries?', a: 'That is the goal. We design around conversion with clear calls to action, trust signals, and a buyer-focused structure.' },
+  { q: 'How long does SEO take to show results?', a: 'Most Auckland businesses see early movement in 2-3 months, with stronger results building over 6-12 months.' },
+  { q: 'Do you offer websites, SEO, and Google Ads together?', a: 'Yes. Combining all three is usually the strongest setup because the website handles conversion while SEO and ads bring demand.' },
+];
+
+const exploreGroups = [
+  {
+    label: 'Popular services',
+    links: [
+      { text: 'WordPress websites', href: '/wordpress-website-design-auckland/' },
+      { text: 'Local SEO Auckland', href: '/local-seo-for-auckland-small-businesses/' },
+      { text: 'Google Ads', href: '/google-ads/' },
+      { text: 'Website hosting', href: '/website-hosting-auckland/' },
+    ],
+  },
+  {
+    label: 'Industries',
+    links: [
+      { text: 'Tradies', href: '/tradie-website-design-auckland/' },
+      { text: 'Beauty & Wellness', href: '/how-kiwi-web-design-helps-auckland-beauty-industry/' },
+      { text: 'Restaurants & Cafes', href: '/how-kiwi-web-design-helps-auckland-restaurants/' },
+      { text: 'Healthcare', href: '/how-kiwi-web-design-helps-auckland-healthcare/' },
+    ],
+  },
+  {
+    label: 'Auckland areas',
+    links: [
+      { text: 'North Shore', href: '/north-shore-website-design/' },
+      { text: 'South Auckland', href: '/south-auckland-web-design/' },
+      { text: 'West Auckland', href: '/west-auckland-web-design/' },
+      { text: 'East Auckland', href: '/east-auckland-web-design/' },
+    ],
+  },
 ];
 ---
 
@@ -308,314 +186,232 @@ const faqs = [
   canonicalURL="https://www.kiwiwebdesign.co.nz/"
   schema={schema}
 >
-
-  <!-- ── Hero ── -->
   <section class="hp-hero">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto">
-      <source src={aucklandVideo} type="video/mp4" />
-    </video>
-    <div class="hero-overlay" aria-hidden="true"></div>
-
-    <div class="container hp-hero-inner">
-      <div class="hp-hero-text">
-        <p class="hp-eyebrow">Web Design · SEO · Google Ads · Auckland, NZ</p>
-        <h1 class="hp-headline">
-          Websites. SEO. Google Ads.<br />
-          <span class="hp-accent">Real leads for Auckland businesses.</span>
-        </h1>
-        <p class="hp-lead">Kiwi Web Design helps Auckland small businesses drive traffic, enquiries, and sales — not just build websites. Strategy-first, results-focused, locally based.</p>
-        <div class="hp-ctas">
-          <a href="/website-designer-auckland/" class="hp-btn-primary">Get a Free Quote</a>
-          <a href="/small-business-website-design-auckland/" class="hp-btn-ghost">See Our Packages</a>
+    <div class="hp-hero-glow hp-hero-glow-one" aria-hidden="true"></div>
+    <div class="hp-hero-glow hp-hero-glow-two" aria-hidden="true"></div>
+    <div class="container hp-hero-shell">
+      <div class="hp-hero-copy">
+        <div class="hp-kicker-row">
+          <p class="hp-eyebrow">Auckland web design studio</p>
+          <span class="hp-location-pill">Grey Lynn, Auckland</span>
         </div>
-        <a href="https://share.google/nciRqe4rK6ywabSVx" target="_blank" rel="noopener" class="hp-trust-card">
-          <div class="htc-stars">★★★★★</div>
-          <div>
-            <p class="htc-text"><strong>5/5</strong> Google Reviews</p>
-            <p class="htc-sub">Trusted by Auckland businesses</p>
+        <h1 class="hp-headline">Websites, SEO, and Google Ads designed to make the phone ring.</h1>
+        <p class="hp-lead">Kiwi Web Design helps Auckland small businesses turn traffic into quote requests, booked calls, and steady enquiries. Strategy-first, local, and built to convert.</p>
+        <div class="hp-ctas">
+          <a href="/website-designer-auckland/" class="hp-btn-primary">Book a Free Consultation</a>
+          <a href="#packages" class="hp-btn-secondary">See Pricing</a>
+        </div>
+        <div class="hp-proof-row">
+          <a href="https://share.google/nciRqe4rK6ywabSVx" target="_blank" rel="noopener" class="hp-review-pill">
+            <div class="review-pill-badge">Google</div>
+            <div>
+              <p class="htc-text"><strong>4.9/5</strong> Google Reviews</p>
+              <p class="htc-sub">47 verified reviews from Auckland clients</p>
+            </div>
+          </a>
+          <p class="hp-mini-note">Free consultation online or in person. Typical launch timeline: 2-3 weeks.</p>
+        </div>
+      </div>
+
+      <div class="hp-stage">
+        <div class="hp-stage-window">
+          <div class="hp-stage-topline">
+            <span>Recent Auckland work</span>
+            <span>Conversion-first build</span>
           </div>
-        </a>
+          <video class="hp-stage-video" autoplay muted loop playsinline preload="auto">
+            <source src={aucklandVideo} type="video/mp4" />
+          </video>
+          <div class="hp-stage-overlay" aria-hidden="true"></div>
+          <div class="hp-stage-caption">
+            <p class="hp-stage-label">Launch faster, convert harder</p>
+            <p class="hp-stage-title">A homepage should feel credible in five seconds, not after a long scroll.</p>
+          </div>
+        </div>
+
+        <div class="hp-stage-cards">
+          {stats.map(({ number, label }) => (
+            <div class="hp-stat-card">
+              <span class="hp-stat-number">{number}</span>
+              <span class="hp-stat-label">{label}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Trust bar ── -->
-  <div class="trust-bar">
-    <div class="container trust-bar-inner">
-      <div class="tb-item">
-        <svg class="tb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-        <span class="tb-value">4.9★</span>
-        <span class="tb-label">Google Reviews</span>
+  <section class="section hp-intro-section">
+    <div class="container hp-intro-grid">
+      <div class="hp-intro-copy">
+        <SectionHeader
+          eyebrow="Why businesses switch to us"
+          title="You do not need another pretty brochure site."
+          subtitle="You need a clear offer, a persuasive first impression, and a path that makes calling or enquiring feel obvious."
+          align="left"
+        />
+        <p class="hp-intro-text">That is the gap most small-business websites miss. They look acceptable, but they do not explain the value fast enough, they bury trust signals, and they give buyers too much to think about. We build around decision-making, not decoration.</p>
+        <ul class="hp-checklist">
+          <li>Sharper messaging above the fold so visitors understand the offer immediately.</li>
+          <li>Proof-led layouts with reviews, case studies, and local trust signals in the right places.</li>
+          <li>Conversion paths tuned for quote requests, calls, bookings, and repeat enquiries.</li>
+        </ul>
       </div>
-      <span class="tb-sep" aria-hidden="true"></span>
-      <div class="tb-item">
-        <svg class="tb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-        <span class="tb-value">50+</span>
-        <span class="tb-label">Projects Delivered</span>
-      </div>
-      <span class="tb-sep" aria-hidden="true"></span>
-      <div class="tb-item">
-        <svg class="tb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span class="tb-value">2–3 wks</span>
-        <span class="tb-label">Average Delivery</span>
-      </div>
-      <span class="tb-sep" aria-hidden="true"></span>
-      <div class="tb-item">
-        <svg class="tb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
-        <span class="tb-value">From $1,290</span>
-        <span class="tb-label">Website Pricing</span>
-      </div>
-      <span class="tb-sep" aria-hidden="true"></span>
-      <div class="tb-item">
-        <svg class="tb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-        <span class="tb-value">Grey Lynn</span>
-        <span class="tb-label">Auckland-based</span>
+
+      <div class="hp-adv-grid">
+        {whyUs.map(({ icon, title, desc }) => (
+          <article class="hp-adv-card">
+            <div class="hp-adv-icon">
+              {icon}
+            </div>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </article>
+        ))}
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ── Core services ── -->
-  <section class="section">
+  <section class="section hp-services-section">
     <div class="container">
       <SectionHeader
         eyebrow="What We Do"
-        title="Three services. One goal: more enquiries."
-        subtitle="Web design, SEO, and Google Ads working together to bring your business a steady stream of qualified leads."
+        title="Three services. One lead-generation system."
+        subtitle="The strongest results come when your website, search visibility, and paid traffic all point at the same conversion goal."
       />
-      <div class="srv-illus-grid">
-
-        <!-- Web Design card -->
-        <a href="/small-business-website-design-auckland/" class="srv-card">
-          <div class="srv-illus">
-            <svg viewBox="0 0 260 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="260" height="160" rx="10" fill="#1e1c1a"/>
-              <!-- Browser chrome -->
-              <rect width="260" height="32" rx="10" fill="#2c2927"/>
-              <rect y="18" width="260" height="14" fill="#2c2927"/>
-              <circle cx="18" cy="16" r="4" fill="#ff5f57"/>
-              <circle cx="30" cy="16" r="4" fill="#febc2e"/>
-              <circle cx="42" cy="16" r="4" fill="#28c840"/>
-              <rect x="60" y="8" width="140" height="16" rx="4" fill="#3a3532"/>
-              <text x="130" y="20" text-anchor="middle" font-size="6.5" fill="#fbe8a6" fill-opacity="0.7" font-family="monospace">kiwiwebdesign.co.nz</text>
-              <!-- Nav bar -->
-              <rect x="8" y="42" width="244" height="20" rx="3" fill="#2c2927"/>
-              <rect x="16" y="49" width="28" height="6" rx="2" fill="#fbe8a6" fill-opacity="0.8"/>
-              <rect x="52" y="49" width="18" height="6" rx="2" fill="#534a45" fill-opacity="0.6"/>
-              <rect x="76" y="49" width="18" height="6" rx="2" fill="#534a45" fill-opacity="0.6"/>
-              <rect x="196" y="47" width="48" height="10" rx="3" fill="#fbe8a6"/>
-              <!-- Hero block -->
-              <rect x="8" y="70" width="244" height="56" rx="3" fill="#241f1d"/>
-              <rect x="16" y="78" width="88" height="7" rx="2" fill="#ffffff" fill-opacity="0.75"/>
-              <rect x="16" y="89" width="68" height="5" rx="2" fill="#ffffff" fill-opacity="0.35"/>
-              <rect x="16" y="98" width="76" height="5" rx="2" fill="#ffffff" fill-opacity="0.25"/>
-              <rect x="16" y="110" width="44" height="11" rx="3" fill="#fbe8a6"/>
-              <!-- Hero image placeholder -->
-              <rect x="134" y="75" width="110" height="46" rx="4" fill="#3a3532"/>
-              <path d="M148 98 L168 84 L188 94 L210 82 L238 96" stroke="#fbe8a6" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-              <!-- Bottom cards -->
-              <rect x="8" y="133" width="74" height="20" rx="3" fill="#2c2927"/>
-              <rect x="16" y="139" width="26" height="4" rx="2" fill="#fbe8a6" fill-opacity="0.5"/>
-              <rect x="16" y="146" width="46" height="3" rx="2" fill="#534a45" fill-opacity="0.4"/>
-              <rect x="93" y="133" width="74" height="20" rx="3" fill="#2c2927"/>
-              <rect x="101" y="139" width="26" height="4" rx="2" fill="#fbe8a6" fill-opacity="0.5"/>
-              <rect x="101" y="146" width="46" height="3" rx="2" fill="#534a45" fill-opacity="0.4"/>
-              <rect x="178" y="133" width="74" height="20" rx="3" fill="#2c2927"/>
-              <rect x="186" y="139" width="26" height="4" rx="2" fill="#fbe8a6" fill-opacity="0.5"/>
-              <rect x="186" y="146" width="46" height="3" rx="2" fill="#534a45" fill-opacity="0.4"/>
-            </svg>
-          </div>
-          <div class="srv-body">
-            <h3 class="srv-title">Website Design</h3>
-            <p class="srv-desc">Conversion-focused websites built for Auckland small businesses. Mobile-first, fast, and designed to turn visitors into enquiries — not just look good.</p>
-            <span class="srv-link">Learn more →</span>
-          </div>
-        </a>
-
-        <!-- SEO card -->
-        <a href="/seo-auckland/" class="srv-card">
-          <div class="srv-illus">
-            <svg viewBox="0 0 260 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="260" height="160" rx="10" fill="#1e1c1a"/>
-              <!-- Grid lines -->
-              <line x1="0" y1="130" x2="260" y2="130" stroke="#2c2927" stroke-width="1"/>
-              <line x1="0" y1="105" x2="260" y2="105" stroke="#2c2927" stroke-width="1"/>
-              <line x1="0" y1="80" x2="260" y2="80" stroke="#2c2927" stroke-width="1"/>
-              <line x1="0" y1="55" x2="260" y2="55" stroke="#2c2927" stroke-width="1"/>
-              <!-- Bar chart -->
-              <rect x="24" y="118" width="22" height="12" rx="2" fill="#534a45" fill-opacity="0.7"/>
-              <rect x="54" y="103" width="22" height="27" rx="2" fill="#534a45" fill-opacity="0.7"/>
-              <rect x="84" y="88" width="22" height="42" rx="2" fill="#534a45"/>
-              <rect x="114" y="70" width="22" height="60" rx="2" fill="#fbe8a6" fill-opacity="0.55"/>
-              <rect x="144" y="50" width="22" height="80" rx="2" fill="#fbe8a6" fill-opacity="0.75"/>
-              <rect x="174" y="28" width="22" height="102" rx="2" fill="#fbe8a6"/>
-              <!-- Trend line -->
-              <path d="M35 122 L65 108 L95 92 L125 74 L155 54 L185 32" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-dasharray="4 2"/>
-              <!-- Arrow at trend end -->
-              <path d="M181 36 L185 28 L189 36" fill="#ffffff" fill-opacity="0.5"/>
-              <!-- Magnifying glass -->
-              <circle cx="212" cy="72" r="30" fill="#2c2927" stroke="#fbe8a6" stroke-width="2.5"/>
-              <circle cx="212" cy="72" r="20" fill="#1a1816" stroke="#3a3532" stroke-width="1"/>
-              <rect x="202" y="64" width="20" height="5" rx="2" fill="#fbe8a6" fill-opacity="0.8"/>
-              <rect x="202" y="73" width="16" height="4" rx="2" fill="#534a45" fill-opacity="0.7"/>
-              <rect x="202" y="81" width="18" height="4" rx="2" fill="#534a45" fill-opacity="0.5"/>
-              <line x1="234" y1="92" x2="248" y2="108" stroke="#fbe8a6" stroke-width="4" stroke-linecap="round"/>
-              <!-- #1 badge -->
-              <circle cx="36" cy="24" r="14" fill="#fbe8a6"/>
-              <text x="36" y="29" text-anchor="middle" font-size="11" fill="#2c2927" font-weight="bold" font-family="sans-serif">#1</text>
-            </svg>
-          </div>
-          <div class="srv-body">
-            <h3 class="srv-title">SEO Auckland</h3>
-            <p class="srv-desc">Local SEO that targets the keywords your customers actually search. We build organic visibility that brings consistent, high-intent traffic to your site.</p>
-            <span class="srv-link">Learn more →</span>
-          </div>
-        </a>
-
-        <!-- Google Ads card -->
-        <a href="/google-ads/" class="srv-card">
-          <div class="srv-illus">
-            <svg viewBox="0 0 260 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="260" height="160" rx="10" fill="#1e1c1a"/>
-              <!-- Search bar -->
-              <rect x="12" y="12" width="236" height="22" rx="5" fill="#2c2927" stroke="#3a3532" stroke-width="1"/>
-              <circle cx="26" cy="23" r="5.5" fill="none" stroke="#534a45" stroke-width="1.5"/>
-              <line x1="30" y1="27" x2="34" y2="31" stroke="#534a45" stroke-width="1.5" stroke-linecap="round"/>
-              <rect x="40" y="19" width="70" height="8" rx="2" fill="#534a45" fill-opacity="0.5"/>
-              <!-- Ad result 1 — highlighted -->
-              <rect x="12" y="42" width="236" height="36" rx="5" fill="#2c2927"/>
-              <rect x="20" y="49" width="22" height="10" rx="3" fill="#fbe8a6"/>
-              <text x="31" y="58" text-anchor="middle" font-size="6.5" fill="#2c2927" font-weight="bold" font-family="sans-serif">Ad</text>
-              <rect x="48" y="50" width="100" height="7" rx="2" fill="#7ba7e0" fill-opacity="0.85"/>
-              <rect x="20" y="62" width="170" height="4" rx="2" fill="#534a45" fill-opacity="0.5"/>
-              <rect x="20" y="69" width="130" height="4" rx="2" fill="#534a45" fill-opacity="0.3"/>
-              <!-- Ad result 2 -->
-              <rect x="12" y="84" width="236" height="36" rx="5" fill="#241f1d"/>
-              <rect x="20" y="91" width="22" height="10" rx="3" fill="#fbe8a6" fill-opacity="0.65"/>
-              <text x="31" y="100" text-anchor="middle" font-size="6.5" fill="#2c2927" font-weight="bold" font-family="sans-serif">Ad</text>
-              <rect x="48" y="92" width="80" height="7" rx="2" fill="#7ba7e0" fill-opacity="0.5"/>
-              <rect x="20" y="104" width="150" height="4" rx="2" fill="#534a45" fill-opacity="0.35"/>
-              <rect x="20" y="111" width="110" height="4" rx="2" fill="#534a45" fill-opacity="0.2"/>
-              <!-- Divider -->
-              <line x1="12" y1="126" x2="248" y2="126" stroke="#3a3532" stroke-width="1"/>
-              <!-- Organic result (muted) -->
-              <rect x="12" y="132" width="236" height="20" rx="4" fill="#1a1816"/>
-              <rect x="20" y="138" width="80" height="5" rx="2" fill="#534a45" fill-opacity="0.35"/>
-              <rect x="20" y="146" width="150" height="4" rx="2" fill="#534a45" fill-opacity="0.2"/>
-              <!-- Target icon -->
-              <circle cx="236" cy="52" r="12" stroke="#fbe8a6" stroke-opacity="0.15" stroke-width="1.5" fill="none"/>
-              <circle cx="236" cy="52" r="7" stroke="#fbe8a6" stroke-opacity="0.25" stroke-width="1.5" fill="none"/>
-              <circle cx="236" cy="52" r="3" fill="#fbe8a6" fill-opacity="0.6"/>
-            </svg>
-          </div>
-          <div class="srv-body">
-            <h3 class="srv-title">Google Ads</h3>
-            <p class="srv-desc">PPC campaigns built around buyer intent. We set up, manage, and optimise Google Ads so you get more calls and enquiries — without wasting ad spend.</p>
-            <span class="srv-link">Learn more →</span>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Stats strip ── -->
-  <StatsRow items={stats} dark={true} />
-
-  <!-- ── Office images ── -->
-  <div class="office-strip">
-    <Image src={office1} alt="Kiwi Web Design studio — Auckland web design workspace" width={800} height={540} class="office-img" />
-    <Image src={office2} alt="Kiwi Web Design team at work in Grey Lynn Auckland" width={800} height={540} class="office-img" />
-  </div>
-
-  <!-- ── Why choose us ── -->
-  <section class="section" style="background: var(--kwd-cream);">
-    <div class="container">
-      <SectionHeader
-        eyebrow="Why Kiwi Web Design"
-        title="The agency that puts your growth first."
-        subtitle="We're not the biggest agency in Auckland — but we're the one that cares most about your results."
-      />
-      <div class="why-us-wrap">
-        <ServiceGrid items={whyUs} cols={2} />
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Recent work ── -->
-  <section class="section" style="background: var(--kwd-dark);">
-    <div class="container">
-      <SectionHeader
-        eyebrow="Our Work"
-        title="Built for real Auckland businesses."
-        subtitle="From tradies to restaurants to law firms — every site designed to generate leads."
-        light={true}
-      />
-      <div class="portfolio-grid">
-        {portfolio.map(({ src, alt, caption, href }) => (
-          href ? (
-            <a href={href} class="portfolio-item portfolio-item--linked">
-              <img src={src} alt={alt} width="400" height="280" loading="lazy" class="portfolio-img" />
-              <figcaption class="portfolio-caption">{caption} <span class="portfolio-arrow">→</span></figcaption>
-            </a>
-          ) : (
-            <figure class="portfolio-item">
-              <img src={src} alt={alt} width="400" height="280" loading="lazy" class="portfolio-img" />
-              <figcaption class="portfolio-caption">{caption}</figcaption>
-            </figure>
-          )
+      <div class="service-grid">
+        {services.map(({ icon, title, desc, href }) => (
+          <a href={href} class="service-card">
+            <div class="service-icon">{icon}</div>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+            <span>Learn more -&gt;</span>
+          </a>
         ))}
       </div>
-      <div class="portfolio-cta-wrap">
+    </div>
+  </section>
+  <section class="section hp-studio-section">
+    <div class="container hp-studio-grid">
+      <div class="hp-studio-photos">
+        <div class="hp-studio-photo hp-studio-photo-large">
+          <Image src={office1} alt="Kiwi Web Design studio - Auckland web design workspace" width={800} height={540} class="office-img" />
+        </div>
+        <div class="hp-studio-photo hp-studio-photo-small">
+          <Image src={office2} alt="Kiwi Web Design team at work in Grey Lynn Auckland" width={800} height={540} class="office-img" />
+        </div>
+      </div>
+
+      <div class="hp-studio-copy">
+        <SectionHeader
+          eyebrow="Local and hands-on"
+          title="Auckland strategy. Fast execution. No agency bloat."
+          subtitle="We keep the process direct, the pricing clear, and the work close to the actual goals of your business."
+          align="left"
+        />
+        <p class="hp-intro-text">You are not passed through layers of account managers. We work close to the brief, move quickly, and keep the project grounded in what your customers need to see before they trust you enough to enquire.</p>
+        <div class="hp-studio-note">
+          <strong>Best fit:</strong> service businesses, professional firms, tradies, restaurants, clinics, and local brands that need more than a generic template.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hp-work-section">
+    <div class="container hp-work-shell">
+      <div class="hp-work-intro">
+        <SectionHeader
+          eyebrow="Selected Work"
+          title="Built for real Auckland businesses."
+          subtitle="From tradies to restaurants to law firms, every project is designed around clarity, credibility, and conversion."
+          align="left"
+        />
         <a href="/website-designer-auckland/" class="hp-btn-primary">Start Your Project</a>
       </div>
-    </div>
-  </section>
 
-  <!-- ── Testimonials ── -->
-  <section class="section">
-    <div class="container">
-      <SectionHeader
-        eyebrow="Client Reviews"
-        title="Don't take our word for it."
-        subtitle="Here's what Auckland business owners say after working with us."
-      />
-      <TestimonialGrid items={reviews} cols={2} />
-      <div class="reviews-trust">
-        <div class="reviews-stars" aria-label="5 stars">
-          <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
-          <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
-          <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
-          <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
-          <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
-          <span class="reviews-google-label">Google</span>
+      <div class="portfolio-carousel" data-portfolio-carousel>
+        <div class="portfolio-viewport">
+          <div class="portfolio-track">
+            {portfolioLoop.map(({ src, alt, caption, href }, index) => {
+              const isClone = index >= portfolio.length;
+
+              return href ? (
+                <a
+                  href={href}
+                  class:list={['portfolio-item', isClone && 'is-clone']}
+                  aria-hidden={isClone ? 'true' : undefined}
+                  tabindex={isClone ? '-1' : undefined}
+                >
+                  <img src={src} alt={isClone ? '' : alt} width="400" height="280" loading="lazy" class="portfolio-img" />
+                  <span class="portfolio-caption">
+                    <span>{caption}</span>
+                    <span class="portfolio-arrow">View project -&gt;</span>
+                  </span>
+                </a>
+              ) : (
+                <figure
+                  class:list={['portfolio-item', 'portfolio-item-static', isClone && 'is-clone']}
+                  aria-hidden={isClone ? 'true' : undefined}
+                >
+                  <img src={src} alt={isClone ? '' : alt} width="400" height="280" loading="lazy" class="portfolio-img" />
+                  <figcaption class="portfolio-caption">
+                    <span>{caption}</span>
+                    <span class="portfolio-arrow">Featured project</span>
+                  </figcaption>
+                </figure>
+              );
+            })}
+          </div>
         </div>
-        <p>4.9 stars across 47 verified Google reviews</p>
       </div>
     </div>
   </section>
 
-  <!-- ── Process ── -->
-  <section class="section" style="background: var(--kwd-cream);">
+  <section class="section hp-proof-section">
+    <div class="container hp-proof-layout">
+      <div class="hp-proof-copy">
+        <SectionHeader
+          eyebrow="Client Reviews"
+          title="Trusted by business owners who need leads, not fluff."
+          subtitle="A good homepage should feel credible before anyone clicks deeper. Reviews do a lot of that work."
+          align="left"
+        />
+        <div class="reviews-trust">
+          <div class="reviews-stars" aria-label="5 stars">
+            <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+            <span class="reviews-google-label">Google</span>
+          </div>
+          <p>4.9 stars across 47 verified Google reviews</p>
+        </div>
+      </div>
+
+      <div class="hp-proof-cards">
+        <TestimonialGrid items={reviews} cols={2} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section hp-process-section">
     <div class="container">
       <SectionHeader
         eyebrow="How It Works"
-        title="Simple process. Real results."
-        subtitle="From your first conversation to a live, lead-generating website — here's how it works."
+        title="Simple process. Real momentum."
+        subtitle="Clear scope, quick execution, and a site that is built to start working from day one."
       />
-      <div class="process-wrap">
-        <div class="process-connector" aria-hidden="true"></div>
-        <ProcessSteps items={process} />
-      </div>
+      <ProcessSteps items={process} />
     </div>
   </section>
 
-  <!-- ── Packages ── -->
-  <section class="section" id="packages">
+  <section class="section hp-packages-section" id="packages">
     <div class="container">
       <SectionHeader
         eyebrow="Pricing"
-        title="Lead Generation Packages"
-        subtitle="Choose based on how quickly you want to grow — every package is built around results."
+        title="Packages with a clear commercial point of view."
+        subtitle="Structured for businesses that need better presentation, stronger lead flow, or both."
       />
       <div class="packages-grid">
         {packages.map(({ name, price, desc, features, highlight, tag }) => (
@@ -625,681 +421,966 @@ const faqs = [
             <p class="pkg-price">{price}</p>
             <p class="pkg-desc">{desc}</p>
             <ul class="pkg-features">
-              {features.map((f) => (
-                <li>
-                  <svg class="pkg-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-                  {f}
-                </li>
+              {features.map((feature) => (
+                <li>{feature}</li>
               ))}
             </ul>
-            <a href="/website-designer-auckland/" class:list={['pkg-cta', highlight && 'pkg-cta-accent']}>
-              Get Started →
-            </a>
+            <a href="/website-designer-auckland/" class:list={['pkg-cta', highlight && 'pkg-cta-accent']}>Get Started -&gt;</a>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ── FAQ ── -->
-  <section class="section" style="background: var(--kwd-cream);">
+  <section class="section hp-faq-section">
+    <div class="container faq-layout">
+      <div>
+        <p class="faq-eyebrow">FAQs</p>
+        <h2 class="faq-sidebar-title">Common questions from Auckland business owners.</h2>
+        <p class="faq-sidebar-sub">If you do not see your question here, reach out and we will answer directly.</p>
+        <a href="/website-designer-auckland/" class="hp-btn-dark" style="margin-top: 1.5rem; display: inline-flex;">Ask a Question</a>
+      </div>
+      <FAQAccordion items={faqs} title="" />
+    </div>
+  </section>
+
+  <section class="section hp-explore-section">
     <div class="container">
-      <div class="faq-layout">
-        <div class="faq-sidebar">
-          <p class="faq-eyebrow">FAQs</p>
-          <h2 class="faq-sidebar-title">Common questions from Auckland business owners.</h2>
-          <p class="faq-sidebar-sub">If you don't see your question here, reach out — we're happy to answer directly.</p>
-          <a href="/website-designer-auckland/" class="hp-btn-dark" style="margin-top: 1.5rem; display: inline-block;">Ask a Question</a>
-        </div>
-        <div>
-          <FAQAccordion items={faqs} title="" />
-        </div>
+      <SectionHeader
+        eyebrow="Explore More"
+        title="Browse the path that matches your business."
+        subtitle="Start with the service, industry, or area that is closest to what you need."
+      />
+      <div class="explore-grid">
+        {exploreGroups.map(({ label, links }) => (
+          <section class="explore-card">
+            <p class="explore-label">{label}</p>
+            <div class="explore-links">
+              {links.map(({ text, href }) => (
+                <a href={href} class="explore-link">{text}</a>
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ── YouTube videos ── -->
-  <section class="section hp-videos-section">
-    <div class="container">
-      <div class="hp-videos-header">
-        <p class="hp-videos-eyebrow">From Our Channel</p>
-        <h2 class="hp-videos-title">Watch before you decide.</h2>
-        <p class="hp-videos-sub">Two short videos that explain what we do and why it works for Auckland small businesses.</p>
-      </div>
-      <div class="hp-videos-grid">
-        <div class="hp-video-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/n9BFps8DyRY"
-            title="Auckland Web Design for Small Businesses | Why Choose Kiwi Web Design"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
-        </div>
-        <div class="hp-video-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/vCd2E2GnWkY"
-            title="How to Build a Website — Your First Step"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Tech icon strip ── -->
-  <div class="hp-tech-strip">
-    <p class="hp-tech-label">Built with industry-leading tools</p>
-    <div class="hp-tech-marquee">
-      <div class="hp-tech-track">
-        <span class="hp-tech-item"><img src="https://cdn.simpleicons.org/wordpress/21759B" width="48" height="48" alt="WordPress" title="WordPress" loading="lazy" /></span>
-        <span class="hp-tech-item"><img src="https://cdn.simpleicons.org/php/777BB4" width="48" height="48" alt="PHP" title="PHP" loading="lazy" /></span>
-        <span class="hp-tech-item"><img src="https://cdn.simpleicons.org/mysql/4479A1" width="48" height="48" alt="MySQL" title="MySQL" loading="lazy" /></span>
-        <span class="hp-tech-item"><img src="https://cdn.simpleicons.org/github/181717" width="48" height="48" alt="GitHub" title="GitHub" loading="lazy" /></span>
-        <span class="hp-tech-item"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" width="48" height="48" alt="Google Analytics" title="Google Analytics" loading="lazy" /></span>
-        <span class="hp-tech-item"><img src="https://cdn.simpleicons.org/cloudflare/F6821F" width="48" height="48" alt="Cloudflare" title="Cloudflare" loading="lazy" /></span>
-        <span class="hp-tech-item"><img src="https://cdn.simpleicons.org/shopify/96BF48" width="48" height="48" alt="Shopify" title="Shopify" loading="lazy" /></span>
-        <span class="hp-tech-item"><img src="https://cdn.simpleicons.org/html5/E34F26" width="48" height="48" alt="HTML5" title="HTML5" loading="lazy" /></span>
-        <span class="hp-tech-item"><img src="https://cdn.simpleicons.org/css3/1572B6" width="48" height="48" alt="CSS3" title="CSS3" loading="lazy" /></span>
-        <span class="hp-tech-item"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" width="48" height="48" alt="JavaScript" title="JavaScript" loading="lazy" /></span>
-        <span class="hp-tech-item"><img src="https://cdn.simpleicons.org/woocommerce/96588A" width="48" height="48" alt="WooCommerce" title="WooCommerce" loading="lazy" /></span>
-        <span class="hp-tech-item"><img src="https://cdn.simpleicons.org/googleads/4285F4" width="48" height="48" alt="Google Ads" title="Google Ads" loading="lazy" /></span>
-        <!-- duplicate for seamless loop -->
-        <span class="hp-tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/wordpress/21759B" width="48" height="48" alt="" loading="lazy" /></span>
-        <span class="hp-tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/php/777BB4" width="48" height="48" alt="" loading="lazy" /></span>
-        <span class="hp-tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/mysql/4479A1" width="48" height="48" alt="" loading="lazy" /></span>
-        <span class="hp-tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/github/181717" width="48" height="48" alt="" loading="lazy" /></span>
-        <span class="hp-tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" width="48" height="48" alt="" loading="lazy" /></span>
-        <span class="hp-tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/cloudflare/F6821F" width="48" height="48" alt="" loading="lazy" /></span>
-        <span class="hp-tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/shopify/96BF48" width="48" height="48" alt="" loading="lazy" /></span>
-        <span class="hp-tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/html5/E34F26" width="48" height="48" alt="" loading="lazy" /></span>
-        <span class="hp-tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/css3/1572B6" width="48" height="48" alt="" loading="lazy" /></span>
-        <span class="hp-tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" width="48" height="48" alt="" loading="lazy" /></span>
-        <span class="hp-tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/woocommerce/96588A" width="48" height="48" alt="" loading="lazy" /></span>
-        <span class="hp-tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/googleads/4285F4" width="48" height="48" alt="" loading="lazy" /></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── Case studies ── -->
-  <section class="related-strip">
-    <div class="container" style="max-width: 900px;">
-      <p class="rps-label">Client case studies</p>
-      <div class="rps-links">
-        <a href="/case-study-scaffolding/" class="rps-link">Barrett Access Scaffolding — +125% quote requests</a>
-        <a href="/beauty-touch-case-study/" class="rps-link">Beauty Touch Auckland — live in 3 weeks</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Industries we serve ── -->
-  <section class="related-strip">
-    <div class="container" style="max-width: 900px;">
-      <p class="rps-label">Industries we serve</p>
-      <div class="rps-links">
-        <a href="/tradie-website-design-auckland/" class="rps-link">Tradies</a>
-        <a href="/how-kiwi-web-design-helps-auckland-beauty-industry/" class="rps-link">Beauty &amp; Wellness</a>
-        <a href="/how-kiwi-web-design-helps-auckland-restaurants/" class="rps-link">Restaurants &amp; Cafés</a>
-        <a href="/how-kiwi-web-design-helps-auckland-healthcare/" class="rps-link">Healthcare</a>
-        <a href="/how-kiwi-web-design-helps-auckand-lawyers/" class="rps-link">Lawyers &amp; Professional Services</a>
-        <a href="/industries-we-serve-in-auckland/" class="rps-link">All Industries →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Areas we serve ── -->
-  <section class="related-strip">
-    <div class="container" style="max-width: 900px;">
-      <p class="rps-label">Areas we serve</p>
-      <div class="rps-links">
-        <a href="/north-shore-website-design/" class="rps-link">North Shore</a>
-        <a href="/south-auckland-web-design/" class="rps-link">South Auckland</a>
-        <a href="/west-auckland-web-design/" class="rps-link">West Auckland</a>
-        <a href="/east-auckland-web-design/" class="rps-link">East Auckland</a>
-        <a href="/central-auckland-web-design/" class="rps-link">Central Auckland</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Related services ── -->
-  <section class="related-strip">
-    <div class="container" style="max-width: 900px;">
-      <p class="rps-label">Explore our services</p>
-      <div class="rps-links">
-        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress Websites</a>
-        <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO Auckland</a>
-        <a href="/ecommerce-website-auckland/" class="rps-link">eCommerce Websites</a>
-        <a href="/tradie-website-design-auckland/" class="rps-link">Tradie Websites</a>
-        <a href="/wordpress-maintenance-auckland/" class="rps-link">WordPress Maintenance</a>
-        <a href="/website-hosting-auckland/" class="rps-link">Website Hosting</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Final CTA ── -->
   <CTABanner
     variant="yellow"
     title="Ready to grow your Auckland business online?"
-    subtitle="Free consultation — online or in person, Auckland wide. No commitment, no pressure."
-    ctaPrimary={{ text: "Book a Free Consultation", href: "/website-designer-auckland/" }}
-    ctaSecondary={{ text: "See Our Packages", href: "/small-business-website-design-auckland/" }}
+    subtitle="Free consultation - online or in person, Auckland wide. No commitment, no pressure."
+    ctaPrimary={{ text: 'Book a Free Consultation', href: '/website-designer-auckland/' }}
+    ctaSecondary={{ text: 'See Our Packages', href: '/small-business-website-design-auckland/' }}
   />
 
+  <script is:inline>
+    const portfolioCarousel = document.querySelector('[data-portfolio-carousel]');
+
+    if (portfolioCarousel instanceof HTMLElement) {
+      const viewport = portfolioCarousel.querySelector('.portfolio-viewport');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      if (viewport instanceof HTMLElement) {
+        let paused = prefersReducedMotion.matches;
+        let frameId = 0;
+        let lastFrame = 0;
+
+        const getSpeed = () => (window.innerWidth < 720 ? 22 : 34);
+        const getResetPoint = () => viewport.scrollWidth / 2;
+
+        const tick = (time) => {
+          if (!paused) {
+            if (!lastFrame) lastFrame = time;
+
+            const delta = (time - lastFrame) / 1000;
+            viewport.scrollLeft += getSpeed() * delta;
+
+            const resetPoint = getResetPoint();
+            if (viewport.scrollLeft >= resetPoint) {
+              viewport.scrollLeft -= resetPoint;
+            }
+          }
+
+          lastFrame = time;
+          frameId = window.requestAnimationFrame(tick);
+        };
+
+        const setPaused = (value) => {
+          paused = value || prefersReducedMotion.matches;
+          if (!paused) lastFrame = 0;
+        };
+
+        portfolioCarousel.addEventListener('mouseenter', () => setPaused(true));
+        portfolioCarousel.addEventListener('mouseleave', () => setPaused(false));
+        portfolioCarousel.addEventListener('focusin', () => setPaused(true));
+        portfolioCarousel.addEventListener('focusout', () => {
+          if (!portfolioCarousel.contains(document.activeElement)) {
+            setPaused(false);
+          }
+        });
+
+        prefersReducedMotion.addEventListener('change', (event) => {
+          setPaused(event.matches);
+        });
+
+        frameId = window.requestAnimationFrame(tick);
+
+        window.addEventListener('pagehide', () => {
+          window.cancelAnimationFrame(frameId);
+        }, { once: true });
+      }
+    }
+  </script>
 </Layout>
 
 <style>
-  /* ── Hero ── */
   .hp-hero {
     position: relative;
     overflow: hidden;
-    padding: 7rem 0 6rem;
-    background: var(--kwd-dark);
+    padding: 8.5rem 0 5rem;
+    background:
+      radial-gradient(circle at 10% 20%, rgba(243, 217, 122, 0.14), transparent 28%),
+      radial-gradient(circle at 85% 18%, rgba(243, 217, 122, 0.08), transparent 26%),
+      linear-gradient(180deg, #171412 0%, #211d1a 48%, #f6f1e6 100%);
   }
-  .hero-video {
+
+  .hp-hero-glow {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
+    border-radius: 999px;
+    filter: blur(60px);
+    opacity: 0.28;
+    pointer-events: none;
   }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(44,41,39,0.82) 0%,
-      rgba(44,41,39,0.65) 60%,
-      rgba(44,41,39,0.45) 100%
-    );
-    z-index: 1;
+
+  .hp-hero-glow-one {
+    width: 18rem;
+    height: 18rem;
+    top: 4rem;
+    right: -4rem;
+    background: rgba(251, 232, 166, 0.7);
   }
-  .hp-hero-inner {
+
+  .hp-hero-glow-two {
+    width: 16rem;
+    height: 16rem;
+    left: -5rem;
+    bottom: 8rem;
+    background: rgba(251, 232, 166, 0.38);
+  }
+
+  .hp-hero-shell,
+  .hp-intro-grid,
+  .hp-studio-grid,
+  .hp-proof-layout {
     position: relative;
-    z-index: 2;
-    max-width: 720px;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+    align-items: center;
   }
-  .hp-eyebrow {
+
+  .hp-kicker-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hp-eyebrow,
+  .faq-eyebrow,
+  .explore-label {
+    margin: 0;
     font-size: 0.72rem;
     font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--kwd-yellow);
-    margin-bottom: 1.25rem;
   }
-  .hp-headline {
-    font-size: clamp(2.4rem, 5vw, 4.25rem);
-    color: #fff;
-    line-height: 1.08;
-    margin-bottom: 1.25rem;
-    font-family: var(--kwd-font-heading);
-  }
-  .hp-accent { color: var(--kwd-yellow); }
-  .hp-lead {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.78);
-    max-width: 580px;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-  }
-  .hp-ctas { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
 
-  .hp-btn-primary {
-    display: inline-block;
+  .hp-eyebrow {
+    color: var(--kwd-yellow);
+  }
+
+  .hp-location-pill {
+    display: inline-flex;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.74rem;
+    font-weight: 600;
+  }
+
+  .hp-headline {
+    max-width: 11ch;
+    margin-bottom: 1.25rem;
+    color: #fff8eb;
+    font-size: clamp(3rem, 5.5vw, 5.4rem);
+    line-height: 0.96;
+    text-wrap: balance;
+  }
+
+  .hp-lead,
+  .hp-intro-text,
+  .faq-sidebar-sub {
+    color: var(--kwd-brown);
+    line-height: 1.8;
+  }
+
+  .hp-lead {
+    max-width: 36rem;
+    margin-bottom: 2rem;
+    font-size: 1.08rem;
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .hp-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hp-btn-primary,
+  .hp-btn-secondary,
+  .hp-btn-dark,
+  .pkg-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.3rem;
+    padding: 0.9rem 1.5rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  }
+
+  .hp-btn-primary,
+  .pkg-cta-accent {
     background: var(--kwd-yellow);
     color: var(--kwd-dark);
-    padding: 0.875rem 2rem;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    transition: background 0.2s, transform 0.15s;
   }
-  .hp-btn-primary:hover { background: var(--kwd-gold); transform: translateY(-1px); }
 
-  .hp-btn-dark {
-    display: inline-block;
+  .hp-btn-secondary {
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .hp-btn-dark,
+  .pkg-cta {
     background: var(--kwd-dark);
     color: #fff;
-    padding: 0.875rem 2rem;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    transition: background 0.2s, transform 0.15s;
   }
-  .hp-btn-dark:hover { background: #3e3633; transform: translateY(-1px); }
 
-  .hp-btn-ghost {
-    display: inline-block;
-    border: 2px solid rgba(255,255,255,0.35);
-    color: rgba(255,255,255,0.9);
-    padding: 0.875rem 2rem;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    transition: border-color 0.2s, color 0.2s;
+  .hp-btn-primary:hover,
+  .hp-btn-secondary:hover,
+  .hp-btn-dark:hover,
+  .pkg-cta:hover {
+    transform: translateY(-2px);
   }
-  .hp-btn-ghost:hover { border-color: var(--kwd-yellow); color: var(--kwd-yellow); }
 
-  /* Trust card — frosted glass pill below CTAs */
-  .hp-trust-card {
+  .hp-btn-primary:hover,
+  .pkg-cta-accent:hover {
+    background: var(--kwd-gold);
+  }
+
+  .hp-btn-secondary:hover {
+    border-color: rgba(251, 232, 166, 0.65);
+    color: var(--kwd-yellow);
+  }
+
+  .hp-btn-dark:hover,
+  .pkg-cta:hover {
+    background: #433a36;
+  }
+
+  .hp-proof-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+
+  .hp-review-pill {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.18);
-    border-radius: 10px;
-    padding: 0.75rem 1.25rem;
-    text-decoration: none;
-    transition: background 0.2s, border-color 0.2s;
-    cursor: pointer;
+    max-width: 100%;
+    padding: 0.95rem 1.15rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
   }
-  .hp-trust-card:hover {
-    background: rgba(255,255,255,0.16);
-    border-color: rgba(251,232,166,0.4);
-  }
-  .htc-stars { color: #f5a523; font-size: 1rem; letter-spacing: 0.05em; flex-shrink: 0; }
-  .htc-text  { font-size: 0.85rem; font-weight: 600; color: #fff; margin: 0; }
-  .htc-sub   { font-size: 0.72rem; color: rgba(255,255,255,0.65); margin: 0; }
 
-  /* ── Trust bar ── */
-  .trust-bar {
-    background: #fff;
-    border-bottom: 1px solid rgba(0,0,0,0.07);
-    padding: 1.25rem 0;
-  }
-  .trust-bar-inner {
-    display: flex;
+  .review-pill-badge {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    min-width: 4.6rem;
+    min-height: 2.1rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(251, 232, 166, 0.18);
+    color: var(--kwd-yellow);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    flex-shrink: 0;
   }
-  .tb-item { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
-  .tb-icon { width: 15px; height: 15px; color: var(--kwd-brown); opacity: 0.65; flex-shrink: 0; margin-bottom: 0.1rem; }
-  .tb-value { font-size: 1.05rem; font-weight: 700; color: var(--kwd-dark); font-family: var(--kwd-font-heading); }
-  .tb-label { font-size: 0.7rem; color: var(--kwd-brown); text-transform: uppercase; letter-spacing: 0.07em; }
-  .tb-sep   { width: 1px; height: 2.5rem; background: rgba(0,0,0,0.1); flex-shrink: 0; }
 
-  /* ── Portfolio ── */
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  .htc-text,
+  .htc-sub,
+  .hp-mini-note,
+  .reviews-trust p,
+  .faq-sidebar-sub,
+  .pkg-desc,
+  .pkg-features li,
+  .service-card p,
+  .hp-adv-card p,
+  .explore-link {
+    margin: 0;
+  }
+
+  .htc-text {
+    color: #fff;
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .htc-sub,
+  .hp-mini-note {
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .hp-stage {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
   }
-  .portfolio-item { margin: 0; overflow: hidden; border-radius: 10px; }
+
+  .hp-stage-window {
+    position: relative;
+    overflow: hidden;
+    min-height: 33rem;
+    border-radius: 28px;
+    background: #110f0e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 32px 70px rgba(8, 8, 8, 0.38);
+  }
+
+  .hp-stage-topline {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .hp-stage-video,
+  .office-img,
   .portfolio-img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.35s;
   }
-  .portfolio-item:hover .portfolio-img { transform: scale(1.04); }
-  .portfolio-caption {
-    font-size: 0.72rem;
-    color: rgba(255,255,255,0.5);
-    text-align: center;
-    margin-top: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  .portfolio-item--linked { display: block; text-decoration: none; }
-  .portfolio-item--linked .portfolio-caption { color: rgba(255,255,255,0.65); transition: color 0.15s; }
-  .portfolio-item--linked:hover .portfolio-caption { color: var(--kwd-yellow); }
-  .portfolio-arrow { font-style: normal; opacity: 0.7; }
-  .portfolio-cta-wrap { text-align: center; margin-top: 2.5rem; }
 
-  /* ── Reviews trust ── */
+  .hp-stage-video {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hp-stage-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(18, 16, 15, 0.18) 0%, rgba(18, 16, 15, 0.36) 38%, rgba(18, 16, 15, 0.86) 100%),
+      linear-gradient(120deg, rgba(18, 16, 15, 0.72) 0%, rgba(18, 16, 15, 0.18) 56%, rgba(18, 16, 15, 0.62) 100%);
+  }
+
+  .hp-stage-caption {
+    position: absolute;
+    left: 1.35rem;
+    right: 1.35rem;
+    bottom: 1.35rem;
+    z-index: 2;
+    padding: 1.2rem 1.25rem;
+    border-radius: 20px;
+    background: rgba(17, 15, 14, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+  }
+
+  .hp-stage-label,
+  .hp-stage-title,
+  .service-card h3,
+  .hp-adv-card h3,
+  .pkg-name,
+  .pkg-price,
+  .faq-sidebar-title,
+  .portfolio-caption {
+    margin: 0;
+  }
+
+  .hp-stage-label {
+    margin-bottom: 0.35rem;
+    color: var(--kwd-yellow);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .hp-stage-title {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .hp-stage-cards,
+  .service-grid,
+  .hp-adv-grid,
+  .packages-grid,
+  .explore-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .hp-stage-cards,
+  .service-grid,
+  .packages-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hp-stage-cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .hp-stat-card,
+  .service-card,
+  .hp-adv-card,
+  .pkg-card,
+  .explore-card {
+    border-radius: 22px;
+    border: 1px solid rgba(44, 41, 39, 0.08);
+    box-shadow: 0 18px 40px rgba(26, 21, 16, 0.08);
+  }
+
+  .hp-stat-card,
+  .service-card,
+  .hp-adv-card,
+  .pkg-card {
+    background: #fff8ef;
+  }
+
+  .hp-stat-card {
+    min-height: 7.5rem;
+    padding: 1.2rem 1.25rem;
+  }
+
+  .hp-stat-number,
+  .pkg-price {
+    font-family: var(--kwd-font-heading);
+    line-height: 1;
+  }
+
+  .hp-stat-number {
+    display: block;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--kwd-dark);
+  }
+
+  .hp-stat-label,
+  .service-card p,
+  .hp-adv-card p,
+  .pkg-desc,
+  .pkg-features li,
+  .faq-sidebar-sub,
+  .explore-link {
+    color: var(--kwd-brown);
+    line-height: 1.6;
+  }
+
+  .hp-intro-section,
+  .hp-studio-section,
+  .hp-faq-section {
+    background: linear-gradient(180deg, #f6f1e6 0%, #ffffff 100%);
+  }
+
+  .hp-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .hp-checklist li,
+  .pkg-features li {
+    position: relative;
+    padding-left: 1.4rem;
+    line-height: 1.65;
+  }
+
+  .hp-checklist li::before,
+  .pkg-features li::before {
+    content: '';
+    position: absolute;
+    top: 0.7rem;
+    left: 0;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--kwd-yellow);
+  }
+
+  .service-card,
+  .hp-adv-card,
+  .pkg-card,
+  .explore-card {
+    padding: 1.4rem;
+  }
+
+  .service-card,
+  .portfolio-item,
+  .explore-link {
+    text-decoration: none;
+  }
+
+  .service-card span {
+    margin-top: auto;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--kwd-dark);
+  }
+
+  .service-icon,
+  .hp-adv-icon {
+    width: 3rem;
+    height: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: rgba(251, 232, 166, 0.45);
+    color: var(--kwd-dark);
+    margin-bottom: 1rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hp-studio-photos {
+    position: relative;
+    min-height: 34rem;
+  }
+
+  .hp-studio-photo {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(22, 19, 16, 0.14);
+  }
+
+  .hp-studio-photo-large {
+    inset: 0 18% 12% 0;
+  }
+
+  .hp-studio-photo-small {
+    inset: 34% 0 0 42%;
+    border: 8px solid #f6f1e6;
+  }
+
+  .hp-studio-note {
+    margin-top: 1.6rem;
+    padding: 1.2rem 1.25rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(44, 41, 39, 0.08);
+    color: var(--kwd-brown);
+    line-height: 1.7;
+  }
+
+  .hp-work-section,
+  .hp-explore-section {
+    background: #181513;
+    color: #fff;
+  }
+
+  .hp-work-section :global(.sh-eyebrow),
+  .hp-explore-section :global(.sh-eyebrow) {
+    color: var(--kwd-yellow);
+  }
+
+  .hp-work-section :global(.sh-title),
+  .hp-explore-section :global(.sh-title) {
+    color: #fff;
+  }
+
+  .hp-work-section :global(.sh-subtitle),
+  .hp-explore-section :global(.sh-subtitle) {
+    color: rgba(255, 255, 255, 0.68);
+  }
+
+  .portfolio-carousel {
+    position: relative;
+  }
+
+  .portfolio-carousel::before,
+  .portfolio-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(2rem, 6vw, 5rem);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .portfolio-carousel::before {
+    left: 0;
+    background: linear-gradient(90deg, #181513 5%, rgba(24, 21, 19, 0));
+  }
+
+  .portfolio-carousel::after {
+    right: 0;
+    background: linear-gradient(270deg, #181513 5%, rgba(24, 21, 19, 0));
+  }
+
+  .portfolio-viewport {
+    overflow-x: auto;
+    padding-block: 0.25rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+    overscroll-behavior-x: contain;
+  }
+
+  .portfolio-viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+  }
+
+  .portfolio-item {
+    position: relative;
+    display: block;
+    flex: 0 0 clamp(16rem, 24vw, 21rem);
+    min-height: 25rem;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #282320;
+    margin: 0;
+    color: inherit;
+    text-decoration: none;
+    scroll-snap-align: start;
+  }
+
+  .portfolio-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(19, 17, 15, 0.08) 28%, rgba(19, 17, 15, 0.86) 100%);
+  }
+
+  .portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  .portfolio-item:is(:hover, :focus-visible) .portfolio-img {
+    transform: scale(1.04);
+  }
+
+  .portfolio-caption {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    align-items: flex-end;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .portfolio-item-static {
+    cursor: default;
+  }
+
+  .portfolio-arrow {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
   .reviews-trust {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 1.75rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(0,0,0,0.08);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
   }
-  .reviews-trust p { font-size: 0.875rem; color: var(--kwd-brown); margin: 0; }
+
   .reviews-stars {
     display: flex;
     align-items: center;
     gap: 0.15rem;
     flex-shrink: 0;
   }
-  .reviews-stars svg { width: 18px; height: 18px; }
-  .reviews-google-label {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--kwd-brown);
-    margin-left: 0.35rem;
-    letter-spacing: 0.03em;
+
+  .reviews-stars svg {
+    width: 18px;
+    height: 18px;
   }
 
-  /* ── Packages ── */
-  .packages-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+  .reviews-google-label {
+    margin-left: 0.4rem;
+    color: var(--kwd-brown);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
   }
+
+  .hp-proof-section :global(.tg-card) {
+    border-radius: 20px;
+    box-shadow: 0 18px 40px rgba(23, 19, 16, 0.07);
+  }
+
+  .hp-process-section {
+    background: linear-gradient(180deg, #f6f1e6 0%, #efe7d9 100%);
+  }
+
   .pkg-card {
-    border: 2px solid rgba(0,0,0,0.08);
-    border-radius: 16px;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 0.875rem;
-    background: #fff;
-    transition: box-shadow 0.2s;
+    gap: 0.9rem;
+    background: linear-gradient(180deg, #fff 0%, #fbf8f1 100%);
   }
-  .pkg-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+
   .pkg-highlight {
-    border-color: var(--kwd-dark);
-    background: var(--kwd-dark);
+    border-color: rgba(251, 232, 166, 0.4);
+    background: linear-gradient(180deg, #241f1d 0%, #161311 100%);
   }
+
   .pkg-tag {
     display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    align-self: flex-start;
+    padding: 0.28rem 0.8rem;
+    border-radius: 999px;
     background: var(--kwd-yellow);
     color: var(--kwd-dark);
-    padding: 0.2rem 0.75rem;
-    border-radius: 100px;
-    align-self: flex-start;
-  }
-  .pkg-name  { font-size: 1rem; font-family: var(--kwd-font-body); font-weight: 700; color: var(--kwd-dark); margin: 0; }
-  .pkg-highlight .pkg-name { color: #fff; }
-  .pkg-price { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: var(--kwd-dark); margin: 0; line-height: 1; }
-  .pkg-highlight .pkg-price { color: var(--kwd-yellow); }
-  .pkg-desc  { font-size: 0.875rem; color: var(--kwd-brown); margin: 0; line-height: 1.6; }
-  .pkg-highlight .pkg-desc { color: rgba(255,255,255,0.62); }
-  .pkg-features { list-style: none; padding: 0; margin: 0; flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
-  .pkg-features li { font-size: 0.875rem; color: var(--kwd-brown); line-height: 1.5; display: flex; align-items: flex-start; gap: 0.5rem; }
-  .pkg-check { width: 14px; height: 14px; flex-shrink: 0; margin-top: 0.15em; color: var(--kwd-dark); }
-  .pkg-highlight .pkg-features li { color: rgba(255,255,255,0.72); }
-  .pkg-highlight .pkg-check { color: var(--kwd-yellow); }
-  .pkg-cta {
-    display: inline-block;
-    background: var(--kwd-cream);
-    color: var(--kwd-dark);
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
+    font-size: 0.7rem;
     font-weight: 700;
-    font-size: 0.85rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
-    transition: background 0.2s;
-    margin-top: 0.5rem;
-    text-align: center;
   }
-  .pkg-cta:hover { background: var(--kwd-gold); }
-  .pkg-cta-accent { background: var(--kwd-yellow); }
-  .pkg-cta-accent:hover { background: var(--kwd-gold); }
 
-  /* ── FAQ layout ── */
+  .pkg-name {
+    font-size: 1rem;
+    font-family: var(--kwd-font-body);
+    color: var(--kwd-dark);
+  }
+
+  .pkg-highlight .pkg-name {
+    color: #fff;
+  }
+
+  .pkg-price {
+    font-size: 1.9rem;
+    color: var(--kwd-dark);
+  }
+
+  .pkg-highlight .pkg-price {
+    color: var(--kwd-yellow);
+  }
+
+  .pkg-highlight .pkg-desc,
+  .pkg-highlight .pkg-features li {
+    color: rgba(255, 255, 255, 0.74);
+  }
+
   .faq-layout {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 320px minmax(0, 1fr);
     gap: 4rem;
     align-items: start;
   }
+
   .faq-eyebrow {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
     color: var(--kwd-brown);
-    margin-bottom: 0.75rem;
   }
-  .faq-sidebar-title { font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--kwd-dark); line-height: 1.2; margin-bottom: 0.75rem; }
-  .faq-sidebar-sub  { font-size: 0.9rem; color: var(--kwd-brown); line-height: 1.65; margin: 0; }
 
-  /* ── Illustrated services ── */
-  .srv-illus-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .srv-card {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: box-shadow 0.2s, transform 0.2s;
-    text-decoration: none;
-  }
-  .srv-card:hover {
-    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-    transform: translateY(-3px);
-  }
-  .srv-illus {
-    background: #1e1c1a;
-    line-height: 0;
-  }
-  .srv-illus svg {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .srv-body {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    flex: 1;
-  }
-  .srv-title {
-    font-size: 1.1rem;
-    font-weight: 700;
+  .faq-sidebar-title {
     color: var(--kwd-dark);
-    font-family: var(--kwd-font-body);
-    margin: 0;
-  }
-  .srv-desc {
-    font-size: 0.875rem;
-    color: var(--kwd-brown);
-    line-height: 1.65;
-    margin: 0;
-    flex: 1;
-  }
-  .srv-link {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--kwd-dark);
-    margin-top: 0.25rem;
-    transition: color 0.15s;
-  }
-  .srv-card:hover .srv-link { color: var(--kwd-brown); }
-
-  /* ── Why-us icon badge ── */
-  .why-us-wrap :global(.sg-icon) {
-    width: 52px;
-    height: 52px;
-    background: rgba(44,41,39,0.06);
-    border-radius: 12px;
-    border: 1px solid rgba(44,41,39,0.08);
-    justify-content: center;
-    padding: 0.75rem;
-  }
-
-  /* ── Process connector ── */
-  .process-wrap { position: relative; }
-  .process-connector {
-    position: absolute;
-    top: 1.4rem;
-    left: calc(12.5% + 1.5rem);
-    right: calc(12.5% + 1.5rem);
-    height: 2px;
-    background: repeating-linear-gradient(
-      to right,
-      var(--kwd-dark) 0px,
-      var(--kwd-dark) 6px,
-      transparent 6px,
-      transparent 14px
-    );
-    opacity: 0.18;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  /* ── Related strip ── */
-  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
-  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
-  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
-  .rps-link:hover { background: #e8e7db; }
-
-  /* ── Responsive ── */
-  @media (max-width: 1024px) {
-    .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
-  }
-  @media (max-width: 900px) {
-    .hp-hero { padding: 5rem 0 4rem; }
-    .trust-bar-inner { gap: 1rem; }
-    .tb-sep { display: none; }
-    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
-    .packages-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
-    .srv-illus-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
-    .process-connector { display: none; }
-  }
-  @media (max-width: 600px) {
-    .portfolio-grid { grid-template-columns: 1fr; }
-    .reviews-trust  { flex-direction: column; align-items: flex-start; }
-  }
-
-  /* ── YouTube videos ── */
-  .hp-videos-section { background: var(--kwd-cream); }
-  .hp-videos-header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-  }
-  .hp-videos-eyebrow {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--kwd-brown);
-    margin: 0 0 0.6rem;
-  }
-  .hp-videos-title {
-    font-family: var(--kwd-font-heading);
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
-    color: var(--kwd-dark);
-    margin: 0 0 0.6rem;
     line-height: 1.15;
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
   }
-  .hp-videos-sub {
-    font-size: 0.95rem;
-    color: var(--kwd-brown);
-    max-width: 520px;
-    margin-inline: auto;
-    line-height: 1.6;
+
+  .explore-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .hp-videos-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.75rem;
+
+  .explore-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.08);
   }
-  .hp-video-wrap {
-    position: relative;
-    padding-bottom: 56.25%;
+
+  .explore-label {
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .explore-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .explore-link {
+    padding: 0.6rem 0.85rem;
     border-radius: 14px;
-    overflow: hidden;
-    background: var(--kwd-dark);
-    box-shadow: 0 8px 32px rgba(44,41,39,0.18);
-  }
-  .hp-video-wrap iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-  @media (max-width: 700px) {
-    .hp-videos-grid { grid-template-columns: 1fr; }
+    color: rgba(255, 255, 255, 0.78);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 0.84rem;
+    font-weight: 600;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
   }
 
-  /* ── Tech icon strip ── */
-  .hp-tech-strip {
-    background: #fff;
-    border-top: 1px solid rgba(0,0,0,0.06);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    padding: 1.5rem 0 2rem;
-    text-align: center;
-    overflow: hidden;
-  }
-  .hp-tech-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--kwd-brown);
-    opacity: 0.5;
-    margin: 0 0 1.25rem;
-  }
-  .hp-tech-marquee {
-    overflow: hidden;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
-    mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
-  }
-  .hp-tech-track {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    width: max-content;
-    animation: techMarquee 28s linear infinite;
-  }
-  .hp-tech-track:hover {
-    animation-play-state: paused;
-  }
-  @keyframes techMarquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .hp-tech-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    opacity: 0.7;
-    transition: opacity 0.2s, transform 0.3s;
-  }
-  .hp-tech-item:hover {
-    opacity: 1;
-    transform: scale(1.15) translateY(-3px);
-  }
-  .hp-tech-item img {
-    width: 48px;
-    height: 48px;
-    display: block;
+  .explore-link:hover {
+    background: rgba(251, 232, 166, 0.12);
+    color: var(--kwd-yellow);
+    transform: translateX(2px);
   }
 
-  /* ── Office image strip ── */
-  .office-strip {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 420px;
+  @media (max-width: 1080px) {
+    .hp-hero-shell,
+    .hp-intro-grid,
+    .hp-studio-grid,
+    .hp-proof-layout,
+    .faq-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .hp-headline {
+      max-width: 12ch;
+    }
+
+    .hp-stage,
+    .portfolio-carousel,
+    .explore-grid {
+      max-width: none;
+    }
+
+    .service-grid,
+    .packages-grid,
+    .explore-grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
-  .office-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+
+  @media (max-width: 720px) {
+    .hp-hero {
+      padding-top: 7.2rem;
+      padding-bottom: 4rem;
+    }
+
+    .hp-headline {
+      max-width: none;
+      font-size: clamp(2.7rem, 12vw, 4.3rem);
+    }
+
+    .hp-stage-window {
+      min-height: 25rem;
+    }
+
+    .hp-stage-cards,
+    .service-grid,
+    .hp-adv-grid,
+    .packages-grid,
+    .explore-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .portfolio-item {
+      flex-basis: min(78vw, 18.5rem);
+      min-height: 22rem;
+    }
+
+    .portfolio-caption {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .reviews-trust {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
-  @media (max-width: 640px) {
-    .office-strip { grid-template-columns: 1fr; height: 480px; }
-    .office-strip .office-img:last-child { display: none; }
+
+  @media (max-width: 560px) {
+    .hp-kicker-row {
+      align-items: flex-start;
+    }
+
+    .hp-ctas {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .hp-stage-topline {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hp-studio-photos {
+      min-height: auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .hp-studio-photo {
+      position: relative;
+      inset: auto;
+      min-height: 14rem;
+    }
+
+    .hp-studio-photo-small {
+      border-width: 0;
+    }
   }
 </style>
