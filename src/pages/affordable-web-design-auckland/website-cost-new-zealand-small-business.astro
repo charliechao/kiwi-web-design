@@ -465,18 +465,19 @@ const schema = [
 
 <style is:global>
   #kwd-website-cost-nz {
-    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    color: #15212b;
-    background-color: #f7fafc;
+    font-family: var(--kwd-font-body);
+    color: var(--kwd-dark);
+    background-color: var(--kwd-cream);
     padding: 2.5rem 1rem;
   }
   #kwd-website-cost-nz a {
-    color: #0467c2;
-    text-decoration: none;
+    color: var(--kwd-dark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
   #kwd-website-cost-nz a:hover,
   #kwd-website-cost-nz a:focus {
-    text-decoration: underline;
+    color: var(--kwd-brown);
   }
   #kwd-website-cost-nz .kwd-container {
     max-width: 920px;
@@ -484,14 +485,14 @@ const schema = [
     background-color: #ffffff;
     padding: 2.5rem 2rem;
     border-radius: 16px;
-    box-shadow: 0 12px 30px rgba(15, 46, 71, 0.08);
+    box-shadow: 0 12px 30px rgba(44, 41, 39, 0.1);
   }
   #kwd-website-cost-nz .kwd-meta-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background: linear-gradient(135deg, #0b7fd6, #34b7eb);
-    color: #ffffff;
+    background: var(--kwd-dark);
+    color: var(--kwd-yellow);
     padding: 0.6rem 1rem;
     border-radius: 999px;
     font-size: 0.875rem;
@@ -501,22 +502,24 @@ const schema = [
     font-size: clamp(2rem, 4vw, 2.75rem);
     line-height: 1.1;
     margin: 0 0 0.5rem;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-updated-line {
     font-size: 0.95rem;
-    color: #415463;
+    color: var(--kwd-brown);
     margin-bottom: 1.75rem;
   }
   #kwd-website-cost-nz .kwd-snippet {
     font-size: 1.05rem;
     line-height: 1.7;
     margin-bottom: 1.25rem;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-quick-list {
     list-style: disc;
     padding-left: 1.25rem;
     margin-bottom: 2rem;
-    color: #1f2d3a;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-table-wrapper {
     margin-bottom: 2.5rem;
@@ -531,31 +534,31 @@ const schema = [
     text-align: left;
     font-weight: 600;
     margin-bottom: 0.75rem;
-    color: #0d2d4a;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz th,
   #kwd-website-cost-nz td {
     padding: 0.75rem 0.9rem;
-    border: 1px solid #d8e3ec;
+    border: 1px solid #d5cfc5;
     text-align: left;
     vertical-align: top;
     font-size: 0.95rem;
     line-height: 1.5;
   }
   #kwd-website-cost-nz thead th {
-    background: #eff6fb;
+    background: var(--kwd-dark);
     font-weight: 600;
-    color: #0e3552;
+    color: var(--kwd-yellow);
   }
   #kwd-website-cost-nz tbody tr:nth-child(even) {
-    background: #f9fcff;
+    background: #f7f6ee;
   }
   #kwd-website-cost-nz .kwd-calculator-section {
     margin-bottom: 3rem;
   }
   #kwd-website-cost-nz .kwd-calculator-card {
-    background: #f0f7ff;
-    border: 1px solid #cfe3f7;
+    background: var(--kwd-cream);
+    border: 1px solid #c8c2b8;
     border-radius: 14px;
     padding: 2rem;
   }
@@ -563,7 +566,7 @@ const schema = [
     margin-top: 0;
     margin-bottom: 1.5rem;
     font-size: 1.6rem;
-    color: #0f3a5d;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-calculator-card fieldset {
     border: none;
@@ -576,6 +579,7 @@ const schema = [
   #kwd-website-cost-nz .kwd-field-group legend {
     font-weight: 600;
     margin-bottom: 0.75rem;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-radio-group {
     display: grid;
@@ -589,7 +593,7 @@ const schema = [
     background: #ffffff;
     padding: 0.75rem 0.9rem;
     border-radius: 10px;
-    border: 1px solid #cbd9e5;
+    border: 1px solid #d5cfc5;
     cursor: pointer;
   }
   #kwd-website-cost-nz .kwd-radio-group input,
@@ -598,7 +602,7 @@ const schema = [
   }
   #kwd-website-cost-nz label span {
     font-size: 0.95rem;
-    color: #1b2b3a;
+    color: var(--kwd-dark);
     display: block;
   }
   #kwd-website-cost-nz .kwd-inline-fields {
@@ -609,20 +613,21 @@ const schema = [
     display: flex;
     flex-direction: column;
     font-weight: 600;
-    color: #0e3552;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz input[type="number"],
   #kwd-website-cost-nz select {
     margin-top: 0.35rem;
     padding: 0.6rem 0.9rem;
     border-radius: 8px;
-    border: 1px solid #b9cde0;
+    border: 1px solid #c8c2b8;
     font-size: 1rem;
     background: #ffffff;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-breakdown {
     margin-top: 1.5rem;
-    border-top: 1px solid #c0d5e7;
+    border-top: 1px solid #c8c2b8;
     padding-top: 1.25rem;
   }
   #kwd-website-cost-nz .kwd-breakdown ul {
@@ -636,7 +641,7 @@ const schema = [
     gap: 1rem;
     font-size: 0.95rem;
     padding: 0.35rem 0;
-    color: #24425a;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-total-line {
     font-size: 1.25rem;
@@ -645,34 +650,34 @@ const schema = [
     justify-content: space-between;
     align-items: baseline;
     gap: 1rem;
-    color: #0b3d63;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-total-line small {
     font-weight: 500;
-    color: #3b607a;
+    color: var(--kwd-brown);
   }
   #kwd-website-cost-nz .kwd-disclaimer {
     font-size: 0.85rem;
-    color: #4a657a;
+    color: var(--kwd-brown);
     margin-top: 1.25rem;
   }
   #kwd-website-cost-nz .kwd-toc {
     margin: 3rem 0 2rem;
     padding: 1.5rem;
-    border: 1px solid #d6e4f2;
+    border: 1px solid #c8c2b8;
     border-radius: 12px;
-    background: #f8fbff;
+    background: var(--kwd-cream);
   }
   #kwd-website-cost-nz .kwd-toc h2 {
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: 1.4rem;
-    color: #0f3a5d;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-toc ol {
     padding-left: 1.25rem;
     margin: 0;
-    color: #1f2d3a;
+    color: var(--kwd-dark);
     display: grid;
     gap: 0.5rem;
   }
@@ -681,14 +686,14 @@ const schema = [
   }
   #kwd-website-cost-nz .kwd-content-section h2 {
     font-size: 1.75rem;
-    color: #0f3a5d;
+    color: var(--kwd-dark);
     margin-bottom: 0.9rem;
   }
   #kwd-website-cost-nz .kwd-content-section p {
     font-size: 1rem;
     line-height: 1.7;
     margin: 0 0 1rem;
-    color: #1a2633;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-case-grid {
     display: grid;
@@ -696,24 +701,24 @@ const schema = [
     margin-top: 1.5rem;
   }
   #kwd-website-cost-nz .kwd-case-card {
-    background: #f1f6fb;
-    border: 1px solid #cfe0ef;
+    background: var(--kwd-cream);
+    border: 1px solid #c8c2b8;
     border-radius: 12px;
     padding: 1rem 1.25rem;
     transition: border-color 0.15s;
   }
   #kwd-website-cost-nz .kwd-case-card:hover {
-    border-color: #0b7fd6;
+    border-color: var(--kwd-gold);
   }
   #kwd-website-cost-nz .kwd-case-card h3 {
     margin: 0 0 0.35rem;
     font-size: 1.05rem;
-    color: #0d375a;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-case-card p {
     margin: 0;
     font-size: 0.95rem;
-    color: #29475f;
+    color: var(--kwd-brown);
   }
   #kwd-website-cost-nz .kwd-faq {
     margin-top: 3rem;
@@ -721,14 +726,14 @@ const schema = [
   #kwd-website-cost-nz .kwd-faq h2 {
     font-size: 1.7rem;
     margin-bottom: 1.25rem;
-    color: #0f3a5d;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-accordion {
-    border-top: 1px solid #d7e5f3;
-    border-bottom: 1px solid #d7e5f3;
+    border-top: 1px solid #d5cfc5;
+    border-bottom: 1px solid #d5cfc5;
   }
   #kwd-website-cost-nz .kwd-accordion-item {
-    border-bottom: 1px solid #d7e5f3;
+    border-bottom: 1px solid #d5cfc5;
   }
   #kwd-website-cost-nz .kwd-accordion-item:last-child {
     border-bottom: none;
@@ -741,19 +746,20 @@ const schema = [
     padding: 1rem 0;
     font-size: 1.05rem;
     font-weight: 600;
-    color: #123d5f;
+    color: var(--kwd-dark);
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
     cursor: pointer;
+    font-family: var(--kwd-font-body);
   }
   #kwd-website-cost-nz .kwd-faq-button span:first-child {
     flex: 1;
   }
   #kwd-website-cost-nz .kwd-faq-icon {
     font-size: 1.4rem;
-    color: #0b7fd6;
+    color: var(--kwd-brown);
     transition: transform 0.2s ease;
     flex-shrink: 0;
   }
@@ -763,24 +769,24 @@ const schema = [
   #kwd-website-cost-nz .kwd-faq-panel {
     padding: 0 0 1rem;
     font-size: 0.97rem;
-    color: #293d51;
+    color: var(--kwd-dark);
     line-height: 1.7;
   }
   #kwd-website-cost-nz .kwd-internal-links {
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid #d7e5f3;
+    border-top: 1px solid #d5cfc5;
   }
   #kwd-website-cost-nz .kwd-internal-links h3 {
     font-size: 1.25rem;
     margin-bottom: 0.75rem;
-    color: #0f3a5d;
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-internal-links ul {
     list-style: disc;
     padding-left: 1.25rem;
     margin: 0;
-    color: #1f2d3a;
+    color: var(--kwd-dark);
     display: grid;
     gap: 0.4rem;
   }
@@ -788,7 +794,7 @@ const schema = [
     margin-top: 3rem;
     padding: 1.75rem;
     border-radius: 14px;
-    background: #0f3a5d;
+    background: var(--kwd-dark);
     color: #ffffff;
     display: grid;
     gap: 0.75rem;
@@ -796,40 +802,45 @@ const schema = [
   #kwd-website-cost-nz .kwd-author-box p {
     margin: 0;
     font-size: 0.95rem;
-    color: #e6f2ff;
+    color: rgba(255, 255, 255, 0.82);
   }
   #kwd-website-cost-nz .kwd-author-box a {
-    color: #ffffff;
+    color: var(--kwd-yellow);
     text-decoration: underline;
   }
   #kwd-website-cost-nz .kwd-cta-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #34b7eb;
-    color: #032a46;
-    font-weight: 600;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-weight: 700;
     padding: 0.85rem 1.5rem;
-    border-radius: 999px;
+    border-radius: 6px;
     transition: transform 0.2s ease, background 0.2s ease;
     text-decoration: none !important;
     width: fit-content;
+    font-family: var(--kwd-font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-size: 0.875rem;
   }
   #kwd-website-cost-nz .kwd-cta-button:hover,
   #kwd-website-cost-nz .kwd-cta-button:focus {
     transform: translateY(-2px);
-    background: #4ec8f6;
+    background: var(--kwd-gold);
+    color: var(--kwd-dark);
   }
   #kwd-website-cost-nz button,
   #kwd-website-cost-nz input,
   #kwd-website-cost-nz select {
-    font-family: inherit;
+    font-family: var(--kwd-font-body);
   }
   #kwd-website-cost-nz button:focus-visible,
   #kwd-website-cost-nz a:focus-visible,
   #kwd-website-cost-nz input:focus-visible,
   #kwd-website-cost-nz select:focus-visible {
-    outline: 3px solid #7cd2ff;
+    outline: 3px solid var(--kwd-yellow);
     outline-offset: 2px;
   }
   @media (min-width: 760px) {
