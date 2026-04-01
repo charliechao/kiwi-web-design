@@ -192,16 +192,16 @@ const exploreGroups = [
     <div class="container hp-hero-shell">
       <div class="hp-hero-copy">
         <div class="hp-kicker-row">
-          <p class="hp-eyebrow">Auckland web design studio</p>
-          <span class="hp-location-pill">Grey Lynn, Auckland</span>
+          <p class="hp-eyebrow hp-hero-seq" style="--hero-delay: 0.04s;">Auckland web design studio</p>
+          <span class="hp-location-pill hp-hero-seq" style="--hero-delay: 0.12s;">Grey Lynn, Auckland</span>
         </div>
-        <h1 class="hp-headline">Websites, SEO, and Google Ads designed to make the phone ring.</h1>
-        <p class="hp-lead">Kiwi Web Design helps Auckland small businesses turn traffic into quote requests, booked calls, and steady enquiries. Strategy-first, local, and built to convert.</p>
-        <div class="hp-ctas">
+        <h1 class="hp-headline hp-hero-seq" style="--hero-delay: 0.18s;">Websites, SEO, and Google Ads designed to make the phone ring.</h1>
+        <p class="hp-lead hp-hero-seq" style="--hero-delay: 0.3s;">Kiwi Web Design helps Auckland small businesses turn traffic into quote requests, booked calls, and steady enquiries. Strategy-first, local, and built to convert.</p>
+        <div class="hp-ctas hp-hero-seq" style="--hero-delay: 0.42s;">
           <a href="/website-designer-auckland/" class="hp-btn-primary">Book a Free Consultation</a>
           <a href="#packages" class="hp-btn-secondary">See Pricing</a>
         </div>
-        <div class="hp-proof-row">
+        <div class="hp-proof-row hp-hero-seq" style="--hero-delay: 0.52s;">
           <a href="https://share.google/nciRqe4rK6ywabSVx" target="_blank" rel="noopener" class="hp-review-pill">
             <div class="review-pill-badge">Google</div>
             <div>
@@ -213,25 +213,27 @@ const exploreGroups = [
         </div>
       </div>
 
-      <div class="hp-stage">
-        <div class="hp-stage-window">
-          <div class="hp-stage-topline">
-            <span>Recent Auckland work</span>
-            <span>Conversion-first build</span>
-          </div>
-          <video class="hp-stage-video" autoplay muted loop playsinline preload="auto">
-            <source src={aucklandVideo} type="video/mp4" />
-          </video>
-          <div class="hp-stage-overlay" aria-hidden="true"></div>
-          <div class="hp-stage-caption">
-            <p class="hp-stage-label">Launch faster, convert harder</p>
-            <p class="hp-stage-title">A homepage should feel credible in five seconds, not after a long scroll.</p>
+      <div class="hp-stage" data-stage-parallax>
+        <div class="hp-stage-window-shell hp-hero-seq" style="--hero-delay: 0.24s;">
+          <div class="hp-stage-window">
+            <div class="hp-stage-topline">
+              <span>Recent Auckland work</span>
+              <span>Conversion-first build</span>
+            </div>
+            <video class="hp-stage-video" autoplay muted loop playsinline preload="auto">
+              <source src={aucklandVideo} type="video/mp4" />
+            </video>
+            <div class="hp-stage-overlay" aria-hidden="true"></div>
+            <div class="hp-stage-caption">
+              <p class="hp-stage-label">Launch faster, convert harder</p>
+              <p class="hp-stage-title">A homepage should feel credible in five seconds, not after a long scroll.</p>
+            </div>
           </div>
         </div>
 
         <div class="hp-stage-cards">
-          {stats.map(({ number, label }) => (
-            <div class="hp-stat-card">
+          {stats.map(({ number, label }, index) => (
+            <div class="hp-stat-card hp-hero-seq" style={`--hero-delay: ${0.58 + index * 0.08}s;`}>
               <span class="hp-stat-number">{number}</span>
               <span class="hp-stat-label">{label}</span>
             </div>
@@ -242,25 +244,27 @@ const exploreGroups = [
   </section>
 
   <section class="section hp-intro-section">
-    <div class="container hp-intro-grid">
+    <div class="container hp-intro-grid" data-reveal>
       <div class="hp-intro-copy">
-        <SectionHeader
-          eyebrow="Why businesses switch to us"
-          title="You do not need another pretty brochure site."
-          subtitle="You need a clear offer, a persuasive first impression, and a path that makes calling or enquiring feel obvious."
-          align="left"
-        />
-        <p class="hp-intro-text">That is the gap most small-business websites miss. They look acceptable, but they do not explain the value fast enough, they bury trust signals, and they give buyers too much to think about. We build around decision-making, not decoration.</p>
+        <div class="hp-motion-heading" style="--motion-delay: 0ms;">
+          <SectionHeader
+            eyebrow="Why businesses switch to us"
+            title="You do not need another pretty brochure site."
+            subtitle="You need a clear offer, a persuasive first impression, and a path that makes calling or enquiring feel obvious."
+            align="left"
+          />
+        </div>
+        <p class="hp-intro-text hp-motion-item" style="--motion-delay: 160ms;">That is the gap most small-business websites miss. They look acceptable, but they do not explain the value fast enough, they bury trust signals, and they give buyers too much to think about. We build around decision-making, not decoration.</p>
         <ul class="hp-checklist">
-          <li>Sharper messaging above the fold so visitors understand the offer immediately.</li>
-          <li>Proof-led layouts with reviews, case studies, and local trust signals in the right places.</li>
-          <li>Conversion paths tuned for quote requests, calls, bookings, and repeat enquiries.</li>
+          <li class="hp-motion-item" style="--motion-delay: 260ms;">Sharper messaging above the fold so visitors understand the offer immediately.</li>
+          <li class="hp-motion-item" style="--motion-delay: 340ms;">Proof-led layouts with reviews, case studies, and local trust signals in the right places.</li>
+          <li class="hp-motion-item" style="--motion-delay: 420ms;">Conversion paths tuned for quote requests, calls, bookings, and repeat enquiries.</li>
         </ul>
       </div>
 
       <div class="hp-adv-grid">
-        {whyUs.map(({ icon, title, desc }) => (
-          <article class="hp-adv-card">
+        {whyUs.map(({ icon, title, desc }, index) => (
+          <article class="hp-adv-card hp-motion-item" style={`--motion-delay: ${220 + index * 100}ms;`}>
             <div class="hp-adv-icon">
               {icon}
             </div>
@@ -273,15 +277,17 @@ const exploreGroups = [
   </section>
 
   <section class="section hp-services-section">
-    <div class="container">
-      <SectionHeader
-        eyebrow="What We Do"
-        title="Three services. One lead-generation system."
-        subtitle="The strongest results come when your website, search visibility, and paid traffic all point at the same conversion goal."
-      />
+    <div class="container" data-reveal>
+      <div class="hp-motion-heading" style="--motion-delay: 0ms;">
+        <SectionHeader
+          eyebrow="What We Do"
+          title="Three services. One lead-generation system."
+          subtitle="The strongest results come when your website, search visibility, and paid traffic all point at the same conversion goal."
+        />
+      </div>
       <div class="service-grid">
-        {services.map(({ icon, title, desc, href }) => (
-          <a href={href} class="service-card">
+        {services.map(({ icon, title, desc, href }, index) => (
+          <a href={href} class="service-card hp-motion-item" style={`--motion-delay: ${140 + index * 110}ms;`}>
             <div class="service-icon">{icon}</div>
             <h3>{title}</h3>
             <p>{desc}</p>
@@ -292,25 +298,27 @@ const exploreGroups = [
     </div>
   </section>
   <section class="section hp-studio-section">
-    <div class="container hp-studio-grid">
+    <div class="container hp-studio-grid" data-reveal>
       <div class="hp-studio-photos">
-        <div class="hp-studio-photo hp-studio-photo-large">
+        <div class="hp-studio-photo hp-studio-photo-large hp-photo-drift-one hp-motion-item" style="--motion-delay: 80ms;">
           <Image src={office1} alt="Kiwi Web Design studio - Auckland web design workspace" width={800} height={540} class="office-img" />
         </div>
-        <div class="hp-studio-photo hp-studio-photo-small">
+        <div class="hp-studio-photo hp-studio-photo-small hp-photo-drift-two hp-motion-item" style="--motion-delay: 180ms;">
           <Image src={office2} alt="Kiwi Web Design team at work in Grey Lynn Auckland" width={800} height={540} class="office-img" />
         </div>
       </div>
 
       <div class="hp-studio-copy">
-        <SectionHeader
-          eyebrow="Local and hands-on"
-          title="Auckland strategy. Fast execution. No agency bloat."
-          subtitle="We keep the process direct, the pricing clear, and the work close to the actual goals of your business."
-          align="left"
-        />
-        <p class="hp-intro-text">You are not passed through layers of account managers. We work close to the brief, move quickly, and keep the project grounded in what your customers need to see before they trust you enough to enquire.</p>
-        <div class="hp-studio-note">
+        <div class="hp-motion-heading" style="--motion-delay: 0ms;">
+          <SectionHeader
+            eyebrow="Local and hands-on"
+            title="Auckland strategy. Fast execution. No agency bloat."
+            subtitle="We keep the process direct, the pricing clear, and the work close to the actual goals of your business."
+            align="left"
+          />
+        </div>
+        <p class="hp-intro-text hp-motion-item" style="--motion-delay: 150ms;">You are not passed through layers of account managers. We work close to the brief, move quickly, and keep the project grounded in what your customers need to see before they trust you enough to enquire.</p>
+        <div class="hp-studio-note hp-motion-item" style="--motion-delay: 260ms;">
           <strong>Best fit:</strong> service businesses, professional firms, tradies, restaurants, clinics, and local brands that need more than a generic template.
         </div>
       </div>
@@ -319,28 +327,32 @@ const exploreGroups = [
 
   <section class="section hp-work-section">
     <div class="container hp-work-shell">
-      <div class="hp-work-intro">
-        <SectionHeader
-          eyebrow="Selected Work"
-          title="Built for real Auckland businesses."
-          subtitle="From tradies to restaurants to law firms, every project is designed around clarity, credibility, and conversion."
-          align="left"
-        />
-        <a href="/website-designer-auckland/" class="hp-btn-primary">Start Your Project</a>
+      <div class="hp-work-intro" data-reveal>
+        <div class="hp-motion-heading" style="--motion-delay: 0ms;">
+          <SectionHeader
+            eyebrow="Selected Work"
+            title="Built for real Auckland businesses."
+            subtitle="From tradies to restaurants to law firms, every project is designed around clarity, credibility, and conversion."
+            align="left"
+          />
+        </div>
+        <a href="/website-designer-auckland/" class="hp-btn-primary hp-motion-item" style="--motion-delay: 140ms;">Start Your Project</a>
       </div>
 
-      <div class="portfolio-carousel" data-portfolio-carousel>
+      <div class="portfolio-carousel" data-portfolio-carousel data-reveal>
         <div class="portfolio-viewport">
           <div class="portfolio-track">
             {portfolioLoop.map(({ src, alt, caption, href }, index) => {
               const isClone = index >= portfolio.length;
+              const motionDelay = Math.min(index, portfolio.length - 1) * 90 + 100;
 
               return href ? (
                 <a
                   href={href}
-                  class:list={['portfolio-item', isClone && 'is-clone']}
+                  class:list={['portfolio-item', !isClone && 'hp-motion-item', isClone && 'is-clone']}
                   aria-hidden={isClone ? 'true' : undefined}
                   tabindex={isClone ? '-1' : undefined}
+                  style={!isClone ? `--motion-delay: ${motionDelay}ms;` : undefined}
                 >
                   <img src={src} alt={isClone ? '' : alt} width="400" height="280" loading="lazy" class="portfolio-img" />
                   <span class="portfolio-caption">
@@ -350,8 +362,9 @@ const exploreGroups = [
                 </a>
               ) : (
                 <figure
-                  class:list={['portfolio-item', 'portfolio-item-static', isClone && 'is-clone']}
+                  class:list={['portfolio-item', 'portfolio-item-static', !isClone && 'hp-motion-item', isClone && 'is-clone']}
                   aria-hidden={isClone ? 'true' : undefined}
+                  style={!isClone ? `--motion-delay: ${motionDelay}ms;` : undefined}
                 >
                   <img src={src} alt={isClone ? '' : alt} width="400" height="280" loading="lazy" class="portfolio-img" />
                   <figcaption class="portfolio-caption">
@@ -368,15 +381,17 @@ const exploreGroups = [
   </section>
 
   <section class="section hp-proof-section">
-    <div class="container hp-proof-layout">
+    <div class="container hp-proof-layout" data-reveal>
       <div class="hp-proof-copy">
-        <SectionHeader
-          eyebrow="Client Reviews"
-          title="Trusted by business owners who need leads, not fluff."
-          subtitle="A good homepage should feel credible before anyone clicks deeper. Reviews do a lot of that work."
-          align="left"
-        />
-        <div class="reviews-trust">
+        <div class="hp-motion-heading" style="--motion-delay: 0ms;">
+          <SectionHeader
+            eyebrow="Client Reviews"
+            title="Trusted by business owners who need leads, not fluff."
+            subtitle="A good homepage should feel credible before anyone clicks deeper. Reviews do a lot of that work."
+            align="left"
+          />
+        </div>
+        <div class="reviews-trust hp-motion-item" style="--motion-delay: 180ms;">
           <div class="reviews-stars" aria-label="5 stars">
             <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
             <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
@@ -389,33 +404,39 @@ const exploreGroups = [
         </div>
       </div>
 
-      <div class="hp-proof-cards">
+      <div class="hp-proof-cards hp-motion-testimonials" style="--motion-delay: 180ms;">
         <TestimonialGrid items={reviews} cols={2} />
       </div>
     </div>
   </section>
 
   <section class="section hp-process-section">
-    <div class="container">
-      <SectionHeader
-        eyebrow="How It Works"
-        title="Simple process. Real momentum."
-        subtitle="Clear scope, quick execution, and a site that is built to start working from day one."
-      />
-      <ProcessSteps items={process} />
+    <div class="container" data-reveal>
+      <div class="hp-motion-heading" style="--motion-delay: 0ms;">
+        <SectionHeader
+          eyebrow="How It Works"
+          title="Simple process. Real momentum."
+          subtitle="Clear scope, quick execution, and a site that is built to start working from day one."
+        />
+      </div>
+      <div class="hp-motion-process" style="--motion-delay: 140ms;">
+        <ProcessSteps items={process} />
+      </div>
     </div>
   </section>
 
   <section class="section hp-packages-section" id="packages">
-    <div class="container">
-      <SectionHeader
-        eyebrow="Pricing"
-        title="Packages with a clear commercial point of view."
-        subtitle="Structured for businesses that need better presentation, stronger lead flow, or both."
-      />
+    <div class="container" data-reveal>
+      <div class="hp-motion-heading" style="--motion-delay: 0ms;">
+        <SectionHeader
+          eyebrow="Pricing"
+          title="Packages with a clear commercial point of view."
+          subtitle="Structured for businesses that need better presentation, stronger lead flow, or both."
+        />
+      </div>
       <div class="packages-grid">
-        {packages.map(({ name, price, desc, features, highlight, tag }) => (
-          <div class:list={['pkg-card', highlight && 'pkg-highlight']}>
+        {packages.map(({ name, price, desc, features, highlight, tag }, index) => (
+          <div class:list={['pkg-card', 'hp-motion-item', highlight && 'pkg-highlight']} style={`--motion-delay: ${140 + index * 120}ms;`}>
             {tag && <span class="pkg-tag">{tag}</span>}
             <h3 class="pkg-name">{name}</h3>
             <p class="pkg-price">{price}</p>
@@ -433,27 +454,31 @@ const exploreGroups = [
   </section>
 
   <section class="section hp-faq-section">
-    <div class="container faq-layout">
-      <div>
+    <div class="container faq-layout" data-reveal>
+      <div class="hp-motion-item hp-motion-soft" style="--motion-delay: 0ms;">
         <p class="faq-eyebrow">FAQs</p>
         <h2 class="faq-sidebar-title">Common questions from Auckland business owners.</h2>
         <p class="faq-sidebar-sub">If you do not see your question here, reach out and we will answer directly.</p>
         <a href="/website-designer-auckland/" class="hp-btn-dark" style="margin-top: 1.5rem; display: inline-flex;">Ask a Question</a>
       </div>
-      <FAQAccordion items={faqs} title="" />
+      <div class="hp-motion-faq hp-motion-soft" style="--motion-delay: 120ms;">
+        <FAQAccordion items={faqs} title="" />
+      </div>
     </div>
   </section>
 
   <section class="section hp-explore-section">
-    <div class="container">
-      <SectionHeader
-        eyebrow="Explore More"
-        title="Browse the path that matches your business."
-        subtitle="Start with the service, industry, or area that is closest to what you need."
-      />
+    <div class="container" data-reveal>
+      <div class="hp-motion-heading" style="--motion-delay: 0ms;">
+        <SectionHeader
+          eyebrow="Explore More"
+          title="Browse the path that matches your business."
+          subtitle="Start with the service, industry, or area that is closest to what you need."
+        />
+      </div>
       <div class="explore-grid">
-        {exploreGroups.map(({ label, links }) => (
-          <section class="explore-card">
+        {exploreGroups.map(({ label, links }, index) => (
+          <section class="explore-card hp-motion-item" style={`--motion-delay: ${140 + index * 110}ms;`}>
             <p class="explore-label">{label}</p>
             <div class="explore-links">
               {links.map(({ text, href }) => (
@@ -466,34 +491,90 @@ const exploreGroups = [
     </div>
   </section>
 
-  <CTABanner
-    variant="yellow"
-    title="Ready to grow your Auckland business online?"
-    subtitle="Free consultation - online or in person, Auckland wide. No commitment, no pressure."
-    ctaPrimary={{ text: 'Book a Free Consultation', href: '/website-designer-auckland/' }}
-    ctaSecondary={{ text: 'See Our Packages', href: '/small-business-website-design-auckland/' }}
-  />
+  <div class="hp-home-cta hp-motion-cta" data-reveal>
+    <CTABanner
+      variant="yellow"
+      title="Ready to grow your Auckland business online?"
+      subtitle="Free consultation - online or in person, Auckland wide. No commitment, no pressure."
+      ctaPrimary={{ text: 'Book a Free Consultation', href: '/website-designer-auckland/' }}
+      ctaSecondary={{ text: 'See Our Packages', href: '/small-business-website-design-auckland/' }}
+    />
+  </div>
 
   <script is:inline>
-    const portfolioCarousel = document.querySelector('[data-portfolio-carousel]');
-
-    if (portfolioCarousel instanceof HTMLElement) {
-      const viewport = portfolioCarousel.querySelector('.portfolio-viewport');
+    (() => {
+      const root = document.documentElement;
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const revealSections = Array.from(document.querySelectorAll('[data-reveal]'));
+      const portfolioCarousel = document.querySelector('[data-portfolio-carousel]');
+      const stage = document.querySelector('[data-stage-parallax]');
+      const desktopParallax = window.matchMedia('(min-width: 1081px) and (hover: hover) and (pointer: fine)');
 
-      if (viewport instanceof HTMLElement) {
-        let paused = prefersReducedMotion.matches;
-        let frameId = 0;
-        let lastFrame = 0;
+      let revealObserver;
+      let carouselFrame = 0;
+      let lastCarouselFrame = 0;
+      let carouselHoverPaused = false;
+      let carouselFocusPaused = false;
+      let parallaxFrame = 0;
+      let parallaxCurrentX = 0;
+      let parallaxCurrentY = 0;
+      let parallaxTargetX = 0;
+      let parallaxTargetY = 0;
+      let syncCarouselMotion = () => {};
+      let syncParallaxMotion = () => {};
+
+      const motionActive = () => !prefersReducedMotion.matches;
+
+      const syncMotionClass = () => {
+        root.classList.toggle('motion-enabled', motionActive());
+      };
+
+      const initReveals = () => {
+        revealObserver?.disconnect();
+
+        if (!motionActive()) {
+          revealSections.forEach((section) => section.classList.add('is-visible'));
+          return;
+        }
+
+        revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            revealObserver?.unobserve(entry.target);
+          });
+        }, {
+          threshold: 0.18,
+          rootMargin: '0px 0px -10% 0px',
+        });
+
+        revealSections.forEach((section) => {
+          if (section.classList.contains('is-visible')) return;
+
+          const sectionTop = section.getBoundingClientRect().top;
+          if (sectionTop < window.innerHeight * 0.88) {
+            section.classList.add('is-visible');
+          } else {
+            revealObserver?.observe(section);
+          }
+        });
+      };
+
+      const initCarousel = () => {
+        if (!(portfolioCarousel instanceof HTMLElement)) return;
+
+        const viewport = portfolioCarousel.querySelector('.portfolio-viewport');
+        if (!(viewport instanceof HTMLElement)) return;
 
         const getSpeed = () => (window.innerWidth < 720 ? 22 : 34);
         const getResetPoint = () => viewport.scrollWidth / 2;
+        const carouselPaused = () => !motionActive() || carouselHoverPaused || carouselFocusPaused;
 
-        const tick = (time) => {
-          if (!paused) {
-            if (!lastFrame) lastFrame = time;
+        const stepCarousel = (time) => {
+          if (!carouselPaused()) {
+            if (!lastCarouselFrame) lastCarouselFrame = time;
 
-            const delta = (time - lastFrame) / 1000;
+            const delta = (time - lastCarouselFrame) / 1000;
             viewport.scrollLeft += getSpeed() * delta;
 
             const resetPoint = getResetPoint();
@@ -502,35 +583,145 @@ const exploreGroups = [
             }
           }
 
-          lastFrame = time;
-          frameId = window.requestAnimationFrame(tick);
+          lastCarouselFrame = time;
+          carouselFrame = window.requestAnimationFrame(stepCarousel);
         };
 
-        const setPaused = (value) => {
-          paused = value || prefersReducedMotion.matches;
-          if (!paused) lastFrame = 0;
+        syncCarouselMotion = () => {
+          if (!motionActive()) {
+            if (carouselFrame) {
+              window.cancelAnimationFrame(carouselFrame);
+              carouselFrame = 0;
+            }
+            lastCarouselFrame = 0;
+            return;
+          }
+
+          if (!carouselFrame) {
+            carouselFrame = window.requestAnimationFrame(stepCarousel);
+          }
         };
 
-        portfolioCarousel.addEventListener('mouseenter', () => setPaused(true));
-        portfolioCarousel.addEventListener('mouseleave', () => setPaused(false));
-        portfolioCarousel.addEventListener('focusin', () => setPaused(true));
+        portfolioCarousel.addEventListener('mouseenter', () => {
+          carouselHoverPaused = true;
+        });
+
+        portfolioCarousel.addEventListener('mouseleave', () => {
+          carouselHoverPaused = false;
+          lastCarouselFrame = 0;
+          syncCarouselMotion();
+        });
+
+        portfolioCarousel.addEventListener('focusin', () => {
+          carouselFocusPaused = true;
+        });
+
         portfolioCarousel.addEventListener('focusout', () => {
           if (!portfolioCarousel.contains(document.activeElement)) {
-            setPaused(false);
+            carouselFocusPaused = false;
+            lastCarouselFrame = 0;
+            syncCarouselMotion();
           }
         });
 
-        prefersReducedMotion.addEventListener('change', (event) => {
-          setPaused(event.matches);
+        syncCarouselMotion();
+
+        return () => {
+          if (carouselFrame) {
+            window.cancelAnimationFrame(carouselFrame);
+          }
+        };
+      };
+
+      const initStageParallax = () => {
+        if (!(stage instanceof HTMLElement)) return;
+
+        const setParallax = () => {
+          parallaxCurrentX += (parallaxTargetX - parallaxCurrentX) * 0.12;
+          parallaxCurrentY += (parallaxTargetY - parallaxCurrentY) * 0.12;
+
+          stage.style.setProperty('--stage-window-x', `${parallaxCurrentX * 14}px`);
+          stage.style.setProperty('--stage-window-y', `${parallaxCurrentY * 12}px`);
+          stage.style.setProperty('--stage-window-rotate-x', `${parallaxCurrentY * -3.5}deg`);
+          stage.style.setProperty('--stage-window-rotate-y', `${parallaxCurrentX * 4.5}deg`);
+          stage.style.setProperty('--stage-cards-x', `${parallaxCurrentX * -10}px`);
+          stage.style.setProperty('--stage-cards-y', `${parallaxCurrentY * -8}px`);
+
+          if (
+            Math.abs(parallaxTargetX - parallaxCurrentX) > 0.002 ||
+            Math.abs(parallaxTargetY - parallaxCurrentY) > 0.002
+          ) {
+            parallaxFrame = window.requestAnimationFrame(setParallax);
+          } else {
+            parallaxFrame = 0;
+          }
+        };
+
+        const queueParallax = () => {
+          if (!parallaxFrame) {
+            parallaxFrame = window.requestAnimationFrame(setParallax);
+          }
+        };
+
+        const resetParallax = () => {
+          parallaxTargetX = 0;
+          parallaxTargetY = 0;
+          stage.classList.remove('is-parallax-active');
+          queueParallax();
+        };
+
+        syncParallaxMotion = () => {
+          if (!motionActive() || !desktopParallax.matches) {
+            resetParallax();
+          }
+        };
+
+        stage.addEventListener('pointermove', (event) => {
+          if (!motionActive() || !desktopParallax.matches) return;
+
+          const rect = stage.getBoundingClientRect();
+          const ratioX = (event.clientX - rect.left) / rect.width - 0.5;
+          const ratioY = (event.clientY - rect.top) / rect.height - 0.5;
+
+          parallaxTargetX = Math.max(-1, Math.min(1, ratioX * 2));
+          parallaxTargetY = Math.max(-1, Math.min(1, ratioY * 2));
+
+          stage.classList.add('is-parallax-active');
+          queueParallax();
         });
 
-        frameId = window.requestAnimationFrame(tick);
+        stage.addEventListener('pointerleave', resetParallax);
+        stage.addEventListener('pointercancel', resetParallax);
 
-        window.addEventListener('pagehide', () => {
-          window.cancelAnimationFrame(frameId);
-        }, { once: true });
-      }
-    }
+        return () => {
+          if (parallaxFrame) {
+            window.cancelAnimationFrame(parallaxFrame);
+          }
+        };
+      };
+
+      syncMotionClass();
+      initReveals();
+
+      const destroyCarousel = initCarousel();
+      const destroyParallax = initStageParallax();
+
+      const handleMotionChange = () => {
+        syncMotionClass();
+        initReveals();
+        syncCarouselMotion();
+        syncParallaxMotion();
+      };
+
+      prefersReducedMotion.addEventListener('change', handleMotionChange);
+      desktopParallax.addEventListener('change', handleMotionChange);
+
+      window.addEventListener('pagehide', () => {
+        revealObserver?.disconnect();
+        destroyCarousel?.();
+        destroyParallax?.();
+      }, { once: true });
+    })();
   </script>
 </Layout>
 
@@ -567,6 +758,160 @@ const exploreGroups = [
     left: -5rem;
     bottom: 8rem;
     background: rgba(251, 232, 166, 0.38);
+  }
+
+  @keyframes heroIntro {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 2.4rem, 0) scale(0.985);
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes heroGlowDrift {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 0.18;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: translate3d(2.4rem, -1.8rem, 0) scale(1.14);
+      opacity: 0.24;
+    }
+  }
+
+  @keyframes imageDrift {
+    0% {
+      transform: scale(1.02) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: scale(1.08) translate3d(-1.8%, -1.5%, 0);
+    }
+  }
+
+  @keyframes imageDriftReverse {
+    0% {
+      transform: scale(1.03) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: scale(1.08) translate3d(1.6%, -1.2%, 0);
+    }
+  }
+
+  .hp-motion-soft {
+    --motion-distance: 1.1rem;
+    --motion-scale: 1;
+    --motion-blur: 0px;
+  }
+
+  :global(.motion-enabled) .hp-hero-seq {
+    opacity: 0;
+    transform: translate3d(0, 2.2rem, 0) scale(0.985);
+    filter: blur(8px);
+    animation: heroIntro 0.96s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--hero-delay, 0s);
+    will-change: transform, opacity;
+  }
+
+  :global(.motion-enabled) .hp-stage-cards .hp-hero-seq {
+    transform: translate3d(0, 2.8rem, 0) scale(0.96);
+  }
+
+  :global(.motion-enabled) .hp-hero-glow-one {
+    animation: heroGlowDrift 18s ease-in-out infinite alternate;
+  }
+
+  :global(.motion-enabled) .hp-hero-glow-two {
+    animation: heroGlowDrift 24s ease-in-out -8s infinite alternate-reverse;
+  }
+
+  :global(.motion-enabled) [data-reveal] .hp-motion-item,
+  :global(.motion-enabled) [data-reveal] .hp-motion-heading :global(.sh-eyebrow),
+  :global(.motion-enabled) [data-reveal] .hp-motion-heading :global(.sh-title),
+  :global(.motion-enabled) [data-reveal] .hp-motion-heading :global(.sh-subtitle),
+  :global(.motion-enabled) [data-reveal] .hp-motion-process :global(.process-step),
+  :global(.motion-enabled) [data-reveal] .hp-motion-testimonials :global(.tg-card),
+  :global(.motion-enabled) [data-reveal] .hp-motion-faq :global(.faq-wrap),
+  :global(.motion-enabled) [data-reveal].hp-motion-cta :global(.cta-text),
+  :global(.motion-enabled) [data-reveal].hp-motion-cta :global(.cta-buttons) {
+    opacity: 0;
+    transform: translate3d(0, var(--motion-distance, 2rem), 0) scale(var(--motion-scale, 0.985));
+    filter: blur(var(--motion-blur, 7px));
+    transition:
+      opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.92s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 0.92s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--motion-delay, 0ms);
+    will-change: transform, opacity;
+  }
+
+  :global(.motion-enabled) [data-reveal].is-visible .hp-motion-item,
+  :global(.motion-enabled) [data-reveal].is-visible .hp-motion-heading :global(.sh-eyebrow),
+  :global(.motion-enabled) [data-reveal].is-visible .hp-motion-heading :global(.sh-title),
+  :global(.motion-enabled) [data-reveal].is-visible .hp-motion-heading :global(.sh-subtitle),
+  :global(.motion-enabled) [data-reveal].is-visible .hp-motion-process :global(.process-step),
+  :global(.motion-enabled) [data-reveal].is-visible .hp-motion-testimonials :global(.tg-card),
+  :global(.motion-enabled) [data-reveal].is-visible .hp-motion-faq :global(.faq-wrap),
+  :global(.motion-enabled) [data-reveal].is-visible.hp-motion-cta :global(.cta-text),
+  :global(.motion-enabled) [data-reveal].is-visible.hp-motion-cta :global(.cta-buttons) {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+
+  :global(.motion-enabled) [data-reveal] .hp-motion-heading :global(.sh-eyebrow) {
+    transition-delay: calc(var(--motion-delay, 0ms) + 0ms);
+  }
+
+  :global(.motion-enabled) [data-reveal] .hp-motion-heading :global(.sh-title) {
+    transition-delay: calc(var(--motion-delay, 0ms) + 90ms);
+  }
+
+  :global(.motion-enabled) [data-reveal] .hp-motion-heading :global(.sh-subtitle) {
+    transition-delay: calc(var(--motion-delay, 0ms) + 180ms);
+  }
+
+  :global(.motion-enabled) [data-reveal] .hp-motion-process :global(.process-step:nth-child(1)),
+  :global(.motion-enabled) [data-reveal] .hp-motion-testimonials :global(.tg-card:nth-child(1)) {
+    transition-delay: calc(var(--motion-delay, 0ms) + 0ms);
+  }
+
+  :global(.motion-enabled) [data-reveal] .hp-motion-process :global(.process-step:nth-child(2)),
+  :global(.motion-enabled) [data-reveal] .hp-motion-testimonials :global(.tg-card:nth-child(2)) {
+    transition-delay: calc(var(--motion-delay, 0ms) + 110ms);
+  }
+
+  :global(.motion-enabled) [data-reveal] .hp-motion-process :global(.process-step:nth-child(3)),
+  :global(.motion-enabled) [data-reveal] .hp-motion-testimonials :global(.tg-card:nth-child(3)) {
+    transition-delay: calc(var(--motion-delay, 0ms) + 220ms);
+  }
+
+  :global(.motion-enabled) [data-reveal] .hp-motion-process :global(.process-step:nth-child(4)),
+  :global(.motion-enabled) [data-reveal] .hp-motion-testimonials :global(.tg-card:nth-child(4)) {
+    transition-delay: calc(var(--motion-delay, 0ms) + 330ms);
+  }
+
+  :global(.motion-enabled) [data-reveal].hp-motion-cta :global(.cta-text) {
+    transition-delay: 0ms;
+  }
+
+  :global(.motion-enabled) [data-reveal].hp-motion-cta :global(.cta-buttons) {
+    transition-delay: 160ms;
+  }
+
+  :global(.motion-enabled) [data-reveal].is-visible .hp-photo-drift-one .office-img {
+    animation: imageDrift 14s ease-in-out 0.6s infinite alternate;
+  }
+
+  :global(.motion-enabled) [data-reveal].is-visible .hp-photo-drift-two .office-img {
+    animation: imageDriftReverse 16s ease-in-out 0.9s infinite alternate;
   }
 
   .hp-hero-shell,
@@ -764,9 +1109,19 @@ const exploreGroups = [
   }
 
   .hp-stage {
+    --stage-window-x: 0px;
+    --stage-window-y: 0px;
+    --stage-window-rotate-x: 0deg;
+    --stage-window-rotate-y: 0deg;
+    --stage-cards-x: 0px;
+    --stage-cards-y: 0px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .hp-stage-window-shell {
+    perspective: 1600px;
   }
 
   .hp-stage-window {
@@ -873,6 +1228,10 @@ const exploreGroups = [
 
   .hp-stage-cards {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .hp-home-cta {
+    overflow: clip;
   }
 
   .hp-stat-card,
@@ -1287,6 +1646,26 @@ const exploreGroups = [
     transform: translateX(2px);
   }
 
+  @media (min-width: 1081px) {
+    :global(.motion-enabled) .hp-stage-window {
+      transform:
+        translate3d(var(--stage-window-x), var(--stage-window-y), 0)
+        rotateX(var(--stage-window-rotate-x))
+        rotateY(var(--stage-window-rotate-y));
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    :global(.motion-enabled) .hp-stage-cards {
+      transform: translate3d(var(--stage-cards-x), var(--stage-cards-y), 0);
+      will-change: transform;
+    }
+
+    :global(.motion-enabled) .hp-stage.is-parallax-active .hp-stage-window {
+      box-shadow: 0 40px 92px rgba(8, 8, 8, 0.44);
+    }
+  }
+
   @media (max-width: 1080px) {
     .hp-hero-shell,
     .hp-intro-grid,
@@ -1381,6 +1760,17 @@ const exploreGroups = [
 
     .hp-studio-photo-small {
       border-width: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hp-hero-glow,
+    .office-img,
+    .hp-stage-window,
+    .hp-stage-cards {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
     }
   }
 </style>
