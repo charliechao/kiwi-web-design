@@ -119,7 +119,10 @@ const reviews = [
       <div class="contact-form-wrap" id="contact">
         <h2 class="contact-form-title">Send us a message</h2>
         <p class="contact-form-sub">We reply within 1 business day. Fields marked * are required.</p>
-        <form class="contact-form" id="contact-form" name="contact" method="POST" action="/api/contact">
+        <form class="contact-form" id="contact-form" name="contact" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="e0a725e4-f764-4536-826c-df981c8bdf3b" />
+          <input type="hidden" name="subject" value="New enquiry from KWD contact form" />
+          <input type="hidden" name="from_name" value="Kiwi Web Design Website" />
           <div class="form-row">
             <label class="form-label">
               Your Name <span class="req">*</span>
@@ -518,44 +521,3 @@ const reviews = [
     .contact-form-wrap { padding: 1.75rem; }
   }
 </style>
-
-<script>
-  (function () {
-    const form   = document.getElementById('contact-form') as HTMLFormElement | null;
-    const btn    = document.getElementById('contact-submit') as HTMLButtonElement | null;
-    const status = document.getElementById('contact-status') as HTMLElement | null;
-    if (!form || !btn || !status) return;
-
-    function setStatus(msg: string, isError: boolean) {
-      status!.textContent = msg;
-      status!.style.display = 'block';
-      status!.className = 'form-status ' + (isError ? 'form-status--error' : 'form-status--success');
-    }
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      btn!.disabled = true;
-      btn!.textContent = 'Sending…';
-      status!.style.display = 'none';
-      try {
-        const res  = await fetch('/api/contact', {
-          method: 'POST',
-          body: new URLSearchParams(new FormData(form) as unknown as Record<string, string>),
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        });
-        const data = await res.json();
-        if (data.ok) {
-          setStatus("Message sent! We'll be in touch within 1 business day.", false);
-          form.reset();
-        } else {
-          setStatus(data.error || 'Something went wrong. Please try again.', true);
-        }
-      } catch {
-        setStatus('Network error — please check your connection and try again.', true);
-      } finally {
-        btn!.disabled = false;
-        btn!.textContent = 'Send Message →';
-      }
-    });
-  })();
-</script>
