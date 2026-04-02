@@ -63,7 +63,6 @@ export async function onRequest(context) {
   const missing = [];
   if (!name)    missing.push('name');
   if (!email)   missing.push('email');
-  if (!mobile)  missing.push('mobile');
   if (!message) missing.push('message');
   if (missing.length) {
     return json({ ok: false, error: `Required fields missing: ${missing.join(', ')}.` }, 422);

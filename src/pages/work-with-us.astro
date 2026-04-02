@@ -227,7 +227,8 @@ const values = [
                 <textarea name="message" rows="5" placeholder="What do you do, what kind of work are you looking for, and why would we be a good fit?..." required></textarea>
               </label>
             </div>
-            <button type="submit" class="wwu-form-submit">Send Introduction →</button>
+            <button type="submit" class="wwu-form-submit" id="wwu-submit">Send Introduction →</button>
+            <p id="wwu-status" aria-live="polite" style="display:none" class="wwu-status"></p>
             <p class="wwu-form-privacy">We respect your privacy. Your details are never shared or sold.</p>
           </form>
         </div>
@@ -582,4 +583,50 @@ const values = [
   .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
   .rps-link:hover { background: #e8e7db; }
+
+  .wwu-status { font-size: 0.88rem; font-weight: 600; padding: 0.75rem 1rem; border-radius: 8px; text-align: center; margin: 0.5rem 0 0; }
+  .wwu-status--success { background: #d1fae5; color: #065f46; border: 1.5px solid #6ee7b7; }
+  .wwu-status--error   { background: #fee2e2; color: #991b1b; border: 1.5px solid #fca5a5; }
+  .wwu-form-submit:disabled { opacity: 0.65; cursor: not-allowed; }
 </style>
+
+<script>
+  (function () {
+    const form   = document.querySelector('form[name="work-with-us"]') as HTMLFormElement | null;
+    const btn    = document.getElementById('wwu-submit') as HTMLButtonElement | null;
+    const status = document.getElementById('wwu-status') as HTMLElement | null;
+    if (!form || !btn || !status) return;
+
+    function setStatus(msg: string, isError: boolean) {
+      status!.textContent = msg;
+      status!.style.display = 'block';
+      status!.className = 'wwu-status ' + (isError ? 'wwu-status--error' : 'wwu-status--success');
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btn!.disabled = true;
+      btn!.textContent = 'Sending…';
+      status!.style.display = 'none';
+      try {
+        const res  = await fetch('/api/contact', {
+          method: 'POST',
+          body: new URLSearchParams(new FormData(form) as unknown as Record<string, string>),
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        });
+        const data = await res.json();
+        if (data.ok) {
+          setStatus("Introduction sent! We'll be in touch soon.", false);
+          form.reset();
+        } else {
+          setStatus(data.error || 'Something went wrong. Please try again.', true);
+        }
+      } catch {
+        setStatus('Network error — please check your connection and try again.', true);
+      } finally {
+        btn!.disabled = false;
+        btn!.textContent = 'Send Introduction →';
+      }
+    });
+  })();
+</script>
