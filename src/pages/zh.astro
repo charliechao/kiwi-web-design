@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
 
+const contactPage = '/website-designer-auckland/';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -121,7 +123,7 @@ const faqs = [
         <h1 class="zh-title">专业网站，让您的<br />生意脱颖而出。</h1>
         <p class="zh-subtitle">为奥克兰华人中小企业提供专业网站建设、SEO优化和数字营销服务。价格透明，快速交付，本地团队支持。</p>
         <div class="zh-hero-btns">
-          <a href="/work-with-us/" class="btn-zh-primary">免费咨询</a>
+          <a href={contactPage} class="btn-zh-primary">免费咨询</a>
           <a href="/small-business-website-design-auckland/" class="btn-zh-outline">查看服务详情</a>
         </div>
         <p class="zh-note">大多数网站2-3周内上线 · 固定价格，无隐性收费</p>
@@ -181,7 +183,7 @@ const faqs = [
         <p class="zh-about-body">Kiwi Web Design由Charlie Chao创立，专注于为奥克兰小企业和个体经营者提供高性价比的网站建设和数字营销服务。</p>
         <p class="zh-about-body">我们不是大型代理公司——我们是一个小型本地团队，直接与客户沟通，提供更快的响应速度和更好的性价比。每个项目都有固定价格报价、明确的时间表，以及完整的网站管理培训。</p>
         <p class="zh-about-body">无论您是餐饮、零售、贸易、专业服务还是其他行业，我们都有丰富的相关经验，帮助您的企业在线上取得成功。</p>
-        <a href="/work-with-us/" class="btn-zh-dark">预约免费咨询</a>
+        <a href={contactPage} class="btn-zh-dark">预约免费咨询</a>
       </div>
       <div class="zh-reasons">
         {reasons.map(r => (
@@ -248,7 +250,7 @@ const faqs = [
     variant="yellow"
     title="准备好让您的企业在网上脱颖而出了吗？"
     subtitle="免费咨询，24小时内提供固定价格报价。欢迎通过下方联系我们。"
-    ctaPrimary={{ text: "免费咨询", href: "/work-with-us/" }}
+    ctaPrimary={{ text: "免费咨询", href: contactPage }}
     ctaSecondary={{ text: "查看网页设计服务", href: "/small-business-website-design-auckland/" }}
   />
 
