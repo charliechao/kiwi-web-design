@@ -59,6 +59,7 @@ const schema = {
         "@id": "https://www.kiwiwebdesign.co.nz/#charlie",
         "name": "Charlie Chao",
         "url": "https://www.kiwiwebdesign.co.nz/about-us/",
+        "sameAs": ["https://www.linkedin.com/in/gocharlie/"],
         "jobTitle": "Founder, Kiwi Web Design",
         "worksFor": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" }
       },
@@ -113,7 +114,7 @@ const schema = {
       </nav>
       <div class="post-meta">
         <time datetime={pubDate.toISOString()} class="post-date">{formatDate(pubDate)}</time>
-        <span class="post-author">by Charlie Chao</span>
+        <span class="post-author">by <a href="https://www.linkedin.com/in/gocharlie/" target="_blank" rel="noopener" class="author-link">Charlie Chao</a></span>
       </div>
       <h1 class="post-title">{title}</h1>
       <p class="post-desc">{description}</p>
@@ -244,6 +245,14 @@ const schema = {
     color: rgba(255,255,255,0.4);
     letter-spacing: 0.04em;
   }
+  .author-link {
+    color: rgba(255,255,255,0.55);
+    text-decoration: underline;
+    text-decoration-color: rgba(255,255,255,0.2);
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+  }
+  .author-link:hover { color: var(--kwd-yellow); }
 
   .post-title {
     font-family: var(--kwd-font-heading);
