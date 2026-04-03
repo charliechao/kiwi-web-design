@@ -123,6 +123,8 @@ const reviews = [
           <input type="hidden" name="access_key" value="e0a725e4-f764-4536-826c-df981c8bdf3b" />
           <input type="hidden" name="subject" value="New enquiry from KWD contact form" />
           <input type="hidden" name="from_name" value="Kiwi Web Design Website" />
+          <input type="hidden" name="submitted_at" id="contact-submitted-at" value="" />
+          <input type="checkbox" name="botcheck" class="form-botcheck" tabindex="-1" autocomplete="off" />
           <div class="form-row">
             <label class="form-label">
               Your Name <span class="req">*</span>
@@ -158,6 +160,9 @@ const reviews = [
                 <option value="other">Other / Not Sure</option>
               </select>
             </label>
+          </div>
+          <div class="form-row">
+            <div class="h-captcha" data-captcha="true"></div>
           </div>
           <div class="form-row">
             <label class="form-label">
@@ -250,10 +255,14 @@ const reviews = [
 
   <script>
     (function () {
-      const form   = document.getElementById('contact-form') as HTMLFormElement | null;
-      const btn    = document.getElementById('contact-submit') as HTMLButtonElement | null;
+      const form = document.getElementById('contact-form') as HTMLFormElement | null;
+      const btn = document.getElementById('contact-submit') as HTMLButtonElement | null;
       const status = document.getElementById('contact-status') as HTMLElement | null;
+      const submittedAt = document.getElementById('contact-submitted-at') as HTMLInputElement | null;
       if (!form || !btn || !status) return;
+
+      const minSubmitSeconds = 4;
+      if (submittedAt) submittedAt.value = String(Date.now());
 
       function setStatus(msg: string, isError: boolean) {
         status!.textContent = msg;
@@ -261,8 +270,42 @@ const reviews = [
         status!.className = 'form-status ' + (isError ? 'form-status--error' : 'form-status--success');
       }
 
+      function countUrls(value: string) {
+        return (value.match(/(?:https?:\/\/|www\.)/gi) || []).length;
+      }
+
+      function hasSuspiciousPattern(value: string) {
+        return /(.)\1{7,}/.test(value);
+      }
+
+      function validateSubmission() {
+        const formData = new FormData(form!);
+        const name = String(formData.get('name') || '').trim();
+        const message = String(formData.get('message') || '').trim();
+        const startedAt = Number(formData.get('submitted_at') || 0);
+        const botcheck = formData.get('botcheck');
+        const captcha = form!.querySelector('textarea[name="h-captcha-response"]') as HTMLTextAreaElement | null;
+
+        if (botcheck) return 'Submission blocked. Please refresh the page and try again.';
+        if (!startedAt || ((Date.now() - startedAt) / 1000) < minSubmitSeconds) {
+          return 'Please wait a few seconds before sending your message.';
+        }
+        if (name.length < 2 || !/[a-z]/i.test(name)) return 'Please enter your name.';
+        if (message.length < 20) return 'Please add a bit more detail so we can help properly.';
+        if (countUrls(message) > 1 || hasSuspiciousPattern(message)) {
+          return 'Please remove suspicious content and try again.';
+        }
+        if (!captcha?.value) return 'Please complete the captcha before sending.';
+        return '';
+      }
+
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        const validationError = validateSubmission();
+        if (validationError) {
+          setStatus(validationError, true);
+          return;
+        }
         btn.disabled = true;
         btn.textContent = 'Sending…';
         status.style.display = 'none';
@@ -276,6 +319,8 @@ const reviews = [
           if (data.success) {
             setStatus("Message sent! We'll be in touch within 1 business day.", false);
             form.reset();
+            if (submittedAt) submittedAt.value = String(Date.now());
+            (window as Window & { hcaptcha?: { reset: () => void } }).hcaptcha?.reset();
           } else {
             setStatus(data.message || 'Something went wrong. Please try again.', true);
           }
@@ -288,6 +333,7 @@ const reviews = [
       });
     })();
   </script>
+  <script is:inline src="https://web3forms.com/client/script.js" async defer></script>
 
 </Layout>
 
@@ -439,6 +485,7 @@ const reviews = [
     border-color: var(--kwd-dark);
   }
   .form-label textarea { resize: vertical; min-height: 100px; }
+  .form-botcheck { display: none !important; }
 
   .form-submit {
     background: var(--kwd-dark);
