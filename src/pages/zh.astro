@@ -15,21 +15,84 @@ const schema = {
       "description": "奥克兰华人网页设计专家。为新西兰华人中小企业提供专业网站建设、SEO优化和Google广告服务。价格透明，快速交付。",
       "inLanguage": "zh-Hans",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/zh/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/zh/#breadcrumb" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".zh-snippet", ".zh-eyebrow", ".zh-subtitle"]
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/zh/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "中文服务" }
+        { "@type": "ListItem", "position": 2, "name": "中文服务", "item": "https://www.kiwiwebdesign.co.nz/zh/" }
       ]
     },
     {
-      "@type": "Organization",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz/"
+      "alternateName": "奥克兰网页设计",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "ratingCount": "50"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kiwiwebdesign.co.nz/favicon.png",
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "网站建设费用是多少？",
+          "acceptedAnswer": { "@type": "Answer", "text": "一个标准的5-8页小企业网站价格在$1,500-$2,500 NZD之间。具体价格取决于页面数量、功能需求（如预约系统、电商功能）等。我们会在项目开始前提供详细的固定价格报价。" }
+        },
+        {
+          "@type": "Question",
+          "name": "建设网站需要多长时间？",
+          "acceptedAnswer": { "@type": "Answer", "text": "大多数小企业网站在内容（文字和图片）准备好后，2-3周内可以上线。更复杂的网站或电商网站需要3-5周。我们会在报价阶段给出具体时间表。" }
+        },
+        {
+          "@type": "Question",
+          "name": "我需要准备哪些内容？",
+          "acceptedAnswer": { "@type": "Answer", "text": "您需要提供：企业Logo、品牌颜色偏好、需要的页面列表，以及相关文字和图片。如果没有专业照片，我们可以使用高质量的版权图片。" }
+        },
+        {
+          "@type": "Question",
+          "name": "网站建成后我能自己更新内容吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可以。我们使用WordPress系统，并提供培训。网站交付后，您可以自行更新文字、添加图片、发布博客文章，无需依赖开发人员。" }
+        },
+        {
+          "@type": "Question",
+          "name": "你们只服务华人客户吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "不是。Kiwi Web Design为所有奥克兰小企业提供服务，包括各行各业的华人和非华人企业主。我们理解华人企业主的需求，同时也具备服务更广泛客户群的能力。" }
+        }
+      ]
     }
   ]
 };
@@ -113,6 +176,7 @@ const faqs = [
   description="奥克兰华人网页设计专家。为新西兰华人中小企业提供专业网站建设、SEO优化和Google广告服务。价格透明，快速交付。"
   canonicalURL="https://www.kiwiwebdesign.co.nz/zh/"
   schema={schema}
+  lang="zh-Hans"
 >
 
   <!-- Hero -->
@@ -148,6 +212,13 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <!-- AI citability snippet -->
+  <div class="zh-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> 是奥克兰本地网页设计公司，由华裔创始人 Charlie Chao 创立，专为奥克兰华人及中小企业提供中文服务。业务涵盖网站建设（起价 <strong>$1,290 NZD</strong>）、本地 SEO 优化（起价 <strong>$500/月</strong>）和 Google 广告管理。公司地址：Grey Lynn，奥克兰，可全程中文沟通，固定报价无隐性收费，Google 评分 <strong>4.9★</strong>。</p>
+    </div>
+  </div>
 
   <!-- Services -->
   <section class="section" style="background: var(--kwd-cream);">
@@ -236,12 +307,13 @@ const faqs = [
   <!-- Related services -->
   <section class="related-strip">
     <div class="container" style="max-width: 860px;">
-      <p class="rps-label">Related services</p>
+      <p class="rps-label">相关服务</p>
       <div class="rps-links">
-        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design</a>
-        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress</a>
-        <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO</a>
-        <a href="/about-us/" class="rps-link">About Us</a>
+        <a href="/small-business-website-design-auckland/" class="rps-link">网页设计</a>
+        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress 网站</a>
+        <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">本地 SEO</a>
+        <a href="/ai-seo-for-auckland-small-businesses/" class="rps-link">AI SEO &amp; GEO</a>
+        <a href="/about-us/" class="rps-link">关于我们</a>
       </div>
     </div>
   </section>
@@ -568,6 +640,19 @@ const faqs = [
   @media (max-width: 640px) {
     .zh-services-grid { grid-template-columns: 1fr; }
   }
+
+  /* AI citability snippet */
+  .zh-snippet {
+    background: var(--kwd-cream);
+    border-left: 4px solid var(--kwd-gold);
+    padding: 1.1rem 0;
+  }
+  .zh-snippet .container {
+    font-size: 0.92rem;
+    color: var(--kwd-dark);
+    line-height: 1.8;
+  }
+  .zh-snippet p { margin: 0; }
 
   .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
   .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
