@@ -8,29 +8,101 @@ const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
+      "@type": ["WebPage", "ContactPage"],
       "@id": "https://www.kiwiwebdesign.co.nz/website-designer-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/website-designer-auckland/",
-      "name": "Contact Kiwi Web Design | Affordable Web Design Auckland",
-      "description": "Have questions or ready to get started? Contact Kiwi Web Design for affordable web design in Auckland. Free in-person consults. Let's build your website together.",
+      "name": "Website Designer Auckland | Free Consultation | Kiwi Web Design",
+      "description": "Book a free consultation with Kiwi Web Design — Auckland website designers based in Grey Lynn. Web design, SEO, and Google Ads for small businesses across Auckland and NZ.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/website-designer-auckland/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/website-designer-auckland/#breadcrumb" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".contact-eyebrow", ".contact-info h1", ".contact-lead"]
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/website-designer-auckland/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "Contact" }
+        { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.kiwiwebdesign.co.nz/website-designer-auckland/" }
       ]
     },
     {
-      "@type": "Organization",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
       "alternateName": "Web Design Auckland",
-      "url": "https://www.kiwiwebdesign.co.nz/"
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "ratingCount": "50"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kiwiwebdesign.co.nz/favicon.png",
+        "width": 512,
+        "height": 512
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web Design and Digital Marketing Services Auckland",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design Auckland" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Auckland" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Ads Auckland" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI SEO & GEO Auckland" } }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How quickly does Kiwi Web Design respond to enquiries?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We respond to all enquiries within 1 business day. For urgent projects, call or text 021 039 6580 directly." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the initial consultation with Kiwi Web Design really free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The initial consultation is completely free with no obligation. We talk through your business, goals, and options before any quote is given." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Kiwi Web Design work with businesses outside Auckland?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. While based in Grey Lynn, Auckland, we work with businesses across New Zealand via video call. We meet in person with Auckland clients when useful." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a typical website project take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most small business websites go live in 2–6 weeks from project start. eCommerce and custom builds take 8–12 weeks depending on complexity." }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I prepare before my first conversation with Kiwi Web Design?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nothing formal. Think about what your business does, who your ideal customer is, and any websites you admire. We guide the rest in the consultation." }
+        }
+      ]
     }
   ]
 };
@@ -51,8 +123,8 @@ const reviews = [
 ---
 
 <Layout
-  title="Contact Kiwi Web Design | Affordable Web Design Auckland"
-  description="Have questions or ready to get started? Contact Kiwi Web Design for affordable web design in Auckland. Free in-person consults. Let's build your website together."
+  title="Website Designer Auckland | Free Consultation | Kiwi Web Design"
+  description="Book a free consultation with Kiwi Web Design — Auckland website designers based in Grey Lynn. Web design, SEO, and Google Ads for small businesses. Reply within 1 business day."
   canonicalURL="https://www.kiwiwebdesign.co.nz/website-designer-auckland/"
   schema={schema}
 >
@@ -219,6 +291,35 @@ const reviews = [
         <a href="/wordpress-maintenance-auckland/" class="rps-link">WordPress Maintenance</a>
         <a href="/ecommerce-website-auckland/" class="rps-link">eCommerce Websites</a>
         <a href="/faq/" class="rps-link">FAQ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ section -->
+  <section class="contact-faq">
+    <div class="container">
+      <p class="rps-label">Common questions before getting in touch</p>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-q">How quickly do you respond to enquiries?</summary>
+          <p class="faq-a">We reply within 1 business day. For urgent matters, call or text <a href="tel:+64210396580">021 039 6580</a> directly.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Is the initial consultation really free?</summary>
+          <p class="faq-a">Yes — no obligation, no quote pressure. We talk through your business and goals first. If we're a good fit, great. If not, we'll tell you honestly.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Do you work with businesses outside Auckland?</summary>
+          <p class="faq-a">Yes. We're based in Grey Lynn but work with businesses across New Zealand via video call. Auckland clients can always meet in person at our Great North Road office.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How long does a website project take?</summary>
+          <p class="faq-a">Most small business websites are live in 2–6 weeks from project start. eCommerce and custom builds take 8–12 weeks depending on scope and complexity.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">What should I prepare before our first conversation?</summary>
+          <p class="faq-a">Nothing formal. Think about what your business does, who your best customers are, and any websites you like. We guide the rest in the consultation.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -557,6 +658,50 @@ const reviews = [
   .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
   .rps-link:hover { background: #e8e7db; }
+
+  /* FAQ */
+  .contact-faq {
+    background: #fff;
+    padding: 2.5rem 0;
+    border-top: 1px solid rgba(0,0,0,0.07);
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    max-width: 760px;
+  }
+  .faq-item {
+    border: 1.5px solid rgba(0,0,0,0.09);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .faq-item[open] { border-color: var(--kwd-gold); }
+  .faq-q {
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    user-select: none;
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-q::after { content: '+'; font-size: 1.25rem; font-weight: 400; color: var(--kwd-brown); flex-shrink: 0; }
+  .faq-item[open] .faq-q::after { content: '−'; }
+  .faq-a {
+    padding: 0 1.25rem 1rem;
+    font-size: 0.9rem;
+    color: var(--kwd-brown);
+    line-height: 1.65;
+    margin: 0;
+  }
+  .faq-a a { color: var(--kwd-dark); font-weight: 600; }
 
   @media (max-width: 960px) {
     .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
