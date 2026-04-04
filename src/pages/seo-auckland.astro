@@ -22,35 +22,72 @@ const schema = {
       "description": "Local SEO for Auckland small businesses from $500/month. Google Maps rankings, targeted keywords, plain-English reporting. No lock-in contracts. Free audit.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/seo-auckland/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/seo-auckland/#breadcrumb" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".seo-snippet", ".seo-statbar-inner"]
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/seo-auckland/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "SEO Auckland" }
+        { "@type": "ListItem", "position": 2, "name": "SEO Auckland", "item": "https://www.kiwiwebdesign.co.nz/seo-auckland/" }
       ]
     },
     {
-      "@type": "LocalBusiness",
-      "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness",
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "telephone": "+64210396580",
-      "url": "https://www.kiwiwebdesign.co.nz/"
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "ratingCount": "50"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kiwiwebdesign.co.nz/favicon.png",
+        "width": 512,
+        "height": 512
+      }
     },
     {
       "@type": "Service",
       "@id": "https://www.kiwiwebdesign.co.nz/seo-auckland/#service",
       "name": "SEO Services Auckland",
-      "description": "Local SEO for Auckland small businesses. Google Maps rankings, on-page optimisation, content creation, link building, and monthly reporting. From $500/month.",
-      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness" },
-      "areaServed": { "@type": "City", "name": "Auckland" },
+      "serviceType": "Search Engine Optimisation",
+      "category": "Digital Marketing",
+      "description": "Local SEO for Auckland small businesses. Google Maps rankings, on-page optimisation, content creation, link building, and monthly reporting. From $500/month. No lock-in contracts.",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
       "url": "https://www.kiwiwebdesign.co.nz/seo-auckland/",
       "offers": {
-        "@type": "Offer",
-        "price": "500",
+        "@type": "AggregateOffer",
+        "lowPrice": "500",
+        "highPrice": "2500",
         "priceCurrency": "NZD",
         "priceSpecification": { "@type": "PriceSpecification", "price": "500", "priceCurrency": "NZD", "unitCode": "MON" }
       }
@@ -169,6 +206,13 @@ const faqs = [
     ctaSecondary={{ text: "View Pricing", href: "#pricing" }}
     centered={true}
   />
+
+  <!-- AI citability snippet -->
+  <div class="seo-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> provides SEO services for Auckland small businesses from <strong>$500/month</strong> with no lock-in contracts. Services cover local SEO, Google Business Profile optimisation, technical SEO, content creation, and link building. Based in Grey Lynn, Auckland — 4.9★ Google rating from 50+ NZ clients. Most businesses see early results in 2–3 months, with sustained growth over 6–12 months.</p>
+    </div>
+  </div>
 
   <!-- Stat bar -->
   <div class="seo-statbar">
@@ -377,6 +421,7 @@ const faqs = [
       <p class="rps-label">Related services</p>
       <div class="rps-links">
         <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO Auckland</a>
+        <a href="/ai-seo-for-auckland-small-businesses/" class="rps-link">AI SEO &amp; GEO</a>
         <a href="/google-ads/" class="rps-link">Google Ads Auckland</a>
         <a href="/analytics-reporting-for-auckland-small-business-websites/" class="rps-link">Analytics &amp; Reporting</a>
         <a href="/wordpress-seo-optimisation/" class="rps-link">WordPress SEO</a>
@@ -646,6 +691,20 @@ const faqs = [
     .seo-team-stats { padding: 2rem 1.5rem; }
     .seo-team-nums { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
   }
+
+  /* AI citability snippet */
+  .seo-snippet {
+    background: var(--kwd-cream);
+    border-left: 4px solid var(--kwd-gold);
+    padding: 1.1rem 0;
+  }
+  .seo-snippet .container {
+    font-size: 0.92rem;
+    color: var(--kwd-dark);
+    line-height: 1.75;
+    max-width: 860px;
+  }
+  .seo-snippet p { margin: 0; }
 </style>
 
 <!-- Vanta.js WAVES background for hero -->
