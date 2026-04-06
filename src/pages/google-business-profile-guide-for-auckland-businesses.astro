@@ -12,25 +12,55 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/",
       "url": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/",
-      "name": "Google Business Profile Guide for Auckland Businesses",
-      "description": "Learn how to set up and optimise your Google Business Profile for local visibility in Auckland and NZ: categories, NAP, photos, reviews, posts, tracking.",
+      "name": "Google Business Profile Guide for Auckland Businesses | 7-Step Setup",
+      "description": "Complete guide to setting up and optimising your Google Business Profile for local visibility in Auckland. Covers categories, NAP, photos, reviews, posts, and tracking.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".gbp-snippet", "h1"] }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "Google Business Profile Guide" }
+        { "@type": "ListItem", "position": 2, "name": "Google Business Profile Guide", "item": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/" }
       ]
     },
     {
-      "@type": "Organization",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz/"
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Do I need a physical storefront to have a Google Business Profile?", "acceptedAnswer": { "@type": "Answer", "text": "No. Service-area businesses (like tradies, cleaners, or mobile services) can hide their address and instead specify the suburbs or regions they serve. You still appear in local search results for those areas." } },
+        { "@type": "Question", "name": "How long does it take to verify a Google Business Profile?", "acceptedAnswer": { "@type": "Answer", "text": "Phone and email verification can be instant. Postcard verification typically takes 5–14 business days. Video verification is available for some business types and is usually same-day." } },
+        { "@type": "Question", "name": "Why isn't my business showing up in the Google Maps 3-Pack?", "acceptedAnswer": { "@type": "Answer", "text": "The 3-Pack is determined by relevance, distance, and prominence. Common causes for not appearing are: incomplete profile, wrong primary category, few reviews, no website, or strong competition in your area. A local SEO audit can pinpoint exactly what is holding you back." } },
+        { "@type": "Question", "name": "Can I manage multiple locations from one account?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Google Business Profile supports multi-location management. You can manage all your locations from one account, with bulk verification available for businesses with 10 or more locations." } },
+        { "@type": "Question", "name": "Should I respond to negative reviews?", "acceptedAnswer": { "@type": "Answer", "text": "Always. A professional, calm response to a negative review often impresses potential customers more than the negative review damages. Acknowledge the issue, apologise if warranted, and offer to resolve it offline. Never argue or be defensive." } },
+        { "@type": "Question", "name": "Do you offer Google Business Profile management?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We offer ongoing Google Business Profile management as part of our local SEO service — weekly posts, review response, photo updates, and monthly reporting. It can also be bundled with a website maintenance plan." } }
+      ]
     }
   ]
 };
@@ -131,6 +161,13 @@ const faqs = [
     </div>
   </section>
 
+  <!-- AI citability snippet -->
+  <div class="gbp-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> provides a free 7-step Google Business Profile setup guide for Auckland businesses. A fully completed GBP gets 5× more views, drives Google Maps 3-Pack rankings, and is free to create. We also offer professional GBP setup and management as part of our local SEO service for Auckland businesses.</p>
+    </div>
+  </div>
+
   <StatsRow items={stats} />
 
   <!-- Guide steps -->
@@ -214,6 +251,9 @@ const faqs = [
 </Layout>
 
 <style>
+  .gbp-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
+  .gbp-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
+
   /* Hero */
   .gbp-hero {
     background: var(--kwd-dark);
