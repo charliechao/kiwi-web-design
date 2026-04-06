@@ -14,24 +14,72 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/seo-for-ecommerce/",
       "url": "https://www.kiwiwebdesign.co.nz/seo-for-ecommerce/",
       "name": "SEO for eCommerce Websites Auckland | Kiwi Web Design",
-      "description": "SEO for eCommerce websites in Auckland and NZ. Drive organic traffic to your online store with product optimisation, technical SEO, and category page strategies.",
+      "description": "SEO for eCommerce websites in Auckland and NZ. Product page optimisation, technical SEO, category pages, and WooCommerce/Shopify expertise. Drive organic traffic that converts.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/seo-for-ecommerce/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/seo-for-ecommerce/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".ecom-snippet", "h1"] }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/seo-for-ecommerce/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "SEO for eCommerce" }
+        { "@type": "ListItem", "position": 2, "name": "SEO for eCommerce", "item": "https://www.kiwiwebdesign.co.nz/seo-for-ecommerce/" }
       ]
     },
     {
-      "@type": "Organization",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz/"
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/seo-for-ecommerce/#service",
+      "name": "eCommerce SEO Auckland",
+      "serviceType": "eCommerce Search Engine Optimisation",
+      "category": "Digital Marketing",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "500",
+        "highPrice": "2500",
+        "priceCurrency": "NZD",
+        "priceSpecification": { "@type": "PriceSpecification", "valueAddedTaxIncluded": false, "unitCode": "MON" }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How is eCommerce SEO different from regular SEO?", "acceptedAnswer": { "@type": "Answer", "text": "eCommerce sites have unique challenges: thousands of product pages, duplicate content from product variants, faceted navigation creating crawl issues, and category pages that need both SEO and conversion optimisation. A standard SEO approach misses most of these — eCommerce SEO requires specialist knowledge of how Google crawls and indexes large product catalogues." } },
+        { "@type": "Question", "name": "How long before I see results from eCommerce SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Technical fixes and on-page improvements can show results within 4–8 weeks. Competitive category-level rankings typically take 3–6 months of consistent effort. We focus on quick wins first — fixing technical issues and optimising best-performing product pages — while building toward longer-term category dominance." } },
+        { "@type": "Question", "name": "Do you work with WooCommerce and Shopify?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work with both. WooCommerce and Shopify have different SEO implementations — URL structure, schema, sitemap generation, and plugin ecosystems are all different. We tailor our approach to your platform." } },
+        { "@type": "Question", "name": "My store already gets traffic from ads. Why do I need SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Ads stop the moment you stop paying. Organic traffic from SEO compounds over time and costs nothing per click. A well-ranked product or category page can deliver consistent revenue for years. Most successful eCommerce businesses combine both — Google Ads for immediate sales, SEO for long-term sustainable growth." } },
+        { "@type": "Question", "name": "Can you help if my store was built by someone else?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can audit and optimise any WooCommerce or Shopify store regardless of who built it. We start with a technical audit to identify what is holding your store back, then work through the issues systematically." } }
+      ]
     }
   ]
 };
@@ -99,6 +147,13 @@ const faqs = [
     ctaSecondary={{ text: "View SEO Services", href: "/seo-auckland/" }}
     centered={true}
   />
+
+  <!-- AI citability snippet -->
+  <div class="ecom-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> provides eCommerce SEO for Auckland and NZ online stores — WooCommerce and Shopify. Services include product page optimisation, category page SEO, technical audits (crawl budget, canonicalisation, duplicate content), Core Web Vitals fixes, and monthly reporting. No lock-in contracts. 4.9★ Google rating from 50+ clients.</p>
+    </div>
+  </div>
 
   <!-- What it covers -->
   <section class="section" style="background: var(--kwd-cream);">
@@ -170,6 +225,9 @@ const faqs = [
 </Layout>
 
 <style>
+  .ecom-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
+  .ecom-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
+
   .ecom-body p {
     font-size: 0.9375rem;
     color: var(--kwd-brown);

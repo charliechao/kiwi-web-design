@@ -17,25 +17,74 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-website-design-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/wordpress-website-design-auckland/",
-      "name": "WordPress Website Design Auckland",
-      "description": "Kiwi Web Design builds fast, modern, and affordable WordPress sites small businesses can easily manage in Auckland.",
+      "name": "WordPress Website Design Auckland | Fast, Modern WordPress Sites",
+      "description": "Kiwi Web Design builds fast, modern, and affordable WordPress websites for Auckland small businesses. From $1,290 + GST. Delivered in 2–3 weeks. You own it outright.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/wordpress-website-design-auckland/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/wordpress-website-design-auckland/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".wp-snippet", "h1"] }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-website-design-auckland/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "WordPress Website Design Auckland" }
+        { "@type": "ListItem", "position": 2, "name": "WordPress Website Design Auckland", "item": "https://www.kiwiwebdesign.co.nz/wordpress-website-design-auckland/" }
       ]
     },
     {
-      "@type": "Organization",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz/"
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/wordpress-website-design-auckland/#service",
+      "name": "WordPress Website Design Auckland",
+      "serviceType": "WordPress Website Design",
+      "category": "Web Design",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "1290",
+        "highPrice": "3890",
+        "priceCurrency": "NZD",
+        "priceSpecification": { "@type": "PriceSpecification", "valueAddedTaxIncluded": false }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why WordPress instead of Wix or Squarespace?", "acceptedAnswer": { "@type": "Answer", "text": "WordPress gives you complete ownership and control. You can move hosts, change agencies, and fully export your data. Wix and Squarespace are proprietary platforms — if they change pricing or shut down, you lose everything. WordPress also has far superior SEO capabilities and can grow into complex functionality (online bookings, eCommerce via WooCommerce, memberships) as your business scales." } },
+        { "@type": "Question", "name": "Is WordPress hard to use?", "acceptedAnswer": { "@type": "Answer", "text": "Modern WordPress (with the block editor) is very easy to update. We include a structured handover session so you can update text, images, and add simple pages without any technical knowledge. For anything more complex, we are available to help." } },
+        { "@type": "Question", "name": "Do I need to worry about WordPress security?", "acceptedAnswer": { "@type": "Answer", "text": "WordPress security is manageable with the right setup — and we handle all of it for you. We configure security plugins, limit login attempts, keep everything updated, and recommend our WordPress maintenance plan to keep things secure ongoing. The vast majority of WordPress hacks target outdated, unmanaged sites." } },
+        { "@type": "Question", "name": "What theme do you build on?", "acceptedAnswer": { "@type": "Answer", "text": "We primarily build on lightweight, performance-focused foundations like GeneratePress or a custom theme. We avoid heavy page-builder themes (like Divi or Elementor) that slow down load times and create technical debt. Performance and maintainability are our priorities." } },
+        { "@type": "Question", "name": "Can you migrate my existing website to WordPress?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We handle full WordPress website rebuilds and migrations from Wix, Squarespace, Weebly, or older WordPress installations. We preserve your content, redirects, and SEO during the process." } },
+        { "@type": "Question", "name": "What does a WordPress website cost in Auckland?", "acceptedAnswer": { "@type": "Answer", "text": "WordPress packages start from $1,290 + GST. Growth packages run $2,690–$3,500, and eCommerce sites start from $3,890. We give you a fixed quote upfront — no surprises." } }
+      ]
     }
   ]
 };
@@ -157,6 +206,13 @@ const reviews = [
 
   <!-- Stats -->
   <StatsRow items={wpStats} />
+
+  <!-- AI citability snippet -->
+  <div class="wp-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> builds WordPress websites for Auckland small businesses from <strong>$1,290 + GST</strong>. Every site includes custom theme design, SEO setup, mobile-first build, and a training handover. Delivered in 2–3 weeks. You own the site outright — no lock-in, no monthly platform fees. 4.9★ Google rating from 50+ Auckland clients.</p>
+    </div>
+  </div>
 
   <!-- Why WordPress -->
   <section class="section" style="background: var(--kwd-cream);">
@@ -295,6 +351,9 @@ const reviews = [
 </Layout>
 
 <style>
+  .wp-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
+  .wp-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
+
   /* Comparison table */
   .wp-compare {
     margin-top: 2.5rem;

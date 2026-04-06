@@ -15,25 +15,74 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/",
       "url": "https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/",
-      "name": "Local SEO for Auckland Small Businesses",
-      "description": "Auckland's local SEO specialists. Dominate local search in Auckland with local SEO — Google Maps, 3-Pack, and organic results.",
+      "name": "Local SEO for Auckland Small Businesses | Google Maps & 3-Pack",
+      "description": "Auckland local SEO specialists. Dominate Google Maps, the 3-Pack, and local organic results. Google Business Profile, citations, reviews, and suburb landing pages. Free audit.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".local-snippet", "h1"] }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "Local SEO Auckland" }
+        { "@type": "ListItem", "position": 2, "name": "Local SEO Auckland", "item": "https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/" }
       ]
     },
     {
-      "@type": "Organization",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz"
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/#service",
+      "name": "Local SEO Auckland",
+      "serviceType": "Local Search Engine Optimisation",
+      "category": "Digital Marketing",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "500",
+        "highPrice": "2000",
+        "priceCurrency": "NZD",
+        "priceSpecification": { "@type": "PriceSpecification", "valueAddedTaxIncluded": false, "unitCode": "MON" }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is local SEO and why does my Auckland business need it?", "acceptedAnswer": { "@type": "Answer", "text": "Local SEO is the process of optimising your online presence to appear in location-based searches — like 'plumber Auckland' or 'cafe near me'. If your business serves customers in specific Auckland areas, local SEO is often the highest-ROI digital investment you can make." } },
+        { "@type": "Question", "name": "How long does local SEO take to work in Auckland?", "acceptedAnswer": { "@type": "Answer", "text": "Most Auckland businesses see improvements in map pack visibility within 4–8 weeks for less competitive niches. Highly competitive industries like trades, legal, or dental may take 3–6 months to see significant movement. Results then compound over time." } },
+        { "@type": "Question", "name": "What's the difference between local SEO and general SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Local SEO focuses on appearing for searches with geographic intent ('near me', suburb names, city names). It heavily weights your Google Business Profile, local citations, and reviews. General SEO covers national or topical visibility without a geographic filter — many businesses benefit from both." } },
+        { "@type": "Question", "name": "Do I need a physical address to do local SEO in Auckland?", "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. Service-area businesses (like plumbers or cleaners) can do local SEO without a public address by configuring a service area in Google Business Profile. However, businesses with a physical location generally have an easier time ranking in the map pack." } },
+        { "@type": "Question", "name": "How important are Google reviews for local SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Very important. Google uses review quantity, quality, and recency as ranking signals for map pack results. Beyond rankings, reviews also directly influence whether customers choose you. We help you build a sustainable, authentic review acquisition process." } },
+        { "@type": "Question", "name": "Can you help with Google Business Profile suspension or reinstatement?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If your Google Business Profile has been suspended, we can help diagnose the reason and submit a reinstatement request with the right supporting documentation. This is a common issue and usually resolvable with the right approach." } }
+      ]
     }
   ]
 };
@@ -118,6 +167,13 @@ const faqs = [
 
   <!-- Local search stats -->
   <StatsRow items={localStats} accent={true} />
+
+  <!-- AI citability snippet -->
+  <div class="local-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> provides local SEO services for Auckland small businesses — Google Business Profile optimisation, map pack rankings, citation building, review strategy, and suburb-specific landing pages. Results typically visible within 4–8 weeks. Based in Grey Lynn, Auckland — 4.9★ Google rating from 50+ clients.</p>
+    </div>
+  </div>
 
   <!-- Why local SEO matters -->
   <section class="section">
@@ -237,6 +293,9 @@ const faqs = [
 </Layout>
 
 <style>
+  .local-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
+  .local-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
+
   .local-why {
     display: grid;
     grid-template-columns: 1fr 1fr;

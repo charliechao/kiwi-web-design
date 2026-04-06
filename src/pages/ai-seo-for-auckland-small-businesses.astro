@@ -16,12 +16,13 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/",
       "url": "https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/",
-      "name": "AI SEO Auckland | GEO & Generative Engine Optimisation",
+      "name": "AI SEO Auckland | GEO & Generative Engine Optimisation | Kiwi Web Design",
       "description": "AI SEO and Generative Engine Optimisation (GEO) for Auckland businesses. Get ranked on Google and cited by ChatGPT, Perplexity, Gemini & AI Overviews. From $500/mo.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".aiseo-snippet", "h1"] }
     },
     {
       "@type": "BreadcrumbList",
@@ -29,29 +30,51 @@ const schema = {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
         { "@type": "ListItem", "position": 2, "name": "SEO Auckland", "item": "https://www.kiwiwebdesign.co.nz/seo-auckland/" },
-        { "@type": "ListItem", "position": 3, "name": "AI SEO Auckland" }
+        { "@type": "ListItem", "position": 3, "name": "AI SEO Auckland", "item": "https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/" }
       ]
     },
     {
-      "@type": "LocalBusiness",
-      "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness",
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "telephone": "+64210396580",
-      "url": "https://www.kiwiwebdesign.co.nz/"
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
     },
     {
       "@type": "Service",
       "@id": "https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/#service",
       "name": "AI SEO & Generative Engine Optimisation (GEO) Auckland",
+      "serviceType": "AI SEO",
+      "category": "Digital Marketing",
       "description": "AI-powered SEO and GEO for Auckland businesses. Get ranked on Google and cited by ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews. From $500/month.",
-      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#localbusiness" },
-      "areaServed": { "@type": "City", "name": "Auckland" },
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
       "url": "https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/",
       "offers": {
-        "@type": "Offer",
-        "price": "500",
+        "@type": "AggregateOffer",
+        "lowPrice": "500",
+        "highPrice": "2500",
         "priceCurrency": "NZD",
-        "priceSpecification": { "@type": "PriceSpecification", "price": "500", "priceCurrency": "NZD", "unitCode": "MON" }
+        "priceSpecification": { "@type": "PriceSpecification", "valueAddedTaxIncluded": false, "unitCode": "MON" }
       }
     },
     {
@@ -222,6 +245,13 @@ const faqs = [
   />
 
   <StatsRow items={stats} />
+
+  <!-- AI citability snippet -->
+  <div class="aiseo-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> provides AI SEO and Generative Engine Optimisation (GEO) for Auckland businesses — from <strong>$500/month</strong>. Services include schema markup, llms.txt setup, AI crawler configuration, entity authority building, and content structured for citation by ChatGPT, Perplexity, Gemini, Google AI Overviews, and Claude. Based in Grey Lynn, Auckland — 4.9★ Google rating from 50+ clients. No lock-in contracts.</p>
+    </div>
+  </div>
 
   <!-- Authority / Trust strip -->
   <section class="aiseo-trust-strip">
@@ -472,6 +502,10 @@ const faqs = [
 </Layout>
 
 <style>
+  /* ── Citability snippet ── */
+  .aiseo-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
+  .aiseo-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
+
   /* ── Trust strip ── */
   .aiseo-trust-strip {
     background: var(--kwd-dark);
