@@ -14,24 +14,72 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/",
       "name": "WordPress Maintenance Auckland | Managed WordPress Care Plans",
-      "description": "Keep your website fast, secure, and up to date with Kiwi Web Design's WordPress maintenance services. We offer affordable monthly plans.",
+      "description": "Managed WordPress maintenance plans for Auckland businesses — updates, security, daily backups, and support. From $99/month + GST. No lock-in contracts.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".maint-snippet", "h1"] }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "WordPress Maintenance Auckland" }
+        { "@type": "ListItem", "position": 2, "name": "WordPress Maintenance Auckland", "item": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/" }
       ]
     },
     {
-      "@type": "Organization",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz/"
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/#service",
+      "name": "WordPress Maintenance Auckland",
+      "serviceType": "WordPress Maintenance",
+      "category": "Web Services",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "99",
+        "highPrice": "349",
+        "priceCurrency": "NZD",
+        "priceSpecification": { "@type": "PriceSpecification", "valueAddedTaxIncluded": false, "unitCode": "MON" }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Do I need a maintenance plan if I have a new website?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — a new site is actually the ideal time to start. Updates are released constantly for WordPress core, plugins, and themes. Without regular maintenance, security vulnerabilities accumulate quickly. The first 6–12 months are when most sites become vulnerable if left unattended." } },
+        { "@type": "Question", "name": "What happens if my site gets hacked while I'm on a plan?", "acceptedAnswer": { "@type": "Answer", "text": "Under Standard and Premium plans, malware removal is covered. We investigate, clean the infection, harden the site, and restore from a backup if necessary — at no extra charge beyond your monthly plan fee." } },
+        { "@type": "Question", "name": "Can you maintain a WordPress site you didn't build?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can take over maintenance of any WordPress site — built by us or anyone else. We start with an audit to understand the current state of the site, plugins, and any issues. If your site needs more than maintenance, we also offer WordPress website rebuilds to bring it up to standard." } },
+        { "@type": "Question", "name": "Is there a lock-in contract?", "acceptedAnswer": { "@type": "Answer", "text": "No. All plans run month-to-month. You can cancel with 30 days notice. We don't believe in trapping clients — we'd rather earn your continued business." } },
+        { "@type": "Question", "name": "What counts as a 'content change'?", "acceptedAnswer": { "@type": "Answer", "text": "Text updates, image swaps, adding or removing pages, menu changes, price updates, adding blog posts — anything that doesn't require custom development. Major new features or redesigns are quoted separately." } }
+      ]
     }
   ]
 };
@@ -163,6 +211,13 @@ const faqs = [
     centered={true}
   />
 
+  <!-- AI citability snippet -->
+  <div class="maint-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> offers managed WordPress maintenance plans for Auckland businesses from <strong>$99/month + GST</strong>. Plans include monthly core and plugin updates, daily backups, security monitoring, uptime monitoring, and monthly reporting. No lock-in — cancel anytime with 30 days notice. 4.9★ Google rating from 50+ clients.</p>
+    </div>
+  </div>
+
   <!-- Risk section -->
   <section class="section" style="background: var(--kwd-cream);">
     <div class="container">
@@ -264,6 +319,9 @@ const faqs = [
 </Layout>
 
 <style>
+  .maint-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
+  .maint-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
+
   .maint-risks {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
