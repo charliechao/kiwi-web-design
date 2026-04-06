@@ -8,6 +8,7 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import ecommerceHeroImg from '../assets/general/shopping-cart-for-eCommerce-1.jpg';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -248,7 +249,7 @@ const faqs = [
         {platforms.map(({ name, tag, icon, pros, best, href }) => (
           <div class="ec-platform">
             <div class="ec-platform-top">
-              <span class="ec-platform-icon">{icon}</span>
+              <span class="ec-platform-icon"><Icon name={icon} size={24} /></span>
               <div>
                 <h3 class="ec-platform-name">{name}</h3>
                 <span class="ec-platform-tag">{tag}</span>
@@ -348,7 +349,7 @@ const faqs = [
     align-items: center;
     gap: 1rem;
   }
-  .ec-platform-icon { font-size: 2rem; }
+  .ec-platform-icon { }
   .ec-platform-name {
     font-family: var(--kwd-font-body);
     font-size: 1.25rem;

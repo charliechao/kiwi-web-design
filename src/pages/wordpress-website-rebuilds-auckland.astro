@@ -7,6 +7,7 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import heroImg from '../assets/general/pexels-photo-7218525-7218525-scaled-e1758396597668.jpg';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -130,7 +131,7 @@ const faqs = [
       <div class="rebuild-signs">
         {signs.map(({ icon, title, desc }) => (
           <div class="rebuild-sign">
-            <span class="rebuild-sign-icon">{icon}</span>
+            <span class="rebuild-sign-icon"><Icon name={icon} size={24} /></span>
             <div>
               <strong class="rebuild-sign-title">{title}</strong>
               <p class="rebuild-sign-desc">{desc}</p>
@@ -216,7 +217,7 @@ const faqs = [
     border-radius: 14px;
     padding: 1.5rem;
   }
-  .rebuild-sign-icon { font-size: 1.75rem; flex-shrink: 0; width: 2.25rem; text-align: center; }
+  .rebuild-sign-icon { flex-shrink: 0; width: 2.25rem; text-align: center; }
   .rebuild-sign-title { display: block; font-size: 0.9rem; font-weight: 700; color: var(--kwd-dark); margin-bottom: 0.35rem; }
   .rebuild-sign-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
 

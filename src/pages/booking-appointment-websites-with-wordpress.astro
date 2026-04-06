@@ -7,6 +7,7 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import heroImg from '../assets/general/Calendar-e1756877877640.png';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -154,7 +155,7 @@ const faqs = [
         {useCases.map(({ icon, name, plugin, detail }) => (
           <div class="book-uc">
             <div class="book-uc-top">
-              <span class="book-uc-icon">{icon}</span>
+              <span class="book-uc-icon"><Icon name={icon} size={24} /></span>
               <strong class="book-uc-name">{name}</strong>
             </div>
             <span class="book-uc-plugin">{plugin}</span>
@@ -261,7 +262,7 @@ const faqs = [
     gap: 0.4rem;
   }
   .book-uc-top { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.25rem; }
-  .book-uc-icon { font-size: 1.4rem; }
+  .book-uc-icon { }
   .book-uc-name { font-size: 0.9rem; font-weight: 700; color: #fff; }
   .book-uc-plugin { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--kwd-yellow); }
   .book-uc-detail { font-size: 0.83rem; color: rgba(255,255,255,0.6); line-height: 1.55; margin: 0; }

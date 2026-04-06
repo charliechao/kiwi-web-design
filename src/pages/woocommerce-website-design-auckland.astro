@@ -7,6 +7,7 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import heroImg from '../assets/general/shopping-cart-for-eCommerce-1.jpg';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -203,7 +204,7 @@ const faqs = [
       <div class="woo-nz-grid">
         {nzSetup.map(({ icon, label, desc }) => (
           <div class="woo-nz-item">
-            <span class="woo-nz-icon">{icon}</span>
+            <span class="woo-nz-icon"><Icon name={icon} size={24} /></span>
             <div>
               <strong class="woo-nz-label">{label}</strong>
               <p class="woo-nz-desc">{desc}</p>
@@ -312,7 +313,7 @@ const faqs = [
     border-radius: 12px;
     padding: 1.25rem;
   }
-  .woo-nz-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .woo-nz-icon { flex-shrink: 0; }
   .woo-nz-label { display: block; font-size: 0.875rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
   .woo-nz-desc { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin: 0; line-height: 1.4; }
 

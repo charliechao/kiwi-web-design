@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import Icon from '../components/Icon.astro';
 
 const categories = [
   {
@@ -165,7 +166,7 @@ const schema = {
       <div class="faq-cat-nav">
         {categories.map(({ id, label, icon }) => (
           <a href={`#${id}`} class="faq-cat-btn">
-            <span>{icon}</span>
+            <span><Icon name={icon} size={24} /></span>
             <span>{label}</span>
           </a>
         ))}
@@ -179,7 +180,7 @@ const schema = {
       {categories.map(({ id, label, icon, faqs }) => (
         <div class="faq-category" id={id}>
           <div class="faq-category-header">
-            <span class="faq-cat-icon">{icon}</span>
+            <span class="faq-cat-icon"><Icon name={icon} size={24} /></span>
             <h2 class="faq-cat-title">{label}</h2>
           </div>
           <FAQAccordion items={faqs} title="" />
@@ -307,7 +308,7 @@ const schema = {
     padding-bottom: 1rem;
     border-bottom: 2px solid var(--kwd-cream);
   }
-  .faq-cat-icon { font-size: 1.75rem; }
+  .faq-cat-icon { }
   .faq-cat-title { font-size: clamp(1.25rem, 2vw, 1.75rem); color: var(--kwd-dark); margin: 0; }
 
   /* Still have questions */

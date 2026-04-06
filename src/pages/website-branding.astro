@@ -7,6 +7,7 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import heroImg from '../assets/general/about.jpg';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -129,7 +130,7 @@ const faqs = [
       <div class="brand-why-grid">
         {whyBrandFirst.map(({ icon, title, desc }) => (
           <div class="brand-why-card">
-            <span class="bwc-icon">{icon}</span>
+            <span class="bwc-icon"><Icon name={icon} size={24} /></span>
             <h3 class="bwc-title">{title}</h3>
             <p class="bwc-desc">{desc}</p>
           </div>
@@ -240,7 +241,7 @@ const faqs = [
     margin-top: 2.5rem;
   }
   .brand-why-card { background: #fff; border: 1.5px solid rgba(0,0,0,0.07); border-radius: 14px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
-  .bwc-icon { font-size: 1.75rem; }
+  .bwc-icon { }
   .bwc-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
   .bwc-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
 

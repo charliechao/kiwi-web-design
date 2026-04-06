@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -159,7 +160,7 @@ const bundles = [
         {solutions.map(({ icon, category, title, desc, features, links }) => (
           <div class="sol-card">
             <div class="sol-card-top">
-              <span class="sol-icon">{icon}</span>
+              <span class="sol-icon"><Icon name={icon} size={24} /></span>
               <span class="sol-category">{category}</span>
             </div>
             <h3 class="sol-title">{title}</h3>
@@ -286,7 +287,7 @@ const bundles = [
   }
   .sol-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
   .sol-card-top { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem; }
-  .sol-icon { font-size: 1.75rem; }
+  .sol-icon { }
   .sol-category {
     font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
     color: var(--kwd-brown); background: rgba(0,0,0,0.06); padding: 0.2rem 0.6rem; border-radius: 100px;

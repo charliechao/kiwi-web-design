@@ -7,6 +7,7 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import heroImg from '../assets/general/shopping-cart-for-eCommerce-1.jpg';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -186,7 +187,7 @@ const faqs = [
       <div class="shopify-strengths">
         {shopifyStrengths.map(({ icon, title, desc }) => (
           <div class="shopify-strength">
-            <span class="ss-icon">{icon}</span>
+            <span class="ss-icon"><Icon name={icon} size={24} /></span>
             <h3 class="ss-title">{title}</h3>
             <p class="ss-desc">{desc}</p>
           </div>
@@ -307,7 +308,7 @@ const faqs = [
     flex-direction: column;
     gap: 0.5rem;
   }
-  .ss-icon { font-size: 1.75rem; }
+  .ss-icon { }
   .ss-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
   .ss-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
 

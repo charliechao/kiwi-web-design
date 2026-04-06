@@ -6,6 +6,7 @@ import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import heroImg from '../assets/general/about3.jpg';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -136,7 +137,7 @@ const faqs = [
       <div class="threat-grid">
         {threats.map(({ icon, title, desc }) => (
           <div class="threat-card">
-            <span class="threat-icon">{icon}</span>
+            <span class="threat-icon"><Icon name={icon} size={24} /></span>
             <div>
               <strong class="threat-title">{title}</strong>
               <p class="threat-desc">{desc}</p>
@@ -210,7 +211,7 @@ const faqs = [
     border-radius: 14px;
     padding: 1.5rem;
   }
-  .threat-icon { font-size: 1.75rem; flex-shrink: 0; width: 2.25rem; text-align: center; }
+  .threat-icon { flex-shrink: 0; width: 2.25rem; text-align: center; }
   .threat-title { display: block; font-size: 0.9rem; font-weight: 700; color: var(--kwd-dark); margin-bottom: 0.35rem; }
   .threat-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
 

@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -226,7 +227,7 @@ const faqs = [
       <div class="proc-commitments">
         {commitments.map(({ icon, title, desc }) => (
           <div class="proc-commit-card">
-            <span class="pcc-icon">{icon}</span>
+            <span class="pcc-icon"><Icon name={icon} size={24} /></span>
             <h3 class="pcc-title">{title}</h3>
             <p class="pcc-desc">{desc}</p>
           </div>
@@ -606,7 +607,7 @@ const faqs = [
     flex-direction: column;
     gap: 0.5rem;
   }
-  .pcc-icon { font-size: 1.75rem; }
+  .pcc-icon { }
   .pcc-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
   .pcc-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
 

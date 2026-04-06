@@ -10,6 +10,7 @@ import aucklandVideo from '../assets/general/Auckland_Video.mp4';
 import office1 from '../assets/general/office1.jpg';
 import office2 from '../assets/general/office2.jpg';
 import beautyTouchPreview from '../assets/general/beauty-salon-website-design-seo-auckland.jpg';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -288,7 +289,7 @@ const exploreGroups = [
       <div class="service-grid">
         {services.map(({ icon, title, desc, href }, index) => (
           <a href={href} class="service-card hp-motion-item" style={`--motion-delay: ${140 + index * 110}ms;`}>
-            <div class="service-icon">{icon}</div>
+            <div class="service-icon"><Icon name={icon} size={24} /></div>
             <h3>{title}</h3>
             <p>{desc}</p>
             <span>Learn more -&gt;</span>
@@ -1345,7 +1346,6 @@ const exploreGroups = [
     background: rgba(251, 232, 166, 0.45);
     color: var(--kwd-dark);
     margin-bottom: 1rem;
-    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;

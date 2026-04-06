@@ -7,6 +7,7 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import lawyersHeroImg from '../assets/general/Legal-e1753416217381.jpg';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -145,7 +146,7 @@ const faqs = [
       <div class="ind-pain-grid">
         {painPoints.map(({ icon, title, desc }) => (
           <div class="ind-pain-card">
-            <span class="ipc-icon">{icon}</span>
+            <span class="ipc-icon"><Icon name={icon} size={24} /></span>
             <h3 class="ipc-title">{title}</h3>
             <p class="ipc-desc">{desc}</p>
           </div>
@@ -249,7 +250,7 @@ const faqs = [
     flex-direction: column;
     gap: 0.5rem;
   }
-  .ipc-icon { font-size: 1.75rem; }
+  .ipc-icon { }
   .ipc-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
   .ipc-desc { font-size: 0.875rem; color: var(--kwd-brown); line-height: 1.65; margin: 0; }
 

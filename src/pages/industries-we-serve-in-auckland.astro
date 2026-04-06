@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -171,7 +172,7 @@ const whyIndustryKnowledge = [
       <div class="ind-grid">
         {industries.map(({ icon, title, desc, tags, href, linkLabel }) => (
           <div class="ind-card">
-            <span class="ind-icon">{icon}</span>
+            <span class="ind-icon"><Icon name={icon} size={24} /></span>
             <h3 class="ind-title">{title}</h3>
             <p class="ind-desc">{desc}</p>
             <div class="ind-tags">
@@ -196,7 +197,7 @@ const whyIndustryKnowledge = [
       <div class="ind-why-grid">
         {whyIndustryKnowledge.map(({ icon, title, desc }) => (
           <div class="ind-why-item">
-            <span class="ind-why-icon">{icon}</span>
+            <span class="ind-why-icon"><Icon name={icon} size={24} /></span>
             <h3 class="ind-why-title">{title}</h3>
             <p class="ind-why-desc">{desc}</p>
           </div>
@@ -309,7 +310,7 @@ const whyIndustryKnowledge = [
     transition: box-shadow 0.2s, transform 0.2s;
   }
   .ind-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-2px); }
-  .ind-icon { font-size: 2rem; }
+  .ind-icon { }
   .ind-title { font-family: var(--kwd-font-body); font-size: 1rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
   .ind-desc { font-size: 0.84rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; flex: 1; }
   .ind-tags {
@@ -351,7 +352,7 @@ const whyIndustryKnowledge = [
     flex-direction: column;
     gap: 0.5rem;
   }
-  .ind-why-icon { font-size: 1.75rem; }
+  .ind-why-icon { }
   .ind-why-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: #fff; margin: 0; }
   .ind-why-desc { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.6; margin: 0; }
 

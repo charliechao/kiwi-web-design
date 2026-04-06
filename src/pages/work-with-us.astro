@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -131,7 +132,7 @@ const values = [
         {roles.map(({ icon, title, desc, skills, type }) => (
           <div class="wwu-role-card">
             <div class="wwu-role-top">
-              <span class="wwu-role-icon">{icon}</span>
+              <span class="wwu-role-icon"><Icon name={icon} size={24} /></span>
               <span class="wwu-role-type">{type}</span>
             </div>
             <h3 class="wwu-role-title">{title}</h3>
@@ -159,7 +160,7 @@ const values = [
       <div class="wwu-values">
         {values.map(({ icon, title, desc }) => (
           <div class="wwu-value">
-            <span class="wwu-value-icon">{icon}</span>
+            <span class="wwu-value-icon"><Icon name={icon} size={24} /></span>
             <h3 class="wwu-value-title">{title}</h3>
             <p class="wwu-value-desc">{desc}</p>
           </div>
@@ -382,7 +383,7 @@ const values = [
     align-items: center;
     margin-bottom: 0.5rem;
   }
-  .wwu-role-icon { font-size: 1.75rem; }
+  .wwu-role-icon { }
   .wwu-role-type {
     font-size: 0.7rem;
     font-weight: 700;
@@ -439,7 +440,7 @@ const values = [
     flex-direction: column;
     gap: 0.5rem;
   }
-  .wwu-value-icon { font-size: 1.75rem; }
+  .wwu-value-icon { }
   .wwu-value-title {
     font-family: var(--kwd-font-body);
     font-size: 0.95rem;

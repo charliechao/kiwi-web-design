@@ -7,6 +7,7 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import heroImg from '../assets/general/pexels-photo-4348404-4348404-scaled-1.jpg';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -129,7 +130,7 @@ const faqs = [
       <div class="copy-principles">
         {principles.map(({ icon, title, desc }) => (
           <div class="copy-principle">
-            <span class="cp-icon">{icon}</span>
+            <span class="cp-icon"><Icon name={icon} size={24} /></span>
             <h3 class="cp-title">{title}</h3>
             <p class="cp-desc">{desc}</p>
           </div>
@@ -232,7 +233,7 @@ const faqs = [
     flex-direction: column;
     gap: 0.5rem;
   }
-  .cp-icon { font-size: 1.75rem; }
+  .cp-icon { }
   .cp-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
   .cp-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.6; margin: 0; }
 
