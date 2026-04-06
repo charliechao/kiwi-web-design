@@ -15,25 +15,74 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/woocommerce-website-design-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/woocommerce-website-design-auckland/",
-      "name": "WooCommerce Website Design Auckland",
-      "description": "Fast, secure WooCommerce stores for Auckland businesses. NZ payments, shipping & GST set up. Affordable and built to sell.",
+      "name": "WooCommerce Website Design Auckland | NZ Online Stores",
+      "description": "Fast, secure WooCommerce stores for Auckland businesses. NZ payments (AfterPay, POLi, Laybuy), shipping & GST set up. Own your store outright — no monthly platform fee. From $3,890 + GST.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/woocommerce-website-design-auckland/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/woocommerce-website-design-auckland/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".woo-snippet", "h1"] }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/woocommerce-website-design-auckland/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "WooCommerce Website Design Auckland" }
+        { "@type": "ListItem", "position": 2, "name": "WooCommerce Website Design Auckland", "item": "https://www.kiwiwebdesign.co.nz/woocommerce-website-design-auckland/" }
       ]
     },
     {
-      "@type": "Organization",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz/"
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/woocommerce-website-design-auckland/#service",
+      "name": "WooCommerce Website Design Auckland",
+      "serviceType": "WooCommerce Website Design",
+      "category": "eCommerce",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "3890",
+        "highPrice": "8000",
+        "priceCurrency": "NZD",
+        "priceSpecification": { "@type": "PriceSpecification", "valueAddedTaxIncluded": false }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why WooCommerce over Shopify?", "acceptedAnswer": { "@type": "Answer", "text": "WooCommerce is the right choice if you want full ownership with no monthly platform fee, maximum design flexibility, and the ability to build rich content alongside your store. It also has superior NZ payment gateway support (AfterPay, Laybuy, POLi) and integrates natively with WordPress." } },
+        { "@type": "Question", "name": "Is WooCommerce hard to manage?", "acceptedAnswer": { "@type": "Answer", "text": "Not for day-to-day tasks. Adding products, processing orders, and checking reports is straightforward. We include a handover training session, and the WordPress block editor makes content management easy. Anything technical is handled under our WordPress maintenance plan." } },
+        { "@type": "Question", "name": "How many products can WooCommerce handle?", "acceptedAnswer": { "@type": "Answer", "text": "WooCommerce scales to tens of thousands of products with the right hosting. Our standard packages include up to 20 products. Larger catalogues are quoted separately." } },
+        { "@type": "Question", "name": "Can you migrate my existing store to WooCommerce?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We handle full migrations from Shopify, Wix eCommerce, Squarespace Commerce, or other platforms — preserving products, customer data, and order history where possible." } },
+        { "@type": "Question", "name": "Do you set up the Xero integration?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We set up the Xero WooCommerce integration so orders, invoices, and payments sync automatically. Same for MYOB if that's your accounting platform." } },
+        { "@type": "Question", "name": "What does a WooCommerce store cost?", "acceptedAnswer": { "@type": "Answer", "text": "WooCommerce store packages start from $3,890 + GST for up to 20 products. This includes store design, payment gateway setup (Stripe, AfterPay, Laybuy, POLi), NZ shipping configuration, GST setup, and Analytics. Fixed price — no surprises." } }
+      ]
     }
   ]
 };
@@ -122,6 +171,13 @@ const faqs = [
     imgSrc={heroImg.src}
     imgAlt="WooCommerce website design Auckland"
   />
+
+  <!-- AI citability snippet -->
+  <div class="woo-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> builds WooCommerce stores for Auckland and NZ businesses from <strong>$3,890 + GST</strong>. Every store includes NZ payment gateways (Stripe, AfterPay, Laybuy, POLi), NZ shipping rules, GST configuration, and Xero integration. No monthly platform fee — you own the store outright. 4.9★ Google rating from 50+ clients.</p>
+    </div>
+  </div>
 
   <!-- Services -->
   <section class="section" style="background: var(--kwd-cream);">
@@ -238,6 +294,9 @@ const faqs = [
 </Layout>
 
 <style>
+  .woo-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
+  .woo-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
+
   .woo-nz-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
