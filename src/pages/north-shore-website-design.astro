@@ -17,25 +17,32 @@ const schema = {
       "description": "Affordable WordPress web design for North Shore businesses. Serving Takapuna, Albany, Milford, and Devonport. Professional websites built to generate enquiries.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/north-shore-website-design/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/north-shore-website-design/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".loc-snippet", ".loc-hero-text"] }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/north-shore-website-design/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "North Shore Web Design" }
+        { "@type": "ListItem", "position": 2, "name": "North Shore Web Design", "item": "https://www.kiwiwebdesign.co.nz/north-shore-website-design/" }
       ]
     },
     {
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Auckland",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
         "addressRegion": "Auckland",
+        "postalCode": "1021",
         "addressCountry": "NZ"
       },
       "areaServed": [
@@ -51,7 +58,28 @@ const schema = {
         "@type": "GeoCoordinates",
         "latitude": -36.7867,
         "longitude": 174.7406
-      }
+      },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/north-shore-website-design/#service",
+      "name": "Web Design — North Shore Auckland",
+      "serviceType": "Website Design",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": { "@type": "Place", "name": "North Shore, Auckland" },
+      "offers": { "@type": "Offer", "price": "1290", "priceCurrency": "NZD", "priceSpecification": { "@type": "PriceSpecification", "price": "1290", "priceCurrency": "NZD", "valueAddedTaxIncluded": false } }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Do you work with businesses across the whole North Shore?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work with businesses from Devonport and Takapuna through to Albany, Browns Bay, and the Hibiscus Coast. Everything is handled remotely — we don't need to meet in person, though we're happy to for North Shore clients who prefer it." } },
+        { "@type": "Question", "name": "North Shore businesses compete with CBD firms — can you match that quality?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build the same quality of website for North Shore clients that a CBD agency would charge three times more for. Our advantage is lower overheads and direct work with Charlie — no account managers or junior designers." } },
+        { "@type": "Question", "name": "Can you help us rank in local North Shore searches?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Local SEO for North Shore requires suburb-specific content, a well-maintained Google Business Profile, and consistent citations in NZ directories. We handle all of this as part of our SEO service — targeting suburbs like Takapuna, Albany, and Devonport specifically." } },
+        { "@type": "Question", "name": "How long does a North Shore website project take?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects launch within 2–4 weeks from brief approval. Simple brochure sites for North Shore businesses can be live in under two weeks. We agree on a timeline upfront and stick to it." } },
+        { "@type": "Question", "name": "What does a North Shore website cost?", "acceptedAnswer": { "@type": "Answer", "text": "A professional small business website starts from $1,290 + GST. eCommerce, booking systems, and multi-page builds are quoted by scope. All quotes are fixed price — no surprises." } }
+      ]
     }
   ]
 };
@@ -154,6 +182,13 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <!-- AI citability snippet -->
+  <div class="loc-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> builds professional websites for North Shore businesses — Takapuna, Albany, Devonport, Milford, Browns Bay, and Glenfield — from <strong>$1,290 + GST</strong>. Delivered in 2–4 weeks with local SEO included. Based in Grey Lynn, Auckland — 4.9★ Google rating from 50+ clients.</p>
+    </div>
+  </div>
 
   <!-- North Shore context -->
   <section class="section" style="background: var(--kwd-cream);">
@@ -369,6 +404,8 @@ const faqs = [
   .lac-name { font-size: 0.875rem; font-weight: 700; color: var(--kwd-dark); display: block; margin-bottom: 0.2rem; }
   .lac-note { font-size: 0.78rem; color: var(--kwd-brown); margin: 0; line-height: 1.5; }
 
+  .loc-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
+  .loc-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
   @media (max-width: 900px) {
     .loc-hero-inner { grid-template-columns: 1fr; }
     .loc-hero-card { display: none; }

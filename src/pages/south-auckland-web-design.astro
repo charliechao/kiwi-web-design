@@ -16,25 +16,32 @@ const schema = {
       "description": "Affordable web design for South Auckland tradies and businesses. Serving Manukau, Papakura, Pukekohe, and surrounding areas. Fixed-price WordPress websites.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/south-auckland-web-design/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/south-auckland-web-design/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".loc-snippet", ".loc-hero-text"] }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/south-auckland-web-design/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "South Auckland Web Design" }
+        { "@type": "ListItem", "position": 2, "name": "South Auckland Web Design", "item": "https://www.kiwiwebdesign.co.nz/south-auckland-web-design/" }
       ]
     },
     {
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Auckland",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
         "addressRegion": "Auckland",
+        "postalCode": "1021",
         "addressCountry": "NZ"
       },
       "areaServed": [
@@ -50,7 +57,28 @@ const schema = {
         "@type": "GeoCoordinates",
         "latitude": -36.9940,
         "longitude": 174.8793
-      }
+      },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/south-auckland-web-design/#service",
+      "name": "Web Design — South Auckland",
+      "serviceType": "Website Design",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": { "@type": "Place", "name": "South Auckland" },
+      "offers": { "@type": "Offer", "price": "1290", "priceCurrency": "NZD", "priceSpecification": { "@type": "PriceSpecification", "price": "1290", "priceCurrency": "NZD", "valueAddedTaxIncluded": false } }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Do you work with tradies in South Auckland specifically?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. South Auckland tradies are a key client group for us. The area has high demand for trades services but many businesses still have no online presence or an outdated site. We build tradie websites specifically to generate phone call enquiries." } },
+        { "@type": "Question", "name": "What's the most important thing a South Auckland tradie can do online?", "acceptedAnswer": { "@type": "Answer", "text": "Set up and properly maintain your Google Business Profile — and build a website with suburb-specific service pages. When someone in Papatoetoe searches 'plumber near me', Google serves businesses with a well-maintained GBP and a site that mentions Papatoetoe." } },
+        { "@type": "Question", "name": "Are your prices affordable for small South Auckland businesses?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Small business website packages start from $1,290 + GST. We work with businesses of all sizes, and we don't price differently based on location. Fixed price means no surprises — you know the total cost before we start." } },
+        { "@type": "Question", "name": "Can you help me get more Google reviews?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We set up Google review request automations as part of our local SEO work. After a job is completed, a review request goes out automatically. South Auckland service businesses with 20+ Google reviews convert significantly better than those with none." } },
+        { "@type": "Question", "name": "Do you come to South Auckland for meetings?", "acceptedAnswer": { "@type": "Answer", "text": "Most of our work is done remotely. A 30-minute phone or Zoom call is usually enough to brief a project. If you're in Manukau or Papakura and prefer to meet in person, we can accommodate that." } }
+      ]
     }
   ]
 };
@@ -147,6 +175,13 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <!-- AI citability snippet -->
+  <div class="loc-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> builds websites for South Auckland tradies and businesses — Manukau, Papakura, Pukekohe, Papatoetoe, and Takanini — from <strong>$1,290 + GST</strong>. Fixed price, delivered in 2–3 weeks, with Google Business Profile setup included. 4.9★ Google rating from 50+ Auckland clients.</p>
+    </div>
+  </div>
 
   <!-- South Auckland context -->
   <section class="section" style="background: var(--kwd-cream);">
@@ -256,6 +291,8 @@ const faqs = [
   .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
   .rps-link:hover { background: #e8e7db; }
+  .loc-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
+  .loc-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
   @media (max-width: 900px) {
     .loc-hero-inner { grid-template-columns: 1fr; }
     .loc-hero-card { display: none; }

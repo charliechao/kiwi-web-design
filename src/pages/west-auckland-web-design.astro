@@ -16,25 +16,32 @@ const schema = {
       "description": "Web design for West Auckland independent businesses. Serving Henderson, New Lynn, Kumeu, Titirangi, and West Auckland. WordPress websites that reflect your identity.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/west-auckland-web-design/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/west-auckland-web-design/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".loc-snippet", ".loc-hero-text"] }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/west-auckland-web-design/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "West Auckland Web Design" }
+        { "@type": "ListItem", "position": 2, "name": "West Auckland Web Design", "item": "https://www.kiwiwebdesign.co.nz/west-auckland-web-design/" }
       ]
     },
     {
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Auckland",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
         "addressRegion": "Auckland",
+        "postalCode": "1021",
         "addressCountry": "NZ"
       },
       "areaServed": [
@@ -50,7 +57,28 @@ const schema = {
         "@type": "GeoCoordinates",
         "latitude": -36.8768,
         "longitude": 174.6071
-      }
+      },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/west-auckland-web-design/#service",
+      "name": "Web Design — West Auckland",
+      "serviceType": "Website Design",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": { "@type": "Place", "name": "West Auckland" },
+      "offers": { "@type": "Offer", "price": "1290", "priceCurrency": "NZD", "priceSpecification": { "@type": "PriceSpecification", "price": "1290", "priceCurrency": "NZD", "valueAddedTaxIncluded": false } }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "We're a small winery in Kumeu — what does our website need?", "acceptedAnswer": { "@type": "Answer", "text": "A Kumeu winery website typically needs: a strong visual story (your vineyard, your wines, your people), a wine catalogue with tasting notes, cellar door information and opening hours, a wine club sign-up, and optionally an online shop. We build all of this in WordPress — manageable by a non-technical person once live." } },
+        { "@type": "Question", "name": "West Auckland has a strong independent character — can you capture that in a design?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — and we think this is one of the most interesting briefs we get. West Auckland independent businesses often have a distinct visual and tonal identity that corporate templates don't accommodate. We work from your aesthetic cues and design something that actually reflects you." } },
+        { "@type": "Question", "name": "We're a tradie based in Henderson. What's the most important thing our website should do?", "acceptedAnswer": { "@type": "Answer", "text": "Generate phone calls from people in your service area who are searching right now. That means: a clear headline with your service and area, a phone number prominently placed, a before/after gallery of your work, and a contact form. Then local SEO and Google Business Profile maintenance to put you in front of people searching 'plumber Henderson' or 'builder West Auckland'." } },
+        { "@type": "Question", "name": "Can you build a website that includes an online shop for our artisan products?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. WooCommerce is what we use for product sales. For a small artisan range (under 50 products), it's simple to set up and manage yourself after handover. For a larger range with variants and stock management, we scope the build accordingly." } },
+        { "@type": "Question", "name": "How much does a West Auckland business website cost?", "acceptedAnswer": { "@type": "Answer", "text": "A professional small business website starts from $1,290 + GST. eCommerce, booking systems, and winery sites with online shops are quoted by scope. All quotes are fixed price — no surprises." } }
+      ]
     }
   ]
 };
@@ -147,6 +175,13 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <!-- AI citability snippet -->
+  <div class="loc-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> builds websites for West Auckland businesses — Henderson, Kumeu, Titirangi, New Lynn, and Glen Eden — from <strong>$1,290 + GST</strong>. Wineries, cafes, tradies, and wellness businesses. Delivered in 2–4 weeks with local SEO built in. 4.9★ Google rating from 50+ Auckland clients.</p>
+    </div>
+  </div>
 
   <!-- West Auckland context -->
   <section class="section" style="background: var(--kwd-cream);">
@@ -247,6 +282,8 @@ const faqs = [
   .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
   .rps-link:hover { background: #e8e7db; }
+  .loc-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
+  .loc-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
   @media (max-width: 900px) {
     .loc-hero-inner { grid-template-columns: 1fr; }
     .loc-hero-card { display: none; }

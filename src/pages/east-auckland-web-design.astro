@@ -16,25 +16,32 @@ const schema = {
       "description": "Professional web design for East Auckland businesses. Serving Howick, Botany, Pakuranga, and Flat Bush. Affordable WordPress websites that generate local enquiries.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/east-auckland-web-design/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/east-auckland-web-design/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".loc-snippet", ".loc-hero-text"] }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/east-auckland-web-design/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "East Auckland Web Design" }
+        { "@type": "ListItem", "position": 2, "name": "East Auckland Web Design", "item": "https://www.kiwiwebdesign.co.nz/east-auckland-web-design/" }
       ]
     },
     {
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Auckland",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
         "addressRegion": "Auckland",
+        "postalCode": "1021",
         "addressCountry": "NZ"
       },
       "areaServed": [
@@ -50,7 +57,28 @@ const schema = {
         "@type": "GeoCoordinates",
         "latitude": -36.8985,
         "longitude": 174.9184
-      }
+      },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/east-auckland-web-design/#service",
+      "name": "Web Design — East Auckland",
+      "serviceType": "Website Design",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": { "@type": "Place", "name": "East Auckland" },
+      "offers": { "@type": "Offer", "price": "1290", "priceCurrency": "NZD", "priceSpecification": { "@type": "PriceSpecification", "price": "1290", "priceCurrency": "NZD", "valueAddedTaxIncluded": false } }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "East Auckland is competitive — can you help us stand out?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The East Auckland market is well-served by competition in most categories — healthcare, education, and professional services in particular. Standing out requires genuine quality content (practice area pages, service descriptions, real practitioner information) and local SEO that targets the specific suburbs your clients come from." } },
+        { "@type": "Question", "name": "We run a tutoring centre in Botany. What does our website need?", "acceptedAnswer": { "@type": "Answer", "text": "East Auckland tutoring centres benefit from clearly structured subject and year-level pages, tutor credentials and bio pages, a prominent enrolment enquiry form, and parent testimonials. Google ranks tutoring businesses that have detailed, specific content about what they teach — not just a generic homepage." } },
+        { "@type": "Question", "name": "Can you build a website that works for both Howick locals and wider Auckland?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We often build sites with a hybrid approach: suburb-specific landing pages for local search, alongside broader service pages that work for region-wide searches. The content and targeting are planned in the discovery phase." } },
+        { "@type": "Question", "name": "Do East Auckland clients have higher design expectations?", "acceptedAnswer": { "@type": "Answer", "text": "East Auckland has one of Auckland's highest median household incomes. Clients are accustomed to quality — they notice when a website looks cheap or outdated. A professionally designed small business website signals credibility and justifies premium pricing." } },
+        { "@type": "Question", "name": "How quickly can you build a website for an East Auckland business?", "acceptedAnswer": { "@type": "Answer", "text": "Most builds take 2–4 weeks. For simpler brochure sites, we can often go live in under 2 weeks. We agree on a timeline in the discovery call and stick to it." } }
+      ]
     }
   ]
 };
@@ -147,6 +175,13 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <!-- AI citability snippet -->
+  <div class="loc-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> builds websites for East Auckland businesses — Howick, Botany, Pakuranga, Flat Bush, and Bucklands Beach — from <strong>$1,290 + GST</strong>. Designed for Auckland's most research-driven market: education, healthcare, and professional services. Delivered in 2–4 weeks. 4.9★ Google rating from 50+ clients.</p>
+    </div>
+  </div>
 
   <!-- East Auckland context -->
   <section class="section" style="background: var(--kwd-cream);">
@@ -247,6 +282,8 @@ const faqs = [
   .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
   .rps-link:hover { background: #e8e7db; }
+  .loc-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
+  .loc-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
   @media (max-width: 900px) {
     .loc-hero-inner { grid-template-columns: 1fr; }
     .loc-hero-card { display: none; }
