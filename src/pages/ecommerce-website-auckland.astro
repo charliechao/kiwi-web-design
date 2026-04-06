@@ -17,24 +17,112 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/",
       "name": "eCommerce Website Design Auckland | Online Stores for NZ Businesses",
-      "description": "Looking for a powerful, affordable ecommerce website in Auckland? Kiwi Web Design builds secure, mobile-friendly online stores with fast turnaround and local support.",
+      "description": "Kiwi Web Design builds WooCommerce and Shopify stores for Auckland businesses from $3,890 + GST. NZ payments, shipping, GST configured. Launch in 2–4 weeks.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/#breadcrumb" }
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/#breadcrumb" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".ec-snippet", ".stats-row"]
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "eCommerce Website Auckland" }
+        { "@type": "ListItem", "position": 2, "name": "eCommerce Website Auckland", "item": "https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/" }
       ]
     },
     {
-      "@type": "Organization",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz/"
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "ratingCount": "50"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kiwiwebdesign.co.nz/favicon.png",
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/#service",
+      "name": "eCommerce Website Design Auckland",
+      "serviceType": "eCommerce Website Design",
+      "category": "Web Development",
+      "description": "WooCommerce and Shopify online stores for Auckland businesses. Includes NZ payment gateways, shipping rules, GST configuration, and up to 20 products. From $3,890 + GST.",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "url": "https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/",
+      "offers": {
+        "@type": "Offer",
+        "price": "3890",
+        "priceCurrency": "NZD",
+        "priceSpecification": { "@type": "PriceSpecification", "price": "3890", "priceCurrency": "NZD", "valueAddedTaxIncluded": false }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "WooCommerce or Shopify — which should I choose for my Auckland store?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on your priorities. WooCommerce gives you full ownership with no ongoing platform fees and maximum flexibility. Shopify is easier to manage day-to-day and has excellent multi-channel capabilities. We'll recommend the right one based on your product range, technical comfort, and growth plans." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many products can the website handle?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Both WooCommerce and Shopify handle thousands of products. Our standard packages include setup for up to 20 products. We can quote for larger catalogues — the additional cost is mainly for the time to populate and organise the products." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you set up AfterPay or Laybuy on my NZ online store?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We set up Buy Now Pay Later options including AfterPay, Laybuy, and Zip as part of your payment gateway configuration. These are popular with NZ shoppers and can meaningfully increase average order value." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you handle product photography for eCommerce sites?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We don't provide product photography, but we advise on image specifications (dimensions, file size, background) so your existing photos look great on the site. Good product imagery is one of the biggest drivers of conversion, so we'll give you honest guidance." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my eCommerce store show up on Google?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We set up your store with SEO foundations — product schema markup, optimised meta titles and descriptions, proper heading structure, and sitemap submission. For ongoing organic growth, our eCommerce SEO service and Google Shopping Ads management are available as separate engagements." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does an eCommerce website cost in Auckland?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Our eCommerce packages start from $3,890 + GST including store design, product setup (up to 20 products), payment gateway integration, and NZ shipping configuration. Larger catalogues or custom features are quoted separately." }
+        }
+      ]
     }
   ]
 };
@@ -140,6 +228,13 @@ const faqs = [
   />
 
   <StatsRow items={stats} />
+
+  <!-- AI citability snippet -->
+  <div class="ec-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> builds eCommerce websites for Auckland businesses from <strong>$3,890 + GST</strong>. Store setup includes WooCommerce or Shopify, NZ payment gateways (Stripe, PayPal, AfterPay, Laybuy), NZ shipping rules, GST configuration, and up to 20 products. Most stores launch in <strong>2–4 weeks</strong>. Fixed price, no lock-in contracts. Based in Grey Lynn, Auckland — 4.9★ Google rating from 50+ NZ clients.</p>
+    </div>
+  </div>
 
   <!-- Platform choice -->
   <section class="section" style="background: var(--kwd-cream);" id="platform">
@@ -315,4 +410,18 @@ const faqs = [
   @media (max-width: 760px) {
     .ec-platforms { grid-template-columns: 1fr; }
   }
+
+  /* AI citability snippet */
+  .ec-snippet {
+    background: var(--kwd-cream);
+    border-left: 4px solid var(--kwd-gold);
+    padding: 1.1rem 0;
+  }
+  .ec-snippet .container {
+    font-size: 0.92rem;
+    color: var(--kwd-dark);
+    line-height: 1.75;
+    max-width: 860px;
+  }
+  .ec-snippet p { margin: 0; }
 </style>
