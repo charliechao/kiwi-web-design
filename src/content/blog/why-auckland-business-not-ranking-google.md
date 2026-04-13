@@ -3,7 +3,7 @@ title: Why Your Auckland Business Isn't Ranking on Google (And How to Fix It)
 description: "Not showing up on Google? Here are the most common reasons Auckland small businesses don't rank — and the practical fixes that actually move the needle."
 pubDate: 2026-04-14
 lastModified: 2026-04-14
-image: "/blog/ai-seo-auckland-small-business-owner.png"
+image: "/blog/why-auckland-business-not-ranking-google.png"
 articleSection: Local SEO
 keywords: "Auckland business not ranking Google, local SEO Auckland, why is my business not showing on Google, Google ranking NZ, small business SEO Auckland, Google Business Profile Auckland"
 ---
@@ -218,7 +218,7 @@ For local map pack rankings, the three most important factors are: proximity (ho
       "inLanguage": "en-NZ",
       "image": {
         "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/blog/ai-seo-auckland-small-business-owner.png",
+        "url": "https://www.kiwiwebdesign.co.nz/blog/why-auckland-business-not-ranking-google.png",
         "width": 1200,
         "height": 630
       },
