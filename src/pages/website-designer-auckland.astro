@@ -200,8 +200,8 @@ const reviews = [
               <input type="email" name="email" placeholder="you@yourbusiness.co.nz" required />
             </label>
             <label class="form-label">
-              Phone / Mobile <span class="req">*</span>
-              <input type="tel" name="mobile" placeholder="021 000 0000" required />
+              Phone / Mobile
+              <input type="tel" name="mobile" placeholder="021 000 0000" />
             </label>
           </div>
           <div class="form-row">
@@ -350,7 +350,7 @@ const reviews = [
       const submittedAt = document.getElementById('contact-submitted-at') as HTMLInputElement | null;
       if (!form || !btn || !status) return;
 
-      const minSubmitSeconds = 4;
+      const minSubmitSeconds = 3;
       if (submittedAt) submittedAt.value = String(Date.now());
 
       function setStatus(msg: string, isError: boolean) {
@@ -378,7 +378,7 @@ const reviews = [
           return 'Please wait a few seconds before sending your message.';
         }
         if (name.length < 2 || !/[a-z]/i.test(name)) return 'Please enter your name.';
-        if (message.length < 20) return 'Please add a bit more detail so we can help properly.';
+        if (message.length < 10) return 'Please add a bit more detail so we can help properly.';
         if (countUrls(message) > 1 || hasSuspiciousPattern(message)) {
           return 'Please remove suspicious content and try again.';
         }
