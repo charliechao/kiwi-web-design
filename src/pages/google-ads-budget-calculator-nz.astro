@@ -1,0 +1,620 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/google-ads-budget-calculator-nz/",
+      "url": "https://www.kiwiwebdesign.co.nz/google-ads-budget-calculator-nz/",
+      "name": "Google Ads Budget Calculator NZ (2026) | Estimate CPC & Leads",
+      "description": "Free Google Ads budget calculator for NZ businesses. Enter your industry, location, and budget to estimate CPC, monthly clicks, leads, and break-even. No email needed.",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/google-ads-budget-calculator-nz/#breadcrumb" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".gac-snippet", ".gac-hero-facts"]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/google-ads-budget-calculator-nz/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Google Ads", "item": "https://www.kiwiwebdesign.co.nz/google-ads/" },
+        { "@type": "ListItem", "position": 3, "name": "Google Ads Budget Calculator NZ", "item": "https://www.kiwiwebdesign.co.nz/google-ads-budget-calculator-nz/" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/google-ads/#service",
+      "name": "Google Ads Management Auckland",
+      "serviceType": "Google Ads Management",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "url": "https://www.kiwiwebdesign.co.nz/google-ads/",
+      "offers": [
+        { "@type": "Offer", "name": "Campaign Setup", "price": "499", "priceCurrency": "NZD" },
+        { "@type": "Offer", "name": "Monthly Management", "price": "399", "priceCurrency": "NZD" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does Google Ads cost per click in NZ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Google Ads CPC in New Zealand varies significantly by industry. Trades and cleaning services typically range from $3–$8 per click, while competitive industries like legal ($8–$22) and finance ($6–$18) are considerably higher. Auckland campaigns cost roughly 25% more than the national average due to higher competition. Most small NZ businesses see CPCs between $2 and $10." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much should a small NZ business spend on Google Ads per month?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For most Auckland service businesses, $500–$1,500/month in ad spend is a practical starting point. Businesses in high-CPC industries like legal or finance may need $2,000–$5,000/month to generate meaningful lead volume. The key is spending enough to gather data and optimise — too little and results are statistically unreliable." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good conversion rate for Google Ads in New Zealand?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A well-optimised Google Ads campaign for a NZ service business typically converts at 4–8% (clicks to enquiries). Trade services, moving companies, and beauty businesses often see higher rates (6–9%) due to high purchase intent. eCommerce tends to sit lower at 1–3%. These rates assume a well-built landing page — a poor landing page can halve your conversion rate regardless of ad quality." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate my Google Ads cost per lead?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Cost per lead = monthly ad spend ÷ number of leads generated. For example, $800/month budget with a 5% conversion rate and $5 average CPC gives roughly 160 clicks and 8 leads, making your cost per lead approximately $100. Use the calculator above to estimate your specific numbers based on your industry and location." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Google Ads worth it for small businesses in New Zealand?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — for most service businesses where a single job is worth $300+, Google Ads can deliver a strong ROI. The key factors are CPC in your industry, your website conversion rate, and your average job value. Use the calculator to check your break-even point: if you only need 1–2 jobs per month to cover your ad spend, Google Ads is almost certainly worth testing." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between Google Ads ad spend and management fees?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ad spend is the budget you pay directly to Google for clicks — this goes entirely to running your ads. Management fees are what you pay an agency or specialist to set up, monitor, and optimise your campaigns. At Kiwi Web Design, management starts from $399/month flat fee (not a percentage of spend), plus a one-time setup from $499. Your ad spend budget is separate and paid directly to Google." }
+        }
+      ]
+    }
+  ]
+};
+
+const howItWorksItems = [
+  {
+    icon: "📊",
+    title: "Industry CPC data",
+    desc: "CPC ranges are sourced from SEMrush NZ keyword data and real campaign benchmarks across New Zealand service industries. Figures are updated periodically to reflect current market conditions.",
+  },
+  {
+    icon: "🎯",
+    title: "Conversion rate estimates",
+    desc: "Lead conversion rates (clicks → enquiries) are based on typical NZ service business landing page performance. A well-optimised page can achieve the higher end of the range; a generic homepage will convert lower.",
+  },
+  {
+    icon: "💰",
+    title: "Break-even calculation",
+    desc: "Break-even shows how many jobs or sales you need to close each month to cover your ad spend. If your average job value is $800 and you need just 1–2 jobs to break even, the risk is low.",
+  },
+];
+
+const faqs = [
+  { q: "How much does Google Ads cost per click in NZ?", a: "Google Ads CPC in New Zealand varies significantly by industry. Trades and cleaning services typically range from $3–$8 per click, while competitive industries like legal ($8–$22) and finance ($6–$18) are considerably higher. Auckland campaigns cost roughly 25% more than the national average due to higher competition. Most small NZ businesses see CPCs between $2 and $10." },
+  { q: "How much should a small NZ business spend on Google Ads per month?", a: "For most Auckland service businesses, $500–$1,500/month in ad spend is a practical starting point. Businesses in high-CPC industries like legal or finance may need $2,000–$5,000/month to generate meaningful lead volume. The key is spending enough to gather data and optimise — too little and results are statistically unreliable." },
+  { q: "What is a good conversion rate for Google Ads in New Zealand?", a: "A well-optimised Google Ads campaign for a NZ service business typically converts at 4–8% (clicks to enquiries). Trade services, moving companies, and beauty businesses often see higher rates (6–9%) due to high purchase intent. eCommerce tends to sit lower at 1–3%. These rates assume a well-built landing page — a poor landing page can halve your conversion rate regardless of ad quality." },
+  { q: "How do I calculate my Google Ads cost per lead?", a: "Cost per lead = monthly ad spend ÷ number of leads generated. For example, $800/month budget with a 5% conversion rate and $5 average CPC gives roughly 160 clicks and 8 leads, making your cost per lead approximately $100. Use the calculator above to estimate your specific numbers based on your industry and location." },
+  { q: "Is Google Ads worth it for small businesses in New Zealand?", a: "Yes — for most service businesses where a single job is worth $300+, Google Ads can deliver a strong ROI. The key factors are CPC in your industry, your website conversion rate, and your average job value. Use the calculator to check your break-even point: if you only need 1–2 jobs per month to cover your ad spend, Google Ads is almost certainly worth testing." },
+  { q: "What's the difference between ad spend and management fees?", a: "Ad spend is the budget you pay directly to Google for clicks — this goes entirely to running your ads. Management fees are what you pay an agency or specialist to set up and optimise your campaigns. At Kiwi Web Design, management starts from $399/month flat fee (not a percentage of spend), plus a one-time setup from $499. Your ad spend budget is separate and paid directly to Google." },
+];
+---
+
+<Layout
+  title="Google Ads Budget Calculator NZ (2026) | Estimate CPC & Leads"
+  description="Free Google Ads budget calculator for NZ businesses. Enter your industry, location, and budget to estimate CPC, monthly clicks, leads, and break-even point. No email needed."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/google-ads-budget-calculator-nz/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Google Ads Cost Calculator NZ"
+    title="How much does Google Ads cost in New Zealand?"
+    subtitle="Enter your industry, location, and monthly budget for an instant estimate of your CPC range, monthly clicks, lead count, and break-even point."
+    badgeText="Free — no email required"
+    ctaPrimary={{ text: "Get a Free Strategy Call", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "How It Works", href: "#how-it-works" }}
+    centered={true}
+  />
+
+  <!-- AI citability snippet -->
+  <div class="gac-snippet">
+    <div class="container">
+      <p>In New Zealand, <strong>Google Ads CPCs range from $0.50 (hospitality) to $22+ (legal)</strong> depending on industry and location. <strong>Auckland campaigns cost roughly 25% more</strong> than the NZ average. Most small NZ service businesses spend <strong>$500–$1,500/month</strong> in ad spend and generate leads at a <strong>4–8% conversion rate</strong>. A typical trades business with an $800/month budget can expect <strong>80–160 clicks</strong> and <strong>6–11 leads</strong> per month. Management fees (separate from ad spend) start from <strong>$399/month</strong> at Kiwi Web Design — flat fee, not a percentage of spend.</p>
+    </div>
+  </div>
+
+  <!-- Calculator -->
+  <section class="section gac-calc-section">
+    <div class="container gac-calc-container">
+      <div id="kwd-google-ads-calculator">
+
+        <!-- Inputs -->
+        <div class="gac-inputs-card">
+          <h2 class="gac-inputs-heading">Your campaign details</h2>
+
+          <label class="gac-label">
+            Industry
+            <select id="gac-industry">
+              <option value="trades">Trades (plumber, electrician, builder)</option>
+              <option value="legal">Legal / Law firms</option>
+              <option value="dental">Dental / Healthcare</option>
+              <option value="finance">Finance / Mortgage brokers</option>
+              <option value="realestate">Real estate</option>
+              <option value="beauty">Beauty &amp; wellness / Salons</option>
+              <option value="cleaning">Cleaning services</option>
+              <option value="automotive">Automotive / Mechanics</option>
+              <option value="hvac">HVAC / Heating &amp; cooling</option>
+              <option value="accounting">Accounting / Bookkeeping</option>
+              <option value="it">IT services / Tech support</option>
+              <option value="education">Education / Tutoring</option>
+              <option value="hospitality">Restaurants / Hospitality</option>
+              <option value="ecommerce">eCommerce / Retail</option>
+              <option value="landscaping">Landscaping / Gardening</option>
+              <option value="photography">Photography / Videography</option>
+              <option value="moving">Removalists / Moving</option>
+              <option value="other">Other / Not listed</option>
+            </select>
+          </label>
+
+          <label class="gac-label">
+            Location
+            <select id="gac-location">
+              <option value="auckland">Auckland</option>
+              <option value="wellington">Wellington</option>
+              <option value="christchurch">Christchurch</option>
+              <option value="hamilton">Hamilton / Waikato</option>
+              <option value="nz-wide">NZ-wide (nationwide)</option>
+              <option value="other">Other NZ region</option>
+            </select>
+          </label>
+
+          <label class="gac-label">
+            Monthly ad budget (NZD)
+            <input type="number" id="gac-budget" min="100" step="50" value="800" inputmode="numeric" />
+          </label>
+
+          <label class="gac-label">
+            Campaign goal
+            <select id="gac-goal">
+              <option value="leads">Generate leads / phone calls</option>
+              <option value="ecommerce">Drive eCommerce sales</option>
+              <option value="awareness">Brand awareness</option>
+            </select>
+          </label>
+
+          <label class="gac-label">
+            Average job / sale value (NZD)
+            <input type="number" id="gac-jobvalue" min="1" step="50" value="500" inputmode="numeric" />
+            <span class="gac-label-hint">Used to calculate your break-even point</span>
+          </label>
+        </div>
+
+        <!-- Outputs -->
+        <div class="gac-outputs">
+          <h2 class="gac-outputs-heading">Your estimates</h2>
+          <div class="gac-metrics-grid">
+
+            <div class="gac-metric">
+              <span class="gac-metric-value" id="gac-cpc-range">$0 – $0</span>
+              <span class="gac-metric-label">Est. CPC range</span>
+              <span class="gac-metric-sub">cost per click</span>
+            </div>
+
+            <div class="gac-metric">
+              <span class="gac-metric-value" id="gac-clicks">0</span>
+              <span class="gac-metric-label">Monthly clicks</span>
+              <span class="gac-metric-sub">at avg CPC</span>
+            </div>
+
+            <div class="gac-metric">
+              <span class="gac-metric-value" id="gac-leads">0</span>
+              <span class="gac-metric-label">Monthly leads</span>
+              <span class="gac-metric-sub" id="gac-conv-rate-label">at 0% conversion</span>
+            </div>
+
+            <div class="gac-metric">
+              <span class="gac-metric-value" id="gac-cpl">$0</span>
+              <span class="gac-metric-label">Cost per lead</span>
+              <span class="gac-metric-sub">est. avg</span>
+            </div>
+
+            <div class="gac-metric gac-metric--wide">
+              <span class="gac-metric-value" id="gac-breakeven">0 jobs</span>
+              <span class="gac-metric-label">Break-even point</span>
+              <span class="gac-metric-sub">jobs/sales needed to cover ad spend</span>
+            </div>
+
+          </div>
+
+          <div class="gac-disclaimer">
+            <p>Estimates only — actual results vary based on ad quality, landing page, and competition. <a href="/google-ads/">Learn about our Google Ads management →</a></p>
+          </div>
+
+          <div class="gac-inline-cta">
+            <p>Want us to run your Google Ads?</p>
+            <a href="/website-designer-auckland/" class="gac-cta-btn">Book a free strategy call →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="About This Calculator"
+        title="How the estimates are calculated."
+        subtitle="Built from real NZ campaign data — not generic global averages."
+      />
+      <ServiceGrid items={howItWorksItems} cols={3} />
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner
+    variant="yellow"
+    title="Want us to run your Google Ads?"
+    subtitle="Free strategy session — we'll map your market, estimate your cost-per-lead, and give you honest advice. Call 021 039 6580 or book online."
+    ctaPrimary={{ text: "Book a Free Strategy Call", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Google Ads Pricing", href: "/google-ads/" }}
+  />
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Google Ads Cost — NZ Questions Answered"
+        subtitle="Common questions from NZ small businesses about Google Ads budgets, CPCs, and ROI."
+      />
+    </div>
+  </section>
+
+  <!-- Related links -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/google-ads/" class="rps-link">Google Ads Management Auckland</a>
+        <a href="/seo-auckland/" class="rps-link">SEO Auckland</a>
+        <a href="/landing-pages-funnels-on-wordpress/" class="rps-link">Landing Pages &amp; Funnels</a>
+        <a href="/analytics-reporting-for-auckland-small-business-websites/" class="rps-link">Analytics &amp; Reporting</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Useful calculators &amp; guides</p>
+      <div class="rps-links">
+        <a href="/affordable-web-design-auckland/website-cost-new-zealand-small-business/" class="rps-link">Website Cost Calculator NZ</a>
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design Auckland</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* ── AI snippet ── */
+  .gac-snippet {
+    background: var(--kwd-cream);
+    border-left: 4px solid var(--kwd-gold);
+    padding: 1.1rem 0;
+  }
+  .gac-snippet .container {
+    font-size: 0.92rem;
+    color: var(--kwd-dark);
+    line-height: 1.75;
+    max-width: 860px;
+  }
+  .gac-snippet p { margin: 0; }
+
+  /* ── Calculator layout ── */
+  .gac-calc-section { background: #fff; }
+  .gac-calc-container { max-width: 1100px; }
+
+  #kwd-google-ads-calculator {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  /* ── Inputs card ── */
+  .gac-inputs-card {
+    background: var(--kwd-cream);
+    border: 1px solid #c8c2b8;
+    border-radius: 14px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .gac-inputs-heading {
+    font-size: 1.25rem;
+    color: var(--kwd-dark);
+    margin: 0 0 0.25rem;
+  }
+  .gac-label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--kwd-dark);
+    gap: 0.35rem;
+  }
+  .gac-label-hint {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--kwd-brown);
+    margin-top: -0.15rem;
+  }
+  .gac-inputs-card select,
+  .gac-inputs-card input[type="number"] {
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #c8c2b8;
+    font-size: 1rem;
+    background: #fff;
+    color: var(--kwd-dark);
+    font-family: inherit;
+    width: 100%;
+  }
+  .gac-inputs-card select:focus,
+  .gac-inputs-card input[type="number"]:focus {
+    outline: 2px solid var(--kwd-gold);
+    outline-offset: 1px;
+  }
+
+  /* ── Outputs ── */
+  .gac-outputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .gac-outputs-heading {
+    font-size: 1.25rem;
+    color: var(--kwd-dark);
+    margin: 0;
+  }
+  .gac-metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .gac-metric {
+    background: var(--kwd-dark);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .gac-metric--wide {
+    grid-column: 1 / -1;
+  }
+  .gac-metric-value {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--kwd-yellow);
+    line-height: 1.1;
+  }
+  .gac-metric-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 0.15rem;
+  }
+  .gac-metric-sub {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ── Disclaimer & inline CTA ── */
+  .gac-disclaimer {
+    font-size: 0.82rem;
+    color: var(--kwd-brown);
+    line-height: 1.6;
+  }
+  .gac-disclaimer p { margin: 0; }
+  .gac-disclaimer a { color: var(--kwd-brown); font-weight: 600; }
+
+  .gac-inline-cta {
+    background: var(--kwd-cream);
+    border: 1px solid #c8c2b8;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .gac-inline-cta p {
+    margin: 0;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--kwd-dark);
+  }
+  .gac-cta-btn {
+    display: inline-block;
+    background: var(--kwd-dark);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .gac-cta-btn:hover { background: var(--kwd-brown); }
+
+  /* ── Related strip (match google-ads.astro) ── */
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
+
+  /* ── Responsive ── */
+  @media (max-width: 860px) {
+    #kwd-google-ads-calculator {
+      grid-template-columns: 1fr;
+    }
+    .gac-metrics-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 480px) {
+    .gac-metrics-grid {
+      grid-template-columns: 1fr;
+    }
+    .gac-metric--wide {
+      grid-column: 1;
+    }
+    .gac-inline-cta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+<!-- Vanta.js GLOBE background for hero (matches google-ads.astro) -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.globe.min.js"></script>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof VANTA !== 'undefined') {
+      VANTA.GLOBE({
+        el: '.hero-section',
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200,
+        minWidth: 200,
+        scale: 1.0,
+        scaleMobile: 0.75,
+        color: 0xf3d97a,
+        color2: 0xf3d97a,
+        backgroundColor: 0x2c2927,
+      });
+    }
+  });
+</script>
+
+<!-- Calculator logic -->
+<script is:inline>
+  (function () {
+    var calc = document.getElementById('kwd-google-ads-calculator');
+    if (!calc) return;
+
+    var industrySelect  = calc.querySelector('#gac-industry');
+    var locationSelect  = calc.querySelector('#gac-location');
+    var budgetInput     = calc.querySelector('#gac-budget');
+    var goalSelect      = calc.querySelector('#gac-goal');
+    var jobValueInput   = calc.querySelector('#gac-jobvalue');
+
+    var elCpcRange      = calc.querySelector('#gac-cpc-range');
+    var elClicks        = calc.querySelector('#gac-clicks');
+    var elLeads         = calc.querySelector('#gac-leads');
+    var elConvLabel     = calc.querySelector('#gac-conv-rate-label');
+    var elCpl           = calc.querySelector('#gac-cpl');
+    var elBreakeven     = calc.querySelector('#gac-breakeven');
+
+    var industryData = {
+      trades:      { cpcLow: 3.50, cpcHigh: 8.00,  convRate: 0.07 },
+      legal:       { cpcLow: 8.00, cpcHigh: 22.00, convRate: 0.04 },
+      dental:      { cpcLow: 4.00, cpcHigh: 12.00, convRate: 0.06 },
+      finance:     { cpcLow: 6.00, cpcHigh: 18.00, convRate: 0.04 },
+      realestate:  { cpcLow: 2.50, cpcHigh: 7.00,  convRate: 0.03 },
+      beauty:      { cpcLow: 1.20, cpcHigh: 4.00,  convRate: 0.08 },
+      cleaning:    { cpcLow: 2.50, cpcHigh: 7.00,  convRate: 0.07 },
+      automotive:  { cpcLow: 2.00, cpcHigh: 6.00,  convRate: 0.06 },
+      hvac:        { cpcLow: 4.00, cpcHigh: 10.00, convRate: 0.07 },
+      accounting:  { cpcLow: 4.50, cpcHigh: 14.00, convRate: 0.04 },
+      it:          { cpcLow: 3.00, cpcHigh: 9.00,  convRate: 0.05 },
+      education:   { cpcLow: 1.50, cpcHigh: 5.00,  convRate: 0.06 },
+      hospitality: { cpcLow: 0.50, cpcHigh: 2.50,  convRate: 0.05 },
+      ecommerce:   { cpcLow: 0.80, cpcHigh: 3.50,  convRate: 0.02 },
+      landscaping: { cpcLow: 2.50, cpcHigh: 7.00,  convRate: 0.07 },
+      photography: { cpcLow: 1.50, cpcHigh: 5.00,  convRate: 0.05 },
+      moving:      { cpcLow: 3.00, cpcHigh: 8.00,  convRate: 0.08 },
+      other:       { cpcLow: 2.00, cpcHigh: 6.00,  convRate: 0.05 }
+    };
+
+    var locationMultiplier = {
+      auckland:     1.25,
+      wellington:   1.10,
+      christchurch: 1.00,
+      hamilton:     0.90,
+      'nz-wide':    1.15,
+      other:        0.85
+    };
+
+    var goalModifier = {
+      leads:     1.0,
+      ecommerce: 0.5,
+      awareness: 0.2
+    };
+
+    function fmt(n) {
+      return '$' + Math.round(n).toLocaleString('en-NZ');
+    }
+
+    function updateCalc() {
+      var industry  = industryData[industrySelect.value] || industryData['other'];
+      var locMult   = locationMultiplier[locationSelect.value] || 1.0;
+      var budget    = Math.max(0, parseFloat(budgetInput.value) || 0);
+      var goalMod   = goalModifier[goalSelect.value] || 1.0;
+      var jobValue  = Math.max(1, parseFloat(jobValueInput.value) || 1);
+
+      var adjLow  = industry.cpcLow  * locMult;
+      var adjHigh = industry.cpcHigh * locMult;
+      var avgCpc  = (adjLow + adjHigh) / 2;
+
+      var clicks       = avgCpc > 0 ? Math.floor(budget / avgCpc) : 0;
+      var convRate     = industry.convRate * goalMod;
+      var leads        = Math.floor(clicks * convRate);
+      var cpl          = leads > 0 ? budget / leads : 0;
+      var breakeven    = Math.ceil(budget / jobValue);
+
+      elCpcRange.textContent  = fmt(adjLow) + ' \u2013 ' + fmt(adjHigh);
+      elClicks.textContent    = clicks.toLocaleString('en-NZ');
+      elLeads.textContent     = leads.toLocaleString('en-NZ');
+      elConvLabel.textContent = 'at ' + Math.round(convRate * 100) + '% conversion';
+      elCpl.textContent       = leads > 0 ? fmt(cpl) : 'N/A';
+      elBreakeven.textContent = breakeven + (breakeven === 1 ? ' job' : ' jobs');
+    }
+
+    [industrySelect, locationSelect, goalSelect].forEach(function (el) {
+      el.addEventListener('change', updateCalc);
+    });
+    [budgetInput, jobValueInput].forEach(function (el) {
+      el.addEventListener('input', updateCalc);
+    });
+
+    updateCalc();
+  })();
+</script>
