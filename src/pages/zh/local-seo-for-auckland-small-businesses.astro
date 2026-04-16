@@ -1,0 +1,565 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import ServiceGrid from '../../components/ServiceGrid.astro';
+import StatsRow from '../../components/StatsRow.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/local-seo-for-auckland-small-businesses/",
+      "url": "https://www.kiwiwebdesign.co.nz/zh/local-seo-for-auckland-small-businesses/",
+      "name": "奥克兰本地SEO优化 | Google地图排名 | Kiwi Web Design",
+      "description": "专为奥克兰华人中小企业提供本地SEO优化服务。主导Google地图三强榜单、本地搜索和自然结果排名。Google商家档案优化、引用建设与评价策略。免费审核。",
+      "inLanguage": "zh-Hans",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/zh/local-seo-for-auckland-small-businesses/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".local-snippet", "h1"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/local-seo-for-auckland-small-businesses/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.kiwiwebdesign.co.nz/zh/" },
+        { "@type": "ListItem", "position": 2, "name": "奥克兰本地SEO", "item": "https://www.kiwiwebdesign.co.nz/zh/local-seo-for-auckland-small-businesses/" }
+      ]
+    },
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "alternateName": "奥克兰网页设计",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/local-seo-for-auckland-small-businesses/#service",
+      "name": "奥克兰本地SEO优化",
+      "serviceType": "本地搜索引擎优化",
+      "category": "数字营销",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "500",
+        "highPrice": "2000",
+        "priceCurrency": "NZD",
+        "priceSpecification": { "@type": "PriceSpecification", "valueAddedTaxIncluded": false, "unitCode": "MON" }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "什么是本地SEO，我的奥克兰企业为什么需要它？", "acceptedAnswer": { "@type": "Answer", "text": "本地SEO是优化您的线上存在以出现在基于位置的搜索中的过程——例如「奥克兰水管工」或「附近的咖啡馆」。如果您的企业服务于奥克兰特定区域的客户，本地SEO通常是您能做的数字投资中回报率最高的。" } },
+        { "@type": "Question", "name": "奥克兰本地SEO需要多长时间才能见效？", "acceptedAnswer": { "@type": "Answer", "text": "大多数奥克兰企业在竞争较少的细分市场中，4至8周内就能看到Google地图排名的改善。建筑、法律或牙科等竞争激烈的行业可能需要3至6个月才能看到显著变化。之后效果会随时间持续复利增长。" } },
+        { "@type": "Question", "name": "本地SEO和普通SEO有什么区别？", "acceptedAnswer": { "@type": "Answer", "text": "本地SEO专注于出现在具有地理意图的搜索中（「附近」、区域名称、城市名称）。它非常重视您的Google商家档案、本地引用和评价。普通SEO涵盖无地理过滤的全国性或主题性可见度——许多企业两者都能受益。" } },
+        { "@type": "Question", "name": "做奥克兰本地SEO需要实体地址吗？", "acceptedAnswer": { "@type": "Answer", "text": "不一定。服务区域型企业（如水管工或清洁公司）可以通过在Google商家档案中配置服务区域来做本地SEO，而无需公开地址。但拥有实体位置的企业通常更容易在地图三强中排名。" } },
+        { "@type": "Question", "name": "Google评价对本地SEO有多重要？", "acceptedAnswer": { "@type": "Answer", "text": "非常重要。Google将评价数量、质量和时效性作为地图三强结果的排名信号。除排名外，评价还直接影响客户是否选择您。我们帮助您建立可持续、真实的评价获取流程。" } },
+        { "@type": "Question", "name": "你们能帮助处理Google商家档案被暂停或恢复的问题吗？", "acceptedAnswer": { "@type": "Answer", "text": "可以。如果您的Google商家档案被暂停，我们可以帮助诊断原因并提交附有正确支持文件的恢复申请。这是一个常见问题，用正确的方法通常可以解决。" } }
+      ]
+    }
+  ]
+};
+
+const localStats = [
+  { number: "46%", label: "的Google搜索具有本地意图" },
+  { number: "78%", label: "的本地移动端搜索在24小时内促成购买" },
+  { number: "70%", label: "的点击流向Google地图前三名结果" },
+  { number: "500%", label: "「附近」搜索量在5年内的增长幅度" },
+];
+
+const localServices = [
+  {
+    icon: "📍",
+    title: "Google商家档案优化",
+    desc: "您的Google商家档案是最重要的本地SEO资产。我们优化每一个元素——类别、服务、照片、帖子和评价——以最大化您在地图三强中的可见度。",
+    items: ["完整档案设置与优化", "服务区域配置", "照片策略", "每周帖子与问答管理"],
+  },
+  {
+    icon: "🗺️",
+    title: "Google地图三强排名",
+    desc: "Google地图顶部的三强榜单捕获70%的本地点击量。我们建立赢得并保持这些位置所需的信号。",
+    items: ["本地排名因素优化", "邻近信号建设", "评价获取策略", "竞争对手替代策略"],
+  },
+  {
+    icon: "📋",
+    title: "本地引用建设",
+    desc: "跨目录一致的NAP（名称、地址、电话）信息建立信任和权威。我们在新西兰相关目录中建立和修复引用。",
+    items: ["新西兰目录提交", "引用一致性审核与修复", "行业专属目录", "持续引用监控"],
+  },
+  {
+    icon: "⭐",
+    title: "评价策略",
+    desc: "线上评价既影响排名也影响买家决策。我们帮助您建立系统化流程，在Google、Facebook和Yelp上收集和管理评价。",
+    items: ["评价请求工作流程", "回复管理", "评价监控", "口碑保护"],
+  },
+  {
+    icon: "🏙️",
+    title: "本地内容与落地页",
+    desc: "针对区域级搜索排名的地点专属落地页。我们创建针对您客户所在具体奥克兰区域的页面。",
+    items: ["奥克兰各区落地页", "本地关键词优化", "超本地化内容", "内部链接策略"],
+  },
+  {
+    icon: "🔗",
+    title: "本地链接建设",
+    desc: "来自奥克兰本地企业、协会和媒体的链接建立地图三强排名所依赖的地理权威。",
+    items: ["本地企业合作", "商会与协会列名", "新西兰新闻与媒体提及", "社区赞助"],
+  },
+];
+
+const process = [
+  { step: "1", title: "本地SEO审核", desc: "我们评估您当前的本地可见度：Google商家档案状态、引用一致性、评价情况和本地排名位置。" },
+  { step: "2", title: "关键词与竞争对手研究", desc: "我们找出您的客户使用的本地搜索词，并分析您的主要竞争对手如何排名。" },
+  { step: "3", title: "站内与站外优化", desc: "我们修复您的Google商家档案、建立引用、创建本地内容并获取本地链接——系统化推进。" },
+  { step: "4", title: "审核与报告", desc: "月度报告追踪您的地图三强位置、自然排名以及带来的询盘数量。" },
+];
+
+const faqs = [
+  { q: "什么是本地SEO，我的奥克兰企业为什么需要它？", a: "本地SEO是优化您的线上存在以出现在基于位置的搜索中的过程——例如「奥克兰水管工」或「附近的咖啡馆」。如果您的企业服务于奥克兰特定区域的客户，本地SEO通常是您能做的数字投资中回报率最高的。" },
+  { q: "奥克兰本地SEO需要多长时间才能见效？", a: "大多数奥克兰企业在竞争较少的细分市场中，4至8周内就能看到Google地图排名的改善。建筑、法律或牙科等竞争激烈的行业可能需要3至6个月才能看到显著变化。之后效果会随时间持续复利增长。" },
+  { q: "本地SEO和普通SEO有什么区别？", a: "本地SEO专注于出现在具有地理意图的搜索中（「附近」、区域名称、城市名称）。它非常重视您的Google商家档案、本地引用和评价。我们更广泛的<a href=\"/zh/ai-seo-for-auckland-small-businesses/\">AI SEO服务</a>涵盖无地理过滤的全国性或主题性可见度——许多企业两者都能受益。" },
+  { q: "做奥克兰本地SEO需要实体地址吗？", a: "不一定。服务区域型企业（如水管工或清洁公司）可以通过在Google商家档案中配置服务区域来做本地SEO，而无需公开地址。但拥有实体位置的企业通常更容易在地图三强中排名。" },
+  { q: "Google评价对本地SEO有多重要？", a: "非常重要。Google将评价数量、质量和时效性作为地图三强结果的排名信号。除排名外，评价还直接影响客户是否选择您。我们帮助您建立可持续、真实的评价获取流程。" },
+  { q: "你们能帮助处理Google商家档案被暂停或恢复的问题吗？", a: "可以。如果您的Google商家档案被暂停，我们可以帮助诊断原因并提交附有正确支持文件的恢复申请。这是一个常见问题，用正确的方法通常可以解决。详细的设置和优化指南，请参阅我们的<a href=\"/google-business-profile-guide-for-auckland-businesses/\">奥克兰企业Google商家档案指南</a>。" },
+];
+---
+
+<Layout
+  lang="zh-Hans"
+  title="奥克兰本地SEO优化 | Google地图排名 | Kiwi Web Design"
+  description="专为奥克兰华人中小企业提供本地SEO优化服务。主导Google地图三强、本地搜索和自然结果。Google商家档案、引用建设、评价策略。免费审核。"
+  canonicalURL="https://www.kiwiwebdesign.co.nz/zh/local-seo-for-auckland-small-businesses/"
+  alternateUrl="https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="奥克兰本地SEO"
+    title="主导本地搜索。第一个被找到。"
+    subtitle="46%的所有Google搜索具有本地意图。我们确保搜索您服务的奥克兰华人客户第一个看到您的企业——在Google地图、三强榜单和自然结果中。"
+    ctaPrimary={{ text: "获取免费本地SEO审核", href: "/zh/website-designer-auckland/" }}
+    ctaSecondary={{ text: "查看所有SEO服务", href: "/zh/ai-seo-for-auckland-small-businesses/" }}
+  />
+
+  <!-- Local search stats -->
+  <StatsRow items={localStats} accent={true} />
+
+  <!-- AI citability snippet -->
+  <div class="local-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> 为奥克兰华人中小企业提供本地SEO服务——Google商家档案优化、地图三强排名、引用建设、评价策略和区域专属落地页。效果通常在4至8周内显现。总部位于Grey Lynn，奥克兰——50+客户4.9星Google评分。</p>
+    </div>
+  </div>
+
+  <!-- Why local SEO matters -->
+  <section class="section">
+    <div class="container">
+      <div class="local-why">
+        <div class="local-why-text">
+          <p class="local-eyebrow">为什么重要</p>
+          <h2>奥克兰华人客户在本地搜索——您出现了吗？</h2>
+          <p>当Ponsonby、Remuera、Henderson或奥克兰华人社区集中的Howick、Botany、Newmarket的客户搜索您的服务时，Google会优先显示最具本地相关性的结果。出现在Google地图三强中的企业捕获绝大多数点击——以及绝大多数询盘。</p>
+          <p>如果您的竞争对手出现了而您没有，那么对大量潜在客户来说您是隐形的。本地SEO——结合专业建设的<a href="/zh/website-designer-auckland/">中小企业网站</a>——是解决这一问题的方法。</p>
+          <p>对于在新西兰经营的华人企业来说，本地SEO尤其重要：许多华人客户会用中英文混合关键词在Google上搜索，例如"奥克兰 electrician"或"Auckland 中文会计"。我们帮助您在这些搜索中都能被找到。</p>
+        </div>
+        <div class="local-why-card-wrap">
+          <div class="local-why-card">
+            <span class="lwc-icon">🗺️</span>
+            <h3>Google地图三强榜单</h3>
+            <p>顶部三个地图结果出现在所有自然结果之上。出现在这里让您的企业在客户甚至滚动页面之前就进入视野。</p>
+          </div>
+          <div class="local-why-card">
+            <span class="lwc-icon">📱</span>
+            <h3>移动端本地搜索</h3>
+            <p>78%的本地移动端搜索在24小时内促成购买。在意向时刻保持可见是一切的关键。</p>
+          </div>
+          <div class="local-why-card">
+            <span class="lwc-icon">⭐</span>
+            <h3>评价驱动决策</h3>
+            <p>客户在致电之前会比较评价。强大的评价档案建立信任，将浏览转化为询盘——这对华人客户群体尤为重要。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="我们的本地SEO服务"
+        title="主导奥克兰本地搜索所需的一切。"
+        subtitle="全面的本地SEO方法，针对地图三强、自然结果和目录可见度。"
+      />
+      <ServiceGrid items={localServices} cols={3} />
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader eyebrow="我们的流程" title="我们如何提升您的本地可见度。" light={true} />
+      <ProcessSteps items={process} dark={true} />
+    </div>
+  </section>
+
+  <!-- Auckland suburbs / areas -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="服务覆盖"
+        title="我们服务奥克兰所有区域的华人企业。"
+        subtitle="从市中心到北岸、东区、西区和南区——无论您的客户在哪里，我们都能帮到您。"
+      />
+      <div class="local-suburbs">
+        <a href="/central-auckland-web-design/" class="local-suburb-tag local-suburb-link">市中心奥克兰</a>
+        <a href="/north-shore-website-design/" class="local-suburb-tag local-suburb-link">北岸</a>
+        <a href="/west-auckland-web-design/" class="local-suburb-tag local-suburb-link">西区奥克兰</a>
+        <a href="/east-auckland-web-design/" class="local-suburb-tag local-suburb-link">东区奥克兰</a>
+        <a href="/south-auckland-web-design/" class="local-suburb-tag local-suburb-link">南区奥克兰</a>
+        {["Ponsonby", "Grey Lynn", "Remuera", "Mt Eden", "Howick", "Botany", "Newmarket", "Henderson", "Pakuranga", "Manukau", "Takapuna", "Glenfield"].map((area) => (
+          <span class="local-suburb-tag">{area}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Chinese business context section -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="专为华人企业"
+        title="了解新西兰华人市场的本地SEO。"
+        subtitle="奥克兰华人社区庞大而活跃。我们帮助您在本地华人客户和说英语的客户中都建立可见度。"
+      />
+      <div class="zh-biz-grid">
+        <div class="zh-biz-card">
+          <span class="zh-biz-icon">🌐</span>
+          <h3>双语搜索可见度</h3>
+          <p>许多奥克兰华人客户用中英文混合关键词搜索。我们确保您的企业在两种语言的搜索中都能被找到，最大化您的本地覆盖范围。</p>
+        </div>
+        <div class="zh-biz-card">
+          <span class="zh-biz-icon">📍</span>
+          <h3>华人聚集区精准定向</h3>
+          <p>Howick、Botany、Newmarket、Mt Albert——我们为奥克兰华人社区集中的区域创建落地页，帮助您的企业在这些目标社区中排名靠前。</p>
+        </div>
+        <div class="zh-biz-card">
+          <span class="zh-biz-icon">⭐</span>
+          <h3>建立可信赖的品牌声誉</h3>
+          <p>华人客户高度重视口碑和评价。我们建立系统化的评价获取流程，在Google上打造强大、可信赖的在线声誉，提升客户信任度。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <SectionHeader
+        eyebrow="定价"
+        title="奥克兰本地SEO定价"
+        subtitle="无锁定合同。每次合作都从免费本地SEO审核开始。"
+      />
+      <div class="local-pkg-grid">
+        <div class="local-pkg">
+          <h3>本地SEO 基础版</h3>
+          <p class="local-price">从 $500<span class="local-period">/月</span></p>
+          <p class="local-pkg-desc">适合希望在Google地图和本地搜索中建立初步可见度的企业。</p>
+          <ul class="local-pkg-list">
+            <li>Google商家档案完整优化</li>
+            <li>NAP引用一致性审核与修复</li>
+            <li>5个新西兰核心目录提交</li>
+            <li>本地关键词研究</li>
+            <li>评价获取策略</li>
+            <li>月度本地排名报告</li>
+          </ul>
+          <a href="/zh/website-designer-auckland/" class="local-pkg-btn">立即开始</a>
+        </div>
+        <div class="local-pkg local-pkg-highlight">
+          <span class="local-pkg-tag">最受欢迎</span>
+          <h3>本地SEO 增长版</h3>
+          <p class="local-price">从 $1,000<span class="local-period">/月</span></p>
+          <p class="local-pkg-desc">适合竞争激烈奥克兰市场的全面本地SEO方案。</p>
+          <ul class="local-pkg-list">
+            <li>包含基础版全部内容</li>
+            <li>区域专属落地页（每月1-2页）</li>
+            <li>持续引用建设（每月10+目录）</li>
+            <li>本地链接建设</li>
+            <li>竞争对手分析</li>
+            <li>月度策略通话</li>
+          </ul>
+          <a href="/zh/website-designer-auckland/" class="local-pkg-btn local-pkg-btn-accent">立即开始</a>
+        </div>
+        <div class="local-pkg">
+          <h3>本地SEO 权威版</h3>
+          <p class="local-price">从 $2,000<span class="local-period">/月</span></p>
+          <p class="local-pkg-desc">适合需要在多个区域或竞争激烈行业主导本地市场的企业。</p>
+          <ul class="local-pkg-list">
+            <li>包含增长版全部内容</li>
+            <li>多区域落地页策略</li>
+            <li>数字公关与本地媒体提及</li>
+            <li>竞争对手监控</li>
+            <li>Google商业档案帖子管理</li>
+            <li>每周报告与优先支持</li>
+          </ul>
+          <a href="/zh/website-designer-auckland/" class="local-pkg-btn">立即开始</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion items={faqs} title="本地SEO常见问题解答" subtitle="奥克兰华人企业主关于本地搜索的常见问题。" />
+    </div>
+  </section>
+
+  <!-- Areas we serve -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">服务区域</p>
+      <div class="rps-links">
+        <a href="/central-auckland-web-design/" class="rps-link">市中心奥克兰</a>
+        <a href="/north-shore-website-design/" class="rps-link">北岸</a>
+        <a href="/west-auckland-web-design/" class="rps-link">西区奥克兰</a>
+        <a href="/east-auckland-web-design/" class="rps-link">东区奥克兰</a>
+        <a href="/south-auckland-web-design/" class="rps-link">南区奥克兰</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">相关服务</p>
+      <div class="rps-links">
+        <a href="/zh/ai-seo-for-auckland-small-businesses/" class="rps-link">AI SEO 优化</a>
+        <a href="/zh/website-designer-auckland/" class="rps-link">网站设计与报价</a>
+        <a href="/google-business-profile-guide-for-auckland-businesses/" class="rps-link">Google商家档案指南</a>
+        <a href="/google-ads/" class="rps-link">Google广告</a>
+        <a href="/analytics-reporting-for-auckland-small-business-websites/" class="rps-link">数据分析与报告</a>
+        <a href="/small-business-website-design-auckland/" class="rps-link">奥克兰网页设计</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="准备好在奥克兰本地搜索中排名第一了吗？"
+    subtitle="获取免费本地SEO审核——我们将向您展示您目前的状况以及接下来应该做什么。"
+    ctaPrimary={{ text: "获取免费本地SEO审核", href: "/zh/website-designer-auckland/" }}
+    ctaSecondary={{ text: "查看AI SEO服务", href: "/zh/ai-seo-for-auckland-small-businesses/" }}
+  />
+
+</Layout>
+
+<style>
+  .local-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
+  .local-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.75; color: var(--kwd-dark); }
+
+  .local-why {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .local-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.75rem;
+  }
+  .local-why-text h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); margin-bottom: 1rem; }
+  .local-why-text p { font-size: 0.95rem; color: var(--kwd-brown); line-height: 1.75; margin-bottom: 0.75rem; }
+  .local-why-text a { color: var(--kwd-dark); font-weight: 600; }
+
+  .local-why-card-wrap { display: flex; flex-direction: column; gap: 1rem; }
+  .local-why-card {
+    background: var(--kwd-cream);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .lwc-icon { font-size: 1.5rem; }
+  .local-why-card h3 { font-family: var(--kwd-font-body); font-size: 1rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .local-why-card p { font-size: 0.875rem; color: var(--kwd-brown); margin: 0; line-height: 1.65; }
+
+  /* ── Chinese business grid ── */
+  .zh-biz-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .zh-biz-card {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .zh-biz-icon { font-size: 1.75rem; }
+  .zh-biz-card h3 { font-family: var(--kwd-font-body); font-size: 1rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .zh-biz-card p { font-size: 0.875rem; color: var(--kwd-brown); margin: 0; line-height: 1.7; }
+
+  /* ── Suburbs ── */
+  .local-suburbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  .local-suburb-tag {
+    display: inline-block;
+    background: var(--kwd-cream);
+    color: var(--kwd-dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 100px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .local-suburb-link { text-decoration: none; color: var(--kwd-dark); }
+  .local-suburb-link:hover { background: var(--kwd-dark); color: #fff; border-color: var(--kwd-dark); }
+
+  /* ── Pricing grid ── */
+  .local-pkg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .local-pkg {
+    border: 2px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: #fff;
+    transition: box-shadow 0.2s;
+    position: relative;
+  }
+  .local-pkg:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+  .local-pkg-highlight { border-color: var(--kwd-dark); background: var(--kwd-dark); }
+  .local-pkg-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.2rem 0.75rem;
+    border-radius: 100px;
+    align-self: flex-start;
+  }
+  .local-pkg h3 { font-family: var(--kwd-font-body); font-size: 1.05rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .local-pkg-highlight h3 { color: #fff; }
+  .local-price { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: var(--kwd-dark); margin: 0; }
+  .local-pkg-highlight .local-price { color: var(--kwd-yellow); }
+  .local-period { font-size: 1rem; opacity: 0.6; }
+  .local-pkg-desc { font-size: 0.875rem; color: var(--kwd-brown); margin: 0; line-height: 1.6; flex: 1; }
+  .local-pkg-highlight .local-pkg-desc { color: rgba(255,255,255,0.62); }
+  .local-pkg-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+  .local-pkg-list li { font-size: 0.875rem; color: var(--kwd-brown); padding-left: 1.25rem; position: relative; line-height: 1.5; }
+  .local-pkg-list li::before { content: "✓"; position: absolute; left: 0; font-weight: 700; color: var(--kwd-dark); font-size: 0.8rem; }
+  .local-pkg-highlight .local-pkg-list li { color: rgba(255,255,255,0.7); }
+  .local-pkg-highlight .local-pkg-list li::before { color: var(--kwd-yellow); }
+  .local-pkg-btn {
+    display: inline-block;
+    background: var(--kwd-cream);
+    color: var(--kwd-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    text-align: center;
+    transition: background 0.2s;
+    margin-top: auto;
+    text-decoration: none;
+  }
+  .local-pkg-btn:hover { background: var(--kwd-gold); }
+  .local-pkg-btn-accent { background: var(--kwd-yellow); }
+  .local-pkg-btn-accent:hover { background: var(--kwd-gold); }
+
+  /* ── Related strips ── */
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
+
+  /* ── Responsive ── */
+  @media (max-width: 860px) {
+    .local-why { grid-template-columns: 1fr; gap: 2.5rem; }
+    .zh-biz-grid { grid-template-columns: 1fr; }
+    .local-pkg-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+  }
+  @media (max-width: 600px) {
+    .zh-biz-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- Vanta.js BIRDS background for hero -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.birds.min.js"></script>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    VANTA.BIRDS({
+      el: '.hero-section',
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200,
+      minWidth: 200,
+      scale: 1.0,
+      scaleMobile: 0.75,
+      backgroundColor: 0x2c2927,
+      color1: 0xf3d97a,
+      color2: 0xfbe8a6,
+      birdSize: 1.2,
+      wingSpan: 25,
+      speedLimit: 4,
+      separation: 60,
+      alignment: 50,
+      cohesion: 50,
+      quantity: 3,
+    });
+  });
+</script>

@@ -1,0 +1,890 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import { Image } from 'astro:assets';
+import about3Img from '../../assets/general/about3.jpg';
+import about4Img from '../../assets/general/about4.jpg';
+
+const contactPage = '/zh/website-designer-auckland/';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/google-ads/",
+      "url": "https://www.kiwiwebdesign.co.nz/zh/google-ads/",
+      "name": "奥克兰Google广告服务 | SEM竞价推广 | Kiwi Web Design",
+      "description": "奥克兰Google广告管理专家。帮助本地中小企业快速获客，24-72小时见效。固定月费起$399，非按广告费比例收费。",
+      "inLanguage": "zh-Hans",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/zh/google-ads/#breadcrumb" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".zh-ga-snippet", ".zh-eyebrow", ".zh-subtitle"]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/google-ads/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.kiwiwebdesign.co.nz/zh/" },
+        { "@type": "ListItem", "position": 2, "name": "Google广告", "item": "https://www.kiwiwebdesign.co.nz/zh/google-ads/" }
+      ]
+    },
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "alternateName": "奥克兰网页设计",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "ratingCount": "50"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/google-ads/#service",
+      "name": "奥克兰Google广告管理",
+      "serviceType": "Google Ads Management",
+      "category": "Digital Marketing",
+      "description": "为奥克兰中小企业提供Google广告投放与管理服务。涵盖搜索广告、本地服务广告、再营销广告和转化追踪。固定月费起$399。",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "url": "https://www.kiwiwebdesign.co.nz/zh/google-ads/",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "广告账户初始设置",
+          "price": "499",
+          "priceCurrency": "NZD",
+          "description": "一次性Google广告账户设置费"
+        },
+        {
+          "@type": "Offer",
+          "name": "每月管理费",
+          "price": "399",
+          "priceCurrency": "NZD",
+          "priceSpecification": { "@type": "PriceSpecification", "price": "399", "priceCurrency": "NZD", "unitCode": "MON" },
+          "description": "持续每月Google广告管理——固定费用，非按广告费比例收费"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Google广告多快能产生询盘？",
+          "acceptedAnswer": { "@type": "Answer", "text": "通常在广告上线后24-72小时内即可产生询盘。这是Google广告相较于SEO的核心优势——广告一经审核通过，立即可以开始获得潜在客户联系。" }
+        },
+        {
+          "@type": "Question",
+          "name": "Google广告管理费是多少？",
+          "acceptedAnswer": { "@type": "Answer", "text": "Kiwi Web Design收取固定月度管理费，起价$399/月，另加一次性初始设置费起$499。这与您的广告投放预算分开计算。大多数奥克兰服务型企业建议广告预算最低$500/月。" }
+        },
+        {
+          "@type": "Question",
+          "name": "需要多少广告预算？",
+          "acceptedAnswer": { "@type": "Answer", "text": "对大多数奥克兰服务型企业来说，每月$500-$1,500的广告投入是合理的起点。竞争激烈的行业（如法律或装修）可能需要更多。我们会提前坦诚告知您在特定市场竞争所需的预算。" }
+        },
+        {
+          "@type": "Question",
+          "name": "Google广告和SEO哪个更适合我？",
+          "acceptedAnswer": { "@type": "Answer", "text": "两者用途不同。Google广告可立即带来询盘，但需要持续投入广告费。SEO见效慢但能积累长期免费流量。对大多数奥克兰成长型企业，建议两者结合——先用广告快速获客，同时建立SEO长期优势。" }
+        },
+        {
+          "@type": "Question",
+          "name": "你们能接管我现有的Google广告账户吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可以。我们可以审计并接管您现有的广告系列，也可以为从零开始的企业全新设置账户。无论哪种情况，我们都会先进行免费审计，了解现状和改进空间。" }
+        },
+        {
+          "@type": "Question",
+          "name": "你们按广告费比例收费吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "不。Kiwi Web Design收取固定月度管理费，而非按广告费百分比收费。这意味着我们的利益与您一致——最大化您的效果，而非鼓励您多花广告费。初始设置费起$499，月度管理费起$399。" }
+        }
+      ]
+    }
+  ]
+};
+
+const adServices = [
+  {
+    icon: "🔍",
+    title: "搜索广告",
+    desc: "在用户主动搜索您产品或服务时，让您的广告出现在Google顶部。我们建立精准定向的广告系列，把高意向买家带到您面前。",
+    items: ["关键词研究与匹配类型策略", "竞争对手差距分析", "否定关键词列表", "广告文案A/B测试"],
+  },
+  {
+    icon: "🏙️",
+    title: "本地服务广告",
+    desc: "出现在Google认证的本地结果中——Google保证或Google筛选徽章。适合希望最大化本地曝光的服务型企业。",
+    items: ["LSA设置与资质认证", "预算优化", "好评获取支持", "询盘质量追踪"],
+  },
+  {
+    icon: "🎯",
+    title: "再营销广告",
+    desc: "重新触达曾经访问但未转化的潜在客户。我们向已对您业务表现出兴趣的用户展示定向广告。",
+    items: ["受众列表创建", "展示再营销", "YouTube再营销", "动态广告创意"],
+  },
+  {
+    icon: "📊",
+    title: "转化追踪",
+    desc: "精确掌握哪些广告带来了电话、表单提交和实际收入。我们搭建完整的转化追踪体系，让每一分广告费都有据可查。",
+    items: ["Google标签管理器设置", "电话追踪", "表单提交追踪", "电商收入追踪"],
+  },
+  {
+    icon: "🛒",
+    title: "购物广告",
+    desc: "专为电商企业设计——让您的产品出现在Google购物结果顶部，配合精细化的产品数据管理。",
+    items: ["Google Merchant Center设置", "产品数据优化", "智能购物广告系列", "广告支出回报优化"],
+  },
+  {
+    icon: "📈",
+    title: "持续优化",
+    desc: "持续的月度管理，不断提升广告效果。我们测试、分析、改进——在降低单次获客成本的同时增加询盘量。",
+    items: ["每月效果审查", "出价策略优化", "质量得分提升", "广告投放时段精调"],
+  },
+];
+
+const whyUs = [
+  {
+    icon: "🚫",
+    title: "零浪费广告预算",
+    desc: "通过精准关键词定向、全面否定关键词列表和高转化落地页，确保您的预算精准触达购买意向用户，而非随意浏览者。",
+  },
+  {
+    icon: "📍",
+    title: "专为奥克兰企业打造",
+    desc: "本地市场经验确保广告精准覆盖奥克兰各区域。没有通用全国模板——每个广告系列都针对您的特定受众量身定制。",
+  },
+  {
+    icon: "🔎",
+    title: "透明数据报告",
+    desc: "您每月都会清楚了解广告的运营情况。清晰报告展示投放金额、获得询盘数、单次获客成本，以及我们正在做的改进措施。",
+  },
+  {
+    icon: "🏁",
+    title: "快速启动，快速见效",
+    desc: "与SEO不同，Google广告上线后数天内即可产生询盘。我们快速、正确地搭建广告系列，让您无需等待数月才能看到结果。",
+  },
+];
+
+const process = [
+  { step: "1", title: "免费广告审计", desc: "审查您的现有广告系列（或从头评估市场机会），找出最大的优化空间。" },
+  { step: "2", title: "制定广告策略", desc: "制定完整广告方案：关键词、广告文案、落地页、预算分配和出价策略——全部围绕您的目标定制。" },
+  { step: "3", title: "设置与上线", desc: "广告系列搭建完毕、转化追踪安装到位、广告正式上线——通常在确认方案后5个工作日内完成。" },
+  { step: "4", title: "管理与优化", desc: "持续月度管理：测试、出价调整、否定关键词维护和效果报告，不断提升投资回报率。" },
+];
+
+const industries = [
+  "工程与装修（水电、建筑）",
+  "医疗与牙科",
+  "律师事务所与专业服务",
+  "美容与健康沙龙",
+  "餐饮与酒店",
+  "电商与零售",
+  "清洁与物业服务",
+  "汽车与机械服务",
+];
+
+const reviews = [
+  { name: "Zane Barrett", company: "Barrett Access Scaffolding", text: "Charlie负责了我们的Google广告推广，第一周就开始有询盘了。报告清晰，没有专业术语，而且他真心在意效果。" },
+  { name: "Jack", company: "Show Me Shorts", text: "他们从一开始就把广告搭建得很规范——追踪了转化、合理管控预算，投资回报率一直很稳。正是我们需要的。" },
+];
+
+const faqs = [
+  { q: "Google广告多快能产生询盘？", a: "通常在广告上线后24-72小时内即可产生询盘。这是Google广告相较于SEO的核心优势——广告一经审核通过，立即可以开始获得潜在客户联系。" },
+  { q: "Google广告管理费是多少？", a: "我们的管理费起价$399/月，另加您的广告投放预算。具体费用取决于您的预算和广告系列复杂程度。对大多数奥克兰服务型企业，建议广告预算最低$500/月以产生有意义的效果。" },
+  { q: "需要多少广告预算？", a: "对大多数奥克兰服务型企业来说，每月$500-$1,500的广告投入是合理的起点。竞争激烈的行业（如法律或工程）可能需要更多预算。我们会提前坦诚告知您在特定市场竞争所需的具体投入。" },
+  { q: "Google广告和SEO哪个更适合我？", a: "两者用途不同。Google广告可立即带来询盘，但需要持续投入广告费。SEO优化见效较慢，但能积累带来长期免费流量。对大多数奥克兰成长型企业，建议两者结合——先用广告快速获客，同时建立SEO的长期优势。" },
+  { q: "你们能接管我现有的Google广告账户吗？", a: "可以。我们可以审计并接管您现有的广告系列管理，也可以为从零开始的企业全新设置账户。无论哪种情况，我们都会先进行审计，了解现状与改进空间。" },
+  { q: "你们的收费结构是怎样的？", a: "我们收取固定月度管理费，而非按广告费百分比收费。这意味着我们的利益与您完全一致——最大化效果，而非鼓励您增加广告支出。初始设置费起$499，月度管理费起$399。" },
+];
+---
+
+<Layout
+  title="奥克兰Google广告服务 | SEM竞价推广 | Kiwi Web Design"
+  description="奥克兰Google广告管理专家。帮助本地中小企业快速获客，24-72小时见效。固定月费起$399，非按广告费比例收费。免费策略咨询。"
+  canonicalURL="https://www.kiwiwebdesign.co.nz/zh/google-ads/"
+  schema={schema}
+  lang="zh-Hans"
+  alternateUrl="https://www.kiwiwebdesign.co.nz/google-ads/"
+>
+
+  <!-- Hero -->
+  <section class="zh-ga-hero">
+    <div class="container zh-ga-hero-inner">
+      <div class="zh-ga-hero-text">
+        <p class="zh-eyebrow">奥克兰 Google 广告服务</p>
+        <h1 class="zh-ga-title">本周就开始获得更多询盘。</h1>
+        <p class="zh-subtitle">为奥克兰中小企业提供专业Google广告投放与管理服务。我们设置、管理并持续优化广告系列，将高意向流量带到专为转化而设计的落地页。</p>
+        <div class="zh-ga-hero-btns">
+          <a href={contactPage} class="btn-zh-primary">预约免费咨询</a>
+          <a href="#process" class="btn-zh-outline">了解服务流程</a>
+        </div>
+        <p class="zh-note">初始设置起 NZ$499 · 固定月费，不按广告费比例收取</p>
+      </div>
+      <div class="zh-ga-hero-stats">
+        <div class="zh-stat">
+          <span class="zh-stat-num">24–72</span>
+          <span class="zh-stat-lbl">小时内开始产生询盘</span>
+        </div>
+        <div class="zh-stat">
+          <span class="zh-stat-num">$399</span>
+          <span class="zh-stat-lbl">月度管理费起价</span>
+        </div>
+        <div class="zh-stat">
+          <span class="zh-stat-num">固定</span>
+          <span class="zh-stat-lbl">月费，非按广告费比例</span>
+        </div>
+        <div class="zh-stat">
+          <span class="zh-stat-num">4.9★</span>
+          <span class="zh-stat-lbl">Google 评分</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI citability snippet -->
+  <div class="zh-ga-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> 为奥克兰中小企业提供Google广告管理服务，月度管理费固定起价 <strong>$399</strong>——非按广告费百分比收取。一次性初始设置费起 <strong>$499</strong>。服务涵盖搜索广告、本地服务广告、再营销、购物广告和转化追踪。大多数广告系列在上线后 <strong>24-72小时</strong>内即可产生询盘。建议广告预算：每月$500-$1,500。公司位于奥克兰Grey Lynn——Google评分4.9★。</p>
+    </div>
+  </div>
+
+  <!-- Why Google Ads -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <div class="zh-section-header">
+        <p class="zh-section-eyebrow">为什么选择 Google 广告</p>
+        <h2 class="zh-section-title">奥克兰获客最快速的方式。</h2>
+        <p class="zh-section-subtitle">Google广告让您的企业在潜在客户搜索的那一刻出现在结果顶部——并且只有在他们点击时才付费。</p>
+      </div>
+      <div class="zh-why-grid">
+        {whyUs.map(item => (
+          <div class="zh-why-card">
+            <span class="zh-why-icon">{item.icon}</span>
+            <h3 class="zh-why-title">{item.title}</h3>
+            <p class="zh-why-desc">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section">
+    <div class="container">
+      <div class="zh-section-header">
+        <p class="zh-section-eyebrow">我们的服务</p>
+        <h2 class="zh-section-title">全方位 Google 广告管理。</h2>
+        <p class="zh-section-subtitle">从广告系列初始设置到持续优化——运营高效Google广告所需的一切。</p>
+      </div>
+      <div class="zh-services-grid">
+        {adServices.map(svc => (
+          <div class="zh-service-card">
+            <span class="zh-service-icon">{svc.icon}</span>
+            <h3 class="zh-service-title">{svc.title}</h3>
+            <p class="zh-service-desc">{svc.desc}</p>
+            <ul class="zh-service-list">
+              {svc.items.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <div class="zh-section-header" style="color: #fff;">
+        <p class="zh-section-eyebrow" style="color: var(--kwd-yellow);">服务行业</p>
+        <h2 class="zh-section-title" style="color: #fff;">我们服务的行业。</h2>
+      </div>
+      <div class="zh-industries">
+        {industries.map(item => (
+          <div class="zh-industry-item">
+            <svg class="zh-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);" id="process">
+    <div class="container">
+      <div class="zh-section-header">
+        <p class="zh-section-eyebrow">服务流程</p>
+        <h2 class="zh-section-title">5个工作日内完成设置，快速上线。</h2>
+        <p class="zh-section-subtitle">我们行动迅速，让您不必等待数月才能开始获得询盘。</p>
+      </div>
+      <div class="zh-process-steps">
+        {process.map((step, i) => (
+          <div class="zh-process-step">
+            <span class="zh-step-num">{step.step}</span>
+            <div class="zh-step-body">
+              <h3 class="zh-step-title">{step.title}</h3>
+              <p class="zh-step-desc">{step.desc}</p>
+            </div>
+            {i < process.length - 1 && <div class="zh-step-connector" aria-hidden="true" />}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team photo band -->
+  <section class="zh-ga-team-band">
+    <Image src={about3Img} alt="Kiwi Web Design团队为奥克兰企业管理Google广告系列" width={1600} height={640} class="zh-ga-band-img" />
+    <div class="zh-ga-band-overlay">
+      <div class="container">
+        <p class="zh-ga-band-eyebrow">您广告背后的团队</p>
+        <h2 class="zh-ga-band-title">我们像管理自己的钱一样，管理每一分广告预算。</h2>
+        <a href="/zh/website-designer-auckland/" class="zh-ga-band-link">立即获取免费广告策略咨询 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section">
+    <div class="container">
+      <div class="zh-pricing-card">
+        <div class="zh-pricing-left">
+          <p class="zh-pricing-eyebrow">服务定价</p>
+          <h2 class="zh-pricing-title">简单透明的固定费用。</h2>
+          <p class="zh-pricing-desc">我们收取固定月度管理费——而非按广告费百分比收取。这意味着我们的利益始终与您一致：最大化效果，而非鼓励您增加广告支出。</p>
+          <div class="zh-pricing-tiers">
+            <div class="zh-tier">
+              <span class="zh-tier-price">起价 $499</span>
+              <span class="zh-tier-label">一次性广告系列初始设置费</span>
+            </div>
+            <div class="zh-tier">
+              <span class="zh-tier-price">起价 $399/月</span>
+              <span class="zh-tier-label">持续月度管理费</span>
+            </div>
+            <div class="zh-tier">
+              <span class="zh-tier-price">$500+/月</span>
+              <span class="zh-tier-label">建议广告投放预算（另计）</span>
+            </div>
+          </div>
+        </div>
+        <div class="zh-pricing-right">
+          <h3>管理服务包含：</h3>
+          <ul>
+            <li>关键词研究与广告系列架构</li>
+            <li>广告文案撰写与创意制作</li>
+            <li>落地页优化建议</li>
+            <li>转化追踪设置</li>
+            <li>否定关键词管理</li>
+            <li>出价持续优化</li>
+            <li>每月效果报告</li>
+            <li>直接对接专属客户经理</li>
+          </ul>
+          <a href={contactPage} class="zh-ga-cta-btn">获取免费报价</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <div class="zh-section-header">
+        <p class="zh-section-eyebrow">客户评价</p>
+        <h2 class="zh-section-title">Google广告客户怎么说。</h2>
+      </div>
+      <div class="zh-reviews-grid">
+        {reviews.map(r => (
+          <div class="zh-review-card">
+            <p class="zh-review-text">"{r.text}"</p>
+            <div class="zh-review-author">
+              <span class="zh-review-name">{r.name}</span>
+              <span class="zh-review-company">{r.company}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Free Strategy Session split -->
+  <section class="section zh-consult-section">
+    <div class="container">
+      <div class="zh-consult-split">
+        <div class="zh-consult-img-wrap">
+          <Image src={about4Img} alt="与奥克兰中小企业进行免费Google广告策略咨询" width={760} height={520} class="zh-consult-img" />
+        </div>
+        <div class="zh-consult-content">
+          <p class="zh-consult-eyebrow">免费策略咨询</p>
+          <h2 class="zh-consult-title">我们先制定计划，再谈合作。</h2>
+          <p class="zh-consult-desc">每个Google广告合作都从免费审计和策略咨询开始。我们分析您的市场、预估每次获客成本，并提供诚实的建议——即便Google广告暂时不适合您，我们也会直说。</p>
+          <ul class="zh-consult-list">
+            <li>含竞争对手广告分析</li>
+            <li>预算与单次获客成本预估</li>
+            <li>无任何强制承诺</li>
+          </ul>
+          <a href={contactPage} class="zh-consult-btn">预约免费咨询 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <div class="zh-section-header">
+        <p class="zh-section-eyebrow">常见问题</p>
+        <h2 class="zh-section-title">奥克兰企业关于Google广告的常见疑问。</h2>
+      </div>
+      <div class="zh-faqs">
+        {faqs.map(faq => (
+          <details class="zh-faq-item">
+            <summary class="zh-faq-q">{faq.q}</summary>
+            <p class="zh-faq-a">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">相关服务</p>
+      <div class="rps-links">
+        <a href="/zh/seo-auckland/" class="rps-link">SEO优化</a>
+        <a href="/zh/local-seo-for-auckland-small-businesses/" class="rps-link">本地SEO</a>
+        <a href="/zh/small-business-website-design-auckland/" class="rps-link">网页设计</a>
+        <a href="/zh/about-us/" class="rps-link">关于我们</a>
+        <a href="/zh/" class="rps-link">中文首页</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">服务区域</p>
+      <div class="rps-links">
+        <a href="/north-shore-website-design/" class="rps-link">北岸</a>
+        <a href="/south-auckland-web-design/" class="rps-link">南区</a>
+        <a href="/west-auckland-web-design/" class="rps-link">西区</a>
+        <a href="/east-auckland-web-design/" class="rps-link">东区</a>
+        <a href="/central-auckland-web-design/" class="rps-link">中区</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="准备好本周就开始获得更多询盘了吗？"
+    subtitle="免费策略咨询——我们分析您的市场并预估单次获客成本。致电 021 039 6580 或在线预约。"
+    ctaPrimary={{ text: "预约免费咨询", href: contactPage }}
+    ctaSecondary={{ text: "了解SEO服务", href: "/zh/seo-auckland/" }}
+  />
+
+</Layout>
+
+<style>
+  /* Hero */
+  .zh-ga-hero {
+    background: var(--kwd-dark);
+    color: #fff;
+    padding: 5rem 0 4rem;
+  }
+  .zh-ga-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .zh-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-yellow);
+    margin-bottom: 0.85rem;
+  }
+  .zh-ga-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+    line-height: 1.15;
+    color: #fff;
+    margin-bottom: 0.85rem;
+  }
+  .zh-subtitle {
+    font-size: 0.975rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 1.75rem;
+  }
+  .zh-ga-hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .btn-zh-primary {
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s;
+  }
+  .btn-zh-primary:hover { opacity: 0.9; }
+  .btn-zh-outline {
+    border: 2px solid rgba(255,255,255,0.5);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s;
+  }
+  .btn-zh-outline:hover { border-color: rgba(255,255,255,0.8); }
+  .zh-note {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    margin: 0;
+  }
+
+  /* Hero stats */
+  .zh-ga-hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .zh-stat {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .zh-stat-num {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.85rem;
+    color: var(--kwd-yellow);
+    line-height: 1;
+  }
+  .zh-stat-lbl {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.4;
+  }
+
+  /* AI citability snippet */
+  .zh-ga-snippet {
+    background: var(--kwd-cream);
+    border-left: 4px solid var(--kwd-gold);
+    padding: 1.1rem 0;
+  }
+  .zh-ga-snippet .container {
+    font-size: 0.92rem;
+    color: var(--kwd-dark);
+    line-height: 1.8;
+    max-width: 860px;
+  }
+  .zh-ga-snippet p { margin: 0; }
+
+  /* Section headers */
+  .zh-section-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+  }
+  .zh-section-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.6rem;
+  }
+  .zh-section-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    color: var(--kwd-dark);
+    line-height: 1.25;
+    margin-bottom: 0.65rem;
+  }
+  .zh-section-subtitle {
+    font-size: 0.9rem;
+    color: var(--kwd-brown);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Why grid */
+  .zh-why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .zh-why-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    padding: 1.75rem;
+    transition: box-shadow 0.2s;
+  }
+  .zh-why-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  .zh-why-icon { font-size: 1.75rem; display: block; margin-bottom: 0.85rem; }
+  .zh-why-title { font-size: 1rem; font-weight: 700; color: var(--kwd-dark); margin-bottom: 0.4rem; }
+  .zh-why-desc { font-size: 0.875rem; color: var(--kwd-brown); line-height: 1.7; margin: 0; }
+
+  /* Services grid */
+  .zh-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .zh-service-card {
+    background: var(--kwd-cream);
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.75rem;
+    transition: box-shadow 0.2s;
+  }
+  .zh-service-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  .zh-service-icon { font-size: 1.75rem; display: block; margin-bottom: 0.85rem; }
+  .zh-service-title { font-family: var(--kwd-font-heading); font-size: 1.05rem; color: var(--kwd-dark); margin-bottom: 0.5rem; }
+  .zh-service-desc { font-size: 0.875rem; color: var(--kwd-brown); line-height: 1.7; margin-bottom: 1rem; }
+  .zh-service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .zh-service-list li {
+    font-size: 0.82rem;
+    color: var(--kwd-dark);
+    font-weight: 600;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .zh-service-list li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-brown); }
+
+  /* Industries */
+  .zh-industries {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .zh-industry-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.8);
+  }
+  .zh-check { color: var(--kwd-yellow); flex-shrink: 0; width: 18px; height: 18px; }
+
+  /* Process steps */
+  .zh-process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    position: relative;
+  }
+  .zh-process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    position: relative;
+  }
+  .zh-step-num {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--kwd-dark);
+    color: var(--kwd-yellow);
+    font-family: var(--kwd-font-heading);
+    font-size: 1.1rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .zh-step-title { font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin-bottom: 0.25rem; }
+  .zh-step-desc { font-size: 0.85rem; color: var(--kwd-brown); line-height: 1.65; margin: 0; }
+
+  /* Team photo band */
+  .zh-ga-team-band { position: relative; height: 380px; overflow: hidden; }
+  .zh-ga-band-img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
+  .zh-ga-band-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(44,41,39,0.91) 0%, rgba(44,41,39,0.7) 55%, rgba(44,41,39,0.25) 100%);
+    display: flex;
+    align-items: center;
+  }
+  .zh-ga-band-eyebrow { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--kwd-yellow); margin-bottom: 0.75rem; }
+  .zh-ga-band-title { font-family: var(--kwd-font-heading); font-size: clamp(1.6rem, 3vw, 2.5rem); color: #fff; margin-bottom: 1.25rem; max-width: 560px; }
+  .zh-ga-band-link { font-size: 0.875rem; font-weight: 700; color: var(--kwd-yellow); text-decoration: none; border-bottom: 1.5px solid rgba(251,232,166,0.4); padding-bottom: 2px; transition: border-color 0.2s; }
+  .zh-ga-band-link:hover { border-color: var(--kwd-yellow); }
+
+  /* Pricing card */
+  .zh-pricing-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    background: var(--kwd-dark);
+    border-radius: 20px;
+    padding: 3rem;
+    color: #fff;
+  }
+  .zh-pricing-eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--kwd-yellow); margin-bottom: 0.75rem; }
+  .zh-pricing-title { font-family: var(--kwd-font-heading); font-size: clamp(1.5rem, 2.5vw, 2rem); color: #fff; margin-bottom: 0.75rem; }
+  .zh-pricing-desc { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 2rem; }
+  .zh-pricing-tiers { display: flex; flex-direction: column; gap: 1rem; }
+  .zh-tier { display: flex; flex-direction: column; gap: 0.2rem; padding: 1rem; background: rgba(255,255,255,0.07); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); }
+  .zh-tier-price { font-family: var(--kwd-font-heading); font-size: 1.6rem; color: var(--kwd-yellow); }
+  .zh-tier-label { font-size: 0.8rem; color: rgba(255,255,255,0.55); }
+  .zh-pricing-right h3 { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .zh-pricing-right ul { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .zh-pricing-right li { font-size: 0.875rem; color: rgba(255,255,255,0.72); padding-left: 1.25rem; position: relative; }
+  .zh-pricing-right li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-yellow); font-weight: 700; }
+  .zh-ga-cta-btn {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.875rem 2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .zh-ga-cta-btn:hover { opacity: 0.9; }
+
+  /* Reviews */
+  .zh-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .zh-review-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .zh-review-text { font-size: 0.9rem; color: var(--kwd-dark); line-height: 1.75; margin: 0; font-style: italic; }
+  .zh-review-author { display: flex; flex-direction: column; gap: 0.15rem; }
+  .zh-review-name { font-size: 0.875rem; font-weight: 700; color: var(--kwd-dark); }
+  .zh-review-company { font-size: 0.8rem; color: var(--kwd-brown); }
+
+  /* Consultation split */
+  .zh-consult-section { background: var(--kwd-cream); }
+  .zh-consult-split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
+  .zh-consult-img-wrap { border-radius: 16px; overflow: hidden; box-shadow: 0 20px 56px rgba(44,41,39,0.14); aspect-ratio: 3/2; }
+  .zh-consult-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+  .zh-consult-img-wrap:hover .zh-consult-img { transform: scale(1.03); }
+  .zh-consult-eyebrow { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--kwd-brown); margin-bottom: 0.75rem; }
+  .zh-consult-title { font-family: var(--kwd-font-heading); font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--kwd-dark); margin-bottom: 1rem; }
+  .zh-consult-desc { font-size: 0.95rem; color: var(--kwd-brown); line-height: 1.75; margin-bottom: 1.5rem; }
+  .zh-consult-list { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .zh-consult-list li { font-size: 0.875rem; font-weight: 600; color: var(--kwd-dark); padding-left: 1.4rem; position: relative; }
+  .zh-consult-list li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-brown); font-weight: 700; }
+  .zh-consult-btn { display: inline-block; background: var(--kwd-dark); color: #fff; padding: 0.875rem 1.75rem; border-radius: 6px; font-size: 0.875rem; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+  .zh-consult-btn:hover { background: var(--kwd-brown); }
+
+  /* FAQ */
+  .zh-faqs { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
+  .zh-faq-item { border-bottom: 1px solid rgba(0,0,0,0.1); }
+  .zh-faq-q {
+    cursor: pointer;
+    padding: 1.1rem 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--kwd-dark);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.5;
+  }
+  .zh-faq-q::-webkit-details-marker { display: none; }
+  .zh-faq-q::after { content: "+"; font-size: 1.4rem; color: var(--kwd-brown); flex-shrink: 0; margin-left: 1rem; }
+  .zh-faq-item[open] .zh-faq-q::after { content: "−"; }
+  .zh-faq-a { font-size: 0.9rem; color: var(--kwd-brown); line-height: 1.75; padding: 0 0 1.25rem; margin: 0; }
+
+  /* Related strip */
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .zh-ga-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .zh-services-grid { grid-template-columns: repeat(2, 1fr); }
+    .zh-pricing-card { grid-template-columns: 1fr; gap: 2.5rem; }
+    .zh-process-steps { grid-template-columns: repeat(2, 1fr); }
+    .zh-consult-split { grid-template-columns: 1fr; gap: 2.5rem; }
+    .zh-ga-team-band { height: 280px; }
+  }
+  @media (max-width: 680px) {
+    .zh-why-grid { grid-template-columns: 1fr; }
+    .zh-services-grid { grid-template-columns: 1fr; }
+    .zh-industries { grid-template-columns: repeat(2, 1fr); }
+    .zh-reviews-grid { grid-template-columns: 1fr; }
+    .zh-process-steps { grid-template-columns: 1fr; }
+    .zh-ga-hero-stats { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 420px) {
+    .zh-industries { grid-template-columns: 1fr; }
+  }
+</style>

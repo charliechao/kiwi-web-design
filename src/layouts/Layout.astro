@@ -9,9 +9,13 @@ interface Props {
   canonicalURL?: string;
   schema?: Record<string, unknown> | Record<string, unknown>[];
   lang?: string;
+  alternateUrl?: string;
 }
 
-const { title, description, canonicalURL, schema, lang = 'en-NZ' } = Astro.props;
+const { title, description, canonicalURL, schema, lang = 'en-NZ', alternateUrl } = Astro.props;
+
+const isZh = lang.startsWith('zh');
+const altLang = isZh ? 'en-NZ' : 'zh-Hans';
 
 const OG_IMAGE = 'https://www.kiwiwebdesign.co.nz/og-image.png';
 
@@ -33,6 +37,15 @@ const schemaStr = schema
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={resolvedCanonical} />
+
+    <!-- hreflang for bilingual pages -->
+    {alternateUrl && (
+      <>
+        <link rel="alternate" hreflang={lang} href={resolvedCanonical} />
+        <link rel="alternate" hreflang={altLang} href={alternateUrl} />
+        <link rel="alternate" hreflang="x-default" href={isZh ? alternateUrl : resolvedCanonical} />
+      </>
+    )}
 
     <!-- Open Graph -->
     <meta property="og:type"        content="website" />

@@ -10,6 +10,13 @@ export default defineConfig({
   output: 'static',
   site: 'https://www.kiwiwebdesign.co.nz',
   trailingSlash: 'always',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   adapter: cloudflare({
     imageService: 'compile', // use Sharp at build time for prerendered pages
   }),

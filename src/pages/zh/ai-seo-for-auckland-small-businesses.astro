@@ -1,0 +1,879 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import ServiceGrid from '../../components/ServiceGrid.astro';
+import StatsRow from '../../components/StatsRow.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import TestimonialGrid from '../../components/TestimonialGrid.astro';
+import { Image } from 'astro:assets';
+import consultImg from '../../assets/general/about5.webp';
+import aucklandCBD from '../../assets/general/Auckland-CBD.jpg';
+import Icon from '../../components/Icon.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/ai-seo-for-auckland-small-businesses/",
+      "url": "https://www.kiwiwebdesign.co.nz/zh/ai-seo-for-auckland-small-businesses/",
+      "name": "奥克兰AI SEO与GEO优化服务 | 人工智能搜索优化 | Kiwi Web Design",
+      "description": "专为奥克兰华人中小企业提供AI SEO及GEO（生成式引擎优化）服务。在Google排名靠前，同时被ChatGPT、Perplexity、Gemini及Google AI摘要引用。从$500/月起。",
+      "inLanguage": "zh-Hans",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/zh/ai-seo-for-auckland-small-businesses/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".aiseo-snippet", "h1"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/ai-seo-for-auckland-small-businesses/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.kiwiwebdesign.co.nz/zh/" },
+        { "@type": "ListItem", "position": 2, "name": "AI SEO 奥克兰", "item": "https://www.kiwiwebdesign.co.nz/zh/ai-seo-for-auckland-small-businesses/" }
+      ]
+    },
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "alternateName": "奥克兰网页设计",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/ai-seo-for-auckland-small-businesses/#service",
+      "name": "AI SEO 与生成式引擎优化（GEO）— 奥克兰",
+      "serviceType": "AI SEO",
+      "category": "数字营销",
+      "description": "为奥克兰华人中小企业提供AI SEO及GEO服务，帮助您在Google排名靠前，同时被ChatGPT、Perplexity、Gemini、Claude及Google AI摘要引用。从$500/月起。",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "url": "https://www.kiwiwebdesign.co.nz/zh/ai-seo-for-auckland-small-businesses/",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "500",
+        "highPrice": "2500",
+        "priceCurrency": "NZD",
+        "priceSpecification": { "@type": "PriceSpecification", "valueAddedTaxIncluded": false, "unitCode": "MON" }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "什么是AI SEO，它与传统SEO有什么区别？",
+          "acceptedAnswer": { "@type": "Answer", "text": "传统SEO专注于在Google蓝色链接结果中排名。AI SEO（也称为生成式引擎优化，即GEO）专注于让您的内容在Google AI摘要、ChatGPT、Perplexity等AI生成答案中被引用或展示。GEO在传统SEO基础上增加了实体优化、可引用性结构化和llms.txt配置等新层次。" }
+        },
+        {
+          "@type": "Question",
+          "name": "奥克兰小企业真的需要关注AI搜索吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "是的，越来越重要。Google AI摘要目前出现在58%以上的搜索结果中，并在全球范围内持续推广。如果有人搜索「奥克兰最好的水管工」，Google生成一个AI回答，您的企业要么出现在其中，要么就被排除在外。我们帮助您出现在其中。" }
+        },
+        {
+          "@type": "Question",
+          "name": "如何让企业在ChatGPT或Perplexity中被引用？",
+          "acceptedAnswer": { "@type": "Answer", "text": "AI系统从可抓取的网络内容、第三方提及和结构化数据中获取信息。我们通过以下方式提高您的可引用性：将内容结构化为直接答案、添加完整的结构化数据标记、在第三方网站建立权威提及，以及确保您的Google商家档案和目录信息完整一致。" }
+        },
+        {
+          "@type": "Question",
+          "name": "什么是GEO分数？",
+          "acceptedAnswer": { "@type": "Answer", "text": "GEO（生成式引擎优化）分数衡量AI系统引用您内容的可能性。我们评估内容可引用性、结构化数据完整性、AI爬虫技术可访问性以及品牌在AI训练来源中的提及情况等因素。" }
+        },
+        {
+          "@type": "Question",
+          "name": "AI SEO会取代传统SEO吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "不会——它是对传统SEO的扩展。传统排名信号（链接、速度、移动端表现、关键词相关性）仍然重要。AI SEO在此基础上增加了新的优化层次。" }
+        },
+        {
+          "@type": "Question",
+          "name": "AI SEO的费用是多少？",
+          "acceptedAnswer": { "@type": "Answer", "text": "AI SEO套餐从每月$500起，适合基础GEO配置。完整的AI SEO策略和内容制作根据行业竞争程度和内容量，费用在$1,000至$2,500/月之间。" }
+        },
+        {
+          "@type": "Question",
+          "name": "GEO与AEO（答案引擎优化）有什么区别？",
+          "acceptedAnswer": { "@type": "Answer", "text": "GEO（生成式引擎优化）专注于在ChatGPT、Perplexity等工具的AI生成内容中被引用。AEO（答案引擎优化）专注于出现在传统搜索的答案框和精选摘要中。两者的内容策略相似——结构化答案、结构化数据标记和权威信号。我们两者都涵盖。" }
+        },
+        {
+          "@type": "Question",
+          "name": "什么是llms.txt，我的网站需要它吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "llms.txt是一种新兴标准——类似于robots.txt——帮助AI系统理解您网站的结构和关键内容。它告诉AI爬虫您的业务是什么、哪些页面最重要以及如何解读您的网站。目前大多数新西兰网络公司还没有实施这一标准，但我们已经部署了。" }
+        },
+        {
+          "@type": "Question",
+          "name": "如何追踪AI引用和提及情况？",
+          "acceptedAnswer": { "@type": "Answer", "text": "我们监控您的品牌在各AI平台上的表现，包括Google AI摘要、ChatGPT、Perplexity和Gemini。月度报告展示您被引用的位置、触发提及的查询词以及需要改进的方面。" }
+        },
+        {
+          "@type": "Question",
+          "name": "你们能帮助我的企业出现在Reddit和Quora上吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可以。AI系统在生成答案时非常重视Reddit和Quora等社区平台。我们通过有价值、权威的内容在这些平台上建立真实的存在感，将您的企业定位为行业可信来源，从而直接提高被AI工具引用的机会。" }
+        }
+      ]
+    }
+  ]
+};
+
+const stats = [
+  { number: "58%", label: "的搜索结果现已显示AI生成答案（Google AI摘要）" },
+  { number: "40%", label: "的消费者使用AI工具研究产品和服务" },
+  { number: "50+", label: "家新西兰企业通过Kiwi Web Design实现排名提升" },
+  { number: "4.9★", label: "Google综合评分（来自所有客户评价）" },
+];
+
+const services = [
+  {
+    icon: "🤖",
+    title: "生成式引擎优化（GEO）",
+    desc: "将您的内容结构化，让ChatGPT、Perplexity、Google AI摘要和Gemini引用您——而不仅仅是在蓝色链接结果中排名。",
+    items: ["AI可引用性内容审核", "答案优先内容结构化", "实体与主题覆盖", "llms.txt配置"],
+  },
+  {
+    icon: "🏷️",
+    title: "AI就绪结构化数据标记",
+    desc: "全面的JSON-LD结构化数据，向AI系统说明您是谁、您做什么以及为什么您具有权威性。",
+    items: ["LocalBusiness与Service结构化数据", "FAQ与HowTo标记", "speakable属性", "sameAs实体链接"],
+  },
+  {
+    icon: "📝",
+    title: "AI辅助内容策略",
+    desc: "我们使用AI工具研究竞争对手内容缺口、识别问题集群，并大规模生产与搜索意图匹配的内容。",
+    items: ["关键词与主题聚类", "竞争对手内容缺口分析", "AI起草、人工审核的文案", "内容日历规划"],
+  },
+  {
+    icon: "⚡",
+    title: "技术SEO与核心网页指标",
+    desc: "快速加载、可抓取、移动端优先的网站，从第一天起就满足Google的技术排名要求。",
+    items: ["核心网页指标优化", "爬取效率提升", "网站地图与robots.txt", "页面速度审核与修复"],
+  },
+  {
+    icon: "🗺️",
+    title: "本地AI SEO",
+    desc: "出现在Google地图、本地AI摘要和「附近」搜索中。我们优化您的Google商家档案和本地内容足迹。",
+    items: ["Google商家档案优化", "本地结构化数据标记", "区域落地页", "评价增长策略"],
+  },
+  {
+    icon: "📊",
+    title: "AI搜索可见度追踪",
+    desc: "我们不仅追踪排名，还追踪您的品牌在AI生成答案中的表现——这是大多数机构忽略的新指标。",
+    items: ["AI提及监控", "GBP洞察报告", "Search Console集成", "月度AI可见度报告"],
+  },
+  {
+    icon: "💬",
+    title: "社区与平台可见度",
+    desc: "AI系统在生成答案时非常重视Reddit、Quora和论坛。我们在AI模型最信任的平台上建立您的存在感。",
+    items: ["Reddit与Quora权威建设", "YouTube视频SEO", "行业论坛存在感", "平台专属内容"],
+  },
+  {
+    icon: "📰",
+    title: "数字公关与品牌权威",
+    desc: "在可信网站上获得提及，建立AI系统用来决定引用对象的实体权威。我们让您的品牌出现在重要的地方。",
+    items: ["新西兰媒体与目录外联", "行业出版物提及", "品牌实体澄清", "权威信号建设"],
+  },
+];
+
+const aiBenefit = [
+  { icon: "🔍", title: "Google AI摘要", desc: "AI生成的摘要出现在大多数搜索的自然结果之上。我们用答案优先段落和FAQ结构化数据来让您的内容被纳入其中。", items: ["答案优先内容结构化", "FAQ与HowTo结构化数据", "精选摘要定向优化"] },
+  { icon: "💬", title: "ChatGPT 与 SearchGPT", desc: "当客户向ChatGPT询问本地服务时，您的企业应该出现在其中。我们建立实体权威和第三方引用，供ChatGPT参考。", items: ["实体权威建设", "第三方引用开发", "上下文结构化数据"] },
+  { icon: "🔗", title: "Perplexity", desc: "Perplexity以链接形式引用来源——使其成为AI工具中最直接的流量驱动器。我们优化您的内容以获得来源归因。", items: ["来源归因优化", "权威链接内容", "值得引用的格式"] },
+  { icon: "⭐", title: "Gemini 与 Bing Copilot", desc: "Google Gemini和Microsoft Copilot都重视结构化数据和Bing站长信号。我们确保您的结构化数据和索引覆盖两个生态系统。", items: ["Bing站长工具配置", "针对Copilot的结构化数据", "跨平台结构化数据"] },
+  { icon: "🤖", title: "Claude", desc: "Anthropic的Claude使用llms.txt和可抓取内容来了解企业。我们为Claude的索引配置爬虫访问权限和内容结构。", items: ["llms.txt配置", "ClaudeBot爬虫访问", "AI可读内容结构"] },
+];
+
+const process = [
+  { step: "1", title: "AI可见度审核", desc: "我们审核您目前在Google、AI摘要和AI聊天工具中的可见度。您将清楚地了解您出现的位置——以及您缺失的位置。" },
+  { step: "2", title: "策略与内容规划", desc: "我们识别最高影响力的关键词集群、AI答案机会和结构化数据缺口。为您的行业量身定制优先路线图。" },
+  { step: "3", title: "实施执行", desc: "技术修复、结构化数据标记、内容制作、GBP优化和页面SEO——按结构化月度冲刺部署。" },
+  { step: "4", title: "追踪与报告", desc: "月度报告涵盖排名、自然流量、AI引用和GBP洞察——让您看到每一分钱的回报。" },
+];
+
+const reviews = [
+  { name: "Marcus Tane", company: "Tane Scaffolding Ltd", text: "Charlie在不到两周内从零开始建立了我们的网站。我们从没有任何网络存在，到在「奥克兰脚手架」上排在第一页。咨询在第一个月就开始涌来，物超所值。" },
+  { name: "Raj Sharma", company: "Sharma Electrical", text: "之前我在网上几乎没有获得任何咨询。新网站上线三个月内，我每周仅从网站就能接到两到三个电话。Charlie同时设置了Google广告，回报已经翻了好几倍。" },
+  { name: "Tom Blackwood", company: "Blackwood Plumbing", text: "之前有个基本网站但没带来任何业务。Charlie修复了SEO，重写了主页，并设置了针对紧急水管工搜索的Google广告活动。这是我今年做的最好的商业投资，现在每天电话不断。" },
+];
+
+const faqs = [
+  { q: "什么是AI SEO，它与传统SEO有什么区别？", a: "传统SEO专注于在Google蓝色链接结果中排名。AI SEO（也称为生成式引擎优化，即GEO）专注于让您的内容在Google AI摘要、ChatGPT、Perplexity等AI生成答案中被引用或展示。这些技术部分重叠——结构化内容、结构化数据标记、权威信号——但GEO增加了实体优化、可引用性结构化和llms.txt配置等新层次。" },
+  { q: "奥克兰小企业真的需要关注AI搜索吗？", a: "越来越重要。Google AI摘要目前出现在美国超过58%的搜索中，并在全球持续推广。如果有人搜索「奥克兰最好的水管工」，Google生成一个AI回答，您的企业要么出现在其中，要么就被排除在外。我们帮助您出现在其中。" },
+  { q: "如何让企业在ChatGPT或Perplexity中被引用？", a: "AI系统从可抓取的网络内容、第三方提及和结构化数据中获取信息。我们通过以下方式提高您的可引用性：将内容结构化为直接答案、添加完整的结构化数据标记、在第三方网站建立权威提及，以及确保您的GBP和目录存在完整一致。" },
+  { q: "什么是GEO分数？", a: "GEO（生成式引擎优化）分数衡量AI系统引用您内容的可能性。我们评估内容可引用性、结构化数据完整性、AI爬虫技术可访问性以及品牌在AI训练来源中的提及情况等因素。" },
+  { q: "AI SEO会取代传统SEO吗？", a: "不会——它是对传统SEO的扩展。传统排名信号（链接、速度、移动端表现、关键词相关性）仍然重要。AI SEO在此基础上增加了新的优化层次。我们同时提供两者——请参阅我们的完整<a href=\"/zh/website-designer-auckland/\">SEO服务</a>和<a href=\"/zh/local-seo-for-auckland-small-businesses/\">本地SEO</a>服务。" },
+  { q: "AI SEO的费用是多少？", a: "我们的AI SEO套餐从每月$500起，适合基础GEO配置。完整的AI SEO策略和内容制作根据行业竞争程度和内容量，费用在$1,000至$2,500/月之间。详见我们的<a href=\"#pricing\">定价部分</a>。" },
+  { q: "GEO与AEO（答案引擎优化）有什么区别？", a: "GEO（生成式引擎优化）专注于在ChatGPT、Perplexity等工具的AI生成内容中被引用。AEO（答案引擎优化）专注于出现在传统搜索的答案框和精选摘要中。两者的内容策略相似——结构化答案、结构化数据标记和权威信号。我们的AI SEO服务两者都涵盖。" },
+  { q: "什么是llms.txt，我的网站需要它吗？", a: "llms.txt是一种新兴标准——类似于robots.txt——帮助AI系统理解您网站的结构和关键内容。它告诉AI爬虫您的业务是什么、哪些页面最重要以及如何解读您的网站。目前大多数新西兰网络公司还没有实施这一标准。我们已经部署了——我们自己的网站有一个，并为每位客户配置。" },
+  { q: "如何追踪AI引用和提及情况？", a: "我们监控您的品牌在各AI平台上的表现，包括Google AI摘要、ChatGPT、Perplexity和Gemini。月度报告展示您被引用的位置、触发提及的查询词以及接下来需要填补的缺口。" },
+  { q: "你们能帮助我的企业出现在Reddit和Quora上吗？", a: "可以。AI系统在生成答案时非常重视Reddit和Quora等社区平台。我们通过有价值、权威的内容在这些平台上建立真实的存在感，将您的企业定位为行业可信来源——这直接提高了被AI工具引用的机会。" },
+];
+---
+
+<Layout
+  lang="zh-Hans"
+  title="奥克兰AI SEO与GEO优化服务 | 人工智能搜索优化 | Kiwi Web Design"
+  description="专为奥克兰华人中小企业提供AI SEO及GEO（生成式引擎优化）服务。在Google排名靠前，同时被ChatGPT、Perplexity、Gemini及Google AI摘要引用。从$500/月起。"
+  canonicalURL="https://www.kiwiwebdesign.co.nz/zh/ai-seo-for-auckland-small-businesses/"
+  alternateUrl="https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="奥克兰 AI SEO 专家"
+    title="Google排名。AI引用。两者兼得。"
+    subtitle="我们为奥克兰企业优化Google AI摘要、ChatGPT、Perplexity、Gemini和Claude——无论您的客户如何搜索，都能找到您并引用您。"
+    badgeText="奥克兰AI SEO与GEO专家"
+    ctaPrimary={{ text: "获取免费AI SEO审核", href: "/zh/website-designer-auckland/" }}
+    ctaSecondary={{ text: "了解服务详情", href: "#services" }}
+  />
+
+  <StatsRow items={stats} />
+
+  <!-- AI citability snippet -->
+  <div class="aiseo-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> 为奥克兰企业提供AI SEO及生成式引擎优化（GEO）服务——从<strong>$500/月</strong>起。服务包括结构化数据标记、llms.txt配置、AI爬虫访问设置、实体权威建设，以及为ChatGPT、Perplexity、Gemini、Google AI摘要和Claude被引用而优化的内容结构。总部位于Grey Lynn，奥克兰——50+客户4.9星Google评分。无锁定合同。</p>
+    </div>
+  </div>
+
+  <!-- Authority / Trust strip -->
+  <section class="aiseo-trust-strip">
+    <div class="container">
+      <div class="aiseo-trust-inner">
+        <div class="aiseo-trust-text">
+          <p class="aiseo-trust-eyebrow">为什么选择 Kiwi Web Design</p>
+          <h2>奥克兰AI搜索专家——不是附加服务。</h2>
+          <p>大多数机构将AI SEO视为事后考虑。我们从第一天起就将其融入每个网站和策略中。我们自己的网站运行在Astro上——这是一个现代静态框架，比WordPress加载更快，也更易于AI爬虫解析。在大多数机构甚至还不知道这些标准存在之前，我们已经部署了llms.txt、配置了AI爬虫访问权限并实施了全面的结构化数据标记。</p>
+        </div>
+        <div class="aiseo-trust-badges">
+          <div class="aiseo-trust-badge">
+            <span class="atb-num">50+</span>
+            <span class="atb-lbl">新西兰企业实现排名</span>
+          </div>
+          <div class="aiseo-trust-badge">
+            <span class="atb-num">4.9★</span>
+            <span class="atb-lbl">Google评分</span>
+          </div>
+          <div class="aiseo-trust-badge">
+            <span class="atb-num">llms.txt</span>
+            <span class="atb-lbl">已在我们自己网站部署</span>
+          </div>
+          <div class="aiseo-trust-badge">
+            <span class="atb-num">$0</span>
+            <span class="atb-lbl">锁定合同费用</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why AI search matters — platform-specific strategies -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="AI搜索变革"
+        title="搜索正在改变。您的SEO策略也应随之改变。"
+        subtitle="AI生成答案现已出现在超过一半的搜索结果之上。我们为您的客户使用的每个平台进行优化。"
+      />
+      <div class="aiseo-engines">
+        {aiBenefit.map(({ icon, title, desc, items }) => (
+          <div class="aiseo-engine-card">
+            <span class="aiseo-eng-icon"><Icon name={icon} size={24} /></span>
+            <h3 class="aiseo-eng-title">{title}</h3>
+            <p class="aiseo-eng-desc">{desc}</p>
+            {items && (
+              <ul class="aiseo-eng-items">
+                {items.map((item: string) => <li>{item}</li>)}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <SectionHeader
+        eyebrow="AI SEO 服务"
+        title="现代搜索优化的每一个层次。"
+        subtitle="从技术基础到AI可引用内容和数字公关——我们涵盖2026年及以后所有重要的排名信号。"
+      />
+      <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <!-- Results strip (dark) -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader eyebrow="真实成效" title="我们客户的成果。" light={true} />
+      <div class="seo-results">
+        <div class="seo-result">
+          <span class="sr-num">+125%</span>
+          <span class="sr-label">报价咨询量增长</span>
+          <span class="sr-industry">脚手架企业</span>
+        </div>
+        <div class="seo-result">
+          <span class="sr-num">3.8×</span>
+          <span class="sr-label">优质询盘增加</span>
+          <span class="sr-industry">建筑与施工行业</span>
+        </div>
+        <div class="seo-result">
+          <span class="sr-num">+87%</span>
+          <span class="sr-label">自然流量增长</span>
+          <span class="sr-industry">水管业务</span>
+        </div>
+        <div class="seo-result">
+          <span class="sr-num">3–6月</span>
+          <span class="sr-label">平均见效时间</span>
+          <span class="sr-industry">大多数奥克兰企业</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What traditional vs AI SEO looks like -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="传统SEO vs AI SEO"
+        title="我们的不同之处。"
+        light={true}
+        subtitle="标准SEO机构优化蓝色链接。我们优化完整的搜索生态。"
+      />
+      <div class="aiseo-compare">
+        <div class="aiseo-compare-col">
+          <p class="aiseo-compare-label">仅传统SEO</p>
+          <ul class="aiseo-compare-list aiseo-compare-list--old">
+            <li>优化页面标题和Meta描述</li>
+            <li>建立外链</li>
+            <li>定向关键词排名</li>
+            <li>提升页面速度</li>
+          </ul>
+        </div>
+        <div class="aiseo-compare-divider">+</div>
+        <div class="aiseo-compare-col aiseo-compare-col--new">
+          <p class="aiseo-compare-label aiseo-compare-label--new">我们的AI SEO额外提供</p>
+          <ul class="aiseo-compare-list aiseo-compare-list--new">
+            <li>将内容结构化为AI可引用的直接答案</li>
+            <li>添加完整JSON-LD结构化数据（speakable、FAQ、HowTo）</li>
+            <li>通过第三方提及建立实体权威</li>
+            <li>配置llms.txt和AI爬虫访问权限</li>
+            <li>针对AI摘要和精选摘要优化</li>
+            <li>每月追踪AI引用提及情况</li>
+            <li>在Reddit、Quora和YouTube建立社区存在感</li>
+            <li>配置AI爬虫访问（ChatGPT-User、PerplexityBot、ClaudeBot）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section aiseo-process-section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <div class="aiseo-process-split">
+        <div class="aiseo-process-content">
+          <SectionHeader
+            eyebrow="工作流程"
+            title="审核、规划、构建、报告。"
+            subtitle="结构化月度合作，效果随时间持续复利增长。"
+          />
+          <ProcessSteps items={process} />
+        </div>
+        <div class="aiseo-process-img-wrap">
+          <Image src={consultImg} alt="SEO策略咨询 — Kiwi Web Design 奥克兰" width={600} height={700} class="aiseo-process-img" />
+          <div class="aiseo-process-pill">含免费AI可见度审核</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader eyebrow="客户评价" title="我们的SEO客户怎么说。" />
+      <TestimonialGrid items={reviews} cols={3} />
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section" style="background: var(--kwd-cream);" id="pricing">
+    <div class="container">
+      <SectionHeader
+        eyebrow="定价"
+        title="奥克兰企业AI SEO定价"
+        subtitle="无锁定合同。每次合作都从免费AI可见度审核开始。"
+      />
+      <div class="seo-pkg-grid">
+        <div class="seo-pkg">
+          <h3>AI SEO 基础版</h3>
+          <p class="seo-price">从 $500<span class="seo-period">/月</span></p>
+          <p class="seo-pkg-desc">适合希望在基础SEO之外获得AI就绪技术配置的企业。</p>
+          <ul class="seo-pkg-list">
+            <li>AI就绪结构化数据标记（JSON-LD）</li>
+            <li>llms.txt配置</li>
+            <li>Google商家档案优化</li>
+            <li>AI爬虫访问配置</li>
+            <li>最多5个页面的页面SEO</li>
+            <li>月度AI可见度报告</li>
+          </ul>
+          <a href="/zh/website-designer-auckland/" class="seo-pkg-btn">立即开始</a>
+        </div>
+        <div class="seo-pkg seo-pkg-highlight">
+          <span class="seo-pkg-tag">最受欢迎</span>
+          <h3>GEO 增长版</h3>
+          <p class="seo-price">从 $1,000<span class="seo-period">/月</span></p>
+          <p class="seo-pkg-desc">适合奥克兰竞争市场的完整GEO + 传统SEO方案。</p>
+          <ul class="seo-pkg-list">
+            <li>包含AI SEO基础版全部内容</li>
+            <li>AI可引用性内容审核</li>
+            <li>实体与主题优化</li>
+            <li>内容创作（每月2页）</li>
+            <li>链接建设与引用</li>
+            <li>月度绩效报告</li>
+          </ul>
+          <a href="/zh/website-designer-auckland/" class="seo-pkg-btn seo-pkg-btn-accent">立即开始</a>
+        </div>
+        <div class="seo-pkg">
+          <h3>AI 权威版</h3>
+          <p class="seo-price">从 $2,500<span class="seo-period">/月</span></p>
+          <p class="seo-pkg-desc">适合竞争激烈行业的最大化AI可见度方案。</p>
+          <ul class="seo-pkg-list">
+            <li>包含GEO增长版全部内容</li>
+            <li>数字公关与品牌权威建设</li>
+            <li>社区平台可见度</li>
+            <li>高级结构化数据（speakable、sameAs）</li>
+            <li>竞争对手AI可见度监控</li>
+            <li>每周报告与策略通话</li>
+          </ul>
+          <a href="/zh/website-designer-auckland/" class="seo-pkg-btn">立即开始</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Auckland CBD photo strip -->
+  <div class="aiseo-city-strip">
+    <Image src={aucklandCBD} alt="奥克兰CBD俯瞰 — Kiwi Web Design 服务奥克兰各地企业" width={1400} height={420} class="aiseo-city-img" />
+    <div class="aiseo-city-overlay">
+      <p class="aiseo-city-tag">奥克兰本地 · 服务全新西兰</p>
+      <p class="aiseo-city-line">帮助奥克兰华人企业在Google排名靠前——并被AI引用。</p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="AI SEO 常见问题解答"
+        subtitle="奥克兰企业关于AI搜索、GEO和生成式引擎优化的常见问题。"
+      />
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">相关服务</p>
+      <div class="rps-links">
+        <a href="/zh/local-seo-for-auckland-small-businesses/" class="rps-link">奥克兰本地SEO</a>
+        <a href="/zh/website-designer-auckland/" class="rps-link">网站设计与报价</a>
+        <a href="/seo-auckland/" class="rps-link">SEO服务奥克兰（英文）</a>
+        <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO Auckland（英文）</a>
+        <a href="/analytics-reporting-for-auckland-small-business-websites/" class="rps-link">数据分析与报告</a>
+        <a href="/google-business-profile-guide-for-auckland-businesses/" class="rps-link">Google商家档案指南</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="准备好在Google和AI答案中排名靠前了吗？"
+    subtitle="免费AI SEO审核——我们将向您展示您目前出现在哪里，以及您正在错过什么。"
+    ctaPrimary={{ text: "获取免费AI SEO审核", href: "/zh/website-designer-auckland/" }}
+    ctaSecondary={{ text: "查看所有SEO服务", href: "/zh/local-seo-for-auckland-small-businesses/" }}
+  />
+
+</Layout>
+
+<style>
+  /* ── Citability snippet ── */
+  .aiseo-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
+  .aiseo-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.75; color: var(--kwd-dark); }
+
+  /* ── Trust strip ── */
+  .aiseo-trust-strip {
+    background: var(--kwd-dark);
+    padding: 3.5rem 0;
+  }
+  .aiseo-trust-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .aiseo-trust-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin: 0 0 0.75rem;
+  }
+  .aiseo-trust-text h2 {
+    font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+    color: #fff;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+  }
+  .aiseo-trust-text p:not(.aiseo-trust-eyebrow) {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    margin: 0;
+  }
+  .aiseo-trust-badges {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .aiseo-trust-badge {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    text-align: center;
+  }
+  .atb-num {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.5rem;
+    color: var(--kwd-yellow);
+    line-height: 1;
+  }
+  .atb-lbl {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ── AI engine platform cards ── */
+  .aiseo-engines {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .aiseo-engine-card {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .aiseo-eng-title { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .aiseo-eng-desc { font-size: 0.83rem; color: var(--kwd-brown); line-height: 1.65; margin: 0; }
+  .aiseo-eng-items {
+    list-style: none;
+    padding: 0;
+    margin: 0.25rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .aiseo-eng-items li {
+    font-size: 0.78rem;
+    color: var(--kwd-dark);
+    font-weight: 500;
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.4;
+  }
+  .aiseo-eng-items li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--kwd-dark);
+    font-weight: 700;
+    font-size: 0.7rem;
+  }
+
+  /* ── Results strip ── */
+  .seo-results {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+  .seo-result { display: flex; flex-direction: column; gap: 0.3rem; }
+  .sr-num { font-family: var(--kwd-font-heading); font-size: clamp(2rem, 4vw, 3.5rem); color: var(--kwd-yellow); line-height: 1; }
+  .sr-label { font-size: 0.875rem; color: rgba(255,255,255,0.75); font-weight: 500; }
+  .sr-industry { font-size: 0.75rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* ── Comparison section ── */
+  .aiseo-compare {
+    display: grid;
+    grid-template-columns: 1fr auto 1.4fr;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 2.5rem;
+  }
+  .aiseo-compare-col {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 1.75rem;
+  }
+  .aiseo-compare-col--new {
+    background: rgba(251,232,166,0.08);
+    border-color: rgba(251,232,166,0.25);
+  }
+  .aiseo-compare-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1rem;
+  }
+  .aiseo-compare-label--new { color: var(--kwd-yellow); }
+  .aiseo-compare-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .aiseo-compare-list li {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.6);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.6;
+  }
+  .aiseo-compare-list--old li::before { content: "–"; position: absolute; left: 0; color: rgba(255,255,255,0.3); }
+  .aiseo-compare-list--new li { color: rgba(255,255,255,0.8); }
+  .aiseo-compare-list--new li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-yellow); font-weight: 700; }
+  .aiseo-compare-divider {
+    font-family: var(--kwd-font-heading);
+    font-size: 2.5rem;
+    color: var(--kwd-yellow);
+    display: flex;
+    align-items: center;
+    padding-top: 1.75rem;
+  }
+
+  /* ── Pricing grid ── */
+  .seo-pkg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .seo-pkg {
+    border: 2px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: #fff;
+    transition: box-shadow 0.2s;
+    position: relative;
+  }
+  .seo-pkg:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+  .seo-pkg-highlight { border-color: var(--kwd-dark); background: var(--kwd-dark); }
+  .seo-pkg-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.2rem 0.75rem;
+    border-radius: 100px;
+    align-self: flex-start;
+  }
+  .seo-pkg h3 { font-family: var(--kwd-font-body); font-size: 1.05rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .seo-pkg-highlight h3 { color: #fff; }
+  .seo-price { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: var(--kwd-dark); margin: 0; }
+  .seo-pkg-highlight .seo-price { color: var(--kwd-yellow); }
+  .seo-period { font-size: 1rem; opacity: 0.6; }
+  .seo-pkg-desc { font-size: 0.875rem; color: var(--kwd-brown); margin: 0; line-height: 1.6; flex: 1; }
+  .seo-pkg-highlight .seo-pkg-desc { color: rgba(255,255,255,0.62); }
+  .seo-pkg-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+  .seo-pkg-list li { font-size: 0.875rem; color: var(--kwd-brown); padding-left: 1.25rem; position: relative; line-height: 1.5; }
+  .seo-pkg-list li::before { content: "✓"; position: absolute; left: 0; font-weight: 700; color: var(--kwd-dark); font-size: 0.8rem; }
+  .seo-pkg-highlight .seo-pkg-list li { color: rgba(255,255,255,0.7); }
+  .seo-pkg-highlight .seo-pkg-list li::before { color: var(--kwd-yellow); }
+  .seo-pkg-btn {
+    display: inline-block;
+    background: var(--kwd-cream);
+    color: var(--kwd-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    text-align: center;
+    transition: background 0.2s;
+    margin-top: auto;
+  }
+  .seo-pkg-btn:hover { background: var(--kwd-gold); }
+  .seo-pkg-btn-accent { background: var(--kwd-yellow); }
+  .seo-pkg-btn-accent:hover { background: var(--kwd-gold); }
+
+  /* ── Related services strip ── */
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
+
+  /* ── Process split ── */
+  .aiseo-process-split {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 4rem;
+    align-items: start;
+  }
+  .aiseo-process-img-wrap {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(44,41,39,0.15);
+  }
+  .aiseo-process-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+  }
+  .aiseo-process-pill {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+
+  /* ── Auckland city photo strip ── */
+  .aiseo-city-strip {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+  }
+  .aiseo-city-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+  }
+  .aiseo-city-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(44,41,39,0.88) 0%, rgba(44,41,39,0.55) 55%, rgba(44,41,39,0.15) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 clamp(1.5rem, 8vw, 7rem);
+  }
+  .aiseo-city-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin: 0 0 0.6rem;
+  }
+  .aiseo-city-line {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.2rem, 3vw, 1.9rem);
+    color: #fff;
+    line-height: 1.3;
+    max-width: 600px;
+    margin: 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 960px) {
+    .aiseo-engines { grid-template-columns: repeat(2, 1fr); }
+    .aiseo-compare { grid-template-columns: 1fr; }
+    .aiseo-compare-divider { display: none; }
+    .aiseo-trust-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .seo-results { grid-template-columns: repeat(2, 1fr); }
+    .seo-pkg-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+    .aiseo-process-split { grid-template-columns: 1fr; }
+    .aiseo-process-img-wrap { display: none; }
+  }
+  @media (max-width: 580px) {
+    .aiseo-engines { grid-template-columns: 1fr; }
+    .aiseo-trust-badges { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    .seo-results { grid-template-columns: 1fr; }
+    .aiseo-city-strip { height: 240px; }
+  }
+</style>
+
+<!-- Vanta.js NET background for hero -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    VANTA.NET({
+      el: '.hero-section',
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200,
+      minWidth: 200,
+      scale: 1.0,
+      scaleMobile: 0.75,
+      color: 0xf3d97a,
+      backgroundColor: 0x2c2927,
+      points: 9,
+      maxDistance: 22,
+      spacing: 17,
+    });
+  });
+</script>

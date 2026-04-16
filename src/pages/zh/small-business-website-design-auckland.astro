@@ -1,0 +1,958 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import ServiceGrid from '../../components/ServiceGrid.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import TestimonialGrid from '../../components/TestimonialGrid.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import Icon from '../../components/Icon.astro';
+import { Image } from 'astro:assets';
+import about1 from '../../assets/general/about1.jpg';
+import about2 from '../../assets/general/about2.jpg';
+import smallBizAuckland from '../../assets/general/Small-Business-Auckland.jpg';
+import webSolutions from '../../assets/general/Website-Solutsions-Auckland.jpg';
+import aucklandCafe from '../../assets/general/Auckland-small-business-1.jpg';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/small-business-website-design-auckland/",
+      "url": "https://www.kiwiwebdesign.co.nz/zh/small-business-website-design-auckland/",
+      "name": "奥克兰网页设计服务 | 小企业网站建设 | Kiwi Web Design",
+      "description": "奥克兰小企业网站建设专家，起价$1,290 NZD。定制WordPress网站，2-3周上线，免费面谈咨询。专为新西兰华人企业服务。",
+      "inLanguage": "zh-Hans",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/zh/small-business-website-design-auckland/#breadcrumb" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".smb-snippet", ".stats-row"]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/small-business-website-design-auckland/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "中文服务", "item": "https://www.kiwiwebdesign.co.nz/zh/" },
+        { "@type": "ListItem", "position": 3, "name": "奥克兰网页设计", "item": "https://www.kiwiwebdesign.co.nz/zh/small-business-website-design-auckland/" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/small-business-website-design-auckland/#service",
+      "name": "奥克兰小企业网页设计服务",
+      "serviceType": "Website Design",
+      "category": "Web Development",
+      "description": "为奥克兰小企业和华人商家提供定制WordPress网站建设服务。以转化为核心，移动端优先，2-3周交付，起价$1,290 NZD + GST。",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "url": "https://www.kiwiwebdesign.co.nz/zh/small-business-website-design-auckland/",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "1290",
+        "highPrice": "3890",
+        "priceCurrency": "NZD",
+        "priceSpecification": { "@type": "PriceSpecification", "price": "1290", "priceCurrency": "NZD", "valueAddedTaxIncluded": false }
+      }
+    },
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "alternateName": "奥克兰网页设计",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "ratingCount": "50"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kiwiwebdesign.co.nz/favicon.png",
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "奥克兰小企业建设一个网站需要多少钱？",
+          "acceptedAnswer": { "@type": "Answer", "text": "套餐起价$1,290 + GST（一次性费用）。成长套餐通常为$2,690–$3,500，具体取决于功能复杂程度。电商网站起价$3,890。所有报价均为固定价格，无隐性收费。" }
+        },
+        {
+          "@type": "Question",
+          "name": "建设网站需要多长时间？",
+          "acceptedAnswer": { "@type": "Answer", "text": "大多数项目在内容准备就绪后2-3周内上线。功能较复杂的网站可能需要4-6周。我们会在项目开始前明确告知时间表并严格遵守。" }
+        },
+        {
+          "@type": "Question",
+          "name": "网站建成后我能自己更新内容吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可以。WordPress是专为非开发人员设计的。我们提供培训环节，让您能够独立更新文字、图片和添加页面，无需依赖开发人员。" }
+        },
+        {
+          "@type": "Question",
+          "name": "你们提供主机托管和维护服务吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "提供。托管式WordPress主机起价$49/月，包含更新、备份、安全防护以及每月2小时内容修改服务。" }
+        },
+        {
+          "@type": "Question",
+          "name": "你们能改版或重建我现有的网站吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可以。我们承接完整的WordPress重建、改版及从Wix、Squarespace或旧版WordPress迁移项目，并在过程中保留原有SEO数据和内容。" }
+        }
+      ]
+    }
+  ]
+};
+
+const stats = [
+  { number: "起价$1,290", label: "一次性网站套餐" },
+  { number: "2–3周", label: "典型交付时间" },
+  { number: "50+", label: "奥克兰合作企业" },
+  { number: "4.9★", label: "Google平均评分" },
+];
+
+const included = [
+  {
+    icon: "🎨",
+    title: "定制设计",
+    desc: "没有千篇一律的模板。您的网站围绕您的品牌、客户和目标量身打造——外观和感觉完全符合您的企业形象。",
+    items: ["品牌配色与字体匹配", "移动端优先布局", "现代简洁美学", "差异化竞争设计"],
+  },
+  {
+    icon: "⚡",
+    title: "基于WordPress构建",
+    desc: "WordPress驱动全球43%的网站。可靠、灵活，且方便您自行更新。无平台锁定，无您无法掌控的专有系统。",
+    items: ["轻松编辑内容", "丰富的插件生态", "支持WooCommerce", "随业务成长扩展"],
+  },
+  {
+    icon: "🔍",
+    title: "从第一天起即SEO就绪",
+    desc: "我们构建的每个页面都针对搜索引擎进行结构化优化。速度、移动端性能、Schema标记和正确的标题结构——全部标准配置。",
+    items: ["快速页面加载", "规范Meta标签", "Schema结构化数据", "Google Search Console设置"],
+  },
+  {
+    icon: "📱",
+    title: "移动端优化",
+    desc: "超过60%的流量来自手机端。我们采用移动端优先的方式构建并跨设备测试，确保网站在每种屏幕上都完美运行。",
+    items: ["响应式布局", "触控友好导航", "移动端页面速度", "跨设备测试"],
+  },
+  {
+    icon: "🔒",
+    title: "安全可靠",
+    desc: "SSL证书、定期备份、安全加固和托管主机。我们负责技术层面，让您专注于经营业务。",
+    items: ["SSL证书已含", "每日备份", "在线监控", "WordPress安全加固"],
+  },
+  {
+    icon: "📞",
+    title: "潜在客户获取",
+    desc: "您的网站应该全天候24小时为您工作。我们以清晰的行动号召、快速加载页面和经过验证的转化布局进行设计。",
+    items: ["CTA策略规划", "联系表单设置", "一键拨号集成", "询盘追踪"],
+  },
+];
+
+const industries = [
+  { icon: "Wrench",          title: "建筑与装修行业",   desc: "水管工、电工、建筑商、油漆工。我们深知奥克兰建筑贸易企业的转化关键。", href: "/tradie-website-design-auckland/" },
+  { icon: "Sparkles",        title: "美容与健康",        desc: "美发沙龙、水疗、诊所。集成预约系统，展示您的服务，让座位不再空置。", href: "/beauty-salon-website-design-auckland/" },
+  { icon: "UtensilsCrossed", title: "餐饮业",             desc: "菜单页面、订座链接、Google地图集成。饥饿的顾客第一时间找到您。", href: "/restaurant-website-design-auckland/" },
+  { icon: "HeartPulse",      title: "医疗健康",           desc: "物理治疗、牙科、全科诊所。支持在线预约的专业设计，清晰展示服务项目。", href: "/healthcare-website-design-auckland/" },
+  { icon: "Briefcase",       title: "专业服务",           desc: "律师、会计师、咨询顾问。建立权威形象，赢得新客户信任的专业设计。", href: "/lawyers-website-design-auckland/" },
+  { icon: "ShoppingCart",    title: "电商与零售",         desc: "WooCommerce和Shopify商店，专为销售而建。产品页面、结账流程和支付网关一体化。", href: "/ecommerce-website-auckland/" },
+];
+
+const process = [
+  { step: "1", title: "免费咨询", desc: "我们从一次对话开始，而不是直接报价。我们了解您的业务、目标客户以及您对成功的定义。" },
+  { step: "2", title: "策略与线框图", desc: "我们规划网站结构、页面布局和内容方案。在任何设计开始之前，您先审批整体方向。" },
+  { step: "3", title: "设计与开发", desc: "我们在WordPress中完成网站的设计和开发。您将获得测试环境链接，可在正式上线前审核并提出修改意见。" },
+  { step: "4", title: "上线与交接", desc: "正式上线后，我们设置Google Search Console和Analytics，并指导您如何自行进行基本内容更新。" },
+];
+
+const packages = [
+  {
+    name: "入门套餐",
+    price: "起价$1,290",
+    note: "+ GST",
+    desc: "适合需要快速建立专业网络形象的个体经营者和小企业。",
+    items: [
+      "定制WordPress设计",
+      "移动端响应式",
+      "联系表单",
+      "基础SEO设置",
+      "Google Analytics",
+      "1轮修改",
+    ],
+    cta: "获取报价",
+    href: "/zh/website-designer-auckland/",
+    highlight: false,
+  },
+  {
+    name: "成长套餐",
+    price: "起价$2,690",
+    note: "+ GST",
+    desc: "适合准备投资一个能主动获取潜在客户并随业务成长的网站的企业。",
+    items: [
+      "最多10个页面",
+      "定制WordPress设计",
+      "移动端响应式",
+      "潜在客户转化优化",
+      "完整SEO优化",
+      "Google Analytics + Search Console",
+      "2轮修改",
+      "预约/询盘系统集成",
+      "上线后1个月支持",
+    ],
+    cta: "获取报价",
+    href: "/zh/website-designer-auckland/",
+    highlight: true,
+    tag: "最受欢迎",
+  },
+  {
+    name: "电商套餐",
+    price: "起价$3,890",
+    note: "+ GST",
+    desc: "随时可以销售的WooCommerce商店。包含产品管理、支付网关和订单通知。",
+    items: [
+      "WooCommerce设置",
+      "最多20个产品",
+      "支付网关集成",
+      "运费配置",
+      "产品SEO",
+      "订单管理培训",
+      "2轮修改",
+      "上线后2个月支持",
+    ],
+    cta: "获取报价",
+    href: "/zh/website-designer-auckland/",
+    highlight: false,
+  },
+];
+
+const faqs = [
+  { q: "奥克兰小企业建设网站需要多少钱？", a: "我们的套餐起价$1,290 + GST（一次性费用）。成长套餐通常为$2,690–$3,500，具体取决于复杂程度。电商网站起价$3,890。我们在项目开始前提供固定价格报价——无隐性收费。" },
+  { q: "建设网站需要多长时间？", a: "大多数项目在收到内容后2-3周内完成。功能更复杂的网站可能需要4-6周。我们会提前告知时间表并严格执行。" },
+  { q: "我需要自己准备内容吗？", a: "理想情况下是的——您最了解自己的业务。但我们会提供内容指导和结构建议，也可以作为附加服务帮您撰写文案。如有需要，我们还可以采购版权图片。" },
+  { q: "网站建成后我能自己更新内容吗？", a: "可以。WordPress是专为非开发人员设计的。我们提供交接培训，让您能够独立更新文字、图片和添加页面。我们也提供持续维护计划，如果您希望我们代为处理的话。" },
+  { q: "你们提供主机托管和维护服务吗？", a: "提供。我们提供托管式WordPress主机，起价$49/月，包含更新、备份、安全防护以及每月2小时内容修改服务。可与网站建设项目打包优惠。" },
+  { q: "你们能改版或重建我现有的网站吗？", a: "可以。我们承接完整的WordPress重建、改版及平台迁移（包括Wix、Squarespace或旧版WordPress主题），并在过程中保留原有<a href=\"/zh/seo-auckland/\">SEO</a>数据和内容。" },
+];
+
+const reviews = [
+  { name: "Zane Barrett", company: "Barrett Access Scaffolding", text: "从第一次电话起，Charlie就准确理解了我们的需求。网站在2周内就上线了，上线后第二天就收到了第一笔询盘。" },
+  { name: "Jack", company: "Show Me Shorts", text: "合作非常顺畅。整个流程清晰明确，按时交付，最终成果比我们之前的网站好看太多了。" },
+  { name: "Steven Liu", company: "客户", text: "合作体验极佳。设计简洁、现代、用户友好——完全符合我的期望。" },
+  { name: "Gina Dellabarca", company: "客户", text: "服务全面且有帮助。信息清晰，沟通顺畅，完全按时交付。" },
+];
+---
+
+<Layout
+  title="奥克兰网页设计服务 | 小企业网站建设 | Kiwi Web Design"
+  description="奥克兰小企业网站建设专家，起价$1,290 NZD。定制WordPress网站，2-3周上线，免费面谈咨询。专为新西兰华人企业服务。"
+  canonicalURL="https://www.kiwiwebdesign.co.nz/zh/small-business-website-design-auckland/"
+  schema={schema}
+  lang="zh-Hans"
+  alternateUrl="https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/"
+>
+
+  <PageHero
+    eyebrow="奥克兰小企业网页设计"
+    title="专为获取客户而设计，不只是好看。"
+    subtitle="为奥克兰小企业和华人商家提供高性价比的WordPress网站——起价$1,290，2-3周上线，可免费面谈咨询。"
+    badgeText="起价$1,290 + GST"
+    ctaPrimary={{ text: "获取免费报价", href: "/zh/website-designer-auckland/" }}
+    ctaSecondary={{ text: "查看套餐", href: "#packages" }}
+    centered={true}
+  />
+
+  <!-- AI citability snippet -->
+  <div class="smb-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> 为奥克兰小企业打造定制WordPress网站，起价 <strong>$1,290 + GST</strong>（一次性费用）。大多数项目 <strong>2-3周</strong> 内上线。每个网站均包含移动端优先设计、SEO基础优化、联系表单、Google Analytics和交接培训。成长套餐起价$2,690，电商套餐起价$3,890。固定报价，无隐性收费。公司位于奥克兰Grey Lynn，Google评分 <strong>4.9★</strong>，服务50+新西兰客户。</p>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <section class="smb-stats-row">
+    <div class="container smb-stats-inner">
+      {stats.map(s => (
+        <div class="smb-stat-item">
+          <span class="smb-stat-num">{s.number}</span>
+          <span class="smb-stat-lbl">{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="套餐包含内容"
+        title="您的业务所需的一切，无多余累赘。"
+        subtitle="我们构建的每个网站都包含这些基础要素——因为省略任何一项都会让您损失潜在客户。"
+      />
+      <ServiceGrid items={included} cols={3} />
+    </div>
+  </section>
+
+  <!-- Visual break — who we help -->
+  <section class="sbwd-who-section">
+    <div class="sbwd-who-img-wrap">
+      <Image src={smallBizAuckland} alt="奥克兰小企业主工作场景——我们为这类企业建设网站" width={800} height={560} class="sbwd-who-img" />
+    </div>
+    <div class="sbwd-who-content">
+      <p class="sbwd-who-eyebrow">专为奥克兰打造</p>
+      <h2 class="sbwd-who-title">您的客户正在网上搜索。您出现了吗？</h2>
+      <p class="sbwd-who-body">奥克兰大多数小企业网站每天都在流失潜在客户——要么加载缓慢，要么过时，要么根本难以被找到。我们建设在Google上排名靠前、加载快速、能将访客转化为询盘的网站。无论您是餐饮业、建筑工程还是专业服务，结果都是一样的：更多客户。</p>
+      <a href="/zh/website-designer-auckland/" class="sbwd-who-cta">获取免费报价 →</a>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="服务行业"
+        title="我们了解您的行业，知道什么能带来转化。"
+        light={true}
+      />
+      <div class="sbwd-industries">
+        {industries.map(({ icon, title, desc, href }) => (
+          <a href={href} class="sbwd-ind-card">
+            <span class="sbwd-ind-icon"><Icon name={icon} size={26} /></span>
+            <div>
+              <strong class="sbwd-ind-title">{title}</strong>
+              <p class="sbwd-ind-desc">{desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section sbwd-process-section">
+    <div class="container">
+      <div class="sbwd-process-split">
+        <div class="sbwd-process-content">
+          <SectionHeader
+            eyebrow="合作流程"
+            title="流程简单，结果可预期。"
+            subtitle="我们保持透明和协作——您始终清楚正在发生什么以及下一步是什么。"
+          />
+          <ProcessSteps items={process} />
+        </div>
+        <div class="sbwd-process-img-wrap">
+          <Image src={about1} alt="Charlie Chao与奥克兰小企业主就网站策略进行咨询" width={600} height={700} class="sbwd-process-img" />
+          <div class="sbwd-process-img-pill">免费面谈咨询 · 奥克兰本地服务</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Web design visual -->
+  <section class="sbwd-info-split section">
+    <div class="container">
+      <div class="sbwd-info-img-wrap">
+        <Image src={webSolutions} alt="为奥克兰小企业建设网站的网页设计师" width={1200} height={480} class="sbwd-info-img" />
+        <div class="sbwd-info-img-badge">
+          <span class="sbwd-info-badge-num">2–3周</span>
+          <span class="sbwd-info-badge-label">平均交付时间</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section class="section" style="background: var(--kwd-cream);" id="packages">
+    <div class="container">
+      <SectionHeader
+        eyebrow="套餐与价格"
+        title="透明定价，无隐性收费。"
+        subtitle="项目开始前提供固定价格报价，您始终清楚总费用。"
+      />
+      <div class="sbwd-packages">
+        {packages.map((pkg) => (
+          <div class:list={['sbwd-pkg', pkg.highlight && 'sbwd-pkg--featured']}>
+            {pkg.tag && <span class="sbwd-pkg-tag">{pkg.tag}</span>}
+            <p class="sbwd-pkg-name">{pkg.name}</p>
+            <div class="sbwd-pkg-price-wrap">
+              <span class="sbwd-pkg-price">{pkg.price}</span>
+              <span class="sbwd-pkg-note">{pkg.note}</span>
+            </div>
+            <p class="sbwd-pkg-desc">{pkg.desc}</p>
+            <ul class="sbwd-pkg-list">
+              {pkg.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            <a href={pkg.href} class:list={['sbwd-pkg-btn', pkg.highlight && 'sbwd-pkg-btn--featured']}>{pkg.cta}</a>
+          </div>
+        ))}
+      </div>
+      <p class="sbwd-pkg-note-bottom">所有价格均不含GST。大型或复杂项目可提供定制报价。<a href="/zh/website-designer-auckland/">立即联系我们 →</a></p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section sbwd-testimonials-section">
+    <div class="sbwd-testimonials-photo">
+      <Image src={about2} alt="Kiwi Web Design奥克兰——帮助小企业在网上成长" width={1400} height={480} class="sbwd-tp-img" />
+      <div class="sbwd-tp-overlay">
+        <blockquote class="sbwd-tp-quote">
+          "从第一次电话起，Charlie就准确理解了我们的需求。网站在2周内就上线了，上线后第二天就收到了第一笔询盘。"
+          <cite>— Zane Barrett，Barrett Access Scaffolding</cite>
+        </blockquote>
+      </div>
+    </div>
+    <div class="container">
+      <SectionHeader eyebrow="客户评价" title="奥克兰小企业对我们的评价。" />
+      <TestimonialGrid items={reviews} cols={2} />
+    </div>
+  </section>
+
+  <!-- Auckland café photo strip -->
+  <div class="sbwd-cafe-strip">
+    <Image src={aucklandCafe} alt="奥克兰小企业——我们帮助成长的本地商家" width={1400} height={420} class="sbwd-cafe-img" />
+    <div class="sbwd-cafe-overlay">
+      <p class="sbwd-cafe-tag">自2019年起服务奥克兰企业</p>
+      <p class="sbwd-cafe-line">从Grey Lynn咖啡馆到北岸建筑工程——我们建设真正有效的网站。</p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="网页设计常见问题"
+        subtitle="奥克兰小企业主在开始合作前最常问的问题。"
+      />
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">相关服务</p>
+      <div class="rps-links">
+        <a href="/tradie-website-design-auckland/" class="rps-link">建筑行业网站</a>
+        <a href="/ecommerce-website-auckland/" class="rps-link">电商网站</a>
+        <a href="/woocommerce-website-design-auckland/" class="rps-link">WooCommerce设计</a>
+        <a href="/shopify-website-design-auckland/" class="rps-link">Shopify设计</a>
+        <a href="/website-copywriting-auckland/" class="rps-link">网站文案撰写</a>
+        <a href="/zh/seo-auckland/" class="rps-link">SEO优化服务</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas we serve -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">服务区域</p>
+      <div class="rps-links">
+        <a href="/north-shore-website-design/" class="rps-link">北岸</a>
+        <a href="/south-auckland-web-design/" class="rps-link">南奥克兰</a>
+        <a href="/west-auckland-web-design/" class="rps-link">西奥克兰</a>
+        <a href="/east-auckland-web-design/" class="rps-link">东奥克兰</a>
+        <a href="/central-auckland-web-design/" class="rps-link">奥克兰市中心</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="准备好打造一个真正带来客户的网站了吗？"
+    subtitle="免费咨询——可面谈或线上，服务整个奥克兰地区。拨打 021 039 6580 或在线提交报价申请。"
+    ctaPrimary={{ text: "获取免费报价", href: "/zh/website-designer-auckland/" }}
+    ctaSecondary={{ text: "了解SEO服务", href: "/zh/seo-auckland/" }}
+  />
+
+</Layout>
+
+<style>
+  /* Stats row */
+  .smb-stats-row { background: var(--kwd-cream); padding: 2.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .smb-stats-inner { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 2.5rem; }
+  .smb-stat-item { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; text-align: center; }
+  .smb-stat-num { font-family: var(--kwd-font-heading); font-size: 1.85rem; color: var(--kwd-dark); line-height: 1; }
+  .smb-stat-lbl { font-size: 0.78rem; color: var(--kwd-brown); max-width: 140px; line-height: 1.35; }
+
+  /* Industries grid */
+  .sbwd-industries {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .sbwd-ind-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .sbwd-ind-card:hover {
+    background: rgba(255,255,255,0.11);
+    border-color: rgba(255,255,255,0.2);
+  }
+  .sbwd-ind-icon {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--kwd-gold);
+  }
+  .sbwd-ind-title {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+  .sbwd-ind-desc {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* Process split with image */
+  .sbwd-process-split {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 4rem;
+    align-items: start;
+  }
+  .sbwd-process-img-wrap {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(44,41,39,0.18);
+  }
+  .sbwd-process-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+  }
+  .sbwd-process-img-pill {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  @media (max-width: 960px) {
+    .sbwd-process-split { grid-template-columns: 1fr; }
+    .sbwd-process-img-wrap { display: none; }
+  }
+
+  /* Testimonials photo banner */
+  .sbwd-testimonials-photo {
+    position: relative;
+    height: 340px;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+  .sbwd-tp-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+  .sbwd-tp-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(44,41,39,0.92) 0%, rgba(44,41,39,0.7) 50%, rgba(44,41,39,0.3) 100%);
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(1.5rem, 6vw, 6rem);
+  }
+  .sbwd-tp-quote {
+    max-width: 600px;
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-style: italic;
+    color: #fff;
+    line-height: 1.45;
+    margin: 0;
+    border: none;
+    padding: 0;
+  }
+  .sbwd-tp-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kwd-gold);
+    font-family: var(--kwd-font-body, 'Poppins', sans-serif);
+  }
+  @media (max-width: 640px) {
+    .sbwd-testimonials-photo { height: 260px; }
+  }
+
+  /* Packages */
+  .sbwd-packages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+    margin-top: 2.5rem;
+  }
+  .sbwd-pkg {
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.08);
+    border-radius: 18px;
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .sbwd-pkg--featured {
+    background: var(--kwd-dark);
+    border-color: var(--kwd-dark);
+  }
+  .sbwd-pkg-tag {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+  }
+  .sbwd-pkg-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin: 0 0 0.5rem;
+  }
+  .sbwd-pkg--featured .sbwd-pkg-name { color: rgba(255,255,255,0.5); }
+  .sbwd-pkg-price-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+  .sbwd-pkg-price {
+    font-family: var(--kwd-font-heading);
+    font-size: 2rem;
+    color: var(--kwd-dark);
+    line-height: 1;
+  }
+  .sbwd-pkg--featured .sbwd-pkg-price { color: var(--kwd-yellow); }
+  .sbwd-pkg-note {
+    font-size: 0.8rem;
+    color: var(--kwd-brown);
+  }
+  .sbwd-pkg--featured .sbwd-pkg-note { color: rgba(255,255,255,0.45); }
+  .sbwd-pkg-desc {
+    font-size: 0.85rem;
+    color: var(--kwd-brown);
+    line-height: 1.6;
+    margin: 0 0 1.25rem;
+  }
+  .sbwd-pkg--featured .sbwd-pkg-desc { color: rgba(255,255,255,0.6); }
+  .sbwd-pkg-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+  .sbwd-pkg-list li {
+    font-size: 0.85rem;
+    color: var(--kwd-dark);
+    padding-left: 1.3rem;
+    position: relative;
+  }
+  .sbwd-pkg-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--kwd-brown);
+    font-weight: 700;
+  }
+  .sbwd-pkg--featured .sbwd-pkg-list li { color: rgba(255,255,255,0.8); }
+  .sbwd-pkg--featured .sbwd-pkg-list li::before { color: var(--kwd-yellow); }
+  .sbwd-pkg-btn {
+    display: block;
+    text-align: center;
+    padding: 0.875rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--kwd-cream);
+    color: var(--kwd-dark);
+    transition: background 0.2s;
+  }
+  .sbwd-pkg-btn:hover { background: #e8e7da; }
+  .sbwd-pkg-btn--featured {
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+  }
+  .sbwd-pkg-btn--featured:hover { background: var(--kwd-gold); }
+  .sbwd-pkg-note-bottom {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--kwd-brown);
+    margin-top: 1.5rem;
+  }
+  .sbwd-pkg-note-bottom a { color: var(--kwd-dark); font-weight: 600; }
+
+  @media (max-width: 960px) {
+    .sbwd-industries { grid-template-columns: repeat(2, 1fr); }
+    .sbwd-packages { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+  }
+  @media (max-width: 600px) {
+    .sbwd-industries { grid-template-columns: 1fr; }
+  }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
+
+  /* Who we help — split section */
+  .sbwd-who-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 480px;
+  }
+  .sbwd-who-img-wrap { overflow: hidden; }
+  .sbwd-who-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .sbwd-who-img-wrap:hover .sbwd-who-img { transform: scale(1.03); }
+  .sbwd-who-content {
+    background: var(--kwd-dark);
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(2rem, 5vw, 4.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .sbwd-who-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-gold);
+    margin: 0 0 0.75rem;
+  }
+  .sbwd-who-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    color: #fff;
+    line-height: 1.2;
+    margin: 0 0 1.25rem;
+  }
+  .sbwd-who-body {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    margin: 0 0 2rem;
+  }
+  .sbwd-who-cta {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: opacity 0.15s;
+  }
+  .sbwd-who-cta:hover { opacity: 0.85; }
+  @media (max-width: 768px) {
+    .sbwd-who-section { grid-template-columns: 1fr; }
+    .sbwd-who-img-wrap { height: 280px; }
+  }
+
+  /* Web solutions image */
+  .sbwd-info-img-wrap {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 16px 50px rgba(44,41,39,0.14);
+  }
+  .sbwd-info-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+  }
+  .sbwd-info-img-badge {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  }
+  .sbwd-info-badge-num {
+    display: block;
+    font-family: var(--kwd-font-heading);
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--kwd-dark);
+  }
+  .sbwd-info-badge-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kwd-dark);
+    opacity: 0.7;
+    margin-top: 0.2rem;
+  }
+  @media (max-width: 900px) {
+    .sbwd-info-img { height: 280px; }
+  }
+
+  /* Café photo strip */
+  .sbwd-cafe-strip {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+  }
+  .sbwd-cafe-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
+    display: block;
+  }
+  .sbwd-cafe-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(44,41,39,0.88) 0%, rgba(44,41,39,0.55) 60%, rgba(44,41,39,0.2) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 clamp(1.5rem, 8vw, 7rem);
+  }
+  .sbwd-cafe-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-gold);
+    margin: 0 0 0.6rem;
+  }
+  .sbwd-cafe-line {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.2rem, 3vw, 1.9rem);
+    color: #fff;
+    line-height: 1.3;
+    max-width: 560px;
+    margin: 0;
+  }
+  @media (max-width: 600px) {
+    .sbwd-cafe-strip { height: 240px; }
+  }
+
+  /* AI citability snippet */
+  .smb-snippet {
+    background: var(--kwd-cream);
+    border-left: 4px solid var(--kwd-gold);
+    padding: 1.1rem 0;
+  }
+  .smb-snippet .container {
+    font-size: 0.92rem;
+    color: var(--kwd-dark);
+    line-height: 1.75;
+    max-width: 860px;
+  }
+  .smb-snippet p { margin: 0; }
+</style>
+
+<!-- Vanta.js NET background for hero -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    VANTA.NET({
+      el: '.hero-section',
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200,
+      minWidth: 200,
+      scale: 1.0,
+      scaleMobile: 0.75,
+      color: 0xf3d97a,
+      backgroundColor: 0x2c2927,
+      points: 9,
+      maxDistance: 22,
+      spacing: 17,
+    });
+  });
+</script>

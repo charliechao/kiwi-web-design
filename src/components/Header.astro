@@ -1,11 +1,12 @@
 ---
 const currentPath = Astro.url.pathname;
+const isZh = currentPath.startsWith('/zh');
 
-const navLinks = [
+const enNavLinks = [
   { label: 'Web Design', href: '/small-business-website-design-auckland/' },
   { label: 'SEO',        href: '/seo-auckland/', children: [
     { label: 'AI SEO & GEO', href: '/ai-seo-for-auckland-small-businesses/' },
-    { label: 'Local SEO', href: '/local-seo-for-auckland-small-businesses/' },
+    { label: 'Local SEO',    href: '/local-seo-for-auckland-small-businesses/' },
     { label: 'eCommerce SEO', href: '/seo-for-ecommerce/' },
     { label: 'WordPress SEO', href: '/wordpress-seo-optimisation/' },
   ]},
@@ -14,11 +15,28 @@ const navLinks = [
   { label: 'Blog',       href: '/affordable-web-design-auckland/' },
   { label: '中文',        href: '/zh/' },
 ];
+
+const zhNavLinks = [
+  { label: '网页设计',   href: '/zh/small-business-website-design-auckland/' },
+  { label: 'SEO优化',    href: '/zh/seo-auckland/', children: [
+    { label: 'AI SEO & GEO', href: '/zh/ai-seo-for-auckland-small-businesses/' },
+    { label: '本地SEO',       href: '/zh/local-seo-for-auckland-small-businesses/' },
+  ]},
+  { label: 'Google广告', href: '/zh/google-ads/' },
+  { label: '关于我们',   href: '/zh/about-us/' },
+  { label: '博客',       href: '/affordable-web-design-auckland/' },
+  { label: 'EN',         href: '/' },
+];
+
+const navLinks = isZh ? zhNavLinks : enNavLinks;
+const ctaHref  = isZh ? '/zh/website-designer-auckland/' : '/website-designer-auckland/';
+const ctaLabel = isZh ? '免费咨询' : 'Get a Quote';
+const logoHref = isZh ? '/zh/' : '/';
 ---
 
 <header>
   <div class="container nav-inner">
-    <a href="/" class="logo" aria-label="Kiwi Web Design – home">
+    <a href={logoHref} class="logo" aria-label="Kiwi Web Design – home">
       <img
         src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/04/android-chrome-512x512-1.png"
         alt="Kiwi Web Design"
@@ -63,7 +81,7 @@ const navLinks = [
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
         021 039 6580
       </a>
-      <a href="/website-designer-auckland/" class="btn-cta">Get a Quote</a>
+      <a href={ctaHref} class="btn-cta">{ctaLabel}</a>
     </nav>
   </div>
 </header>

@@ -1,0 +1,735 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import ServiceGrid from '../../components/ServiceGrid.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import TestimonialGrid from '../../components/TestimonialGrid.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import { Image } from 'astro:assets';
+import aboutImg from '../../assets/general/about.jpg';
+import about3Img from '../../assets/general/about3.jpg';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/seo-auckland/",
+      "url": "https://www.kiwiwebdesign.co.nz/zh/seo-auckland/",
+      "name": "奥克兰SEO优化服务 | 搜索引擎优化 | Kiwi Web Design",
+      "description": "奥克兰小企业SEO优化服务，起价$500/月。Google地图排名、精准关键词、中英文月度报告。无合同锁定，免费SEO审核。",
+      "inLanguage": "zh-Hans",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/zh/seo-auckland/#breadcrumb" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".seo-snippet", ".seo-statbar-inner"]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/seo-auckland/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "中文服务", "item": "https://www.kiwiwebdesign.co.nz/zh/" },
+        { "@type": "ListItem", "position": 3, "name": "SEO优化", "item": "https://www.kiwiwebdesign.co.nz/zh/seo-auckland/" }
+      ]
+    },
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "alternateName": "奥克兰网页设计",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "ratingCount": "50"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kiwiwebdesign.co.nz/favicon.png",
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/seo-auckland/#service",
+      "name": "奥克兰SEO优化服务",
+      "serviceType": "Search Engine Optimisation",
+      "category": "Digital Marketing",
+      "description": "为奥克兰小企业提供SEO优化服务。涵盖Google地图排名、页面优化、内容创作、外链建设和月度报告。起价$500/月，无合同锁定。",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "url": "https://www.kiwiwebdesign.co.nz/zh/seo-auckland/",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "500",
+        "highPrice": "2500",
+        "priceCurrency": "NZD",
+        "priceSpecification": { "@type": "PriceSpecification", "price": "500", "priceCurrency": "NZD", "unitCode": "MON" }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "奥克兰SEO优化需要多长时间才能看到效果？",
+          "acceptedAnswer": { "@type": "Answer", "text": "大多数奥克兰企业在2-3个月内会看到初步变化，在6-12个月内会看到明显效果。SEO是随时间积累的——投入越长，效果越强劲、越稳定。" }
+        },
+        {
+          "@type": "Question",
+          "name": "新西兰小企业SEO费用是多少？",
+          "acceptedAnswer": { "@type": "Answer", "text": "SEO套餐起价$500/月，根据行业竞争程度和工作范围可升至$2,500/月。每个合作都从免费审核开始，确保报价准确。" }
+        },
+        {
+          "@type": "Question",
+          "name": "本地SEO和普通SEO有什么区别？",
+          "acceptedAnswer": { "@type": "Answer", "text": "本地SEO针对基于地理位置的搜索——如「奥克兰水管工」或「附近咖啡馆」。它包含您的Google商家资料、本地引用和地图Pack排名。普通SEO专注于更广泛的全国性知名度，不区分地理位置。大多数奥克兰小企业从本地SEO中获益最大。" }
+        },
+        {
+          "@type": "Question",
+          "name": "我已经在投放Google广告，还需要做SEO吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "两者的运作方式不同。Google广告一旦停止付费就立即失效。SEO建立有机排名，随时间积累免费流量。大多数企业两者结合效果最佳——广告获取即时客户，SEO实现长期增长。" }
+        },
+        {
+          "@type": "Question",
+          "name": "你们能保证Google首页排名吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "任何有道德的SEO机构都无法保证特定排名。Kiwi Web Design能保证的是在对您的本地奥克兰市场最重要的信号上进行专注、透明的努力，并辅以清晰的月度报告。" }
+        },
+        {
+          "@type": "Question",
+          "name": "你们是否服务奥克兰以外的企业？",
+          "acceptedAnswer": { "@type": "Answer", "text": "Kiwi Web Design总部位于奥克兰，但也为新西兰各地企业提供服务。本地SEO专业知识在奥克兰最强，但技术SEO和内容SEO适用于新西兰各地。" }
+        }
+      ]
+    }
+  ]
+};
+
+const seoServices = [
+  {
+    icon: "📍",
+    title: "奥克兰本地SEO",
+    desc: "在Google地图和本地Pack中占据主导地位。我们优化您的Google商家资料，建立本地引用，针对地理位置关键词进行定向优化。",
+    items: ["Google商家资料优化", "本地引用与目录收录", "地图Pack排名提升", "地理定向关键词策略"],
+  },
+  {
+    icon: "⚙️",
+    title: "技术SEO",
+    desc: "一个快速、结构良好、Google能够抓取和索引的网站。我们修复阻碍您排名的技术问题。",
+    items: ["网站速度优化", "核心网页指标改善", "Schema结构化数据", "移动端适配优化"],
+  },
+  {
+    icon: "✍️",
+    title: "内容与页面SEO",
+    desc: "关键词研究与内容创作，将您的页面与买家意图紧密连接——同时针对Google和您的潜在客户进行优化。",
+    items: ["关键词研究分析", "SEO内容创作", "Meta标签优化", "内部链接结构"],
+  },
+  {
+    icon: "🔗",
+    title: "外链建设",
+    desc: "来自相关新西兰资源的高质量外链，以可持续的方式提升网站权威度——不走捷径，不使用垃圾链接。",
+    items: ["新西兰相关目录收录", "本地商业合作伙伴关系", "内容型外链获取", "权威度持续建设"],
+  },
+  {
+    icon: "📊",
+    title: "数据分析与报告",
+    desc: "清晰的月度报告，展示实际进展——排名变化、自然流量和产生的询盘。无术语，直观明了。",
+    items: ["Google Analytics 4配置", "Search Console监控", "月度排名追踪", "询盘来源归因"],
+  },
+  {
+    icon: "🛒",
+    title: "电商SEO",
+    desc: "WooCommerce和Shopify商店的产品页面和类目页面优化，驱动能够产生转化的自然流量。",
+    items: ["产品页面优化", "类目结构优化", "产品Schema标记", "Google购物曝光"],
+  },
+];
+
+const process = [
+  { step: "1", title: "免费SEO审核", desc: "我们审查您当前的排名、网站健康状况、关键词差距和竞争对手情况。零费用，无义务。" },
+  { step: "2", title: "定制策略", desc: "一份专注于能带来合格询盘的关键词的定制计划——而不是单纯追求流量数字。" },
+  { step: "3", title: "执行优化", desc: "技术修复、内容创作、本地信号优化和外链建设——系统性地逐步推进。" },
+  { step: "4", title: "月度报告", desc: "清晰易读的报告，展示排名的变化以及我们下一步的计划。" },
+];
+
+const reviews = [
+  { name: "Zane Barrett", company: "Barrett Access Scaffolding", text: "Charlie花时间真正了解我们的业务，打造了一个实际能带来排名的网站。我们获得了以前从来没有的询盘，这些都是通过SEO找到我们的。" },
+  { name: "Jack", company: "Show Me Shorts", text: "SEO工作非常专业彻底。他们把所有事情都解释得很清楚，我能看到我们Google排名的实实在在的改善。" },
+];
+
+const faqs = [
+  { q: "奥克兰SEO优化需要多长时间才能看到效果？", a: "大多数奥克兰企业在2-3个月内会看到初步变化，在6-12个月内会有明显效果。SEO是随时间积累的——投入越长，效果越强劲、越稳定。" },
+  { q: "新西兰小企业SEO费用是多少？", a: "我们的SEO套餐起价$500/月，根据行业竞争程度和工作范围可升至$2,500/月。每个合作都从免费审核开始，确保报价准确。" },
+  { q: "本地SEO和普通SEO有什么区别？", a: "本地SEO针对基于地理位置的搜索——如「奥克兰水管工」或「附近咖啡馆」。它包含您的Google商家资料、本地引用和地图Pack排名。普通SEO专注于更广泛的全国性知名度，不区分地理位置。详细内容可查看我们的<a href=\"/local-seo-for-auckland-small-businesses/\">奥克兰本地SEO</a>服务页面。" },
+  { q: "我已经在投放Google广告，还需要做SEO吗？", a: "两者的运作方式不同。<a href=\"/google-ads/\">Google广告</a>一旦停止付费就立即失效。SEO建立有机排名，随时间积累免费流量。大多数企业两者结合效果最佳——广告获取即时客户，SEO实现长期增长。" },
+  { q: "你们能保证Google首页排名吗？", a: "任何有道德的SEO机构都无法保证特定排名。我们能保证的是在对您的本地市场最重要的信号上进行专注、透明的努力，并辅以清晰的月度报告。" },
+  { q: "你们是否服务奥克兰以外的企业？", a: "我们总部位于奥克兰，但也为新西兰各地企业提供服务。本地SEO专业知识在奥克兰最强，但技术SEO和内容SEO适用于新西兰各地。" },
+];
+---
+
+<Layout
+  title="奥克兰SEO优化服务 | 搜索引擎优化 | Kiwi Web Design"
+  description="奥克兰小企业SEO优化服务，起价$500/月。Google地图排名、精准关键词、中英文月度报告。无合同锁定，免费SEO审核。"
+  canonicalURL="https://www.kiwiwebdesign.co.nz/zh/seo-auckland/"
+  schema={schema}
+  lang="zh-Hans"
+  alternateUrl="https://www.kiwiwebdesign.co.nz/seo-auckland/"
+>
+
+  <PageHero
+    eyebrow="奥克兰SEO优化服务"
+    title="让正在搜索您的客户真正找到您。"
+    subtitle="为奥克兰小企业提供专业SEO优化服务。我们针对您客户真正使用的关键词，建立有机排名，将搜索流量转化为真实询盘——起价$500/月，无合同锁定。"
+    ctaPrimary={{ text: "获取免费SEO审核", href: "/zh/website-designer-auckland/" }}
+    ctaSecondary={{ text: "查看价格", href: "#pricing" }}
+    centered={true}
+  />
+
+  <!-- AI citability snippet -->
+  <div class="seo-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> 为奥克兰小企业提供SEO优化服务，<strong>起价$500/月</strong>，无合同锁定。服务涵盖本地SEO、Google商家资料优化、技术SEO、内容创作和外链建设。公司位于奥克兰Grey Lynn，Google评分 <strong>4.9★</strong>，服务50+新西兰客户。大多数企业在2-3个月内看到初步效果，6-12个月内实现持续增长。</p>
+    </div>
+  </div>
+
+  <!-- Stat bar -->
+  <div class="seo-statbar">
+    <div class="container seo-statbar-inner">
+      <div class="ssb-item"><span class="ssb-num">93%</span><span class="ssb-lbl">网络体验始于搜索引擎</span></div>
+      <span class="ssb-sep" aria-hidden="true"></span>
+      <div class="ssb-item"><span class="ssb-num">14.6%</span><span class="ssb-lbl">SEO潜在客户成交率 vs 外呼1.7%</span></div>
+      <span class="ssb-sep" aria-hidden="true"></span>
+      <div class="ssb-item"><span class="ssb-num">4.9★</span><span class="ssb-lbl">Google综合评分</span></div>
+      <span class="ssb-sep" aria-hidden="true"></span>
+      <div class="ssb-item"><span class="ssb-num">起价$500/月</span><span class="ssb-lbl">SEO套餐起步价格</span></div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="我们的SEO服务"
+        title="排名提升与客户转化所需的一切。"
+        subtitle="从技术修复到内容创作和本地信号优化——为奥克兰企业提供完整的SEO解决方案。"
+      />
+      <ServiceGrid items={seoServices} cols={3} />
+    </div>
+  </section>
+
+  <!-- Results strip (dark) -->
+  <section class="section" style="background: var(--kwd-dark);">
+    <div class="container">
+      <SectionHeader eyebrow="真实成果" title="我们客户通过SEO实现的增长。" light={true} />
+      <div class="seo-results">
+        <div class="seo-result">
+          <span class="sr-num">+87%</span>
+          <span class="sr-label">自然搜索流量增长</span>
+          <span class="sr-industry">管道工程企业</span>
+        </div>
+        <div class="seo-result">
+          <span class="sr-num">+64%</span>
+          <span class="sr-label">网站访问量增长</span>
+          <span class="sr-industry">餐饮行业</span>
+        </div>
+        <div class="seo-result">
+          <span class="sr-num">+92%</span>
+          <span class="sr-label">新患者询盘增长</span>
+          <span class="sr-industry">牙科诊所</span>
+        </div>
+        <div class="seo-result">
+          <span class="sr-num">3–6月</span>
+          <span class="sr-label">平均见效时间</span>
+          <span class="sr-industry">大多数奥克兰企业</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="合作流程"
+        title="从审核到成果，流程清晰。"
+        subtitle="每次SEO合作都从免费审核开始，让我们准确知道该修复什么、该建立什么。"
+      />
+      <ProcessSteps items={process} />
+    </div>
+  </section>
+
+  <!-- About split -->
+  <section class="section seo-about-section">
+    <div class="container">
+      <div class="seo-about-split">
+        <div class="seo-about-img-wrap">
+          <Image src={aboutImg} alt="SEO专家为奥克兰企业制定关键词策略" width={560} height={700} class="seo-about-img" />
+        </div>
+        <div class="seo-about-content">
+          <p class="seo-about-eyebrow">为何选择我们</p>
+          <h2>围绕您的业务定制的SEO，而不是套用模板。</h2>
+          <p>我们不是卖完套餐就不管了。每位奥克兰客户都能获得基于其行业、竞争对手和客户搜索行为的专属策略——每个月都会重新审查和调整。</p>
+          <ul class="seo-about-list">
+            <li>合作前免费审核，无需承担任何义务</li>
+            <li>无合同锁定——留下来是因为真的有效</li>
+            <li>月度报告清晰易懂，无技术术语</li>
+            <li>奥克兰本地知识，而非海外外包团队</li>
+            <li>以真实询盘而非仅仅排名数字衡量成果</li>
+          </ul>
+          <a href="/zh/website-designer-auckland/" class="seo-about-btn">预约免费SEO审核 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <SectionHeader
+        eyebrow="价格方案"
+        title="奥克兰企业SEO价格"
+        subtitle="无合同锁定。每次合作都从免费审核开始。"
+      />
+      <div class="seo-pkg-grid">
+        <div class="seo-pkg">
+          <h3>入门SEO</h3>
+          <p class="seo-price">起价$500<span class="seo-period">/月</span></p>
+          <p class="seo-pkg-desc">适合竞争程度较低领域的小企业，希望建立Google搜索知名度。</p>
+          <ul class="seo-pkg-list">
+            <li>Google商家资料优化</li>
+            <li>最多5个页面的页面SEO</li>
+            <li>本地引用建设</li>
+            <li>月度报告</li>
+          </ul>
+          <a href="/zh/website-designer-auckland/" class="seo-pkg-btn">立即开始</a>
+        </div>
+        <div class="seo-pkg seo-pkg-highlight">
+          <span class="seo-pkg-tag">最受欢迎</span>
+          <h3>成长SEO</h3>
+          <p class="seo-price">起价$1,000<span class="seo-period">/月</span></p>
+          <p class="seo-pkg-desc">适合竞争激烈的奥克兰市场，希望通过自然搜索持续获得客户询盘。</p>
+          <ul class="seo-pkg-list">
+            <li>完整技术SEO审核与修复</li>
+            <li>全站页面优化</li>
+            <li>本地SEO + Google商家资料</li>
+            <li>内容创作（每月2篇）</li>
+            <li>外链建设</li>
+            <li>月度绩效报告</li>
+          </ul>
+          <a href="/zh/website-designer-auckland/" class="seo-pkg-btn seo-pkg-btn-accent">立即开始</a>
+        </div>
+        <div class="seo-pkg">
+          <h3>权威SEO</h3>
+          <p class="seo-price">起价$2,500<span class="seo-period">/月</span></p>
+          <p class="seo-pkg-desc">适合高度竞争的细分市场——在您的行业类别中占据搜索主导地位。</p>
+          <ul class="seo-pkg-list">
+            <li>包含成长SEO全部内容</li>
+            <li>内容策略与支柱页面</li>
+            <li>高级外链建设</li>
+            <li>竞争对手差距分析</li>
+            <li>转化率优化</li>
+            <li>每周报告</li>
+          </ul>
+          <a href="/zh/website-designer-auckland/" class="seo-pkg-btn">立即开始</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader eyebrow="客户评价" title="我们的SEO客户怎么说。" />
+      <TestimonialGrid items={reviews} cols={2} />
+    </div>
+  </section>
+
+  <!-- about3.jpg: dark card with stats + team image -->
+  <div class="container seo-team-card-wrap">
+    <div class="seo-team-card">
+      <div class="seo-team-stats">
+        <p class="seo-team-eyebrow">您的SEO背后的团队</p>
+        <h2>数据驱动。专注奥克兰。结果负责。</h2>
+        <div class="seo-team-nums">
+          <div class="stn-item">
+            <span class="stn-num">50+</span>
+            <span class="stn-lbl">新西兰企业成功排名</span>
+          </div>
+          <div class="stn-item">
+            <span class="stn-num">4.9★</span>
+            <span class="stn-lbl">Google综合评分</span>
+          </div>
+          <div class="stn-item">
+            <span class="stn-num">3–6月</span>
+            <span class="stn-lbl">平均见效时间</span>
+          </div>
+        </div>
+        <a href="/zh/website-designer-auckland/" class="seo-team-btn">预约免费SEO审核 →</a>
+      </div>
+      <div class="seo-team-img-wrap">
+        <Image src={about3Img} alt="Kiwi Web Design团队为奥克兰客户分析SEO数据" width={800} height={540} class="seo-team-img" />
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion items={faqs} title="SEO常见问题解答" subtitle="奥克兰企业主关于SEO最常见的问题。" />
+    </div>
+  </section>
+
+  <!-- Areas we serve -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">服务区域</p>
+      <div class="rps-links">
+        <a href="/central-auckland-web-design/" class="rps-link">奥克兰市中心</a>
+        <a href="/north-shore-website-design/" class="rps-link">北岸</a>
+        <a href="/west-auckland-web-design/" class="rps-link">西奥克兰</a>
+        <a href="/east-auckland-web-design/" class="rps-link">东奥克兰</a>
+        <a href="/south-auckland-web-design/" class="rps-link">南奥克兰</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">相关服务</p>
+      <div class="rps-links">
+        <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">奥克兰本地SEO</a>
+        <a href="/ai-seo-for-auckland-small-businesses/" class="rps-link">AI SEO &amp; GEO</a>
+        <a href="/google-ads/" class="rps-link">Google广告</a>
+        <a href="/analytics-reporting-for-auckland-small-business-websites/" class="rps-link">数据分析与报告</a>
+        <a href="/wordpress-seo-optimisation/" class="rps-link">WordPress SEO</a>
+        <a href="/zh/small-business-website-design-auckland/" class="rps-link">网页设计服务</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="准备好提升排名、获取更多询盘了吗？"
+    subtitle="预约免费SEO审核——我们将准确告诉您是什么制约了您的网站。拨打 021 039 6580 或在线提交申请。"
+    ctaPrimary={{ text: "预约免费SEO审核", href: "/zh/website-designer-auckland/" }}
+    ctaSecondary={{ text: "查看网页设计服务", href: "/zh/small-business-website-design-auckland/" }}
+  />
+
+</Layout>
+
+<style>
+  /* ── About split section ── */
+  .seo-about-section { background: var(--kwd-cream); }
+  .seo-about-split {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .seo-about-img-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+    aspect-ratio: 4/5;
+  }
+  .seo-about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .seo-about-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.75rem;
+  }
+  .seo-about-content h2 {
+    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+    color: var(--kwd-dark);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .seo-about-content p {
+    font-size: 0.95rem;
+    color: var(--kwd-brown);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+  .seo-about-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .seo-about-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--kwd-dark);
+    font-weight: 500;
+  }
+  .seo-about-list li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--kwd-yellow);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c2927' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+  }
+  .seo-about-btn {
+    display: inline-block;
+    background: var(--kwd-dark);
+    color: #fff;
+    padding: 0.875rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .seo-about-btn:hover { background: #3e3633; transform: translateY(-1px); }
+
+  /* ── Team card ── */
+  .seo-team-card-wrap { padding: 0 0 4rem; }
+  .seo-team-card {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 400px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+  }
+  .seo-team-stats {
+    background: var(--kwd-dark);
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .seo-team-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin: 0;
+  }
+  .seo-team-stats h2 {
+    font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+    color: #fff;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .seo-team-nums {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 1.5rem;
+  }
+  .stn-item { display: flex; flex-direction: column; gap: 0.15rem; }
+  .stn-num { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: var(--kwd-yellow); line-height: 1; }
+  .stn-lbl { font-size: 0.78rem; color: rgba(255,255,255,0.6); }
+  .seo-team-btn {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: background 0.2s;
+    align-self: flex-start;
+  }
+  .seo-team-btn:hover { background: var(--kwd-gold); }
+  .seo-team-img-wrap { overflow: hidden; }
+  .seo-team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .seo-team-card:hover .seo-team-img { transform: scale(1.03); }
+
+  /* Stat bar */
+  .seo-statbar { background: var(--kwd-cream); padding: 2rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .seo-statbar-inner { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 2rem; }
+  .ssb-item { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; text-align: center; }
+  .ssb-num  { font-family: var(--kwd-font-heading); font-size: 1.8rem; color: var(--kwd-dark); line-height: 1; }
+  .ssb-lbl  { font-size: 0.78rem; color: var(--kwd-brown); max-width: 140px; line-height: 1.35; }
+  .ssb-sep  { width: 1px; height: 2.5rem; background: rgba(0,0,0,0.1); flex-shrink: 0; }
+
+  /* Results grid */
+  .seo-results {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+  .seo-result { display: flex; flex-direction: column; gap: 0.3rem; }
+  .sr-num    { font-family: var(--kwd-font-heading); font-size: clamp(2rem, 4vw, 3.5rem); color: var(--kwd-yellow); line-height: 1; }
+  .sr-label  { font-size: 0.875rem; color: rgba(255,255,255,0.75); font-weight: 500; }
+  .sr-industry { font-size: 0.75rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Pricing grid */
+  .seo-pkg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .seo-pkg {
+    border: 2px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: #fff;
+    transition: box-shadow 0.2s;
+    position: relative;
+  }
+  .seo-pkg:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+  .seo-pkg-highlight { border-color: var(--kwd-dark); background: var(--kwd-dark); }
+  .seo-pkg-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.2rem 0.75rem;
+    border-radius: 100px;
+    align-self: flex-start;
+  }
+  .seo-pkg h3 { font-family: var(--kwd-font-body); font-size: 1.05rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
+  .seo-pkg-highlight h3 { color: #fff; }
+  .seo-price { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: var(--kwd-dark); margin: 0; }
+  .seo-pkg-highlight .seo-price { color: var(--kwd-yellow); }
+  .seo-period { font-size: 1rem; opacity: 0.6; }
+  .seo-pkg-desc { font-size: 0.875rem; color: var(--kwd-brown); margin: 0; line-height: 1.6; flex: 1; }
+  .seo-pkg-highlight .seo-pkg-desc { color: rgba(255,255,255,0.62); }
+  .seo-pkg-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+  .seo-pkg-list li { font-size: 0.875rem; color: var(--kwd-brown); padding-left: 1.25rem; position: relative; line-height: 1.5; }
+  .seo-pkg-list li::before { content: "✓"; position: absolute; left: 0; font-weight: 700; color: var(--kwd-dark); font-size: 0.8rem; }
+  .seo-pkg-highlight .seo-pkg-list li { color: rgba(255,255,255,0.7); }
+  .seo-pkg-highlight .seo-pkg-list li::before { color: var(--kwd-yellow); }
+  .seo-pkg-btn {
+    display: inline-block;
+    background: var(--kwd-cream);
+    color: var(--kwd-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    text-align: center;
+    transition: background 0.2s;
+    margin-top: auto;
+  }
+  .seo-pkg-btn:hover { background: var(--kwd-gold); }
+  .seo-pkg-btn-accent { background: var(--kwd-yellow); }
+  .seo-pkg-btn-accent:hover { background: var(--kwd-gold); }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: #e8e7db; }
+
+  @media (max-width: 900px) {
+    .seo-statbar-inner { justify-content: flex-start; gap: 1.5rem; }
+    .ssb-sep { display: none; }
+    .seo-results { grid-template-columns: repeat(2, 1fr); }
+    .seo-pkg-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+    .seo-about-split { grid-template-columns: 1fr; gap: 2rem; }
+    .seo-about-img-wrap { aspect-ratio: 16/9; max-height: 340px; }
+    .seo-team-card { grid-template-columns: 1fr; }
+    .seo-team-img-wrap { height: 280px; }
+  }
+  @media (max-width: 600px) {
+    .seo-results { grid-template-columns: 1fr; }
+    .seo-team-stats { padding: 2rem 1.5rem; }
+    .seo-team-nums { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+  }
+
+  /* AI citability snippet */
+  .seo-snippet {
+    background: var(--kwd-cream);
+    border-left: 4px solid var(--kwd-gold);
+    padding: 1.1rem 0;
+  }
+  .seo-snippet .container {
+    font-size: 0.92rem;
+    color: var(--kwd-dark);
+    line-height: 1.75;
+    max-width: 860px;
+  }
+  .seo-snippet p { margin: 0; }
+</style>
+
+<!-- Vanta.js WAVES background for hero -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js"></script>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    VANTA.WAVES({
+      el: '.hero-section',
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200,
+      minWidth: 200,
+      scale: 1.0,
+      scaleMobile: 0.75,
+      color: 0x2c2927,
+      shininess: 30,
+      waveHeight: 15,
+      waveSpeed: 0.75,
+      zoom: 0.85,
+    });
+  });
+</script>
