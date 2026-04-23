@@ -11,8 +11,8 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/zh/",
       "url": "https://www.kiwiwebdesign.co.nz/zh/",
-      "name": "奥克兰网页设计 | 中文服务 | Kiwi Web Design",
-      "description": "奥克兰华人网页设计专家。为新西兰华人中小企业提供专业网站建设、SEO优化和Google广告服务。价格透明，快速交付。",
+      "name": "奥克兰网站开发与网页设计 | 中文服务 | Kiwi Web Design",
+      "description": "奥克兰华人网站开发与网页设计专家。为新西兰华人中小企业提供专业网站开发、SEO优化和Google广告服务。价格透明，快速交付。",
       "inLanguage": "zh-Hans",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -34,7 +34,7 @@ const schema = {
       "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "alternateName": "奥克兰网页设计",
+      "alternateName": ["奥克兰网页设计", "奥克兰网站开发"],
       "url": "https://www.kiwiwebdesign.co.nz/",
       "telephone": "+64-21-039-6580",
       "email": "hi@kiwiwebdesign.co.nz",
@@ -65,16 +65,33 @@ const schema = {
       }
     },
     {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/zh/#service",
+      "name": "奥克兰网站开发与网页设计",
+      "serviceType": "网站开发",
+      "description": "为奥克兰华人及中小企业提供专业网站开发、WordPress建站、SEO优化和Google广告管理服务。",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "offers": [
+        { "@type": "Offer", "name": "基础官网开发", "price": "1290", "priceCurrency": "NZD" },
+        { "@type": "Offer", "name": "标准官网开发", "price": "2500", "priceCurrency": "NZD" },
+        { "@type": "Offer", "name": "电商网站开发", "price": "4500", "priceCurrency": "NZD" }
+      ]
+    },
+    {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "网站建设费用是多少？",
-          "acceptedAnswer": { "@type": "Answer", "text": "一个标准的5-8页小企业网站价格在$1,500-$2,500 NZD之间。具体价格取决于页面数量、功能需求（如预约系统、电商功能）等。我们会在项目开始前提供详细的固定价格报价。" }
+          "name": "网站开发费用是多少？",
+          "acceptedAnswer": { "@type": "Answer", "text": "一个标准的5-8页小企业网站开发价格在$1,500-$3,500 NZD之间。具体价格取决于页面数量、功能需求（如预约系统、电商功能）等。我们会在项目开始前提供详细的固定价格报价。" }
         },
         {
           "@type": "Question",
-          "name": "建设网站需要多长时间？",
+          "name": "网站开发需要多长时间？",
           "acceptedAnswer": { "@type": "Answer", "text": "大多数小企业网站在内容（文字和图片）准备好后，2-3周内可以上线。更复杂的网站或电商网站需要3-5周。我们会在报价阶段给出具体时间表。" }
         },
         {
@@ -84,7 +101,7 @@ const schema = {
         },
         {
           "@type": "Question",
-          "name": "网站建成后我能自己更新内容吗？",
+          "name": "网站开发完成后我能自己更新内容吗？",
           "acceptedAnswer": { "@type": "Answer", "text": "可以。我们使用WordPress系统，并提供培训。网站交付后，您可以自行更新文字、添加图片、发布博客文章，无需依赖开发人员。" }
         },
         {
@@ -100,8 +117,8 @@ const schema = {
 const services = [
   {
     icon: "🌐",
-    title: "网站建设",
-    desc: "为奥克兰华人企业定制专业WordPress网站。设计精美，加载快速，在手机和电脑上完美显示。",
+    title: "网站开发",
+    desc: "为奥克兰华人企业定制专业WordPress网站开发。设计精美，加载快速，在手机和电脑上完美显示。",
     items: ["固定价格报价", "2-3周完成交付", "移动端优先设计", "SEO基础设置"],
   },
   {
@@ -122,6 +139,36 @@ const services = [
     desc: "为您的企业配置专业邮箱（Microsoft 365或Google Workspace），提升企业形象和可信度。",
     items: ["Microsoft 365配置", "Google Workspace设置", "所有设备同步", "DNS记录配置"],
   },
+];
+
+const devProcess = [
+  { step: "01", title: "免费咨询与报价", desc: "了解您的业务需求和目标客户，分析竞争环境。通常在24小时内提供详细的固定价格报价，全程中文沟通。" },
+  { step: "02", title: "设计与网站开发", desc: "根据您的品牌风格进行网页设计，经您确认后开始正式开发。随时提供进度更新，欢迎反馈意见。" },
+  { step: "03", title: "测试与修改完善", desc: "网站开发完成后进行全面测试——手机端、桌面端、各主流浏览器。根据您的反馈进行修改，直到满意为止。" },
+  { step: "04", title: "上线与操作培训", desc: "网站正式上线，并提供中文操作培训视频和文档。域名、主机账户、网站代码全部归您所有。" },
+];
+
+const caseStudies = [
+  {
+    name: "Barrett Access Scaffolding",
+    tag: "建筑与施工",
+    result: "+125% 询盘量",
+    desc: "为奥克兰脚手架公司重建专业网站，结合Google广告精准投放，月均询盘量增长125%，项目持续增长。",
+    href: "/case-study-scaffolding/",
+  },
+  {
+    name: "Beauty Touch Auckland",
+    tag: "美容与护理",
+    result: "3周内上线",
+    desc: "为奥克兰美容院设计品牌网站，3周内完成全部网站开发并正式上线，在线预约量显著提升。",
+    href: "/beauty-touch-case-study/",
+  },
+];
+
+const pricingTiers = [
+  { name: "起步官网", price: "起价 $1,290", pages: "3–5页", desc: "单页或小型官网，联系表单，移动端适配，SEO基础设置", popular: false },
+  { name: "标准官网", price: "起价 $2,500", pages: "5–8页", desc: "完整小企业官网，博客，预约表单，Google Analytics，SEO优化", popular: true },
+  { name: "电商网站", price: "起价 $4,500", pages: "含产品目录", desc: "在线商店，产品管理，支付系统（Stripe/PayPal），库存管理", popular: false },
 ];
 
 const reasons = [
@@ -149,11 +196,11 @@ const reasons = [
 
 const faqs = [
   {
-    q: "网站建设费用是多少？",
-    a: "一个标准的5-8页小企业网站价格在$1,500-$2,500 NZD之间。具体价格取决于页面数量、功能需求（如预约系统、电商功能）等。我们会在项目开始前提供详细的固定价格报价。",
+    q: "网站开发费用是多少？",
+    a: "一个标准的5-8页小企业网站开发价格在$1,500-$3,500 NZD之间。具体价格取决于页面数量、功能需求（如预约系统、电商功能）等。我们会在项目开始前提供详细的固定价格报价。",
   },
   {
-    q: "建设网站需要多长时间？",
+    q: "网站开发需要多长时间？",
     a: "大多数小企业网站在内容（文字和图片）准备好后，2-3周内可以上线。更复杂的网站或电商网站需要3-5周。我们会在报价阶段给出具体时间表。",
   },
   {
@@ -161,7 +208,7 @@ const faqs = [
     a: "您需要提供：企业Logo、品牌颜色偏好、需要的页面列表，以及相关文字和图片。如果没有专业照片，我们可以使用高质量的版权图片。",
   },
   {
-    q: "网站建成后我能自己更新内容吗？",
+    q: "网站开发完成后我能自己更新内容吗？",
     a: "可以。我们使用WordPress系统，并提供培训。网站交付后，您可以自行更新文字、添加图片、发布博客文章，无需依赖开发人员。",
   },
   {
@@ -172,8 +219,8 @@ const faqs = [
 ---
 
 <Layout
-  title="奥克兰网页设计 | 中文服务 | Kiwi Web Design"
-  description="奥克兰华人网页设计专家。为新西兰华人中小企业提供专业网站建设、SEO优化和Google广告服务。价格透明，快速交付。"
+  title="奥克兰网站开发与网页设计 | 中文服务 | Kiwi Web Design"
+  description="奥克兰华人网站开发专家。为新西兰华人中小企业提供专业网站开发、网页设计、SEO优化和Google广告服务。价格透明，快速交付。"
   canonicalURL="https://www.kiwiwebdesign.co.nz/zh/"
   schema={schema}
   lang="zh-Hans"
@@ -184,9 +231,9 @@ const faqs = [
   <section class="zh-hero">
     <div class="container zh-hero-inner">
       <div class="zh-hero-text">
-        <p class="zh-eyebrow">奥克兰华人网页设计服务</p>
-        <h1 class="zh-title">专业网站，让您的<br />生意脱颖而出。</h1>
-        <p class="zh-subtitle">为奥克兰华人中小企业提供专业网站建设、SEO优化和数字营销服务。价格透明，快速交付，本地团队支持。</p>
+        <p class="zh-eyebrow">奥克兰华人网站开发与网页设计服务</p>
+        <h1 class="zh-title">奥克兰网站开发，<br />让您的生意脱颖而出。</h1>
+        <p class="zh-subtitle">为奥克兰华人中小企业提供专业网站开发、SEO优化和数字营销服务。价格透明，快速交付，本地团队支持。</p>
         <div class="zh-hero-btns">
           <a href={contactPage} class="btn-zh-primary">免费咨询</a>
           <a href="/zh/small-business-website-design-auckland/" class="btn-zh-outline">查看服务详情</a>
@@ -217,7 +264,7 @@ const faqs = [
   <!-- AI citability snippet -->
   <div class="zh-snippet">
     <div class="container">
-      <p><strong>Kiwi Web Design</strong> 是奥克兰本地网页设计公司，由华裔创始人 Charlie Chao 创立，专为奥克兰华人及中小企业提供中文服务。业务涵盖网站建设（起价 <strong>$1,290 NZD</strong>）、本地 SEO 优化（起价 <strong>$500/月</strong>）和 Google 广告管理。公司地址：Grey Lynn，奥克兰，可全程中文沟通，固定报价无隐性收费，Google 评分 <strong>4.9★</strong>。</p>
+      <p><strong>Kiwi Web Design</strong> 是奥克兰本地网站开发与网页设计公司，由华裔创始人 Charlie Chao 创立，专为奥克兰华人及中小企业提供中文网站开发服务。业务涵盖网站开发（起价 <strong>$1,290 NZD</strong>）、本地 SEO 优化（起价 <strong>$500/月</strong>）和 Google 广告管理。公司地址：Grey Lynn，奥克兰，可全程中文沟通，固定报价无隐性收费，Google 评分 <strong>4.9★</strong>。</p>
     </div>
   </div>
 
@@ -226,8 +273,8 @@ const faqs = [
     <div class="container">
       <div class="zh-section-header">
         <p class="zh-section-eyebrow">我们的服务</p>
-        <h2 class="zh-section-title">一站式数字营销解决方案</h2>
-        <p class="zh-section-subtitle">从网站建设到搜索优化，我们帮助奥克兰华人企业在网上建立专业形象，吸引更多客户。</p>
+        <h2 class="zh-section-title">奥克兰网站开发 · 一站式数字营销服务</h2>
+        <p class="zh-section-subtitle">从网站开发到搜索优化，我们帮助奥克兰华人企业在网上建立专业形象，吸引更多客户。</p>
       </div>
       <div class="zh-services-grid">
         {services.map(svc => (
@@ -246,14 +293,36 @@ const faqs = [
     </div>
   </section>
 
-  <!-- About / Why KWD -->
+  <!-- Development process -->
   <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="zh-section-header">
+        <p class="zh-section-eyebrow">网站开发流程</p>
+        <h2 class="zh-section-title">从咨询到上线，全程中文沟通。</h2>
+        <p class="zh-section-subtitle">清晰的网站开发流程，让您随时了解项目进度，无任何意外费用。</p>
+      </div>
+      <div class="zh-process">
+        {devProcess.map(step => (
+          <div class="zh-process-step">
+            <span class="zh-process-num">{step.step}</span>
+            <div class="zh-process-content">
+              <h3 class="zh-process-title">{step.title}</h3>
+              <p class="zh-process-desc">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Why KWD -->
+  <section class="section" style="background: var(--kwd-cream);">
     <div class="container zh-about-wrap">
       <div class="zh-about-text">
         <p class="zh-section-eyebrow" style="color: var(--kwd-brown);">关于我们</p>
-        <h2 class="zh-about-title">Kiwi Web Design — 奥克兰本地网页设计团队</h2>
-        <p class="zh-about-body">Kiwi Web Design由Charlie Chao创立，专注于为奥克兰小企业和个体经营者提供高性价比的网站建设和数字营销服务。</p>
-        <p class="zh-about-body">我们不是大型代理公司——我们是一个小型本地团队，直接与客户沟通，提供更快的响应速度和更好的性价比。每个项目都有固定价格报价、明确的时间表，以及完整的网站管理培训。</p>
+        <h2 class="zh-about-title">Kiwi Web Design — 奥克兰本地网站开发团队</h2>
+        <p class="zh-about-body">Kiwi Web Design由Charlie Chao创立，专注于为奥克兰小企业和个体经营者提供高性价比的网站开发和数字营销服务。</p>
+        <p class="zh-about-body">我们不是大型代理公司——我们是一个小型本地团队，直接与客户沟通，提供更快的响应速度和更好的性价比。每个网站开发项目都有固定价格报价、明确的时间表，以及完整的网站管理培训。</p>
         <p class="zh-about-body">无论您是餐饮、零售、贸易、专业服务还是其他行业，我们都有丰富的相关经验，帮助您的企业在线上取得成功。</p>
         <a href={contactPage} class="btn-zh-dark">预约免费咨询</a>
       </div>
@@ -271,13 +340,60 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Industries -->
+  <!-- Case studies -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="zh-section-header">
+        <p class="zh-section-eyebrow">客户案例</p>
+        <h2 class="zh-section-title">真实项目，可查证的结果。</h2>
+        <p class="zh-section-subtitle">我们为奥克兰各行业企业完成了100+个网站开发项目，以下是部分案例。</p>
+      </div>
+      <div class="zh-case-grid">
+        {caseStudies.map(cs => (
+          <a href={cs.href} class="zh-case-card">
+            <div class="zh-case-top">
+              <span class="zh-case-tag">{cs.tag}</span>
+              <span class="zh-case-result">{cs.result}</span>
+            </div>
+            <h3 class="zh-case-name">{cs.name}</h3>
+            <p class="zh-case-desc">{cs.desc}</p>
+            <span class="zh-case-link">查看详情 →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
   <section class="section" style="background: var(--kwd-dark);">
-    <div class="container" style="max-width: 860px;">
+    <div class="container" style="max-width: 900px;">
       <div class="zh-section-header" style="color: #fff;">
-        <p class="zh-section-eyebrow" style="color: var(--kwd-yellow);">服务行业</p>
-        <h2 class="zh-section-title" style="color: #fff;">各行各业，皆有经验</h2>
-        <p class="zh-section-subtitle" style="color: rgba(255,255,255,0.7);">我们为奥克兰各行业的华人企业提供服务，包括但不限于：</p>
+        <p class="zh-section-eyebrow" style="color: var(--kwd-yellow);">网站开发价格</p>
+        <h2 class="zh-section-title" style="color: #fff;">透明报价，固定价格，不按小时计费。</h2>
+        <p class="zh-section-subtitle" style="color: rgba(255,255,255,0.65);">以下为常见网站开发套餐参考价格（NZD，含GST另算）。具体报价以项目需求为准。</p>
+      </div>
+      <div class="zh-pricing-grid">
+        {pricingTiers.map(tier => (
+          <div class={`zh-pricing-card${tier.popular ? ' zh-pricing-card--popular' : ''}`}>
+            {tier.popular && <span class="zh-popular-badge">最受欢迎</span>}
+            <p class="zh-pricing-name">{tier.name}</p>
+            <p class="zh-pricing-price">{tier.price}</p>
+            <p class="zh-pricing-pages">{tier.pages}</p>
+            <p class="zh-pricing-desc">{tier.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="zh-pricing-note">所有套餐均含：域名配置、移动端适配、SEO基础设置、网站操作培训。<a href={contactPage} class="zh-pricing-cta-link">获取精确报价 →</a></p>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <div class="zh-section-header">
+        <p class="zh-section-eyebrow">服务行业</p>
+        <h2 class="zh-section-title">各行各业，皆有经验</h2>
+        <p class="zh-section-subtitle">我们为奥克兰各行业的华人企业提供网站开发服务，包括但不限于：</p>
       </div>
       <div class="zh-industries">
         {["餐饮与外卖", "零售与电商", "建筑与装修", "美容与护理", "专业服务", "教育与培训", "进出口贸易", "房产中介", "汽车服务", "健康与保健"].map(ind => (
@@ -288,11 +404,11 @@ const faqs = [
   </section>
 
   <!-- FAQ -->
-  <section class="section" style="background: var(--kwd-cream);">
+  <section class="section">
     <div class="container" style="max-width: 760px;">
       <div class="zh-section-header">
         <p class="zh-section-eyebrow">常见问题</p>
-        <h2 class="zh-section-title">您可能想了解的</h2>
+        <h2 class="zh-section-title">关于网站开发，您可能想了解的</h2>
       </div>
       <div class="zh-faqs">
         {faqs.map(faq => (
@@ -314,6 +430,7 @@ const faqs = [
         <a href="/zh/seo-auckland/" class="rps-link">SEO优化</a>
         <a href="/zh/local-seo-for-auckland-small-businesses/" class="rps-link">本地 SEO</a>
         <a href="/zh/ai-seo-for-auckland-small-businesses/" class="rps-link">AI SEO &amp; GEO</a>
+        <a href="/google-ads/" class="rps-link">Google广告</a>
         <a href="/zh/about-us/" class="rps-link">关于我们</a>
       </div>
     </div>
@@ -504,6 +621,49 @@ const faqs = [
     color: var(--kwd-brown);
   }
 
+  /* Development process */
+  .zh-process {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    counter-reset: none;
+  }
+  .zh-process-step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .zh-process-step:last-child { border-bottom: none; }
+  .zh-process-num {
+    flex-shrink: 0;
+    font-family: var(--kwd-font-heading);
+    font-size: 1.6rem;
+    color: var(--kwd-yellow);
+    line-height: 1;
+    background: var(--kwd-dark);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 0.1rem;
+  }
+  .zh-process-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin-bottom: 0.35rem;
+  }
+  .zh-process-desc {
+    font-size: 0.875rem;
+    color: var(--kwd-brown);
+    line-height: 1.75;
+    margin: 0;
+  }
+
   /* About section */
   .zh-about-wrap {
     display: grid;
@@ -576,6 +736,141 @@ const faqs = [
     margin: 0;
   }
 
+  /* Case studies */
+  .zh-case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .zh-case-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background: var(--kwd-cream);
+    border: 1px solid #c8c2b8;
+    border-radius: 14px;
+    padding: 1.75rem;
+    text-decoration: none;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .zh-case-card:hover { box-shadow: 0 6px 24px rgba(44,41,39,0.1); transform: translateY(-2px); }
+  .zh-case-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .zh-case-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kwd-brown);
+  }
+  .zh-case-result {
+    font-family: var(--kwd-font-heading);
+    font-size: 1rem;
+    color: var(--kwd-dark);
+    background: var(--kwd-yellow);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .zh-case-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin: 0;
+  }
+  .zh-case-desc {
+    font-size: 0.875rem;
+    color: var(--kwd-brown);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .zh-case-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin-top: auto;
+  }
+
+  /* Pricing */
+  .zh-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .zh-pricing-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 1.75rem 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .zh-pricing-card--popular {
+    background: rgba(251,232,166,0.12);
+    border-color: var(--kwd-yellow);
+  }
+  .zh-popular-badge {
+    position: absolute;
+    top: -0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .zh-pricing-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.55);
+    margin: 0;
+  }
+  .zh-pricing-price {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.6rem;
+    color: var(--kwd-yellow);
+    line-height: 1.1;
+    margin: 0.25rem 0 0;
+  }
+  .zh-pricing-pages {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    margin: 0;
+  }
+  .zh-pricing-desc {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+    margin: 0.5rem 0 0;
+  }
+  .zh-pricing-note {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    margin: 0;
+  }
+  .zh-pricing-cta-link {
+    color: var(--kwd-yellow);
+    font-weight: 700;
+    margin-left: 0.5rem;
+    text-decoration: none;
+  }
+  .zh-pricing-cta-link:hover { text-decoration: underline; }
+
   /* Industries */
   .zh-industries {
     display: flex;
@@ -588,9 +883,9 @@ const faqs = [
     font-weight: 600;
     padding: 0.45rem 1rem;
     border-radius: 999px;
-    background: rgba(255,255,255,0.1);
-    border: 1.5px solid rgba(255,255,255,0.2);
-    color: rgba(255,255,255,0.9);
+    background: rgba(0,0,0,0.06);
+    border: 1.5px solid rgba(0,0,0,0.1);
+    color: var(--kwd-dark);
   }
 
   /* FAQ */
@@ -637,6 +932,8 @@ const faqs = [
     .zh-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .zh-about-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
     .zh-hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .zh-pricing-grid { grid-template-columns: 1fr; }
+    .zh-case-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 640px) {
     .zh-services-grid { grid-template-columns: 1fr; }
