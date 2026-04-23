@@ -717,11 +717,24 @@ const exploreGroups = [
       prefersReducedMotion.addEventListener('change', handleMotionChange);
       desktopParallax.addEventListener('change', handleMotionChange);
 
+      // Clean up on every navigation away (not once: true — must also run after bfcache restore)
       window.addEventListener('pagehide', () => {
         revealObserver?.disconnect();
         destroyCarousel?.();
         destroyParallax?.();
-      }, { once: true });
+      });
+
+      // bfcache restore: browser thaws the frozen page instead of re-running the script.
+      // revealObserver was disconnected on pagehide, rAF IDs are stale — re-initialise everything.
+      window.addEventListener('pageshow', (event) => {
+        if (!event.persisted) return;
+        carouselFrame = 0;   // reset stale rAF ID so syncCarouselMotion restarts the loop
+        parallaxFrame = 0;   // reset stale rAF ID
+        syncMotionClass();
+        initReveals();       // re-attach observer + immediately show anything now in viewport
+        syncCarouselMotion();
+        syncParallaxMotion();
+      });
     })();
   </script>
 </Layout>
