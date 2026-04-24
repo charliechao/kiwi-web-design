@@ -295,7 +295,25 @@ const schema = [
             <span id="kwd-total">$0</span>
           </div>
         </div>
-        <p class="kwd-disclaimer">This is a ballpark estimate to help NZ businesses plan. For a fixed quote, <a href="/website-designer-auckland/">contact Kiwi Web Design</a>.</p>
+        <!-- Inline quote form — shown directly after the total -->
+        <div class="kwd-quote-form" id="kwd-quote-form">
+          <p class="kwd-qf-heading">Want this confirmed? Get a free, fixed quote:</p>
+          <form id="kwd-calc-contact-form" novalidate>
+            <input type="hidden" name="access_key" value="e0a725e4-f764-4536-826c-df981c8bdf3b" />
+            <input type="hidden" name="subject" value="Website cost enquiry from KWD calculator" />
+            <input type="hidden" name="from_name" value="KWD Cost Calculator" />
+            <input type="hidden" id="kwd-calc-estimate-field" name="calculator_estimate" value="" />
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+            <div class="kwd-qf-fields">
+              <input class="kwd-qf-input" type="text" id="kwd-qf-name" name="name" placeholder="Your name *" required autocomplete="name" />
+              <input class="kwd-qf-input" type="tel" id="kwd-qf-contact" name="contact" placeholder="Phone or email *" required autocomplete="tel" />
+            </div>
+            <button class="kwd-qf-btn" type="submit" id="kwd-qf-btn">Send My Details →</button>
+            <p class="kwd-qf-status" id="kwd-qf-status" aria-live="polite" hidden></p>
+          </form>
+          <p class="kwd-qf-trust">No obligation &middot; No spam &middot; Charlie replies within 2 business hours</p>
+          <p class="kwd-disclaimer">Figures are estimates to help with planning. For a fixed price, use the form above.</p>
+        </div>
       </div>
     </section>
 
@@ -668,9 +686,90 @@ const schema = [
     color: var(--kwd-brown);
   }
   #kwd-website-cost-nz .kwd-disclaimer {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--kwd-brown);
-    margin-top: 1.25rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0;
+  }
+  /* ── Inline quote form ── */
+  #kwd-website-cost-nz .kwd-quote-form {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--kwd-dark);
+  }
+  #kwd-website-cost-nz .kwd-qf-heading {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin: 0 0 0.9rem;
+  }
+  #kwd-website-cost-nz .kwd-qf-fields {
+    display: grid;
+    gap: 0.65rem;
+    margin-bottom: 0.75rem;
+  }
+  #kwd-website-cost-nz .kwd-qf-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #c8c2b8;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--kwd-font-body);
+    color: var(--kwd-dark);
+    background: #fff;
+    transition: border-color 0.15s;
+  }
+  #kwd-website-cost-nz .kwd-qf-input:focus {
+    outline: none;
+    border-color: var(--kwd-dark);
+  }
+  #kwd-website-cost-nz .kwd-qf-btn {
+    width: 100%;
+    background: var(--kwd-dark);
+    color: var(--kwd-yellow);
+    font-family: var(--kwd-font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border: none;
+    border-radius: 8px;
+    padding: 0.9rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  #kwd-website-cost-nz .kwd-qf-btn:hover,
+  #kwd-website-cost-nz .kwd-qf-btn:focus-visible {
+    background: #3e3633;
+  }
+  #kwd-website-cost-nz .kwd-qf-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  #kwd-website-cost-nz .kwd-qf-status {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 6px;
+  }
+  #kwd-website-cost-nz .kwd-qf-status.is-success {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+  #kwd-website-cost-nz .kwd-qf-status.is-error {
+    background: #fdecea;
+    color: #c62828;
+  }
+  #kwd-website-cost-nz .kwd-qf-trust {
+    margin-top: 0.65rem;
+    margin-bottom: 0;
+    font-size: 0.82rem;
+    color: var(--kwd-brown);
+  }
+  @media (min-width: 500px) {
+    #kwd-website-cost-nz .kwd-qf-fields {
+      grid-template-columns: 1fr 1fr;
+    }
   }
   #kwd-website-cost-nz .kwd-toc {
     margin: 3rem 0 2rem;
@@ -996,6 +1095,12 @@ const schema = [
       totalLabel.textContent = gstOn ? "Estimated total (Incl. GST)" : "Estimated total (GST excl.)";
       totalValue.textContent = formatCurrency(total);
 
+      // Keep the hidden form field in sync so submissions include the current estimate
+      var estimateField = document.getElementById("kwd-calc-estimate-field");
+      if (estimateField) {
+        estimateField.value = "Site type: " + siteType + " | Estimate: " + formatCurrency(total) + (gstOn ? " (incl. GST)" : " (excl. GST)");
+      }
+
       breakdownList.innerHTML = breakdown
         .map(function (item) {
           return "<li><span>" + item.label + "</span><span>" + formatCurrency(item.amount) + "</span></li>";
@@ -1040,6 +1145,68 @@ const schema = [
           target.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 200);
       }
+    }
+
+    // ── Inline quote form submit ──
+    const calcForm = document.getElementById("kwd-calc-contact-form");
+    const qfBtn    = document.getElementById("kwd-qf-btn");
+    const qfStatus = document.getElementById("kwd-qf-status");
+
+    function showQFStatus(msg, isError) {
+      qfStatus.textContent = msg;
+      qfStatus.className = "kwd-qf-status " + (isError ? "is-error" : "is-success");
+      qfStatus.hidden = false;
+    }
+
+    if (calcForm && qfBtn && qfStatus) {
+      calcForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Honeypot bot check
+        const botcheck = calcForm.querySelector('[name="botcheck"]');
+        if (botcheck && botcheck.checked) return;
+
+        const name    = (document.getElementById("kwd-qf-name").value || "").trim();
+        const contact = (document.getElementById("kwd-qf-contact").value || "").trim();
+
+        if (name.length < 2) {
+          showQFStatus("Please enter your name.", true);
+          return;
+        }
+        if (contact.length < 5) {
+          showQFStatus("Please enter your phone number or email address.", true);
+          return;
+        }
+
+        qfBtn.disabled = true;
+        qfBtn.textContent = "Sending\u2026";
+        qfStatus.hidden = true;
+
+        const payload = {};
+        new FormData(calcForm).forEach(function (val, key) { payload[key] = val; });
+
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(payload)
+        })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (data.success) {
+              showQFStatus("Thanks! Charlie will be in touch within 2 business hours.", false);
+              calcForm.reset();
+            } else {
+              showQFStatus(data.message || "Something went wrong — please try again.", true);
+            }
+          })
+          .catch(function () {
+            showQFStatus("Network error — please try again or call 021\u00a0039\u00a06580.", true);
+          })
+          .finally(function () {
+            qfBtn.disabled = false;
+            qfBtn.textContent = "Send My Details \u2192";
+          });
+      });
     }
 
     // FAQ accordion
