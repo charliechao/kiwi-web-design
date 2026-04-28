@@ -18,8 +18,8 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/seo-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/seo-auckland/",
-      "name": "SEO Services Auckland | Local SEO for Small Business | Kiwi Web Design",
-      "description": "Local SEO for Auckland small businesses from $500/month. Google Maps rankings, targeted keywords, plain-English reporting. No lock-in contracts. Free audit.",
+      "name": "SEO Auckland | Auckland SEO Agency for Small Business | Kiwi Web Design",
+      "description": "Auckland SEO agency for small businesses: local SEO, Google Business Profile optimisation, technical SEO, content, and reporting. Based in Grey Lynn, Auckland.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -74,10 +74,10 @@ const schema = {
     {
       "@type": "Service",
       "@id": "https://www.kiwiwebdesign.co.nz/seo-auckland/#service",
-      "name": "SEO Services Auckland",
-      "serviceType": "Search Engine Optimisation",
+      "name": "SEO Auckland",
+      "serviceType": "SEO Agency Services",
       "category": "Digital Marketing",
-      "description": "Local SEO for Auckland small businesses. Google Maps rankings, on-page optimisation, content creation, link building, and monthly reporting. From $500/month. No lock-in contracts.",
+      "description": "SEO Auckland services for small businesses. Local SEO, Google Business Profile optimisation, on-page SEO, technical SEO, content, link building, and monthly reporting.",
       "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "areaServed": [
         { "@type": "City", "name": "Auckland" },
@@ -181,10 +181,28 @@ const reviews = [
   { name: "Jack", company: "Show Me Shorts", text: "The SEO work was thorough and professional. They explained everything clearly and I can see real improvements in our Google rankings." },
 ];
 
+const caseStudies = [
+  {
+    name: "Barrett Access Scaffolding",
+    summary: "For Barrett Access Scaffolding, we paired sector landing pages with clearer local intent, Google Business Profile updates, and enquiry routing that matched residential, commercial, and industrial searches.",
+    takeaway: "The SEO lesson: better local landing pages and better-fit enquiry paths usually lift lead quality before you even start chasing harder keywords.",
+    href: "/case-study-scaffolding/",
+    cta: "Read the Barrett case study",
+  },
+  {
+    name: "Beauty Touch Auckland",
+    summary: "For Beauty Touch Auckland, we launched service pages, booking-ready structure, and Google Business Profile support so the business could show up more credibly for branded and treatment-led local searches.",
+    takeaway: "The SEO lesson: many Auckland small businesses need cleaner service-page structure and stronger local trust signals before advanced SEO campaigns make sense.",
+    href: "/beauty-touch-case-study/",
+    cta: "Read the Beauty Touch case study",
+  },
+];
+
 const faqs = [
   { q: "How long does SEO take to show results in Auckland?", a: "Most Auckland businesses see early movement in 2–3 months, with meaningful results building over 6–12 months. SEO compounds over time — the longer you invest, the stronger and more consistent your results." },
   { q: "How much does SEO cost for a small business in New Zealand?", a: "Our SEO packages start from $500/month and scale to $2,500/month depending on your industry's competition and scope of work. Every engagement starts with a free audit so we can quote accurately." },
   { q: "What's the difference between local SEO and general SEO?", a: "Local SEO targets location-based searches — 'plumber Auckland' or 'café near me'. It includes your Google Business Profile, local citations, and map pack rankings. Our dedicated <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO for Auckland businesses</a> service covers this in detail. General SEO focuses on broader national visibility without a geographic focus." },
+  { q: "What does an SEO agency in Auckland actually do?", a: "A good Auckland SEO agency handles the work that improves both visibility and conversion: keyword targeting, Google Business Profile optimisation, on-page improvements, technical fixes, content strategy, internal linking, and reporting tied to real enquiries." },
   { q: "Do I need SEO if I'm already running Google Ads?", a: "They work differently. <a href=\"/google-ads/\">Google Ads</a> stops the moment you stop paying. SEO builds organic visibility that earns free clicks over time. Most businesses benefit from running both — Ads for immediate leads, SEO for long-term growth." },
   { q: "Can you guarantee first-page Google rankings?", a: "No ethical agency can guarantee specific rankings. What we do guarantee is a focused, transparent effort on the signals that matter most for your local market, backed by clear monthly reporting." },
   { q: "Do you work with businesses outside Auckland?", a: "We're Auckland-based but work with businesses across New Zealand. Our local SEO expertise is strongest for Auckland, but our technical and content SEO applies everywhere." },
@@ -192,16 +210,16 @@ const faqs = [
 ---
 
 <Layout
-  title="SEO Services Auckland | Local SEO for Small Business | Kiwi Web Design"
-  description="Local SEO for Auckland small businesses from $500/month. Google Maps rankings, targeted keywords, plain-English reporting. No lock-in contracts. Free audit."
+  title="SEO Auckland | Auckland SEO Agency for Small Business | Kiwi Web Design"
+  description="Auckland SEO agency for small businesses: local SEO, Google Business Profile optimisation, technical SEO, content, and reporting. Based in Grey Lynn, Auckland."
   canonicalURL="https://www.kiwiwebdesign.co.nz/seo-auckland/"
   schema={schema}
 >
 
   <PageHero
-    eyebrow="SEO Services Auckland"
-    title="Get found by customers actively searching for you."
-    subtitle="Local SEO for Auckland small businesses. We target the keywords your customers actually use and build the organic visibility that turns searches into real enquiries — from $500/month, no lock-in."
+    eyebrow="SEO Auckland"
+    title="An Auckland SEO agency for small businesses that want more leads."
+    subtitle="Kiwi Web Design provides SEO Auckland businesses can build on: local SEO, Google Business Profile optimisation, technical fixes, and content that turns search demand into real enquiries. Based in Grey Lynn, Auckland. From $500/month, no lock-in."
     ctaPrimary={{ text: "Get a Free SEO Audit", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "View Pricing", href: "#pricing" }}
     centered={true}
@@ -210,20 +228,20 @@ const faqs = [
   <!-- AI citability snippet -->
   <div class="seo-snippet">
     <div class="container">
-      <p><strong>Kiwi Web Design</strong> provides SEO services for Auckland small businesses from <strong>$500/month</strong> with no lock-in contracts. Services cover local SEO, Google Business Profile optimisation, technical SEO, content creation, and link building. Based in Grey Lynn, Auckland — 4.9★ Google rating from 50+ NZ clients. Most businesses see early results in 2–3 months, with sustained growth over 6–12 months.</p>
+      <p><strong>Kiwi Web Design</strong> is an Auckland SEO agency focused on small businesses. We combine local SEO, Google Business Profile optimisation, technical SEO, content structure, and reporting tied to real enquiries. Based in Grey Lynn, Auckland, with a 4.9/5 Google rating and SEO packages from <strong>$500/month</strong>.</p>
     </div>
   </div>
 
   <!-- Stat bar -->
   <div class="seo-statbar">
     <div class="container seo-statbar-inner">
-      <div class="ssb-item"><span class="ssb-num">93%</span><span class="ssb-lbl">of online experiences start with search</span></div>
+      <div class="ssb-item"><span class="ssb-num">Grey Lynn</span><span class="ssb-lbl">Auckland-based SEO partner</span></div>
       <span class="ssb-sep" aria-hidden="true"></span>
-      <div class="ssb-item"><span class="ssb-num">14.6%</span><span class="ssb-lbl">close rate for SEO leads vs 1.7% outbound</span></div>
+      <div class="ssb-item"><span class="ssb-num">4.9/5</span><span class="ssb-lbl">Google rating</span></div>
       <span class="ssb-sep" aria-hidden="true"></span>
-      <div class="ssb-item"><span class="ssb-num">4.9★</span><span class="ssb-lbl">Google rating across 47 reviews</span></div>
+      <div class="ssb-item"><span class="ssb-num">No lock-in</span><span class="ssb-lbl">month-to-month SEO support</span></div>
       <span class="ssb-sep" aria-hidden="true"></span>
-      <div class="ssb-item"><span class="ssb-num">From $500/mo</span><span class="ssb-lbl">SEO packages starting from</span></div>
+      <div class="ssb-item"><span class="ssb-num">From $500/mo</span><span class="ssb-lbl">SEO packages for Auckland businesses</span></div>
     </div>
   </div>
 
@@ -232,8 +250,8 @@ const faqs = [
     <div class="container">
       <SectionHeader
         eyebrow="Our SEO Services"
-        title="Everything you need to rank and convert."
-        subtitle="From technical fixes to content and local signals — a complete SEO approach for Auckland businesses."
+        title="Everything an Auckland SEO campaign needs to rank and convert."
+        subtitle="From technical fixes to content and local signals, this is a complete SEO Auckland offer for small businesses that want better visibility and better enquiries."
       />
       <ServiceGrid items={seoServices} cols={3} />
     </div>
@@ -242,28 +260,49 @@ const faqs = [
   <!-- Results strip (dark) -->
   <section class="section" style="background: var(--kwd-dark);">
     <div class="container">
-      <SectionHeader eyebrow="Real Results" title="What our clients achieve with SEO." light={true} />
+      <SectionHeader eyebrow="SEO Signals" title="The kind of SEO work that moves Auckland campaigns forward." light={true} />
       <div class="seo-results">
         <div class="seo-result">
-          <span class="sr-num">+87%</span>
-          <span class="sr-label">Organic Traffic</span>
-          <span class="sr-industry">Plumbing Business</span>
+          <span class="sr-num">GBP</span>
+          <span class="sr-label">Google Business Profile optimisation</span>
+          <span class="sr-industry">Local visibility foundation</span>
         </div>
         <div class="seo-result">
-          <span class="sr-num">+64%</span>
-          <span class="sr-label">Website Visits</span>
-          <span class="sr-industry">Café & Hospitality</span>
+          <span class="sr-num">On-page</span>
+          <span class="sr-label">Service-page targeting and internal links</span>
+          <span class="sr-industry">Clearer keyword intent</span>
         </div>
         <div class="seo-result">
-          <span class="sr-num">+92%</span>
-          <span class="sr-label">New Patient Enquiries</span>
-          <span class="sr-industry">Dental Clinic</span>
+          <span class="sr-num">Tech SEO</span>
+          <span class="sr-label">Crawl, speed, schema, and indexing fixes</span>
+          <span class="sr-industry">Cleaner site quality signals</span>
         </div>
         <div class="seo-result">
-          <span class="sr-num">3–6 mo</span>
-          <span class="sr-label">Average time to results</span>
-          <span class="sr-industry">Most Auckland businesses</span>
+          <span class="sr-num">3-6 mo</span>
+          <span class="sr-label">Typical time to see meaningful movement</span>
+          <span class="sr-industry">Most Auckland SEO campaigns</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case studies -->
+  <section class="section seo-proof-section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="SEO Case Studies"
+        title="What SEO work looks like on real Auckland projects."
+        subtitle="These are grounded examples from live client work, not made-up ranking wins."
+      />
+      <div class="seo-case-grid">
+        {caseStudies.map(({ name, summary, takeaway, href, cta }) => (
+          <article class="seo-case-card">
+            <p class="seo-case-name">{name}</p>
+            <p class="seo-case-summary">{summary}</p>
+            <p class="seo-case-takeaway">{takeaway}</p>
+            <a href={href} class="seo-case-link">{cta} -&gt;</a>
+          </article>
+        ))}
       </div>
     </div>
   </section>
@@ -288,15 +327,15 @@ const faqs = [
           <Image src={aboutImg} alt="SEO specialist reviewing keyword strategy for an Auckland business" width={560} height={700} class="seo-about-img" />
         </div>
         <div class="seo-about-content">
-          <p class="seo-about-eyebrow">Why Work With Us</p>
-          <h2>SEO built around your business, not a template.</h2>
-          <p>We don't sell packages and forget you. Every Auckland client gets a dedicated strategy based on their industry, competitors, and customer search behaviour — reviewed every single month.</p>
+          <p class="seo-about-eyebrow">Why Choose Our SEO Agency</p>
+          <h2>Why choose our SEO agency in Auckland?</h2>
+          <p>Most small businesses do not need a big-agency process. They need an Auckland SEO agency that understands local search intent, can fix the website as well as the keywords, and stays accountable to leads instead of vanity metrics.</p>
           <ul class="seo-about-list">
-            <li>Free audit before any commitment</li>
-            <li>No lock-in contracts — stay because it works</li>
-            <li>Clear monthly reporting in plain English</li>
-            <li>Local Auckland knowledge, not offshore teams</li>
-            <li>Results tracked against your actual leads, not just rankings</li>
+            <li>Direct strategy with Charlie Chao, not an offshore handoff</li>
+            <li>SEO, website fixes, and landing-page improvements under one roof</li>
+            <li>Local Auckland knowledge across GBP, suburb intent, and service-area searches</li>
+            <li>Plain-English reporting tied to enquiries, not just ranking screenshots</li>
+            <li>No lock-in contracts - stay because the work is moving</li>
           </ul>
           <a href="/website-designer-auckland/" class="seo-about-btn">Book a Free SEO Audit →</a>
         </div>
@@ -375,15 +414,15 @@ const faqs = [
         <div class="seo-team-nums">
           <div class="stn-item">
             <span class="stn-num">50+</span>
-            <span class="stn-lbl">NZ businesses ranked</span>
+            <span class="stn-lbl">NZ client projects</span>
           </div>
           <div class="stn-item">
             <span class="stn-num">4.9★</span>
             <span class="stn-lbl">Google rating</span>
           </div>
           <div class="stn-item">
-            <span class="stn-num">3–6 mo</span>
-            <span class="stn-lbl">Average time to results</span>
+            <span class="stn-num">3-6 mo</span>
+            <span class="stn-lbl">Typical time to movement</span>
           </div>
         </div>
         <a href="/website-designer-auckland/" class="seo-team-btn">Start with a Free Audit →</a>
@@ -610,6 +649,57 @@ const faqs = [
   .sr-label  { font-size: 0.875rem; color: rgba(255,255,255,0.75); font-weight: 500; }
   .sr-industry { font-size: 0.75rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.05em; }
 
+  .seo-proof-section {
+    background: linear-gradient(180deg, #f7f3ea 0%, #ffffff 100%);
+  }
+  .seo-case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .seo-case-card {
+    padding: 1.6rem;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid rgba(44, 41, 39, 0.08);
+    box-shadow: 0 16px 36px rgba(22, 19, 16, 0.08);
+  }
+  .seo-case-name,
+  .seo-case-summary,
+  .seo-case-takeaway {
+    margin: 0;
+  }
+  .seo-case-name {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+  }
+  .seo-case-summary,
+  .seo-case-takeaway {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--kwd-brown);
+  }
+  .seo-case-summary {
+    margin-bottom: 0.9rem;
+  }
+  .seo-case-takeaway {
+    margin-bottom: 1rem;
+  }
+  .seo-case-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--kwd-dark);
+    text-decoration: none;
+  }
+  .seo-case-link:hover {
+    color: var(--kwd-gold);
+  }
+
   .seo-pkg-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -679,7 +769,8 @@ const faqs = [
   @media (max-width: 900px) {
     .seo-statbar-inner { justify-content: flex-start; gap: 1.5rem; }
     .ssb-sep { display: none; }
-    .seo-results { grid-template-columns: repeat(2, 1fr); }
+    .seo-results,
+    .seo-case-grid { grid-template-columns: repeat(2, 1fr); }
     .seo-pkg-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
     .seo-about-split { grid-template-columns: 1fr; gap: 2rem; }
     .seo-about-img-wrap { aspect-ratio: 16/9; max-height: 340px; }
@@ -687,7 +778,8 @@ const faqs = [
     .seo-team-img-wrap { height: 280px; }
   }
   @media (max-width: 600px) {
-    .seo-results { grid-template-columns: 1fr; }
+    .seo-results,
+    .seo-case-grid { grid-template-columns: 1fr; }
     .seo-team-stats { padding: 2rem 1.5rem; }
     .seo-team-nums { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
   }
