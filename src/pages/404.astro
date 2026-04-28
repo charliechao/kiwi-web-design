@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Page Not Found | Kiwi Web Design"
+  description="The page you requested could not be found. Browse Kiwi Web Design's Auckland web design, SEO, and Google Ads services instead."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/404.html"
+  robots="noindex, nofollow"
+>
+  <section class="nf-wrap">
+    <div class="container nf-shell">
+      <p class="nf-kicker">404</p>
+      <h1>That page does not exist anymore.</h1>
+      <p class="nf-copy">
+        If this came from an old bookmark or an older Google result, the site structure has changed since the WordPress migration.
+        The main pages below will get you to the right place faster.
+      </p>
+
+      <div class="nf-actions">
+        <a href="/" class="nf-btn-primary">Go to Homepage</a>
+        <a href="/website-designer-auckland/" class="nf-btn-secondary">Book a Free Consultation</a>
+      </div>
+
+      <div class="nf-links">
+        <a href="/small-business-website-design-auckland/">Web Design</a>
+        <a href="/seo-auckland/">SEO Auckland</a>
+        <a href="/google-ads/">Google Ads</a>
+        <a href="/affordable-web-design-auckland/">Blog</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .nf-wrap {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    background:
+      radial-gradient(circle at top left, rgba(251, 232, 166, 0.52), transparent 34%),
+      radial-gradient(circle at bottom right, rgba(199, 170, 93, 0.28), transparent 30%),
+      linear-gradient(180deg, #2c2927 0%, #1f1d1c 100%);
+    padding: 7rem 0 4rem;
+  }
+
+  .nf-shell {
+    max-width: 760px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .nf-kicker {
+    margin: 0 0 0.9rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--kwd-yellow);
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: clamp(2.4rem, 6vw, 4.8rem);
+    line-height: 1.02;
+  }
+
+  .nf-copy {
+    margin: 0 auto 2rem;
+    max-width: 56ch;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+
+  .nf-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.6rem;
+  }
+
+  .nf-btn-primary,
+  .nf-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.9rem 1.4rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .nf-btn-primary {
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+  }
+
+  .nf-btn-primary:hover {
+    background: var(--kwd-gold);
+  }
+
+  .nf-btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .nf-btn-secondary:hover {
+    border-color: var(--kwd-yellow);
+    color: var(--kwd-yellow);
+  }
+
+  .nf-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.1rem 1.4rem;
+    flex-wrap: wrap;
+  }
+
+  .nf-links a {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.95rem;
+  }
+
+  .nf-links a:hover {
+    color: var(--kwd-yellow);
+  }
+
+  @media (max-width: 640px) {
+    .nf-wrap {
+      padding-top: 6.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 12vw, 3rem);
+    }
+
+    .nf-copy {
+      font-size: 0.98rem;
+    }
+
+    .nf-actions {
+      flex-direction: column;
+    }
+
+    .nf-btn-primary,
+    .nf-btn-secondary {
+      width: 100%;
+    }
+  }
+</style>

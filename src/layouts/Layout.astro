@@ -10,9 +10,10 @@ interface Props {
   schema?: Record<string, unknown> | Record<string, unknown>[];
   lang?: string;
   alternateUrl?: string;
+  robots?: string;
 }
 
-const { title, description, canonicalURL, schema, lang = 'en-NZ', alternateUrl } = Astro.props;
+const { title, description, canonicalURL, schema, lang = 'en-NZ', alternateUrl, robots } = Astro.props;
 
 const isZh = lang.startsWith('zh');
 const altLang = isZh ? 'en-NZ' : 'zh-Hans';
@@ -36,6 +37,7 @@ const schemaStr = schema
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    {robots && <meta name="robots" content={robots} />}
     <link rel="canonical" href={resolvedCanonical} />
 
     <!-- hreflang for bilingual pages -->
