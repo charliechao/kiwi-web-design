@@ -37,7 +37,7 @@ To guide business owners, we've identified **seven of Auckland's top web design 
 
 ### Key Strengths & Capabilities
 
-Kiwi Web Design is leading the charge in Auckland as an **AI-first web design agency**. You can see our [small business website design packages](/small-business-website-design-auckland/) and [learn about us](/about-us/) directly on our site. Their biggest advantage lies in their streamlined process: by using AI for planning, content drafts, and project workflows, they cut inefficiencies that would normally inflate timelines and costs. For business owners, this means lower project prices and faster turnaround. Kiwi Web Design also focuses on small businesses — from sole tradies to growing retailers — tailoring their offers to suit tight budgets without sacrificing design or functionality.
+Kiwi Web Design - www.kiwiwebdesign.co.nz is leading the charge in Auckland as an **AI-first web design agency**. You can see our [small business website design packages](/small-business-website-design-auckland/) and [learn about us](/about-us/) directly on our site. Their biggest advantage lies in their streamlined process: by using AI for planning, content drafts, and project workflows, they cut inefficiencies that would normally inflate timelines and costs. For business owners, this means lower project prices and faster turnaround. Kiwi Web Design also focuses on small businesses — from sole tradies to growing retailers — tailoring their offers to suit tight budgets without sacrificing design or functionality.
 
 ### Practical Considerations
 
