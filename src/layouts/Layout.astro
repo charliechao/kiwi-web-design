@@ -11,9 +11,10 @@ interface Props {
   lang?: string;
   alternateUrl?: string;
   robots?: string;
+  ogImage?: string;
 }
 
-const { title, description, canonicalURL, schema, lang = 'en-NZ', alternateUrl, robots } = Astro.props;
+const { title, description, canonicalURL, schema, lang = 'en-NZ', alternateUrl, robots, ogImage } = Astro.props;
 
 const isZh = lang.startsWith('zh');
 const altLang = isZh ? 'en-NZ' : 'zh-Hans';
@@ -21,6 +22,7 @@ const altLang = isZh ? 'en-NZ' : 'zh-Hans';
 const OG_IMAGE = 'https://www.kiwiwebdesign.co.nz/og-image.png';
 
 const resolvedCanonical = canonicalURL ?? new URL(Astro.url.pathname, Astro.site).href;
+const resolvedOgImage = ogImage ?? OG_IMAGE;
 
 // Escape </script> sequences so JSON-LD doesn't break the HTML parser
 const schemaStr = schema
@@ -54,15 +56,15 @@ const schemaStr = schema
     <meta property="og:url"         content={resolvedCanonical} />
     <meta property="og:title"       content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image"       content={OG_IMAGE} />
+    <meta property="og:image"       content={resolvedOgImage} />
     <meta property="og:site_name"   content="Kiwi Web Design" />
-    <meta property="og:locale"      content="en_NZ" />
+    <meta property="og:locale"      content={isZh ? 'zh_CN' : 'en_NZ'} />
 
     <!-- Twitter / X -->
     <meta name="twitter:card"        content="summary_large_image" />
     <meta name="twitter:title"       content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image"       content={OG_IMAGE} />
+    <meta name="twitter:image"       content={resolvedOgImage} />
 
     <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
