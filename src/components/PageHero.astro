@@ -8,6 +8,7 @@ interface Props {
   ctaSecondary?: { text: string; href: string };
   imgSrc?: string;
   imgAlt?: string;
+  imgTitle?: string;
   centered?: boolean;
 }
 
@@ -20,6 +21,7 @@ const {
   ctaSecondary,
   imgSrc,
   imgAlt = '',
+  imgTitle,
   centered = false,
 } = Astro.props;
 ---
@@ -42,7 +44,7 @@ const {
       </div>
       {imgSrc && (
         <div class="hero-image-wrap">
-          <img src={imgSrc} alt={imgAlt} width="640" height="480" loading="eager" class="hero-img" />
+          <img src={imgSrc} alt={imgAlt} title={imgTitle} width="640" height="480" loading="eager" class="hero-img" />
         </div>
       )}
     </div>
