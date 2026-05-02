@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import CTABanner from '../../components/CTABanner.astro';
+import Icon from '../../components/Icon.astro';
 
 const contactPage = '/zh/website-designer-auckland/';
 
@@ -116,25 +117,25 @@ const schema = {
 
 const services = [
   {
-    icon: "🌐",
+    icon: "Globe",
     title: "网站开发",
     desc: "为奥克兰华人企业定制专业WordPress网站开发。设计精美，加载快速，在手机和电脑上完美显示。",
     items: ["固定价格报价", "2-3周完成交付", "移动端优先设计", "SEO基础设置"],
   },
   {
-    icon: "🔍",
+    icon: "Search",
     title: "本地SEO优化",
     desc: "帮助您的企业在Google搜索结果中排名靠前。针对奥克兰本地市场优化，吸引更多潜在客户。",
     items: ["关键词研究分析", "Google商家资料优化", "本地引用建设", "每月排名报告"],
   },
   {
-    icon: "📣",
+    icon: "Megaphone",
     title: "Google广告",
     desc: "精准投放Google广告，让您的企业出现在搜索结果首页。按效果付费，控制广告预算。",
     items: ["广告账户设置", "关键词竞价策略", "广告文案撰写", "效果数据追踪"],
   },
   {
-    icon: "📧",
+    icon: "Mail",
     title: "企业邮箱设置",
     desc: "为您的企业配置专业邮箱（Microsoft 365或Google Workspace），提升企业形象和可信度。",
     items: ["Microsoft 365配置", "Google Workspace设置", "所有设备同步", "DNS记录配置"],
@@ -279,7 +280,9 @@ const faqs = [
       <div class="zh-services-grid">
         {services.map(svc => (
           <div class="zh-service-card">
-            <span class="zh-service-icon">{svc.icon}</span>
+            <span class="zh-service-icon" aria-hidden="true">
+              <Icon name={svc.icon} size={28} class="zh-service-svg" />
+            </span>
             <h3 class="zh-service-title">{svc.title}</h3>
             <p class="zh-service-desc">{svc.desc}</p>
             <ul class="zh-service-list">
@@ -583,9 +586,21 @@ const faqs = [
   }
   .zh-service-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
   .zh-service-icon {
-    font-size: 1.75rem;
-    display: block;
+    display: inline-flex;
+    width: 3rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.85rem;
+    border-radius: 10px;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    box-shadow: inset 0 0 0 1px rgba(44,41,39,0.08);
+  }
+  .zh-service-svg {
+    width: 1.55rem;
+    height: 1.55rem;
+    stroke-width: 1.9;
   }
   .zh-service-title {
     font-family: var(--kwd-font-heading);
