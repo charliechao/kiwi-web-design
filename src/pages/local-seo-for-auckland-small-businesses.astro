@@ -163,6 +163,8 @@ const faqs = [
     subtitle="46% of all Google searches have local intent. We make sure Auckland customers searching for your services find your business first — in Google Maps, the 3-Pack, and organic results."
     ctaPrimary={{ text: "Get a Free Local SEO Audit", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "Our SEO Services", href: "/seo-auckland/" }}
+    imgSrc="/local-seo/auckland-local-seo-hero.webp"
+    imgAlt="Auckland small business owner reviewing local SEO map rankings on a laptop"
   />
 
   <!-- Local search stats -->
@@ -174,6 +176,32 @@ const faqs = [
       <p><strong>Kiwi Web Design</strong> provides local SEO services for Auckland small businesses — Google Business Profile optimisation, map pack rankings, citation building, review strategy, and suburb-specific landing pages. Results typically visible within 4–8 weeks. Based in Grey Lynn, Auckland — 4.9★ Google rating from 50+ clients.</p>
     </div>
   </div>
+
+  <!-- Visual overview -->
+  <section class="local-visual-band">
+    <div class="container local-visual-grid">
+      <figure class="local-feature-figure">
+        <img
+          src="/local-seo/local-seo-map-pack-workflow.webp"
+          alt="Local SEO workflow showing map pack, reviews, citations, suburb pages, and enquiry tracking"
+          loading="lazy"
+          width="1536"
+          height="864"
+        />
+      </figure>
+      <div class="local-feature-copy">
+        <p class="local-eyebrow">Local Visibility System</p>
+        <h2>Turn Google Maps visibility into calls, bookings, and quote requests.</h2>
+        <p>Local SEO works best when your Google Business Profile, suburb pages, reviews, citations, and tracking all support the same commercial goal. We build that system around how Auckland customers actually search.</p>
+        <div class="local-proof-list" aria-label="Local SEO focus areas">
+          <span>Map pack visibility</span>
+          <span>Review trust signals</span>
+          <span>Suburb landing pages</span>
+          <span>Enquiry tracking</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Why local SEO matters -->
   <section class="section">
@@ -234,6 +262,15 @@ const faqs = [
         title="We serve businesses across all of Auckland."
         subtitle="From Central Auckland to the North Shore, East Auckland, West Auckland, and South Auckland — wherever your customers are."
       />
+      <figure class="local-coverage-figure">
+        <img
+          src="/local-seo/auckland-suburb-coverage.webp"
+          alt="Auckland suburb coverage map for local SEO campaigns"
+          loading="eager"
+          width="1536"
+          height="864"
+        />
+      </figure>
       <div class="local-suburbs">
         <a href="/central-auckland-web-design/" class="local-suburb-tag local-suburb-link">Central Auckland</a>
         <a href="/north-shore-website-design/" class="local-suburb-tag local-suburb-link">North Shore</a>
@@ -296,6 +333,79 @@ const faqs = [
   .local-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
   .local-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
 
+  .local-visual-band {
+    background: linear-gradient(180deg, #fff 0%, #f2f1e5 100%);
+    padding: 4.5rem 0;
+  }
+  .local-visual-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: 3rem;
+    align-items: center;
+  }
+  .local-feature-figure,
+  .local-coverage-figure {
+    margin: 0;
+    position: relative;
+  }
+  .local-feature-figure::after,
+  .local-coverage-figure::after {
+    content: "";
+    position: absolute;
+    inset: auto 10% -18px;
+    height: 34px;
+    border-radius: 999px;
+    background: rgba(44, 41, 39, 0.18);
+    filter: blur(22px);
+    z-index: 0;
+  }
+  .local-feature-figure img,
+  .local-coverage-figure img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    object-fit: cover;
+    border: 1px solid rgba(44, 41, 39, 0.12);
+    box-shadow: 0 28px 70px rgba(44, 41, 39, 0.16);
+  }
+  .local-feature-copy {
+    background: rgba(255,255,255,0.86);
+    border: 1px solid rgba(44, 41, 39, 0.08);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 18px 48px rgba(44, 41, 39, 0.08);
+  }
+  .local-feature-copy h2 {
+    font-size: clamp(1.55rem, 2.7vw, 2.25rem);
+    margin: 0 0 1rem;
+    color: var(--kwd-dark);
+  }
+  .local-feature-copy p:not(.local-eyebrow) {
+    margin: 0;
+    color: var(--kwd-brown);
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+  .local-proof-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+    margin-top: 1.4rem;
+  }
+  .local-proof-list span {
+    background: var(--kwd-cream);
+    border: 1px solid rgba(44, 41, 39, 0.08);
+    border-radius: 999px;
+    padding: 0.55rem 0.85rem;
+    color: var(--kwd-dark);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
   .local-why {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -326,6 +436,11 @@ const faqs = [
   .local-why-card h3 { font-family: var(--kwd-font-body); font-size: 1rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
   .local-why-card p { font-size: 0.875rem; color: var(--kwd-brown); margin: 0; line-height: 1.6; }
 
+  .local-coverage-figure {
+    max-width: 980px;
+    margin: 0 auto 2rem;
+  }
+
   .local-suburbs {
     display: flex;
     flex-wrap: wrap;
@@ -352,7 +467,15 @@ const faqs = [
   .rps-link:hover { background: #e8e7db; }
 
   @media (max-width: 860px) {
+    .local-visual-grid { grid-template-columns: 1fr; gap: 2rem; }
     .local-why { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+  @media (max-width: 580px) {
+    .local-visual-band { padding: 3rem 0; }
+    .local-feature-copy { padding: 1.35rem; }
+    .local-proof-list { grid-template-columns: 1fr; }
+    .local-feature-figure img,
+    .local-coverage-figure img { border-radius: 12px; }
   }
 </style>
 
