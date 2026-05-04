@@ -73,22 +73,20 @@ const schemaStr = schema
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
+    <!-- Self-hosted fonts — preload critical above-fold fonts -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-400.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/dm-serif-display-400.woff2" crossorigin />
+
     <!-- Google Analytics GA4 -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-T7CZRER80F"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-T7CZRER80F');
+      (window.requestIdleCallback || function(fn){ setTimeout(fn, 0); })(function() {
+        gtag('config', 'G-T7CZRER80F');
+      });
     </script>
-
-    <!-- Google Fonts: DM Serif Display (headings) + Poppins (body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
 
     {schemaStr && <script type="application/ld+json" is:inline set:html={schemaStr} />}
   </head>

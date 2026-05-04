@@ -130,13 +130,13 @@ const reviews = [
 
 const portfolio = [
   { src: '/portfolio/topline-services.jpg', alt: 'Auckland cleaning company website', caption: 'Top Line Services', href: '/topline-services-cleaning-website/' },
-  { src: '/portfolio/barrett-access-scaffolding.jpg', alt: 'Barrett Access Scaffolding website', caption: 'Barrett Access Scaffolding', href: '/case-study-scaffolding/' },
+  { src: '/portfolio/barrett-access-scaffolding.webp', alt: 'Barrett Access Scaffolding website', caption: 'Barrett Access Scaffolding', href: '/case-study-scaffolding/' },
   { src: beautyTouchPreview.src, alt: 'Beauty Touch Auckland website', caption: 'Beauty Touch Auckland', href: '/beauty-touch-case-study/' },
   { src: '/portfolio/inspector-guys.jpg', alt: 'Auckland building inspector website', caption: 'Inspector Guys', href: '/inspector-guys-building-inspections-website/' },
   { src: '/portfolio/la-veranda.jpg', alt: 'Auckland restaurant website', caption: 'La Veranda Restaurant', href: '/la-veranda-restaurant-website/' },
   { src: '/portfolio/fl-legal.jpg', alt: 'Auckland law firm website', caption: 'FL Legal', href: '/fl-legal-website/' },
-  { src: '/portfolio/kiwiland-construction.png', alt: 'Kiwiland Construction website', caption: 'Kiwiland Construction', href: '/kiwiland-construction-website/' },
-  { src: '/portfolio/melanoma-specialists.png', alt: 'Melanoma Specialists website', caption: 'Melanoma Specialists', href: '/melanoma-specialists-website/' },
+  { src: '/portfolio/kiwiland-construction.webp', alt: 'Kiwiland Construction website', caption: 'Kiwiland Construction', href: '/kiwiland-construction-website/' },
+  { src: '/portfolio/melanoma-specialists.webp', alt: 'Melanoma Specialists website', caption: 'Melanoma Specialists', href: '/melanoma-specialists-website/' },
   { src: '/portfolio/mt-albert-business.jpg', alt: 'Mt Albert Business Association website', caption: 'Mt Albert Business Assoc.' },
   { src: '/blog/600-21B675F7-8EB5-45A5-99242870729DC26D.png', alt: 'TopRated.nz platform', caption: 'TopRated.nz', href: '/affordable-web-design-auckland/toprated-auckland-web-design/' },
 ];
@@ -221,7 +221,7 @@ const exploreGroups = [
               <span>Recent Auckland work</span>
               <span>Conversion-first build</span>
             </div>
-            <video class="hp-stage-video" autoplay muted loop playsinline preload="auto">
+            <video class="hp-stage-video" autoplay muted loop playsinline preload="none" poster="/hero-poster.webp">
               <source src={aucklandVideo} type="video/mp4" />
             </video>
             <div class="hp-stage-overlay" aria-hidden="true"></div>
@@ -1718,6 +1718,13 @@ const exploreGroups = [
 
     .hp-stage-window {
       min-height: 25rem;
+      background-image: url('/hero-poster.webp');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hp-stage-video {
+      display: none;
     }
 
     .hp-stage-cards,
@@ -1784,6 +1791,10 @@ const exploreGroups = [
       animation: none !important;
       transition: none !important;
       transform: none !important;
+    }
+
+    .hp-stage-video {
+      display: none;
     }
   }
 </style>
