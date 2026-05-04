@@ -1,6 +1,10 @@
 # Chinese blog post — colon stripped by Astro slug generation
 /affordable-web-design-auckland/新西兰华人创业宝典：从零到一打造你的成功小公/  /affordable-web-design-auckland/新西兰华人创业宝典从零到一打造你的成功小公/  301
 
+# Blog post — old standalone slug → nested blog URL
+/affordable-web-design-auckland-2025-why-small-business-needs-website   /affordable-web-design-auckland/5-reasons-why-small-kiwi-businesses-need-a-website/  301
+/affordable-web-design-auckland-2025-why-small-business-needs-website/  /affordable-web-design-auckland/5-reasons-why-small-kiwi-businesses-need-a-website/  301
+
 # Tradie page — old slug redirect
 /auckland-tradie-web-design              /tradie-website-design-auckland/  301
 /auckland-tradie-web-design/             /tradie-website-design-auckland/  301
