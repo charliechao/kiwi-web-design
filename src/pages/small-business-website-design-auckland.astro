@@ -24,7 +24,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/",
       "name": "Small Business Website Design Auckland | From $1,290 | Kiwi Web Design",
-      "description": "Custom WordPress websites for Auckland small businesses from $1,290. Built to generate leads, live in 2–3 weeks. Free in-person consultation. Call 021 039 6580.",
+      "description": "Custom websites for Auckland small businesses from $1,290. Built to generate leads, live in 2–3 weeks. Free in-person consultation. Call 021 039 6580.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -48,7 +48,7 @@ const schema = {
       "name": "Small Business Website Design Auckland",
       "serviceType": "Website Design",
       "category": "Web Development",
-      "description": "Custom WordPress website design for Auckland small businesses. Conversion-focused, mobile-first, delivered in 2–3 weeks from $1,290 + GST.",
+      "description": "Custom website design for Auckland small businesses. Conversion-focused, mobile-first, delivered in 2–3 weeks from $1,290 + GST. WordPress or custom build.",
       "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "areaServed": [
         { "@type": "City", "name": "Auckland" },
@@ -103,7 +103,7 @@ const schema = {
         {
           "@type": "Question",
           "name": "How much does a website cost for a small business in Auckland?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Packages start from $1,290 + GST for a WordPress website. Growth packages typically run $2,690–$3,500 depending on complexity. eCommerce sites start from $3,890. Fixed quotes are provided upfront — no surprises." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Packages start from $1,290 + GST. Most Auckland small business sites are built on WordPress, though we also deliver fully custom builds depending on your needs. Growth packages typically run $2,690–$3,500. eCommerce sites start from $3,890. Fixed quotes upfront — no surprises." }
         },
         {
           "@type": "Question",
@@ -113,17 +113,17 @@ const schema = {
         {
           "@type": "Question",
           "name": "Will I be able to update the website myself?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. WordPress is designed for non-developers. A handover session is included so you can update text, images, and add pages without needing a developer. Monthly maintenance plans are also available." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. WordPress sites are easy to update without a developer. For custom builds we set up the right editing tools for your needs. A handover session is included with every project. Monthly maintenance plans are also available." }
         },
         {
           "@type": "Question",
           "name": "Do you offer hosting and maintenance for Auckland small businesses?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Managed WordPress hosting is available from $49/month and includes updates, backups, security, and 2 hours of content changes per month." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Managed hosting is available from $49/month and includes updates, backups, security, and 2 hours of content changes per month." }
         },
         {
           "@type": "Question",
           "name": "Can you redesign my existing website?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Full WordPress rebuilds, redesigns, and migrations from Wix, Squarespace, or old WordPress themes are available. SEO and content are preserved during the process." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Full rebuilds, redesigns, and migrations from Wix, Squarespace, or old WordPress themes are all available. We also build from scratch on custom platforms where needed. SEO and content are preserved during the process." }
         }
       ]
     }
@@ -146,9 +146,9 @@ const included = [
   },
   {
     icon: "⚡",
-    title: "Built on WordPress",
-    desc: "WordPress powers 43% of the web. It's reliable, flexible, and easy for you to update. No lock-in, no proprietary systems you can't control.",
-    items: ["Easy content editing", "Plugin ecosystem", "WooCommerce ready", "Scales as you grow"],
+    title: "WordPress or Custom Build",
+    desc: "Most of our builds use WordPress — reliable, flexible, and easy to update. We also build fully custom sites when your project needs something beyond off-the-shelf. No lock-in either way.",
+    items: ["Easy content editing", "WordPress or custom CMS", "WooCommerce ready", "Scales as you grow"],
   },
   {
     icon: "🔍",
@@ -166,7 +166,7 @@ const included = [
     icon: "🔒",
     title: "Secure & Reliable",
     desc: "SSL certificates, regular backups, security hardening, and managed hosting. We handle the technical side so you can focus on your business.",
-    items: ["SSL included", "Daily backups", "Uptime monitoring", "WordPress security hardening"],
+    items: ["SSL included", "Daily backups", "Uptime monitoring", "Security hardening"],
   },
   {
     icon: "📞",
@@ -188,7 +188,7 @@ const industries = [
 const process = [
   { step: "1", title: "Free Discovery Call", desc: "We start with a conversation — not a quote. We learn about your business, your customers, and what success looks like for you." },
   { step: "2", title: "Strategy & Wireframe", desc: "We map out the site structure, page layout, and content plan. You approve the direction before any design begins." },
-  { step: "3", title: "Design & Build", desc: "We design and build your site in WordPress. You get a staging link to review and request changes before launch." },
+  { step: "3", title: "Design & Build", desc: "We design and build your site — on WordPress or a custom platform, depending on your needs. You get a staging link to review and request changes before launch." },
   { step: "4", title: "Launch & Handover", desc: "We go live, set up Google Search Console and Analytics, and walk you through how to make basic updates yourself." },
 ];
 
@@ -199,7 +199,7 @@ const packages = [
     note: "+ GST",
     desc: "Perfect for sole traders and small businesses that need a professional online presence fast.",
     items: [
-      "Custom WordPress design",
+      "Custom design",
       "Mobile responsive",
       "Contact form",
       "Basic SEO setup",
@@ -217,7 +217,7 @@ const packages = [
     desc: "For businesses ready to invest in a website that actively generates leads and grows with them.",
     items: [
       "Up to 10 pages",
-      "Custom WordPress design",
+      "Custom design",
       "Mobile responsive",
       "Lead-gen conversion setup",
       "Full SEO optimisation",
@@ -253,12 +253,12 @@ const packages = [
 ];
 
 const faqs = [
-  { q: "How much does a website cost for a small business in Auckland?", a: "Our packages start from $1,290 + GST for a <a href=\"/wordpress-website-design-auckland/\">WordPress website</a>. Growth packages typically run $2,690–$3,500 depending on complexity. eCommerce sites start from $3,890. We give you a fixed quote upfront — no surprises. Try our <a href=\"/affordable-web-design-auckland/website-cost-new-zealand-small-business/\">free website cost calculator</a> to estimate your budget before we talk." },
+  { q: "How much does a website cost for a small business in Auckland?", a: "Our packages start from $1,290 + GST. Most sites are built on <a href=\"/wordpress-website-design-auckland/\">WordPress</a>, though we also offer fully custom builds when your project needs it. Growth packages typically run $2,690–$3,500. eCommerce sites start from $3,890. Fixed quote upfront — no surprises. Try our <a href=\"/affordable-web-design-auckland/website-cost-new-zealand-small-business/\">free website cost calculator</a> to estimate your budget." },
   { q: "How long does it take to build a website?", a: "Most projects are completed in 2–3 weeks from when we receive your content. More complex sites with custom features may take 4–6 weeks. We'll give you a timeline upfront and stick to it. See our full <a href=\"/website-design-process-in-auckland/\">website design process</a> for a step-by-step breakdown." },
   { q: "Do I need to provide content?", a: "Ideally yes — you know your business best. But we help with content guidance, structure, and can write copy for you as an add-on. We also source or licence stock images if needed." },
-  { q: "Will I be able to update the website myself?", a: "Yes. WordPress is designed for non-developers. We include a handover session so you can update text, images, and add pages without needing us. We also offer ongoing maintenance plans if you'd prefer we handle it." },
-  { q: "Do you offer hosting and maintenance?", a: "Yes. We offer managed WordPress hosting from $49/month and a monthly maintenance plan that includes updates, backups, security, and 2 hours of content changes. Ask us about bundling it with your build." },
-  { q: "Can you redesign my existing website?", a: "Yes. We do full WordPress rebuilds, redesigns, and migrations from other platforms (like Wix, Squarespace, or old WordPress themes). We preserve your <a href=\"/seo-auckland/\">SEO</a> and content during the process. After launch, consider adding <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO</a> or <a href=\"/google-ads/\">Google Ads</a> to drive traffic." },
+  { q: "Will I be able to update the website myself?", a: "Yes. WordPress sites are easy to manage without a developer — we include a handover session on every project. For custom builds, we set up the right editing tools for your team. Ongoing maintenance plans are available if you'd prefer we handle updates." },
+  { q: "Do you offer hosting and maintenance?", a: "Yes. We offer managed hosting from $49/month, covering updates, backups, security, and 2 hours of content changes. Ask us about bundling it with your build." },
+  { q: "Can you redesign my existing website?", a: "Yes. We do full rebuilds, redesigns, and migrations from Wix, Squarespace, old WordPress themes, or any other platform. We also build bespoke sites from scratch when a standard CMS isn't the right fit. We preserve your <a href=\"/seo-auckland/\">SEO</a> and content throughout. After launch, consider adding <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO</a> or <a href=\"/google-ads/\">Google Ads</a> to drive traffic." },
 ];
 
 const reviews = [
@@ -271,7 +271,7 @@ const reviews = [
 
 <Layout
   title="Small Business Website Design Auckland | From $1,290 | Kiwi Web Design"
-  description="Custom WordPress websites for Auckland small businesses from $1,290. Built to generate leads, live in 2–3 weeks. Free in-person consultation. Call 021 039 6580."
+  description="Custom websites for Auckland small businesses from $1,290. WordPress or fully custom build — lead-focused, live in 2–3 weeks. Free consultation. Call 021 039 6580."
   canonicalURL="https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/"
   schema={schema}
 >
@@ -279,7 +279,7 @@ const reviews = [
   <PageHero
     eyebrow="Small Business Web Design Auckland"
     title="Websites built to generate leads. Not just look good."
-    subtitle="Affordable WordPress websites for Auckland small businesses and tradies — from $1,290, delivered in 2–3 weeks, with a free in-person consult."
+    subtitle="Affordable websites for Auckland small businesses and tradies — WordPress or fully custom, from $1,290, delivered in 2–3 weeks, with a free in-person consult."
     badgeText="From $1,290 + GST"
     ctaPrimary={{ text: "Get a Free Quote", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "View Packages", href: "#packages" }}
@@ -289,7 +289,7 @@ const reviews = [
   <!-- AI citability snippet -->
   <div class="smb-snippet">
     <div class="container">
-      <p><strong>Kiwi Web Design</strong> builds custom WordPress websites for Auckland small businesses from <strong>$1,290 + GST</strong>. Most projects go live in <strong>2–3 weeks</strong>. Every website includes mobile-first design, SEO foundations, contact form, Google Analytics, and a handover training session. Growth packages from $2,690. eCommerce from $3,890. Fixed quotes upfront — no surprises. Based in Grey Lynn, Auckland — 4.9★ Google rating from 50+ NZ clients.</p>
+      <p><strong>Kiwi Web Design</strong> builds custom websites for Auckland small businesses from <strong>$1,290 + GST</strong> — on WordPress or a fully custom platform, depending on your needs. Most projects go live in <strong>2–3 weeks</strong>. Every website includes mobile-first design, SEO foundations, contact form, Google Analytics, and a handover training session. Growth packages from $2,690. eCommerce from $3,890. Fixed quotes upfront — no surprises. Based in Grey Lynn, Auckland — 4.9★ Google rating from 50+ NZ clients.</p>
     </div>
   </div>
 
