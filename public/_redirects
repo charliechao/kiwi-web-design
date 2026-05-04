@@ -9,6 +9,10 @@
 /auckland-tradie-web-design              /tradie-website-design-auckland/  301
 /auckland-tradie-web-design/             /tradie-website-design-auckland/  301
 
+# Small business page consolidation — duplicate removed, redirect to canonical
+/small-business-web-design-auckland      /small-business-website-design-auckland/  301
+/small-business-web-design-auckland/     /small-business-website-design-auckland/  301
+
 # Industry page redirects — old URLs from previous site
 /beauty-salon-website-design-auckland/     /how-kiwi-web-design-helps-auckland-beauty-industry/  301
 /restaurant-website-design-auckland/       /how-kiwi-web-design-helps-auckland-restaurants/       301
