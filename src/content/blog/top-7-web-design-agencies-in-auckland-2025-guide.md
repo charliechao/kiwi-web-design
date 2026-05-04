@@ -1,6 +1,6 @@
 ---
-title: Top 7 web design agencies in Auckland 2026 guide
-description: "Updated for 2026. Compare the best web design agencies in Auckland, with key strengths, pricing signals, and local fit for small businesses."
+title: "Best Web Design Company Auckland 2026 | Top 7 Agencies Ranked & Compared"
+description: "Looking for the best web design company in Auckland? We've ranked the top 7 agencies by quality, price, and local fit — so you can choose with confidence."
 pubDate: 2025-10-03
 image: "/blog/ChatGPT-Image-Oct-3-2025-03_06_40-PM.png"
 ---

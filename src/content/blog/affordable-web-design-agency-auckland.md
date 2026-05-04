@@ -1,6 +1,6 @@
 ---
-title: Kiwi Web Design Ranked as an Affordable Web Design Agency in Auckland
-description: "Kiwi Web Design offers affordable web design with fast turnarounds, making professional websites accessible for local businesses."
+title: "Affordable Website Design Services Auckland | From $1290 | Kiwi Web Design"
+description: "Professional website design services for Auckland small businesses from $1290. Local team, 2–3 week delivery, no lock-in. Get a free quote today."
 pubDate: 2025-09-09
 image: "/blog/Blue-and-White-minimalist-Instagram-Post.png"
 ---
