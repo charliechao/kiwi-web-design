@@ -2,6 +2,20 @@
 const currentPath = Astro.url.pathname;
 const isZh = currentPath.startsWith('/zh');
 
+// Page-aware language switcher: maps each EN page to its ZH counterpart
+const zhMap: Record<string, string> = {
+  '/':                                          '/zh/',
+  '/about-us/':                                 '/zh/about-us/',
+  '/seo-auckland/':                             '/zh/seo-auckland/',
+  '/ai-seo-for-auckland-small-businesses/':     '/zh/ai-seo-for-auckland-small-businesses/',
+  '/local-seo-for-auckland-small-businesses/':  '/zh/local-seo-for-auckland-small-businesses/',
+  '/google-ads/':                               '/zh/google-ads/',
+  '/small-business-website-design-auckland/':   '/zh/small-business-website-design-auckland/',
+  '/website-designer-auckland/':                '/zh/website-designer-auckland/',
+};
+const enMap = Object.fromEntries(Object.entries(zhMap).map(([en, zh]) => [zh, en]));
+const langSwitchHref = isZh ? (enMap[currentPath] ?? '/') : (zhMap[currentPath] ?? '/zh/');
+
 const enNavLinks = [
   { label: 'Web Design', href: '/' },
   { label: 'SEO',        href: '/seo-auckland/', children: [
@@ -13,7 +27,7 @@ const enNavLinks = [
   { label: 'Google Ads', href: '/google-ads/' },
   { label: 'About',      href: '/about-us/' },
   { label: 'Blog',       href: '/affordable-web-design-auckland/' },
-  { label: '中文',        href: '/zh/' },
+  { label: '中文',        href: langSwitchHref },
 ];
 
 const zhNavLinks = [
@@ -25,7 +39,7 @@ const zhNavLinks = [
   { label: 'Google广告', href: '/zh/google-ads/' },
   { label: '关于我们',   href: '/zh/about-us/' },
   { label: '博客',       href: '/affordable-web-design-auckland/' },
-  { label: 'EN',         href: '/' },
+  { label: 'EN',         href: langSwitchHref },
 ];
 
 const navLinks = isZh ? zhNavLinks : enNavLinks;
