@@ -6,7 +6,7 @@ const isZh = currentPath.startsWith('/zh');
 const zhMap: Record<string, string> = {
   '/':                                          '/zh/',
   '/about-us/':                                 '/zh/about-us/',
-  '/seo-auckland/':                             '/zh/seo-auckland/',
+  '/affordable-seo-auckland/':                  '/zh/seo-auckland/',
   '/ai-seo-for-auckland-small-businesses/':     '/zh/ai-seo-for-auckland-small-businesses/',
   '/local-seo-for-auckland-small-businesses/':  '/zh/local-seo-for-auckland-small-businesses/',
   '/google-ads/':                               '/zh/google-ads/',
@@ -18,7 +18,7 @@ const langSwitchHref = isZh ? (enMap[currentPath] ?? '/') : (zhMap[currentPath] 
 
 const enNavLinks = [
   { label: 'Web Design', href: '/' },
-  { label: 'SEO',        href: '/seo-auckland/', children: [
+  { label: 'SEO',        href: '/affordable-seo-auckland/', children: [
     { label: 'AI SEO & GEO', href: '/ai-seo-for-auckland-small-businesses/' },
     { label: 'Local SEO',    href: '/local-seo-for-auckland-small-businesses/' },
     { label: 'eCommerce SEO', href: '/seo-for-ecommerce/' },

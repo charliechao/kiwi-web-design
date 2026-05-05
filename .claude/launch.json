@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "kwd-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 4321,
+      "cwd": "C:\\Users\\charl\\OneDrive\\Desktop\\Claude Cowork\\KWD_New_AI_site"
+    }
+  ]
+}
