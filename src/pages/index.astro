@@ -519,6 +519,8 @@ const exploreGroups = [
       let lastCarouselFrame = 0;
       let carouselHoverPaused = false;
       let carouselFocusPaused = false;
+      let carouselPointerActivated = false;
+      let carouselPointerTimer = 0;
       let parallaxFrame = 0;
       let parallaxCurrentX = 0;
       let parallaxCurrentY = 0;
@@ -574,6 +576,13 @@ const exploreGroups = [
         const getResetPoint = () => viewport.scrollWidth / 2;
         const carouselPaused = () => !motionActive() || carouselHoverPaused || carouselFocusPaused;
 
+        const resumeCarousel = () => {
+          carouselHoverPaused = false;
+          carouselFocusPaused = false;
+          lastCarouselFrame = 0;
+          syncCarouselMotion();
+        };
+
         const stepCarousel = (time) => {
           if (!carouselPaused()) {
             if (!lastCarouselFrame) lastCarouselFrame = time;
@@ -612,19 +621,41 @@ const exploreGroups = [
 
         portfolioCarousel.addEventListener('mouseleave', () => {
           carouselHoverPaused = false;
-          lastCarouselFrame = 0;
-          syncCarouselMotion();
+          resumeCarousel();
+        });
+
+        portfolioCarousel.addEventListener('pointerdown', () => {
+          carouselPointerActivated = true;
+          if (carouselPointerTimer) window.clearTimeout(carouselPointerTimer);
+          carouselPointerTimer = window.setTimeout(() => {
+            carouselPointerActivated = false;
+          }, 500);
+        });
+
+        portfolioCarousel.addEventListener('click', (event) => {
+          if (!carouselPointerActivated) return;
+
+          const target = event.target instanceof Element ? event.target.closest('.portfolio-item') : null;
+          if (!(target instanceof HTMLElement)) return;
+
+          target.blur();
+          resumeCarousel();
+          if (carouselPointerTimer) window.clearTimeout(carouselPointerTimer);
+          window.setTimeout(() => {
+            carouselPointerActivated = false;
+            resumeCarousel();
+          }, 150);
         });
 
         portfolioCarousel.addEventListener('focusin', () => {
+          if (carouselPointerActivated) return;
           carouselFocusPaused = true;
         });
 
         portfolioCarousel.addEventListener('focusout', () => {
           if (!portfolioCarousel.contains(document.activeElement)) {
             carouselFocusPaused = false;
-            lastCarouselFrame = 0;
-            syncCarouselMotion();
+            resumeCarousel();
           }
         });
 
@@ -633,6 +664,9 @@ const exploreGroups = [
         return () => {
           if (carouselFrame) {
             window.cancelAnimationFrame(carouselFrame);
+          }
+          if (carouselPointerTimer) {
+            window.clearTimeout(carouselPointerTimer);
           }
         };
       };
