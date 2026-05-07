@@ -157,6 +157,13 @@ const reviews = [
             </div>
           </li>
           <li>
+            <span class="cd-icon"><Icon name="MessageCircle" size={18} /></span>
+            <div>
+              <span class="cd-label">微信</span>
+              <span class="wechat-id">yeahcharlie</span>
+            </div>
+          </li>
+          <li>
             <span class="cd-icon"><Icon name="MapPin" size={18} /></span>
             <div>
               <span class="cd-label">办公地址</span>
@@ -166,6 +173,23 @@ const reviews = [
             </div>
           </li>
         </ul>
+
+        <div class="wechat-card">
+          <div class="wechat-card-copy">
+            <span class="wechat-card-label">微信咨询</span>
+            <strong>扫码添加 Charlie</strong>
+            <p>微信号：yeahcharlie。适合中文沟通、发送项目资料或预约免费咨询。</p>
+          </div>
+          <img
+            src="/images/wechat-charlie-qr.jpg"
+            alt="Charlie 微信二维码，微信号 yeahcharlie"
+            title="微信咨询 Charlie | yeahcharlie"
+            width="884"
+            height="1143"
+            loading="lazy"
+            class="wechat-qr"
+          />
+        </div>
 
         <div class="contact-reasons">
           {reasons.map(({ icon, title, desc }) => (
@@ -499,6 +523,71 @@ const reviews = [
   }
   .contact-details a:hover { color: var(--kwd-yellow); }
 
+  .wechat-id {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.5rem;
+    color: rgba(255,255,255,0.88);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  .wechat-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 8.5rem;
+    gap: 1.1rem;
+    align-items: center;
+    max-width: 31rem;
+    margin: -0.75rem 0 2.5rem;
+    padding: 1rem;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.07);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+
+  .wechat-card-copy {
+    min-width: 0;
+  }
+
+  .wechat-card-label {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--kwd-yellow);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .wechat-card strong {
+    display: block;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.35;
+    margin-bottom: 0.35rem;
+  }
+
+  .wechat-card p {
+    margin: 0;
+    color: rgba(255,255,255,0.62);
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  .wechat-qr {
+    width: 100%;
+    max-width: 8.5rem;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center 52%;
+    display: block;
+    border-radius: 12px;
+    background: #fff;
+    padding: 0.35rem;
+  }
+
   .contact-reasons {
     display: flex;
     flex-direction: column;
@@ -697,5 +786,7 @@ const reviews = [
   @media (max-width: 600px) {
     .contact-final-inner { grid-template-columns: 1fr; }
     .contact-form-wrap { padding: 1.75rem; }
+    .wechat-card { grid-template-columns: 1fr; }
+    .wechat-qr { max-width: min(100%, 16rem); }
   }
 </style>
