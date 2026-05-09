@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // TODO: Replace https://example.com with your real deployed domain.
-// @astrojs/sitemap requires this — without it no sitemap files are generated.
+// @astrojs/sitemap requires this, without it no sitemap files are generated.
 
 export default defineConfig({
   output: 'static',

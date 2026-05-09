@@ -231,7 +231,7 @@ async function main() {
         process.stdout.write(`  ✓ [${category.padEnd(12)}] ${fname}\n`);
       } catch (e) {
         stats.failed++;
-        process.stdout.write(`  ✗ FAILED: ${fname} — ${e.message}\n`);
+        process.stdout.write(`  ✗ FAILED: ${fname}, ${e.message}\n`);
         mapping[origUrl] = null;  // note failure
       }
     }));

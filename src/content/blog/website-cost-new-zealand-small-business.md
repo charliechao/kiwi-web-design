@@ -10,20 +10,20 @@ keywords: "website cost NZ, how much does a website cost New Zealand, website pr
 
 <div class="kwd-snippet">
 
-**NZ website cost summary — 2026:**
+**NZ website cost summary, 2026:**
 
 - Small business site (5–8 pages): **$1,500–$6,000** GST excl.
 - One-page / landing page: **$800–$2,000** GST excl.
 - Small eCommerce (up to 100 products): **$5,000–$15,000+** GST excl.
 - Custom or complex builds: **$10,000–$50,000+** GST excl.
 - Ongoing: hosting **$25–$120+/mo**, domain **~$25/yr**
-- All quotes are **GST-exclusive** by default — add 15% for total cash outlay
+- All quotes are **GST-exclusive** by default, add 15% for total cash outlay
 
 </div>
 
 Most Auckland small businesses pay **$1,500–$6,000** for a professionally designed website. Add eCommerce and that shifts to **$5,000–$15,000+**. Custom portals and integrations start around **$10,000**.
 
-These ranges reflect real Auckland projects — not overseas benchmarks. GST, content production, and ongoing hosting are all on top of the build cost.
+These ranges reflect real Auckland projects, not overseas benchmarks. GST, content production, and ongoing hosting are all on top of the build cost.
 
 ---
 
@@ -36,7 +36,7 @@ These ranges reflect real Auckland projects — not overseas benchmarks. GST, co
 | Standard small business | 5–8 pages | $2,500–$6,000 | Service businesses, tradies |
 | Small eCommerce | Up to 100 products | $5,000–$15,000+ | Retail, boutique stores |
 | Complex / custom | Varies | $10,000–$50,000+ | Portals, integrations, bespoke UX |
-| Ongoing (annualised) | — | $300–$1,800+ | Hosting, domain, care plan |
+| Ongoing (annualised) |, | $300–$1,800+ | Hosting, domain, care plan |
 
 *All prices GST-exclusive. Add 15% for the total amount payable in New Zealand.*
 
@@ -63,16 +63,16 @@ These ranges reflect real Auckland projects — not overseas benchmarks. GST, co
         <label style="display:flex;align-items:center;gap:0.6rem;font-size:0.875rem;cursor:pointer;color:#2c2927"><input type="checkbox" id="kc-seo" value="400" style="accent-color:#c8a84b"> Basic on-page SEO setup (+$400)</label>
         <label style="display:flex;align-items:center;gap:0.6rem;font-size:0.875rem;cursor:pointer;color:#2c2927"><input type="checkbox" id="kc-booking" value="600" style="accent-color:#c8a84b"> Online bookings / appointments (+$600)</label>
         <label style="display:flex;align-items:center;gap:0.6rem;font-size:0.875rem;cursor:pointer;color:#2c2927"><input type="checkbox" id="kc-blog" value="300" style="accent-color:#c8a84b"> Blog setup (+$300)</label>
-        <label style="display:flex;align-items:center;gap:0.6rem;font-size:0.875rem;cursor:pointer;color:#2c2927"><input type="checkbox" id="kc-integration" value="800" style="accent-color:#c8a84b"> Third-party integration — Xero, CRM (+$800)</label>
+        <label style="display:flex;align-items:center;gap:0.6rem;font-size:0.875rem;cursor:pointer;color:#2c2927"><input type="checkbox" id="kc-integration" value="800" style="accent-color:#c8a84b"> Third-party integration, Xero, CRM (+$800)</label>
       </div>
     </fieldset>
     <label style="display:flex;flex-direction:column;gap:0.35rem;font-size:0.875rem;font-weight:600;color:#2c2927">
       Hosting / care plan
       <select id="kc-hosting" style="padding:0.6rem 0.75rem;border:1px solid rgba(0,0,0,0.15);border-radius:6px;font-size:0.95rem;background:#fff;color:#2c2927">
         <option value="0">None / bring your own</option>
-        <option value="300">Basic ($25/mo) — +$300/yr</option>
-        <option value="708" selected>Business ($59/mo) — +$708/yr</option>
-        <option value="1188">Managed ($99/mo) — +$1,188/yr</option>
+        <option value="300">Basic ($25/mo), +$300/yr</option>
+        <option value="708" selected>Business ($59/mo), +$708/yr</option>
+        <option value="1188">Managed ($99/mo), +$1,188/yr</option>
       </select>
     </label>
     <label style="display:flex;align-items:center;gap:0.6rem;font-size:0.875rem;cursor:pointer;color:#2c2927"><input type="checkbox" id="kc-gst" style="accent-color:#c8a84b"> Include GST (15%)</label>
@@ -122,7 +122,7 @@ These ranges reflect real Auckland projects — not overseas benchmarks. GST, co
 
 ---
 
-## Website design cost NZ — the quick answer
+## Website design cost NZ, the quick answer
 
 For Auckland small businesses in 2026, a professionally designed brochure website typically lands between **$1,500 and $6,000** before GST. Streamlined one-page builds sit closer to $800–$1,000, while content-rich 7–8 page sites hover around the $4,000–$6,000 mid-point.
 
@@ -134,19 +134,19 @@ GST, hosting, content production, and ongoing optimisation are additional to the
 
 ## What's included at each price point
 
-### $800–$2,000 — One-page or landing page
+### $800–$2,000, One-page or landing page
 A single-page site covering your service, contact method, and a clear call to action. Good for [tradies](/tradie-website-design-auckland/) testing a market or running a specific campaign. Usually includes a template layout, basic SEO setup, and a contact form.
 
-### $1,000–$3,000 — Starter small business site (3–5 pages)
-Home, services, about, and contact — the core four. On-page structure is set up for local search. No blog, no booking system, but a solid professional presence that replaces a social media profile. See our [small business website packages](/small-business-website-design-auckland/) for exactly what's included.
+### $1,000–$3,000, Starter small business site (3–5 pages)
+Home, services, about, and contact, the core four. On-page structure is set up for local search. No blog, no booking system, but a solid professional presence that replaces a social media profile. See our [small business website packages](/small-business-website-design-auckland/) for exactly what's included.
 
-### $2,500–$6,000 — Standard small business site (5–8 pages)
+### $2,500–$6,000, Standard small business site (5–8 pages)
 Includes service sub-pages, a blog/news section, enquiry forms, and SEO foundations. This is the most common range for established Auckland small businesses. Expect custom layout work, copywriting support, and schema markup included.
 
-### $5,000–$15,000+ — Small eCommerce (up to 100 products)
+### $5,000–$15,000+, Small eCommerce (up to 100 products)
 [WooCommerce](/woocommerce-website-design-auckland/) or [Shopify](/shopify-website-design-auckland/) with product catalogue, payment gateway, shipping rules, and tax configuration. Ongoing platform fees and plugin costs apply on top of the build.
 
-### $10,000–$50,000+ — Custom or complex builds
+### $10,000–$50,000+, Custom or complex builds
 Multi-step quoting tools, booking portals, member areas, CRM/Xero integrations, or anything requiring custom development beyond standard themes. Discovery sessions are used to define scope and cost before commitment.
 
 ---
@@ -157,9 +157,9 @@ Multi-step quoting tools, booking portals, member areas, CRM/Xero integrations, 
 
 **Functionality** has a large impact. Online bookings, eCommerce, gated content, and multilingual support all increase configuration hours. Integrations with Xero, HubSpot, or inventory tools require technical discovery and testing.
 
-**Content production** is consistently underestimated. Photography, video, and copywriting each have separate production costs — and they have the largest effect on conversion rates. Budget for them outside the build.
+**Content production** is consistently underestimated. Photography, video, and copywriting each have separate production costs, and they have the largest effect on conversion rates. Budget for them outside the build.
 
-**Performance and SEO foundations** — Core Web Vitals, schema markup, and content structured for NZ search intent — take expertise but pay off in organic visibility and load speed on New Zealand networks.
+**Performance and SEO foundations**, Core Web Vitals, schema markup, and content structured for NZ search intent, take expertise but pay off in organic visibility and load speed on New Zealand networks.
 
 ---
 
@@ -176,7 +176,7 @@ Most Auckland businesses budget **$25–$120+ per month** for hosting and care.
 | SSL certificate | Free–$150/yr | Let's Encrypt free; EV certs paid |
 | Premium plugins or apps | $0–$200+/yr | Varies by platform |
 
-Domains average $25 annually — both .co.nz and .nz are popular with NZ customers. Set aside a budget for fresh content, SEO, and security audits. These keep the site current and prevent expensive rebuilds every few years.
+Domains average $25 annually, both .co.nz and .nz are popular with NZ customers. Set aside a budget for fresh content, SEO, and security audits. These keep the site current and prevent expensive rebuilds every few years.
 
 ---
 

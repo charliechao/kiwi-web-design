@@ -125,7 +125,7 @@ const caseStudies = [
     metaTitle: 'Florist Website Design Auckland – Kiwi Web Design Case Study',
     description: 'See how Kiwi Web Design helped an Auckland florist grow sales with a custom website featuring smart delivery scheduling, SEO, and WooCommerce.',
     client: 'Auckland Florist',
-    industry: 'Retail — Floral & Gift',
+    industry: 'Retail, Floral & Gift',
     heroImg: 'https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/florist-website-design-auckland-kiwiwebdesign.jpg',
     stats: [
       { num: '45%', label: 'Increase in online orders' },
@@ -170,7 +170,7 @@ const caseStudies = [
     metaTitle: 'Melanoma Specialists Website Design Auckland – Kiwi Web Design Case Study',
     description: 'How Kiwi Web Design helped a specialist healthcare provider build trust and attract new patients with a professional, SEO-optimised website.',
     client: 'Auckland Melanoma Specialists',
-    industry: 'Healthcare — Dermatology',
+    industry: 'Healthcare, Dermatology',
     heroImg: 'https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Specialist-e1753415885359.jpg',
     stats: [
       { num: '4x', label: 'Increase in patient enquiries' },
@@ -213,9 +213,9 @@ const caseStudies = [
     file: 'cs_la-veranda-restaurant-website.html',
     title: 'Case Study 7: La Veranda Restaurant Website',
     metaTitle: 'La Veranda Restaurant Website Design – Kiwi Web Design Case Study',
-    description: 'We rebuilt La Veranda\'s website into a fast, elegant experience matching their hospitality brand — clear menus, mobile-first, and booking pathways that convert.',
+    description: 'We rebuilt La Veranda\'s website into a fast, elegant experience matching their hospitality brand, clear menus, mobile-first, and booking pathways that convert.',
     client: 'La Veranda',
-    industry: 'Hospitality — Restaurant & Events',
+    industry: 'Hospitality, Restaurant & Events',
     heroImg: 'https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Lavaranda-e1753415431519.jpg',
     stats: [
       { num: '5x', label: 'Faster page speed' },
@@ -246,7 +246,7 @@ const caseStudies = [
     metaTitle: 'Beauty Touch Case Study – Kiwi Web Design Auckland',
     description: 'See how Kiwi Web Design helped Beauty Touch go from zero online presence to a fully booked premium beauty salon with a conversion-focused website in 3 weeks.',
     client: 'Your Beauty Touch',
-    industry: 'Beauty & Wellness — Advanced Treatments',
+    industry: 'Beauty & Wellness, Advanced Treatments',
     heroImg: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80',
     stats: [
       { num: '3 weeks', label: 'Zero to live website' },
@@ -298,7 +298,7 @@ function buildPage(cs, html) {
     ? faqs
     : [
         { q: 'How long does the project take?', a: 'Most projects are completed in 2–3 weeks from the discovery call to launch.' },
-        { q: 'Do you offer ongoing support?', a: 'Yes — we offer affordable monthly maintenance plans to keep your site secure and up to date.' },
+        { q: 'Do you offer ongoing support?', a: 'Yes, we offer affordable monthly maintenance plans to keep your site secure and up to date.' },
         { q: 'Can you redesign my existing website?', a: 'Absolutely. We frequently migrate Auckland businesses from Wix or Squarespace to WordPress.' },
       ];
 
@@ -365,7 +365,7 @@ const schema = ${schemaStr};
   <section class="cs-hero section-dark">
     <div class="container cs-hero-inner">
       <div class="cs-hero-text">
-        <p class="cs-eyebrow">Case Study — ${cs.industry}</p>
+        <p class="cs-eyebrow">Case Study, ${cs.industry}</p>
         <h1>${cs.title.replace(/Case Study \d+:\s*|Case Study:\s*/i, '')}</h1>
         <p class="cs-hero-desc">${cs.description}</p>
         <div class="cs-hero-stats">
@@ -395,11 +395,11 @@ const schema = ${schemaStr};
     <div class="container cs-two-col">
       ${aboutText ? `<div class="cs-about">
         <h2>About the Client</h2>
-        <p class="cs-client-tag">${cs.client} — ${cs.industry}</p>
+        <p class="cs-client-tag">${cs.client}, ${cs.industry}</p>
         <p>${aboutText}</p>
       </div>` : `<div class="cs-about">
         <h2>About the Client</h2>
-        <p class="cs-client-tag">${cs.client} — ${cs.industry}</p>
+        <p class="cs-client-tag">${cs.client}, ${cs.industry}</p>
       </div>`}
       ${challengeText ? `<div class="cs-challenge">
         <h2>The Challenge</h2>
@@ -458,7 +458,7 @@ const schema = ${schemaStr};
     <div class="container cs-narrow">
       <blockquote class="cs-quote">
         <p>${testimonial}</p>
-        <cite>— ${cs.client}</cite>
+        <cite>- ${cs.client}</cite>
       </blockquote>
     </div>
   </section>` : ''}
@@ -664,4 +664,4 @@ for (const cs of caseStudies) {
   console.log(`✓ src/pages/${cs.slug}.astro`);
 }
 
-console.log('\nDone — 10 case study pages written.');
+console.log('\nDone, 10 case study pages written.');

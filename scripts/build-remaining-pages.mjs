@@ -85,9 +85,9 @@ function decodeEntities(str) {
     .replace(/&#039;/g, "'")
     .replace(/&hellip;/g, '...')
     .replace(/&ndash;/g, '–')
-    .replace(/&mdash;/g, '—')
+    .replace(/&mdash;/g, '-')
     .replace(/&#8211;/g, '–')
-    .replace(/&#8212;/g, '—')
+    .replace(/&#8212;/g, '-')
     .replace(/&#8216;/g, '\u2018')
     .replace(/&#8217;/g, '\u2019')
     .replace(/&#8220;/g, '\u201C')
@@ -535,4 +535,4 @@ for (const page of PAGES) {
   console.log(`  ✓ ${page.slug}`);
 }
 
-console.log(`\nDone — ${count} pages written.`);
+console.log(`\nDone, ${count} pages written.`);

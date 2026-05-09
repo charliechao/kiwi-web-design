@@ -1,6 +1,6 @@
 ---
 title: Top 5 Pages Every Auckland Small Business Website Should Have
-description: Discover the 5 must-have pages that make Auckland small business websites stand out — from homepage to contact page. A local guide by Kiwi Web Design.
+description: Discover the 5 must-have pages that make Auckland small business websites stand out, from homepage to contact page. A local guide by Kiwi Web Design.
 pubDate: 2025-11-03
 image: "/blog/auckland-small-business-website.jpg"
 ---
@@ -8,10 +8,10 @@ image: "/blog/auckland-small-business-website.jpg"
 # Top 5 Pages Every Auckland Small Business Website Should Have
 
 
-Running a small business in [Auckland](https://en.wikipedia.org/wiki/Auckland)means you’re competing not just on quality and price — but also on visibility. And your website is often the first impression people get of your business. Whether you’re a local tradie, a café owner, or a service provider, having the *right* pages on your [small business website](/small-business-website-design-auckland/) can turn casual browsers into paying customers.
+Running a small business in [Auckland](https://en.wikipedia.org/wiki/Auckland)means you’re competing not just on quality and price, but also on visibility. And your website is often the first impression people get of your business. Whether you’re a local tradie, a café owner, or a service provider, having the *right* pages on your [small business website](/small-business-website-design-auckland/) can turn casual browsers into paying customers.
 
 
-At **Kiwi Web Design**, we’ve helped dozens of Auckland businesses build affordable, high-performing websites — and we’ve noticed a clear pattern: the most successful sites all share five essential pages.
+At **Kiwi Web Design**, we’ve helped dozens of Auckland businesses build affordable, high-performing websites, and we’ve noticed a clear pattern: the most successful sites all share five essential pages.
 
 
 Let’s break them down 👇
@@ -32,7 +32,7 @@ Your homepage is your digital storefront. In just a few seconds, visitors should
 - A short intro about your business and your unique value
 
 
-- Strong visuals — ideally photos of your team or work
+- Strong visuals, ideally photos of your team or work
 
 
 - A call-to-action (CTA) like “Get a Free Quote” or “Book a Consultation”
@@ -50,7 +50,7 @@ Kiwis love doing business with people they trust. Your **About** page is where y
 **Include:**
 
 
-- Your story — how you started and what makes you different
+- Your story, how you started and what makes you different
 
 
 - Your team or family (if family-run)
@@ -86,7 +86,7 @@ This is where visitors decide if you’re the right fit. Be clear, not clever.
 - Add testimonials or photos of completed jobs
 
 
-💡 *Tip:* Use schema markup (structured data) to help Google understand your services better — part of our **AI-SEO setup** at Kiwi Web Design.
+💡 *Tip:* Use schema markup (structured data) to help Google understand your services better, part of our **AI-SEO setup** at Kiwi Web Design.
 
 
 ## 4. The Contact Page – Make It Easy to Reach You
@@ -110,7 +110,7 @@ You’d be surprised how many Auckland websites hide their contact info. Don’t
 - Links to your social media or Google Business Profile
 
 
-💡 *Tip:* Add a short message like “We offer free quotes across Auckland — no job too small!” It helps both with conversions and [local SEO for Auckland businesses](/local-seo-for-auckland-small-businesses/).
+💡 *Tip:* Add a short message like “We offer free quotes across Auckland, no job too small!” It helps both with conversions and [local SEO for Auckland businesses](/local-seo-for-auckland-small-businesses/).
 
 
 ## 5. Testimonials or Case Studies Page – Proof That You Deliver
@@ -131,13 +131,13 @@ Social proof sells. Future clients want to see real stories from other Aucklande
 - Short customer quotes or video testimonials
 
 
-💡 *Tip:* Link these case studies to specific suburbs or industries — e.g., *“Website rebuild for a Mt Eden café”* or *“Logo and website for a North Shore plumber.”* That’s powerful for **geo-targeted SEO**.
+💡 *Tip:* Link these case studies to specific suburbs or industries, e.g., *“Website rebuild for a Mt Eden café”* or *“Logo and website for a North Shore plumber.”* That’s powerful for **geo-targeted SEO**.
 
 
 ## Bonus: Blog Page – Stay Fresh and Rank Higher
 
 
-A regularly updated blog shows Google (and customers) that your business is active. You can post helpful guides, tips, or updates — just like this one.
+A regularly updated blog shows Google (and customers) that your business is active. You can post helpful guides, tips, or updates, just like this one.
 
 
 💡 *Example Topics:*
@@ -155,10 +155,10 @@ A regularly updated blog shows Google (and customers) that your business is acti
 ## Final Thoughts
 
 
-Your website doesn’t need to be big — it just needs to be **smart**.Start with these five pages and make sure each one answers the most important question your visitor has: *“Can I trust this business to solve my problem?”*
+Your website doesn’t need to be big, it just needs to be **smart**.Start with these five pages and make sure each one answers the most important question your visitor has: *“Can I trust this business to solve my problem?”*
 
 
 If you’re not sure whether your current site ticks all these boxes, Kiwi Web Design offers **free website audits and local SEO reviews** for Auckland businesses. Good [website copywriting](/website-copywriting-auckland/) for each of these pages also makes a significant difference in conversions. [Get in touch](/website-designer-auckland/) to discuss your options.
 
 
-👉 [Book a Free Consultation](https://www.kiwiwebdesign.co.nz/website-designer-auckland/)Let’s make your website work harder for you — 24/7.
+👉 [Book a Free Consultation](https://www.kiwiwebdesign.co.nz/website-designer-auckland/)Let’s make your website work harder for you, 24/7.

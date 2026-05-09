@@ -13,13 +13,13 @@ It determines whether you appear in Google Maps. It controls what customers see 
 
 Most Auckland businesses have a profile. Very few have one that is properly optimised.
 
-This guide walks through every step — from creating your profile to the ongoing habits that keep you visible in Auckland's local search results.
+This guide walks through every step, from creating your profile to the ongoing habits that keep you visible in Auckland's local search results.
 
 ---
 
 ## Why Google Business Profile Matters for Auckland Businesses
 
-When someone searches "electrician Ponsonby" or "best café Newmarket", Google shows a local 3-pack — three businesses with ratings, hours, photos, and a map pin.
+When someone searches "electrician Ponsonby" or "best café Newmarket", Google shows a local 3-pack, three businesses with ratings, hours, photos, and a map pin.
 
 That 3-pack gets more clicks than the organic results below it.
 
@@ -37,7 +37,7 @@ A well-optimised Google Business Profile:
 
 - Works alongside your [Auckland SEO strategy](/seo-auckland/) to increase overall visibility
 
-The setup takes less than an hour. The optimisation is ongoing — but straightforward once you know what matters.
+The setup takes less than an hour. The optimisation is ongoing, but straightforward once you know what matters.
 
 ---
 
@@ -63,7 +63,7 @@ If it does not appear:
 
 Google verifies ownership to prevent fake listings. Options include:
 
-- Postcard to your business address (most common — arrives in 5–14 days)
+- Postcard to your business address (most common, arrives in 5–14 days)
 
 - Phone call or text
 
@@ -103,7 +103,7 @@ Work through every section:
 
 **Business name**
 
-Use your real trading name. Do not stuff keywords into your business name — Google can suspend listings that do this.
+Use your real trading name. Do not stuff keywords into your business name, Google can suspend listings that do this.
 
 **Address and service areas**
 
@@ -125,7 +125,7 @@ Keep these accurate. Wrong hours create friction and can lead to negative review
 
 **Attributes**
 
-These small details matter — wheelchair access, free Wi-Fi, EFTPOS, NZ-owned. Fill in everything applicable.
+These small details matter, wheelchair access, free Wi-Fi, EFTPOS, NZ-owned. Fill in everything applicable.
 
 ---
 
@@ -141,7 +141,7 @@ Businesses with photos receive significantly more direction requests and website
 
 - Team photos: put faces to the business
 
-- Work examples: completed jobs, finished dishes, finished spaces — anything that shows what you actually do
+- Work examples: completed jobs, finished dishes, finished spaces, anything that shows what you actually do
 
 - Logo and cover image: these appear prominently in your profile
 
@@ -149,7 +149,7 @@ Businesses with photos receive significantly more direction requests and website
 
 Photos with recognisable Auckland locations (harbour, streets, suburbs) reinforce your local relevance to Google and to customers.
 
-Aim for at least 10 photos to start. Add new ones regularly — Google notices fresh activity.
+Aim for at least 10 photos to start. Add new ones regularly, Google notices fresh activity.
 
 ---
 
@@ -171,11 +171,11 @@ This is not your mission statement. It is a short, clear explanation of what you
 
 **What to avoid:**
 
-- Keyword stuffing — Google will penalise or suspend profiles that do this
+- Keyword stuffing, Google will penalise or suspend profiles that do this
 
 - Generic phrases like "quality service" or "passionate team"
 
-- Contact details — these belong in the contact fields
+- Contact details, these belong in the contact fields
 
 Write it in plain language. Read it aloud. If it sounds like a robot wrote it, rewrite it.
 
@@ -207,13 +207,13 @@ This is often overlooked by Auckland businesses. Filling it out properly gives y
 
 Reviews are one of the strongest ranking factors in Google Maps.
 
-Not just the number — the recency, the keywords customers use, and whether you respond.
+Not just the number, the recency, the keywords customers use, and whether you respond.
 
 **How to get more reviews:**
 
-- Ask at the right moment — after a job is complete, after a positive interaction
+- Ask at the right moment, after a job is complete, after a positive interaction
 
-- Make it easy — send a direct link to your Google review page
+- Make it easy, send a direct link to your Google review page
 
 - Follow up once if they haven't left one
 
@@ -247,7 +247,7 @@ Most Auckland businesses never use them. That is an easy advantage for those who
 
 Posts expire after 7 days (offers can be set longer), so weekly posting keeps your profile fresh.
 
-A profile that posts regularly signals to Google that the business is active — this contributes to local ranking.
+A profile that posts regularly signals to Google that the business is active, this contributes to local ranking.
 
 Keep posts short. One clear point. One clear call to action.
 
@@ -259,7 +259,7 @@ Google Business Profile provides data on how customers find and interact with yo
 
 **Key metrics to track:**
 
-- **Search queries:** what words people use to find you — use these to refine your description and posts
+- **Search queries:** what words people use to find you, use these to refine your description and posts
 
 - **Direction requests:** which suburbs are requesting directions (tells you where your customers actually come from)
 
@@ -267,7 +267,7 @@ Google Business Profile provides data on how customers find and interact with yo
 
 - **Website clicks:** how many people went from your profile to your website
 
-Check these monthly. If direction requests are spiking from a particular suburb, that is a signal to create more content targeting that area — on your profile and on your [local SEO pages](/local-seo-for-auckland-small-businesses/).
+Check these monthly. If direction requests are spiking from a particular suburb, that is a signal to create more content targeting that area, on your profile and on your [local SEO pages](/local-seo-for-auckland-small-businesses/).
 
 ---
 
@@ -285,7 +285,7 @@ Customers can tell. Real photos of real work build trust. Stock images do the op
 
 **Ignoring reviews**
 
-Not responding to reviews — especially negative ones — signals to both Google and customers that you are not engaged with your business.
+Not responding to reviews, especially negative ones, signals to both Google and customers that you are not engaged with your business.
 
 **Inconsistent business name, address, or phone**
 
@@ -319,7 +319,7 @@ An unverified listing will not rank. If you claimed your profile and never compl
 
 **How long does it take for my Google Business Profile to rank in Auckland?**
 
-After verification, basic visibility can appear within days. Moving into the local 3-pack for competitive searches typically takes 4–12 weeks of consistent optimisation — reviews, posts, photos, and a well-structured website working together.
+After verification, basic visibility can appear within days. Moving into the local 3-pack for competitive searches typically takes 4–12 weeks of consistent optimisation, reviews, posts, photos, and a well-structured website working together.
 
 **Is Google Business Profile free?**
 
@@ -337,7 +337,7 @@ Yes. Hide your home address and use service areas instead. List the Auckland sub
 
 ## Get Your Auckland Business Found on Google Maps
 
-Setting up your Google Business Profile is the first step. Keeping it optimised — reviews, posts, photos, insights — is what separates businesses that appear consistently from those that disappear.
+Setting up your Google Business Profile is the first step. Keeping it optimised, reviews, posts, photos, insights, is what separates businesses that appear consistently from those that disappear.
 
 If you want a complete local presence:
 
@@ -349,4 +349,4 @@ If you want a complete local presence:
 
 Kiwi Web Design works with Auckland small businesses to build this from the ground up.
 
-[Book a free strategy session](/website-designer-auckland/) and we'll review your current Google presence, identify what's missing, and give you a clear plan — no jargon, no upsells.
+[Book a free strategy session](/website-designer-auckland/) and we'll review your current Google presence, identify what's missing, and give you a clear plan, no jargon, no upsells.

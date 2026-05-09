@@ -212,7 +212,7 @@ Based on our day-to-day work with local businesses:
 - Most service-based businesses should choose [**WordPress**](/wordpress-website-design-auckland/).
 
 
-- Most ecommerce businesses should choose [**Shopify**](/shopify-website-design-auckland/) — or consider [WooCommerce](/woocommerce-website-design-auckland/) if they want more flexibility.
+- Most ecommerce businesses should choose [**Shopify**](/shopify-website-design-auckland/), or consider [WooCommerce](/woocommerce-website-design-auckland/) if they want more flexibility.
 
 
 - SquareSpace/Wix are only suitable for very small, short-term projects.

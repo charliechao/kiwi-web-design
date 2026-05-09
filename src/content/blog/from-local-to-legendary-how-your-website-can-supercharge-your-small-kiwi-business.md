@@ -65,7 +65,7 @@ You don’t need to be a tech expert to build a website. Platforms like Snapps.a
 ## Comprehensive Guide: Transforming Your Small Kiwi Business with a Website
 
 
-In the fast-paced digital landscape,[small businesses](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/) in New Zealand face both opportunities and challenges. A website is no longer a luxury—it’s a necessity for small Kiwi businesses aiming to attract more clients, sell more products, and compete in markets like Auckland. With 75% of New Zealanders aged 16-64 searching online for products and services, a well-optimized website can be the difference between staying local and going legendary. This guide explores why websites are critical for small businesses, offers actionable strategies to leverage them for growth, and recommends tools to make it happen, all tailored for small business owners in Auckland and across New Zealand.
+In the fast-paced digital landscape,[small businesses](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/) in New Zealand face both opportunities and challenges. A website is no longer a luxury-it’s a necessity for small Kiwi businesses aiming to attract more clients, sell more products, and compete in markets like Auckland. With 75% of New Zealanders aged 16-64 searching online for products and services, a well-optimized website can be the difference between staying local and going legendary. This guide explores why websites are critical for small businesses, offers actionable strategies to leverage them for growth, and recommends tools to make it happen, all tailored for small business owners in Auckland and across New Zealand.
 
 
 ## The Power of a Website for Small Kiwi Businesses
@@ -128,7 +128,7 @@ Your website should not only attract visitors but also convince them to take act
 - **Clear Descriptions**: Write concise, benefit-focused descriptions. Instead of “We sell coffee,” say “Enjoy our locally roasted coffee, perfect for your morning boost.”
 
 
-- **Customer Testimonials**: Display reviews to build trust. A tradie could include a quote like, “Fixed our plumbing in no time—highly recommend!”
+- **Customer Testimonials**: Display reviews to build trust. A tradie could include a quote like, “Fixed our plumbing in no time-highly recommend!”
 
 
 - **Calls to Action (CTAs)**: Use buttons like “Book Now,” “Shop Online,” or “Contact Us” to guide visitors toward the next step.

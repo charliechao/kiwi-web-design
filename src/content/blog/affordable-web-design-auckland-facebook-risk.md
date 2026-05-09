@@ -29,19 +29,19 @@ Facebook owns your page, not you. If the platform changes its rules, limits your
 ### ❌ 3. Limited Professionalism
 
 
-When customers compare two businesses—one with a professional website and one with only a Facebook page—they almost always trust the one with the website. A site gives your business credibility, shows you take your work seriously, and provides a clear way for customers to contact you.
+When customers compare two businesses-one with a professional website and one with only a Facebook page-they almost always trust the one with the website. A site gives your business credibility, shows you take your work seriously, and provides a clear way for customers to contact you.
 
 
 ### ❌ 4. Harder to Scale and Grow
 
 
-Facebook pages are limited in functionality. You can’t easily integrate online bookings, payment systems, or advanced marketing tools. A website gives you flexibility to grow your digital presence over time—whether that means [SEO](/seo-auckland/), [e-commerce](/ecommerce-website-auckland/), or [Google Ads](/google-ads/).
+Facebook pages are limited in functionality. You can’t easily integrate online bookings, payment systems, or advanced marketing tools. A website gives you flexibility to grow your digital presence over time-whether that means [SEO](/seo-auckland/), [e-commerce](/ecommerce-website-auckland/), or [Google Ads](/google-ads/).
 
 
 ### ✅ The Smarter Choice: Affordable Web Design in Auckland
 
 
-The good news is you don’t need to spend a fortune. At **Kiwi Web Design**, we specialise in [**affordable web design for Auckland small businesses**](/small-business-website-design-auckland/). Our websites start from just $1,290, with a fast turnaround of 2–3 weeks. We also offer [local SEO](/local-seo-for-auckland-small-businesses/) to help your new site get found by customers in your area. Using smart AI tools, we cut unnecessary costs and pass the savings onto you—without sacrificing quality.
+The good news is you don’t need to spend a fortune. At **Kiwi Web Design**, we specialise in [**affordable web design for Auckland small businesses**](/small-business-website-design-auckland/). Our websites start from just $1,290, with a fast turnaround of 2–3 weeks. We also offer [local SEO](/local-seo-for-auckland-small-businesses/) to help your new site get found by customers in your area. Using smart AI tools, we cut unnecessary costs and pass the savings onto you-without sacrificing quality.
 
 
 ### 📍 Local Expertise, Mt Albert Based
@@ -59,4 +59,4 @@ To support local business owners, we’re offering a **free consultation** (onli
 📩 Contact Kiwi Web Design today to book your free consultation.
 
 
-✅ With the right website, your business won’t just exist online—it will *grow*.
+✅ With the right website, your business won’t just exist online-it will *grow*.

@@ -1,6 +1,6 @@
 ---
 title: Why Every Auckland Tradie Needs a Professional Website
-description: "Auckland tradies—discover how professional web design can help you get found, build trust, and win more jobs."
+description: "Auckland tradies-discover how professional web design can help you get found, build trust, and win more jobs."
 pubDate: 2025-06-24
 image: "/blog/ChatGPT-Image-Jun-24-2025-11_54_50-AM-1.png"
 ---
@@ -8,7 +8,7 @@ image: "/blog/ChatGPT-Image-Jun-24-2025-11_54_50-AM-1.png"
 # Why Every Auckland Tradie Needs a Professional Website
 
 
-If you’re a [tradie in Auckland](https://www.kiwiwebdesign.co.nz/website-design-auckland/)—whether you’re a plumber, electrician, builder, or landscaper—having a professional website is no longer optional. It’s essential. Your website is often the first impression potential customers get of your business. Here’s why investing in professional web design can set you apart and grow your business.
+If you’re a [tradie in Auckland](https://www.kiwiwebdesign.co.nz/website-design-auckland/)-whether you’re a plumber, electrician, builder, or landscaper-having a professional website is no longer optional. It’s essential. Your website is often the first impression potential customers get of your business. Here’s why investing in professional web design can set you apart and grow your business.
 
 
 ### 1. Be Found by Locals Searching Online
@@ -32,13 +32,13 @@ Websites can do more than just look good. With smart design and clear calls to a
 ### 4. Build Trust with Auckland Clients
 
 
-Tradies who have well-designed, up-to-date websites look more professional. It shows you take your work seriously and care about your image. That goes a long way in building trust—especially in competitive Auckland markets.
+Tradies who have well-designed, up-to-date websites look more professional. It shows you take your work seriously and care about your image. That goes a long way in building trust-especially in competitive Auckland markets.
 
 
 ### 5. Save Time
 
 
-Tired of answering the same questions over the phone? A website can provide answers about your services, availability, service area, and pricing—freeing up your time to focus on your jobs.
+Tired of answering the same questions over the phone? A website can provide answers about your services, availability, service area, and pricing-freeing up your time to focus on your jobs.
 
 
 ### 6. Stay Ahead of the Competition

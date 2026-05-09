@@ -1,6 +1,6 @@
 ---
 title: "Affordable Web Design for Small Business Auckland | Websites From $1290"
-description: "Affordable websites for Auckland small businesses from $1290. Fast 2–3 week turnaround, no lock-in, local team. Redesigns and new sites. Free quote — no obligation."
+description: "Affordable websites for Auckland small businesses from $1290. Fast 2–3 week turnaround, no lock-in, local team. Redesigns and new sites. Free quote, no obligation."
 pubDate: 2025-09-16
 image: "/blog/ujfa-790x550-1.webp"
 ---

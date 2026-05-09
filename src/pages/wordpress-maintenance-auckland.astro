@@ -15,7 +15,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/",
       "name": "WordPress Maintenance Auckland | Managed WordPress Care Plans",
-      "description": "Managed WordPress maintenance plans for Auckland businesses — updates, security, daily backups, and support. From $99/month + GST. No lock-in contracts.",
+      "description": "Managed WordPress maintenance plans for Auckland businesses, updates, security, daily backups, and support. From $99/month + GST. No lock-in contracts.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -75,21 +75,21 @@ const schema = {
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Do I need a maintenance plan if I have a new website?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — a new site is actually the ideal time to start. Updates are released constantly for WordPress core, plugins, and themes. Without regular maintenance, security vulnerabilities accumulate quickly. The first 6–12 months are when most sites become vulnerable if left unattended." } },
-        { "@type": "Question", "name": "What happens if my site gets hacked while I'm on a plan?", "acceptedAnswer": { "@type": "Answer", "text": "Under Standard and Premium plans, malware removal is covered. We investigate, clean the infection, harden the site, and restore from a backup if necessary — at no extra charge beyond your monthly plan fee." } },
-        { "@type": "Question", "name": "Can you maintain a WordPress site you didn't build?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can take over maintenance of any WordPress site — built by us or anyone else. We start with an audit to understand the current state of the site, plugins, and any issues. If your site needs more than maintenance, we also offer WordPress website rebuilds to bring it up to standard." } },
-        { "@type": "Question", "name": "Is there a lock-in contract?", "acceptedAnswer": { "@type": "Answer", "text": "No. All plans run month-to-month. You can cancel with 30 days notice. We don't believe in trapping clients — we'd rather earn your continued business." } },
-        { "@type": "Question", "name": "What counts as a 'content change'?", "acceptedAnswer": { "@type": "Answer", "text": "Text updates, image swaps, adding or removing pages, menu changes, price updates, adding blog posts — anything that doesn't require custom development. Major new features or redesigns are quoted separately." } }
+        { "@type": "Question", "name": "Do I need a maintenance plan if I have a new website?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, a new site is actually the ideal time to start. Updates are released constantly for WordPress core, plugins, and themes. Without regular maintenance, security vulnerabilities accumulate quickly. The first 6–12 months are when most sites become vulnerable if left unattended." } },
+        { "@type": "Question", "name": "What happens if my site gets hacked while I'm on a plan?", "acceptedAnswer": { "@type": "Answer", "text": "Under Standard and Premium plans, malware removal is covered. We investigate, clean the infection, harden the site, and restore from a backup if necessary, at no extra charge beyond your monthly plan fee." } },
+        { "@type": "Question", "name": "Can you maintain a WordPress site you didn't build?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can take over maintenance of any WordPress site, built by us or anyone else. We start with an audit to understand the current state of the site, plugins, and any issues. If your site needs more than maintenance, we also offer WordPress website rebuilds to bring it up to standard." } },
+        { "@type": "Question", "name": "Is there a lock-in contract?", "acceptedAnswer": { "@type": "Answer", "text": "No. All plans run month-to-month. You can cancel with 30 days notice. We don't believe in trapping clients, we'd rather earn your continued business." } },
+        { "@type": "Question", "name": "What counts as a 'content change'?", "acceptedAnswer": { "@type": "Answer", "text": "Text updates, image swaps, adding or removing pages, menu changes, price updates, adding blog posts, anything that doesn't require custom development. Major new features or redesigns are quoted separately." } }
       ]
     }
   ]
 };
 
 const risks = [
-  { icon: "🦠", title: "90% of hacked WordPress sites had outdated plugins", desc: "Outdated plugins are the number one attack vector for WordPress. A single unpatched plugin can compromise your entire site — customer data, contact forms, everything." },
+  { icon: "🦠", title: "90% of hacked WordPress sites had outdated plugins", desc: "Outdated plugins are the number one attack vector for WordPress. A single unpatched plugin can compromise your entire site, customer data, contact forms, everything." },
   { icon: "📉", title: "Slow sites lose customers and rankings", desc: "A 1-second delay reduces conversions by 7%. Old WordPress installs accumulate bloat that slows load times. Regular maintenance keeps things running fast." },
   { icon: "💔", title: "Broken sites happen without warning", desc: "A plugin update conflict can take your site offline in seconds. Without backups, that means rebuilding from scratch. With daily backups, it means a 5-minute restore." },
-  { icon: "⚠️", title: "Google flags insecure sites", desc: "Expired SSLs, outdated PHP, and security vulnerabilities can trigger browser warnings — 'This site may be unsafe' — that kill your traffic and conversions overnight." },
+  { icon: "⚠️", title: "Google flags insecure sites", desc: "Expired SSLs, outdated PHP, and security vulnerabilities can trigger browser warnings, 'This site may be unsafe', that kill your traffic and conversions overnight." },
 ];
 
 const maintenancePlans = [
@@ -150,13 +150,13 @@ const services = [
   {
     icon: "🔄",
     title: "Core & Plugin Updates",
-    desc: "We apply WordPress core, plugin, and theme updates monthly — testing on a staging environment first to catch any conflicts before they affect your live site.",
+    desc: "We apply WordPress core, plugin, and theme updates monthly, testing on a staging environment first to catch any conflicts before they affect your live site.",
     items: ["WordPress core updates", "Plugin updates (all)", "Theme updates", "Pre-update backups"],
   },
   {
     icon: "💾",
     title: "Daily Backups",
-    desc: "Automated daily backups stored offsite. If anything goes wrong — a bad update, a hack, accidental deletion — we can restore your site to any point in the retention window.",
+    desc: "Automated daily backups stored offsite. If anything goes wrong, a bad update, a hack, accidental deletion, we can restore your site to any point in the retention window.",
     items: ["Daily automated backups", "Offsite storage", "30-day retention (Standard+)", "One-click restore"],
   },
   {
@@ -174,24 +174,24 @@ const services = [
   {
     icon: "📊",
     title: "Monthly Reporting",
-    desc: "A simple monthly report showing uptime, security scan results, updates applied, and Google Analytics highlights — so you always know what's happening.",
+    desc: "A simple monthly report showing uptime, security scan results, updates applied, and Google Analytics highlights, so you always know what's happening.",
     items: ["Uptime report", "Security scan summary", "Updates log", "Traffic overview"],
   },
   {
     icon: "🛎️",
     title: "Priority Support",
-    desc: "Got something wrong or need a quick fix? As a maintenance client you get priority support — typically responded to within a few hours on business days.",
+    desc: "Got something wrong or need a quick fix? As a maintenance client you get priority support, typically responded to within a few hours on business days.",
     items: ["Priority email support", "Same/next business day response", "Issue diagnosis", "Emergency fix included"],
   },
 ];
 
 const faqs = [
-  { q: "Do I need a maintenance plan if I have a new website?", a: "Yes — actually a new site is the ideal time to start. Whether we built your <a href=\"/wordpress-website-design-auckland/\">WordPress website</a> or someone else did, updates are released constantly for WordPress core, plugins, and themes. Without regular maintenance, security vulnerabilities accumulate quickly. The first 6–12 months are when most sites become vulnerable if left unattended." },
-  { q: "What happens if my site gets hacked while I'm on a plan?", a: "Under our Standard and Premium plans, malware removal is covered. We'll investigate, clean the infection, harden the site, and restore from a backup if necessary — at no extra charge beyond your plan." },
-  { q: "Can you maintain a WordPress site you didn't build?", a: "Yes. We can take over maintenance of any WordPress site — built by us or anyone else. We'll start with an audit to understand the current state of the site, plugins, and any issues. If your site needs more than maintenance, we also offer <a href=\"/wordpress-website-rebuilds-auckland/\">WordPress website rebuilds</a> to bring it up to standard." },
-  { q: "Is there a lock-in contract?", a: "No. All plans run month-to-month. You can cancel with 30 days notice. We don't believe in trapping clients — we'd rather earn your continued business." },
-  { q: "What's the difference between the Standard plan and the Monthly Subscription?", a: "They're essentially the same thing — the Standard plan is our Monthly Subscription product. It includes managed hosting, security, updates, daily backups, 2 hours of content changes, and priority support for $199/month + GST." },
-  { q: "What counts as a 'content change'?", a: "Text updates, image swaps, adding or removing pages, menu changes, price updates, adding blog posts — anything that doesn't require custom development. Major new features or redesigns are quoted separately." },
+  { q: "Do I need a maintenance plan if I have a new website?", a: "Yes, actually a new site is the ideal time to start. Whether we built your <a href=\"/wordpress-website-design-auckland/\">WordPress website</a> or someone else did, updates are released constantly for WordPress core, plugins, and themes. Without regular maintenance, security vulnerabilities accumulate quickly. The first 6–12 months are when most sites become vulnerable if left unattended." },
+  { q: "What happens if my site gets hacked while I'm on a plan?", a: "Under our Standard and Premium plans, malware removal is covered. We'll investigate, clean the infection, harden the site, and restore from a backup if necessary, at no extra charge beyond your plan." },
+  { q: "Can you maintain a WordPress site you didn't build?", a: "Yes. We can take over maintenance of any WordPress site, built by us or anyone else. We'll start with an audit to understand the current state of the site, plugins, and any issues. If your site needs more than maintenance, we also offer <a href=\"/wordpress-website-rebuilds-auckland/\">WordPress website rebuilds</a> to bring it up to standard." },
+  { q: "Is there a lock-in contract?", a: "No. All plans run month-to-month. You can cancel with 30 days notice. We don't believe in trapping clients, we'd rather earn your continued business." },
+  { q: "What's the difference between the Standard plan and the Monthly Subscription?", a: "They're essentially the same thing, the Standard plan is our Monthly Subscription product. It includes managed hosting, security, updates, daily backups, 2 hours of content changes, and priority support for $199/month + GST." },
+  { q: "What counts as a 'content change'?", a: "Text updates, image swaps, adding or removing pages, menu changes, price updates, adding blog posts, anything that doesn't require custom development. Major new features or redesigns are quoted separately." },
 ];
 ---
 
@@ -205,7 +205,7 @@ const faqs = [
   <PageHero
     eyebrow="WordPress Maintenance Auckland"
     title="Your WordPress site needs regular care. We do it for you."
-    subtitle="Managed WordPress maintenance plans for Auckland businesses — updates, security, backups, and support handled monthly so you never have to think about it."
+    subtitle="Managed WordPress maintenance plans for Auckland businesses, updates, security, backups, and support handled monthly so you never have to think about it."
     badgeText="From $99/month + GST"
     ctaPrimary={{ text: "Get a Care Plan", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See Plans", href: "#plans" }}
@@ -215,7 +215,7 @@ const faqs = [
   <!-- AI citability snippet -->
   <div class="maint-snippet">
     <div class="container">
-      <p><strong>Kiwi Web Design</strong> offers managed WordPress maintenance plans for Auckland businesses from <strong>$99/month + GST</strong>. Plans include monthly core and plugin updates, daily backups, security monitoring, uptime monitoring, and monthly reporting. No lock-in — cancel anytime with 30 days notice. 4.9★ Google rating from 50+ clients.</p>
+      <p><strong>Kiwi Web Design</strong> offers managed WordPress maintenance plans for Auckland businesses from <strong>$99/month + GST</strong>. Plans include monthly core and plugin updates, daily backups, security monitoring, uptime monitoring, and monthly reporting. No lock-in, cancel anytime with 30 days notice. 4.9★ Google rating from 50+ clients.</p>
     </div>
   </div>
 
@@ -225,7 +225,7 @@ const faqs = [
       <SectionHeader
         eyebrow="The Risk of Neglect"
         title="What happens to unmanaged WordPress sites."
-        subtitle="It's not a question of if — it's a question of when. These are the real costs of skipping maintenance."
+        subtitle="It's not a question of if, it's a question of when. These are the real costs of skipping maintenance."
       />
       <div class="maint-risks">
         {risks.map(({ icon, title, desc }) => (
@@ -268,7 +268,7 @@ const faqs = [
           </div>
         ))}
       </div>
-      <p class="maint-plans-note">All plans exclude GST. No lock-in — cancel anytime with 30 days notice. <a href="/website-designer-auckland/">Questions? Get in touch →</a></p>
+      <p class="maint-plans-note">All plans exclude GST. No lock-in, cancel anytime with 30 days notice. <a href="/website-designer-auckland/">Questions? Get in touch →</a></p>
     </div>
   </section>
 
@@ -312,7 +312,7 @@ const faqs = [
   <CTABanner
     variant="yellow"
     title="Stop worrying about your WordPress site."
-    subtitle="Get a care plan today — we'll audit your site and have it under management within 48 hours."
+    subtitle="Get a care plan today, we'll audit your site and have it under management within 48 hours."
     ctaPrimary={{ text: "Get a Care Plan", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See Monthly Subscription", href: "/monthly-subscription/" }}
   />

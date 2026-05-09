@@ -85,7 +85,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
       <tr><td style="padding:6px 12px 6px 0;font-weight:700">Name</td><td>${name}</td></tr>
       <tr><td style="padding:6px 12px 6px 0;font-weight:700">Email</td><td><a href="mailto:${email}">${email}</a></td></tr>
       <tr><td style="padding:6px 12px 6px 0;font-weight:700">Mobile</td><td><a href="tel:${mobile}">${mobile}</a></td></tr>
-      <tr><td style="padding:6px 12px 6px 0;font-weight:700">Business</td><td>${business || '—'}</td></tr>
+      <tr><td style="padding:6px 12px 6px 0;font-weight:700">Business</td><td>${business || '-'}</td></tr>
       <tr><td style="padding:6px 12px 6px 0;font-weight:700">Service</td><td>${service || 'Not specified'}</td></tr>
       <tr><td style="padding:6px 12px 6px 0;font-weight:700;vertical-align:top">Message</td><td style="white-space:pre-wrap">${message}</td></tr>
     </table>`;
@@ -95,7 +95,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
       <h2 style="color:#2c2927">Thanks for reaching out, ${name}!</h2>
       <p style="color:#534a45;line-height:1.6">We've received your message and will get back to you within 1 business day.
       If you need us sooner, call or text <a href="tel:+64210396580" style="color:#2c2927;font-weight:700">021 039 6580</a>.</p>
-      <p style="color:#534a45">— Charlie &amp; the Kiwi Web Design team</p>
+      <p style="color:#534a45">- Charlie &amp; the Kiwi Web Design team</p>
       <hr style="border:none;border-top:1px solid #e8e7db;margin:2rem 0"/>
       <p style="font-size:12px;color:#888">Kiwi Web Design · Auckland<br>
       <a href="https://www.kiwiwebdesign.co.nz" style="color:#888">www.kiwiwebdesign.co.nz</a></p>
@@ -107,7 +107,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
         from: FROM_NOTIF,
         to: [OWNER_EMAIL],
         reply_to: email,
-        subject: `New enquiry from ${name}${business ? ` — ${business}` : ''}`,
+        subject: `New enquiry from ${name}${business ? `, ${business}` : ''}`,
         html: notifHtml,
       }),
       sendEmail(apiKey, {

@@ -11,7 +11,7 @@ image: "/blog/pexels-photo-375889-375889-scaled.jpg"
 I’ve been running Kiwi Web Design for years, and I’ve seen too many small business owners get burned by websites that don’t work the way they should. In Auckland alone, there are dozens of agencies promising the world, but not all of them deliver. Your website isn’t just “nice to have” anymore. It’s your shopfront that works 24/7, answering questions, attracting customers, and building trust before you even meet someone.
 
 
-According to Vistaprint NZ, over 75% of Kiwis aged 16-64 search online for products and services. That’s not a trend — that’s the way we live now. So the decision of *who* builds your website matters a lot.
+According to Vistaprint NZ, over 75% of Kiwis aged 16-64 search online for products and services. That’s not a trend, that’s the way we live now. So the decision of *who* builds your website matters a lot.
 
 
 Here’s what I tell people when they ask me how to pick the right web design agency, whether they work with me at Kiwi Web Design or someone else.
@@ -56,7 +56,7 @@ Your website is not “done” the day it goes live. Plugins need updating, cont
 ### Red Flags to Watch For
 
 
-- Agencies promising “page one of Google in a week” — that’s not how SEO works.
+- Agencies promising “page one of Google in a week”, that’s not how SEO works.
 
 
 - No real portfolio or only stock images.
@@ -74,7 +74,7 @@ Last year, a small retail shop in West Auckland came to me after paying for a si
 ### Final Thoughts
 
 
-Whether you choose Kiwi Web Design or another [Auckland web design agency](/small-business-website-design-auckland/), the main thing is to work with a team that listens, explains things clearly, and understands how your customers think. See our [website design process](/website-design-process-in-auckland/) and [about us page](/about-us/) to understand how we work. Take your time, ask questions, and make sure you’re getting a site that works for you — not just for their portfolio.
+Whether you choose Kiwi Web Design or another [Auckland web design agency](/small-business-website-design-auckland/), the main thing is to work with a team that listens, explains things clearly, and understands how your customers think. See our [website design process](/website-design-process-in-auckland/) and [about us page](/about-us/) to understand how we work. Take your time, ask questions, and make sure you’re getting a site that works for you, not just for their portfolio.
 
 
 If you want to talk through what’s possible for your business, get in touch with Kiwi Web Design. We can walk you through your options and give you a clear plan to get your site working as hard as you do.

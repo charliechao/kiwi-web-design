@@ -1,6 +1,6 @@
 ---
 title: Why Your Auckland Business Isn't Ranking on Google (And How to Fix It)
-description: "Not showing up on Google? Here are the most common reasons Auckland small businesses don't rank — and the practical fixes that actually move the needle."
+description: "Not showing up on Google? Here are the most common reasons Auckland small businesses don't rank, and the practical fixes that actually move the needle."
 pubDate: 2026-04-14
 lastModified: 2026-04-14
 image: "/blog/why-auckland-business-not-ranking-google.png"
@@ -10,7 +10,7 @@ keywords: "Auckland business not ranking Google, local SEO Auckland, why is my b
 
 <div class="kwd-snippet">
 
-**Why Auckland businesses don't rank on Google — quick summary:**
+**Why Auckland businesses don't rank on Google, quick summary:**
 
 - No Google Business Profile, or it's incomplete / unverified
 - Website is slow, not mobile-friendly, or has thin content
@@ -18,11 +18,11 @@ keywords: "Auckland business not ranking Google, local SEO Auckland, why is my b
 - Inconsistent business name, address, and phone number across the web
 - No local backlinks or citations pointing to your site
 - On-page SEO basics (title tags, headings, meta descriptions) are missing or wrong
-- Competitors are doing all of the above — and you're not
+- Competitors are doing all of the above, and you're not
 
 </div>
 
-If you've Googled your business and found yourself asking "why isn't my business showing up?" — you're not alone. It's one of the most common questions we get from Auckland small business owners. The good news: most ranking problems have a clear cause, and a clear fix.
+If you've Googled your business and found yourself asking "why isn't my business showing up?", you're not alone. It's one of the most common questions we get from Auckland small business owners. The good news: most ranking problems have a clear cause, and a clear fix.
 
 This guide covers the main reasons Auckland businesses don't appear in Google search results and what you can do about each one.
 
@@ -30,7 +30,7 @@ This guide covers the main reasons Auckland businesses don't appear in Google se
 
 ## 1. Your Google Business Profile is missing or incomplete
 
-For local searches — "plumber Ponsonby", "accountant Grey Lynn", "bakery near me" — Google prioritises businesses with a verified **Google Business Profile (GBP)**. If you haven't claimed yours, you're invisible in the local map pack, which appears above the regular search results.
+For local searches, "plumber Ponsonby", "accountant Grey Lynn", "bakery near me", Google prioritises businesses with a verified **Google Business Profile (GBP)**. If you haven't claimed yours, you're invisible in the local map pack, which appears above the regular search results.
 
 Even if you have a profile, it might be working against you:
 
@@ -40,13 +40,13 @@ Even if you have a profile, it might be working against you:
 - Missing categories or service descriptions
 - Unverified listing (Google won't show unverified profiles prominently)
 
-**Fix:** Claim and verify your GBP at business.google.com. Complete every field — category, description, services, hours, and photos. Then actively ask satisfied customers to leave a review. Our [Google Business Profile guide for Auckland businesses](/google-business-profile-guide-for-auckland-businesses/) walks through the full setup process.
+**Fix:** Claim and verify your GBP at business.google.com. Complete every field, category, description, services, hours, and photos. Then actively ask satisfied customers to leave a review. Our [Google Business Profile guide for Auckland businesses](/google-business-profile-guide-for-auckland-businesses/) walks through the full setup process.
 
 ---
 
 ## 2. Your website is slow or not mobile-friendly
 
-Google measures page experience as a ranking signal. If your website loads slowly on a mobile phone — which is how most Auckland consumers browse — Google will rank it lower than a faster competitor.
+Google measures page experience as a ranking signal. If your website loads slowly on a mobile phone, which is how most Auckland consumers browse, Google will rank it lower than a faster competitor.
 
 Common culprits:
 
@@ -61,7 +61,7 @@ Common culprits:
 
 ## 3. You're targeting the wrong keywords
 
-Many small businesses optimise for how they describe their own service — not how customers search for it. If you're a "bespoke joinery specialist" but customers search "custom kitchen cabinets Auckland", there's a mismatch.
+Many small businesses optimise for how they describe their own service, not how customers search for it. If you're a "bespoke joinery specialist" but customers search "custom kitchen cabinets Auckland", there's a mismatch.
 
 Other common keyword mistakes:
 
@@ -70,13 +70,13 @@ Other common keyword mistakes:
 - Not including suburb-level location terms relevant to your service area
 - Optimising for the same keyword on multiple pages (keyword cannibalism)
 
-**Fix:** Use Google Search Console (free) to see what terms people are already using to find your site. Google's autocomplete and "People also ask" results show you what Auckland locals actually search. Build your page content around those phrases — not internal jargon.
+**Fix:** Use Google Search Console (free) to see what terms people are already using to find your site. Google's autocomplete and "People also ask" results show you what Auckland locals actually search. Build your page content around those phrases, not internal jargon.
 
 ---
 
 ## 4. Your NAP details are inconsistent
 
-NAP stands for Name, Address, Phone number. Google cross-references your business information across dozens of directories — Yellow Pages, Finda, Neighbourly, Facebook, your website footer — to confirm you are who you say you are.
+NAP stands for Name, Address, Phone number. Google cross-references your business information across dozens of directories, Yellow Pages, Finda, Neighbourly, Facebook, your website footer, to confirm you are who you say you are.
 
 If your business name is "Kiwi Plumbing Ltd" on your website, "Kiwi Plumbing" on Facebook, and "K. Plumbing" on a directory listing, Google sees three different businesses. This confusion erodes your local ranking signals.
 
@@ -96,7 +96,7 @@ If your competitors have:
 
 ...and you don't, they rank above you. It's that simple.
 
-**Fix:** Start with the major NZ directories — Finda, Yellow Pages, Neighbourly, Google Maps, and Yelp NZ. Then look for industry-specific directories relevant to your trade. If you're in construction, get listed on Builderscrack. Hospitality? Zomato and TripAdvisor. Building local citations is slow work but has a compounding effect over time.
+**Fix:** Start with the major NZ directories, Finda, Yellow Pages, Neighbourly, Google Maps, and Yelp NZ. Then look for industry-specific directories relevant to your trade. If you're in construction, get listed on Builderscrack. Hospitality? Zomato and TripAdvisor. Building local citations is slow work but has a compounding effect over time.
 
 ---
 
@@ -106,12 +106,12 @@ Even a beautiful, fast website can rank poorly if the underlying SEO structure i
 
 Things to check:
 
-- **Title tag** — Does each page have a unique, keyword-rich title? This appears in browser tabs and search results.
-- **Meta description** — Not a direct ranking factor, but a compelling one improves click-through rate, which does influence ranking.
-- **H1 heading** — Every page should have one H1 that includes your target keyword.
-- **Image alt text** — Describes your images to Google (and screen readers).
-- **Internal links** — Pages linked together help Google understand your site structure and spread authority.
-- **URL slugs** — `/services/auckland-plumber/` is better than `/page?id=47`.
+- **Title tag**, Does each page have a unique, keyword-rich title? This appears in browser tabs and search results.
+- **Meta description**, Not a direct ranking factor, but a compelling one improves click-through rate, which does influence ranking.
+- **H1 heading**, Every page should have one H1 that includes your target keyword.
+- **Image alt text**, Describes your images to Google (and screen readers).
+- **Internal links**, Pages linked together help Google understand your site structure and spread authority.
+- **URL slugs**, `/services/auckland-plumber/` is better than `/page?id=47`.
 
 **Fix:** Install a free SEO plugin if you're on WordPress (Yoast or Rank Math). For non-WordPress sites, do a manual audit of your 5–10 most important pages. Check each one has a unique title, meta description, and a clear H1. Our [local SEO service for Auckland small businesses](/local-seo-for-auckland-small-businesses/) includes a full on-page audit.
 
@@ -121,17 +121,17 @@ Things to check:
 
 Google's algorithm has become very good at matching search intent. If someone searches "how to fix a leaking tap Auckland" and your plumbing page is just a list of services with no useful information, Google will rank a more helpful page above yours.
 
-**Thin content** — pages with very little text or substance — is one of the most common ranking problems we see on small business websites. A 150-word services page with no details, no FAQs, and no location-specific copy gives Google very little to work with.
+**Thin content**, pages with very little text or substance, is one of the most common ranking problems we see on small business websites. A 150-word services page with no details, no FAQs, and no location-specific copy gives Google very little to work with.
 
-**Fix:** Each of your main service pages should have at least 400–600 words of genuine, useful content. Add a FAQ section answering the questions your customers actually ask. Mention the Auckland suburbs you serve. Blog posts like this one help too — they build topical authority and give you more opportunities to rank for long-tail searches.
+**Fix:** Each of your main service pages should have at least 400–600 words of genuine, useful content. Add a FAQ section answering the questions your customers actually ask. Mention the Auckland suburbs you serve. Blog posts like this one help too, they build topical authority and give you more opportunities to rank for long-tail searches.
 
 ---
 
-## 8. Your competitors are doing all of this — and you're not yet
+## 8. Your competitors are doing all of this, and you're not yet
 
 Sometimes the honest answer is: your site is fine, but your competitors have been doing SEO consistently for 2–3 years and have built up an advantage. Google rewards consistency over time. A fresh site or a recently-claimed GBP profile will take 3–6 months to start climbing.
 
-That's not a reason to delay — it's a reason to start now. Every month you wait is another month your competitors extend their lead.
+That's not a reason to delay, it's a reason to start now. Every month you wait is another month your competitors extend their lead.
 
 ---
 
@@ -139,11 +139,11 @@ That's not a reason to delay — it's a reason to start now. Every month you wai
 
 For local Auckland searches in competitive industries (trades, legal, healthcare, hospitality), expect:
 
-- **1–2 months** — Google indexes your site and GBP improvements take effect
-- **3–6 months** — On-page fixes and citation building start to move rankings
-- **6–12 months** — Consistent content and backlinks produce meaningful organic traffic
+- **1–2 months**, Google indexes your site and GBP improvements take effect
+- **3–6 months**, On-page fixes and citation building start to move rankings
+- **6–12 months**, Consistent content and backlinks produce meaningful organic traffic
 
-Less competitive niches or suburb-specific terms can move faster. The key is patience and consistency — SEO is not a one-time task.
+Less competitive niches or suburb-specific terms can move faster. The key is patience and consistency, SEO is not a one-time task.
 
 ---
 
@@ -151,8 +151,8 @@ Less competitive niches or suburb-specific terms can move faster. The key is pat
 
 If this list feels like a lot, start with the two highest-impact actions:
 
-1. **Claim and complete your Google Business Profile** — this affects local map results immediately after verification
-2. **Fix your NAP consistency** — audit and correct your business name, address, and phone number everywhere it appears online
+1. **Claim and complete your Google Business Profile**, this affects local map results immediately after verification
+2. **Fix your NAP consistency**, audit and correct your business name, address, and phone number everywhere it appears online
 
 These two steps alone can produce visible improvements within 4–8 weeks for many Auckland businesses, with no technical skills required.
 
@@ -176,7 +176,7 @@ The most likely reasons are: your Google Business Profile is unclaimed or unveri
 
 **How much does local SEO cost in Auckland?**
 
-Local SEO for Auckland small businesses typically ranges from $300–$800 per month depending on the scope of work and competition in your industry. One-off audits and setup packages are available for businesses that want to get the foundations right before committing to ongoing work. Some fixes — like claiming your GBP and correcting NAP consistency — can be done for free with just time invested.
+Local SEO for Auckland small businesses typically ranges from $300–$800 per month depending on the scope of work and competition in your industry. One-off audits and setup packages are available for businesses that want to get the foundations right before committing to ongoing work. Some fixes, like claiming your GBP and correcting NAP consistency, can be done for free with just time invested.
 
 **How long does it take to rank on Google in New Zealand?**
 
@@ -210,7 +210,7 @@ For local map pack rankings, the three most important factors are: proximity (ho
       "@type": "Article",
       "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/why-auckland-business-not-ranking-google/#article",
       "headline": "Why Your Auckland Business Isn't Ranking on Google (And How to Fix It)",
-      "description": "Not showing up on Google? Here are the most common reasons Auckland small businesses don't rank — and the practical fixes that actually move the needle.",
+      "description": "Not showing up on Google? Here are the most common reasons Auckland small businesses don't rank, and the practical fixes that actually move the needle.",
       "datePublished": "2026-04-14T00:00:00+12:00",
       "dateModified": "2026-04-14T00:00:00+12:00",
       "articleSection": "Local SEO",
@@ -277,7 +277,7 @@ For local map pack rankings, the three most important factors are: proximity (ho
           "name": "How much does local SEO cost in Auckland?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Local SEO for Auckland small businesses typically ranges from $300–$800 per month depending on the scope of work and competition in your industry. One-off audits and setup packages are available for businesses that want to get the foundations right before committing to ongoing work. Some fixes — like claiming your Google Business Profile and correcting NAP consistency — can be done for free with just time invested."
+            "text": "Local SEO for Auckland small businesses typically ranges from $300–$800 per month depending on the scope of work and competition in your industry. One-off audits and setup packages are available for businesses that want to get the foundations right before committing to ongoing work. Some fixes, like claiming your Google Business Profile and correcting NAP consistency, can be done for free with just time invested."
           }
         },
         {

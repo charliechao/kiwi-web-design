@@ -4,7 +4,7 @@
 
 ## Core Services
 
-- [Web Design for Auckland Small Businesses](https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/): Conversion-focused websites starting from $1,290. Mobile-first, fast-loading, built to turn visitors into enquiries — not just look good.
+- [Web Design for Auckland Small Businesses](https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/): Conversion-focused websites starting from $1,290. Mobile-first, fast-loading, built to turn visitors into enquiries, not just look good.
 - [SEO Auckland](https://www.kiwiwebdesign.co.nz/seo-auckland/): Local SEO targeting buyer keywords for Auckland businesses. Organic visibility that compounds over time and reduces reliance on paid ads.
 - [Google Ads Auckland](https://www.kiwiwebdesign.co.nz/google-ads/): PPC campaign setup and management focused on generating calls and enquiries, not wasting ad spend.
 
@@ -52,10 +52,10 @@
 
 ## Pricing
 
-- [Website Cost NZ — 2026 Guide](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/website-cost-new-zealand-small-business/): Real pricing for small business websites in New Zealand.
-- Launch & Get Found: from $1,290 — lead-focused website with on-page SEO.
-- Lead Growth Engine: from $2,690 — website + local SEO + Google Ads setup.
-- Sales Accelerator: from $3,890 — full-service ongoing website, SEO, and Google Ads management.
+- [Website Cost NZ, 2026 Guide](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/website-cost-new-zealand-small-business/): Real pricing for small business websites in New Zealand.
+- Launch & Get Found: from $1,290, lead-focused website with on-page SEO.
+- Lead Growth Engine: from $2,690, website + local SEO + Google Ads setup.
+- Sales Accelerator: from $3,890, full-service ongoing website, SEO, and Google Ads management.
 
 ## Case Studies
 
@@ -69,7 +69,7 @@
 ## Company
 
 - [About Kiwi Web Design](https://www.kiwiwebdesign.co.nz/about-us/): Founded by Charlie Chao. Grey Lynn-based agency delivering premium results at 50–70% less than traditional Auckland agencies.
-- [Our Process](https://www.kiwiwebdesign.co.nz/our-process/): How we work — free consultation, strategy, build, launch.
+- [Our Process](https://www.kiwiwebdesign.co.nz/our-process/): How we work, free consultation, strategy, build, launch.
 - [Client Reviews](https://www.kiwiwebdesign.co.nz/testimonials-reviews/): Google reviews and client testimonials.
 - [Contact / Free Consultation](https://www.kiwiwebdesign.co.nz/website-designer-auckland/): Book a free consultation in-person or online, Auckland-wide.
 - [FAQ](https://www.kiwiwebdesign.co.nz/faq/): Common questions about web design, SEO, and Google Ads for Auckland businesses.
@@ -80,4 +80,4 @@
 - Phone: +64 21 039 6580
 - Email: hi@kiwiwebdesign.co.nz
 - Google Rating: 5/5 stars
-- Service Area: Auckland — North Shore, South, West, East, Central
+- Service Area: Auckland, North Shore, South, West, East, Central

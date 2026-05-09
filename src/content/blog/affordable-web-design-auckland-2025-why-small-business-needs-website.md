@@ -29,7 +29,7 @@ First impressions matter. A professional, modern website reassures potential cus
 ### 3️⃣ Be Available 24/7
 
 
-A website works around the clock, even when you’re not. Customers can browse your services, read reviews, or contact you at any time—making your business accessible 24/7.
+A website works around the clock, even when you’re not. Customers can browse your services, read reviews, or contact you at any time-making your business accessible 24/7.
 
 
 ### 4️⃣ Control Your Online Presence
@@ -65,4 +65,4 @@ To help local businesses take the first step, we’re offering a **free consulta
 👉 Book your free consultation with Kiwi Web Design today
 
 
-✅ With the right website, your business won’t just be visible—it will thrive in 2025 and beyond.
+✅ With the right website, your business won’t just be visible-it will thrive in 2025 and beyond.

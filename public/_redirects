@@ -1,23 +1,23 @@
-# Chinese blog post — colon stripped by Astro slug generation
+# Chinese blog post, colon stripped by Astro slug generation
 /affordable-web-design-auckland/新西兰华人创业宝典：从零到一打造你的成功小公/  /affordable-web-design-auckland/新西兰华人创业宝典从零到一打造你的成功小公/  301
 
-# Blog post — old standalone slug → nested blog URL
+# Blog post, old standalone slug → nested blog URL
 /affordable-web-design-auckland-2025-why-small-business-needs-website   /affordable-web-design-auckland/5-reasons-why-small-kiwi-businesses-need-a-website/  301
 /affordable-web-design-auckland-2025-why-small-business-needs-website/  /affordable-web-design-auckland/5-reasons-why-small-kiwi-businesses-need-a-website/  301
 
-# SEO page — slug changed to target "affordable SEO Auckland"
+# SEO page, slug changed to target "affordable SEO Auckland"
 /seo-auckland                          /affordable-seo-auckland/             301
 /seo-auckland/                         /affordable-seo-auckland/             301
 
-# Tradie page — old slug redirect
+# Tradie page, old slug redirect
 /auckland-tradie-web-design              /tradie-website-design-auckland/  301
 /auckland-tradie-web-design/             /tradie-website-design-auckland/  301
 
-# Small business page consolidation — duplicate removed, redirect to canonical
+# Small business page consolidation, duplicate removed, redirect to canonical
 /small-business-web-design-auckland      /small-business-website-design-auckland/  301
 /small-business-web-design-auckland/     /small-business-website-design-auckland/  301
 
-# Industry page redirects — old URLs from previous site
+# Industry page redirects, old URLs from previous site
 /beauty-salon-website-design-auckland/     /how-kiwi-web-design-helps-auckland-beauty-industry/  301
 /restaurant-website-design-auckland/       /how-kiwi-web-design-helps-auckland-restaurants/       301
 /healthcare-website-design-auckland/       /how-kiwi-web-design-helps-auckland-healthcare/        301

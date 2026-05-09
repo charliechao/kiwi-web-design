@@ -131,7 +131,7 @@ const locations = [
     slug: 'south-auckland-web-design',
     file: 'loc_south-auckland-web-design.html',
     title: 'South Auckland Web Design',
-    description: 'Affordable South Auckland web design for small NZ businesses — fast, mobile-first, and SEO-ready by Kiwi Web Design.',
+    description: 'Affordable South Auckland web design for small NZ businesses, fast, mobile-first, and SEO-ready by Kiwi Web Design.',
     heroImg: 'https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/rainbows-end-south-auckland.jpg',
     area: 'South Auckland',
     suburbs: ['Manukau', 'Papatoetoe', 'Manurewa', 'Otahuhu', 'Papakura', 'Takanini', 'Pukekohe'],
@@ -161,15 +161,15 @@ for (const loc of locations) {
     'SEO-ready structure to rank on Google',
     'Free in-person or online consultation',
     'Contact forms and click-to-call buttons',
-    'Fast turnaround — most sites live in 2–3 weeks',
-    'Transparent pricing from $1,290 — no hidden fees',
+    'Fast turnaround, most sites live in 2–3 weeks',
+    'Transparent pricing from $1,290, no hidden fees',
   ];
   const inclItems = included.length >= 3 ? included : defaultIncluded;
 
   const defaultFAQs = [
     { q: `How much does web design in ${loc.area} cost?`, a: `Our websites for ${loc.area} small businesses start from $1,290. Every package includes a responsive WordPress site, basic SEO, and a free consultation.` },
     { q: 'How long does it take to build a website?', a: 'Most projects are completed in 2–3 weeks from the discovery call to go-live, depending on how quickly you can provide content.' },
-    { q: 'Do you come to us for the consultation?', a: `Yes — we offer free in-person meetings anywhere in ${loc.area} and across Auckland, as well as online consultations.` },
+    { q: 'Do you come to us for the consultation?', a: `Yes, we offer free in-person meetings anywhere in ${loc.area} and across Auckland, as well as online consultations.` },
     { q: 'Can you redesign an existing website?', a: 'Absolutely. We regularly migrate businesses from Wix, Squarespace, or old WordPress sites to a fast, modern build.' },
     { q: 'Do you offer ongoing support?', a: 'Yes. We have affordable monthly maintenance plans to keep your site secure, updated, and performing well.' },
   ];
@@ -248,7 +248,7 @@ const schema = ${schemaStr};
   <section class="loc-hero section-dark">
     <div class="container loc-hero-inner">
       <div class="loc-hero-text">
-        <p class="loc-eyebrow">Auckland Web Design — ${loc.area}</p>
+        <p class="loc-eyebrow">Auckland Web Design, ${loc.area}</p>
         <h1>${loc.title}</h1>
         <p class="loc-subhead">${loc.description}</p>
         <div class="loc-hero-btns">
@@ -273,7 +273,7 @@ const schema = ${schemaStr};
     <div class="container loc-two-col">
       <div>
         <h2>Web Design for ${loc.area} Businesses</h2>
-        ${introText ? `<p>${introText}</p>` : `<p>At Kiwi Web Design, we help small businesses in ${loc.area} build professional websites that attract local customers and generate real enquiries. Based in Grey Lynn, we work with businesses across all of Auckland — in-person or online.</p>`}
+        ${introText ? `<p>${introText}</p>` : `<p>At Kiwi Web Design, we help small businesses in ${loc.area} build professional websites that attract local customers and generate real enquiries. Based in Grey Lynn, we work with businesses across all of Auckland, in-person or online.</p>`}
         ${whyText ? `<p>${whyText}</p>` : ''}
       </div>
       <div>
@@ -311,7 +311,7 @@ const schema = ${schemaStr};
     <div class="container">
       <h2>Recent Work for Auckland Businesses</h2>
       <div class="loc-gallery">
-        ${galleryImgs.map(src => `<img src="${src}" alt="Web design example — Kiwi Web Design Auckland" width="700" height="450" loading="lazy" />`).join('\n        ')}
+        ${galleryImgs.map(src => `<img src="${src}" alt="Web design example, Kiwi Web Design Auckland" width="700" height="450" loading="lazy" />`).join('\n        ')}
       </div>
     </div>
   </section>` : ''}
@@ -357,7 +357,7 @@ const schema = ${schemaStr};
   <section class="section section-dark text-center">
     <div class="container loc-narrow">
       <h2>Ready for a website that works for your ${loc.area} business?</h2>
-      <p>Book a free consultation with Kiwi Web Design — in person or online.</p>
+      <p>Book a free consultation with Kiwi Web Design, in person or online.</p>
       <a href="/website-designer-auckland/" class="btn-primary">Book a Free Consultation</a>
     </div>
   </section>
@@ -547,4 +547,4 @@ const schema = ${schemaStr};
   console.log(`✓ src/pages/${loc.slug}.astro`);
 }
 
-console.log('\nDone — 5 location pages written.');
+console.log('\nDone, 5 location pages written.');

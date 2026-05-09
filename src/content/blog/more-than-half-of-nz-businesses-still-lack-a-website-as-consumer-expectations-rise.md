@@ -1,6 +1,6 @@
 ---
 title: More Than Half of NZ Businesses Still Lack a Website as Consumer Expectations Rise
-description: "InternetNZ 2025: only 53% of NZ businesses have a website — unchanged since 2022 — while consumer expectations keep rising. Key stats and what it means for your business."
+description: "InternetNZ 2025: only 53% of NZ businesses have a website, unchanged since 2022, while consumer expectations keep rising. Key stats and what it means for your business."
 pubDate: 2025-12-02
 lastModified: 2025-12-02
 image: "/blog/nz-business-website-statistics-2025-internetnz-report.png"
@@ -10,13 +10,13 @@ keywords: "NZ business website statistics, InternetNZ 2025, small business websi
 
 <div class="kwd-snippet">
 
-**Key findings — InternetNZ Research 2025 (750 businesses · 500 consumers):**
+**Key findings, InternetNZ Research 2025 (750 businesses · 500 consumers):**
 
-- Only **53% of NZ businesses** have a website — unchanged since 2022
+- Only **53% of NZ businesses** have a website, unchanged since 2022
 - **61%** say a website is their most important digital tool, yet less than half have one
 - **68%** of NZ businesses now use AI tools in daily operations
 - **74%** of businesses agree a .nz domain is more trustworthy (up from 58% in 2020)
-- **52%** of consumers see websites primarily as a sales channel — only **25%** of businesses do
+- **52%** of consumers see websites primarily as a sales channel, only **25%** of businesses do
 
 </div>
 
@@ -34,7 +34,7 @@ The report shows a clear mismatch between what businesses say is important and w
 
 - **61 percent** of businesses rank their website as their most important digital tool, but **only 53 percent** have one
 - Email is ranked second most important, yet its usage is declining as customers shift to messaging and live chat
-- Businesses overestimate the impact of social media — consumers consistently place lower value on social channels as a way to get information or engage
+- Businesses overestimate the impact of social media, consumers consistently place lower value on social channels as a way to get information or engage
 
 This internal mismatch means many NZ businesses are operating without the assets they believe matter most.
 
@@ -138,7 +138,7 @@ For small businesses serving a local market, .nz remains the strongest indicator
 | Businesses agreeing .nz is more trustworthy (2025) | 74% |
 | Businesses agreeing .nz is more trustworthy (2020) | 58% |
 
-*Source: InternetNZ ".nz Consumers and Businesses Research Summary 2025" — survey conducted July–August 2025, sample of 750 businesses and 500 consumers.*
+*Source: InternetNZ ".nz Consumers and Businesses Research Summary 2025", survey conducted July–August 2025, sample of 750 businesses and 500 consumers.*
 
 ---
 
@@ -186,7 +186,7 @@ Yes. InternetNZ 2025 data shows 74 percent of NZ businesses agree that a .nz dom
 
 **How do NZ consumers view business websites compared to how businesses view them?**
 
-There is a significant perception gap. 52 percent of consumers see websites primarily as a sales channel, while only 25 percent of businesses do. Businesses tend to view their website mainly as a credibility or information tool — a mismatch that causes them to underinvest in e-commerce and transactional features their customers actually want.
+There is a significant perception gap. 52 percent of consumers see websites primarily as a sales channel, while only 25 percent of businesses do. Businesses tend to view their website mainly as a credibility or information tool, a mismatch that causes them to underinvest in e-commerce and transactional features their customers actually want.
 
 ---
 
@@ -208,7 +208,7 @@ There is a significant perception gap. 52 percent of consumers see websites prim
       "@type": "NewsArticle",
       "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/more-than-half-of-nz-businesses-still-lack-a-website-as-consumer-expectations-rise/#article",
       "headline": "More Than Half of NZ Businesses Still Lack a Website as Consumer Expectations Rise",
-      "description": "InternetNZ 2025: only 53% of NZ businesses have a website — unchanged since 2022 — while consumer expectations keep rising. Key stats and what it means for your business.",
+      "description": "InternetNZ 2025: only 53% of NZ businesses have a website, unchanged since 2022, while consumer expectations keep rising. Key stats and what it means for your business.",
       "datePublished": "2025-12-02T00:00:00+13:00",
       "dateModified": "2025-12-02T00:00:00+13:00",
       "articleSection": "NZ Business Research",
@@ -316,7 +316,7 @@ There is a significant perception gap. 52 percent of consumers see websites prim
           "name": "How do NZ consumers view business websites compared to how businesses view them?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "52 percent of NZ consumers see websites primarily as a sales channel, while only 25 percent of businesses do. Businesses tend to view their website mainly as a credibility or information tool — a mismatch that causes them to underinvest in transactional features their customers actually want."
+            "text": "52 percent of NZ consumers see websites primarily as a sales channel, while only 25 percent of businesses do. Businesses tend to view their website mainly as a credibility or information tool, a mismatch that causes them to underinvest in transactional features their customers actually want."
           }
         }
       ]

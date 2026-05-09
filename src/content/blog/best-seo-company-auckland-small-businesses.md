@@ -88,7 +88,7 @@ Instead of chasing broad search volume, effective [SEO for Auckland small busine
 
 
 
-- High-intent, location-specific keywords — people ready to act, not just browsing
+- High-intent, location-specific keywords, people ready to act, not just browsing
 
 - [Google Business Profile](/google-business-profile-guide-for-auckland-businesses/) optimisation to drive calls and directions
 
@@ -125,7 +125,7 @@ Client Case Study
 
 
 
-**The result:** Within four months, Beauty Touch moved from page three to the local pack for their primary service keywords. Organic enquiries — bookings made directly through their website and Google profile — increased substantially. Their Google Business Profile views more than doubled in the same period.
+**The result:** Within four months, Beauty Touch moved from page three to the local pack for their primary service keywords. Organic enquiries, bookings made directly through their website and Google profile, increased substantially. Their Google Business Profile views more than doubled in the same period.
 
 
 
@@ -188,14 +188,14 @@ This question comes up constantly, and the honest answer is that they serve diff
 
 
 | **Long-term value**
-| High — builds a permanent asset
-| Low — no residual value when paused
+| High, builds a permanent asset
+| Low, no residual value when paused
 |
 
 
 | **Control**
-| Moderate — algorithm dependent
-| High — precise targeting and budget control
+| Moderate, algorithm dependent
+| High, precise targeting and budget control
 |
 
 
@@ -206,13 +206,13 @@ This question comes up constantly, and the honest answer is that they serve diff
 
 
 | **Risk**
-| Low — gradual, compound growth
-| Medium — wasted spend if poorly set up
+| Low, gradual, compound growth
+| Medium, wasted spend if poorly set up
 |
 
 
 | **Ideal stage**
-| Any — start building early
+| Any, start building early
 | When you need leads now
 |
 
@@ -400,7 +400,7 @@ Both serve different functions. Google Ads delivers leads immediately but stops 
 CC
 
 **Charlie Chao**
-Owner, Kiwi Web Design — Auckland
+Owner, Kiwi Web Design, Auckland
 
 
 Charlie works with small businesses across Auckland to build lead generation systems using SEO and Google Ads. His focus is always on one thing: measurable revenue impact, not vanity metrics.
@@ -417,6 +417,6 @@ Charlie works with small businesses across Auckland to build lead generation sys
 
 **Sources referenced in this article:**
 
-[Think with Google — Local Search Insights](https://www.thinkwithgoogle.com/marketing-strategies/search/local-search-study/)  |
-[Stats NZ — Small Business Data](https://www.stats.govt.nz/topics/business/)  |
-[Figures NZ — New Zealand Business Statistics](https://www.figures.co.nz/)
+[Think with Google, Local Search Insights](https://www.thinkwithgoogle.com/marketing-strategies/search/local-search-study/)  |
+[Stats NZ, Small Business Data](https://www.stats.govt.nz/topics/business/)  |
+[Figures NZ, New Zealand Business Statistics](https://www.figures.co.nz/)

@@ -22,7 +22,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/7-best-web-design-agencies-in-auckland-2026/",
       "url": "https://www.kiwiwebdesign.co.nz/7-best-web-design-agencies-in-auckland-2026/",
       "name": "7 Best Web Design Agencies in Auckland (2026) | Kiwi Web Design",
-      "description": "Independent review of Auckland's top web design agencies for 2026 — evaluated on small business suitability, pricing, turnaround, local support, and real-world results.",
+      "description": "Independent review of Auckland's top web design agencies for 2026, evaluated on small business suitability, pricing, turnaround, local support, and real-world results.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/7-best-web-design-agencies-in-auckland-2026/#breadcrumb" }
@@ -54,8 +54,8 @@ const agencies = [
     pricing: "From ~$1,500. Fixed price, no surprises.",
     timeline: "2–3 weeks typical",
     support: "Auckland-based, direct contact",
-    summary: "Kiwi Web Design is an Auckland-based boutique agency run by Charlie Chao, specialising in lead-generating websites for small businesses across trades, professional services, hospitality, and retail. Every build is custom, fixed-price, and completed in 2–3 weeks — a pace most larger agencies can't match.",
-    strengths: ["Fixed-price quotes — no hourly billing", "Fast turnaround (2–3 weeks)", "Strong local SEO and conversion focus", "Training and handover included with every build", "Auckland-based support, not offshore helpdesks"],
+    summary: "Kiwi Web Design is an Auckland-based boutique agency run by Charlie Chao, specialising in lead-generating websites for small businesses across trades, professional services, hospitality, and retail. Every build is custom, fixed-price, and completed in 2–3 weeks, a pace most larger agencies can't match.",
+    strengths: ["Fixed-price quotes, no hourly billing", "Fast turnaround (2–3 weeks)", "Strong local SEO and conversion focus", "Training and handover included with every build", "Auckland-based support, not offshore helpdesks"],
     verdict: "Our top pick for Auckland SMEs. The combination of affordable pricing, fast delivery, real SEO knowledge, and genuinely local support makes Kiwi Web Design the standout choice for small businesses that need results, not a premium agency experience.",
     featured: true,
   },
@@ -126,7 +126,7 @@ const agencies = [
     support: "Multi-team account management",
     summary: "DNA Design is a large-scale digital agency working primarily with enterprise clients and government organisations in New Zealand. Their projects involve complex system integrations, large content platforms, and organisation-wide digital transformation.",
     strengths: ["Enterprise project capability", "Government and large org experience", "Complex integration work", "Established NZ reputation"],
-    verdict: "Not suitable for small businesses — their focus, pricing, and process are designed for enterprise clients with large budgets and extended timelines. Listed for completeness.",
+    verdict: "Not suitable for small businesses, their focus, pricing, and process are designed for enterprise clients with large budgets and extended timelines. Listed for completeness.",
     featured: false,
   },
   {
@@ -148,7 +148,7 @@ const agencies = [
 
 <Layout
   title="7 Best Web Design Agencies in Auckland (2026) | Kiwi Web Design"
-  description="Independent review of Auckland's top web design agencies for 2026 — evaluated on small business suitability, pricing, turnaround, local support, and real-world results."
+  description="Independent review of Auckland's top web design agencies for 2026, evaluated on small business suitability, pricing, turnaround, local support, and real-world results."
   canonicalURL="https://www.kiwiwebdesign.co.nz/7-best-web-design-agencies-in-auckland-2026/"
   schema={schema}
 >
@@ -179,7 +179,7 @@ const agencies = [
       <p class="toc-heading">Jump to agency:</p>
       <ol class="toc-list">
         {agencies.map(a => (
-          <li><a href={`#agency-${a.rank}`}>{a.rank}. {a.name} — {a.tagline}</a></li>
+          <li><a href={`#agency-${a.rank}`}>{a.rank}. {a.name}, {a.tagline}</a></li>
         ))}
       </ol>
     </div>
@@ -287,7 +287,7 @@ const agencies = [
   <CTABanner
     variant="yellow"
     title="Looking for an Auckland web designer?"
-    subtitle="Free consultation — we'll show you exactly what we'd build for your business and give you a fixed price upfront."
+    subtitle="Free consultation, we'll show you exactly what we'd build for your business and give you a fixed price upfront."
     ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
     ctaSecondary={{ text: "View Our Work", href: "/testimonials-reviews/" }}
   />
