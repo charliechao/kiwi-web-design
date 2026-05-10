@@ -7,6 +7,7 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import Icon from '../components/Icon.astro';
+import membershipImage from '../assets/services/membership-website-wordpress-auckland.png';
 
 const schema = {
   "@context": "https://schema.org",
@@ -124,6 +125,9 @@ const faqs = [
     badgeText="From $2,690 + GST"
     ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See Use Cases", href: "#usecases" }}
+    imgSrc={membershipImage.src}
+    imgAlt="WordPress membership website dashboard for an Auckland business"
+    imgTitle="Membership and subscription websites with WordPress Auckland"
   />
 
   <!-- Use cases -->

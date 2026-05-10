@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import ecommerceSeoImage from '../assets/general/shopping-cart-for-eCommerce-1.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -145,7 +146,9 @@ const faqs = [
     subtitle="SEO for eCommerce sites in Auckland and New Zealand. We optimise your product pages, category structure, and technical setup to drive organic traffic that converts."
     ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
     ctaSecondary={{ text: "View SEO Services", href: "/affordable-seo-auckland/" }}
-    centered={true}
+    imgSrc={ecommerceSeoImage.src}
+    imgAlt="eCommerce SEO strategy for an Auckland online store"
+    imgTitle="SEO for eCommerce websites Auckland"
   />
 
   <!-- AI citability snippet -->

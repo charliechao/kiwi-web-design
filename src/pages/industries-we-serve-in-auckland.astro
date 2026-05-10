@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Icon from '../components/Icon.astro';
+import PageVisual from '../components/PageVisual.astro';
+import industriesImage from '../assets/general/Auckland-Businesses.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -160,6 +162,15 @@ const whyIndustryKnowledge = [
       </div>
     </div>
   </section>
+
+  <PageVisual
+    imgSrc={industriesImage.src}
+    imgAlt="Auckland small business industries served by Kiwi Web Design"
+    imgTitle="Industries served by Kiwi Web Design Auckland"
+    eyebrow="Industry Focus"
+    title="Different industries need different trust signals."
+    caption="The page now has a stronger visual opener before the industry grid, helping the breadth of services feel more tangible."
+  />
 
   <!-- Industries grid -->
   <section class="section" id="industries">

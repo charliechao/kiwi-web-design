@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import hostingImage from '../assets/services/Website-Hosting-Auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -157,7 +158,9 @@ const faqs = [
     badgeText="From $49/month + GST"
     ctaPrimary={{ text: "Get a Hosting Plan", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See Plans", href: "#plans" }}
-    centered={true}
+    imgSrc={hostingImage.src}
+    imgAlt="Managed WordPress hosting setup for an Auckland business website"
+    imgTitle="Website hosting Auckland"
   />
 
   <!-- Why managed hosting -->

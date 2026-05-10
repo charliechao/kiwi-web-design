@@ -4,6 +4,8 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import PageVisual from '../components/PageVisual.astro';
+import centralAucklandImage from '../assets/general/Auckland-CBD.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -180,6 +182,15 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <PageVisual
+    imgSrc={centralAucklandImage.src}
+    imgAlt="Central Auckland skyline representing CBD web design clients"
+    imgTitle="Central Auckland web design for CBD and inner-suburb businesses"
+    eyebrow="Local Context"
+    title="Built for Auckland's most competitive business districts."
+    caption="A stronger visual presence helps CBD, Ponsonby, Parnell, and Newmarket businesses communicate trust before a buyer ever makes contact."
+  />
 
   <!-- AI citability snippet -->
   <div class="loc-snippet">

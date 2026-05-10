@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
+import PageVisual from '../components/PageVisual.astro';
+import agenciesImage from '../assets/general/Top-WEB-DESIGN-Agencies-1.png';
 
 const schema = {
   "@context": "https://schema.org",
@@ -171,9 +173,18 @@ const agencies = [
         <span class="criteria-item">SEO & conversion focus</span>
       </div>
     </div>
-  </section>
+</section>
 
-  <!-- TOC -->
+<PageVisual
+  imgSrc={agenciesImage.src}
+  imgAlt="Auckland web design agency comparison visual for small business owners"
+  imgTitle="Best web design agencies in Auckland 2026"
+  eyebrow="Agency Comparison"
+  title="A more visual guide to choosing the right Auckland web design partner."
+  caption="The comparison now has an editorial visual break before the agency list, helping readers scan a long research page more comfortably."
+/>
+
+<!-- TOC -->
   <section class="section" style="background: var(--kwd-cream);">
     <div class="container" style="max-width: 860px;">
       <p class="toc-heading">Jump to agency:</p>

@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Icon from '../components/Icon.astro';
+import PageVisual from '../components/PageVisual.astro';
+import workWithUsImage from '../assets/services/work-with-us-kiwi-web-design-auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -119,6 +121,15 @@ const values = [
       </div>
     </div>
   </section>
+
+  <PageVisual
+    imgSrc={workWithUsImage.src}
+    imgAlt="Kiwi Web Design collaborator workspace for Auckland web projects"
+    imgTitle="Work with Kiwi Web Design Auckland"
+    eyebrow="Partner Network"
+    title="A better visual signal for designers, developers, and SEO partners."
+    caption="The page now feels more intentional for potential collaborators before they review the role list and application form."
+  />
 
   <!-- Roles -->
   <section class="section" style="background: var(--kwd-cream);" id="roles">

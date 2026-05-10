@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
+import PageVisual from '../components/PageVisual.astro';
+import testimonialsImage from '../assets/services/kiwi-web-design-testimonials-auckland.jpg';
 
 const reviews = [
   {
@@ -191,6 +193,15 @@ const schema = {
       </div>
     </div>
   </section>
+
+  <PageVisual
+    imgSrc={testimonialsImage.src}
+    imgAlt="Kiwi Web Design client review and testimonial visual"
+    imgTitle="Client reviews and testimonials Kiwi Web Design Auckland"
+    eyebrow="Client Trust"
+    title="Reviews are stronger when the page feels as credible as the words."
+    caption="A premium testimonial visual now breaks up the review list and reinforces the trust story before visitors read the individual comments."
+  />
 
   <!-- Reviews grid -->
   <section class="section" style="background: var(--kwd-cream);">

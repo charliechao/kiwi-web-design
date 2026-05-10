@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
+import PageVisual from '../components/PageVisual.astro';
+import beautyImage from '../assets/general/beauty-salon-website-design-seo-auckland.jpg';
 
 const stats = [
   { fig: "3 weeks", label: "Zero to fully live booking website" },
@@ -90,9 +92,18 @@ const schema = {
         ))}
       </div>
     </div>
-  </section>
+</section>
 
-  <!-- Overview -->
+<PageVisual
+  imgSrc={beautyImage.src}
+  imgAlt="Beauty salon website case study visual for an Auckland booking website"
+  imgTitle="Beauty Touch Auckland website case study"
+  eyebrow="Case Study Visual"
+  title="A booking website should feel polished before the first appointment."
+  caption="The case study now has a premium visual break that supports the salon positioning and keeps the project story from reading as a text-only page."
+/>
+
+<!-- Overview -->
   <section class="section" style="background: var(--kwd-cream);">
     <div class="container">
       <div class="cs-overview">

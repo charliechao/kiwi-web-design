@@ -4,6 +4,8 @@ import SectionHeader from '../components/SectionHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import Icon from '../components/Icon.astro';
+import PageVisual from '../components/PageVisual.astro';
+import processImage from '../assets/services/our-process-web-design-auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -162,6 +164,15 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <PageVisual
+    imgSrc={processImage.src}
+    imgAlt="Kiwi Web Design website process from discovery to launch"
+    imgTitle="Our web design process Auckland"
+    eyebrow="Process Snapshot"
+    title="A clear build path makes the project feel easier from day one."
+    caption="The process page now has a visual anchor before the detailed step list, making the workflow feel more premium and less text-heavy."
+  />
 
   <!-- Detailed Steps Timeline -->
   <section class="section proc-steps-section">

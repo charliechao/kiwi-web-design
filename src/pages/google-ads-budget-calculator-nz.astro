@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import growthImage from '../assets/general/business_growth.png';
 
 const schema = {
   "@context": "https://schema.org",
@@ -129,7 +130,9 @@ const faqs = [
     badgeText="Free, no email required"
     ctaPrimary={{ text: "Get a Free Strategy Call", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "How It Works", href: "#how-it-works" }}
-    centered={true}
+    imgSrc={growthImage.src}
+    imgAlt="Google Ads budget and lead forecast dashboard for a New Zealand small business"
+    imgTitle="Google Ads budget calculator for NZ businesses"
   />
 
   <!-- AI citability snippet -->

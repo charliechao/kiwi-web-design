@@ -4,6 +4,8 @@ import SectionHeader from '../components/SectionHeader.astro';
 import StatsRow from '../components/StatsRow.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import PageVisual from '../components/PageVisual.astro';
+import gbpImage from '../assets/services/google-business-profile-setup-optimisation-auckland.png';
 
 const schema = {
   "@context": "https://schema.org",
@@ -160,6 +162,15 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <PageVisual
+    imgSrc={gbpImage.src}
+    imgAlt="Google Business Profile optimisation dashboard for an Auckland business"
+    imgTitle="Google Business Profile guide for Auckland businesses"
+    eyebrow="Local Search"
+    title="Make your Google profile feel as polished as your website."
+    caption="A visual local-search section helps break up the guide while reinforcing what Auckland businesses need to improve map visibility."
+  />
 
   <!-- AI citability snippet -->
   <div class="gbp-snippet">

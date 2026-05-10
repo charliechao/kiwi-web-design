@@ -6,6 +6,7 @@ import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import Icon from '../components/Icon.astro';
+import maintenanceImage from '../assets/services/wordpress-website-maintenance-kiwi-web-design-auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -209,7 +210,9 @@ const faqs = [
     badgeText="From $99/month + GST"
     ctaPrimary={{ text: "Get a Care Plan", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See Plans", href: "#plans" }}
-    centered={true}
+    imgSrc={maintenanceImage.src}
+    imgAlt="Managed WordPress maintenance dashboard for Auckland small business websites"
+    imgTitle="WordPress maintenance Auckland care plan"
   />
 
   <!-- AI citability snippet -->

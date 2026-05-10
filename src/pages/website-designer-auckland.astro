@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import TestimonialGrid from '../components/TestimonialGrid.astro';
 import Icon from '../components/Icon.astro';
+import PageVisual from '../components/PageVisual.astro';
+import contactImage from '../assets/general/office1.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -239,6 +241,15 @@ const reviews = [
 
     </div>
   </section>
+
+  <PageVisual
+    imgSrc={contactImage.src}
+    imgAlt="Kiwi Web Design Auckland consultation workspace"
+    imgTitle="Book a free website consultation in Auckland"
+    eyebrow="Free Consultation"
+    title="A practical first conversation, not a sales script."
+    caption="Adding a real consultation visual makes the contact page feel more personal and gives visitors a warmer reason to start the conversation."
+  />
 
   <!-- Industries we serve -->
   <section class="related-strip">

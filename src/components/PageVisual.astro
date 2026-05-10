@@ -1,0 +1,144 @@
+---
+interface Props {
+  imgSrc: string;
+  imgAlt: string;
+  imgTitle?: string;
+  eyebrow?: string;
+  title?: string;
+  caption?: string;
+  reverse?: boolean;
+}
+
+const {
+  imgSrc,
+  imgAlt,
+  imgTitle,
+  eyebrow,
+  title,
+  caption,
+  reverse = false,
+} = Astro.props;
+---
+
+<section class:list={['page-visual', reverse && 'page-visual--reverse']}>
+  <div class="container page-visual-inner">
+    <div class="page-visual-media">
+      <img
+        src={imgSrc}
+        alt={imgAlt}
+        title={imgTitle}
+        width="1120"
+        height="720"
+        loading="lazy"
+        decoding="async"
+        class="page-visual-img"
+      />
+    </div>
+    {(eyebrow || title || caption) && (
+      <div class="page-visual-copy">
+        {eyebrow && <p class="page-visual-eyebrow">{eyebrow}</p>}
+        {title && <h2>{title}</h2>}
+        {caption && <p>{caption}</p>}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .page-visual {
+    background: var(--kwd-cream);
+    padding: 4rem 0;
+  }
+
+  .page-visual-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .page-visual--reverse .page-visual-inner {
+    grid-template-columns: minmax(280px, 0.65fr) minmax(0, 1.35fr);
+  }
+
+  .page-visual--reverse .page-visual-media {
+    order: 2;
+  }
+
+  .page-visual-media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 28px 60px rgba(44, 41, 39, 0.14);
+  }
+
+  .page-visual-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .page-visual-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .page-visual-copy {
+    background: #fff;
+    border: 1px solid rgba(44, 41, 39, 0.08);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 18px 40px rgba(44, 41, 39, 0.08);
+  }
+
+  .page-visual-eyebrow {
+    margin: 0 0 0.75rem;
+    color: var(--kwd-gold);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .page-visual-copy h2 {
+    margin: 0 0 0.9rem;
+    color: var(--kwd-dark);
+    font-size: clamp(1.45rem, 3vw, 2.2rem);
+    line-height: 1.12;
+  }
+
+  .page-visual-copy p {
+    margin: 0;
+    color: rgba(44, 41, 39, 0.72);
+    line-height: 1.7;
+    font-size: 0.98rem;
+  }
+
+  @media (max-width: 860px) {
+    .page-visual-inner,
+    .page-visual--reverse .page-visual-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .page-visual--reverse .page-visual-media {
+      order: 0;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .page-visual {
+      padding: 3rem 0;
+    }
+
+    .page-visual-copy {
+      padding: 1.5rem;
+    }
+  }
+</style>

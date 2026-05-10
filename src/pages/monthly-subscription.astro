@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import subscriptionImage from '../assets/services/website-security-auckland-dashboard-style.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -112,7 +113,9 @@ const faqs = [
     badgeText="$199/mo + GST"
     ctaPrimary={{ text: "Get Started", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See What's Included", href: "#included" }}
-    centered={true}
+    imgSrc={subscriptionImage.src}
+    imgAlt="Managed website subscription dashboard for Auckland businesses"
+    imgTitle="Monthly website subscription Auckland"
   />
 
   <!-- Main plan card -->

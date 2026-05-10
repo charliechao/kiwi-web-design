@@ -4,6 +4,8 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import PageVisual from '../components/PageVisual.astro';
+import southAucklandImage from '../assets/general/rainbows-end-south-auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -175,6 +177,15 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <PageVisual
+    imgSrc={southAucklandImage.src}
+    imgAlt="South Auckland landmark visual for local website design services"
+    imgTitle="South Auckland web design for Manukau Papakura and Pukekohe"
+    eyebrow="South Auckland Presence"
+    title="A sharper visual cue for businesses serving South Auckland."
+    caption="The page now pairs its practical local SEO copy with an image section that gives visitors a clearer sense of place."
+  />
 
   <!-- AI citability snippet -->
   <div class="loc-snippet">

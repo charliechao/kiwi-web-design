@@ -7,6 +7,7 @@ import ProcessSteps from '../components/ProcessSteps.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import Icon from '../components/Icon.astro';
+import healthcareImage from '../assets/general/pexels-photo-4348404-4348404-scaled-1.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -130,7 +131,9 @@ const faqs = [
     subtitle="WordPress websites for Auckland GPs, specialists, and allied health practices. Practitioner profiles, online appointment booking, accessible design, and patient information that actually helps people find you."
     ctaPrimary={{ text: "Get a Quote", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "See What's Included", href: "#solutions" }}
-    centered={true}
+    imgSrc={healthcareImage.src}
+    imgAlt="Healthcare website planning for an Auckland clinic"
+    imgTitle="Web design for Auckland healthcare practices"
   />
 
   <!-- Pain points -->

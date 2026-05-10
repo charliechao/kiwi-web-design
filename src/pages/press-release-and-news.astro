@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
+import PageVisual from '../components/PageVisual.astro';
+import pressImage from '../assets/services/kiwi-web-design-press-and-news-auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -85,6 +87,15 @@ const categoryColours: Record<string, string> = {
       <p class="news-subtitle">The latest updates, milestones, and announcements from Kiwi Web Design, Auckland's small business web design specialists.</p>
     </div>
   </section>
+
+  <PageVisual
+    imgSrc={pressImage.src}
+    imgAlt="Kiwi Web Design press and news visual for Auckland small business web design"
+    imgTitle="Kiwi Web Design press releases and news Auckland"
+    eyebrow="Newsroom"
+    title="A more credible first impression for announcements."
+    caption="The news page now has an editorial image section before the listing and media contact information."
+  />
 
   <!-- News listing -->
   <section class="section" style="background: var(--kwd-cream);">

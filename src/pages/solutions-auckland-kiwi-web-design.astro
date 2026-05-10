@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Icon from '../components/Icon.astro';
+import PageVisual from '../components/PageVisual.astro';
+import solutionsImage from '../assets/general/Website-Solutsions-Auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -147,6 +149,15 @@ const bundles = [
       </div>
     </div>
   </section>
+
+  <PageVisual
+    imgSrc={solutionsImage.src}
+    imgAlt="Website design SEO hosting and Google Ads solutions for Auckland businesses"
+    imgTitle="Kiwi Web Design solutions for Auckland small businesses"
+    eyebrow="Connected Solutions"
+    title="A website works better when design, search, and support fit together."
+    caption="This visual section gives the solutions page a clearer premium moment before visitors compare individual services and bundles."
+  />
 
   <!-- Solutions -->
   <section class="section" id="solutions">

@@ -4,6 +4,8 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import PageVisual from '../components/PageVisual.astro';
+import westAucklandImage from '../assets/general/West-Auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -175,6 +177,15 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <PageVisual
+    imgSrc={westAucklandImage.src}
+    imgAlt="West Auckland landscape for local web design services"
+    imgTitle="West Auckland web design for local businesses"
+    eyebrow="West Auckland Presence"
+    title="A local website should feel connected to the area it serves."
+    caption="From Henderson to Titirangi and Kumeu, the page now has a stronger visual anchor for West Auckland businesses."
+  />
 
   <!-- AI citability snippet -->
   <div class="loc-snippet">

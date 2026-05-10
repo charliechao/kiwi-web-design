@@ -4,6 +4,8 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import PageVisual from '../components/PageVisual.astro';
+import eastAucklandImage from '../assets/general/Botany.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -175,6 +177,15 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <PageVisual
+    imgSrc={eastAucklandImage.src}
+    imgAlt="East Auckland commercial area for local web design services"
+    imgTitle="East Auckland web design for Howick Botany and Pakuranga"
+    eyebrow="East Auckland Presence"
+    title="A more visual page for businesses across the eastern suburbs."
+    caption="The page now balances its local SEO content with a premium visual section that makes the service feel less text-heavy."
+  />
 
   <!-- AI citability snippet -->
   <div class="loc-snippet">

@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import Icon from '../components/Icon.astro';
+import PageVisual from '../components/PageVisual.astro';
+import faqImage from '../assets/services/kiwi-web-design-testimonials-auckland.jpg';
 
 const categories = [
   {
@@ -173,6 +175,15 @@ const schema = {
       </div>
     </div>
   </section>
+
+  <PageVisual
+    imgSrc={faqImage.src}
+    imgAlt="Kiwi Web Design consultation and support for Auckland website questions"
+    imgTitle="Web design FAQ and consultation support Auckland"
+    eyebrow="Clear Answers"
+    title="A calmer way to compare your options."
+    caption="The FAQ page now has a visual pause before the long question list, helping visitors scan pricing, process, SEO, hosting, and AI SEO topics with more confidence."
+  />
 
   <!-- FAQ sections -->
   <section class="section">
