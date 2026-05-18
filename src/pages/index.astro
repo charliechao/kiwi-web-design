@@ -290,6 +290,46 @@ const exploreGroups = [
     </div>
   </section>
 
+  <section class="section hp-video-section">
+    <div class="container hp-video-shell" data-reveal>
+      <div class="hp-video-copy">
+        <div class="hp-motion-heading" style="--motion-delay: 0ms;">
+          <SectionHeader
+            eyebrow="Watch the process"
+            title="How Kiwi Web Design helps Auckland small businesses build better websites."
+            subtitle="See how our AI-first process keeps website design clear, efficient, and focused on generating real enquiries."
+            align="left"
+          />
+        </div>
+        <a href="https://www.youtube.com/watch?v=n9BFps8DyRY" target="_blank" rel="noopener noreferrer" class="hp-video-fallback hp-motion-item" style="--motion-delay: 180ms;">Watch on YouTube</a>
+      </div>
+
+      <div class="hp-video-card hp-motion-item" style="--motion-delay: 160ms;">
+        <button
+          type="button"
+          class="hp-video-trigger"
+          data-video-trigger
+          data-embed-url="https://www.youtube-nocookie.com/embed/n9BFps8DyRY?autoplay=1&rel=0&modestbranding=1"
+          aria-label="Play Auckland Web Design for Small Businesses video"
+        >
+          <img
+            src="https://i.ytimg.com/vi/n9BFps8DyRY/maxresdefault.jpg"
+            alt="Auckland Web Design for Small Businesses video thumbnail"
+            width="1280"
+            height="720"
+            loading="lazy"
+          />
+          <span class="hp-video-overlay" aria-hidden="true"></span>
+          <span class="hp-video-play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M8 5v14l11-7Z" />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <section class="section hp-services-section">
     <div class="container" data-reveal>
       <div class="hp-motion-heading" style="--motion-delay: 0ms;">
@@ -336,42 +376,6 @@ const exploreGroups = [
           <strong>Best fit:</strong> service businesses, professional firms, tradies, restaurants, clinics, and local brands that need more than a generic template and want a practical path into SEO or Google Ads.
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section hp-video-section">
-    <div class="container hp-video-shell" data-reveal>
-      <div class="hp-motion-heading" style="--motion-delay: 0ms;">
-        <SectionHeader
-          eyebrow="Watch the process"
-          title="How Kiwi Web Design helps Auckland small businesses build better websites."
-          subtitle="See how our AI-first process keeps website design clear, efficient, and focused on generating real enquiries."
-        />
-      </div>
-      <div class="hp-video-card hp-motion-item" style="--motion-delay: 160ms;">
-        <button
-          type="button"
-          class="hp-video-trigger"
-          data-video-trigger
-          data-embed-url="https://www.youtube-nocookie.com/embed/n9BFps8DyRY?autoplay=1&rel=0&modestbranding=1"
-          aria-label="Play Auckland Web Design for Small Businesses video"
-        >
-          <img
-            src="https://i.ytimg.com/vi/n9BFps8DyRY/maxresdefault.jpg"
-            alt="Auckland Web Design for Small Businesses video thumbnail"
-            width="1280"
-            height="720"
-            loading="lazy"
-          />
-          <span class="hp-video-overlay" aria-hidden="true"></span>
-          <span class="hp-video-play" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false">
-              <path d="M8 5v14l11-7Z" />
-            </svg>
-          </span>
-        </button>
-      </div>
-      <a href="https://www.youtube.com/watch?v=n9BFps8DyRY" target="_blank" rel="noopener noreferrer" class="hp-video-fallback hp-motion-item" style="--motion-delay: 240ms;">Watch on YouTube</a>
     </div>
   </section>
 
@@ -571,6 +575,10 @@ const exploreGroups = [
         iframe.allowFullscreen = true;
         iframe.referrerPolicy = 'strict-origin-when-cross-origin';
         iframe.className = 'hp-video-iframe';
+        iframe.style.display = 'block';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = '0';
         trigger.replaceWith(iframe);
       }, { once: true });
     })();
@@ -1506,11 +1514,18 @@ const exploreGroups = [
   }
 
   .hp-video-shell {
-    max-width: 980px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+
+  .hp-video-copy {
+    max-width: 34rem;
   }
 
   .hp-video-card {
-    margin-top: 2rem;
+    position: relative;
     overflow: hidden;
     border: 1px solid rgba(44, 41, 39, 0.1);
     border-radius: 8px;
@@ -1520,7 +1535,7 @@ const exploreGroups = [
   }
 
   .hp-video-trigger,
-  .hp-video-iframe {
+  :global(.hp-video-iframe) {
     display: block;
     width: 100%;
     height: 100%;
@@ -1586,7 +1601,7 @@ const exploreGroups = [
 
   .hp-video-fallback {
     display: inline-flex;
-    margin-top: 1rem;
+    margin-top: 1.1rem;
     color: var(--kwd-dark);
     font-size: 0.82rem;
     font-weight: 700;
@@ -1599,6 +1614,17 @@ const exploreGroups = [
     color: var(--kwd-brown);
     text-decoration: underline;
     text-underline-offset: 0.25rem;
+  }
+
+  @media (max-width: 860px) {
+    .hp-video-shell {
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+    }
+
+    .hp-video-copy {
+      max-width: none;
+    }
   }
 
   .hp-work-section,
