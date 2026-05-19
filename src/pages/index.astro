@@ -11,6 +11,19 @@ import office1 from '../assets/general/office1.jpg';
 import office2 from '../assets/general/office2.jpg';
 import beautyTouchPreview from '../assets/general/beauty-salon-website-design-seo-auckland.jpg';
 import Icon from '../components/Icon.astro';
+import {
+  siAstro,
+  siClaude,
+  siCloudflare,
+  siCss,
+  siGoogle,
+  siGoogleanalytics,
+  siGooglesearchconsole,
+  siHtml5,
+  siJavascript,
+  siShopify,
+  siWordpress,
+} from 'simple-icons';
 
 const schema = {
   "@context": "https://schema.org",
@@ -132,6 +145,30 @@ const packages = [
     highlight: false,
     tag: '',
   },
+];
+
+const techStack = [
+  { name: 'WordPress', desc: 'Flexible CMS websites that are easy for clients to manage.', logo: siWordpress, viewBox: '0 0 24 24' },
+  { name: 'Shopify', desc: 'Ecommerce stores for product catalogues, checkout, and online sales.', logo: siShopify, viewBox: '0 0 24 24' },
+  { name: 'Astro', desc: 'Fast static builds for high-performance marketing websites.', logo: siAstro, viewBox: '0 0 24 24' },
+  { name: 'HTML5', desc: 'Semantic structure that helps browsers, users, and search engines.', logo: siHtml5, viewBox: '0 0 24 24' },
+  { name: 'CSS3', desc: 'Responsive visual systems for polished layouts across devices.', logo: siCss, viewBox: '0 0 24 24' },
+  { name: 'JavaScript', desc: 'Interactive features that make websites feel useful and alive.', logo: siJavascript, viewBox: '0 0 24 24' },
+  {
+    name: 'OpenAI',
+    desc: 'AI workflows for content, automation, and smarter website foundations.',
+    logo: {
+      title: 'OpenAI',
+      hex: '111111',
+      path: 'M14.949 6.547a3.94 3.94 0 0 0-.348-3.273 4.11 4.11 0 0 0-4.4-1.934A4.1 4.1 0 0 0 8.423.2 4.15 4.15 0 0 0 6.305.086a4.1 4.1 0 0 0-1.891.948 4.04 4.04 0 0 0-1.158 1.753 4.1 4.1 0 0 0-1.563.679A4 4 0 0 0 .554 4.72a3.99 3.99 0 0 0 .502 4.731 3.94 3.94 0 0 0 .346 3.274 4.11 4.11 0 0 0 4.402 1.933c.382.425.852.764 1.377.995.526.231 1.095.35 1.67.346 1.78.002 3.358-1.132 3.901-2.804a4.1 4.1 0 0 0 1.563-.68 4 4 0 0 0 1.14-1.253 3.99 3.99 0 0 0-.506-4.716m-6.097 8.406a3.05 3.05 0 0 1-1.945-.694l.096-.054 3.23-1.838a.53.53 0 0 0 .265-.455v-4.49l1.366.778q.02.011.025.035v3.722c-.003 1.653-1.361 2.992-3.037 2.996m-6.53-2.75a2.95 2.95 0 0 1-.36-2.01l.095.057L5.29 12.09a.53.53 0 0 0 .527 0l3.949-2.246v1.555a.05.05 0 0 1-.022.041L6.473 13.3c-1.454.826-3.311.335-4.15-1.098m-.85-6.94A3.02 3.02 0 0 1 3.07 3.949v3.785a.51.51 0 0 0 .262.451l3.93 2.237-1.366.779a.05.05 0 0 1-.048 0L2.585 9.342a2.98 2.98 0 0 1-1.113-4.094zm11.216 2.571L8.747 5.576l1.362-.776a.05.05 0 0 1 .048 0l3.265 1.86a3 3 0 0 1 1.173 1.207 2.96 2.96 0 0 1-.27 3.2 3.05 3.05 0 0 1-1.36.997V8.279a.52.52 0 0 0-.276-.445m1.36-2.015-.097-.057-3.226-1.855a.53.53 0 0 0-.53 0L6.249 6.153V4.598a.04.04 0 0 1 .019-.04L9.533 2.7a3.07 3.07 0 0 1 3.257.139c.474.325.843.778 1.066 1.303.223.526.289 1.103.191 1.664zM5.503 8.575 4.139 7.8a.05.05 0 0 1-.026-.037V4.049c0-.57.166-1.127.476-1.607s.752-.864 1.275-1.105a3.08 3.08 0 0 1 3.234.41l-.096.054-3.23 1.838a.53.53 0 0 0-.265.455zm.742-1.577 1.758-1 1.762 1v2l-1.755 1-1.762-1z',
+    },
+    viewBox: '0 0 16 16',
+  },
+  { name: 'Claude', desc: 'AI-assisted strategy, writing, planning, and implementation support.', logo: siClaude, viewBox: '0 0 24 24' },
+  { name: 'Google', desc: 'Search visibility, business discovery, and performance marketing.', logo: siGoogle, viewBox: '0 0 24 24' },
+  { name: 'Cloudflare', desc: 'Fast hosting, CDN, security, and modern deployment workflows.', logo: siCloudflare, viewBox: '0 0 24 24' },
+  { name: 'Google Analytics', desc: 'Traffic and lead tracking so decisions are based on real data.', logo: siGoogleanalytics, viewBox: '0 0 24 24' },
+  { name: 'Search Console', desc: 'SEO diagnostics for indexing, queries, and search performance.', logo: siGooglesearchconsole, viewBox: '0 0 24 24' },
 ];
 
 const reviews = [
@@ -481,6 +518,41 @@ const exploreGroups = [
       </div>
     </div>
   </section>
+
+  <section class="section hp-tech-section">
+    <div class="container hp-tech-layout" data-reveal>
+      <div class="hp-tech-heading hp-motion-heading" style="--motion-delay: 0ms;">
+        <p class="hp-tech-eyebrow">Tools of the trade</p>
+        <h2>Technology Capabilities</h2>
+      </div>
+      <div class="tech-grid">
+        {techStack.map(({ name, desc, logo, viewBox }, index) => (
+          <article class="tech-card hp-motion-item" data-tech-card style={`--motion-delay: ${120 + index * 45}ms;`} tabindex="0" aria-label={`${name}: ${desc}`}>
+            <svg viewBox={viewBox} class="tech-logo" aria-hidden="true" style={`--tech-color: #${logo.hex};`}>
+              <path d={logo.path}></path>
+            </svg>
+            <span class="sr-only">{name}</span>
+            <span class="tech-tooltip" aria-hidden="true">
+              <strong>{name}</strong>
+              <span>{desc}</span>
+            </span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('[data-tech-card]').forEach((card) => {
+      const activate = () => card.classList.add('is-active');
+      const deactivate = () => card.classList.remove('is-active');
+
+      card.addEventListener('pointerenter', activate);
+      card.addEventListener('pointerleave', deactivate);
+      card.addEventListener('focusin', activate);
+      card.addEventListener('focusout', deactivate);
+    });
+  </script>
 
   <section class="section hp-packages-section" id="packages">
     <div class="container" data-reveal>
@@ -1787,6 +1859,193 @@ const exploreGroups = [
 
   .hp-process-section {
     background: linear-gradient(180deg, #f6f1e6 0%, #efe7d9 100%);
+  }
+
+  .hp-tech-section {
+    background: #f8f6f1;
+  }
+
+  .hp-tech-layout {
+    display: grid;
+    grid-template-columns: minmax(14rem, 0.72fr) minmax(0, 1.7fr);
+    gap: clamp(2.6rem, 6vw, 5.5rem);
+    align-items: start;
+  }
+
+  .hp-tech-heading {
+    position: sticky;
+    top: 6rem;
+  }
+
+  .hp-tech-eyebrow {
+    margin: 0 0 4.8rem;
+    color: rgba(44, 41, 39, 0.72);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hp-tech-heading h2 {
+    margin: 0;
+    max-width: 8.6em;
+    color: #101010;
+    font-family: var(--kwd-font-body);
+    font-size: clamp(3.2rem, 6vw, 5.8rem);
+    font-weight: 400;
+    line-height: 0.98;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(1.8rem, 3vw, 3rem);
+  }
+
+  .tech-card {
+    position: relative;
+    display: flex;
+    min-height: 7.7rem;
+    align-items: center;
+    justify-content: flex-start;
+    border-top: 1px solid rgba(16, 16, 16, 0.22);
+    outline: none;
+  }
+
+  .tech-card:focus-visible {
+    border-top-color: rgba(16, 16, 16, 0.46);
+  }
+
+  .tech-logo {
+    width: clamp(3.2rem, 5vw, 5rem);
+    height: clamp(3.2rem, 5vw, 5rem);
+    color: var(--tech-color);
+    fill: currentColor;
+    filter: drop-shadow(0 14px 24px rgba(16, 16, 16, 0.08));
+    transition:
+      transform 0.22s ease,
+      filter 0.22s ease;
+  }
+
+  .tech-card:is(:hover, :focus, :focus-visible, :focus-within, .is-active) .tech-logo {
+    transform: translateY(-2px) scale(1.04);
+    filter: drop-shadow(0 18px 28px rgba(16, 16, 16, 0.13));
+  }
+
+  .tech-tooltip {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: clamp(4.4rem, 6vw, 6.8rem);
+    z-index: 3;
+    display: grid;
+    gap: 0.24rem;
+    max-width: 17rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(16, 16, 16, 0.08);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.94);
+    color: #101010;
+    box-shadow: 0 18px 42px rgba(16, 16, 16, 0.12);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-46%) translateX(-0.25rem);
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .tech-tooltip::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -0.42rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-left: 1px solid rgba(16, 16, 16, 0.08);
+    border-bottom: 1px solid rgba(16, 16, 16, 0.08);
+    background: rgba(255, 255, 255, 0.94);
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .tech-tooltip strong {
+    color: #101010;
+    font-size: 0.88rem;
+    line-height: 1.2;
+  }
+
+  .tech-tooltip span {
+    color: rgba(44, 41, 39, 0.72);
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .tech-card:is(:hover, :focus, :focus-visible, :focus-within, .is-active) .tech-tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 1040px) {
+    .hp-tech-layout {
+      grid-template-columns: 1fr;
+      gap: 2.6rem;
+    }
+
+    .hp-tech-heading {
+      position: static;
+    }
+
+    .hp-tech-eyebrow {
+      margin-bottom: 1.4rem;
+    }
+
+    .hp-tech-heading h2 {
+      max-width: 10em;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .tech-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 1rem;
+    }
+
+    .tech-card {
+      min-height: 5.8rem;
+    }
+
+    .tech-tooltip {
+      right: auto;
+      left: 0;
+      width: min(16rem, calc(200% + 1rem));
+      max-width: none;
+      transform: translateY(-46%) translateX(0);
+    }
+
+    .tech-card:nth-child(even) .tech-tooltip {
+      right: 0;
+      left: auto;
+    }
+
+    .tech-tooltip::before {
+      display: none;
+    }
+
+    .hp-tech-heading h2 {
+      font-size: clamp(2.8rem, 15vw, 4.3rem);
+    }
   }
 
   .pkg-card {
