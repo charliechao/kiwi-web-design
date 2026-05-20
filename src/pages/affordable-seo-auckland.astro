@@ -3,13 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
-import ProcessSteps from '../components/ProcessSteps.astro';
 import TestimonialGrid from '../components/TestimonialGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import { Image } from 'astro:assets';
+import charlieImg from '../assets/general/Charlie-SEO-e1755040051671.png';
 import aboutImg from '../assets/general/about.jpg';
 import about3Img from '../assets/general/about3.jpg';
+import aucklandCBDImg from '../assets/general/Auckland-CBD.jpg';
+import beautyImg from '../assets/general/beauty-salon-website-design-seo-auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -26,7 +28,7 @@ const schema = {
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/affordable-seo-auckland/#breadcrumb" },
       "speakable": {
         "@type": "SpeakableSpecification",
-        "cssSelector": [".seo-snippet", ".seo-statbar-inner"]
+        "cssSelector": [".seo-snippet", ".seo-trust-inner"]
       }
     },
     {
@@ -157,27 +159,27 @@ const seoServices = [
   {
     icon: "🔗",
     title: "Link Building",
-    desc: "Quality backlinks from relevant NZ sources that build your site's authority sustainably, no shortcuts, no purchased links, no spam.",
+    desc: "Quality backlinks from relevant NZ sources that build your site's authority sustainably — no shortcuts, no purchased links, no spam.",
     items: ["NZ-relevant directory listings", "Local business partnerships", "Content-based link earning", "Authority building"],
   },
   {
     icon: "📊",
     title: "Analytics & Reporting",
-    desc: "Clear monthly reports showing what's moving, rankings, organic traffic, and enquiries. Plain English. No vanity metrics. Tied to actual leads.",
+    desc: "Clear monthly reports showing what's moving — rankings, organic traffic, and enquiries. Plain English. No vanity metrics. Tied to actual leads.",
     items: ["Google Analytics 4 setup", "Search Console monitoring", "Monthly rank tracking", "Lead attribution"],
   },
   {
     icon: "🛒",
     title: "eCommerce SEO",
-    desc: "Product and category page optimisation for WooCommerce and Shopify stores that drives organic traffic that converts into sales.",
+    desc: "Product and category page optimisation for WooCommerce and Shopify stores that drives organic traffic converting into sales.",
     items: ["Product page optimisation", "Category structure", "Schema for products", "Shopping visibility"],
   },
 ];
 
 const process = [
-  { step: "1", title: "Free SEO Audit", desc: "We review your current rankings, site health, keyword gaps, and competitor landscape, no cost, no obligation, no sales pressure." },
-  { step: "2", title: "Custom Strategy", desc: "A tailored plan focused on the keywords that will bring qualified leads. We recommend the right package for your budget and competition level." },
-  { step: "3", title: "Implementation", desc: "Technical fixes, content, local signals, and link building, executed systematically each month against a clear priority list." },
+  { step: "1", title: "Free SEO Audit", desc: "We review your rankings, site health, keyword gaps, and competitor landscape — no cost, no obligation, no sales pressure." },
+  { step: "2", title: "Custom Strategy", desc: "A tailored plan focused on the keywords that bring qualified leads. We recommend the right package for your budget and competition." },
+  { step: "3", title: "Implementation", desc: "Technical fixes, content, local signals, and link building — executed systematically each month against a clear priority list." },
   { step: "4", title: "Monthly Reporting", desc: "Readable reports showing where rankings are moving, what we did, and what's next. You always know what you're paying for." },
 ];
 
@@ -189,6 +191,8 @@ const reviews = [
 const caseStudies = [
   {
     name: "Barrett Access Scaffolding",
+    imgSrc: "/portfolio/barrett-access-scaffolding.webp",
+    imgAlt: "Barrett Access Scaffolding website — Kiwi Web Design Auckland SEO project",
     summary: "For Barrett Access Scaffolding, we paired sector landing pages with clearer local intent, Google Business Profile updates, and enquiry routing that matched residential, commercial, and industrial searches.",
     takeaway: "The SEO lesson: better local landing pages and better-fit enquiry paths usually lift lead quality before you even start chasing harder keywords.",
     href: "/case-study-scaffolding/",
@@ -196,6 +200,8 @@ const caseStudies = [
   },
   {
     name: "Beauty Touch Auckland",
+    imgSrc: beautyImg.src,
+    imgAlt: "Beauty Touch Auckland salon website — Kiwi Web Design SEO project",
     summary: "For Beauty Touch Auckland, we launched service pages, booking-ready structure, and Google Business Profile support so the business could show up more credibly for branded and treatment-led local searches.",
     takeaway: "The SEO lesson: many Auckland small businesses need cleaner service-page structure and stronger local trust signals before advanced SEO campaigns make sense.",
     href: "/beauty-touch-case-study/",
@@ -212,6 +218,9 @@ const faqs = [
   { q: "How long before affordable SEO shows results in Auckland?", a: "Most Auckland businesses see early movement in 2–3 months, with meaningful results over 6–12 months. SEO compounds over time. Google Business Profile optimisation often shows quicker wins (4–8 weeks) in local search." },
   { q: "Do I need SEO if I'm already running Google Ads?", a: "<a href=\"/google-ads/\">Google Ads</a> stops the moment you stop paying. Affordable SEO in Auckland builds organic visibility that earns free clicks over time. Most businesses benefit from both, Ads for immediate leads, SEO for long-term growth." },
 ];
+
+const faqsLeft = faqs.slice(0, 4);
+const faqsRight = faqs.slice(4);
 ---
 
 <Layout
@@ -222,144 +231,219 @@ const faqs = [
   alternateUrl="https://www.kiwiwebdesign.co.nz/zh/seo-auckland/"
 >
 
+  <!-- ① HERO — split layout with Charlie photo -->
   <PageHero
     eyebrow="Affordable SEO Auckland"
     title="Auckland SEO that small businesses can actually afford."
-    subtitle="Big-agency SEO retainers can run $2,000–$5,000/month. Kiwi Web Design delivers the same results for Auckland small businesses from $500/month, no lock-in, direct contact with Charlie, and reporting tied to real enquiries not vanity metrics."
-    badgeText="Free SEO audit, no obligation"
+    subtitle="Big-agency SEO retainers run $2,000–$5,000/month. We deliver the same results from $500/month — no lock-in, direct contact with Charlie, and reporting tied to real enquiries."
+    badgeText="Free SEO audit — no obligation"
     ctaPrimary={{ text: "Get a Free SEO Audit", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "View Pricing", href: "#pricing" }}
-    centered={true}
+    imgSrc={charlieImg.src}
+    imgAlt="Charlie Chao, SEO specialist at Kiwi Web Design Auckland"
   />
 
-  <!-- AI citability snippet -->
+  <!-- ② TRUST STRIP — 5 visual stats -->
+  <div class="seo-trust-strip">
+    <div class="container seo-trust-inner">
+      <div class="stt-item">
+        <span class="stt-num">4.9★</span>
+        <span class="stt-lbl">Google rating (50+ reviews)</span>
+      </div>
+      <span class="stt-sep" aria-hidden="true"></span>
+      <div class="stt-item">
+        <span class="stt-num">$500</span>
+        <span class="stt-lbl">SEO from /month</span>
+      </div>
+      <span class="stt-sep" aria-hidden="true"></span>
+      <div class="stt-item">
+        <span class="stt-num">No lock-in</span>
+        <span class="stt-lbl">Month-to-month contracts</span>
+      </div>
+      <span class="stt-sep" aria-hidden="true"></span>
+      <div class="stt-item">
+        <span class="stt-num">50+</span>
+        <span class="stt-lbl">Auckland businesses helped</span>
+      </div>
+      <span class="stt-sep" aria-hidden="true"></span>
+      <div class="stt-item">
+        <span class="stt-num">Grey Lynn</span>
+        <span class="stt-lbl">Auckland-based team</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ AI SNIPPET — premium callout -->
   <div class="seo-snippet">
-    <div class="container">
+    <div class="container seo-snippet-inner">
+      <p class="seo-snippet-label">🔍 What is Kiwi Web Design?</p>
       <p><strong>Kiwi Web Design</strong> provides affordable SEO Auckland small businesses can sustain: local SEO, Google Business Profile optimisation, technical SEO, content strategy, and plain-English reporting from <strong>$500/month</strong> with no lock-in contracts. Based in Grey Lynn, Auckland. 4.9/5 Google rating. Free SEO audit available.</p>
     </div>
   </div>
 
-  <!-- Stat bar -->
-  <div class="seo-statbar">
-    <div class="container seo-statbar-inner">
-      <div class="ssb-item"><span class="ssb-num">From $500/mo</span><span class="ssb-lbl">Affordable SEO packages</span></div>
-      <span class="ssb-sep" aria-hidden="true"></span>
-      <div class="ssb-item"><span class="ssb-num">No lock-in</span><span class="ssb-lbl">Month-to-month contracts</span></div>
-      <span class="ssb-sep" aria-hidden="true"></span>
-      <div class="ssb-item"><span class="ssb-num">4.9/5</span><span class="ssb-lbl">Google rating</span></div>
-      <span class="ssb-sep" aria-hidden="true"></span>
-      <div class="ssb-item"><span class="ssb-num">Grey Lynn</span><span class="ssb-lbl">Auckland-based SEO team</span></div>
-    </div>
-  </div>
-
-  <!-- Why affordable SEO matters -->
-  <section class="section seo-why-section">
-    <div class="container" style="max-width: 860px;">
+  <!-- ④ CHEAP vs AFFORDABLE — premium two-panel card -->
+  <section class="section seo-compare-section">
+    <div class="container">
       <SectionHeader
         eyebrow="Affordable vs Cheap SEO"
-        title="Why does affordable SEO cost less, without the risk?"
-        subtitle="There's a big difference between cheap SEO and genuinely affordable SEO. Here's how to tell them apart."
+        title="Why affordable SEO costs less — without the risk."
+        subtitle="Not all low-cost SEO is the same. Here's how to tell them apart."
       />
-      <div class="seo-why-grid">
-        <div class="seo-why-card seo-why-bad">
-          <p class="seo-why-label">❌ Cheap SEO</p>
-          <ul>
+      <div class="seo-compare-card">
+        <div class="scc-left">
+          <p class="scc-heading">❌ Cheap SEO</p>
+          <ul class="scc-list">
             <li>Automated link schemes and spam directories</li>
-            <li>Keyword stuffing and thin AI content</li>
-            <li>Offshore "SEO packages" with no local knowledge</li>
-            <li>No reporting or vague vanity-metric dashboards</li>
-            <li>Risks a Google penalty that can kill your rankings</li>
+            <li>Keyword stuffing and thin AI-generated content</li>
+            <li>Offshore packages with no local Auckland knowledge</li>
+            <li>Vague dashboards, no reporting tied to actual enquiries</li>
+            <li>Risk of a Google penalty that wipes out your rankings</li>
           </ul>
+          <p class="scc-note">Could get your site penalised</p>
         </div>
-        <div class="seo-why-card seo-why-good">
-          <p class="seo-why-label">✅ Affordable SEO at Kiwi Web Design</p>
-          <ul>
-            <li>Same legitimate work as big agencies, GBP, on-page, technical, content</li>
-            <li>Lower cost because there's no account-manager layer or office overhead</li>
-            <li>Local Auckland knowledge across suburb intent and service-area searches</li>
-            <li>Monthly reports tied to actual enquiries, not screenshots of rank changes</li>
-            <li>No lock-in, stay because the work is moving, not because you have to</li>
+        <div class="scc-right">
+          <span class="scc-badge">Save up to 70%</span>
+          <p class="scc-heading">✅ Kiwi Web Design</p>
+          <ul class="scc-list">
+            <li>Same work as big agencies — GBP, on-page, technical, content</li>
+            <li>No account-manager layer — you pay for the work, not the overhead</li>
+            <li>Auckland suburb intent and local service-area knowledge</li>
+            <li>Monthly reports tied to actual enquiries, not just screenshots</li>
+            <li>No lock-in — stay because the work is moving, not because you have to</li>
           </ul>
+          <p class="scc-note">Same quality. Fraction of the cost.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
-  <section class="section">
+  <!-- ⑤ SERVICES — at-a-glance stats + ServiceGrid -->
+  <section class="section seo-services-section">
     <div class="container">
+      <div class="seo-stats-mini-row">
+        <div class="smr-item">
+          <span class="smr-num">6</span>
+          <span class="smr-lbl">SEO disciplines covered</span>
+        </div>
+        <div class="smr-item">
+          <span class="smr-num">1</span>
+          <span class="smr-lbl">monthly invoice, no agency shuffle</span>
+        </div>
+        <div class="smr-item">
+          <span class="smr-num">Free</span>
+          <span class="smr-lbl">initial audit, no obligation</span>
+        </div>
+      </div>
       <SectionHeader
         eyebrow="Our SEO Services"
         title="Everything an Auckland SEO campaign needs to rank and convert."
-        subtitle="From technical fixes to content and local signals, a complete affordable SEO offer for small businesses that want better visibility and better enquiries."
+        subtitle="From technical fixes to content and local signals — a complete affordable SEO offer for small businesses that want better visibility and better enquiries."
       />
       <ServiceGrid items={seoServices} cols={3} />
     </div>
   </section>
 
-  <!-- Results strip (dark) -->
-  <section class="section" style="background: var(--kwd-dark);">
+  <!-- ⑥ RESULTS STRIP — dark section with large numbers -->
+  <section class="section seo-results-dark">
     <div class="container">
-      <SectionHeader eyebrow="SEO Signals" title="The kind of affordable SEO work that moves Auckland campaigns forward." light={true} />
+      <SectionHeader eyebrow="SEO Signals" title="The kind of work that moves Auckland campaigns forward." light={true} />
       <div class="seo-results">
         <div class="seo-result">
           <span class="sr-num">GBP</span>
+          <span class="sr-bar" aria-hidden="true"></span>
           <span class="sr-label">Google Business Profile optimisation</span>
           <span class="sr-industry">Local visibility foundation</span>
         </div>
         <div class="seo-result">
           <span class="sr-num">On-page</span>
+          <span class="sr-bar" aria-hidden="true"></span>
           <span class="sr-label">Service-page targeting and internal links</span>
           <span class="sr-industry">Clearer keyword intent</span>
         </div>
         <div class="seo-result">
           <span class="sr-num">Tech SEO</span>
+          <span class="sr-bar" aria-hidden="true"></span>
           <span class="sr-label">Crawl, speed, schema, and indexing fixes</span>
-          <span class="sr-industry">Cleaner site quality signals</span>
+          <span class="sr-industry">Cleaner quality signals</span>
         </div>
         <div class="seo-result">
-          <span class="sr-num">3-6 mo</span>
-          <span class="sr-label">Typical time to see meaningful movement</span>
-          <span class="sr-industry">Most Auckland SEO campaigns</span>
+          <span class="sr-num">3–6 mo</span>
+          <span class="sr-bar" aria-hidden="true"></span>
+          <span class="sr-label">Typical time to meaningful movement</span>
+          <span class="sr-industry">Most Auckland campaigns</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Case studies -->
+  <!-- ⑦ CASE STUDIES — cards with screenshot thumbnails -->
   <section class="section seo-proof-section">
     <div class="container">
       <SectionHeader
         eyebrow="SEO Case Studies"
         title="What affordable SEO work looks like on real Auckland projects."
-        subtitle="Grounded examples from live client work, not made-up ranking wins or cherry-picked screenshots."
+        subtitle="Grounded examples from live client work — not made-up ranking wins or cherry-picked screenshots."
       />
       <div class="seo-case-grid">
-        {caseStudies.map(({ name, summary, takeaway, href, cta }) => (
+        {caseStudies.map(({ name, imgSrc, imgAlt, summary, takeaway, href, cta }) => (
           <article class="seo-case-card">
-            <p class="seo-case-name">{name}</p>
-            <p class="seo-case-summary">{summary}</p>
-            <p class="seo-case-takeaway">{takeaway}</p>
-            <a href={href} class="seo-case-link">{cta} -&gt;</a>
+            <div class="seo-case-thumb">
+              <img src={imgSrc} alt={imgAlt} width="600" height="180" loading="lazy" decoding="async" />
+            </div>
+            <div class="seo-case-body">
+              <p class="seo-case-name">{name}</p>
+              <p class="seo-case-summary">{summary}</p>
+              <p class="seo-case-takeaway">{takeaway}</p>
+              <a href={href} class="seo-case-link">{cta} →</a>
+            </div>
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Process -->
-  <section class="section" style="background: var(--kwd-cream);">
+  <!-- ⑧ PHOTO BAND — Auckland CBD with quote overlay -->
+  <section class="seo-photo-band-outer">
+    <div class="container">
+      <div class="seo-photo-band">
+        <Image
+          src={aucklandCBDImg}
+          alt="Auckland CBD skyline — Kiwi Web Design local SEO specialists"
+          width={1200}
+          height={320}
+          class="seo-pb-img"
+        />
+        <div class="seo-pb-overlay">
+          <p class="seo-pb-quote">"Most Auckland SEO campaigns see real movement in 3–6 months. We start the work in week one."</p>
+          <a href="/website-designer-auckland/" class="seo-pb-cta">Book a Free SEO Audit →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑨ PROCESS — horizontal timeline -->
+  <section class="section seo-process-section">
     <div class="container">
       <SectionHeader
         eyebrow="How It Works"
         title="A clear process from free audit to real results."
-        subtitle="We start every SEO engagement with a free audit, so we know exactly what to fix, what to build, and what budget it actually needs."
+        subtitle="Every SEO engagement starts with a free audit, so we know exactly what to fix, what to build, and what budget it needs."
       />
-      <ProcessSteps items={process} />
+      <div class="seo-process-timeline">
+        {process.map(({ step, title, desc }) => (
+          <div class="seo-step">
+            <div class="seo-step-num">{step}</div>
+            <div class="seo-step-body">
+              <h3 class="seo-step-title">{title}</h3>
+              <p class="seo-step-desc">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- About split -->
+  <!-- ⑩ ABOUT SPLIT — with badge + pill tags -->
   <section class="section seo-about-section">
     <div class="container">
       <div class="seo-about-split">
@@ -367,16 +451,22 @@ const faqs = [
           <Image src={aboutImg} alt="SEO specialist reviewing keyword strategy for an affordable SEO campaign for an Auckland small business" width={560} height={700} class="seo-about-img" />
         </div>
         <div class="seo-about-content">
-          <p class="seo-about-eyebrow">Why Choose Kiwi Web Design</p>
+          <span class="seo-about-badge">Why we're different</span>
           <h2>Why is our SEO more affordable than most Auckland agencies?</h2>
           <p>Most Auckland small businesses don't need a big-agency process with layers of account managers and monthly pitch decks. They need focused, affordable SEO that understands local search intent, fixes the website alongside the keywords, and stays accountable to leads.</p>
-          <p>We keep costs low by staying lean, you work directly with Charlie, not a junior who passes messages up the chain. That means faster decisions, no miscommunication, and none of the overhead that inflates agency retainers.</p>
+          <p>We keep costs low by staying lean — you work directly with Charlie, not a junior passing messages up the chain. Faster decisions, no miscommunication, and none of the overhead that inflates agency retainers.</p>
+          <div class="seo-about-pills">
+            <span class="seo-pill">Charlie direct</span>
+            <span class="seo-pill">No lock-in</span>
+            <span class="seo-pill">One invoice</span>
+            <span class="seo-pill">Auckland-based</span>
+          </div>
           <ul class="seo-about-list">
-            <li>Direct strategy with Charlie Chao, no offshore handoff</li>
+            <li>Direct strategy with Charlie Chao — no offshore handoff</li>
             <li>SEO, website fixes, and landing-page improvements under one roof</li>
             <li>Local Auckland knowledge: GBP, suburb intent, service-area searches</li>
             <li>Plain-English reporting tied to enquiries, not just ranking screenshots</li>
-            <li>No lock-in contracts, stay because the work is moving</li>
+            <li>No lock-in contracts — stay because the work is moving</li>
           </ul>
           <a href="/website-designer-auckland/" class="seo-about-btn">Book a Free SEO Audit →</a>
         </div>
@@ -384,14 +474,15 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="section" id="pricing">
-    <div class="container">
-      <SectionHeader
-        eyebrow="Pricing"
-        title="Affordable SEO Pricing for Auckland Businesses"
-        subtitle="Transparent, fixed monthly fees. No lock-in contracts. Every engagement starts with a free audit."
-      />
+  <!-- ⑪ PRICING — yellow header + 3-tier cards -->
+  <section class="seo-pricing-section" id="pricing">
+    <div class="seo-pricing-header">
+      <div class="container">
+        <h2 class="sph-title">Transparent Pricing — No Lock-in, No Surprises</h2>
+        <p class="sph-sub">Every engagement starts with a free audit. Fixed monthly fees. Cancel anytime.</p>
+      </div>
+    </div>
+    <div class="container seo-pricing-body">
       <div class="seo-pkg-grid">
         <div class="seo-pkg">
           <h3>Starter SEO</h3>
@@ -411,7 +502,7 @@ const faqs = [
           <p class="seo-price">From $1,000<span class="seo-period">/mo</span></p>
           <p class="seo-pkg-desc">For competitive Auckland markets wanting consistent, compounding lead flow from organic search.</p>
           <ul class="seo-pkg-list">
-            <li>Full technical SEO audit & fixes</li>
+            <li>Full technical SEO audit &amp; fixes</li>
             <li>On-page optimisation across all pages</li>
             <li>Local SEO + Google Business Profile</li>
             <li>Content creation (2 pages/month)</li>
@@ -423,10 +514,10 @@ const faqs = [
         <div class="seo-pkg">
           <h3>Authority SEO</h3>
           <p class="seo-price">From $2,500<span class="seo-period">/mo</span></p>
-          <p class="seo-pkg-desc">For highly competitive niches, legal, finance, healthcare, where dominating search in your category is the goal.</p>
+          <p class="seo-pkg-desc">For highly competitive niches — legal, finance, healthcare — where dominating search in your category is the goal.</p>
           <ul class="seo-pkg-list">
             <li>Everything in Growth SEO</li>
-            <li>Content strategy & pillar pages</li>
+            <li>Content strategy &amp; pillar pages</li>
             <li>Advanced link building</li>
             <li>Competitor gap analysis</li>
             <li>Conversion rate optimisation</li>
@@ -438,7 +529,16 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- ⑫ PULL QUOTE — featured testimonial -->
+  <div class="seo-featured-quote">
+    <div class="container">
+      <p class="sfq-mark" aria-hidden="true">"</p>
+      <p class="sfq-text">Charlie really took the time to understand our business and built a site that actually ranks. We're getting enquiries we never would have found without SEO.</p>
+      <p class="sfq-author">— Zane Barrett, Barrett Access Scaffolding</p>
+    </div>
+  </div>
+
+  <!-- ⑬ TESTIMONIALS -->
   <section class="section" style="background: var(--kwd-cream);">
     <div class="container">
       <SectionHeader eyebrow="Client Reviews" title="What our SEO clients say." />
@@ -446,7 +546,7 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Team card -->
+  <!-- ⑭ TEAM CARD — gradient image overlay -->
   <div class="container seo-team-card-wrap">
     <div class="seo-team-card">
       <div class="seo-team-stats">
@@ -462,7 +562,7 @@ const faqs = [
             <span class="stn-lbl">Google rating</span>
           </div>
           <div class="stn-item">
-            <span class="stn-num">3-6 mo</span>
+            <span class="stn-num">3–6 mo</span>
             <span class="stn-lbl">Typical time to movement</span>
           </div>
         </div>
@@ -474,14 +574,28 @@ const faqs = [
     </div>
   </div>
 
-  <!-- FAQ -->
+  <!-- ⑮ FAQ — 2-column on desktop -->
   <section class="section">
-    <div class="container" style="max-width: 860px;">
-      <FAQAccordion items={faqs} title="Affordable SEO Auckland, Questions Answered" subtitle="Common questions from Auckland small business owners about affordable SEO options." />
+    <div class="container">
+      <SectionHeader
+        eyebrow="Common Questions"
+        title="Affordable SEO Auckland — Questions Answered"
+        subtitle="Common questions from Auckland small business owners about affordable SEO."
+      />
+      <div class="seo-faq-cols">
+        <FAQAccordion items={faqsLeft} title="" maxWidth="100%" />
+        <div class="seo-faq-right">
+          <FAQAccordion items={faqsRight} title="" maxWidth="100%" />
+          <div class="seo-faq-cta-card">
+            <p>Still have questions?</p>
+            <a href="/website-designer-auckland/">Book a free SEO consultation →</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Areas we serve -->
+  <!-- ⑯ AREAS WE SERVE -->
   <section class="related-strip">
     <div class="container" style="max-width: 860px;">
       <p class="rps-label">Areas we serve</p>
@@ -495,7 +609,7 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Related services -->
+  <!-- ⑰ RELATED SERVICES -->
   <section class="related-strip">
     <div class="container" style="max-width: 860px;">
       <p class="rps-label">Related services</p>
@@ -514,8 +628,8 @@ const faqs = [
 
   <CTABanner
     variant="yellow"
-    title="Ready to rank higher and get more enquiries, affordably?"
-    subtitle="Book a free SEO audit, we'll show you exactly what's holding your site back and what an affordable SEO plan would look like. Call 021 039 6580 or request online."
+    title="Ready to rank higher and get more enquiries — affordably?"
+    subtitle="Book a free SEO audit — we'll show you exactly what's holding your site back and what an affordable SEO plan would look like. Call 021 039 6580 or request online."
     ctaPrimary={{ text: "Book a Free SEO Audit", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "View All Services", href: "/small-business-website-design-auckland/" }}
   />
@@ -523,54 +637,450 @@ const faqs = [
 </Layout>
 
 <style>
-  /* ── Affordable vs Cheap comparison ── */
-  .seo-why-section { background: #fff; }
-  .seo-why-grid {
+  /* ══════════════════════════════════════════
+     ② TRUST STRIP
+  ══════════════════════════════════════════ */
+  .seo-trust-strip {
+    background: var(--kwd-cream);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    padding: 2.25rem 0;
+  }
+  .seo-trust-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .stt-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  .stt-num {
+    font-family: var(--kwd-font-heading);
+    font-size: 2.4rem;
+    color: var(--kwd-dark);
+    line-height: 1;
+    border-left: 3px solid var(--kwd-gold);
+    padding-left: 0.75rem;
+  }
+  .stt-lbl {
+    font-size: 0.76rem;
+    color: var(--kwd-brown);
+    max-width: 140px;
+    line-height: 1.35;
+    padding-left: 0.75rem;
+  }
+  .stt-sep {
+    width: 1px;
+    height: 3rem;
+    background: rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+  }
+
+  /* ══════════════════════════════════════════
+     ③ AI SNIPPET
+  ══════════════════════════════════════════ */
+  .seo-snippet {
+    background: #fff;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .seo-snippet-inner {
+    max-width: 860px;
+    border-left: 4px solid var(--kwd-gold);
+    padding-left: 1.5rem;
+    background: var(--kwd-cream);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 10px 10px 0;
+  }
+  .seo-snippet-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin: 0 0 0.5rem;
+  }
+  .seo-snippet-inner p:last-child {
+    font-size: 1rem;
+    color: var(--kwd-dark);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  /* ══════════════════════════════════════════
+     ④ CHEAP vs AFFORDABLE CARD
+  ══════════════════════════════════════════ */
+  .seo-compare-section { background: #fff; }
+  .seo-compare-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    border-radius: 20px;
+    overflow: hidden;
     margin-top: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
   }
-  .seo-why-card {
-    border-radius: 14px;
-    padding: 1.75rem 2rem;
-    border: 2px solid transparent;
+  .scc-left {
+    background: var(--kwd-dark);
+    padding: 2.5rem 2.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
-  .seo-why-bad {
-    background: #fff5f5;
-    border-color: #fccaca;
-  }
-  .seo-why-good {
+  .scc-right {
     background: #f4faf0;
-    border-color: #b7e0a7;
+    padding: 2.5rem 2.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
-  .seo-why-label {
-    font-size: 0.85rem;
+  .scc-badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--kwd-yellow);
     color: var(--kwd-dark);
-    margin-bottom: 1rem;
+    padding: 0.25rem 0.9rem;
+    border-radius: 100px;
+    margin-bottom: -0.25rem;
   }
-  .seo-why-card ul {
+  .scc-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  .scc-left .scc-heading { color: rgba(255, 255, 255, 0.9); }
+  .scc-right .scc-heading { color: var(--kwd-dark); }
+  .scc-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.55rem;
+    gap: 0.65rem;
+    flex: 1;
   }
-  .seo-why-card li {
-    font-size: 0.88rem;
-    color: var(--kwd-brown);
+  .scc-left .scc-list li {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.68);
     line-height: 1.55;
-    padding-left: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
   }
-  @media (max-width: 640px) {
-    .seo-why-grid { grid-template-columns: 1fr; }
+  .scc-left .scc-list li::before {
+    content: "✕";
+    position: absolute;
+    left: 0;
+    color: #ff8080;
+    font-weight: 700;
+    font-size: 0.8rem;
+    top: 1px;
+  }
+  .scc-right .scc-list li {
+    font-size: 0.875rem;
+    color: #2a5c3a;
+    line-height: 1.55;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .scc-right .scc-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #4caf67;
+    font-weight: 700;
+    font-size: 0.9rem;
+    top: 0;
+  }
+  .scc-note {
+    font-size: 0.82rem;
+    font-style: italic;
+    margin: 0;
+    padding-top: 1rem;
+    border-top: 1px solid transparent;
+  }
+  .scc-left .scc-note {
+    color: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .scc-right .scc-note {
+    color: var(--kwd-brown);
+    border-color: rgba(0, 0, 0, 0.08);
   }
 
-  /* ── About split section ── */
-  .seo-about-section { background: var(--kwd-cream); }
+  /* ══════════════════════════════════════════
+     ⑤ SERVICES SECTION — mini stats row
+  ══════════════════════════════════════════ */
+  .seo-services-section { background: var(--kwd-cream); }
+  .seo-stats-mini-row {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem 0 3rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+  .smr-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    text-align: center;
+  }
+  .smr-num {
+    font-family: var(--kwd-font-heading);
+    font-size: 3rem;
+    color: var(--kwd-dark);
+    line-height: 1;
+  }
+  .smr-lbl {
+    font-size: 0.8rem;
+    color: var(--kwd-brown);
+    max-width: 120px;
+    line-height: 1.4;
+  }
+
+  /* ══════════════════════════════════════════
+     ⑥ RESULTS DARK STRIP
+  ══════════════════════════════════════════ */
+  .seo-results-dark { background: var(--kwd-dark); }
+  .seo-results {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+  .seo-result {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+  }
+  .sr-num {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(2rem, 4.5vw, 4rem);
+    color: var(--kwd-yellow);
+    line-height: 1;
+  }
+  .sr-bar {
+    width: 36px;
+    height: 2px;
+    background: var(--kwd-gold);
+    opacity: 0.5;
+    margin: 0.2rem 0;
+  }
+  .sr-label {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 500;
+  }
+  .sr-industry {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.38);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ══════════════════════════════════════════
+     ⑦ CASE STUDIES — with thumbnails
+  ══════════════════════════════════════════ */
+  .seo-proof-section {
+    background: linear-gradient(180deg, #f7f3ea 0%, #ffffff 100%);
+  }
+  .seo-case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
+    margin-top: 2rem;
+  }
+  .seo-case-card {
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid rgba(44, 41, 39, 0.08);
+    box-shadow: 0 12px 32px rgba(22, 19, 16, 0.07);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .seo-case-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 24px 52px rgba(22, 19, 16, 0.13);
+  }
+  .seo-case-thumb {
+    height: 190px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--kwd-cream);
+  }
+  .seo-case-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+  }
+  .seo-case-card:hover .seo-case-thumb img { transform: scale(1.04); }
+  .seo-case-body {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .seo-case-name {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+  }
+  .seo-case-summary,
+  .seo-case-takeaway {
+    margin: 0;
+    font-size: 0.91rem;
+    line-height: 1.7;
+    color: var(--kwd-brown);
+  }
+  .seo-case-summary { margin-bottom: 0.75rem; }
+  .seo-case-takeaway { margin-bottom: 1.25rem; }
+  .seo-case-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--kwd-dark);
+    text-decoration: none;
+    margin-top: auto;
+  }
+  .seo-case-link:hover { color: var(--kwd-gold); }
+
+  /* ══════════════════════════════════════════
+     ⑧ PHOTO BAND
+  ══════════════════════════════════════════ */
+  .seo-photo-band-outer {
+    background: #fff;
+    padding: 4rem 0;
+  }
+  .seo-photo-band {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 320px;
+  }
+  .seo-pb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.28);
+  }
+  .seo-pb-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .seo-pb-quote {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+    color: #fff;
+    max-width: 700px;
+    line-height: 1.45;
+    margin: 0;
+    font-style: italic;
+  }
+  .seo-pb-cta {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .seo-pb-cta:hover { background: var(--kwd-gold); }
+
+  /* ══════════════════════════════════════════
+     ⑨ PROCESS HORIZONTAL TIMELINE
+  ══════════════════════════════════════════ */
+  .seo-process-section { background: var(--kwd-cream); }
+  .seo-process-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 3rem;
+    position: relative;
+  }
+  /* Connecting line behind the step circles */
+  .seo-process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 26px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+    background: linear-gradient(to right, var(--kwd-gold), rgba(251, 232, 166, 0.4));
+    z-index: 0;
+  }
+  .seo-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+  .seo-step-num {
+    width: 52px;
+    height: 52px;
+    background: var(--kwd-yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--kwd-font-heading);
+    font-size: 1.4rem;
+    color: var(--kwd-dark);
+    margin-bottom: 1.25rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  }
+  .seo-step-body { display: flex; flex-direction: column; }
+  .seo-step-title {
+    font-family: var(--kwd-font-body);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin: 0 0 0.5rem;
+  }
+  .seo-step-desc {
+    font-size: 0.855rem;
+    color: var(--kwd-brown);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ══════════════════════════════════════════
+     ⑩ ABOUT SPLIT
+  ══════════════════════════════════════════ */
+  .seo-about-section { background: #fff; }
   .seo-about-split {
     display: grid;
     grid-template-columns: 420px 1fr;
@@ -580,34 +1090,48 @@ const faqs = [
   .seo-about-img-wrap {
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
     aspect-ratio: 4/5;
   }
-  .seo-about-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .seo-about-eyebrow {
+  .seo-about-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .seo-about-badge {
+    display: inline-block;
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--kwd-brown);
-    margin-bottom: 0.75rem;
+    letter-spacing: 0.1em;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.2rem 0.85rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
   }
   .seo-about-content h2 {
     font-size: clamp(1.5rem, 2.8vw, 2.1rem);
     color: var(--kwd-dark);
     line-height: 1.15;
-    margin-bottom: 1rem;
+    margin: 0 0 1.25rem;
   }
   .seo-about-content p {
     font-size: 0.95rem;
     color: var(--kwd-brown);
     line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+  .seo-about-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-bottom: 1.5rem;
+  }
+  .seo-pill {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--kwd-dark);
+    background: var(--kwd-cream);
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    padding: 0.3rem 0.85rem;
+    border-radius: 100px;
   }
   .seo-about-list {
     list-style: none;
@@ -647,11 +1171,180 @@ const faqs = [
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.07em;
+    text-decoration: none;
     transition: background 0.2s, transform 0.15s;
   }
   .seo-about-btn:hover { background: #3e3633; transform: translateY(-1px); }
 
-  /* ── Team card ── */
+  /* ══════════════════════════════════════════
+     ⑪ PRICING
+  ══════════════════════════════════════════ */
+  .seo-pricing-section { background: #fff; }
+  .seo-pricing-header {
+    background: var(--kwd-yellow);
+    padding: 3rem 0 2.75rem;
+    text-align: center;
+  }
+  .sph-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+    color: var(--kwd-dark);
+    margin: 0 0 0.5rem;
+    line-height: 1.2;
+  }
+  .sph-sub {
+    font-size: 0.95rem;
+    color: var(--kwd-dark);
+    opacity: 0.65;
+    margin: 0;
+  }
+  .seo-pricing-body {
+    padding-top: 3rem;
+    padding-bottom: 4.5rem;
+  }
+  .seo-pkg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .seo-pkg {
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    border-top: 4px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: #fff;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .seo-pkg:hover {
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+  }
+  .seo-pkg-highlight {
+    border-color: var(--kwd-dark);
+    border-top-color: var(--kwd-yellow);
+    background: var(--kwd-dark);
+  }
+  .seo-pkg-highlight:hover { transform: scale(1.02) translateY(-3px); }
+  .seo-pkg-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.2rem 0.75rem;
+    border-radius: 100px;
+    align-self: flex-start;
+  }
+  .seo-pkg h3 {
+    font-family: var(--kwd-font-body);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin: 0;
+  }
+  .seo-pkg-highlight h3 { color: #fff; }
+  .seo-price {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.9rem;
+    color: var(--kwd-dark);
+    margin: 0;
+  }
+  .seo-pkg-highlight .seo-price { color: var(--kwd-yellow); }
+  .seo-period { font-size: 1rem; opacity: 0.6; }
+  .seo-pkg-desc {
+    font-size: 0.875rem;
+    color: var(--kwd-brown);
+    margin: 0;
+    line-height: 1.6;
+    flex: 1;
+  }
+  .seo-pkg-highlight .seo-pkg-desc { color: rgba(255, 255, 255, 0.62); }
+  .seo-pkg-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  .seo-pkg-list li {
+    font-size: 0.875rem;
+    color: var(--kwd-brown);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .seo-pkg-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    font-size: 0.8rem;
+  }
+  .seo-pkg-highlight .seo-pkg-list li { color: rgba(255, 255, 255, 0.7); }
+  .seo-pkg-highlight .seo-pkg-list li::before { color: var(--kwd-yellow); }
+  .seo-pkg-btn {
+    display: inline-block;
+    background: var(--kwd-cream);
+    color: var(--kwd-dark);
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+    margin-top: auto;
+  }
+  .seo-pkg-btn:hover { background: var(--kwd-gold); }
+  .seo-pkg-btn-accent { background: var(--kwd-yellow); }
+  .seo-pkg-btn-accent:hover { background: var(--kwd-gold); }
+
+  /* ══════════════════════════════════════════
+     ⑫ FEATURED PULL QUOTE
+  ══════════════════════════════════════════ */
+  .seo-featured-quote {
+    background: var(--kwd-dark);
+    padding: 4rem 0;
+    text-align: center;
+  }
+  .seo-featured-quote .container { max-width: 780px; }
+  .sfq-mark {
+    font-family: var(--kwd-font-heading);
+    font-size: 5rem;
+    color: var(--kwd-yellow);
+    line-height: 0.5;
+    margin: 0 0 1.25rem;
+    display: block;
+  }
+  .sfq-text {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    color: #fff;
+    line-height: 1.45;
+    font-style: italic;
+    margin: 0 0 1.5rem;
+  }
+  .sfq-author {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    margin: 0;
+  }
+
+  /* ══════════════════════════════════════════
+     ⑭ TEAM CARD — gradient overlay on image
+  ══════════════════════════════════════════ */
   .seo-team-card-wrap { padding: 0 0 4rem; }
   .seo-team-card {
     display: grid;
@@ -659,7 +1352,7 @@ const faqs = [
     border-radius: 20px;
     overflow: hidden;
     min-height: 400px;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
   }
   .seo-team-stats {
     background: var(--kwd-dark);
@@ -687,12 +1380,17 @@ const faqs = [
     display: flex;
     flex-direction: column;
     gap: 1.1rem;
-    border-top: 1px solid rgba(255,255,255,0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
     padding-top: 1.5rem;
   }
   .stn-item { display: flex; flex-direction: column; gap: 0.15rem; }
-  .stn-num { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: var(--kwd-yellow); line-height: 1; }
-  .stn-lbl { font-size: 0.78rem; color: rgba(255,255,255,0.6); }
+  .stn-num {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.75rem;
+    color: var(--kwd-yellow);
+    line-height: 1;
+  }
+  .stn-lbl { font-size: 0.78rem; color: rgba(255, 255, 255, 0.6); }
   .seo-team-btn {
     display: inline-block;
     background: var(--kwd-yellow);
@@ -703,11 +1401,24 @@ const faqs = [
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.07em;
+    text-decoration: none;
     transition: background 0.2s;
     align-self: flex-start;
   }
   .seo-team-btn:hover { background: var(--kwd-gold); }
-  .seo-team-img-wrap { overflow: hidden; }
+  .seo-team-img-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+  /* Gradient overlay blending into dark left panel */
+  .seo-team-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--kwd-dark) 0%, transparent 35%);
+    pointer-events: none;
+    z-index: 1;
+  }
   .seo-team-img {
     width: 100%;
     height: 100%;
@@ -717,165 +1428,112 @@ const faqs = [
   }
   .seo-team-card:hover .seo-team-img { transform: scale(1.03); }
 
-  .seo-statbar { background: var(--kwd-cream); padding: 2rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
-  .seo-statbar-inner { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 2rem; }
-  .ssb-item { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; text-align: center; }
-  .ssb-num  { font-family: var(--kwd-font-heading); font-size: 1.8rem; color: var(--kwd-dark); line-height: 1; }
-  .ssb-lbl  { font-size: 0.78rem; color: var(--kwd-brown); max-width: 140px; line-height: 1.35; }
-  .ssb-sep  { width: 1px; height: 2.5rem; background: rgba(0,0,0,0.1); flex-shrink: 0; }
-
-  .seo-results {
+  /* ══════════════════════════════════════════
+     ⑮ FAQ — 2-column
+  ══════════════════════════════════════════ */
+  .seo-faq-cols {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    text-align: center;
-    margin-top: 2.5rem;
-  }
-  .seo-result { display: flex; flex-direction: column; gap: 0.3rem; }
-  .sr-num    { font-family: var(--kwd-font-heading); font-size: clamp(2rem, 4vw, 3.5rem); color: var(--kwd-yellow); line-height: 1; }
-  .sr-label  { font-size: 0.875rem; color: rgba(255,255,255,0.75); font-weight: 500; }
-  .sr-industry { font-size: 0.75rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.05em; }
-
-  .seo-proof-section {
-    background: linear-gradient(180deg, #f7f3ea 0%, #ffffff 100%);
-  }
-  .seo-case-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
     margin-top: 2rem;
   }
-  .seo-case-card {
-    padding: 1.6rem;
-    border-radius: 18px;
-    background: #fff;
-    border: 1px solid rgba(44, 41, 39, 0.08);
-    box-shadow: 0 16px 36px rgba(22, 19, 16, 0.08);
-  }
-  .seo-case-name,
-  .seo-case-summary,
-  .seo-case-takeaway { margin: 0; }
-  .seo-case-name {
-    margin-bottom: 0.8rem;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--kwd-dark);
-  }
-  .seo-case-summary,
-  .seo-case-takeaway {
-    font-size: 0.92rem;
-    line-height: 1.7;
-    color: var(--kwd-brown);
-  }
-  .seo-case-summary { margin-bottom: 0.9rem; }
-  .seo-case-takeaway { margin-bottom: 1rem; }
-  .seo-case-link {
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--kwd-dark);
-    text-decoration: none;
-  }
-  .seo-case-link:hover { color: var(--kwd-gold); }
-
-  .seo-pkg-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .seo-pkg {
-    border: 2px solid rgba(0,0,0,0.08);
-    border-radius: 16px;
-    padding: 2rem;
+  .seo-faq-right { display: flex; flex-direction: column; }
+  .seo-faq-cta-card {
+    margin-top: 1.5rem;
+    background: var(--kwd-cream);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    background: #fff;
-    transition: box-shadow 0.2s;
-    position: relative;
+    gap: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.07);
   }
-  .seo-pkg:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
-  .seo-pkg-highlight { border-color: var(--kwd-dark); background: var(--kwd-dark); }
-  .seo-pkg-tag {
-    display: inline-block;
+  .seo-faq-cta-card p {
+    margin: 0;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    font-size: 0.95rem;
+  }
+  .seo-faq-cta-card a {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .seo-faq-cta-card a:hover { color: var(--kwd-gold); }
+
+  /* ══════════════════════════════════════════
+     RELATED STRIPS
+  ══════════════════════════════════════════ */
+  .related-strip {
+    background: var(--kwd-cream);
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+  }
+  .rps-label {
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    background: var(--kwd-yellow);
-    color: var(--kwd-dark);
-    padding: 0.2rem 0.75rem;
-    border-radius: 100px;
-    align-self: flex-start;
+    color: var(--kwd-brown);
+    margin-bottom: 0.6rem;
   }
-  .seo-pkg h3 { font-family: var(--kwd-font-body); font-size: 1.05rem; font-weight: 700; color: var(--kwd-dark); margin: 0; }
-  .seo-pkg-highlight h3 { color: #fff; }
-  .seo-price { font-family: var(--kwd-font-heading); font-size: 1.75rem; color: var(--kwd-dark); margin: 0; }
-  .seo-pkg-highlight .seo-price { color: var(--kwd-yellow); }
-  .seo-period { font-size: 1rem; opacity: 0.6; }
-  .seo-pkg-desc { font-size: 0.875rem; color: var(--kwd-brown); margin: 0; line-height: 1.6; flex: 1; }
-  .seo-pkg-highlight .seo-pkg-desc { color: rgba(255,255,255,0.62); }
-  .seo-pkg-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
-  .seo-pkg-list li { font-size: 0.875rem; color: var(--kwd-brown); padding-left: 1.25rem; position: relative; line-height: 1.5; }
-  .seo-pkg-list li::before { content: "✓"; position: absolute; left: 0; font-weight: 700; color: var(--kwd-dark); font-size: 0.8rem; }
-  .seo-pkg-highlight .seo-pkg-list li { color: rgba(255,255,255,0.7); }
-  .seo-pkg-highlight .seo-pkg-list li::before { color: var(--kwd-yellow); }
-  .seo-pkg-btn {
-    display: inline-block;
-    background: var(--kwd-cream);
-    color: var(--kwd-dark);
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    text-align: center;
-    transition: background 0.2s;
-    margin-top: auto;
-  }
-  .seo-pkg-btn:hover { background: var(--kwd-gold); }
-  .seo-pkg-btn-accent { background: var(--kwd-yellow); }
-  .seo-pkg-btn-accent:hover { background: var(--kwd-gold); }
-
-  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
-  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
   .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    color: var(--kwd-dark);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
   .rps-link:hover { background: #e8e7db; }
 
+  /* ══════════════════════════════════════════
+     RESPONSIVE
+  ══════════════════════════════════════════ */
   @media (max-width: 900px) {
-    .seo-statbar-inner { justify-content: flex-start; gap: 1.5rem; }
-    .ssb-sep { display: none; }
-    .seo-results,
-    .seo-case-grid { grid-template-columns: repeat(2, 1fr); }
+    .seo-trust-inner { justify-content: flex-start; gap: 1.5rem; }
+    .stt-sep { display: none; }
+    .seo-results { grid-template-columns: repeat(2, 1fr); }
+    .seo-case-grid { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
     .seo-pkg-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
     .seo-about-split { grid-template-columns: 1fr; gap: 2rem; }
     .seo-about-img-wrap { aspect-ratio: 16/9; max-height: 340px; }
     .seo-team-card { grid-template-columns: 1fr; }
     .seo-team-img-wrap { height: 280px; }
+    .seo-team-img-wrap::after {
+      background: linear-gradient(to bottom, var(--kwd-dark) 0%, transparent 35%);
+    }
+    .seo-photo-band { height: 240px; }
+    .seo-faq-cols { grid-template-columns: 1fr; }
+    .seo-process-timeline {
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
+    }
+    .seo-process-timeline::before { display: none; }
+    .seo-step {
+      flex-direction: row;
+      text-align: left;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+    .seo-step-num { margin-bottom: 0; flex-shrink: 0; }
   }
-  @media (max-width: 600px) {
-    .seo-results,
-    .seo-case-grid { grid-template-columns: 1fr; }
+  @media (max-width: 640px) {
+    .seo-compare-card { grid-template-columns: 1fr; }
+    .seo-stats-mini-row { gap: 1.75rem; }
+    .seo-results { grid-template-columns: 1fr; }
     .seo-team-stats { padding: 2rem 1.5rem; }
     .seo-team-nums { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+    .seo-photo-band { height: 200px; border-radius: 12px; }
+    .seo-photo-band-outer { padding: 2.5rem 0; }
+    .seo-snippet-inner { padding: 1rem 1.25rem; }
   }
-
-  /* AI citability snippet */
-  .seo-snippet {
-    background: var(--kwd-cream);
-    border-left: 4px solid var(--kwd-gold);
-    padding: 1.1rem 0;
-  }
-  .seo-snippet .container {
-    font-size: 0.92rem;
-    color: var(--kwd-dark);
-    line-height: 1.75;
-    max-width: 860px;
-  }
-  .seo-snippet p { margin: 0; }
 </style>
 
 <!-- Vanta.js WAVES background for hero -->
