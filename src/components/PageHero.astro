@@ -9,6 +9,7 @@ interface Props {
   imgSrc?: string;
   imgAlt?: string;
   imgTitle?: string;
+  imgNatural?: boolean;
   centered?: boolean;
 }
 
@@ -22,6 +23,7 @@ const {
   imgSrc,
   imgAlt = '',
   imgTitle,
+  imgNatural = false,
   centered = false,
 } = Astro.props;
 ---
@@ -43,7 +45,7 @@ const {
         <slot />
       </div>
       {imgSrc && (
-        <div class="hero-image-wrap">
+        <div class:list={['hero-image-wrap', imgNatural && 'hero-image-natural']}>
           <img src={imgSrc} alt={imgAlt} title={imgTitle} width="640" height="480" loading="eager" class="hero-img" />
         </div>
       )}
@@ -150,6 +152,19 @@ const {
     display: block;
     object-fit: cover;
     box-shadow: 0 32px 64px rgba(0,0,0,0.4);
+  }
+
+  /* imgNatural: render at intrinsic size, centred, no upscaling */
+  .hero-image-natural {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-image-natural .hero-img {
+    width: auto;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
   }
 
   @media (max-width: 860px) {
