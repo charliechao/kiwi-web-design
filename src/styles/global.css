@@ -60,6 +60,7 @@
   --kwd-container:     1200px;
   --kwd-font-body:     'Poppins', sans-serif;
   --kwd-font-heading:  'DM Serif Display', serif;
+  --kwd-font-zh:       "Microsoft YaHei", "PingFang SC", "Noto Sans SC", "Source Han Sans SC", "Hiragino Sans GB", "Heiti SC", Arial, sans-serif;
 }
 
 /* ─── Base resets ─── */
@@ -93,6 +94,217 @@
   h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
   h2 { font-size: clamp(1.75rem, 3.5vw, 3rem); }
   h3 { font-size: clamp(1.25rem, 2.5vw, 2rem); }
+}
+
+/* Chinese pages need a native CJK stack and less English-style tracking. */
+@layer base {
+  html[lang^="zh"] {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  html[lang^="zh"] body,
+  html[lang^="zh"] button,
+  html[lang^="zh"] input,
+  html[lang^="zh"] textarea,
+  html[lang^="zh"] select {
+    font-family: var(--kwd-font-zh);
+    font-size: 17px;
+  }
+
+  html[lang^="zh"] h1,
+  html[lang^="zh"] h2,
+  html[lang^="zh"] h3,
+  html[lang^="zh"] h4,
+  html[lang^="zh"] h5,
+  html[lang^="zh"] h6 {
+    font-family: var(--kwd-font-zh);
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+}
+
+@layer components {
+  html[lang^="zh"] :is(
+    .zh-title,
+    .hero-title,
+    .zh-section-title,
+    .zh-about-title,
+    .zh-about-h1,
+    .zh-ga-title,
+    .zh-service-title,
+    .zh-step-title,
+    .zh-case-name,
+    .zh-faq-q,
+    .sh-title,
+    .cta-title,
+    .faq-title,
+    .sbwd-who-title,
+    .sbwd-cafe-line,
+    .seo-price,
+    .seo-pkg h3,
+    .sr-num,
+    .stn-num,
+    .ssb-num,
+    .smb-stat-num,
+    .cf-num,
+    .zh-stat-num
+  ) {
+    font-family: var(--kwd-font-zh) !important;
+    font-weight: 700;
+    letter-spacing: 0 !important;
+  }
+
+  html[lang^="zh"] :is(
+    .zh-eyebrow,
+    .hero-eyebrow,
+    .zh-section-eyebrow,
+    .zh-popular-badge,
+    .zh-pricing-name,
+    .zh-case-tag,
+    .rps-label,
+    .sbwd-pkg-tag,
+    .sbwd-pkg-name,
+    .sbwd-who-eyebrow,
+    .sbwd-cafe-tag,
+    .cf-label,
+    .zh-ga-band-eyebrow,
+    .sr-industry,
+    .btn-zh-primary,
+    .btn-zh-outline,
+    .cta-btn-primary,
+    .cta-btn-secondary,
+    .btn-hero-primary,
+    .btn-hero-secondary
+  ) {
+    font-family: var(--kwd-font-zh) !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+  }
+
+  html[lang^="zh"] :is(
+    .zh-subtitle,
+    .hero-subtitle,
+    .zh-section-subtitle,
+    .zh-service-desc,
+    .zh-service-list li,
+    .zh-process-desc,
+    .zh-about-body,
+    .zh-reason-body,
+    .zh-case-desc,
+    .zh-pricing-desc,
+    .zh-pricing-pages,
+    .zh-pricing-note,
+    .zh-faq-a,
+    .smb-snippet .container,
+    .aiseo-snippet p,
+    .seo-snippet p,
+    .zh-why-desc,
+    .zh-step-desc,
+    .seo-pkg-desc,
+    .seo-pkg-list li,
+    .sbwd-pkg-desc,
+    .sbwd-pkg-list li,
+    .sbwd-pkg-note-bottom,
+    .sbwd-who-body,
+    .sbwd-ind-desc,
+    .zh-value-desc,
+    .zh-review-text,
+    .cr-desc,
+    .rps-link
+  ) {
+    font-size: max(0.96rem, 15.5px) !important;
+    line-height: 1.78 !important;
+    letter-spacing: 0 !important;
+  }
+
+  html[lang^="zh"] :is(
+    .zh-eyebrow,
+    .zh-section-eyebrow,
+    .zh-note,
+    .zh-pricing-name,
+    .zh-pricing-pages,
+    .zh-pricing-desc,
+    .zh-pricing-note,
+    .sbwd-pkg-name,
+    .sbwd-pkg-desc,
+    .sbwd-pkg-note,
+    .smb-stat-lbl,
+    .zh-stat-lbl,
+    .seo-pkg-highlight .seo-pkg-desc,
+    .seo-pkg-highlight .seo-pkg-list li,
+    .zh-value-desc,
+    .cr-desc
+  ) {
+    opacity: 1 !important;
+  }
+
+  html[lang^="zh"] :is(
+    .zh-subtitle,
+    .hero-subtitle,
+    .zh-note,
+    .zh-au-hero-text p,
+    .contact-lead,
+    .sbwd-who-body
+  ) {
+    color: rgba(255, 255, 255, 0.9) !important;
+    opacity: 1 !important;
+  }
+
+  html[lang^="zh"] :is(
+    .zh-pricing-name,
+    .zh-pricing-pages,
+    .zh-pricing-desc,
+    .zh-pricing-note,
+    .sbwd-pkg--featured .sbwd-pkg-name,
+    .sbwd-pkg--featured .sbwd-pkg-note,
+    .sbwd-pkg--featured .sbwd-pkg-desc,
+    .sbwd-pkg--featured .sbwd-pkg-list li,
+    .seo-pkg-highlight .seo-pkg-desc,
+    .seo-pkg-highlight .seo-pkg-list li
+  ) {
+    color: rgba(255, 255, 255, 0.86) !important;
+  }
+
+  html[lang^="zh"] :is(
+    .zh-eyebrow,
+    .zh-section-eyebrow,
+    .sbwd-who-eyebrow,
+    .sbwd-cafe-tag,
+    .zh-ga-band-eyebrow
+  ) {
+    font-size: max(0.82rem, 14px) !important;
+  }
+
+  html[lang^="zh"] .hero-section {
+    position: relative;
+    isolation: isolate;
+  }
+
+  html[lang^="zh"] .hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 50% 32%, rgba(44, 41, 39, 0.2), rgba(44, 41, 39, 0.54) 58%),
+      linear-gradient(180deg, rgba(44, 41, 39, 0.12), rgba(44, 41, 39, 0.38));
+  }
+
+  html[lang^="zh"] .hero-section .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  html[lang^="zh"] .hero-section canvas {
+    opacity: 0.45 !important;
+  }
+
+  html[lang^="zh"] .hero-title,
+  html[lang^="zh"] .hero-subtitle {
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+  }
 }
 
 /* ─── Legacy utility classes (for Header / Footer / existing pages) ─── */
