@@ -19,8 +19,8 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/zh/",
       "url": "https://www.kiwiwebdesign.co.nz/zh/",
-      "name": "奥克兰网站开发与网页设计 | 中文服务 | 免费咨询",
-      "description": "奥克兰华人网站开发专家，为新西兰华人中小企业提供网站开发、网页设计、SEO优化和Google广告服务。价格透明，快速交付，欢迎免费咨询。",
+      "name": "新西兰华人网站开发与网页设计 | 奥克兰团队 | 免费咨询",
+      "description": "奥克兰本地团队，服务全新西兰华人中小企业。提供网站开发、网页设计、SEO优化和Google广告服务。中文沟通，价格透明，快速交付，欢迎免费咨询。",
       "primaryImageOfPage": { "@id": "https://www.kiwiwebdesign.co.nz/zh/#primaryimage" },
       "image": [
         { "@id": "https://www.kiwiwebdesign.co.nz/zh/#primaryimage" },
@@ -119,7 +119,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/zh/#service",
       "name": "奥克兰网站开发与网页设计",
       "serviceType": "网站开发",
-      "description": "为奥克兰华人及中小企业提供专业网站开发、WordPress建站、SEO优化和Google广告管理服务。",
+      "description": "为新西兰华人及中小企业提供专业网站开发、WordPress建站、SEO优化和Google广告管理服务。总部位于奥克兰，可服务全新西兰客户。",
       "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "areaServed": [
         { "@type": "City", "name": "Auckland" },
@@ -157,7 +157,7 @@ const schema = {
         {
           "@type": "Question",
           "name": "你们只服务华人客户吗？",
-          "acceptedAnswer": { "@type": "Answer", "text": "不是。Kiwi Web Design为所有奥克兰小企业提供服务，包括各行各业的华人和非华人企业主。我们理解华人企业主的需求，同时也具备服务更广泛客户群的能力。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "不是。Kiwi Web Design总部位于奥克兰，服务全新西兰中小企业，包括各行各业的华人和非华人企业主。我们理解华人企业主的需求，同时也具备服务更广泛客户群的能力。" }
         }
       ]
     }
@@ -168,13 +168,13 @@ const services = [
   {
     icon: "Globe",
     title: "网站开发",
-    desc: "为奥克兰华人企业定制专业WordPress网站开发。设计精美，加载快速，在手机和电脑上完美显示。",
+    desc: "为新西兰华人企业定制专业WordPress网站开发。设计精美，加载快速，在手机和电脑上完美显示。",
     items: ["固定价格报价", "2-3周完成交付", "移动端优先设计", "SEO基础设置"],
   },
   {
     icon: "Search",
     title: "本地SEO优化",
-    desc: "帮助您的企业在Google搜索结果中排名靠前。针对奥克兰本地市场优化，吸引更多潜在客户。",
+    desc: "帮助您的企业在Google搜索结果中排名靠前。针对奥克兰及全新西兰市场优化，吸引更多潜在客户。",
     items: ["关键词研究分析", "Google商家资料优化", "本地引用建设", "每月排名报告"],
   },
   {
@@ -221,6 +221,17 @@ const pricingTiers = [
   { name: "电商网站", price: "起价 $4,500", pages: "含产品目录", desc: "在线商店，产品管理，支付系统（Stripe/PayPal），库存管理", popular: false },
 ];
 
+const serviceRegions = [
+  "奥克兰",
+  "汉密尔顿",
+  "陶朗加",
+  "惠灵顿",
+  "基督城",
+  "皇后镇",
+  "罗托鲁瓦",
+  "全新西兰线上服务",
+];
+
 const reasons = [
   {
     num: "01",
@@ -263,14 +274,14 @@ const faqs = [
   },
   {
     q: "你们只服务华人客户吗？",
-    a: "不是。Kiwi Web Design为所有奥克兰小企业提供服务，包括各行各业的华人和非华人企业主。我们理解华人企业主的需求，同时也具备服务更广泛客户群的能力。",
+    a: "不是。Kiwi Web Design总部位于奥克兰，服务全新西兰中小企业，包括各行各业的华人和非华人企业主。我们理解华人企业主的需求，同时也具备服务更广泛客户群的能力。",
   },
 ];
 ---
 
 <Layout
-  title="奥克兰网站开发与网页设计 | 中文服务 | 免费咨询"
-  description="奥克兰华人网站开发专家，为新西兰华人中小企业提供网站开发、网页设计、SEO优化和Google广告服务。价格透明，快速交付，欢迎免费咨询。"
+  title="新西兰华人网站开发与网页设计 | 奥克兰团队 | 免费咨询"
+  description="奥克兰本地团队，服务全新西兰华人中小企业。提供网站开发、网页设计、SEO优化和Google广告服务。中文沟通，价格透明，快速交付。"
   canonicalURL="https://www.kiwiwebdesign.co.nz/zh/"
   schema={schema}
   lang="zh-Hans"
@@ -282,9 +293,9 @@ const faqs = [
   <section class="zh-hero">
     <div class="container zh-hero-inner">
       <div class="zh-hero-text">
-        <p class="zh-eyebrow">奥克兰华人网站开发与网页设计服务</p>
-        <h1 class="zh-title">奥克兰网站开发，<br />让您的生意脱颖而出。</h1>
-        <p class="zh-subtitle">为奥克兰华人中小企业提供专业网站开发、SEO优化和数字营销服务。价格透明，快速交付，本地团队支持。</p>
+        <p class="zh-eyebrow">奥克兰本地团队 · 服务全新西兰华人企业</p>
+        <h1 class="zh-title">为新西兰华人企业打造能带来客户的网站。</h1>
+        <p class="zh-subtitle">我们总部位于奥克兰，专为新西兰华人中小企业提供网站开发、SEO优化和Google广告服务。可中文沟通，支持全新西兰线上合作。</p>
         <div class="zh-hero-btns">
           <a href={contactPage} class="btn-zh-primary">免费咨询</a>
           <a href="/zh/small-business-website-design-auckland/" class="btn-zh-outline">查看服务详情</a>
@@ -306,7 +317,7 @@ const faqs = [
         <div class="zh-hero-stats" aria-label="Kiwi Web Design 服务亮点">
           <div class="zh-stat">
             <span class="zh-stat-num">100+</span>
-            <span class="zh-stat-lbl">奥克兰企业客户</span>
+            <span class="zh-stat-lbl">新西兰中小企业客户</span>
           </div>
           <div class="zh-stat">
             <span class="zh-stat-num">2–3</span>
@@ -317,8 +328,8 @@ const faqs = [
             <span class="zh-stat-lbl">价格，不按小时计费</span>
           </div>
           <div class="zh-stat">
-            <span class="zh-stat-num">本地</span>
-            <span class="zh-stat-lbl">奥克兰团队支持</span>
+            <span class="zh-stat-num">全国</span>
+            <span class="zh-stat-lbl">线上服务全新西兰</span>
           </div>
         </div>
       </div>
@@ -328,7 +339,7 @@ const faqs = [
   <!-- AI citability snippet -->
   <div class="zh-snippet">
     <div class="container">
-      <p><strong>Kiwi Web Design</strong> 是奥克兰本地网站开发与网页设计公司，由华裔创始人 Charlie Chao 创立，专为奥克兰华人及中小企业提供中文网站开发服务。业务涵盖网站开发（起价 <strong>$1,290 NZD</strong>）、本地 SEO 优化（起价 <strong>$500/月</strong>）和 Google 广告管理。公司地址：Grey Lynn，奥克兰，可全程中文沟通，固定报价无隐性收费，Google 评分 <strong>4.9★</strong>。</p>
+      <p><strong>Kiwi Web Design</strong> 是位于奥克兰 Grey Lynn 的网站开发与数字营销团队，由华裔创始人 Charlie Chao 创立，专为新西兰华人及中小企业提供中文网站开发服务。业务涵盖网站开发（起价 <strong>$1,290 NZD</strong>）、本地 SEO 优化（起价 <strong>$500/月</strong>）和 Google 广告管理。可全程中文沟通，支持全新西兰线上合作，固定报价无隐性收费，Google 评分 <strong>4.9★</strong>。</p>
     </div>
   </div>
 
@@ -337,8 +348,8 @@ const faqs = [
     <div class="container">
       <div class="zh-section-header">
         <p class="zh-section-eyebrow">我们的服务</p>
-        <h2 class="zh-section-title">奥克兰网站开发 · 一站式数字营销服务</h2>
-        <p class="zh-section-subtitle">从网站开发到搜索优化，我们帮助奥克兰华人企业在网上建立专业形象，吸引更多客户。</p>
+        <h2 class="zh-section-title">网站开发 · SEO · Google广告一站式增长服务</h2>
+        <p class="zh-section-subtitle">从网站开发到搜索优化，我们帮助新西兰华人企业在网上建立专业形象，吸引更多客户。</p>
       </div>
       <figure class="zh-services-media">
         <Image
@@ -413,8 +424,8 @@ const faqs = [
     <div class="container zh-about-wrap">
       <div class="zh-about-text">
         <p class="zh-section-eyebrow" style="color: var(--kwd-brown);">关于我们</p>
-        <h2 class="zh-about-title">Kiwi Web Design, 奥克兰本地网站开发团队</h2>
-        <p class="zh-about-body">Kiwi Web Design由Charlie Chao创立，专注于为奥克兰小企业和个体经营者提供高性价比的网站开发和数字营销服务。</p>
+        <h2 class="zh-about-title">Kiwi Web Design，奥克兰本地团队，服务全新西兰。</h2>
+        <p class="zh-about-body">Kiwi Web Design由Charlie Chao创立，专注于为新西兰华人企业、小企业和个体经营者提供高性价比的网站开发和数字营销服务。</p>
         <p class="zh-about-body">我们不是大型代理公司--我们是一个小型本地团队，直接与客户沟通，提供更快的响应速度和更好的性价比。每个网站开发项目都有固定价格报价、明确的时间表，以及完整的网站管理培训。</p>
         <p class="zh-about-body">无论您是餐饮、零售、贸易、专业服务还是其他行业，我们都有丰富的相关经验，帮助您的企业在线上取得成功。</p>
         <a href={contactPage} class="btn-zh-dark">预约免费咨询</a>
@@ -433,13 +444,29 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Service regions -->
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <div class="zh-section-header">
+        <p class="zh-section-eyebrow">服务地区</p>
+        <h2 class="zh-section-title">我们在奥克兰，也服务全新西兰华人企业。</h2>
+        <p class="zh-section-subtitle">奥克兰客户可预约面谈；其他城市客户可通过微信、电话、Zoom和邮件完成咨询、报价、设计确认、上线和培训。</p>
+      </div>
+      <div class="zh-industries">
+        {serviceRegions.map(region => (
+          <span class="zh-industry-chip">{region}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Case studies -->
   <section class="section">
     <div class="container" style="max-width: 900px;">
       <div class="zh-section-header">
         <p class="zh-section-eyebrow">客户案例</p>
         <h2 class="zh-section-title">真实项目，可查证的结果。</h2>
-        <p class="zh-section-subtitle">我们为奥克兰各行业企业完成了100+个网站开发项目，以下是部分案例。</p>
+        <p class="zh-section-subtitle">我们为新西兰各行业企业完成了100+个网站开发项目，以下是部分案例。</p>
       </div>
       <div class="zh-case-grid">
         {caseStudies.map(cs => (
@@ -486,7 +513,7 @@ const faqs = [
       <div class="zh-section-header">
         <p class="zh-section-eyebrow">服务行业</p>
         <h2 class="zh-section-title">各行各业，皆有经验</h2>
-        <p class="zh-section-subtitle">我们为奥克兰各行业的华人企业提供网站开发服务，包括但不限于：</p>
+        <p class="zh-section-subtitle">我们为全新西兰各行业的华人企业提供网站开发服务，包括但不限于：</p>
       </div>
       <div class="zh-industries">
         {["餐饮与外卖", "零售与电商", "建筑与装修", "美容与护理", "专业服务", "教育与培训", "进出口贸易", "房产中介", "汽车服务", "健康与保健"].map(ind => (
@@ -523,7 +550,7 @@ const faqs = [
         <a href="/zh/seo-auckland/" class="rps-link">SEO优化</a>
         <a href="/zh/local-seo-for-auckland-small-businesses/" class="rps-link">本地 SEO</a>
         <a href="/zh/ai-seo-for-auckland-small-businesses/" class="rps-link">AI SEO &amp; GEO</a>
-        <a href="/google-ads/" class="rps-link">Google广告</a>
+        <a href="/zh/google-ads/" class="rps-link">Google广告</a>
         <a href="/zh/about-us/" class="rps-link">关于我们</a>
       </div>
     </div>
@@ -532,7 +559,7 @@ const faqs = [
   <CTABanner
     variant="yellow"
     title="准备好让您的企业在网上脱颖而出了吗？"
-    subtitle="免费咨询，24小时内提供固定价格报价。欢迎通过下方联系我们。"
+    subtitle="免费咨询，24小时内提供固定价格报价。我们位于奥克兰，支持全新西兰华人企业线上合作。"
     ctaPrimary={{ text: "免费咨询", href: contactPage }}
     ctaSecondary={{ text: "查看网页设计服务", href: "/zh/small-business-website-design-auckland/" }}
   />

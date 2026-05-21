@@ -1,7 +1,9 @@
 ---
 const year = new Date().getFullYear();
+const currentPath = Astro.url.pathname;
+const isZh = currentPath.startsWith('/zh');
 
-const services = [
+const enServices = [
   { label: 'Web Design',      href: '/' },
   { label: 'SEO',             href: '/affordable-seo-auckland/' },
   { label: 'AI SEO & GEO',    href: '/ai-seo-for-auckland-small-businesses/' },
@@ -11,7 +13,16 @@ const services = [
   { label: 'Website Hosting', href: '/website-hosting-auckland/' },
 ];
 
-const company = [
+const zhServices = [
+  { label: '网页设计',       href: '/zh/small-business-website-design-auckland/' },
+  { label: 'SEO优化',        href: '/zh/seo-auckland/' },
+  { label: 'AI SEO & GEO',   href: '/zh/ai-seo-for-auckland-small-businesses/' },
+  { label: '本地SEO',        href: '/zh/local-seo-for-auckland-small-businesses/' },
+  { label: 'Google广告',     href: '/zh/google-ads/' },
+  { label: '免费咨询',       href: '/zh/website-designer-auckland/' },
+];
+
+const enCompany = [
   { label: 'About Us',      href: '/about-us/' },
   { label: 'Our Process',   href: '/our-process/' },
   { label: 'Reviews',       href: '/testimonials-reviews/' },
@@ -19,6 +30,24 @@ const company = [
   { label: 'FAQ',           href: '/faq/' },
   { label: 'Contact',       href: '/website-designer-auckland/' },
 ];
+
+const zhCompany = [
+  { label: '关于我们',       href: '/zh/about-us/' },
+  { label: '客户评价',       href: '/testimonials-reviews/' },
+  { label: '博客',           href: '/affordable-web-design-auckland/' },
+  { label: '常见问题',       href: '/faq/' },
+  { label: '联系我们',       href: '/zh/website-designer-auckland/' },
+  { label: 'English',        href: '/' },
+];
+
+const services = isZh ? zhServices : enServices;
+const company = isZh ? zhCompany : enCompany;
+const logoHref = isZh ? '/zh/' : '/';
+const tagline = isZh ? '为新西兰华人企业打造能带来客户的网站。' : 'Websites built to generate leads.';
+const location = isZh ? '总部位于奥克兰，服务全新西兰' : 'Auckland, New Zealand';
+const servicesHeading = isZh ? '服务' : 'Services';
+const companyHeading = isZh ? '公司' : 'Company';
+const privacyLabel = isZh ? '隐私政策' : 'Privacy Policy';
 
 const social = [
   {
@@ -59,7 +88,7 @@ const social = [
 
     <!-- Col 1: Brand -->
     <div class="col-brand">
-      <a href="/" aria-label="Kiwi Web Design – home">
+      <a href={logoHref} aria-label="Kiwi Web Design – home">
         <img
           src="/logo-96.webp"
           alt="Kiwi Web Design"
@@ -69,8 +98,8 @@ const social = [
           decoding="async"
         />
       </a>
-      <p class="tagline">Websites built to generate leads.</p>
-      <p class="location">Auckland, New Zealand</p>
+      <p class="tagline">{tagline}</p>
+      <p class="location">{location}</p>
       <div class="social-links">
         {social.map(({ label, href, viewBox, path }) => (
           <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label}>
@@ -83,7 +112,7 @@ const social = [
 
     <!-- Col 2: Services -->
     <div>
-      <h3>Services</h3>
+      <h3>{servicesHeading}</h3>
       <ul>
         {services.map(({ label, href }) => (
           <li><a href={href}>{label}</a></li>
@@ -93,7 +122,7 @@ const social = [
 
     <!-- Col 3: Company -->
     <div>
-      <h3>Company</h3>
+      <h3>{companyHeading}</h3>
       <ul>
         {company.map(({ label, href }) => (
           <li><a href={href}>{label}</a></li>
@@ -106,7 +135,7 @@ const social = [
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
       <p>&copy; {year} Kiwi Web Design. All rights reserved.</p>
-      <a href="/privacy-policy/">Privacy Policy</a>
+      <a href="/privacy-policy/">{privacyLabel}</a>
     </div>
   </div>
 </footer>
