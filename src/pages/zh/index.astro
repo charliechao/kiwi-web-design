@@ -126,9 +126,9 @@ const schema = {
         { "@type": "Country", "name": "New Zealand" }
       ],
       "offers": [
-        { "@type": "Offer", "name": "基础官网开发", "price": "1290", "priceCurrency": "NZD" },
-        { "@type": "Offer", "name": "标准官网开发", "price": "2500", "priceCurrency": "NZD" },
-        { "@type": "Offer", "name": "电商网站开发", "price": "4500", "priceCurrency": "NZD" }
+        { "@type": "Offer", "name": "Launch & Get Found 网站基础套餐", "price": "1290", "priceCurrency": "NZD" },
+        { "@type": "Offer", "name": "Lead Growth Engine 线索增长系统", "price": "2690", "priceCurrency": "NZD" },
+        { "@type": "Offer", "name": "Sales Accelerator 销售加速系统", "price": "3890", "priceCurrency": "NZD" }
       ]
     },
     {
@@ -137,7 +137,7 @@ const schema = {
         {
           "@type": "Question",
           "name": "网站开发费用是多少？",
-          "acceptedAnswer": { "@type": "Answer", "text": "一个标准的5-8页小企业网站开发价格在$1,500-$3,500 NZD之间。具体价格取决于页面数量、功能需求（如预约系统、电商功能）等。我们会在项目开始前提供详细的固定价格报价。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "Kiwi Web Design 的网站与增长系统套餐起价为 $1,290 NZD。常见套餐包括 Launch & Get Found（起价 $1,290）、Lead Growth Engine（起价 $2,690）和 Sales Accelerator（起价 $3,890）。具体报价会根据页面数量、内容、SEO、Google Ads和转化追踪需求确认。" }
         },
         {
           "@type": "Question",
@@ -216,9 +216,9 @@ const caseStudies = [
 ];
 
 const pricingTiers = [
-  { name: "起步官网", price: "起价 $1,290", pages: "3–5页", desc: "单页或小型官网，联系表单，移动端适配，SEO基础设置", popular: false },
-  { name: "标准官网", price: "起价 $2,500", pages: "5–8页", desc: "完整小企业官网，博客，预约表单，Google Analytics，SEO优化", popular: true },
-  { name: "电商网站", price: "起价 $4,500", pages: "含产品目录", desc: "在线商店，产品管理，支付系统（Stripe/PayPal），库存管理", popular: false },
+  { name: "Launch & Get Found", price: "起价 $1,290", pages: "网站 + 本地搜索基础", desc: "转化型网页设计、AI友好网站结构、页面本地SEO、移动端速度优化、联系表单与询盘设置。", popular: false },
+  { name: "Lead Growth Engine", price: "起价 $2,690", pages: "网站 + SEO + Google Ads基础", desc: "转化型网站、本地SEO和AI SEO设置、AI友好内容与Schema基础、Google Ads基础设置、线索落地页和转化追踪。", popular: true },
+  { name: "Sales Accelerator", price: "起价 $3,890", pages: "持续增长与转化优化", desc: "每月SEO和AI搜索优化、线索落地页、月度报告、优先支持和增长建议，适合准备持续扩大询盘的企业。", popular: false },
 ];
 
 const serviceRegions = [
@@ -258,7 +258,7 @@ const reasons = [
 const faqs = [
   {
     q: "网站开发费用是多少？",
-    a: "一个标准的5-8页小企业网站开发价格在$1,500-$3,500 NZD之间。具体价格取决于页面数量、功能需求（如预约系统、电商功能）等。我们会在项目开始前提供详细的固定价格报价。",
+    a: "我们的套餐与英文首页保持一致：Launch & Get Found 起价 $1,290，Lead Growth Engine 起价 $2,690，Sales Accelerator 起价 $3,890。实际报价会根据页面数量、内容、SEO、Google Ads和转化追踪范围确认，项目开始前会提供固定价格报价。",
   },
   {
     q: "网站开发需要多长时间？",
@@ -490,7 +490,7 @@ const faqs = [
       <div class="zh-section-header" style="color: #fff;">
         <p class="zh-section-eyebrow" style="color: var(--kwd-yellow);">网站开发价格</p>
         <h2 class="zh-section-title" style="color: #fff;">透明报价，固定价格，不按小时计费。</h2>
-        <p class="zh-section-subtitle" style="color: rgba(255,255,255,0.65);">以下为常见网站开发套餐参考价格（NZD，含GST另算）。具体报价以项目需求为准。</p>
+        <p class="zh-section-subtitle" style="color: rgba(255,255,255,0.65);">以下套餐与英文首页保持一致（NZD，GST另算）。具体报价以项目需求为准。</p>
       </div>
       <div class="zh-pricing-grid">
         {pricingTiers.map(tier => (
@@ -503,7 +503,7 @@ const faqs = [
           </div>
         ))}
       </div>
-      <p class="zh-pricing-note">所有套餐均含：域名配置、移动端适配、SEO基础设置、网站操作培训。<a href={contactPage} class="zh-pricing-cta-link">获取精确报价 →</a></p>
+      <p class="zh-pricing-note">所有套餐均围绕网站、SEO / AI SEO、Google Ads和线索转化系统设计。<a href={contactPage} class="zh-pricing-cta-link">获取精确报价 →</a></p>
     </div>
   </section>
 

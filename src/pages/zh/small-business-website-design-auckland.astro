@@ -103,7 +103,7 @@ const schema = {
         {
           "@type": "Question",
           "name": "奥克兰小企业建设一个网站需要多少钱？",
-          "acceptedAnswer": { "@type": "Answer", "text": "套餐起价$1,290 + GST（一次性费用）。成长套餐通常为$2,690–$3,500，具体取决于功能复杂程度。电商网站起价$3,890。所有报价均为固定价格，无隐性收费。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "网站与增长系统套餐起价 $1,290 + GST。常见套餐包括 Launch & Get Found（起价 $1,290）、Lead Growth Engine（起价 $2,690）和 Sales Accelerator（起价 $3,890）。所有报价均为固定价格，无隐性收费。" }
         },
         {
           "@type": "Question",
@@ -194,37 +194,33 @@ const process = [
 
 const packages = [
   {
-    name: "入门套餐",
+    name: "Launch & Get Found",
     price: "起价$1,290",
     note: "+ GST",
-    desc: "适合需要快速建立专业网络形象的个体经营者和小企业。",
+    desc: "适合需要专业、AI友好网站基础和清晰本地搜索基础的新西兰华人企业。",
     items: [
-      "定制WordPress设计",
-      "移动端响应式",
-      "联系表单",
-      "基础SEO设置",
-      "Google Analytics",
-      "1轮修改",
+      "转化型网页设计",
+      "AI友好网站结构",
+      "页面本地SEO",
+      "移动端速度优化",
+      "联系表单与询盘设置",
     ],
     cta: "获取报价",
     href: "/zh/website-designer-auckland/",
     highlight: false,
   },
   {
-    name: "成长套餐",
+    name: "Lead Growth Engine",
     price: "起价$2,690",
     note: "+ GST",
-    desc: "适合准备投资一个能主动获取潜在客户并随业务成长的网站的企业。",
+    desc: "网站、SEO、AI友好内容基础和Google Ads协同工作，形成一套线索增长系统。",
     items: [
-      "最多10个页面",
-      "定制WordPress设计",
-      "移动端响应式",
-      "潜在客户转化优化",
-      "完整SEO优化",
-      "Google Analytics + Search Console",
-      "2轮修改",
-      "预约/询盘系统集成",
-      "上线后1个月支持",
+      "转化型网站",
+      "本地SEO和AI SEO设置",
+      "AI友好内容和Schema基础",
+      "Google Ads基础设置",
+      "线索落地页",
+      "转化与电话追踪",
     ],
     cta: "获取报价",
     href: "/zh/website-designer-auckland/",
@@ -232,19 +228,16 @@ const packages = [
     tag: "最受欢迎",
   },
   {
-    name: "电商套餐",
+    name: "Sales Accelerator",
     price: "起价$3,890",
     note: "+ GST",
-    desc: "随时可以销售的WooCommerce商店。包含产品管理、支付网关和订单通知。",
+    desc: "适合准备通过持续SEO、Google Ads管理和转化优化扩大询盘的企业。",
     items: [
-      "WooCommerce设置",
-      "最多20个产品",
-      "支付网关集成",
-      "运费配置",
-      "产品SEO",
-      "订单管理培训",
-      "2轮修改",
-      "上线后2个月支持",
+      "每月SEO和AI搜索优化",
+      "线索落地页",
+      "月度报告",
+      "优先支持",
+      "增长建议",
     ],
     cta: "获取报价",
     href: "/zh/website-designer-auckland/",
@@ -253,7 +246,7 @@ const packages = [
 ];
 
 const faqs = [
-  { q: "奥克兰小企业建设网站需要多少钱？", a: "我们的套餐起价$1,290 + GST（一次性费用）。成长套餐通常为$2,690–$3,500，具体取决于复杂程度。电商网站起价$3,890。我们在项目开始前提供固定价格报价--无隐性收费。" },
+  { q: "奥克兰小企业建设网站需要多少钱？", a: "我们的套餐与英文首页保持一致：Launch & Get Found 起价 $1,290 + GST，Lead Growth Engine 起价 $2,690 + GST，Sales Accelerator 起价 $3,890 + GST。我们在项目开始前提供固定价格报价--无隐性收费。" },
   { q: "建设网站需要多长时间？", a: "大多数项目在收到内容后2-3周内完成。功能更复杂的网站可能需要4-6周。我们会提前告知时间表并严格执行。" },
   { q: "我需要自己准备内容吗？", a: "理想情况下是的--您最了解自己的业务。但我们会提供内容指导和结构建议，也可以作为附加服务帮您撰写文案。如有需要，我们还可以采购版权图片。" },
   { q: "网站建成后我能自己更新内容吗？", a: "可以。WordPress是专为非开发人员设计的。我们提供交接培训，让您能够独立更新文字、图片和添加页面。我们也提供持续维护计划，如果您希望我们代为处理的话。" },
@@ -291,7 +284,7 @@ const reviews = [
   <!-- AI citability snippet -->
   <div class="smb-snippet">
     <div class="container">
-  <p><strong>Kiwi Web Design</strong> 为新西兰华人企业和小企业打造定制WordPress网站，起价 <strong>$1,290 + GST</strong>（一次性费用）。大多数项目 <strong>2-3周</strong> 内上线。每个网站均包含移动端优先设计、SEO基础优化、联系表单、Google Analytics和交接培训。成长套餐起价$2,690，电商套餐起价$3,890。固定报价，无隐性收费。公司位于奥克兰Grey Lynn，Google评分 <strong>4.9★</strong>，服务50+新西兰客户。</p>
+  <p><strong>Kiwi Web Design</strong> 为新西兰华人企业和小企业打造定制WordPress网站与线索增长系统，起价 <strong>$1,290 + GST</strong>。常见套餐包括 Launch & Get Found（起价$1,290）、Lead Growth Engine（起价$2,690）和 Sales Accelerator（起价$3,890）。每个项目都围绕转化、SEO / AI SEO、Google Ads基础和询盘追踪设计。固定报价，无隐性收费。公司位于奥克兰Grey Lynn，Google评分 <strong>4.9★</strong>，服务50+新西兰客户。</p>
     </div>
   </div>
 
