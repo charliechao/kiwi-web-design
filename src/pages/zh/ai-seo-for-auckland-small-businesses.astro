@@ -21,7 +21,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/zh/ai-seo-for-auckland-small-businesses/",
       "url": "https://www.kiwiwebdesign.co.nz/zh/ai-seo-for-auckland-small-businesses/",
       "name": "奥克兰AI SEO与GEO优化服务 | 人工智能搜索优化 | Kiwi Web Design",
-      "description": "奥克兰本地AI SEO团队，服务全新西兰华人企业。帮助您在Google排名靠前，同时被ChatGPT、Perplexity、Gemini及Google AI摘要引用。从$500/月起。",
+      "description": "奥克兰AI SEO与GEO优化团队，服务全新西兰华人企业。帮助网站内容更容易被Google、AI摘要、ChatGPT、Perplexity和Gemini理解与引用。从$500/月起。",
       "inLanguage": "zh-Hans",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -65,7 +65,7 @@ const schema = {
       "name": "AI SEO 与生成式引擎优化（GEO）- 奥克兰",
       "serviceType": "AI SEO",
       "category": "数字营销",
-      "description": "为全新西兰华人企业提供AI SEO及GEO服务，帮助您在Google排名靠前，同时被ChatGPT、Perplexity、Gemini、Claude及Google AI摘要引用。从$500/月起。",
+      "description": "为全新西兰华人企业提供AI SEO及GEO服务，帮助网站内容更容易被Google、AI摘要、ChatGPT、Perplexity、Gemini和Claude理解与引用。从$500/月起。",
       "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "areaServed": [
         { "@type": "Place", "name": "Auckland" },
@@ -86,12 +86,12 @@ const schema = {
         {
           "@type": "Question",
           "name": "什么是AI SEO，它与传统SEO有什么区别？",
-          "acceptedAnswer": { "@type": "Answer", "text": "传统SEO专注于在Google蓝色链接结果中排名。AI SEO（也称为生成式引擎优化，即GEO）专注于让您的内容在Google AI摘要、ChatGPT、Perplexity等AI生成答案中被引用或展示。GEO在传统SEO基础上增加了实体优化、可引用性结构化和llms.txt配置等新层次。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "传统SEO主要关注Google自然搜索排名。AI SEO，也叫GEO，会在传统SEO基础上，把内容写得更清楚、更容易被AI摘要、ChatGPT、Perplexity等工具理解、引用和总结。" }
         },
         {
           "@type": "Question",
           "name": "奥克兰小企业真的需要关注AI搜索吗？",
-          "acceptedAnswer": { "@type": "Answer", "text": "是的，越来越重要。Google AI摘要目前出现在58%以上的搜索结果中，并在全球范围内持续推广。如果有人搜索「奥克兰最好的水管工」，Google生成一个AI回答，您的企业要么出现在其中，要么就被排除在外。我们帮助您出现在其中。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "需要开始关注。越来越多客户会通过AI摘要、ChatGPT或Perplexity了解服务和比较供应商。小企业不一定要追新概念，但网站内容、Schema、品牌信息和本地信号要让搜索引擎和AI都看得懂。" }
         },
         {
           "@type": "Question",
@@ -149,20 +149,20 @@ const services = [
   {
     icon: "🤖",
     title: "生成式引擎优化（GEO）",
-    desc: "将您的内容结构化，让ChatGPT、Perplexity、Google AI摘要和Gemini引用您--而不仅仅是在蓝色链接结果中排名。",
-    items: ["AI可引用性内容审核", "答案优先内容结构化", "实体与主题覆盖", "llms.txt配置"],
+    desc: "把网站内容整理成更清楚、可引用的结构，让AI工具更容易理解你是谁、做什么、服务哪些客户。",
+    items: ["AI可引用性内容审核", "直接回答式内容结构", "实体与主题覆盖", "llms.txt配置"],
   },
   {
     icon: "🏷️",
     title: "AI就绪结构化数据标记",
-    desc: "全面的JSON-LD结构化数据，向AI系统说明您是谁、您做什么以及为什么您具有权威性。",
+    desc: "用结构化数据清楚告诉搜索引擎和AI：你是谁、做什么、服务哪些地区、有哪些常见问题。",
     items: ["LocalBusiness与Service结构化数据", "FAQ与HowTo标记", "speakable属性", "sameAs实体链接"],
   },
   {
     icon: "📝",
     title: "AI辅助内容策略",
-    desc: "我们使用AI工具研究竞争对手内容缺口、识别问题集群，并大规模生产与搜索意图匹配的内容。",
-    items: ["关键词与主题聚类", "竞争对手内容缺口分析", "AI起草、人工审核的文案", "内容日历规划"],
+    desc: "我们会用AI辅助研究关键词和内容机会，但最终内容会由人工审核，确保读起来真实、准确、像人写的。",
+    items: ["关键词与主题聚类", "竞争对手内容差距分析", "AI辅助、人工审核文案", "内容日历规划"],
   },
   {
     icon: "⚡",
@@ -173,25 +173,25 @@ const services = [
   {
     icon: "🗺️",
     title: "本地AI SEO",
-    desc: "出现在Google地图、本地AI摘要和「附近」搜索中。我们优化您的Google商家档案和本地内容足迹。",
+    desc: "让本地客户和AI搜索都更清楚你的服务区域、评价、地址、电话和本地业务信息。",
     items: ["Google商家档案优化", "本地结构化数据标记", "区域落地页", "评价增长策略"],
   },
   {
     icon: "📊",
     title: "AI搜索可见度追踪",
-    desc: "我们不仅追踪排名，还追踪您的品牌在AI生成答案中的表现--这是大多数机构忽略的新指标。",
+    desc: "除了排名，我们也会观察品牌是否在AI答案、AI摘要或相关搜索场景中被提及。",
     items: ["AI提及监控", "GBP洞察报告", "Search Console集成", "月度AI可见度报告"],
   },
   {
     icon: "💬",
     title: "社区与平台可见度",
-    desc: "AI系统在生成答案时非常重视Reddit、Quora和论坛。我们在AI模型最信任的平台上建立您的存在感。",
+    desc: "AI工具会参考不同平台上的公开信息。我们会判断哪些社区、目录或平台值得出现，而不是盲目到处发内容。",
     items: ["Reddit与Quora权威建设", "YouTube视频SEO", "行业论坛存在感", "平台专属内容"],
   },
   {
     icon: "📰",
     title: "数字公关与品牌权威",
-    desc: "在可信网站上获得提及，建立AI系统用来决定引用对象的实体权威。我们让您的品牌出现在重要的地方。",
+    desc: "通过相关的新西兰目录、媒体或行业提及，帮助品牌信息更一致、更可信。",
     items: ["新西兰媒体与目录外联", "行业出版物提及", "品牌实体澄清", "权威信号建设"],
   },
 ];
@@ -205,10 +205,10 @@ const aiBenefit = [
 ];
 
 const process = [
-  { step: "1", title: "AI可见度审核", desc: "我们审核您目前在Google、AI摘要和AI聊天工具中的可见度。您将清楚地了解您出现的位置--以及您缺失的位置。" },
-  { step: "2", title: "策略与内容规划", desc: "我们识别最高影响力的关键词集群、AI答案机会和结构化数据缺口。为您的行业量身定制优先路线图。" },
-  { step: "3", title: "实施执行", desc: "技术修复、结构化数据标记、内容制作、GBP优化和页面SEO--按结构化月度冲刺部署。" },
-  { step: "4", title: "追踪与报告", desc: "月度报告涵盖排名、自然流量、AI引用和GBP洞察--让您看到每一分钱的回报。" },
+  { step: "1", title: "AI可见度审核", desc: "先看你的网站在Google、AI摘要和AI聊天工具中是否容易被理解和引用。" },
+  { step: "2", title: "策略与内容规划", desc: "找出最值得先补的关键词、问答、Schema和内容缺口。" },
+  { step: "3", title: "执行优化", desc: "按优先级处理技术问题、结构化数据、内容更新、Google商家资料和页面SEO。" },
+  { step: "4", title: "追踪与报告", desc: "每月汇报排名、自然流量、AI提及和下一步优化重点。" },
 ];
 
 const reviews = [
@@ -218,8 +218,8 @@ const reviews = [
 ];
 
 const faqs = [
-  { q: "什么是AI SEO，它与传统SEO有什么区别？", a: "传统SEO专注于在Google蓝色链接结果中排名。AI SEO（也称为生成式引擎优化，即GEO）专注于让您的内容在Google AI摘要、ChatGPT、Perplexity等AI生成答案中被引用或展示。这些技术部分重叠--结构化内容、结构化数据标记、权威信号--但GEO增加了实体优化、可引用性结构化和llms.txt配置等新层次。" },
-  { q: "奥克兰小企业真的需要关注AI搜索吗？", a: "越来越重要。Google AI摘要目前出现在美国超过58%的搜索中，并在全球持续推广。如果有人搜索「奥克兰最好的水管工」，Google生成一个AI回答，您的企业要么出现在其中，要么就被排除在外。我们帮助您出现在其中。" },
+  { q: "什么是AI SEO，它与传统SEO有什么区别？", a: "传统SEO主要关注Google自然搜索排名。AI SEO（也叫GEO）会在传统SEO基础上，把内容写得更清楚、更容易被AI摘要、ChatGPT、Perplexity等工具理解、引用和总结。" },
+  { q: "奥克兰小企业真的需要关注AI搜索吗？", a: "需要开始关注。越来越多客户会通过AI摘要、ChatGPT或Perplexity了解服务和比较供应商。小企业不一定要追新概念，但网站内容、Schema、品牌信息和本地信号要让搜索引擎和AI都看得懂。" },
   { q: "如何让企业在ChatGPT或Perplexity中被引用？", a: "AI系统从可抓取的网络内容、第三方提及和结构化数据中获取信息。我们通过以下方式提高您的可引用性：将内容结构化为直接答案、添加完整的结构化数据标记、在第三方网站建立权威提及，以及确保您的GBP和目录存在完整一致。" },
   { q: "什么是GEO分数？", a: "GEO（生成式引擎优化）分数衡量AI系统引用您内容的可能性。我们评估内容可引用性、结构化数据完整性、AI爬虫技术可访问性以及品牌在AI训练来源中的提及情况等因素。" },
   { q: "AI SEO会取代传统SEO吗？", a: "不会--它是对传统SEO的扩展。传统排名信号（链接、速度、移动端表现、关键词相关性）仍然重要。AI SEO在此基础上增加了新的优化层次。我们同时提供两者--请参阅我们的完整<a href=\"/zh/website-designer-auckland/\">SEO服务</a>和<a href=\"/zh/local-seo-for-auckland-small-businesses/\">本地SEO</a>服务。" },
@@ -234,16 +234,16 @@ const faqs = [
 <Layout
   lang="zh-Hans"
   title="奥克兰AI SEO与GEO优化服务 | 人工智能搜索优化 | Kiwi Web Design"
-  description="奥克兰本地AI SEO团队，服务全新西兰华人企业。帮助您在Google排名靠前，同时被ChatGPT、Perplexity、Gemini及Google AI摘要引用。从$500/月起。"
+  description="奥克兰AI SEO与GEO优化团队，服务全新西兰华人企业。帮助网站内容更容易被Google、AI摘要、ChatGPT、Perplexity和Gemini理解与引用。从$500/月起。"
   canonicalURL="https://www.kiwiwebdesign.co.nz/zh/ai-seo-for-auckland-small-businesses/"
   alternateUrl="https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/"
   schema={schema}
 >
 
   <PageHero
-    eyebrow="奥克兰 AI SEO 专家"
-    title="Google排名。AI引用。两者兼得。"
-    subtitle="我们为新西兰华人企业优化Google AI摘要、ChatGPT、Perplexity、Gemini和Claude--无论您的客户如何搜索，都能找到您并引用您。"
+    eyebrow="奥克兰 AI SEO 与 GEO"
+    title="让搜索引擎和AI，都更容易看懂你的业务。"
+    subtitle="我们为新西兰华人企业优化Google搜索、AI摘要、ChatGPT、Perplexity、Gemini和Claude，让网站内容更清楚、更容易被理解和引用。"
     badgeText="奥克兰AI SEO与GEO专家"
     ctaPrimary={{ text: "获取免费AI SEO审核", href: "/zh/website-designer-auckland/" }}
     ctaSecondary={{ text: "了解服务详情", href: "#services" }}
@@ -254,7 +254,7 @@ const faqs = [
   <!-- AI citability snippet -->
   <div class="aiseo-snippet">
     <div class="container">
-  <p><strong>Kiwi Web Design</strong> 为新西兰华人企业提供AI SEO及生成式引擎优化（GEO）服务--从<strong>$500/月</strong>起。服务包括结构化数据标记、llms.txt配置、AI爬虫访问设置、实体权威建设，以及为ChatGPT、Perplexity、Gemini、Google AI摘要和Claude被引用而优化的内容结构。总部位于Grey Lynn，奥克兰，支持全新西兰线上合作--50+客户4.9星Google评分。无锁定合同。</p>
+  <p><strong>Kiwi Web Design</strong> 为新西兰华人企业提供AI SEO及生成式引擎优化（GEO）服务，起价<strong>$500/月</strong>。服务包括结构化数据、llms.txt配置、AI爬虫访问检查、实体信息整理，以及适合ChatGPT、Perplexity、Gemini、Google AI摘要和Claude理解的内容结构。我们在奥克兰 Grey Lynn，支持全新西兰远程合作，Google评分 <strong>4.9★</strong>。</p>
     </div>
   </div>
 
@@ -264,8 +264,8 @@ const faqs = [
       <div class="aiseo-trust-inner">
         <div class="aiseo-trust-text">
           <p class="aiseo-trust-eyebrow">为什么选择 Kiwi Web Design</p>
-          <h2>奥克兰AI搜索专家--不是附加服务。</h2>
-          <p>大多数机构将AI SEO视为事后考虑。我们从第一天起就将其融入每个网站和策略中。我们自己的网站运行在Astro上--这是一个现代静态框架，比WordPress加载更快，也更易于AI爬虫解析。在大多数机构甚至还不知道这些标准存在之前，我们已经部署了llms.txt、配置了AI爬虫访问权限并实施了全面的结构化数据标记。</p>
+          <h2>AI搜索不是噱头，基础要先做对。</h2>
+          <p>AI SEO不是把文章交给AI乱写。真正有用的做法，是把网站速度、结构化数据、品牌实体信息、常见问题、服务页面和本地资料整理清楚。这样Google和AI工具在理解你的业务时，才不容易抓错重点。</p>
         </div>
         <div class="aiseo-trust-badges">
           <div class="aiseo-trust-badge">
@@ -294,8 +294,8 @@ const faqs = [
     <div class="container">
       <SectionHeader
         eyebrow="AI搜索变革"
-        title="搜索正在改变。您的SEO策略也应随之改变。"
-        subtitle="AI生成答案现已出现在超过一半的搜索结果之上。我们为您的客户使用的每个平台进行优化。"
+        title="搜索正在改变，网站内容也要更清楚。"
+        subtitle="客户不只看传统搜索结果，也会看AI摘要或直接问AI工具。你的内容需要更容易被机器理解，也要让真人读得明白。"
       />
       <div class="aiseo-engines">
         {aiBenefit.map(({ icon, title, desc, items }) => (
@@ -319,8 +319,8 @@ const faqs = [
     <div class="container">
       <SectionHeader
         eyebrow="AI SEO 服务"
-        title="现代搜索优化的每一个层次。"
-        subtitle="从技术基础到AI可引用内容和数字公关--我们涵盖2026年及以后所有重要的排名信号。"
+        title="从技术基础到内容结构，一层一层做好。"
+        subtitle="我们不会把AI SEO讲得很玄。重点是让网站信息清楚、一致、可抓取、可引用。"
       />
       <ServiceGrid items={services} cols={3} />
     </div>
@@ -461,7 +461,7 @@ const faqs = [
         <div class="seo-pkg">
           <h3>AI 权威版</h3>
           <p class="seo-price">从 $2,500<span class="seo-period">/月</span></p>
-          <p class="seo-pkg-desc">适合竞争激烈行业的最大化AI可见度方案。</p>
+          <p class="seo-pkg-desc">适合竞争很强的行业，需要更系统地提升AI搜索可见度。</p>
           <ul class="seo-pkg-list">
             <li>包含GEO增长版全部内容</li>
             <li>数字公关与品牌权威建设</li>
@@ -481,7 +481,7 @@ const faqs = [
     <Image src={aucklandCBD} alt="奥克兰CBD俯瞰, Kiwi Web Design 服务奥克兰各地企业" width={1400} height={420} class="aiseo-city-img" />
     <div class="aiseo-city-overlay">
       <p class="aiseo-city-tag">奥克兰本地 · 服务全新西兰</p>
-      <p class="aiseo-city-line">帮助奥克兰华人企业在Google排名靠前--并被AI引用。</p>
+      <p class="aiseo-city-line">帮助奥克兰华人企业在Google上更容易被找到，也让AI更容易理解和引用。</p>
     </div>
   </div>
 
@@ -513,8 +513,8 @@ const faqs = [
 
   <CTABanner
     variant="yellow"
-    title="准备好在Google和AI答案中排名靠前了吗？"
-    subtitle="免费AI SEO审核--我们将向您展示您目前出现在哪里，以及您正在错过什么。"
+    title="想知道你的网站适不适合AI搜索？"
+    subtitle="预约一次免费AI SEO审核，我们会看你的网站内容、Schema、llms.txt和AI可见度，再告诉你下一步该先做什么。"
     ctaPrimary={{ text: "获取免费AI SEO审核", href: "/zh/website-designer-auckland/" }}
     ctaSecondary={{ text: "查看所有SEO服务", href: "/zh/local-seo-for-auckland-small-businesses/" }}
   />

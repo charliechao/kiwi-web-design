@@ -15,7 +15,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/zh/google-ads/",
       "url": "https://www.kiwiwebdesign.co.nz/zh/google-ads/",
       "name": "奥克兰Google广告服务 | SEM竞价推广 | Kiwi Web Design",
-      "description": "奥克兰Google广告管理专家。帮助本地中小企业快速获客，24-72小时见效。固定月费起$399，非按广告费比例收费。",
+      "description": "奥克兰Google广告管理团队，服务全新西兰华人企业与本地小企业。帮助企业设置、管理和优化Google广告，固定月费起$399。",
       "inLanguage": "zh-Hans",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -98,7 +98,7 @@ const schema = {
         {
           "@type": "Question",
           "name": "Google广告多快能产生询盘？",
-          "acceptedAnswer": { "@type": "Answer", "text": "通常在广告上线后24-72小时内即可产生询盘。这是Google广告相较于SEO的核心优势--广告一经审核通过，立即可以开始获得潜在客户联系。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "广告通过审核后通常很快就能开始获得曝光和点击。实际询盘速度取决于行业竞争、广告预算、关键词、落地页质量和转化追踪设置。" }
         },
         {
           "@type": "Question",
@@ -113,7 +113,7 @@ const schema = {
         {
           "@type": "Question",
           "name": "Google广告和SEO哪个更适合我？",
-          "acceptedAnswer": { "@type": "Answer", "text": "两者用途不同。Google广告可立即带来询盘，但需要持续投入广告费。SEO见效慢但能积累长期免费流量。对大多数奥克兰成长型企业，建议两者结合--先用广告快速获客，同时建立SEO长期优势。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "两者用途不同。Google广告适合更快获得曝光和询盘，但需要持续广告预算。SEO见效慢一些，但能积累长期自然流量。很多成长型企业会两者结合。" }
         },
         {
           "@type": "Question",
@@ -123,7 +123,7 @@ const schema = {
         {
           "@type": "Question",
           "name": "你们按广告费比例收费吗？",
-          "acceptedAnswer": { "@type": "Answer", "text": "不。Kiwi Web Design收取固定月度管理费，而非按广告费百分比收费。这意味着我们的利益与您一致--最大化您的效果，而非鼓励您多花广告费。初始设置费起$499，月度管理费起$399。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "不。Kiwi Web Design收取固定月度管理费，而不是按广告费百分比收费。这样你更容易控制成本，也不会因为广告预算提高而自动增加管理费。初始设置费起$499，月度管理费起$399。" }
         }
       ]
     }
@@ -134,37 +134,37 @@ const adServices = [
   {
     icon: "🔍",
     title: "搜索广告",
-    desc: "在用户主动搜索您产品或服务时，让您的广告出现在Google顶部。我们建立精准定向的广告系列，把高意向买家带到您面前。",
-    items: ["关键词研究与匹配类型策略", "竞争对手差距分析", "否定关键词列表", "广告文案A/B测试"],
+    desc: "当客户正在Google上搜索你的服务时，让广告出现在合适的位置。我们会设置关键词、匹配方式和广告文案。",
+    items: ["关键词和匹配方式", "竞争对手差距分析", "否定关键词列表", "广告文案测试"],
   },
   {
     icon: "🏙️",
     title: "本地服务广告",
-    desc: "出现在Google认证的本地结果中--Google保证或Google筛选徽章。适合希望最大化本地曝光的服务型企业。",
+    desc: "适合服务型企业争取更多本地曝光。我们会根据你的行业和地区判断是否适合使用本地服务广告。",
     items: ["LSA设置与资质认证", "预算优化", "好评获取支持", "询盘质量追踪"],
   },
   {
     icon: "🎯",
     title: "再营销广告",
-    desc: "重新触达曾经访问但未转化的潜在客户。我们向已对您业务表现出兴趣的用户展示定向广告。",
+    desc: "重新触达曾经访问过网站、但还没有联系你的客户，让品牌在他们考虑时继续出现。",
     items: ["受众列表创建", "展示再营销", "YouTube再营销", "动态广告创意"],
   },
   {
     icon: "📊",
     title: "转化追踪",
-    desc: "精确掌握哪些广告带来了电话、表单提交和实际收入。我们搭建完整的转化追踪体系，让每一分广告费都有据可查。",
+    desc: "清楚知道哪些广告带来了电话、表单和销售机会，避免只看点击、不知道效果。",
     items: ["Google标签管理器设置", "电话追踪", "表单提交追踪", "电商收入追踪"],
   },
   {
     icon: "🛒",
     title: "购物广告",
-    desc: "专为电商企业设计--让您的产品出现在Google购物结果顶部，配合精细化的产品数据管理。",
+    desc: "适合电商企业，把产品数据整理好，让商品更容易出现在Google购物相关位置。",
     items: ["Google Merchant Center设置", "产品数据优化", "智能购物广告系列", "广告支出回报优化"],
   },
   {
     icon: "📈",
     title: "持续优化",
-    desc: "持续的月度管理，不断提升广告效果。我们测试、分析、改进--在降低单次获客成本的同时增加询盘量。",
+    desc: "广告不是设置完就不管。我们会每月看数据、调关键词、改文案、优化预算。",
     items: ["每月效果审查", "出价策略优化", "质量得分提升", "广告投放时段精调"],
   },
 ];
@@ -172,31 +172,31 @@ const adServices = [
 const whyUs = [
   {
     icon: "🚫",
-    title: "零浪费广告预算",
-    desc: "通过精准关键词定向、全面否定关键词列表和高转化落地页，确保您的预算精准触达购买意向用户，而非随意浏览者。",
+    title: "尽量少浪费预算",
+    desc: "通过关键词、否定关键词和落地页优化，把预算更多花在真正有搜索意向的客户身上。",
   },
   {
     icon: "📍",
     title: "奥克兰本地团队，服务全新西兰",
-    desc: "我们根据您的城市、行业和目标客户设置广告系列。没有通用模板--每个广告系列都针对您的具体市场和受众量身定制。",
+    desc: "我们会根据你的城市、行业和目标客户设置广告系列，不用一套模板套所有行业。",
   },
   {
     icon: "🔎",
     title: "透明数据报告",
-    desc: "您每月都会清楚了解广告的运营情况。清晰报告展示投放金额、获得询盘数、单次获客成本，以及我们正在做的改进措施。",
+    desc: "你每月会看到投放金额、询盘情况、获客成本和我们正在做的优化，不需要自己猜效果。",
   },
   {
     icon: "🏁",
-    title: "快速启动，快速见效",
-    desc: "与SEO不同，Google广告上线后数天内即可产生询盘。我们快速、正确地搭建广告系列，让您无需等待数月才能看到结果。",
+    title: "启动速度快",
+    desc: "相比SEO，Google广告通常能更快开始获得曝光和点击。我们会先把账户、追踪和落地页基础设置好。",
   },
 ];
 
 const process = [
-  { step: "1", title: "免费广告审计", desc: "审查您的现有广告系列（或从头评估市场机会），找出最大的优化空间。" },
-  { step: "2", title: "制定广告策略", desc: "制定完整广告方案：关键词、广告文案、落地页、预算分配和出价策略--全部围绕您的目标定制。" },
-  { step: "3", title: "设置与上线", desc: "广告系列搭建完毕、转化追踪安装到位、广告正式上线--通常在确认方案后5个工作日内完成。" },
-  { step: "4", title: "管理与优化", desc: "持续月度管理：测试、出价调整、否定关键词维护和效果报告，不断提升投资回报率。" },
+  { step: "1", title: "免费广告审计", desc: "先看你现有广告账户，或从零评估市场、关键词和预算是否合理。" },
+  { step: "2", title: "制定广告策略", desc: "确定关键词、广告文案、落地页、预算和转化追踪，不盲目开跑。" },
+  { step: "3", title: "设置与上线", desc: "搭建广告系列，安装转化追踪，确认无误后上线。" },
+  { step: "4", title: "管理与优化", desc: "每月看数据、调预算、加否定关键词、测试文案，并汇报结果。" },
 ];
 
 const industries = [
@@ -219,15 +219,15 @@ const faqs = [
   { q: "Google广告多快能产生询盘？", a: "广告上线并通过审核后，通常很快就能开始获得曝光和点击。实际询盘速度取决于行业竞争、预算、落地页质量和转化追踪设置。" },
   { q: "Google广告管理费是多少？", a: "我们的管理费起价$399/月，另加您的广告投放预算。具体费用取决于您的预算和广告系列复杂程度。对大多数新西兰服务型企业，建议广告预算最低$500/月以产生有意义的效果。" },
   { q: "需要多少广告预算？", a: "对大多数新西兰服务型企业来说，每月$500-$1,500的广告投入是合理的起点。竞争激烈的行业（如法律或工程）可能需要更多预算。我们会提前坦诚告知您在特定市场竞争所需的具体投入。" },
-  { q: "Google广告和SEO哪个更适合我？", a: "两者用途不同。Google广告可较快带来询盘，但需要持续投入广告费。SEO优化见效较慢，但能积累带来长期免费流量。对大多数新西兰成长型企业，建议两者结合--先用广告快速获客，同时建立SEO的长期优势。" },
+  { q: "Google广告和SEO哪个更适合我？", a: "两者用途不同。Google广告适合更快获得曝光和询盘，但需要持续广告预算。SEO见效慢一些，但能积累长期自然流量。很多新西兰成长型企业会两者结合。" },
   { q: "你们能接管我现有的Google广告账户吗？", a: "可以。我们可以审计并接管您现有的广告系列管理，也可以为从零开始的企业全新设置账户。无论哪种情况，我们都会先进行审计，了解现状与改进空间。" },
-  { q: "你们的收费结构是怎样的？", a: "我们收取固定月度管理费，而非按广告费百分比收费。这意味着我们的利益与您完全一致--最大化效果，而非鼓励您增加广告支出。初始设置费起$499，月度管理费起$399。" },
+  { q: "你们的收费结构是怎样的？", a: "我们收取固定月度管理费，而不是按广告费百分比收费。这样你更容易控制成本，也不会因为广告预算提高而自动增加管理费。初始设置费起$499，月度管理费起$399。" },
 ];
 ---
 
 <Layout
   title="奥克兰Google广告服务 | SEM竞价推广 | Kiwi Web Design"
-  description="奥克兰Google广告管理团队，服务全新西兰华人企业与小企业。帮助本地中小企业更快获得询盘。固定月费起$399，免费策略咨询。"
+  description="奥克兰Google广告管理团队，服务全新西兰华人企业与小企业。帮助企业设置、管理和优化Google广告，固定月费起$399。"
   canonicalURL="https://www.kiwiwebdesign.co.nz/zh/google-ads/"
   schema={schema}
   lang="zh-Hans"
@@ -239,8 +239,8 @@ const faqs = [
     <div class="container zh-ga-hero-inner">
       <div class="zh-ga-hero-text">
         <p class="zh-eyebrow">奥克兰 Google 广告服务</p>
-        <h1 class="zh-ga-title">本周就开始获得更多询盘。</h1>
-        <p class="zh-subtitle">为新西兰华人企业与中小企业提供专业Google广告投放与管理服务。我们设置、管理并持续优化广告系列，将高意向流量带到专为转化而设计的落地页。</p>
+        <h1 class="zh-ga-title">想更快拿到询盘，可以先从Google广告开始。</h1>
+        <p class="zh-subtitle">我们帮新西兰华人企业和本地小企业设置、管理和优化Google广告，把预算更多花在真正有搜索意向的客户身上。</p>
         <div class="zh-ga-hero-btns">
           <a href={contactPage} class="btn-zh-primary">预约免费咨询</a>
           <a href="#process" class="btn-zh-outline">了解服务流程</a>
@@ -249,8 +249,8 @@ const faqs = [
       </div>
       <div class="zh-ga-hero-stats">
         <div class="zh-stat">
-          <span class="zh-stat-num">24–72</span>
-          <span class="zh-stat-lbl">小时内开始获得曝光</span>
+          <span class="zh-stat-num">快速</span>
+          <span class="zh-stat-lbl">通过审核后开始获得曝光</span>
         </div>
         <div class="zh-stat">
           <span class="zh-stat-num">$399</span>
@@ -271,7 +271,7 @@ const faqs = [
   <!-- AI citability snippet -->
   <div class="zh-ga-snippet">
     <div class="container">
-      <p><strong>Kiwi Web Design</strong> 为奥克兰中小企业提供Google广告管理服务，月度管理费固定起价 <strong>$399</strong>--非按广告费百分比收取。一次性初始设置费起 <strong>$499</strong>。服务涵盖搜索广告、本地服务广告、再营销、购物广告和转化追踪。大多数广告系列在上线后 <strong>24-72小时</strong>内即可产生询盘。建议广告预算：每月$500-$1,500。公司位于奥克兰Grey Lynn--Google评分4.9★。</p>
+      <p><strong>Kiwi Web Design</strong> 为新西兰华人企业和本地小企业提供Google广告管理服务，月度管理费固定起价 <strong>$399</strong>，不按广告费百分比收费。一次性初始设置费起 <strong>$499</strong>。服务包括搜索广告、本地服务广告、再营销、购物广告和转化追踪。广告通过审核后通常能较快开始获得曝光和点击，实际询盘取决于预算、行业竞争和落地页质量。公司位于奥克兰 Grey Lynn，Google评分 <strong>4.9★</strong>。</p>
     </div>
   </div>
 
@@ -280,8 +280,8 @@ const faqs = [
     <div class="container">
       <div class="zh-section-header">
         <p class="zh-section-eyebrow">为什么选择 Google 广告</p>
-        <h2 class="zh-section-title">奥克兰获客最快速的方式。</h2>
-        <p class="zh-section-subtitle">Google广告让您的企业在潜在客户搜索的那一刻出现在结果顶部--并且只有在他们点击时才付费。</p>
+        <h2 class="zh-section-title">想更快获得曝光，Google广告是很直接的方式。</h2>
+        <p class="zh-section-subtitle">当客户正在搜索你的服务时，广告可以让你更快出现在他们面前，并且按点击付费。</p>
       </div>
       <div class="zh-why-grid">
         {whyUs.map(item => (
@@ -300,8 +300,8 @@ const faqs = [
     <div class="container">
       <div class="zh-section-header">
         <p class="zh-section-eyebrow">我们的服务</p>
-        <h2 class="zh-section-title">全方位 Google 广告管理。</h2>
-        <p class="zh-section-subtitle">从广告系列初始设置到持续优化--运营高效Google广告所需的一切。</p>
+        <h2 class="zh-section-title">从设置到账户优化，我们一起管理。</h2>
+        <p class="zh-section-subtitle">关键词、广告文案、落地页建议、转化追踪和月度优化都会一起考虑。</p>
       </div>
       <div class="zh-services-grid">
         {adServices.map(svc => (
@@ -343,8 +343,8 @@ const faqs = [
     <div class="container">
       <div class="zh-section-header">
         <p class="zh-section-eyebrow">服务流程</p>
-        <h2 class="zh-section-title">5个工作日内完成设置，快速上线。</h2>
-        <p class="zh-section-subtitle">我们行动迅速，让您不必等待数月才能开始获得询盘。</p>
+        <h2 class="zh-section-title">先把账户和追踪搭好，再上线投放。</h2>
+        <p class="zh-section-subtitle">Google广告启动速度快，但基础设置要认真做，后面数据才有参考价值。</p>
       </div>
       <div class="zh-process-steps">
         {process.map((step, i) => (
@@ -366,7 +366,7 @@ const faqs = [
     <Image src={about3Img} alt="Kiwi Web Design团队为奥克兰企业管理Google广告系列" width={1600} height={640} class="zh-ga-band-img" />
     <div class="zh-ga-band-overlay">
       <div class="container">
-        <p class="zh-ga-band-eyebrow">您广告背后的团队</p>
+        <p class="zh-ga-band-eyebrow">你广告背后的团队</p>
         <h2 class="zh-ga-band-title">我们像管理自己的钱一样，管理每一分广告预算。</h2>
         <a href="/zh/website-designer-auckland/" class="zh-ga-band-link">立即获取免费广告策略咨询 →</a>
       </div>
@@ -380,7 +380,7 @@ const faqs = [
         <div class="zh-pricing-left">
           <p class="zh-pricing-eyebrow">服务定价</p>
           <h2 class="zh-pricing-title">简单透明的固定费用。</h2>
-          <p class="zh-pricing-desc">我们收取固定月度管理费--而非按广告费百分比收取。这意味着我们的利益始终与您一致：最大化效果，而非鼓励您增加广告支出。</p>
+          <p class="zh-pricing-desc">我们收取固定月度管理费，而不是按广告费百分比收费。这样你更容易控制成本，也不会因为广告预算提高而自动增加管理费。</p>
           <div class="zh-pricing-tiers">
             <div class="zh-tier">
               <span class="zh-tier-price">起价 $499</span>
@@ -445,7 +445,7 @@ const faqs = [
         <div class="zh-consult-content">
           <p class="zh-consult-eyebrow">免费策略咨询</p>
           <h2 class="zh-consult-title">我们先制定计划，再谈合作。</h2>
-          <p class="zh-consult-desc">每个Google广告合作都从免费审计和策略咨询开始。我们分析您的市场、预估每次获客成本，并提供诚实的建议--即便Google广告暂时不适合您，我们也会直说。</p>
+          <p class="zh-consult-desc">每个Google广告合作都会先做一次免费审计和策略咨询。我们会看你的市场、预算和落地页情况，再给诚实建议。如果Google广告暂时不适合你，我们也会直说。</p>
           <ul class="zh-consult-list">
             <li>含竞争对手广告分析</li>
             <li>预算与单次获客成本预估</li>
@@ -505,8 +505,8 @@ const faqs = [
 
   <CTABanner
     variant="yellow"
-    title="准备好本周就开始获得更多询盘了吗？"
-    subtitle="免费策略咨询--我们分析您的市场并预估单次获客成本。奥克兰可面谈，全新西兰可线上合作。"
+    title="想知道Google广告适不适合你现在的业务？"
+    subtitle="可以先做一次免费策略咨询。我们会看你的市场、预算和落地页，奥克兰可面谈，全新西兰可线上合作。"
     ctaPrimary={{ text: "预约免费咨询", href: contactPage }}
     ctaSecondary={{ text: "了解SEO服务", href: "/zh/seo-auckland/" }}
   />

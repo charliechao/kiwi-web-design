@@ -8,8 +8,10 @@ import TestimonialGrid from '../../components/TestimonialGrid.astro';
 import CTABanner from '../../components/CTABanner.astro';
 import FAQAccordion from '../../components/FAQAccordion.astro';
 import { Image } from 'astro:assets';
-import aboutImg from '../../assets/general/about.jpg';
 import about3Img from '../../assets/general/about3.jpg';
+import seoConsultationImg from '../../assets/zh/seo-auckland-chinese-business-consultation.png';
+import seoReportImg from '../../assets/zh/seo-auckland-monthly-report-workspace.png';
+import seoLocalConsultImg from '../../assets/zh/seo-auckland-local-search-cafe-consultation.png';
 
 const schema = {
   "@context": "https://schema.org",
@@ -19,7 +21,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/zh/seo-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/zh/seo-auckland/",
       "name": "奥克兰SEO优化服务 | 搜索引擎优化 | Kiwi Web Design",
-      "description": "奥克兰本地SEO团队，服务新西兰华人企业与小企业。SEO优化起价$500/月，Google地图排名、精准关键词、中英文月度报告，无合同锁定。",
+      "description": "奥克兰SEO优化团队，服务新西兰华人企业与本地小企业。SEO优化起价$500/月，包含Google地图排名、网站内容、技术SEO和月度报告。",
       "inLanguage": "zh-Hans",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -78,7 +80,7 @@ const schema = {
       "name": "奥克兰SEO优化服务",
       "serviceType": "Search Engine Optimisation",
       "category": "Digital Marketing",
-      "description": "为新西兰华人企业与小企业提供SEO优化服务。涵盖Google地图排名、页面优化、内容创作、外链建设和月度报告。起价$500/月，无合同锁定。",
+      "description": "为新西兰华人企业与本地小企业提供SEO优化服务。涵盖Google地图排名、页面优化、内容创作、外链建设和月度报告。起价$500/月。",
       "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "areaServed": [
         { "@type": "City", "name": "Auckland" },
@@ -99,7 +101,7 @@ const schema = {
         {
           "@type": "Question",
           "name": "奥克兰SEO优化需要多长时间才能看到效果？",
-          "acceptedAnswer": { "@type": "Answer", "text": "大多数奥克兰企业在2-3个月内会看到初步变化，在6-12个月内会看到明显效果。SEO是随时间积累的--投入越长，效果越强劲、越稳定。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "大多数企业会在2-3个月内看到一些初步变化，6-12个月更容易看到稳定效果。SEO不是一开就立刻见效的广告，它需要把网站基础、内容和本地信号慢慢做扎实。" }
         },
         {
           "@type": "Question",
@@ -109,22 +111,22 @@ const schema = {
         {
           "@type": "Question",
           "name": "本地SEO和普通SEO有什么区别？",
-          "acceptedAnswer": { "@type": "Answer", "text": "本地SEO针对基于地理位置的搜索--如「奥克兰水管工」或「附近咖啡馆」。它包含您的Google商家资料、本地引用和地图Pack排名。普通SEO专注于更广泛的全国性知名度，不区分地理位置。大多数奥克兰小企业从本地SEO中获益最大。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "本地SEO主要针对带地区意图的搜索，例如「奥克兰水管工」或「附近咖啡馆」。它会重点处理Google商家资料、本地目录、评价和Google地图排名。普通SEO更偏向网站整体内容和全国性搜索。" }
         },
         {
           "@type": "Question",
           "name": "我已经在投放Google广告，还需要做SEO吗？",
-          "acceptedAnswer": { "@type": "Answer", "text": "两者的运作方式不同。Google广告一旦停止付费就立即失效。SEO建立有机排名，随时间积累免费流量。大多数企业两者结合效果最佳--广告获取即时客户，SEO实现长期增长。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "两者作用不同。Google广告适合更快拿到曝光和询盘，但需要持续广告预算。SEO见效更慢，但能积累长期自然流量。很多企业会先用广告带来询盘，同时用SEO打长期基础。" }
         },
         {
           "@type": "Question",
           "name": "你们能保证Google首页排名吗？",
-          "acceptedAnswer": { "@type": "Answer", "text": "任何有道德的SEO机构都无法保证特定排名。Kiwi Web Design能保证的是在对您的本地奥克兰市场最重要的信号上进行专注、透明的努力，并辅以清晰的月度报告。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "不能。任何负责任的SEO团队都不应该保证某个固定排名。我们能保证的是把该做的基础、内容、本地信号和数据追踪认真做好，并用清楚的月度报告说明进展。" }
         },
         {
           "@type": "Question",
           "name": "你们是否服务奥克兰以外的企业？",
-          "acceptedAnswer": { "@type": "Answer", "text": "Kiwi Web Design总部位于奥克兰，但也为新西兰各地企业提供服务。本地SEO专业知识在奥克兰最强，但技术SEO和内容SEO适用于新西兰各地。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "可以。我们在奥克兰，也为新西兰其他城市的企业做SEO。奥克兰客户可以面谈，其他地区可以远程合作。" }
         }
       ]
     }
@@ -135,46 +137,46 @@ const seoServices = [
   {
     icon: "📍",
     title: "奥克兰本地SEO",
-    desc: "在Google地图和本地Pack中占据主导地位。我们优化您的Google商家资料，建立本地引用，针对地理位置关键词进行定向优化。",
-    items: ["Google商家资料优化", "本地引用与目录收录", "地图Pack排名提升", "地理定向关键词策略"],
+    desc: "让附近正在找服务的客户更容易看到你。我们会优化Google商家资料、本地目录和带地区的关键词。",
+    items: ["Google商家资料优化", "本地目录和引用", "Google地图排名", "地区关键词策略"],
   },
   {
     icon: "⚙️",
     title: "技术SEO",
-    desc: "一个快速、结构良好、Google能够抓取和索引的网站。我们修复阻碍您排名的技术问题。",
+    desc: "先把网站速度、结构、索引和手机端体验处理好，避免因为技术问题影响排名。",
     items: ["网站速度优化", "核心网页指标改善", "Schema结构化数据", "移动端适配优化"],
   },
   {
     icon: "✍️",
     title: "内容与页面SEO",
-    desc: "关键词研究与内容创作，将您的页面与买家意图紧密连接--同时针对Google和您的潜在客户进行优化。",
+    desc: "研究客户真正会搜的词，再把页面内容写清楚。既让Google看得懂，也让客户读得明白。",
     items: ["关键词研究分析", "SEO内容创作", "Meta标签优化", "内部链接结构"],
   },
   {
     icon: "🔗",
     title: "外链建设",
-    desc: "来自相关新西兰资源的高质量外链，以可持续的方式提升网站权威度--不走捷径，不使用垃圾链接。",
+    desc: "通过相关的新西兰目录、合作资源和内容机会提升网站可信度，不买垃圾链接，不走短期捷径。",
     items: ["新西兰相关目录收录", "本地商业合作伙伴关系", "内容型外链获取", "权威度持续建设"],
   },
   {
     icon: "📊",
     title: "数据分析与报告",
-    desc: "清晰的月度报告，展示实际进展--排名变化、自然流量和产生的询盘。无术语，直观明了。",
+    desc: "每月用清楚的报告说明排名、自然流量和询盘变化，少讲术语，多讲下一步怎么做。",
     items: ["Google Analytics 4配置", "Search Console监控", "月度排名追踪", "询盘来源归因"],
   },
   {
     icon: "🛒",
     title: "电商SEO",
-    desc: "WooCommerce和Shopify商店的产品页面和类目页面优化，驱动能够产生转化的自然流量。",
+    desc: "优化WooCommerce和Shopify的产品页、分类页和结构，让有购买意向的自然流量更容易进来。",
     items: ["产品页面优化", "类目结构优化", "产品Schema标记", "Google购物曝光"],
   },
 ];
 
 const process = [
-  { step: "1", title: "免费SEO审核", desc: "我们审查您当前的排名、网站健康状况、关键词差距和竞争对手情况。零费用，无义务。" },
-  { step: "2", title: "定制策略", desc: "一份专注于能带来合格询盘的关键词的定制计划--而不是单纯追求流量数字。" },
-  { step: "3", title: "执行优化", desc: "技术修复、内容创作、本地信号优化和外链建设--系统性地逐步推进。" },
-  { step: "4", title: "月度报告", desc: "清晰易读的报告，展示排名的变化以及我们下一步的计划。" },
+  { step: "1", title: "免费SEO审核", desc: "先看你现在的网站、排名、关键词机会和竞争对手情况。" },
+  { step: "2", title: "制定优先级", desc: "找出最值得先做的关键词和页面，不为了流量数字而做无关内容。" },
+  { step: "3", title: "逐步优化", desc: "技术修复、内容更新、本地信号和外链机会会按优先级推进。" },
+  { step: "4", title: "月度报告", desc: "用清楚的报告说明排名、流量和询盘变化，以及下个月要做什么。" },
 ];
 
 const reviews = [
@@ -183,18 +185,18 @@ const reviews = [
 ];
 
 const faqs = [
-  { q: "奥克兰SEO优化需要多长时间才能看到效果？", a: "大多数奥克兰企业在2-3个月内会看到初步变化，在6-12个月内会有明显效果。SEO是随时间积累的--投入越长，效果越强劲、越稳定。" },
+  { q: "奥克兰SEO优化需要多长时间才能看到效果？", a: "大多数企业会在2-3个月内看到一些初步变化，6-12个月更容易看到稳定效果。SEO不是一开就立刻见效的广告，它需要把网站基础、内容和本地信号慢慢做扎实。" },
   { q: "新西兰小企业SEO费用是多少？", a: "我们的SEO套餐起价$500/月，根据行业竞争程度和工作范围可升至$2,500/月。每个合作都从免费审核开始，确保报价准确。" },
-  { q: "本地SEO和普通SEO有什么区别？", a: "本地SEO针对基于地理位置的搜索--如「奥克兰水管工」或「附近咖啡馆」。它包含您的Google商家资料、本地引用和地图Pack排名。普通SEO专注于更广泛的全国性知名度，不区分地理位置。详细内容可查看我们的<a href=\"/local-seo-for-auckland-small-businesses/\">奥克兰本地SEO</a>服务页面。" },
-  { q: "我已经在投放Google广告，还需要做SEO吗？", a: "两者的运作方式不同。<a href=\"/google-ads/\">Google广告</a>一旦停止付费就立即失效。SEO建立有机排名，随时间积累免费流量。大多数企业两者结合效果最佳--广告获取即时客户，SEO实现长期增长。" },
-  { q: "你们能保证Google首页排名吗？", a: "任何有道德的SEO机构都无法保证特定排名。我们能保证的是在对您的本地市场最重要的信号上进行专注、透明的努力，并辅以清晰的月度报告。" },
-  { q: "你们是否服务奥克兰以外的企业？", a: "我们总部位于奥克兰，但也为新西兰各地企业提供服务。本地SEO专业知识在奥克兰最强，但技术SEO和内容SEO适用于新西兰各地。" },
+  { q: "本地SEO和普通SEO有什么区别？", a: "本地SEO主要针对带地区意图的搜索，例如「奥克兰水管工」或「附近咖啡馆」。它会重点处理Google商家资料、本地目录、评价和Google地图排名。普通SEO更偏向网站整体内容和全国性搜索。详细内容可查看我们的<a href=\"/local-seo-for-auckland-small-businesses/\">奥克兰本地SEO</a>服务页面。" },
+  { q: "我已经在投放Google广告，还需要做SEO吗？", a: "两者作用不同。<a href=\"/google-ads/\">Google广告</a>适合更快拿到曝光和询盘，但需要持续广告预算。SEO见效更慢，但能积累长期自然流量。很多企业会先用广告带来询盘，同时用SEO打长期基础。" },
+  { q: "你们能保证Google首页排名吗？", a: "不能。任何负责任的SEO团队都不应该保证某个固定排名。我们能保证的是把该做的基础、内容、本地信号和数据追踪认真做好，并用清楚的月度报告说明进展。" },
+  { q: "你们是否服务奥克兰以外的企业？", a: "可以。我们在奥克兰，也为新西兰其他城市的企业做SEO。奥克兰客户可以面谈，其他地区可以远程合作。" },
 ];
 ---
 
 <Layout
   title="奥克兰SEO优化服务 | 搜索引擎优化 | Kiwi Web Design"
-  description="奥克兰本地SEO团队，服务新西兰华人企业与小企业。SEO优化起价$500/月，Google地图排名、精准关键词、中英文月度报告，无合同锁定。"
+  description="奥克兰SEO优化团队，服务新西兰华人企业与本地小企业。SEO优化起价$500/月，包含Google地图排名、网站内容、技术SEO和月度报告。"
   canonicalURL="https://www.kiwiwebdesign.co.nz/zh/seo-auckland/"
   schema={schema}
   lang="zh-Hans"
@@ -203,8 +205,8 @@ const faqs = [
 
   <PageHero
     eyebrow="奥克兰SEO优化服务"
-    title="让正在搜索您的客户真正找到您。"
-    subtitle="为新西兰华人企业与小企业提供专业SEO优化服务。我们针对您客户真正使用的关键词，建立有机排名，将搜索流量转化为真实询盘--起价$500/月，无合同锁定。"
+    title="让真正想找你的客户，在Google上找到你。"
+    subtitle="我们帮新西兰华人企业和本地小企业做SEO优化，包括Google地图排名、网站内容、技术SEO和月度报告。起价$500/月，先审核，再建议。"
     ctaPrimary={{ text: "获取免费SEO审核", href: "/zh/website-designer-auckland/" }}
     ctaSecondary={{ text: "查看价格", href: "#pricing" }}
     centered={true}
@@ -213,16 +215,43 @@ const faqs = [
   <!-- AI citability snippet -->
   <div class="seo-snippet">
     <div class="container">
-  <p><strong>Kiwi Web Design</strong> 为新西兰华人企业与小企业提供SEO优化服务，<strong>起价$500/月</strong>，无合同锁定。服务涵盖本地SEO、Google商家资料优化、技术SEO、内容创作和外链建设。公司位于奥克兰Grey Lynn，支持全新西兰线上合作，Google评分 <strong>4.9★</strong>，服务50+新西兰客户。大多数企业在2-3个月内看到初步效果，6-12个月内实现持续增长。</p>
+  <p><strong>Kiwi Web Design</strong> 为新西兰华人企业与本地小企业提供SEO优化服务，<strong>起价$500/月</strong>。服务包括本地SEO、Google商家资料优化、技术SEO、内容优化和月度报告。公司位于奥克兰 Grey Lynn，支持全新西兰远程合作，Google评分 <strong>4.9★</strong>。SEO通常需要持续投入，大多数企业会先看到基础改善，再逐步积累稳定排名和询盘。</p>
     </div>
   </div>
+
+  <!-- Premium visual intro -->
+  <section class="seo-visual-intro">
+    <div class="container seo-visual-intro-grid">
+      <figure class="seo-hero-media">
+        <Image
+          src={seoConsultationImg}
+          alt="奥克兰华人企业主与SEO顾问一起查看搜索排名和网站数据"
+          width={1536}
+          height={864}
+          class="seo-hero-media-img"
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
+      <div class="seo-visual-panel">
+        <p class="seo-panel-eyebrow">SEO不是玄学</p>
+        <h2>先看业务、网站和真实搜索，再决定该怎么做。</h2>
+        <p>我们会先了解你的客户怎么找服务、现在网站卡在哪里、Google商家资料是否完整，再把技术SEO、内容和本地信号按优先级排出来。</p>
+        <div class="seo-panel-points">
+          <span>关键词和页面优先级</span>
+          <span>Google地图与本地信号</span>
+          <span>月度数据复盘</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Stat bar -->
   <div class="seo-statbar">
     <div class="container seo-statbar-inner">
-      <div class="ssb-item"><span class="ssb-num">93%</span><span class="ssb-lbl">网络体验始于搜索引擎</span></div>
+      <div class="ssb-item"><span class="ssb-num">93%</span><span class="ssb-lbl">很多客户会先从搜索开始了解企业</span></div>
       <span class="ssb-sep" aria-hidden="true"></span>
-      <div class="ssb-item"><span class="ssb-num">14.6%</span><span class="ssb-lbl">SEO潜在客户成交率 vs 外呼1.7%</span></div>
+      <div class="ssb-item"><span class="ssb-num">14.6%</span><span class="ssb-lbl">SEO线索常见成交率参考</span></div>
       <span class="ssb-sep" aria-hidden="true"></span>
       <div class="ssb-item"><span class="ssb-num">4.9★</span><span class="ssb-lbl">Google综合评分</span></div>
       <span class="ssb-sep" aria-hidden="true"></span>
@@ -235,8 +264,8 @@ const faqs = [
     <div class="container">
       <SectionHeader
         eyebrow="我们的SEO服务"
-        title="排名提升与客户转化所需的一切。"
-    subtitle="从技术修复到内容创作和本地信号优化--为新西兰华人企业与小企业提供完整的SEO解决方案。"
+        title="先把基础做好，再一步步提高排名。"
+    subtitle="从技术修复到内容、本地信号和报告，重点是让真正有需求的客户更容易找到你。"
       />
       <ServiceGrid items={seoServices} cols={3} />
     </div>
@@ -245,7 +274,7 @@ const faqs = [
   <!-- Results strip (dark) -->
   <section class="section" style="background: var(--kwd-dark);">
     <div class="container">
-      <SectionHeader eyebrow="真实成果" title="我们客户通过SEO实现的增长。" light={true} />
+      <SectionHeader eyebrow="真实成果" title="SEO做得扎实，询盘才会慢慢稳定。" light={true} />
       <div class="seo-results">
         <div class="seo-result">
           <span class="sr-num">+87%</span>
@@ -271,6 +300,33 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Reporting visual -->
+  <section class="section seo-report-section">
+    <div class="container seo-report-grid">
+      <div class="seo-report-copy">
+        <p class="seo-about-eyebrow">月度报告</p>
+        <h2>不是只发一堆排名截图，而是告诉你下一步该做什么。</h2>
+        <p>SEO报告会把排名、自然流量、电话和表单询盘放在一起看。你会知道这个月做了什么、哪些页面有变化、下个月最值得先优化哪里。</p>
+        <ul class="seo-about-list">
+          <li>关键词排名和自然流量变化</li>
+          <li>Google商家资料和地图表现</li>
+          <li>电话、表单和询盘来源追踪</li>
+        </ul>
+      </div>
+      <figure class="seo-report-media">
+        <Image
+          src={seoReportImg}
+          alt="奥克兰小企业SEO月度报告和搜索表现数据"
+          width={1536}
+          height={864}
+          class="seo-report-img"
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
+    </div>
+  </section>
+
   <!-- Process -->
   <section class="section" style="background: var(--kwd-cream);">
     <div class="container">
@@ -288,18 +344,18 @@ const faqs = [
     <div class="container">
       <div class="seo-about-split">
         <div class="seo-about-img-wrap">
-          <Image src={aboutImg} alt="SEO专家为奥克兰企业制定关键词策略" width={560} height={700} class="seo-about-img" />
+          <Image src={seoLocalConsultImg} alt="奥克兰华人小企业主与SEO顾问讨论本地搜索和Google地图排名" width={1536} height={864} class="seo-about-img" loading="eager" decoding="async" />
         </div>
         <div class="seo-about-content">
           <p class="seo-about-eyebrow">为何选择我们</p>
-          <h2>围绕您的业务定制的SEO，而不是套用模板。</h2>
-          <p>我们不是卖完套餐就不管了。每位奥克兰客户都能获得基于其行业、竞争对手和客户搜索行为的专属策略--每个月都会重新审查和调整。</p>
+          <h2>SEO要围绕你的业务来做，不能只套模板。</h2>
+          <p>我们不是卖完套餐就不管。每个客户的行业、竞争对手和客户搜索习惯都不一样，所以策略也要按实际情况调整。</p>
           <ul class="seo-about-list">
-            <li>合作前免费审核，无需承担任何义务</li>
-            <li>无合同锁定--留下来是因为真的有效</li>
-            <li>月度报告清晰易懂，无技术术语</li>
-            <li>奥克兰本地知识，而非海外外包团队</li>
-            <li>以真实询盘而非仅仅排名数字衡量成果</li>
+            <li>合作前先做免费审核</li>
+            <li>不靠长期合同锁住客户</li>
+            <li>月度报告清楚易懂，少讲术语</li>
+            <li>奥克兰本地团队，也服务全新西兰</li>
+            <li>看排名，也看电话、表单和真实询盘</li>
           </ul>
           <a href="/zh/website-designer-auckland/" class="seo-about-btn">预约免费SEO审核 →</a>
         </div>
@@ -346,7 +402,7 @@ const faqs = [
         <div class="seo-pkg">
           <h3>权威SEO</h3>
           <p class="seo-price">起价$2,500<span class="seo-period">/月</span></p>
-          <p class="seo-pkg-desc">适合高度竞争的细分市场--在您的行业类别中占据搜索主导地位。</p>
+          <p class="seo-pkg-desc">适合竞争很强的行业，需要更系统地做内容、技术SEO和权威信号。</p>
           <ul class="seo-pkg-list">
             <li>包含成长SEO全部内容</li>
             <li>内容策略与支柱页面</li>
@@ -373,8 +429,8 @@ const faqs = [
   <div class="container seo-team-card-wrap">
     <div class="seo-team-card">
       <div class="seo-team-stats">
-        <p class="seo-team-eyebrow">您的SEO背后的团队</p>
-        <h2>数据驱动。专注奥克兰。结果负责。</h2>
+        <p class="seo-team-eyebrow">你SEO背后的团队</p>
+        <h2>看数据，也看真实询盘。</h2>
         <div class="seo-team-nums">
           <div class="stn-item">
             <span class="stn-num">50+</span>
@@ -392,7 +448,7 @@ const faqs = [
         <a href="/zh/website-designer-auckland/" class="seo-team-btn">预约免费SEO审核 →</a>
       </div>
       <div class="seo-team-img-wrap">
-        <Image src={about3Img} alt="Kiwi Web Design团队为奥克兰客户分析SEO数据" width={800} height={540} class="seo-team-img" />
+        <Image src={about3Img} alt="Kiwi Web Design团队为奥克兰客户分析SEO数据" width={800} height={540} class="seo-team-img" loading="eager" decoding="async" />
       </div>
     </div>
   </div>
@@ -427,7 +483,7 @@ const faqs = [
         <a href="/zh/ai-seo-for-auckland-small-businesses/" class="rps-link">AI SEO &amp; GEO</a>
         <a href="/zh/google-ads/" class="rps-link">Google广告</a>
         <a href="/analytics-reporting-for-auckland-small-business-websites/" class="rps-link">数据分析与报告</a>
-        <a href="/wordpress-seo-optimisation/" class="rps-link">WordPress SEO</a>
+        <a href="/website-copywriting-auckland/" class="rps-link">网站内容优化</a>
         <a href="/zh/small-business-website-design-auckland/" class="rps-link">网页设计服务</a>
       </div>
     </div>
@@ -435,8 +491,8 @@ const faqs = [
 
   <CTABanner
     variant="yellow"
-    title="准备好提升排名、获取更多询盘了吗？"
-    subtitle="预约免费SEO审核--我们将准确告诉您是什么制约了您的网站。奥克兰可面谈，全新西兰可线上合作。"
+    title="想知道你的网站为什么排不上去？"
+    subtitle="预约一次免费SEO审核，我们会告诉你问题在哪里，以及哪些地方最值得先做。奥克兰可面谈，全新西兰可远程合作。"
     ctaPrimary={{ text: "预约免费SEO审核", href: "/zh/website-designer-auckland/" }}
     ctaSecondary={{ text: "查看网页设计服务", href: "/zh/small-business-website-design-auckland/" }}
   />
@@ -444,6 +500,108 @@ const faqs = [
 </Layout>
 
 <style>
+  /* Premium SEO visuals */
+  .seo-visual-intro {
+    background: linear-gradient(180deg, #fff 0%, var(--kwd-cream) 100%);
+    padding: 3rem 0 4rem;
+  }
+  .seo-visual-intro-grid,
+  .seo-report-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+    gap: 2rem;
+    align-items: stretch;
+  }
+  .seo-hero-media,
+  .seo-report-media {
+    margin: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    min-height: 360px;
+    box-shadow: 0 22px 70px rgba(44,41,39,0.16);
+    border: 1px solid rgba(44,41,39,0.08);
+    background: #fff;
+  }
+  .seo-hero-media-img,
+  .seo-report-img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    display: block;
+  }
+  .seo-visual-panel {
+    background: var(--kwd-dark);
+    color: #fff;
+    border-radius: 18px;
+    padding: clamp(1.75rem, 3vw, 2.6rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 22px 60px rgba(44,41,39,0.16);
+  }
+  .seo-panel-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin: 0 0 0.85rem;
+  }
+  .seo-visual-panel h2,
+  .seo-report-copy h2 {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.35rem, 2.4vw, 2rem);
+    line-height: 1.18;
+    margin: 0 0 1rem;
+  }
+  .seo-visual-panel h2 { color: #fff; }
+  .seo-report-copy h2 { color: var(--kwd-dark); }
+  .seo-visual-panel p,
+  .seo-report-copy p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin: 0 0 1.4rem;
+  }
+  .seo-visual-panel p { color: rgba(255,255,255,0.7); }
+  .seo-report-copy p { color: var(--kwd-brown); }
+  .seo-panel-points {
+    display: grid;
+    gap: 0.65rem;
+    margin-top: 0.25rem;
+  }
+  .seo-panel-points span {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.88);
+  }
+  .seo-panel-points span::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--kwd-yellow);
+    box-shadow: 0 0 0 4px rgba(244,199,94,0.12);
+    flex: 0 0 auto;
+  }
+  .seo-report-section {
+    background: var(--kwd-cream);
+  }
+  .seo-report-grid {
+    grid-template-columns: minmax(320px, 0.75fr) minmax(0, 1.25fr);
+    align-items: center;
+  }
+  .seo-report-copy {
+    background: #fff;
+    border-radius: 18px;
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+    border: 1px solid rgba(44,41,39,0.08);
+    box-shadow: 0 16px 48px rgba(44,41,39,0.08);
+  }
+
   /* ── About split section ── */
   .seo-about-section { background: var(--kwd-cream); }
   .seo-about-split {
@@ -456,7 +614,7 @@ const faqs = [
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 16px 48px rgba(0,0,0,0.12);
-    aspect-ratio: 4/5;
+    aspect-ratio: 4/3;
   }
   .seo-about-img {
     width: 100%;
@@ -681,6 +839,12 @@ const faqs = [
   .rps-link:hover { background: #e8e7db; }
 
   @media (max-width: 900px) {
+    .seo-visual-intro-grid,
+    .seo-report-grid {
+      grid-template-columns: 1fr;
+    }
+    .seo-report-copy { order: 2; }
+    .seo-report-media { order: 1; }
     .seo-statbar-inner { justify-content: flex-start; gap: 1.5rem; }
     .ssb-sep { display: none; }
     .seo-results { grid-template-columns: repeat(2, 1fr); }
