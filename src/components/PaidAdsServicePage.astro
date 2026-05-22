@@ -1,0 +1,829 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Icon from './Icon.astro';
+import heroImage from '../assets/general/Auckland-CBD.jpg';
+import systemImage from '../assets/services/analytics-reporting-auckland-small-business-websites.jpg';
+
+interface LinkItem {
+  text: string;
+  href: string;
+}
+
+interface ServiceItem {
+  icon: string;
+  title: string;
+  desc: string;
+  href?: string;
+  label?: string;
+  items?: string[];
+}
+
+interface Props {
+  lang?: string;
+  title: string;
+  description: string;
+  canonicalURL: string;
+  alternateUrl: string;
+  schema: Record<string, unknown>;
+  eyebrow: string;
+  h1: string;
+  subtitle: string;
+  badgeText: string;
+  primaryCta: LinkItem;
+  secondaryCta: LinkItem;
+  proof: string[];
+  snippetLabel: string;
+  snippet: string;
+  introEyebrow: string;
+  introTitle: string;
+  introText: string;
+  channels: ServiceItem[];
+  featureEyebrow: string;
+  featureTitle: string;
+  featureText: string;
+  features: ServiceItem[];
+  processEyebrow: string;
+  processTitle: string;
+  processText: string;
+  process: ServiceItem[];
+  pricing: {
+    eyebrow: string;
+    title: string;
+    setupLabel: string;
+    setupPrice: string;
+    monthlyLabel: string;
+    monthlyPrice: string;
+    note: string;
+    items: string[];
+  };
+  faqs: { q: string; a: string }[];
+  relatedLabel: string;
+  related: LinkItem[];
+  finalCta: {
+    title: string;
+    subtitle: string;
+    primaryText: string;
+    primaryHref: string;
+    secondaryText: string;
+    secondaryHref: string;
+  };
+}
+
+const {
+  lang = 'en-NZ',
+  title,
+  description,
+  canonicalURL,
+  alternateUrl,
+  schema,
+  eyebrow,
+  h1,
+  subtitle,
+  badgeText,
+  primaryCta,
+  secondaryCta,
+  proof,
+  snippetLabel,
+  snippet,
+  introEyebrow,
+  introTitle,
+  introText,
+  channels,
+  featureEyebrow,
+  featureTitle,
+  featureText,
+  features,
+  processEyebrow,
+  processTitle,
+  processText,
+  process,
+  pricing,
+  faqs,
+  relatedLabel,
+  related,
+  finalCta,
+} = Astro.props;
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonicalURL={canonicalURL}
+  alternateUrl={alternateUrl}
+  lang={lang}
+  schema={schema}
+>
+  <section class="paid-hero">
+    <div class="paid-shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{eyebrow}</p>
+        <h1>{h1}</h1>
+        <p class="hero-subtitle">{subtitle}</p>
+        <div class="hero-actions">
+          <a href={primaryCta.href} class="btn-primary">{primaryCta.text}</a>
+          <a href={secondaryCta.href} class="btn-secondary">{secondaryCta.text}</a>
+        </div>
+        <div class="proof-row" aria-label="Service proof points">
+          {proof.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+
+      <div class="hero-media" aria-label={badgeText}>
+        <Image src={heroImage} alt={badgeText} width={900} height={700} class="hero-img" loading="eager" />
+        <div class="media-panel">
+          <span>{badgeText}</span>
+          <strong>{pricing.monthlyPrice}</strong>
+          <small>{pricing.monthlyLabel}</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="answer-strip">
+    <div class="paid-shell answer-inner">
+      <span>{snippetLabel}</span>
+      <p>{snippet}</p>
+    </div>
+  </section>
+
+  <section class="paid-section">
+    <div class="paid-shell split-intro">
+      <div>
+        <p class="eyebrow">{introEyebrow}</p>
+        <h2>{introTitle}</h2>
+      </div>
+      <p>{introText}</p>
+    </div>
+
+    <div class="paid-shell channel-grid">
+      {channels.map((channel) => (
+        <article class="channel-panel">
+          <div class="channel-head">
+            <span class="icon-wrap"><Icon name={channel.icon} size={25} /></span>
+            <h3>{channel.title}</h3>
+          </div>
+          <p>{channel.desc}</p>
+          {channel.items && (
+            <ul>
+              {channel.items.map((item) => <li>{item}</li>)}
+            </ul>
+          )}
+          {channel.href && <a href={channel.href}>{channel.label}</a>}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="paid-section cream">
+    <div class="paid-shell capability-grid">
+      <div class="feature-copy">
+        <p class="eyebrow">{featureEyebrow}</p>
+        <h2>{featureTitle}</h2>
+        <p>{featureText}</p>
+      </div>
+      <div class="feature-list">
+        {features.map((feature) => (
+          <article>
+            <span class="icon-wrap small"><Icon name={feature.icon} size={21} /></span>
+            <div>
+              <h3>{feature.title}</h3>
+              <p>{feature.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="paid-section">
+    <div class="paid-shell process-grid">
+      <div>
+        <p class="eyebrow">{processEyebrow}</p>
+        <h2>{processTitle}</h2>
+        <p>{processText}</p>
+        <Image src={systemImage} alt={processTitle} width={760} height={520} class="process-img" loading="lazy" />
+      </div>
+      <div class="steps">
+        {process.map((step, index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="paid-section pricing-band">
+    <div class="paid-shell pricing-grid">
+      <div>
+        <p class="eyebrow">{pricing.eyebrow}</p>
+        <h2>{pricing.title}</h2>
+        <p>{pricing.note}</p>
+      </div>
+      <div class="price-panel">
+        <div class="price-row">
+          <span>{pricing.setupLabel}</span>
+          <strong>{pricing.setupPrice}</strong>
+        </div>
+        <div class="price-row">
+          <span>{pricing.monthlyLabel}</span>
+          <strong>{pricing.monthlyPrice}</strong>
+        </div>
+        <ul>
+          {pricing.items.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="paid-section">
+    <div class="paid-shell faq-grid">
+      {faqs.map((faq) => (
+        <details>
+          <summary>{faq.q}</summary>
+          <p>{faq.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="related-strip">
+    <div class="paid-shell related-inner">
+      <p>{relatedLabel}</p>
+      <div>
+        {related.map((item) => <a href={item.href}>{item.text}</a>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="paid-shell final-inner">
+      <div>
+        <h2>{finalCta.title}</h2>
+        <p>{finalCta.subtitle}</p>
+      </div>
+      <div class="hero-actions">
+        <a href={finalCta.primaryHref} class="btn-primary">{finalCta.primaryText}</a>
+        <a href={finalCta.secondaryHref} class="btn-secondary light">{finalCta.secondaryText}</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  :global(body) {
+    background: #fbfaf5;
+  }
+
+  .paid-shell {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+  }
+
+  .paid-hero {
+    padding: clamp(72px, 9vw, 128px) 0 clamp(54px, 7vw, 88px);
+    background:
+      radial-gradient(circle at 78% 18%, rgba(247, 196, 57, 0.22), transparent 28%),
+      linear-gradient(135deg, #17150f 0%, #2a2518 55%, #16140f 100%);
+    color: #fbfaf5;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
+    gap: clamp(34px, 6vw, 72px);
+    align-items: center;
+  }
+
+  .eyebrow {
+    margin: 0 0 14px;
+    color: #c4971e;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .hero-copy h1,
+  .paid-section h2,
+  .final-cta h2 {
+    margin: 0;
+    font-family: var(--font-serif, Georgia, serif);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 0.98;
+  }
+
+  .hero-copy h1 {
+    max-width: 760px;
+    font-size: clamp(3.1rem, 7.8vw, 6.9rem);
+  }
+
+  .hero-subtitle {
+    max-width: 650px;
+    margin: 24px 0 0;
+    color: rgba(251, 250, 245, 0.82);
+    font-size: clamp(1.08rem, 1.7vw, 1.28rem);
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 22px;
+    border-radius: 6px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+  }
+
+  .btn-primary {
+    background: #f7c439;
+    color: #17150f;
+  }
+
+  .btn-secondary {
+    border: 1px solid rgba(251, 250, 245, 0.28);
+    color: #fbfaf5;
+  }
+
+  .btn-secondary.light {
+    border-color: rgba(251, 250, 245, 0.42);
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+  }
+
+  .proof-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .proof-row span {
+    border: 1px solid rgba(251, 250, 245, 0.18);
+    border-radius: 999px;
+    padding: 8px 12px;
+    color: rgba(251, 250, 245, 0.76);
+    font-size: 0.9rem;
+  }
+
+  .hero-media {
+    position: relative;
+    min-height: 520px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(251, 250, 245, 0.16);
+    box-shadow: 0 32px 88px rgba(0, 0, 0, 0.34);
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+    filter: saturate(0.82) contrast(1.06);
+  }
+
+  .hero-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(23, 21, 15, 0.05), rgba(23, 21, 15, 0.66));
+  }
+
+  .media-panel {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1;
+    display: grid;
+    gap: 5px;
+    border-radius: 8px;
+    border: 1px solid rgba(251, 250, 245, 0.2);
+    background: rgba(23, 21, 15, 0.72);
+    padding: 20px;
+    backdrop-filter: blur(12px);
+  }
+
+  .media-panel span,
+  .media-panel small {
+    color: rgba(251, 250, 245, 0.72);
+  }
+
+  .media-panel strong {
+    font-size: clamp(1.9rem, 3vw, 2.7rem);
+    line-height: 1;
+  }
+
+  .answer-strip {
+    background: #f7c439;
+    color: #17150f;
+  }
+
+  .answer-inner {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 34px;
+    padding: 24px 0;
+    align-items: center;
+  }
+
+  .answer-inner span {
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .answer-inner p {
+    margin: 0;
+    max-width: 820px;
+    font-weight: 700;
+    line-height: 1.55;
+  }
+
+  .paid-section {
+    padding: clamp(68px, 9vw, 112px) 0;
+    background: #fbfaf5;
+    color: #17150f;
+  }
+
+  .paid-section.cream {
+    background: #f2efe4;
+  }
+
+  .split-intro,
+  .capability-grid,
+  .process-grid,
+  .pricing-grid,
+  .final-inner {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(28px, 6vw, 76px);
+    align-items: start;
+  }
+
+  .paid-section h2,
+  .final-cta h2 {
+    font-size: clamp(2.4rem, 5vw, 4.8rem);
+  }
+
+  .split-intro p:last-child,
+  .feature-copy p,
+  .process-grid > div > p,
+  .pricing-grid > div > p,
+  .final-cta p {
+    margin: 0;
+    color: #5f594b;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 34px;
+  }
+
+  .channel-panel {
+    border: 1px solid rgba(23, 21, 15, 0.12);
+    border-radius: 8px;
+    background: #fffdf7;
+    padding: clamp(24px, 3vw, 34px);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  }
+
+  .channel-panel:hover {
+    transform: translateY(-4px);
+    border-color: rgba(196, 151, 30, 0.45);
+    box-shadow: 0 20px 46px rgba(23, 21, 15, 0.08);
+  }
+
+  .channel-head {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+    border-radius: 8px;
+    background: #17150f;
+    color: #f7c439;
+  }
+
+  .icon-wrap.small {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .channel-panel h3,
+  .feature-list h3,
+  .steps h3 {
+    margin: 0;
+    font-size: 1.35rem;
+    letter-spacing: 0;
+  }
+
+  .channel-panel p {
+    margin: 18px 0 0;
+    color: #5f594b;
+    line-height: 1.7;
+  }
+
+  .channel-panel ul,
+  .price-panel ul {
+    display: grid;
+    gap: 10px;
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .channel-panel li,
+  .price-panel li {
+    position: relative;
+    padding-left: 18px;
+    color: #3f3a31;
+    line-height: 1.55;
+  }
+
+  .channel-panel li::before,
+  .price-panel li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.68em;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #c4971e;
+  }
+
+  .channel-panel a {
+    display: inline-flex;
+    margin-top: 24px;
+    color: #17150f;
+    font-weight: 900;
+    text-decoration-color: rgba(196, 151, 30, 0.5);
+    text-underline-offset: 4px;
+  }
+
+  .feature-copy {
+    position: sticky;
+    top: 110px;
+  }
+
+  .feature-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .feature-list article {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 16px;
+    padding: 20px;
+    border: 1px solid rgba(23, 21, 15, 0.1);
+    border-radius: 8px;
+    background: rgba(251, 250, 245, 0.72);
+  }
+
+  .feature-list p,
+  .steps p,
+  .faq-grid p {
+    margin: 7px 0 0;
+    color: #5f594b;
+    line-height: 1.65;
+  }
+
+  .process-img {
+    width: 100%;
+    margin-top: 28px;
+    border-radius: 8px;
+    border: 1px solid rgba(23, 21, 15, 0.1);
+    object-fit: cover;
+    box-shadow: 0 24px 70px rgba(23, 21, 15, 0.1);
+  }
+
+  .steps {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid rgba(23, 21, 15, 0.14);
+  }
+
+  .steps article {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 22px;
+    padding: 26px 0;
+    border-bottom: 1px solid rgba(23, 21, 15, 0.14);
+  }
+
+  .steps span {
+    color: #c4971e;
+    font-weight: 900;
+  }
+
+  .pricing-band {
+    background: #17150f;
+    color: #fbfaf5;
+  }
+
+  .pricing-band .eyebrow {
+    color: #f7c439;
+  }
+
+  .pricing-band p {
+    color: rgba(251, 250, 245, 0.72) !important;
+  }
+
+  .price-panel {
+    border: 1px solid rgba(251, 250, 245, 0.16);
+    border-radius: 8px;
+    background: rgba(251, 250, 245, 0.06);
+    padding: clamp(24px, 4vw, 42px);
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 22px;
+    padding: 0 0 22px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid rgba(251, 250, 245, 0.14);
+  }
+
+  .price-row span {
+    color: rgba(251, 250, 245, 0.72);
+  }
+
+  .price-row strong {
+    font-size: clamp(1.7rem, 3.5vw, 3rem);
+    white-space: nowrap;
+  }
+
+  .price-panel li {
+    color: rgba(251, 250, 245, 0.82);
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .faq-grid details {
+    border: 1px solid rgba(23, 21, 15, 0.12);
+    border-radius: 8px;
+    background: #fffdf7;
+    padding: 22px;
+  }
+
+  .faq-grid summary {
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 1.05rem;
+  }
+
+  .related-strip {
+    padding: 28px 0;
+    background: #f2efe4;
+    border-top: 1px solid rgba(23, 21, 15, 0.08);
+    border-bottom: 1px solid rgba(23, 21, 15, 0.08);
+  }
+
+  .related-inner {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .related-inner p {
+    margin: 0;
+    color: #7a705f;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .related-inner div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+
+  .related-inner a {
+    border-radius: 999px;
+    border: 1px solid rgba(23, 21, 15, 0.12);
+    padding: 9px 13px;
+    color: #17150f;
+    font-weight: 800;
+    text-decoration: none;
+    background: #fbfaf5;
+  }
+
+  .final-cta {
+    padding: clamp(58px, 8vw, 96px) 0;
+    background: #2f4a3a;
+    color: #fbfaf5;
+  }
+
+  .final-inner {
+    align-items: center;
+  }
+
+  .final-cta p {
+    color: rgba(251, 250, 245, 0.78) !important;
+    margin-top: 18px;
+  }
+
+  @media (max-width: 920px) {
+    .hero-grid,
+    .split-intro,
+    .capability-grid,
+    .process-grid,
+    .pricing-grid,
+    .final-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-media,
+    .hero-img {
+      min-height: 420px;
+    }
+
+    .feature-copy {
+      position: static;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .paid-shell {
+      width: min(100% - 24px, 1120px);
+    }
+
+    .paid-hero {
+      padding-top: 58px;
+    }
+
+    .answer-inner,
+    .channel-grid,
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .answer-inner {
+      gap: 10px;
+    }
+
+    .related-inner {
+      display: grid;
+      justify-content: start;
+    }
+
+    .related-inner div {
+      justify-content: flex-start;
+    }
+
+    .hero-actions {
+      width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+    }
+  }
+</style>

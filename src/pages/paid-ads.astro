@@ -1,0 +1,148 @@
+---
+import PaidAdsServicePage from '../components/PaidAdsServicePage.astro';
+
+const canonicalURL = 'https://www.kiwiwebdesign.co.nz/paid-ads/';
+const alternateUrl = 'https://www.kiwiwebdesign.co.nz/zh/paid-ads/';
+const title = 'Paid Ads Auckland | Google Ads & Meta Ads Management | Kiwi Web Design';
+const description = 'Paid ads management for Auckland small businesses. Kiwi Web Design plans Google Ads and Meta Ads campaigns with landing pages, tracking, and clear reporting.';
+
+const faqs = [
+  { q: 'Do I need Google Ads, Meta Ads, or both?', a: 'It depends on demand. Google Ads is best when people already search for your service. Meta Ads is stronger when your offer needs visual explanation, retargeting, or demand generation.' },
+  { q: 'How much should an Auckland business spend on paid ads?', a: 'Most local service businesses should start with at least NZ$500 to NZ$1,500 per month in ad spend, separate from management fees. Competitive industries may need more.' },
+  { q: 'Can you build the landing page too?', a: 'Yes. We can connect paid ads to dedicated landing pages, website pages, forms, analytics, and conversion tracking so the campaign has a proper conversion path.' },
+  { q: 'Do you charge a percentage of ad spend?', a: 'No. Our paid ads management starts from a flat monthly fee, so your costs stay clear as your campaign grows.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${canonicalURL}#webpage`,
+      url: canonicalURL,
+      name: title,
+      description,
+      inLanguage: 'en-NZ',
+      isPartOf: { '@id': 'https://www.kiwiwebdesign.co.nz/#website' },
+      breadcrumb: { '@id': `${canonicalURL}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonicalURL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.kiwiwebdesign.co.nz/' },
+        { '@type': 'ListItem', position: 2, name: 'Paid Ads', item: canonicalURL },
+      ],
+    },
+    {
+      '@type': 'Service',
+      '@id': `${canonicalURL}#service`,
+      name: 'Paid Ads Management Auckland',
+      serviceType: 'Paid Ads Management',
+      provider: { '@type': 'LocalBusiness', name: 'Kiwi Web Design', url: 'https://www.kiwiwebdesign.co.nz/' },
+      areaServed: { '@type': 'City', name: 'Auckland' },
+      description,
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Paid Ads Services',
+        itemListElement: [
+          { '@type': 'Offer', name: 'Paid Ads Campaign Setup', price: '499', priceCurrency: 'NZD', url: canonicalURL },
+          { '@type': 'Offer', name: 'Paid Ads Monthly Management', price: '399', priceCurrency: 'NZD', url: canonicalURL },
+        ],
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${canonicalURL}#faq`,
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: { '@type': 'Answer', text: faq.a },
+      })),
+    },
+  ],
+};
+---
+
+<PaidAdsServicePage
+  title={title}
+  description={description}
+  canonicalURL={canonicalURL}
+  alternateUrl={alternateUrl}
+  schema={schema}
+  eyebrow="Paid Ads Auckland"
+  h1="Paid ads that turn attention into enquiries."
+  subtitle="Google Ads captures buyers already searching. Meta Ads creates demand on Facebook and Instagram. We connect both to landing pages, tracking, and reporting so your budget has a clear job to do."
+  badgeText="Google Ads and Meta Ads management for Auckland businesses"
+  primaryCta={{ text: 'Book a free ads consultation', href: '/website-designer-auckland/' }}
+  secondaryCta={{ text: 'View Meta Ads', href: '/meta-ads/' }}
+  proof={['Flat-fee management', 'Setup from NZ$499', 'Auckland focused', 'Tracking included']}
+  snippetLabel="Quick answer"
+  snippet="Kiwi Web Design manages paid ads for Auckland small businesses across Google, Facebook, and Instagram, with campaign setup from NZ$499 and ongoing management from NZ$399/month plus ad spend."
+  introEyebrow="Channel strategy"
+  introTitle="One system for search demand and social demand."
+  introText="Paid ads work best when the platform, message, landing page, and tracking are planned together. We help you choose the right channel mix instead of spending blindly across every platform."
+  channels={[
+    {
+      icon: 'Search',
+      title: 'Google Ads',
+      desc: 'Capture people already searching for your service on Google with clear campaign structure and conversion tracking.',
+      href: '/google-ads/',
+      label: 'Explore Google Ads',
+      items: ['Search campaigns', 'Local service intent', 'Remarketing', 'Conversion tracking'],
+    },
+    {
+      icon: 'Megaphone',
+      title: 'Meta Ads',
+      desc: 'Use Facebook and Instagram to introduce offers, test creative, retarget warm audiences, and generate local leads.',
+      href: '/meta-ads/',
+      label: 'Explore Meta Ads',
+      items: ['Facebook and Instagram ads', 'Creative testing', 'Lead forms', 'Retargeting'],
+    },
+  ]}
+  featureEyebrow="What we manage"
+  featureTitle="The campaign is only one part of the result."
+  featureText="A good paid ads setup connects traffic to a strong offer, a conversion-focused page, and simple reporting. That is where most small business campaigns either start working or start wasting money."
+  features={[
+    { icon: 'Globe', title: 'Landing pages that convert', desc: 'Ads point to pages built for clarity, trust, speed, and enquiry generation.' },
+    { icon: 'BadgeDollarSign', title: 'Conversion tracking', desc: 'Calls, forms, and key actions are tracked so optimisation is based on real business outcomes.' },
+    { icon: 'Sparkles', title: 'Creative and keyword testing', desc: 'We test messages, search terms, visuals, and calls to action to find what moves prospects.' },
+    { icon: 'ClipboardCheck', title: 'Clear monthly reporting', desc: 'You see what was spent, what happened, what changed, and what we recommend next.' },
+  ]}
+  processEyebrow="Our process"
+  processTitle="Clear setup, controlled launch, steady optimisation."
+  processText="The goal is not to make paid ads complicated. The goal is to make every dollar accountable, then improve the parts that matter most."
+  process={[
+    { icon: 'Search', title: 'Market and offer audit', desc: 'We review your service, competitors, current website, search demand, and realistic budget range.' },
+    { icon: 'Map', title: 'Campaign plan', desc: 'We choose the right platform mix, targeting, landing pages, tracking events, and launch priorities.' },
+    { icon: 'Zap', title: 'Tracking and launch', desc: 'Campaigns go live only after the conversion path, forms, analytics, and audience setup are checked.' },
+    { icon: 'ClipboardCheck', title: 'Optimise and report', desc: 'We improve campaigns using actual data, not guesswork, and keep reporting simple enough to act on.' },
+  ]}
+  pricing={{
+    eyebrow: 'Pricing',
+    title: 'Flat fees, clear scope, ad spend separate.',
+    setupLabel: 'Campaign setup from',
+    setupPrice: 'NZ$499',
+    monthlyLabel: 'Management from',
+    monthlyPrice: 'NZ$399/mo',
+    note: 'Ad spend is paid directly to the advertising platform. We do not hide fees inside your media budget.',
+    items: ['Google Ads or Meta Ads setup', 'Landing page and tracking recommendations', 'Monthly optimisation', 'Plain-English reporting'],
+  }}
+  faqs={faqs}
+  relatedLabel="Related services"
+  related={[
+    { text: 'Google Ads Auckland', href: '/google-ads/' },
+    { text: 'Meta Ads Auckland', href: '/meta-ads/' },
+    { text: 'Landing Pages', href: '/landing-pages-funnels-on-wordpress/' },
+    { text: 'Analytics Reporting', href: '/analytics-reporting-for-auckland-small-business-websites/' },
+    { text: 'SEO Auckland', href: '/affordable-seo-auckland/' },
+  ]}
+  finalCta={{
+    title: 'Want a paid ads plan before you spend more?',
+    subtitle: 'Book a free consultation and we will tell you which channel makes sense, what budget is realistic, and what needs fixing before launch.',
+    primaryText: 'Book a free consultation',
+    primaryHref: '/website-designer-auckland/',
+    secondaryText: 'Call 021 039 6580',
+    secondaryHref: 'tel:+64210396580',
+  }}
+/>

@@ -1,0 +1,141 @@
+---
+import PaidAdsServicePage from '../components/PaidAdsServicePage.astro';
+
+const canonicalURL = 'https://www.kiwiwebdesign.co.nz/meta-ads/';
+const alternateUrl = 'https://www.kiwiwebdesign.co.nz/zh/meta-ads/';
+const title = 'Meta Ads Auckland | Facebook & Instagram Ads Management | Kiwi Web Design';
+const description = 'Meta Ads management for Auckland small businesses. Facebook and Instagram campaigns for local lead generation, retargeting, creative testing, and conversion tracking.';
+
+const faqs = [
+  { q: 'Are Meta Ads good for local service businesses?', a: 'Yes, when the offer is clear and the creative is tested properly. Meta Ads are especially useful for awareness, retargeting, promotions, and lead generation on Facebook and Instagram.' },
+  { q: 'What is the difference between Meta Ads and Google Ads?', a: 'Google Ads captures active search demand. Meta Ads creates and nurtures demand through visual creative, audience targeting, retargeting, and lead forms.' },
+  { q: 'Can you run Facebook and Instagram ads together?', a: 'Yes. Meta Ads can run across Facebook, Instagram, Messenger, and Meta placements from one campaign setup, with creative adapted to the channel.' },
+  { q: 'Do I need a landing page for Meta Ads?', a: 'For many service businesses, yes. Lead forms can work, but a focused landing page often gives prospects more trust and gives you better context before they enquire.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${canonicalURL}#webpage`,
+      url: canonicalURL,
+      name: title,
+      description,
+      inLanguage: 'en-NZ',
+      isPartOf: { '@id': 'https://www.kiwiwebdesign.co.nz/#website' },
+      breadcrumb: { '@id': `${canonicalURL}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonicalURL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.kiwiwebdesign.co.nz/' },
+        { '@type': 'ListItem', position: 2, name: 'Paid Ads', item: 'https://www.kiwiwebdesign.co.nz/paid-ads/' },
+        { '@type': 'ListItem', position: 3, name: 'Meta Ads', item: canonicalURL },
+      ],
+    },
+    {
+      '@type': 'Service',
+      '@id': `${canonicalURL}#service`,
+      name: 'Meta Ads Management Auckland',
+      serviceType: 'Facebook and Instagram Ads Management',
+      provider: { '@type': 'LocalBusiness', name: 'Kiwi Web Design', url: 'https://www.kiwiwebdesign.co.nz/' },
+      areaServed: { '@type': 'City', name: 'Auckland' },
+      description,
+      offers: [
+        { '@type': 'Offer', name: 'Meta Ads Campaign Setup', price: '499', priceCurrency: 'NZD', url: canonicalURL },
+        { '@type': 'Offer', name: 'Meta Ads Monthly Management', price: '399', priceCurrency: 'NZD', url: canonicalURL },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${canonicalURL}#faq`,
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: { '@type': 'Answer', text: faq.a },
+      })),
+    },
+  ],
+};
+---
+
+<PaidAdsServicePage
+  title={title}
+  description={description}
+  canonicalURL={canonicalURL}
+  alternateUrl={alternateUrl}
+  schema={schema}
+  eyebrow="Meta Ads Auckland"
+  h1="Meta Ads for local leads, not just likes."
+  subtitle="We plan Facebook and Instagram campaigns that introduce your offer, retarget warm visitors, and send prospects to pages designed to convert."
+  badgeText="Facebook and Instagram ads for Auckland small businesses"
+  primaryCta={{ text: 'Book a free Meta Ads consultation', href: '/website-designer-auckland/' }}
+  secondaryCta={{ text: 'View Paid Ads', href: '/paid-ads/' }}
+  proof={['Facebook and Instagram', 'Creative testing', 'Retargeting', 'Lead generation']}
+  snippetLabel="Quick answer"
+  snippet="Kiwi Web Design manages Meta Ads for Auckland small businesses, including Facebook ads, Instagram ads, creative testing, retargeting, landing pages, lead forms, and conversion tracking."
+  introEyebrow="Meta strategy"
+  introTitle="Reach people before they search, then bring them back when they are ready."
+  introText="Meta Ads can make your business visible to the right local audience, but the real work is offer clarity, creative testing, landing-page quality, and follow-up. We build campaigns around that full path."
+  channels={[
+    {
+      icon: 'Megaphone',
+      title: 'Demand generation',
+      desc: 'Introduce your offer to local audiences with Facebook and Instagram creative that explains why your service matters.',
+      items: ['Awareness campaigns', 'Offer testing', 'Audience targeting', 'Visual creative'],
+    },
+    {
+      icon: 'Link2',
+      title: 'Lead conversion',
+      desc: 'Send warm prospects to landing pages or lead forms that make the next step clear and easy.',
+      items: ['Lead forms', 'Landing pages', 'Retargeting', 'Conversion tracking'],
+    },
+  ]}
+  featureEyebrow="What we manage"
+  featureTitle="Meta Ads need strong creative and a clean conversion path."
+  featureText="Most underperforming Facebook and Instagram campaigns suffer from vague messaging, weak landing pages, or missing tracking. We tighten each layer so campaign data becomes useful."
+  features={[
+    { icon: 'Sparkles', title: 'Creative testing', desc: 'We test angles, headlines, visuals, and calls to action instead of relying on one generic ad.' },
+    { icon: 'Smartphone', title: 'Mobile-first campaigns', desc: 'Meta traffic is heavily mobile, so the campaign and landing experience need to feel fast and natural on phones.' },
+    { icon: 'BadgeDollarSign', title: 'Lead tracking', desc: 'Forms, calls, and enquiry actions are tracked so the campaign can optimise toward real outcomes.' },
+    { icon: 'Search', title: 'Search and social mix', desc: 'We can pair Meta Ads with Google Ads when your market needs both immediate demand capture and broader awareness.' },
+  ]}
+  processEyebrow="Our process"
+  processTitle="From offer to creative to tracked enquiries."
+  processText="We keep the setup practical and measurable, with a clear launch plan before ad spend starts moving."
+  process={[
+    { icon: 'ClipboardCheck', title: 'Offer review', desc: 'We define the service, audience, proof, objections, and strongest reason to enquire.' },
+    { icon: 'Sparkles', title: 'Creative plan', desc: 'We map the first round of creative angles and decide what needs to be tested.' },
+    { icon: 'Globe', title: 'Landing path setup', desc: 'We connect ads to a suitable page, lead form, or website flow and check tracking.' },
+    { icon: 'BadgeDollarSign', title: 'Optimisation', desc: 'We review results, shift budget to stronger creative, and improve the conversion path over time.' },
+  ]}
+  pricing={{
+    eyebrow: 'Pricing',
+    title: 'Meta Ads management without confusing retainers.',
+    setupLabel: 'Campaign setup from',
+    setupPrice: 'NZ$499',
+    monthlyLabel: 'Management from',
+    monthlyPrice: 'NZ$399/mo',
+    note: 'Ad spend is separate and paid to Meta. We recommend starting with a controlled test budget before scaling.',
+    items: ['Facebook and Instagram campaign setup', 'Creative angle planning', 'Meta Pixel and conversion tracking guidance', 'Monthly optimisation and reporting'],
+  }}
+  faqs={faqs}
+  relatedLabel="Related services"
+  related={[
+    { text: 'Paid Ads Auckland', href: '/paid-ads/' },
+    { text: 'Google Ads Auckland', href: '/google-ads/' },
+    { text: 'Landing Pages', href: '/landing-pages-funnels-on-wordpress/' },
+    { text: 'Website Copywriting', href: '/website-copywriting-auckland/' },
+    { text: 'Analytics Reporting', href: '/analytics-reporting-for-auckland-small-business-websites/' },
+  ]}
+  finalCta={{
+    title: 'Thinking about Facebook or Instagram ads?',
+    subtitle: 'Start with a clear plan. We will help you decide whether Meta Ads fit your offer, budget, and current website setup.',
+    primaryText: 'Book a free consultation',
+    primaryHref: '/website-designer-auckland/',
+    secondaryText: 'Call 021 039 6580',
+    secondaryHref: 'tel:+64210396580',
+  }}
+/>

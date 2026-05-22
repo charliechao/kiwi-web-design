@@ -1,0 +1,142 @@
+---
+import PaidAdsServicePage from '../../components/PaidAdsServicePage.astro';
+
+const canonicalURL = 'https://www.kiwiwebdesign.co.nz/zh/meta-ads/';
+const alternateUrl = 'https://www.kiwiwebdesign.co.nz/meta-ads/';
+const title = 'Meta广告服务奥克兰 | Facebook与Instagram广告 | Kiwi Web Design';
+const description = 'Kiwi Web Design 为奥克兰中小企业提供 Meta广告服务，包括 Facebook广告、Instagram广告、素材测试、再营销、落地页和转化追踪。';
+
+const faqs = [
+  { q: 'Meta广告适合本地服务行业吗？', a: '适合，但前提是服务卖点清楚，广告素材愿意测试。Meta广告适合建立认知、推广活动、再营销和获取本地询盘。' },
+  { q: 'Meta广告和 Google广告有什么区别？', a: 'Google广告主要承接已经搜索的人。Meta广告通过图片、视频、受众和再营销，在 Facebook 和 Instagram 上创造需求和建立信任。' },
+  { q: '可以同时投放 Facebook 和 Instagram 吗？', a: '可以。Meta广告可以从同一个广告账户覆盖 Facebook、Instagram、Messenger 等位置，并根据不同版位调整素材。' },
+  { q: 'Meta广告一定需要落地页吗？', a: '不一定，但大多数服务型企业会受益于更清晰的落地页。Lead Form 可以快速收集信息，落地页更适合建立信任和解释服务。' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${canonicalURL}#webpage`,
+      url: canonicalURL,
+      name: title,
+      description,
+      inLanguage: 'zh-Hans',
+      isPartOf: { '@id': 'https://www.kiwiwebdesign.co.nz/#website' },
+      breadcrumb: { '@id': `${canonicalURL}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonicalURL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: '中文首页', item: 'https://www.kiwiwebdesign.co.nz/zh/' },
+        { '@type': 'ListItem', position: 2, name: '付费广告', item: 'https://www.kiwiwebdesign.co.nz/zh/paid-ads/' },
+        { '@type': 'ListItem', position: 3, name: 'Meta广告', item: canonicalURL },
+      ],
+    },
+    {
+      '@type': 'Service',
+      '@id': `${canonicalURL}#service`,
+      name: '奥克兰 Meta广告服务',
+      serviceType: 'Facebook and Instagram Ads Management',
+      provider: { '@type': 'LocalBusiness', name: 'Kiwi Web Design', url: 'https://www.kiwiwebdesign.co.nz/' },
+      areaServed: { '@type': 'City', name: 'Auckland' },
+      description,
+      offers: [
+        { '@type': 'Offer', name: 'Meta广告设置', price: '499', priceCurrency: 'NZD', url: canonicalURL },
+        { '@type': 'Offer', name: 'Meta广告每月管理', price: '399', priceCurrency: 'NZD', url: canonicalURL },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${canonicalURL}#faq`,
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: { '@type': 'Answer', text: faq.a },
+      })),
+    },
+  ],
+};
+---
+
+<PaidAdsServicePage
+  lang="zh-Hans"
+  title={title}
+  description={description}
+  canonicalURL={canonicalURL}
+  alternateUrl={alternateUrl}
+  schema={schema}
+  eyebrow="奥克兰 Meta广告"
+  h1="Meta广告，不只是曝光，而是为了带来询盘。"
+  subtitle="我们为 Facebook 和 Instagram 规划广告，用清晰卖点、素材测试、再营销和落地页，把潜在客户从看到你变成愿意联系你。"
+  badgeText="Facebook 与 Instagram 广告服务"
+  primaryCta={{ text: '预约免费 Meta广告咨询', href: '/zh/website-designer-auckland/' }}
+  secondaryCta={{ text: '查看付费广告服务', href: '/zh/paid-ads/' }}
+  proof={['Facebook 和 Instagram', '素材测试', '再营销', '本地询盘']}
+  snippetLabel="快速答案"
+  snippet="Kiwi Web Design 为奥克兰中小企业管理 Meta广告，包括 Facebook广告、Instagram广告、广告素材测试、再营销、Lead Form、落地页和转化追踪。"
+  introEyebrow="Meta广告策略"
+  introTitle="在客户搜索之前先被看见，在客户犹豫时再次出现。"
+  introText="Meta广告的价值不只是曝光。它可以让本地客户认识你的服务，也可以再次触达访问过网站或看过广告的人。关键是卖点、素材、页面和追踪要一起规划。"
+  channels={[
+    {
+      icon: 'Megaphone',
+      title: '创造需求',
+      desc: '通过 Facebook 和 Instagram 的图片、视频和文案，把你的服务介绍给更合适的本地受众。',
+      items: ['品牌认知', '活动推广', '受众测试', '视觉素材'],
+    },
+    {
+      icon: 'Link2',
+      title: '获取询盘',
+      desc: '把有兴趣的人导向 Lead Form 或落地页，让下一步变得清楚简单。',
+      items: ['Lead Form 表单', '落地页', '再营销', '转化追踪'],
+    },
+  ]}
+  featureEyebrow="我们管理什么"
+  featureTitle="Meta广告需要好素材，也需要好的转化路径。"
+  featureText="很多 Facebook 和 Instagram 广告效果不好，不是因为平台不行，而是信息太模糊、页面不够清楚、或者没有正确追踪。我们会把这些层面一起梳理。"
+  features={[
+    { icon: 'Sparkles', title: '广告素材测试', desc: '测试不同角度、标题、图片和行动按钮，而不是只投放一条普通广告。' },
+    { icon: 'Smartphone', title: '移动端优先', desc: 'Meta流量大部分来自手机，广告和落地页必须在手机上快速、清晰、自然。' },
+    { icon: 'BadgeDollarSign', title: '询盘追踪', desc: '尽量追踪表单、电话和关键点击，让优化围绕真实结果。' },
+    { icon: 'Search', title: '搜索与社交配合', desc: '如果行业适合，也可以把 Meta广告 与 Google广告 组合，兼顾需求创造和需求承接。' },
+  ]}
+  processEyebrow="我们的流程"
+  processTitle="从卖点到素材，再到可追踪的询盘。"
+  processText="上线前先把方向想清楚，上线后用数据持续调整。这样预算更可控，也更容易知道下一步该做什么。"
+  process={[
+    { icon: 'ClipboardCheck', title: '服务与卖点评估', desc: '确认你的服务、目标客户、信任证明、常见顾虑和最强转化理由。' },
+    { icon: 'Sparkles', title: '素材方向规划', desc: '规划第一轮广告角度，决定需要测试哪些图片、视频、文案和行动按钮。' },
+    { icon: 'Globe', title: '落地路径设置', desc: '连接合适的落地页、Lead Form 或网站页面，并检查追踪。' },
+    { icon: 'BadgeDollarSign', title: '优化与扩展', desc: '根据结果调整素材和预算，把更多预算放到更有效的方向。' },
+  ]}
+  pricing={{
+    eyebrow: '价格',
+    title: 'Meta广告管理，费用清楚，不用复杂合约。',
+    setupLabel: '广告设置费从',
+    setupPrice: 'NZ$499',
+    monthlyLabel: '每月管理费从',
+    monthlyPrice: 'NZ$399/月',
+    note: '广告预算另算，并直接支付给 Meta。我们建议先用可控预算测试，再根据数据扩大。',
+    items: ['Facebook 和 Instagram 广告设置', '广告素材方向规划', 'Meta Pixel 与转化追踪建议', '每月优化与报告'],
+  }}
+  faqs={faqs}
+  relatedLabel="相关服务"
+  related={[
+    { text: '付费广告服务', href: '/zh/paid-ads/' },
+    { text: 'Google广告服务', href: '/zh/google-ads/' },
+    { text: '奥克兰SEO', href: '/zh/seo-auckland/' },
+    { text: '奥克兰网页设计', href: '/zh/small-business-website-design-auckland/' },
+    { text: '免费咨询', href: '/zh/website-designer-auckland/' },
+  ]}
+  finalCta={{
+    title: '正在考虑 Facebook 或 Instagram 广告？',
+    subtitle: '先做一次免费咨询。我们会判断你的服务、预算和网站是否适合先投放 Meta广告，以及上线前需要补齐什么。',
+    primaryText: '预约免费咨询',
+    primaryHref: '/zh/website-designer-auckland/',
+    secondaryText: '电话 021 039 6580',
+    secondaryHref: 'tel:+64210396580',
+  }}
+/>

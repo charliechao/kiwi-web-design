@@ -1,0 +1,149 @@
+---
+import PaidAdsServicePage from '../../components/PaidAdsServicePage.astro';
+
+const canonicalURL = 'https://www.kiwiwebdesign.co.nz/zh/paid-ads/';
+const alternateUrl = 'https://www.kiwiwebdesign.co.nz/paid-ads/';
+const title = '奥克兰付费广告服务 | Google广告与Meta广告 | Kiwi Web Design';
+const description = 'Kiwi Web Design 为奥克兰华人中小企业提供付费广告服务，包括 Google广告、Meta广告、落地页、转化追踪和清晰报告。';
+
+const faqs = [
+  { q: '我应该做 Google广告 还是 Meta广告？', a: '如果客户已经在 Google 搜索你的服务，Google广告通常更直接。如果你的服务需要通过内容、图片和反复触达来建立兴趣，Meta广告会更适合。很多本地服务行业可以两者配合。' },
+  { q: '广告预算需要多少？', a: '大多数奥克兰本地服务企业建议从每月 NZ$500 到 NZ$1,500 的广告预算开始测试。竞争激烈的行业可能需要更高预算。' },
+  { q: '你们可以一起做落地页吗？', a: '可以。我们可以把广告连接到更适合转化的页面、表单、电话按钮和追踪系统，让广告不只是带来点击，而是带来询盘。' },
+  { q: '你们按广告花费比例收费吗？', a: '不按比例收费。我们的广告管理从固定月费开始，广告预算直接支付给广告平台，费用更清晰。' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${canonicalURL}#webpage`,
+      url: canonicalURL,
+      name: title,
+      description,
+      inLanguage: 'zh-Hans',
+      isPartOf: { '@id': 'https://www.kiwiwebdesign.co.nz/#website' },
+      breadcrumb: { '@id': `${canonicalURL}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonicalURL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: '中文首页', item: 'https://www.kiwiwebdesign.co.nz/zh/' },
+        { '@type': 'ListItem', position: 2, name: '付费广告', item: canonicalURL },
+      ],
+    },
+    {
+      '@type': 'Service',
+      '@id': `${canonicalURL}#service`,
+      name: '奥克兰付费广告服务',
+      serviceType: 'Paid Ads Management',
+      provider: { '@type': 'LocalBusiness', name: 'Kiwi Web Design', url: 'https://www.kiwiwebdesign.co.nz/' },
+      areaServed: { '@type': 'City', name: 'Auckland' },
+      description,
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: '付费广告服务',
+        itemListElement: [
+          { '@type': 'Offer', name: '广告账户与广告系列设置', price: '499', priceCurrency: 'NZD', url: canonicalURL },
+          { '@type': 'Offer', name: '每月广告管理', price: '399', priceCurrency: 'NZD', url: canonicalURL },
+        ],
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${canonicalURL}#faq`,
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: { '@type': 'Answer', text: faq.a },
+      })),
+    },
+  ],
+};
+---
+
+<PaidAdsServicePage
+  lang="zh-Hans"
+  title={title}
+  description={description}
+  canonicalURL={canonicalURL}
+  alternateUrl={alternateUrl}
+  schema={schema}
+  eyebrow="奥克兰付费广告"
+  h1="让广告预算真正带来询盘。"
+  subtitle="Google广告负责承接正在搜索的客户，Meta广告负责在 Facebook 和 Instagram 上创造需求。我们把广告、落地页和转化追踪放在同一套系统里管理。"
+  badgeText="为奥克兰中小企业管理 Google广告 与 Meta广告"
+  primaryCta={{ text: '预约免费咨询', href: '/zh/website-designer-auckland/' }}
+  secondaryCta={{ text: '查看 Meta广告', href: '/zh/meta-ads/' }}
+  proof={['固定管理费', '设置费 NZ$499 起', '奥克兰本地服务', '包含转化追踪']}
+  snippetLabel="快速答案"
+  snippet="Kiwi Web Design 为奥克兰中小企业管理 Google广告、Facebook广告和 Instagram广告，广告设置费从 NZ$499 起，每月管理费从 NZ$399 起，广告预算另算。"
+  introEyebrow="渠道策略"
+  introTitle="把搜索需求和社交需求放在同一个增长系统里。"
+  introText="付费广告不是只开一个广告账户。平台选择、广告文案、落地页、表单、电话按钮和转化追踪都需要一起规划，预算才更容易产生结果。"
+  channels={[
+    {
+      icon: 'Search',
+      title: 'Google广告',
+      desc: '当客户已经在 Google 搜索你的服务时，用清晰的广告结构和转化追踪承接高意向流量。',
+      href: '/zh/google-ads/',
+      label: '查看 Google广告',
+      items: ['搜索广告', '本地服务需求', '再营销', '转化追踪'],
+    },
+    {
+      icon: 'Megaphone',
+      title: 'Meta广告',
+      desc: '通过 Facebook 和 Instagram 介绍你的服务、测试创意、再次触达潜在客户，并推动询盘。',
+      href: '/zh/meta-ads/',
+      label: '查看 Meta广告',
+      items: ['Facebook 和 Instagram 广告', '广告素材测试', 'Lead Form 表单', '再营销'],
+    },
+  ]}
+  featureEyebrow="我们管理什么"
+  featureTitle="广告效果不只取决于广告本身。"
+  featureText="很多广告预算浪费在错误页面、模糊信息和没有追踪的表单上。我们会把广告、页面和数据连起来，让优化有依据。"
+  features={[
+    { icon: 'Globe', title: '更适合转化的落地页', desc: '广告流量会被导向更清晰、更快速、更能建立信任的页面。' },
+    { icon: 'BadgeDollarSign', title: '转化追踪', desc: '电话、表单和重要点击都尽量追踪，让广告优化围绕真实询盘。' },
+    { icon: 'Sparkles', title: '文案与素材测试', desc: '测试不同卖点、关键词、图片和行动按钮，找出更有效的方向。' },
+    { icon: 'ClipboardCheck', title: '清晰报告', desc: '每月说明花费、结果、调整内容和下一步建议，不用复杂术语包装。' },
+  ]}
+  processEyebrow="我们的流程"
+  processTitle="先规划，再上线，然后持续优化。"
+  processText="我们的目标不是把广告讲得很复杂，而是让每一笔预算都有清楚目的，并持续改善最影响询盘的部分。"
+  process={[
+    { icon: 'Search', title: '市场与服务评估', desc: '分析你的服务、竞争对手、网站现状、搜索需求和合理预算范围。' },
+    { icon: 'Map', title: '广告方案', desc: '确定平台组合、受众、落地页、转化事件和上线顺序。' },
+    { icon: 'Zap', title: '追踪与上线', desc: '在广告上线前检查页面、表单、分析工具和转化路径。' },
+    { icon: 'ClipboardCheck', title: '优化与报告', desc: '根据真实数据调整广告，不靠猜测，同时保持报告清楚可读。' },
+  ]}
+  pricing={{
+    eyebrow: '价格',
+    title: '固定费用，范围清楚，广告预算另算。',
+    setupLabel: '广告设置费从',
+    setupPrice: 'NZ$499',
+    monthlyLabel: '每月管理费从',
+    monthlyPrice: 'NZ$399/月',
+    note: '广告预算直接支付给广告平台。我们不会把管理费藏在你的广告预算里。',
+    items: ['Google广告或Meta广告设置', '落地页和追踪建议', '每月优化', '中文沟通与清晰报告'],
+  }}
+  faqs={faqs}
+  relatedLabel="相关服务"
+  related={[
+    { text: 'Google广告服务', href: '/zh/google-ads/' },
+    { text: 'Meta广告服务', href: '/zh/meta-ads/' },
+    { text: '奥克兰SEO', href: '/zh/seo-auckland/' },
+    { text: '奥克兰网页设计', href: '/zh/small-business-website-design-auckland/' },
+    { text: '免费咨询', href: '/zh/website-designer-auckland/' },
+  ]}
+  finalCta={{
+    title: '想先知道广告是否适合你？',
+    subtitle: '预约一次免费咨询，我们会根据你的行业、预算和网站情况，告诉你应该先做 Google广告、Meta广告，还是先修正网站和落地页。',
+    primaryText: '预约免费咨询',
+    primaryHref: '/zh/website-designer-auckland/',
+    secondaryText: '电话 021 039 6580',
+    secondaryHref: 'tel:+64210396580',
+  }}
+/>

@@ -2,7 +2,7 @@
   "_meta": {
     "generated": "2026-03-19",
     "purpose": "Internal linking reference for Kiwi Web Design Astro site",
-    "totalPages": 70,
+    "totalPages": 74,
     "totalBlogPosts": 36,
     "notes": "Hub pages should receive the most inbound internal links. Use suggestedAnchorText when linking TO this page."
   },
@@ -12,7 +12,9 @@
     "pages": [
       "/small-business-website-design-auckland/",
       "/seo-auckland/",
+      "/paid-ads/",
       "/google-ads/",
+      "/meta-ads/",
       "/wordpress-website-design-auckland/",
       "/local-seo-for-auckland-small-businesses/",
       "/ecommerce-website-auckland/",
@@ -49,6 +51,15 @@
       "suggestedAnchorText": ["SEO services Auckland", "SEO Auckland", "search engine optimisation Auckland", "local SEO services", "Auckland SEO"]
     },
     {
+      "url": "/paid-ads/",
+      "title": "Paid Ads Auckland | Google Ads & Meta Ads Management | Kiwi Web Design",
+      "topic": "paid ads Auckland, Google Ads, Meta Ads, PPC management",
+      "summary": "Paid ads service hub covering Google Ads and Meta Ads management, landing pages, conversion tracking, and reporting for Auckland small businesses",
+      "type": "service",
+      "isHub": true,
+      "suggestedAnchorText": ["paid ads Auckland", "paid ads management", "Google Ads and Meta Ads", "PPC Auckland", "paid advertising Auckland"]
+    },
+    {
       "url": "/google-ads/",
       "title": "Google Ads Management Auckland | Google Ads for Small Business | Kiwi Web Design",
       "topic": "Google Ads Auckland, PPC management",
@@ -56,6 +67,15 @@
       "type": "service",
       "isHub": true,
       "suggestedAnchorText": ["Google Ads Auckland", "Google Ads management", "PPC Auckland", "paid search Auckland"]
+    },
+    {
+      "url": "/meta-ads/",
+      "title": "Meta Ads Auckland | Facebook & Instagram Ads Management | Kiwi Web Design",
+      "topic": "Meta Ads Auckland, Facebook ads, Instagram ads",
+      "summary": "Meta Ads service page covering Facebook and Instagram advertising, creative testing, retargeting, lead forms, landing pages, and conversion tracking",
+      "type": "service",
+      "isHub": true,
+      "suggestedAnchorText": ["Meta Ads Auckland", "Facebook ads Auckland", "Instagram ads Auckland", "Meta Ads management", "social media advertising Auckland"]
     },
     {
       "url": "/wordpress-website-design-auckland/",
@@ -633,6 +653,24 @@
       "type": "lang",
       "isHub": false,
       "suggestedAnchorText": ["中文服务", "Chinese language page"]
+    },
+    {
+      "url": "/zh/paid-ads/",
+      "title": "奥克兰付费广告服务 | Google广告与Meta广告 | Kiwi Web Design",
+      "topic": "奥克兰付费广告, Google广告, Meta广告",
+      "summary": "Simplified Chinese paid ads service page covering Google Ads, Meta Ads, landing pages, tracking, pricing, and free consultation",
+      "type": "service",
+      "isHub": false,
+      "suggestedAnchorText": ["奥克兰付费广告", "Google广告与Meta广告", "付费广告服务", "中文广告服务"]
+    },
+    {
+      "url": "/zh/meta-ads/",
+      "title": "Meta广告服务奥克兰 | Facebook与Instagram广告 | Kiwi Web Design",
+      "topic": "奥克兰 Meta广告, Facebook广告, Instagram广告",
+      "summary": "Simplified Chinese Meta Ads page for Auckland businesses covering Facebook and Instagram campaigns, creative testing, retargeting, lead forms, and tracking",
+      "type": "service",
+      "isHub": false,
+      "suggestedAnchorText": ["Meta广告服务", "Facebook广告奥克兰", "Instagram广告奥克兰", "奥克兰Meta广告"]
     },
     {
       "url": "/affordable-web-design-auckland/",
