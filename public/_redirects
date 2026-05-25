@@ -1,2 +1,0 @@
-# Redirect Cloudflare Pages subdomain to production domain
-https://kiwi-web-design.pages.dev/* https://www.kiwiwebdesign.co.nz/:splat 301!
