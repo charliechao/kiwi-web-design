@@ -992,24 +992,24 @@ const schema = [
     const paymentCheckbox = calculator.querySelector("#kwd-add-payment");
 
     const baseCosts = {
-      "one-page": 1400,
-      "small-business": 3500,
-      ecommerce: 8500,
-      custom: 15000
+      "one-page": 899,
+      "small-business": 2490,
+      ecommerce: 3890,
+      custom: 7900
     };
 
     const addOnCosts = {
-      bookings:    { label: "Online bookings/appointments", amount: 600 },
-      blog:        { label: "Blog setup", amount: 400 },
-      seo:         { label: "Basic on-page SEO setup", amount: 700 },
-      payment:     { label: "Payment gateway setup", amount: 500 },
-      integration: { label: "Third-party integration", amount: 1200 }
+      bookings:    { label: "Online bookings/appointments", amount: 350 },
+      blog:        { label: "Blog setup", amount: 250 },
+      seo:         { label: "Basic on-page SEO setup", amount: 400 },
+      payment:     { label: "Payment gateway setup", amount: 300 },
+      integration: { label: "Third-party integration", amount: 700 }
     };
 
     const hostingCosts = {
       none:    { label: "Hosting/Care: None", amount: 0 },
       basic:   { label: "Hosting/Care: Basic plan", amount: 300 },
-      business:{ label: "Hosting/Care: Business plan", amount: 708 },
+      business:{ label: "Hosting/Care: Business plan", amount: 588 },
       managed: { label: "Hosting/Care: Managed plan", amount: 1188 }
     };
 
@@ -1053,8 +1053,9 @@ const schema = [
 
       if (siteType === "one-page" || siteType === "small-business") {
         const pages = Math.max(0, parseInt(pagesInput.value, 10) || 0);
-        const extraPages = Math.max(0, pages - 5);
-        const pageCost = extraPages * 250;
+        const includedPages = siteType === "one-page" ? 1 : 5;
+        const extraPages = Math.max(0, pages - includedPages);
+        const pageCost = extraPages * 180;
         if (pageCost > 0) {
           subtotal += pageCost;
           breakdown.push({ label: "Additional pages (" + extraPages + ")", amount: pageCost });
@@ -1063,11 +1064,11 @@ const schema = [
 
       if (siteType === "ecommerce") {
         const products = Math.max(0, parseInt(productsInput.value, 10) || 0);
-        const productBrackets = Math.max(0, Math.ceil(products / 50) - 1);
-        const productCost = productBrackets * 1200;
+        const productBrackets = Math.max(0, Math.ceil((products - 20) / 20));
+        const productCost = productBrackets * 350;
         if (productCost > 0) {
           subtotal += productCost;
-          breakdown.push({ label: "Extra product batches (" + productBrackets + " \u00d7 50)", amount: productCost });
+          breakdown.push({ label: "Extra product batches (" + productBrackets + " \u00d7 20)", amount: productCost });
         }
       }
 
