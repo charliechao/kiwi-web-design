@@ -1196,6 +1196,10 @@ const schema = [
             if (data.success) {
               showQFStatus("Thanks! Charlie will be in touch within 2 business hours.", false);
               calcForm.reset();
+              if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submit', { form_id: 'kwd-calc-contact-form', form_name: 'website_cost_calculator' });
+                gtag('event', 'generate_lead', { form_id: 'kwd-calc-contact-form', form_name: 'website_cost_calculator' });
+              }
             } else {
               showQFStatus(data.message || "Something went wrong — please try again.", true);
             }
