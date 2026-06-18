@@ -1,0 +1,7 @@
+allowBuilds:
+  esbuild: false
+  sharp: false
+  workerd: false
+minimumReleaseAgeExclude:
+  - '@astrojs/cloudflare@13.7.0'
+  - astro@6.4.5

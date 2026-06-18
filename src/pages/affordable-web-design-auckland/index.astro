@@ -90,7 +90,7 @@ function formatDate(date: Date) {
         {posts.map((post: CollectionEntry<'blog'>) => (
           <article class="post-card">
             {post.data.image && (
-              <a href={`/affordable-web-design-auckland/${post.slug}/`} tabindex="-1" aria-hidden="true">
+              <a href={`/affordable-web-design-auckland/${post.id}/`} tabindex="-1" aria-hidden="true">
                 <img
                   src={post.data.image}
                   alt={post.data.title}
@@ -106,10 +106,10 @@ function formatDate(date: Date) {
                 {formatDate(post.data.pubDate)}
               </time>
               <h2 class="post-title">
-                <a href={`/affordable-web-design-auckland/${post.slug}/`}>{post.data.title}</a>
+                <a href={`/affordable-web-design-auckland/${post.id}/`}>{post.data.title}</a>
               </h2>
               <p class="post-desc">{post.data.description}</p>
-              <a href={`/affordable-web-design-auckland/${post.slug}/`} class="read-more">Read More →</a>
+              <a href={`/affordable-web-design-auckland/${post.id}/`} class="read-more">Read More →</a>
             </div>
           </article>
         ))}
