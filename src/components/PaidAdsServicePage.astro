@@ -24,7 +24,7 @@ interface Props {
   title: string;
   description: string;
   canonicalURL: string;
-  alternateUrl: string;
+  alternateUrl?: string;
   schema: Record<string, unknown>;
   eyebrow: string;
   h1: string;
@@ -58,6 +58,7 @@ interface Props {
     items: string[];
   };
   faqs: { q: string; a: string }[];
+  sourceLinks?: LinkItem[];
   relatedLabel: string;
   related: LinkItem[];
   finalCta: {
@@ -100,6 +101,7 @@ const {
   process,
   pricing,
   faqs,
+  sourceLinks = [],
   relatedLabel,
   related,
   finalCta,
@@ -252,6 +254,17 @@ const {
     </div>
   </section>
 
+
+  {sourceLinks.length > 0 && (
+    <section class="source-strip">
+      <div class="paid-shell source-inner">
+        <p>Research sources</p>
+        <div>
+          {sourceLinks.map((item) => <a href={item.href} target="_blank" rel="noopener noreferrer">{item.text}</a>)}
+        </div>
+      </div>
+    </section>
+  )}
   <section class="related-strip">
     <div class="paid-shell related-inner">
       <p>{relatedLabel}</p>
@@ -721,14 +734,22 @@ const {
     border-bottom: 1px solid rgba(23, 21, 15, 0.08);
   }
 
-  .related-inner {
+  .source-strip {
+    padding: 28px 0;
+    background: #fffdf7;
+    border-top: 1px solid rgba(23, 21, 15, 0.08);
+  }
+
+  .related-inner,
+  .source-inner {
     display: flex;
     gap: 18px;
     align-items: center;
     justify-content: space-between;
   }
 
-  .related-inner p {
+  .related-inner p,
+  .source-inner p {
     margin: 0;
     color: #7a705f;
     font-size: 0.78rem;
@@ -737,14 +758,16 @@ const {
     text-transform: uppercase;
   }
 
-  .related-inner div {
+  .related-inner div,
+  .source-inner div {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: flex-end;
   }
 
-  .related-inner a {
+  .related-inner a,
+  .source-inner a {
     border-radius: 999px;
     border: 1px solid rgba(23, 21, 15, 0.12);
     padding: 9px 13px;
@@ -808,12 +831,14 @@ const {
       gap: 10px;
     }
 
-    .related-inner {
+    .related-inner,
+    .source-inner {
       display: grid;
       justify-content: start;
     }
 
-    .related-inner div {
+    .related-inner div,
+    .source-inner div {
       justify-content: flex-start;
     }
 

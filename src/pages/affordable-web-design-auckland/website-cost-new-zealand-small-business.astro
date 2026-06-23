@@ -1234,9 +1234,10 @@ const schema = [
               showQFStatus("Thanks! Charlie will be in touch within 2 business hours.", false);
               calcForm.reset();
               updateEstimate();
-              if (typeof gtag !== 'undefined') {
-                gtag('event', 'form_submit', { form_id: 'kwd-calc-contact-form', form_name: 'website_cost_calculator' });
-                gtag('event', 'generate_lead', { form_id: 'kwd-calc-contact-form', form_name: 'website_cost_calculator' });
+              const trackEvent = window.gtag;
+              if (typeof trackEvent === 'function') {
+                trackEvent('event', 'form_submit', { form_id: 'kwd-calc-contact-form', form_name: 'website_cost_calculator' });
+                trackEvent('event', 'generate_lead', { form_id: 'kwd-calc-contact-form', form_name: 'website_cost_calculator' });
               }
             } else {
               showQFStatus(data.message || "Something went wrong — please try again.", true);

@@ -2,7 +2,7 @@
   "_meta": {
     "generated": "2026-03-19",
     "purpose": "Internal linking reference for Kiwi Web Design Astro site",
-    "totalPages": 74,
+    "totalPages": 75,
     "totalBlogPosts": 36,
     "notes": "Hub pages should receive the most inbound internal links. Use suggestedAnchorText when linking TO this page."
   },
@@ -15,6 +15,7 @@
       "/paid-ads/",
       "/google-ads/",
       "/meta-ads/",
+      "/chatgpt-ads/",
       "/wordpress-website-design-auckland/",
       "/local-seo-for-auckland-small-businesses/",
       "/ecommerce-website-auckland/",
@@ -76,6 +77,15 @@
       "type": "service",
       "isHub": true,
       "suggestedAnchorText": ["Meta Ads Auckland", "Facebook ads Auckland", "Instagram ads Auckland", "Meta Ads management", "social media advertising Auckland"]
+    },
+    {
+      "url": "/chatgpt-ads/",
+      "title": "ChatGPT Ads NZ | AI Search Advertising for Auckland Businesses",
+      "topic": "ChatGPT Ads NZ, AI search advertising, ChatGPT Search visibility",
+      "summary": "ChatGPT Ads and AI search advertising readiness page for New Zealand businesses covering ChatGPT Search visibility, answer-ready landing pages, schema, tracking, and conversion paths",
+      "type": "service",
+      "isHub": true,
+      "suggestedAnchorText": ["ChatGPT Ads NZ", "ChatGPT Ads", "AI search advertising", "ChatGPT Search visibility", "AI ads New Zealand"]
     },
     {
       "url": "/wordpress-website-design-auckland/",
