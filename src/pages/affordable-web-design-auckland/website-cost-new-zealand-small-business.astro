@@ -303,6 +303,14 @@ const schema = [
             <input type="hidden" name="subject" value="Website cost enquiry from KWD calculator" />
             <input type="hidden" name="from_name" value="KWD Cost Calculator" />
             <input type="hidden" id="kwd-calc-estimate-field" name="calculator_estimate" value="" />
+            <input type="hidden" id="kwd-calc-site-type-field" name="site_type" value="" />
+            <input type="hidden" id="kwd-calc-pages-field" name="page_count" value="" />
+            <input type="hidden" id="kwd-calc-products-field" name="product_count" value="" />
+            <input type="hidden" id="kwd-calc-addons-field" name="selected_add_ons" value="" />
+            <input type="hidden" id="kwd-calc-hosting-field" name="hosting_care" value="" />
+            <input type="hidden" id="kwd-calc-gst-field" name="gst_included" value="" />
+            <input type="hidden" id="kwd-calc-breakdown-field" name="calculator_breakdown" value="" />
+            <input type="hidden" id="kwd-calc-total-field" name="calculator_total" value="" />
             <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
             <div class="kwd-qf-fields">
               <input class="kwd-qf-input" type="text" id="kwd-qf-name" name="name" placeholder="Your name *" required autocomplete="name" />
@@ -1013,6 +1021,13 @@ const schema = [
       managed: { label: "Hosting/Care: Managed plan", amount: 1188 }
     };
 
+    const siteTypeLabels = {
+      "one-page": "One-page - landing or campaign page",
+      "small-business": "Small Business (5-8 pages) - typical NZ service site",
+      ecommerce: "Small eCommerce - up to 100 products",
+      custom: "Custom/Complex - integrations, bespoke UX"
+    };
+
     function formatCurrency(value) {
       return "$" + Math.round(value).toLocaleString("en-NZ");
     }
@@ -1022,6 +1037,11 @@ const schema = [
         if (radio.checked) return radio.value;
       }
       return "small-business";
+    }
+
+    function setHiddenField(id, value) {
+      const field = document.getElementById(id);
+      if (field) field.value = value;
     }
 
     function updateVisibility() {
@@ -1046,6 +1066,9 @@ const schema = [
       const siteType = getSiteType();
       let subtotal = 0;
       const breakdown = [];
+      const selectedAddOns = [];
+      let pageCount = "Not applicable";
+      let productCount = "Not applicable";
 
       const base = baseCosts[siteType] || 0;
       subtotal += base;
@@ -1053,6 +1076,7 @@ const schema = [
 
       if (siteType === "one-page" || siteType === "small-business") {
         const pages = Math.max(0, parseInt(pagesInput.value, 10) || 0);
+        pageCount = String(pages);
         const includedPages = siteType === "one-page" ? 1 : 5;
         const extraPages = Math.max(0, pages - includedPages);
         const pageCost = extraPages * 180;
@@ -1064,6 +1088,7 @@ const schema = [
 
       if (siteType === "ecommerce") {
         const products = Math.max(0, parseInt(productsInput.value, 10) || 0);
+        productCount = String(products);
         const productBrackets = Math.max(0, Math.ceil((products - 20) / 20));
         const productCost = productBrackets * 350;
         if (productCost > 0) {
@@ -1077,6 +1102,7 @@ const schema = [
           const cost = addOnCosts[checkbox.value];
           if (cost) {
             subtotal += cost.amount;
+            selectedAddOns.push(cost.label);
             breakdown.push({ label: cost.label, amount: cost.amount });
           }
         }
@@ -1097,10 +1123,19 @@ const schema = [
       totalValue.textContent = formatCurrency(total);
 
       // Keep the hidden form field in sync so submissions include the current estimate
-      var estimateField = document.getElementById("kwd-calc-estimate-field");
-      if (estimateField) {
-        estimateField.value = "Site type: " + siteType + " | Estimate: " + formatCurrency(total) + (gstOn ? " (incl. GST)" : " (excl. GST)");
-      }
+      const totalText = formatCurrency(total) + (gstOn ? " (incl. GST)" : " (excl. GST)");
+      const breakdownText = breakdown
+        .map(function (item) { return item.label + ": " + formatCurrency(item.amount); })
+        .join("; ");
+      setHiddenField("kwd-calc-estimate-field", "Site type: " + siteType + " | Estimate: " + totalText);
+      setHiddenField("kwd-calc-site-type-field", siteTypeLabels[siteType] || siteType);
+      setHiddenField("kwd-calc-pages-field", pageCount);
+      setHiddenField("kwd-calc-products-field", productCount);
+      setHiddenField("kwd-calc-addons-field", selectedAddOns.length ? selectedAddOns.join(", ") : "None");
+      setHiddenField("kwd-calc-hosting-field", hosting ? hosting.label + " (" + formatCurrency(hosting.amount) + "/yr)" : "Not selected");
+      setHiddenField("kwd-calc-gst-field", gstOn ? "Yes" : "No");
+      setHiddenField("kwd-calc-breakdown-field", breakdownText);
+      setHiddenField("kwd-calc-total-field", totalText);
 
       breakdownList.innerHTML = breakdown
         .map(function (item) {
@@ -1183,6 +1218,8 @@ const schema = [
         qfBtn.textContent = "Sending\u2026";
         qfStatus.hidden = true;
 
+        updateEstimate();
+
         const payload = {};
         new FormData(calcForm).forEach(function (val, key) { payload[key] = val; });
 
@@ -1196,6 +1233,7 @@ const schema = [
             if (data.success) {
               showQFStatus("Thanks! Charlie will be in touch within 2 business hours.", false);
               calcForm.reset();
+              updateEstimate();
               if (typeof gtag !== 'undefined') {
                 gtag('event', 'form_submit', { form_id: 'kwd-calc-contact-form', form_name: 'website_cost_calculator' });
                 gtag('event', 'generate_lead', { form_id: 'kwd-calc-contact-form', form_name: 'website_cost_calculator' });
