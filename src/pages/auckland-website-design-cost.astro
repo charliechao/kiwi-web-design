@@ -1,0 +1,617 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.kiwiwebdesign.co.nz/how-much-does-website-design-cost-in-auckland/#article",
+      "headline": "How Much Does Website Design Cost in Auckland in 2026?",
+      "description": "Website design costs in Auckland range from NZD $1,500 to $15,000+. See a full breakdown by website type, freelancer vs agency pricing, and what affects your cost.",
+      "datePublished": "2026-06-18",
+      "dateModified": "2026-06-18",
+      "inLanguage": "en-NZ",
+      "author": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "publisher": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "mainEntityOfPage": "https://www.kiwiwebdesign.co.nz/how-much-does-website-design-cost-in-auckland/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/how-much-does-website-design-cost-in-auckland/",
+      "url": "https://www.kiwiwebdesign.co.nz/how-much-does-website-design-cost-in-auckland/",
+      "name": "How Much Does Website Design Cost in Auckland in 2026? | Kiwi Web Design",
+      "description": "Website design costs in Auckland range from NZD $1,500 to $15,000+. See a full breakdown by website type, freelancer vs agency pricing, and what affects your cost.",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/how-much-does-website-design-cost-in-auckland/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/how-much-does-website-design-cost-in-auckland/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "How Much Does Website Design Cost in Auckland in 2026?" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a small business website cost in Auckland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most small business websites in Auckland cost between NZD $1,500 and $4,000. The final price depends on the number of pages, whether you need custom design, and how much content needs to be created."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does an ecommerce website cost in Auckland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ecommerce websites generally range from NZD $5,000 to $15,000 or more. Costs increase with the number of products, required integrations, and the level of custom functionality needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to build a website in Auckland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simple websites usually take two to four weeks from kickoff to launch. Larger projects with custom features or a lot of content can take several months."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I hire a freelancer or an agency for web design in Auckland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Freelancers are a solid choice for simpler sites with a tighter budget. Agencies are better suited for larger projects that need a team, a defined process, and ongoing support after launch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are website design prices negotiable in Auckland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sometimes, particularly with freelancers. With agencies, the price usually reflects a defined scope. A better approach is to reduce the scope, launch with fewer pages, and add more later as budget allows."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "url": "https://www.kiwiwebdesign.co.nz/"
+    }
+  ]
+};
+
+const pricingTable = [
+  { type: "One-page website", cost: "NZD $500 – $1,500" },
+  { type: "Small business website", cost: "NZD $1,500 – $4,000" },
+  { type: "Professional service website", cost: "NZD $3,000 – $7,000" },
+  { type: "Ecommerce website", cost: "NZD $5,000 – $15,000+" },
+  { type: "Custom web application", cost: "NZD $10,000 – $50,000+" },
+];
+
+const faqs = [
+  {
+    q: "How much does a small business website cost in Auckland?",
+    a: "Most small business websites in Auckland cost between NZD $1,500 and $4,000. The final price depends on the number of pages, whether you need custom design, and how much content needs to be created."
+  },
+  {
+    q: "How much does an ecommerce website cost?",
+    a: "Ecommerce websites generally range from NZD $5,000 to $15,000 or more. Costs increase with the number of products, required integrations, and the level of custom functionality needed."
+  },
+  {
+    q: "How long does it take to build a website?",
+    a: "Simple websites usually take two to four weeks from kickoff to launch. Larger projects with custom features or a lot of content can take several months. Having your content and branding ready before the project starts speeds things up significantly."
+  },
+  {
+    q: "Should I hire a freelancer or an agency?",
+    a: "It depends on your budget and the complexity of your project. Freelancers are a solid choice for simpler sites with a tighter budget. Agencies are better suited for larger projects that need a team, a defined process, and ongoing support after launch."
+  },
+  {
+    q: "Are website prices negotiable?",
+    a: "Sometimes, particularly with freelancers. With agencies, the price usually reflects a defined scope. A better approach than negotiating the price down is to reduce the scope, launch with fewer pages, and add more later as budget allows."
+  },
+];
+---
+
+<Layout
+  title="How Much Does Website Design Cost in Auckland in 2026? | Kiwi Web Design"
+  description="Website design costs in Auckland range from NZD $1,500 to $15,000+. See a full breakdown by website type, freelancer vs agency pricing, and what affects your cost."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/how-much-does-website-design-cost-in-auckland/"
+  schema={schema}
+>
+
+  <!-- Article header -->
+  <section class="article-header">
+    <div class="container article-header-inner">
+      <div class="article-meta">
+        <span class="article-tag">Pricing Guide</span>
+        <span class="article-date">Updated June 2026</span>
+      </div>
+      <h1 class="article-title">How Much Does Website Design Cost in Auckland in 2026?</h1>
+      <p class="article-subtitle">
+        If you're a business owner in Auckland trying to figure out what a website will actually cost you, you're not alone. Prices vary wildly depending on who you talk to, and it's not always clear what you're paying for. This guide breaks it all down honestly so you can make a smart decision. Read more about our <a href="/small-business-website-design-auckland/" style="color: rgba(255,255,255,0.85); font-weight: 600;">web design packages</a> or learn how <a href="/affordable-seo-auckland/" style="color: rgba(255,255,255,0.85); font-weight: 600;">SEO in Auckland</a> fits into the picture.
+      </p>
+      <div class="article-criteria">
+        <span class="criteria-label">Covers:</span>
+        <span class="criteria-item">Website types</span>
+        <span class="criteria-item">Freelancer vs agency</span>
+        <span class="criteria-item">Hidden costs</span>
+        <span class="criteria-item">SEO setup</span>
+        <span class="criteria-item">How to choose</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick answer + pricing table -->
+  <section class="section">
+    <div class="container article-body">
+
+      <div class="quick-answer">
+        <p class="quick-answer-label">Quick Answer</p>
+        <p>Website design costs in Auckland in 2026 typically range from <strong>NZD $1,500 to $15,000+</strong>, depending on the complexity of the website, the number of pages, custom functionality, and whether you hire a <a href="/website-designer-auckland/">freelancer or a web design agency</a>.</p>
+      </div>
+
+      <h2>Website Design Costs in Auckland at a Glance</h2>
+      <div class="table-wrap">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Website Type</th>
+              <th>Average Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pricingTable.map(row => (
+              <tr>
+                <td>{row.type}</td>
+                <td><strong>{row.cost}</strong></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2>What Affects Website Design Costs?</h2>
+      <p>Not all websites are created equal. Here are the main factors that push prices up or down.</p>
+
+      <h3>Number of Pages</h3>
+      <p>The more pages your website requires, the more design and development work is involved. A simple five-page brochure site is a very different scope to a 30-page service website with individual landing pages for each suburb or service type.</p>
+
+      <h3>Custom Design Requirements</h3>
+      <p>Template-based websites cost less because much of the layout work is already done. Fully custom designs, where a designer starts from scratch to match your brand, take more time and expertise, and that's reflected in the price.</p>
+
+      <h3>Ecommerce Features</h3>
+      <p>Online stores add a significant layer of complexity. Expect costs to climb when your site needs:</p>
+      <ul>
+        <li>Payment gateway integration (Stripe, PayPal, etc.)</li>
+        <li>Product and inventory management</li>
+        <li>Shipping configuration for NZ couriers</li>
+        <li>Customer accounts and order tracking</li>
+      </ul>
+
+      <h3>SEO Setup</h3>
+      <p>A professionally built site should include solid SEO foundations from day one. This typically covers keyword research, meta titles and descriptions, technical SEO configuration, schema markup, and Core Web Vitals optimisation. Skipping this at the build stage means paying to fix it later. Learn more about our <a href="/affordable-seo-auckland/">affordable SEO services in Auckland</a>.</p>
+
+      <h3>Content Creation</h3>
+      <p>If you need copywriting, photography, or blog content as part of the project, budget for it separately. Many agencies offer this as an add-on, and it's worth getting right, especially if your team doesn't have the time to write it themselves.</p>
+
+      <h2>Freelancer vs Agency Pricing in Auckland</h2>
+
+      <div class="comparison-grid">
+        <div class="comparison-card">
+          <p class="comparison-type">Freelancers</p>
+          <p class="comparison-price">NZD $1,000 – $5,000</p>
+          <p class="comparison-label">Best for</p>
+          <ul>
+            <li>Startups working with a tight budget</li>
+            <li>Small businesses needing a straightforward brochure site</li>
+            <li>Owners who already have content and just need the build</li>
+          </ul>
+          <p class="comparison-note">The trade-off is that a solo freelancer may have limited availability, fewer resources for complex builds, and no team to hand things over to if something goes wrong down the track.</p>
+        </div>
+        <div class="comparison-card comparison-card--featured">
+          <p class="comparison-type">Web Design Agencies</p>
+          <p class="comparison-price">NZD $3,000 – $20,000+</p>
+          <p class="comparison-label">Best for</p>
+          <ul>
+            <li>Growing businesses that need a site built to scale</li>
+            <li>Ecommerce stores with real product volume</li>
+            <li>Projects requiring custom functionality or API integrations</li>
+            <li>Businesses that want ongoing marketing support</li>
+          </ul>
+          <p class="comparison-note">With an <a href="/small-business-website-design-auckland/">affordable web design team in Auckland</a>, you get a full team, account management, and a process that keeps the project on track.</p>
+        </div>
+      </div>
+
+      <h2>Additional Costs to Consider</h2>
+      <p>The website build itself is only part of the picture. Here's what to budget for on top of your design quote.</p>
+
+      <div class="additional-costs-grid">
+        <div class="cost-item">
+          <p class="cost-item-title">Domain Name</p>
+          <p class="cost-item-price">NZD $20–50 / year</p>
+          <p>For a <code>.co.nz</code> or <code>.com</code> domain.</p>
+        </div>
+        <div class="cost-item">
+          <p class="cost-item-title">Website Hosting</p>
+          <p class="cost-item-price">NZD $100–500 / year</p>
+          <p>Managed hosting with backups and security monitoring costs more but is worth it for business-critical sites.</p>
+        </div>
+        <div class="cost-item">
+          <p class="cost-item-title">Maintenance</p>
+          <p class="cost-item-price">NZD $50–300 / month</p>
+          <p>Plugin updates, security patches, content edits, and support. Neglecting maintenance is one of the most common reasons websites slow down or break.</p>
+        </div>
+        <div class="cost-item">
+          <p class="cost-item-title">SEO Services</p>
+          <p class="cost-item-price">From NZD $500 / month</p>
+          <p>Ongoing <a href="/affordable-seo-auckland/">SEO in Auckland</a> typically starts from $500/month and can exceed $3,000 for competitive industries. The investment compounds over time as your rankings grow.</p>
+        </div>
+      </div>
+
+      <h2>Is Cheap Website Design Worth It?</h2>
+      <p>Budget websites can work for very small businesses with minimal requirements. But they often cut corners in ways that quietly cost you more later:</p>
+      <ul>
+        <li>Weak SEO foundations mean the site never ranks</li>
+        <li>Slow loading speeds hurt user experience and Google rankings</li>
+        <li>Poor mobile performance drives visitors away</li>
+        <li>Cheap themes become hard to update or customise as you grow</li>
+      </ul>
+      <p>Investing in a professionally designed website upfront tends to pay for itself in leads generated and time saved chasing technical problems.</p>
+
+      <h2>How to Choose the Right Web Designer in Auckland</h2>
+      <p>Before signing anything, ask these questions:</p>
+      <ul>
+        <li>Can I see your portfolio, including live sites?</li>
+        <li>Do you have Google reviews from recent clients?</li>
+        <li>Have you worked with businesses in my industry?</li>
+        <li>What SEO work is included in the build?</li>
+        <li>What does ongoing support look like after launch?</li>
+        <li>Can I see examples of site speed scores for sites you've built?</li>
+      </ul>
+      <p>A good web designer will answer all of these confidently and give you references if asked.</p>
+
+      <!-- FAQ -->
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        {faqs.map(faq => (
+          <div class="faq-item">
+            <p class="faq-q">{faq.q}</p>
+            <p class="faq-a">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Final thoughts -->
+      <div class="final-thoughts">
+        <h2>Final Thoughts</h2>
+        <p>Website design costs in Auckland vary significantly depending on what you actually need. A one-page site and a custom ecommerce platform are completely different investments, and the right choice depends on your goals, your industry, and how much of your business runs through your website.</p>
+        <p>Whatever your budget, prioritise getting the foundations right: good design, fast performance, and solid SEO from day one. A site built properly from the start will serve your business far better than one that needs rebuilding in 12 months.</p>
+        <p>If you're ready to get a clear quote for your project, <a href="/website-designer-auckland/">get in touch with the team at Kiwi Web Design</a>. We work with Auckland businesses of all sizes and will give you a straight answer on what your site will cost and what you'll get for it. We can also help with <a href="/local-seo-for-auckland-small-businesses/">local SEO for Auckland small businesses</a> to make sure people can actually find your new site once it's live.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Explore our services</p>
+      <div class="rps-links">
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design Packages</a>
+        <a href="/about-us/" class="rps-link">About Us</a>
+        <a href="/affordable-seo-auckland/" class="rps-link">SEO Services</a>
+        <a href="/website-designer-auckland/" class="rps-link">Contact Us</a>
+        <a href="/faq/" class="rps-link">FAQ</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Want a straight answer on what your website will cost?"
+    subtitle="Free consultation, we'll show you exactly what we'd build for your business and give you a fixed price upfront."
+    ctaPrimary={{ text: "Work With Us", href: "/work-with-us/" }}
+    ctaSecondary={{ text: "View Our Work", href: "/testimonials-reviews/" }}
+  />
+
+</Layout>
+
+<style>
+  /* Article header */
+  .article-header {
+    background: var(--kwd-dark);
+    padding: 5rem 0 3.5rem;
+  }
+  .article-header-inner {
+    max-width: 860px;
+  }
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .article-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+  }
+  .article-date {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+  }
+  .article-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .article-subtitle {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+    max-width: 680px;
+  }
+  .article-criteria {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .criteria-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .criteria-item {
+    font-size: 0.78rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* Body */
+  .article-body {
+    max-width: 860px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .article-body h2 {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+    color: var(--kwd-dark);
+    margin: 2.5rem 0 0.75rem;
+    line-height: 1.2;
+  }
+  .article-body h3 {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.15rem;
+    color: var(--kwd-dark);
+    margin: 1.75rem 0 0.5rem;
+  }
+  .article-body p {
+    font-size: 0.9375rem;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .article-body ul {
+    margin: 0.5rem 0 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .article-body ul li {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.65;
+  }
+  .article-body a {
+    color: var(--kwd-dark);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .article-body a:hover { color: var(--kwd-brown); }
+
+  /* Quick answer */
+  .quick-answer {
+    background: #fffdf3;
+    border: 1.5px solid var(--kwd-yellow);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 2rem;
+  }
+  .quick-answer-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.5rem !important;
+  }
+  .quick-answer p:last-child { margin-bottom: 0; }
+
+  /* Pricing table */
+  .table-wrap { overflow-x: auto; margin-bottom: 2rem; }
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .pricing-table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background: var(--kwd-dark);
+    color: #fff;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .pricing-table td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    color: #444;
+    vertical-align: top;
+  }
+  .pricing-table tbody tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+
+  /* Comparison grid */
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.25rem 0 2rem;
+  }
+  .comparison-card {
+    border: 1.5px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    padding: 1.5rem;
+    background: #fff;
+  }
+  .comparison-card--featured {
+    border-color: var(--kwd-yellow);
+    background: #fffdf3;
+  }
+  .comparison-type {
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kwd-brown) !important;
+    margin-bottom: 0.25rem !important;
+  }
+  .comparison-price {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.3rem !important;
+    color: var(--kwd-dark) !important;
+    font-weight: 700;
+    margin-bottom: 0.75rem !important;
+  }
+  .comparison-label {
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kwd-brown) !important;
+    margin-bottom: 0.35rem !important;
+  }
+  .comparison-note {
+    font-size: 0.82rem !important;
+    color: #666 !important;
+    line-height: 1.6 !important;
+    margin-top: 0.75rem !important;
+  }
+
+  /* Additional costs */
+  .additional-costs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1rem 0 2rem;
+  }
+  .cost-item {
+    border: 1.5px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 1.25rem 1.4rem;
+    background: #fff;
+  }
+  .cost-item-title {
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kwd-brown) !important;
+    margin-bottom: 0.2rem !important;
+  }
+  .cost-item-price {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.15rem !important;
+    color: var(--kwd-dark) !important;
+    font-weight: 700;
+    margin-bottom: 0.5rem !important;
+  }
+  .cost-item p:last-child { font-size: 0.83rem !important; margin-bottom: 0 !important; }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 2rem;
+  }
+  .faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding: 1.1rem 0;
+  }
+  .faq-q {
+    font-weight: 700 !important;
+    color: var(--kwd-dark) !important;
+    margin-bottom: 0.4rem !important;
+  }
+  .faq-a { margin-bottom: 0 !important; }
+
+  /* Final thoughts */
+  .final-thoughts {
+    background: rgba(0,0,0,0.03);
+    border-radius: 14px;
+    padding: 1.75rem 2rem;
+    margin-top: 2rem;
+  }
+  .final-thoughts h2 {
+    margin-top: 0 !important;
+  }
+
+  /* Related strip */
+  .related-strip {
+    background: var(--kwd-cream);
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(0,0,0,0.07);
+  }
+  .rps-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.6rem;
+  }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.1);
+    color: var(--kwd-dark);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .rps-link:hover { background: #e8e7db; }
+
+  @media (max-width: 700px) {
+    .comparison-grid { grid-template-columns: 1fr; }
+    .additional-costs-grid { grid-template-columns: 1fr; }
+    .article-criteria { gap: 0.4rem; }
+  }
+</style>
