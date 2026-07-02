@@ -14,8 +14,8 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/google-ads-budget-calculator-nz/",
       "url": "https://www.kiwiwebdesign.co.nz/google-ads-budget-calculator-nz/",
-      "name": "Google Ads Budget Calculator NZ (2026) | Estimate CPC & Leads",
-      "description": "Free Google Ads budget calculator for NZ businesses. Enter your industry, location, and budget to estimate CPC, monthly clicks, leads, and break-even. No email needed.",
+      "name": "Google Ads Cost NZ Calculator (2026) | Budget, CPC & Lead Estimates",
+      "description": "Google Ads cost guide and budget calculator for NZ businesses. Estimate CPC, monthly ad spend, clicks, leads, cost per lead, and break-even point for 2026.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -24,6 +24,53 @@ const schema = {
         "@type": "SpeakableSpecification",
         "cssSelector": [".gac-snippet", ".gac-hero-facts"]
       }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.kiwiwebdesign.co.nz/google-ads-budget-calculator-nz/#article",
+      "headline": "Google Ads Cost NZ Calculator: Estimate Budget, CPC and Leads in 2026",
+      "description": "A practical New Zealand guide to Google Ads costs, monthly ad budgets, CPC ranges, cost per lead, and break-even planning for small businesses.",
+      "datePublished": "2026-07-03",
+      "dateModified": "2026-07-03",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.kiwiwebdesign.co.nz/og-image.png",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://www.kiwiwebdesign.co.nz/#charlie",
+        "name": "Charlie Chao",
+        "url": "https://www.kiwiwebdesign.co.nz/about-us/",
+        "sameAs": "https://www.linkedin.com/in/gocharlie/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+        "name": "Kiwi Web Design",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.kiwiwebdesign.co.nz/og-image.png",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      "mainEntityOfPage": "https://www.kiwiwebdesign.co.nz/google-ads-budget-calculator-nz/"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://www.kiwiwebdesign.co.nz/google-ads-budget-calculator-nz/#calculator",
+      "name": "Google Ads Budget Calculator NZ",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "url": "https://www.kiwiwebdesign.co.nz/google-ads-budget-calculator-nz/",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "NZD"
+      },
+      "creator": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" }
     },
     {
       "@type": "BreadcrumbList",
@@ -114,22 +161,54 @@ const faqs = [
   { q: "Is Google Ads worth it for small businesses in New Zealand?", a: "Yes, for most service businesses where a single job is worth $300+, Google Ads can deliver a strong ROI. The key factors are CPC in your industry, your website conversion rate, and your average job value. Use the calculator to check your break-even point: if you only need 1–2 jobs per month to cover your ad spend, Google Ads is almost certainly worth testing." },
   { q: "What's the difference between ad spend and management fees?", a: "Ad spend is the budget you pay directly to Google for clicks, this goes entirely to running your ads. Management fees are what you pay an agency or specialist to set up and optimise your campaigns. At Kiwi Web Design, management starts from $399/month flat fee (not a percentage of spend), plus a one-time setup from $499. Your ad spend budget is separate and paid directly to Google." },
 ];
+
+const budgetRows = [
+  { business: "Local trades or home services", starter: "$600–$1,200", growth: "$1,500–$3,000", note: "Best when calls, quote forms, and service-area keywords are tracked properly." },
+  { business: "Beauty, wellness, salons", starter: "$400–$900", growth: "$1,000–$2,000", note: "Lower CPCs, but offer clarity and booking-page quality matter." },
+  { business: "Legal, finance, professional services", starter: "$1,500–$3,000", growth: "$3,500–$8,000+", note: "Higher CPC markets need stronger qualification and landing pages." },
+  { business: "eCommerce or retail", starter: "$800–$2,000", growth: "$2,500–$6,000+", note: "ROAS depends on margin, repeat purchases, and product feed quality." },
+  { business: "NZ-wide lead generation", starter: "$1,200–$2,500", growth: "$3,000–$7,500+", note: "More reach means more search volume, but targeting needs to stay tight." },
+];
+
+const cpcRows = [
+  { industry: "Trades", range: "$3.50–$8.00", conversion: "5–8%", budget: "$800–$2,000/mo" },
+  { industry: "Legal", range: "$8.00–$22.00", conversion: "3–5%", budget: "$2,000–$5,000+/mo" },
+  { industry: "Dental / healthcare", range: "$4.00–$12.00", conversion: "4–7%", budget: "$1,200–$3,000/mo" },
+  { industry: "Cleaning services", range: "$2.50–$7.00", conversion: "5–8%", budget: "$700–$1,800/mo" },
+  { industry: "Beauty / wellness", range: "$1.20–$4.00", conversion: "6–9%", budget: "$400–$1,500/mo" },
+  { industry: "eCommerce", range: "$0.80–$3.50", conversion: "1–3%", budget: "$800–$3,000+/mo" },
+];
+
+const examples = [
+  {
+    title: "Auckland plumber",
+    copy: "$1,200 monthly ad spend, $6 average CPC, and a 7% landing-page conversion rate gives about 200 clicks and 14 enquiries. If one job is worth $650, two closed jobs can cover the ad spend."
+  },
+  {
+    title: "Small law firm",
+    copy: "$3,000 monthly ad spend, $15 average CPC, and a 4% conversion rate gives about 200 clicks and 8 enquiries. This market needs tighter keywords, stronger qualification, and call tracking."
+  },
+  {
+    title: "Beauty clinic",
+    copy: "$700 monthly ad spend, $2.50 average CPC, and an 8% conversion rate gives about 280 clicks and 22 booking enquiries. Results depend heavily on offer clarity and booking friction."
+  },
+];
 ---
 
 <Layout
-  title="Google Ads Budget Calculator NZ (2026) | Estimate CPC & Leads"
-  description="Free Google Ads budget calculator for NZ businesses. Enter your industry, location, and budget to estimate CPC, monthly clicks, leads, and break-even point. No email needed."
+  title="Google Ads Cost NZ Calculator (2026) | Budget, CPC & Leads"
+  description="How much does Google Ads cost in NZ? Use our free calculator and 2026 guide to estimate CPC, ad spend, leads, cost per lead, and break-even point."
   canonicalURL="https://www.kiwiwebdesign.co.nz/google-ads-budget-calculator-nz/"
   schema={schema}
 >
 
   <PageHero
     eyebrow="Google Ads Cost Calculator NZ"
-    title="How much does Google Ads cost in New Zealand?"
-    subtitle="Enter your industry, location, and monthly budget for an instant estimate of your CPC range, monthly clicks, lead count, and break-even point."
+    title="Google Ads Cost NZ: Budget, CPC and Lead Calculator for 2026"
+    subtitle="Use the calculator to estimate what your monthly Google Ads budget can produce, or work backwards from a lead target to see the ad spend you may need."
     badgeText="Free, no email required"
     ctaPrimary={{ text: "Get a Free Strategy Call", href: "/website-designer-auckland/" }}
-    ctaSecondary={{ text: "How It Works", href: "#how-it-works" }}
+    ctaSecondary={{ text: "See Cost Guide", href: "#google-ads-cost-guide" }}
     imgSrc={growthImage.src}
     imgAlt="Google Ads budget and lead forecast dashboard for a New Zealand small business"
     imgTitle="Google Ads budget calculator for NZ businesses"
@@ -142,6 +221,30 @@ const faqs = [
     </div>
   </div>
 
+  <section class="section gac-guide-intro" id="google-ads-cost-guide">
+    <div class="container gac-content">
+      <div class="gac-meta-badge" aria-label="Kiwi Web Design author credibility">
+        <span class="gac-badge-label">Kiwi Web Design</span>
+        <span class="gac-badge-detail">Auckland Google Ads and lead-generation specialists</span>
+      </div>
+
+      <p class="gac-updated-line"><strong>Updated: 3 July 2026</strong> &bull; Author: <a href="/about-us/">Charlie Chao</a>, Kiwi Web Design</p>
+
+      <h2>How much does Google Ads cost in NZ?</h2>
+      <p>Google Ads has no fixed price in New Zealand because advertisers pay through an auction. Your real cost depends on keyword competition, location, ad quality, landing-page quality, conversion tracking, and how valuable each customer is to your business.</p>
+      <p>For most Auckland small businesses, the practical question is not only "how much is a click?" It is "how many qualified enquiries can this budget buy, and how many jobs do I need to close before the campaign pays for itself?" This page answers both.</p>
+
+      <nav class="gac-toc" aria-label="Google Ads cost guide sections">
+        <a href="#kwd-google-ads-calculator">Calculator</a>
+        <a href="#monthly-budgets">Monthly budgets</a>
+        <a href="#cpc-ranges">CPC ranges</a>
+        <a href="#cost-per-lead">Cost per lead</a>
+        <a href="#examples">Examples</a>
+        <a href="#methodology">Methodology</a>
+      </nav>
+    </div>
+  </section>
+
   <!-- Calculator -->
   <section class="section gac-calc-section">
     <div class="container gac-calc-container">
@@ -150,6 +253,18 @@ const faqs = [
         <!-- Inputs -->
         <div class="gac-inputs-card">
           <h2 class="gac-inputs-heading">Your campaign details</h2>
+
+          <fieldset class="gac-mode-group">
+            <legend>Planning mode</legend>
+            <label>
+              <input type="radio" name="gac-mode" value="budget" checked />
+              <span>I know my monthly budget</span>
+            </label>
+            <label>
+              <input type="radio" name="gac-mode" value="leads" />
+              <span>I know how many leads I want</span>
+            </label>
+          </fieldset>
 
           <label class="gac-label">
             Industry
@@ -190,6 +305,13 @@ const faqs = [
           <label class="gac-label">
             Monthly ad budget (NZD)
             <input type="number" id="gac-budget" min="100" step="50" value="800" inputmode="numeric" />
+            <span class="gac-label-hint" id="gac-budget-hint">Use this if you want to see what your current budget may produce</span>
+          </label>
+
+          <label class="gac-label" id="gac-target-leads-wrap" hidden>
+            Target leads per month
+            <input type="number" id="gac-target-leads" min="1" step="1" value="10" inputmode="numeric" />
+            <span class="gac-label-hint">Use this if you want the calculator to estimate the budget required</span>
           </label>
 
           <label class="gac-label">
@@ -243,6 +365,12 @@ const faqs = [
               <span class="gac-metric-sub">jobs/sales needed to cover ad spend</span>
             </div>
 
+            <div class="gac-metric gac-metric--wide" id="gac-required-budget-card" hidden>
+              <span class="gac-metric-value" id="gac-required-budget">$0</span>
+              <span class="gac-metric-label">Estimated budget required</span>
+              <span class="gac-metric-sub" id="gac-daily-budget">based on your lead target</span>
+            </div>
+
           </div>
 
           <div class="gac-disclaimer">
@@ -256,6 +384,127 @@ const faqs = [
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <section class="section gac-guide-section" id="monthly-budgets">
+    <div class="container gac-content">
+      <SectionHeader
+        eyebrow="Google Ads Budget NZ"
+        title="Typical monthly Google Ads budgets in New Zealand."
+        subtitle="Use these ranges as planning numbers before you validate your exact market with keyword research and conversion tracking."
+      />
+      <div class="gac-table-wrapper">
+        <table>
+          <caption>Indicative Google Ads monthly budgets for NZ small businesses</caption>
+          <thead>
+            <tr>
+              <th scope="col">Business type</th>
+              <th scope="col">Starter test</th>
+              <th scope="col">Growth budget</th>
+              <th scope="col">Planning note</th>
+            </tr>
+          </thead>
+          <tbody>
+            {budgetRows.map((row) => (
+              <tr>
+                <th scope="row">{row.business}</th>
+                <td>{row.starter}</td>
+                <td>{row.growth}</td>
+                <td>{row.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="gac-guide-note">A small test budget can validate search demand, but too little spend may not generate enough clicks to make good decisions. If a campaign only gets a handful of clicks per week, it is hard to judge keywords, ads, or landing-page performance.</p>
+    </div>
+  </section>
+
+  <section class="section gac-guide-section" id="cpc-ranges" style="background: var(--kwd-cream);">
+    <div class="container gac-content">
+      <SectionHeader
+        eyebrow="Google Ads CPC NZ"
+        title="Average CPC ranges by industry."
+        subtitle="CPC is only one part of the equation. A higher CPC can still be profitable when lead quality and customer value are strong."
+      />
+      <div class="gac-table-wrapper">
+        <table>
+          <caption>Indicative CPC and conversion planning ranges for NZ campaigns</caption>
+          <thead>
+            <tr>
+              <th scope="col">Industry</th>
+              <th scope="col">Indicative CPC</th>
+              <th scope="col">Lead conversion range</th>
+              <th scope="col">Useful monthly test range</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cpcRows.map((row) => (
+              <tr>
+                <th scope="row">{row.industry}</th>
+                <td>{row.range}</td>
+                <td>{row.conversion}</td>
+                <td>{row.budget}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gac-guide-section" id="cost-per-lead">
+    <div class="container gac-content">
+      <h2>How to calculate Google Ads cost per lead</h2>
+      <p><strong>Cost per lead = monthly ad spend divided by enquiries generated.</strong> If you spend $1,000 and generate 10 enquiries, your cost per lead is $100. Whether that is good depends on your close rate, average job value, profit margin, and repeat customer value.</p>
+      <p>For service businesses, the landing page is often the difference between a campaign that feels expensive and one that becomes profitable. A focused page with clear offer, proof, calls to action, and tracking can turn the same ad spend into more enquiries.</p>
+      <div class="gac-formula-grid">
+        <div>
+          <strong>Clicks needed</strong>
+          <span>Target leads ÷ conversion rate</span>
+        </div>
+        <div>
+          <strong>Monthly ad spend</strong>
+          <span>Clicks needed × average CPC</span>
+        </div>
+        <div>
+          <strong>Break-even jobs</strong>
+          <span>Ad spend ÷ average job value</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gac-guide-section" id="examples" style="background: var(--kwd-cream);">
+    <div class="container gac-content">
+      <SectionHeader
+        eyebrow="Examples"
+        title="Example Google Ads budgets for NZ businesses."
+        subtitle="These examples are planning scenarios, not guarantees. They show how CPC, conversion rate, and job value change the economics."
+      />
+      <div class="gac-example-grid">
+        {examples.map((example) => (
+          <article class="gac-example-card">
+            <h3>{example.title}</h3>
+            <p>{example.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section gac-guide-section" id="methodology">
+    <div class="container gac-content">
+      <h2>How these Google Ads estimates are built</h2>
+      <p>The calculator combines indicative CPC ranges, location multipliers, typical lead conversion rates, and your average job value. It is designed for planning, not as a guarantee. Before launching a real campaign, validate your keywords, match types, locations, landing page, and conversion tracking.</p>
+      <p>Google's own guidance explains that average daily budgets can flex day to day while monthly charging limits are based on 30.4 times the average daily budget. Keyword Planner can also help estimate search volume, bid ranges, and forecasted clicks before you launch.</p>
+      <p class="gac-source-links">
+        Sources:
+        <a href="https://support.google.com/google-ads/answer/6385083" target="_blank" rel="noopener noreferrer">Google Ads average daily budgets</a>,
+        <a href="https://support.google.com/google-ads/answer/7337243" target="_blank" rel="noopener noreferrer">Google Keyword Planner</a>,
+        <a href="https://support.google.com/google-ads/answer/3022575" target="_blank" rel="noopener noreferrer">Keyword Planner forecasts</a>.
+      </p>
     </div>
   </section>
 
@@ -317,6 +566,142 @@ const faqs = [
 </Layout>
 
 <style>
+  .gac-content {
+    max-width: 920px;
+  }
+  .gac-guide-intro {
+    background: #fff;
+  }
+  .gac-meta-badge {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 999px;
+    background: var(--kwd-cream);
+    margin-bottom: 0.9rem;
+  }
+  .gac-badge-label {
+    font-weight: 800;
+    color: var(--kwd-dark);
+  }
+  .gac-badge-detail {
+    color: var(--kwd-brown);
+    font-size: 0.86rem;
+  }
+  .gac-updated-line {
+    color: var(--kwd-brown);
+    font-size: 0.9rem;
+    margin: 0 0 1.25rem;
+  }
+  .gac-guide-intro h2,
+  .gac-guide-section h2 {
+    color: var(--kwd-dark);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    margin: 0 0 1rem;
+  }
+  .gac-guide-intro p,
+  .gac-guide-section p {
+    color: var(--kwd-brown);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  .gac-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.4rem;
+  }
+  .gac-toc a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 38px;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    background: var(--kwd-dark);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .gac-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 12px;
+    background: #fff;
+  }
+  .gac-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+  }
+  .gac-table-wrapper caption {
+    text-align: left;
+    padding: 1rem 1rem 0;
+    color: var(--kwd-brown);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  .gac-table-wrapper th,
+  .gac-table-wrapper td {
+    text-align: left;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    color: var(--kwd-dark);
+    vertical-align: top;
+  }
+  .gac-table-wrapper thead th {
+    background: var(--kwd-dark);
+    color: #fff;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .gac-table-wrapper tbody tr:last-child th,
+  .gac-table-wrapper tbody tr:last-child td {
+    border-bottom: 0;
+  }
+  .gac-guide-note {
+    margin-top: 1rem;
+  }
+  .gac-formula-grid,
+  .gac-example-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  .gac-formula-grid div,
+  .gac-example-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .gac-formula-grid strong {
+    display: block;
+    color: var(--kwd-dark);
+    margin-bottom: 0.35rem;
+  }
+  .gac-formula-grid span {
+    color: var(--kwd-brown);
+    font-size: 0.9rem;
+  }
+  .gac-example-card h3 {
+    color: var(--kwd-dark);
+    margin: 0 0 0.55rem;
+    font-size: 1.05rem;
+  }
+  .gac-example-card p {
+    font-size: 0.92rem;
+    margin: 0;
+  }
+  .gac-source-links a {
+    color: var(--kwd-dark);
+    font-weight: 700;
+  }
   /* ── AI snippet ── */
   .gac-snippet {
     background: var(--kwd-cream);
@@ -356,6 +741,31 @@ const faqs = [
     font-size: 1.25rem;
     color: var(--kwd-dark);
     margin: 0 0 0.25rem;
+  }
+  .gac-mode-group {
+    border: 0;
+    padding: 0;
+    margin: 0 0 0.25rem;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .gac-mode-group legend {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    margin-bottom: 0.35rem;
+  }
+  .gac-mode-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: #fff;
+    border: 1px solid #c8c2b8;
+    border-radius: 8px;
+    padding: 0.65rem 0.75rem;
+    color: var(--kwd-dark);
+    font-size: 0.9rem;
+    font-weight: 700;
   }
   .gac-label {
     display: flex;
@@ -489,6 +899,10 @@ const faqs = [
     .gac-metrics-grid {
       grid-template-columns: 1fr 1fr;
     }
+    .gac-formula-grid,
+    .gac-example-grid {
+      grid-template-columns: 1fr;
+    }
   }
   @media (max-width: 480px) {
     .gac-metrics-grid {
@@ -536,6 +950,10 @@ const faqs = [
     var industrySelect  = calc.querySelector('#gac-industry');
     var locationSelect  = calc.querySelector('#gac-location');
     var budgetInput     = calc.querySelector('#gac-budget');
+    var budgetHint      = calc.querySelector('#gac-budget-hint');
+    var modeInputs      = calc.querySelectorAll('input[name="gac-mode"]');
+    var targetWrap      = calc.querySelector('#gac-target-leads-wrap');
+    var targetInput     = calc.querySelector('#gac-target-leads');
     var goalSelect      = calc.querySelector('#gac-goal');
     var jobValueInput   = calc.querySelector('#gac-jobvalue');
 
@@ -545,6 +963,9 @@ const faqs = [
     var elConvLabel     = calc.querySelector('#gac-conv-rate-label');
     var elCpl           = calc.querySelector('#gac-cpl');
     var elBreakeven     = calc.querySelector('#gac-breakeven');
+    var requiredCard    = calc.querySelector('#gac-required-budget-card');
+    var elRequired      = calc.querySelector('#gac-required-budget');
+    var elDailyBudget   = calc.querySelector('#gac-daily-budget');
 
     var industryData = {
       trades:      { cpcLow: 3.50, cpcHigh: 8.00,  convRate: 0.07 },
@@ -586,22 +1007,42 @@ const faqs = [
       return '$' + Math.round(n).toLocaleString('en-NZ');
     }
 
+    function getMode() {
+      var checked = calc.querySelector('input[name="gac-mode"]:checked');
+      return checked ? checked.value : 'budget';
+    }
+
     function updateCalc() {
       var industry  = industryData[industrySelect.value] || industryData['other'];
       var locMult   = locationMultiplier[locationSelect.value] || 1.0;
-      var budget    = Math.max(0, parseFloat(budgetInput.value) || 0);
+      var mode      = getMode();
       var goalMod   = goalModifier[goalSelect.value] || 1.0;
       var jobValue  = Math.max(1, parseFloat(jobValueInput.value) || 1);
+      var targetLeads = Math.max(1, parseFloat(targetInput.value) || 1);
 
       var adjLow  = industry.cpcLow  * locMult;
       var adjHigh = industry.cpcHigh * locMult;
       var avgCpc  = (adjLow + adjHigh) / 2;
+      var convRate     = industry.convRate * goalMod;
+
+      var budget = Math.max(0, parseFloat(budgetInput.value) || 0);
+      if (mode === 'leads') {
+        var clicksNeeded = convRate > 0 ? Math.ceil(targetLeads / convRate) : 0;
+        budget = clicksNeeded * avgCpc;
+        budgetInput.value = Math.round(budget);
+      }
 
       var clicks       = avgCpc > 0 ? Math.floor(budget / avgCpc) : 0;
-      var convRate     = industry.convRate * goalMod;
       var leads        = Math.floor(clicks * convRate);
       var cpl          = leads > 0 ? budget / leads : 0;
       var breakeven    = Math.ceil(budget / jobValue);
+
+      var isLeadMode = mode === 'leads';
+      targetWrap.hidden = !isLeadMode;
+      requiredCard.hidden = !isLeadMode;
+      budgetHint.textContent = isLeadMode
+        ? 'Calculated from your lead target and estimated CPC'
+        : 'Use this if you want to see what your current budget may produce';
 
       elCpcRange.textContent  = fmt(adjLow) + ' \u2013 ' + fmt(adjHigh);
       elClicks.textContent    = clicks.toLocaleString('en-NZ');
@@ -609,12 +1050,17 @@ const faqs = [
       elConvLabel.textContent = 'at ' + Math.round(convRate * 100) + '% conversion';
       elCpl.textContent       = leads > 0 ? fmt(cpl) : 'N/A';
       elBreakeven.textContent = breakeven + (breakeven === 1 ? ' job' : ' jobs');
+      elRequired.textContent  = fmt(budget);
+      elDailyBudget.textContent = 'about ' + fmt(budget / 30.4) + ' per day using Google Ads monthly pacing';
     }
 
     [industrySelect, locationSelect, goalSelect].forEach(function (el) {
       el.addEventListener('change', updateCalc);
     });
-    [budgetInput, jobValueInput].forEach(function (el) {
+    modeInputs.forEach(function (el) {
+      el.addEventListener('change', updateCalc);
+    });
+    [budgetInput, targetInput, jobValueInput].forEach(function (el) {
       el.addEventListener('input', updateCalc);
     });
 
