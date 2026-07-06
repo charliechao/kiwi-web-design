@@ -50,7 +50,7 @@ The aim is simple: help users quickly identify top-rated service businesses, whi
 ### Built With SEO and AI Discovery in Mind
 
 
-As an [Auckland web design agency](/small-business-website-design-auckland/), we design websites for how people search today, not how they searched five years ago.
+As an [Auckland web design agency](/), we design websites for how people search today, not how they searched five years ago.
 
 
 TopRated.nz is structured to support both traditional SEO and emerging AI-driven search experiences. Pages are written clearly, organised logically, and built around real search intent, such as users looking for “top rated” services rather than generic directories.

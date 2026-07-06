@@ -42,18 +42,36 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/",
       url: 'https://www.kiwiwebdesign.co.nz/',
       name: 'Web Design Auckland | Website Design, SEO & Google Ads | Kiwi Web Design',
-      description: 'Kiwi Web Design offers AI-ready web design Auckland small businesses can grow with: conversion-focused website design, local SEO, AI SEO, and Google Ads. Grey Lynn, Auckland.',
+      description: 'Web design Auckland small businesses trust: conversion-focused, AI-ready website design from a Grey Lynn studio, backed by local SEO, AI SEO, and Google Ads.',
       isPartOf: { '@id': 'https://www.kiwiwebdesign.co.nz/#website' },
       about: { '@id': 'https://www.kiwiwebdesign.co.nz/#organization' },
       inLanguage: 'en-NZ'
     },
     {
-      '@type': 'Organization',
+      '@type': ['Organization', 'ProfessionalService'],
       '@id': 'https://www.kiwiwebdesign.co.nz/#organization',
       name: 'Kiwi Web Design',
       url: 'https://www.kiwiwebdesign.co.nz/',
       telephone: '+64210396580',
-      email: 'hi@kiwiwebdesign.co.nz'
+      email: 'hi@kiwiwebdesign.co.nz',
+      image: 'https://www.kiwiwebdesign.co.nz/logo-96.webp',
+      priceRange: '$$',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '147 Great North Road',
+        addressLocality: 'Grey Lynn',
+        addressRegion: 'Auckland',
+        addressCountry: 'NZ'
+      },
+      areaServed: [
+        { '@type': 'City', name: 'Auckland' }
+      ],
+      knowsAbout: ['Web Design', 'Website Design', 'Local SEO', 'AI SEO', 'Google Ads'],
+      sameAs: [
+        'https://www.facebook.com/profile.php?id=61559560322941',
+        'https://www.instagram.com/kiwi_web_design/',
+        'https://www.linkedin.com/company/108270459/'
+      ]
     },
     {
       '@type': 'VideoObject',
@@ -242,7 +260,7 @@ const exploreGroups = [
 
 <Layout
   title="Web Design Auckland | Website Design, SEO & Google Ads | Kiwi Web Design"
-  description="Kiwi Web Design offers AI-ready web design Auckland small businesses can grow with: conversion-focused website design, local SEO, AI SEO, and Google Ads. Grey Lynn, Auckland."
+  description="Web design Auckland small businesses trust: conversion-focused, AI-ready website design from a Grey Lynn studio, backed by local SEO, AI SEO, and Google Ads."
   canonicalURL="https://www.kiwiwebdesign.co.nz/"
   schema={schema}
   alternateUrl="https://www.kiwiwebdesign.co.nz/zh/"
@@ -257,7 +275,7 @@ const exploreGroups = [
           <span class="hp-location-pill hp-hero-seq" style="--hero-delay: 0.12s;">Grey Lynn, Auckland</span>
         </div>
         <h1 class="hp-headline hp-hero-seq" style="--hero-delay: 0.18s;">Web design Auckland businesses can use to generate more leads.</h1>
-        <p class="hp-lead hp-hero-seq" style="--hero-delay: 0.3s;">Kiwi Web Design is a Grey Lynn studio offering AI-ready website design Auckland small businesses can build on with local SEO, AI SEO, and Google Ads. We create conversion-focused systems that turn clicks into calls, quote requests, and steady enquiries.</p>
+        <p class="hp-lead hp-hero-seq" style="--hero-delay: 0.3s;">Kiwi Web Design is a Grey Lynn web design studio building conversion-focused websites for Auckland small businesses. Every build is AI-ready and structured for growth, so local SEO, AI SEO, and Google Ads can turn clicks into calls, quote requests, and steady enquiries.</p>
         <div class="hp-ctas hp-hero-seq" style="--hero-delay: 0.42s;">
           <a href="/website-designer-auckland/" class="hp-btn-primary">Book a Free Consultation</a>
           <a href="#packages" class="hp-btn-secondary">See Pricing</a>

@@ -74,7 +74,7 @@ Last year, a small retail shop in West Auckland came to me after paying for a si
 ### Final Thoughts
 
 
-Whether you choose Kiwi Web Design or another [Auckland web design agency](/small-business-website-design-auckland/), the main thing is to work with a team that listens, explains things clearly, and understands how your customers think. See our [website design process](/website-design-process-in-auckland/) and [about us page](/about-us/) to understand how we work. Take your time, ask questions, and make sure you’re getting a site that works for you, not just for their portfolio.
+Whether you choose Kiwi Web Design or another [Auckland web design agency](/), the main thing is to work with a team that listens, explains things clearly, and understands how your customers think. See our [website design process](/website-design-process-in-auckland/) and [about us page](/about-us/) to understand how we work. Take your time, ask questions, and make sure you’re getting a site that works for you, not just for their portfolio.
 
 
 If you want to talk through what’s possible for your business, get in touch with Kiwi Web Design. We can walk you through your options and give you a clear plan to get your site working as hard as you do.
