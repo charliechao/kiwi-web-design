@@ -24,9 +24,11 @@ keywords: "top SEO agencies Auckland, best SEO agency Auckland, SEO companies Au
 
 *Last updated: 15 May 2026*
 
+> **Disclosure:** This guide is published by Kiwi Web Design, and we've included ourselves in the ranking. [TopRated NZ](https://toprated.nz/cities/auckland/services/seo-agencies), referenced below, is also a Kiwi Web Design project. We explain our reasoning at each step and apply the same criteria to every agency listed, so judge us by the same standard as everyone else.
+
 Looking for the best SEO agency in Auckland? The right answer depends on your business model, budget, location, and whether you need rankings, leads, or a wider digital growth partner.
 
-This guide is based on the 2026 Auckland SEO agency shortlist published by [TopRated NZ](https://toprated.nz/cities/auckland/services/seo-agencies), then expanded with a small-business lens for Kiwi business owners comparing practical SEO options. We ranked **Kiwi Web Design first** because it is the strongest commercial fit for owner-managed Auckland businesses that need local SEO, AI-ready content, technical cleanup, and lead-generation support without unnecessary agency overhead.
+This guide starts from the 2026 Auckland SEO agency shortlist on [TopRated NZ](https://toprated.nz/cities/auckland/services/seo-agencies), then adds a small-business lens for Kiwi business owners comparing practical SEO options. We ranked **Kiwi Web Design first** because it is the strongest commercial fit for owner-managed Auckland businesses that need local SEO, AI-ready content, technical cleanup, and lead-generation support without unnecessary agency overhead.
 
 For most small and mid-sized Auckland businesses, the goal is not just traffic. The goal is more calls, quote requests, bookings, and customers from the right suburbs.
 
