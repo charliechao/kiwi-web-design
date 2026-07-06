@@ -18,3 +18,11 @@
 ## Open items / next steps
 - Changes NOT yet committed/pushed (awaiting Charlie's go-ahead).
 - After deploy: spot-check the three 301s in production, and watch GSC for the old URLs dropping out.
+
+---
+
+# Addendum: commercial keyword investigation + homepage fix (same day)
+
+- Confirmed real ranking loss for "web design auckland" / "website design auckland" starting mid-May 2026 (May core update window), NOT the June spam update and not a penalty. Homepage held pos ~12.5 for "website design auckland" until early May, then site impressions collapsed 182/wk → ~10/wk.
+- Shipped (commit 73bb14e, pushed to main): homepage hero/meta lead with core service; ProfessionalService schema with NAP + sameAs; repointed "Web Design Auckland" internal anchors to homepage (4 pages, 2 posts); 301'd 3 legacy 404ing WP-era URLs.
+- Flagged to Charlie: homepage review claims (4.9/47) don't match live GBP (5.0/11); review growth is the main recovery lever.
