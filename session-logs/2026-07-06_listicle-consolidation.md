@@ -26,3 +26,11 @@
 - Confirmed real ranking loss for "web design auckland" / "website design auckland" starting mid-May 2026 (May core update window), NOT the June spam update and not a penalty. Homepage held pos ~12.5 for "website design auckland" until early May, then site impressions collapsed 182/wk → ~10/wk.
 - Shipped (commit 73bb14e, pushed to main): homepage hero/meta lead with core service; ProfessionalService schema with NAP + sameAs; repointed "Web Design Auckland" internal anchors to homepage (4 pages, 2 posts); 301'd 3 legacy 404ing WP-era URLs.
 - Flagged to Charlie: homepage review claims (4.9/47) don't match live GBP (5.0/11); review growth is the main recovery lever.
+
+---
+
+# Addendum 2: full site audit + fixes (commit f50a50e)
+
+- Audited all 120 built pages + GSC inspection of 108 sitemap URLs: 106 indexed, canonicals/schema/robots clean.
+- Fixed and pushed: /seo-auckland/ 404 linked from 25 pages (repointed + 301); 4 dead industry links on small-business page EN+ZH; calculator typo link; /Contact/ legacy 301; duplicate H1s stripped from 32 blog posts; redesign-vs-rebuild duplicate posts consolidated (301); homepage title trimmed to 61 chars.
+- Still open: 2 crawled-not-indexed pages need content refresh (traditional-seo-is-changing post, ai-content-setup-for-websites); ~15 long titles / ~20 long meta descriptions (medium); GBP review-count mismatch flag.
