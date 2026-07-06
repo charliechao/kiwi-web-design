@@ -5,8 +5,6 @@ pubDate: 2025-04-30
 image: "/blog/pexels-photo-1267348-1267348-scaled-1.jpg"
 ---
 
-# How to create a Facebook page for small Kiwi businesses
-
 
 If you’re a small business owner in Auckland, you’re probably always looking for ways to grow your customer base and boost your brand. One of the easiest and most effective ways to do that is by creating a **Facebook page** for your business. Facebook is a powerful tool for reaching new customers, building relationships, and even driving sales-especially for small Kiwi businesses. Plus, it’s free to set up! In this step-by-step guide, we’ll walk you through how to create a Facebook page for your small business in Auckland, so you can start connecting with your community online.
 

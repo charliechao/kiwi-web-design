@@ -5,8 +5,6 @@ pubDate: 2026-02-17
 image: "/blog/seo-for-trades-auckland-job-enquiry.png"
 ---
 
-# SEO for Trades in Auckland: How to Get Consistent Job Enquiries
-
 
 If you’re a plumber, electrician, builder or roofer in Auckland, you don’t need “traffic”.
 
@@ -314,7 +312,7 @@ Ranking is half the battle. Conversion is the other half.
 ## 5. SEO vs Google Ads for Trades
 
 
-[SEO for Auckland trades](/seo-auckland/) builds long-term assets.
+[SEO for Auckland trades](/affordable-seo-auckland/) builds long-term assets.
 
 
 [Google Ads](/google-ads/) generates immediate enquiries.

@@ -5,8 +5,6 @@ pubDate: 2026-01-21
 image: "/blog/600-21B675F7-8EB5-45A5-99242870729DC26D.png"
 ---
 
-# Kiwi Web Design Launches TopRated.nz, a New Auckland-Focused Business Directory
-
 
 ![toprate.zn homepage](https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/01/600-21B675F7-8EB5-45A5-99242870729DC26D.png)
 
@@ -74,7 +72,7 @@ Over time, the platform will expand into other New Zealand cities, following the
 For Kiwi Web Design, TopRated.nz also serves as a live example of how we build websites for clients.
 
 
-Everything from site structure to content clarity reflects how we approach **web design in Auckland** for small and medium-sized businesses. Our [SEO services](/seo-auckland/) and [AI SEO approach](/ai-seo-for-auckland-small-businesses/) are baked into every build from day one. Instead of theory, this project demonstrates what happens when SEO, usability, and AI readiness are considered from day one.
+Everything from site structure to content clarity reflects how we approach **web design in Auckland** for small and medium-sized businesses. Our [SEO services](/affordable-seo-auckland/) and [AI SEO approach](/ai-seo-for-auckland-small-businesses/) are baked into every build from day one. Instead of theory, this project demonstrates what happens when SEO, usability, and AI readiness are considered from day one.
 
 
 If you are interested in improving your website’s visibility or building a platform designed for modern search, you can learn more about our services at **https://www.kiwiwebdesign.co.nz**. You can also [learn about us](/about-us/) and how we work with Auckland businesses.

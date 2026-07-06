@@ -5,8 +5,6 @@ pubDate: 2025-05-07
 image: "/blog/pexels-photo-4348404-4348404-scaled.jpg"
 ---
 
-# From Local to Legendary: How Your Website Can Supercharge Your Small Kiwi Business
-
 
 In today’s digital world, a website is a must-have for small businesses in New Zealand looking to attract more clients and boost sales. Whether you’re a tradie in Auckland or a boutique in Christchurch, a well-designed website can help you reach new customers, build trust, and grow your business. Here’s how small Kiwi businesses can use their websites to achieve these goals, along with practical tips to get started.
 
@@ -256,7 +254,7 @@ To maximize your website’s effectiveness, steer clear of these pitfalls:
 ## Why Invest in Professional Web Design in Auckland?
 
 
-While DIY website builders are great, hiring a [professional web design agency in Auckland](/small-business-website-design-auckland/) can take your site to the next level. Combine that with [Google Ads](/google-ads/) and [SEO services](/seo-auckland/) to drive consistent traffic from day one. Agencies like White Rabbit or Adcelerate offer tailored solutions, including advanced SEO, custom designs, and ongoing support. This is especially valuable in Auckland’s competitive market, where a standout website can make all the difference.
+While DIY website builders are great, hiring a [professional web design agency in Auckland](/small-business-website-design-auckland/) can take your site to the next level. Combine that with [Google Ads](/google-ads/) and [SEO services](/affordable-seo-auckland/) to drive consistent traffic from day one. Agencies like White Rabbit or Adcelerate offer tailored solutions, including advanced SEO, custom designs, and ongoing support. This is especially valuable in Auckland’s competitive market, where a standout website can make all the difference.
 
 
 ## Conclusion

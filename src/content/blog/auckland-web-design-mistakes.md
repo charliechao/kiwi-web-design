@@ -5,8 +5,6 @@ pubDate: 2025-06-30
 image: "/blog/ChatGPT-Image-Jun-30-2025-03_02_03-PM-1.png"
 ---
 
-# Top 10 Web Design Mistakes Small Businesses Make (And How to Avoid Them)
-
 
 Running a small business in Auckland? Your website is often the first point of contact with potential customers-and even with the best intentions, common web design missteps can cost you leads and revenue. Here are the top 10 web design mistakes small businesses make-and how you can avoid them.
 
@@ -44,7 +42,7 @@ Running a small business in Auckland? Your website is often the first point of c
 ### 6. Neglecting SEO Best Practices
 
 
-**Mistake:** Skipping essential on-page SEO elements like title tags, meta descriptions, and header tags.**Why It Matters:** You won’t rank well on Google, making it harder for Auckland customers to find your web design services.**How to Avoid:** Optimize each page’s keyword strategy, our [SEO services in Auckland](/seo-auckland/) can take care of this for you, including descriptive URLs, alt text, and schema markup.
+**Mistake:** Skipping essential on-page SEO elements like title tags, meta descriptions, and header tags.**Why It Matters:** You won’t rank well on Google, making it harder for Auckland customers to find your web design services.**How to Avoid:** Optimize each page’s keyword strategy, our [SEO services in Auckland](/affordable-seo-auckland/) can take care of this for you, including descriptive URLs, alt text, and schema markup.
 
 
 ### 7. Outdated Design and Branding

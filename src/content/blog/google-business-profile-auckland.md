@@ -5,8 +5,6 @@ pubDate: 2026-03-30
 image: "/blog/google-business-profile-setup-optimisation-auckland.png"
 ---
 
-# How to Set Up and Optimise Your Google Business Profile in Auckland
-
 If you run a small business in Auckland, your Google Business Profile (GBP) is the single most powerful free tool available to you.
 
 It determines whether you appear in Google Maps. It controls what customers see before they visit your website. It shapes whether locals trust you enough to call.
@@ -35,7 +33,7 @@ A well-optimised Google Business Profile:
 
 - Sends strong local ranking signals to Google
 
-- Works alongside your [Auckland SEO strategy](/seo-auckland/) to increase overall visibility
+- Works alongside your [Auckland SEO strategy](/affordable-seo-auckland/) to increase overall visibility
 
 The setup takes less than an hour. The optimisation is ongoing, but straightforward once you know what matters.
 
@@ -345,7 +343,7 @@ If you want a complete local presence:
 
 - A website that reinforces your local authority
 
-- An [Auckland SEO strategy](/seo-auckland/) that builds long-term visibility
+- An [Auckland SEO strategy](/affordable-seo-auckland/) that builds long-term visibility
 
 Kiwi Web Design works with Auckland small businesses to build this from the ground up.
 

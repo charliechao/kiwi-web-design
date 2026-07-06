@@ -5,8 +5,6 @@ pubDate: 2025-12-19
 image: "/blog/website-redesign-vs-rebuild-auckland-small-business.png"
 ---
 
-# Website Redesign vs Starting from Scratch
-
 
 ## What’s Right for Auckland Small Businesses?
 

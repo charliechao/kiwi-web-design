@@ -5,8 +5,6 @@ pubDate: 2025-11-06
 image: "/blog/professional-website-design-on-a-budget-kiwi-web-design-auckland.jpg"
 ---
 
-# How to Make Your Website Look Professional Without Spending a Fortune
-
 
 If you’re running a small business in Auckland, you already know how important a good website is, but *“good”* doesn’t have to mean *“expensive.”*At Kiwi Web Design, we help local businesses look polished and professional online **without breaking the bank**.
 
@@ -95,7 +93,7 @@ A slow website looks unprofessional and frustrates visitors.Make sure your hosti
 ## 8. Don’t Forget SEO Basics
 
 
-Even a great-looking website won’t help if nobody finds it. [SEO for Auckland businesses](/seo-auckland/) starts with the basics, add simple on-page SEO like:
+Even a great-looking website won’t help if nobody finds it. [SEO for Auckland businesses](/affordable-seo-auckland/) starts with the basics, add simple on-page SEO like:
 
 
 - Descriptive page titles and meta descriptions

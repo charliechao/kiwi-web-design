@@ -260,7 +260,7 @@ We can help you:
 - Decide whether SEO or Google Ads should come first.
 - Build a conversion-focused website or landing page.
 - Set up [local SEO for Auckland small businesses](/local-seo-for-auckland-small-businesses/).
-- Improve visibility with [SEO Auckland](/seo-auckland/) services.
+- Improve visibility with [SEO Auckland](/affordable-seo-auckland/) services.
 - Launch focused [Google Ads](/google-ads/) campaigns.
 - Prepare your website for AI-assisted search with [AI SEO](/ai-seo-for-auckland-small-businesses/).
 - Track calls, forms, and bookings properly.
@@ -303,4 +303,4 @@ Check whether your website can convert visitors. Make sure your services are cle
 
 ### Can Kiwi Web Design manage both SEO and Google Ads?
 
-Yes. Kiwi Web Design works across [website design](/small-business-website-design-auckland/), [SEO](/seo-auckland/), [local SEO](/local-seo-for-auckland-small-businesses/), [AI SEO](/ai-seo-for-auckland-small-businesses/), and [Google Ads](/google-ads/). That makes it easier to connect traffic, landing pages, tracking, and lead generation.
+Yes. Kiwi Web Design works across [website design](/small-business-website-design-auckland/), [SEO](/affordable-seo-auckland/), [local SEO](/local-seo-for-auckland-small-businesses/), [AI SEO](/ai-seo-for-auckland-small-businesses/), and [Google Ads](/google-ads/). That makes it easier to connect traffic, landing pages, tracking, and lead generation.

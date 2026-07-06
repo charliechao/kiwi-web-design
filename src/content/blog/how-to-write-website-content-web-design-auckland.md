@@ -5,8 +5,6 @@ pubDate: 2025-10-20
 image: "/blog/Facebook-Post-Support-Local-Auckland-Business.jpg"
 ---
 
-# How to Write Website Content That Actually Brings You Enquiries
-
 
 ### Why Most Websites Don’t Convert
 
@@ -56,7 +54,7 @@ Aucklanders don’t want to guess whether you’re local.Make it obvious in your
 “Affordable web design in Auckland for tradies, retailers, and small businesses.”
 
 
-Simple, location-based statements help your [SEO in Auckland](/seo-auckland/) **and** give potential clients confidence that you’re nearby and ready to help.
+Simple, location-based statements help your [SEO in Auckland](/affordable-seo-auckland/) **and** give potential clients confidence that you’re nearby and ready to help.
 
 
 ### 3️⃣ Guide Visitors With a Clear Call-to-Action (CTA)

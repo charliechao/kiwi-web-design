@@ -5,8 +5,6 @@ pubDate: 2025-09-09
 image: "/blog/Blue-and-White-minimalist-Instagram-Post.png"
 ---
 
-# Kiwi Web Design Ranked as an Affordable Web Design Agency in Auckland
-
 
 [Kiwi Web Design](https://kiwiwebdesign.co.nz/), an AI-first digital agency based in Grey Lynn, has been recognized as one of Auckland’s leading providers of affordable web design services for small businesses and tradies.
 

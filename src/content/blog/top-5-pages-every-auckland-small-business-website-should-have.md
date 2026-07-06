@@ -5,8 +5,6 @@ pubDate: 2025-11-03
 image: "/blog/auckland-small-business-website.jpg"
 ---
 
-# Top 5 Pages Every Auckland Small Business Website Should Have
-
 
 Running a small business in [Auckland](https://en.wikipedia.org/wiki/Auckland)means you’re competing not just on quality and price, but also on visibility. And your website is often the first impression people get of your business. Whether you’re a local tradie, a café owner, or a service provider, having the *right* pages on your [small business website](/small-business-website-design-auckland/) can turn casual browsers into paying customers.
 

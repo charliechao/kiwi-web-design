@@ -5,8 +5,6 @@ pubDate: 2025-04-27
 image: "/blog/Auckland.jpg"
 ---
 
-# 5 Reasons Why Small Kiwi Businesses Need A Website
-
 
 In today’s world, if your business isn’t online, it’s almost invisible. Whether you’re running a local café, a [tradie business](https://www.kiwiwebdesign.co.nz/website-design-auckland/), or any other [small business](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/), having a website is no longer just a “nice to have”, it’s essential. More and more Kiwis are turning to Google before stepping out the door, so if you’re not showing up online, you’re missing out on real opportunities.
 
@@ -29,7 +27,7 @@ First impressions count. A clean, easy-to-use website shows people you’re seri
 ### 3. Bring Your Marketing Together
 
 
-A website gives you a home base for everything, Google search, Facebook, Instagram, email newsletters, all roads should lead back to your site. You can post updates, run specials, or publish blog tips that help boost your ranking on search engines (yes, that’s [SEO in Auckland](/seo-auckland/) in action). It’s a great way to stay visible without breaking the bank.
+A website gives you a home base for everything, Google search, Facebook, Instagram, email newsletters, all roads should lead back to your site. You can post updates, run specials, or publish blog tips that help boost your ranking on search engines (yes, that’s [SEO in Auckland](/affordable-seo-auckland/) in action). It’s a great way to stay visible without breaking the bank.
 
 
 ### 4. Make Life Easier for Your Customers

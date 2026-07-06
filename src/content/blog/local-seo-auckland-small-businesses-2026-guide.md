@@ -91,7 +91,7 @@ A good local page should include:
 
 Do not create thin suburb pages where only the place name changes. Google's guidance on [helpful, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) is a good filter: if the page would not help a real local customer, it probably should not exist.
 
-Useful internal examples include [Local SEO for Auckland Small Businesses](/local-seo-for-auckland-small-businesses/), [SEO Auckland](/seo-auckland/), [small business website design in Auckland](/small-business-website-design-auckland/), and the [website cost and package guide for NZ small businesses](/affordable-web-design-auckland/website-cost-new-zealand-small-business/).
+Useful internal examples include [Local SEO for Auckland Small Businesses](/local-seo-for-auckland-small-businesses/), [SEO Auckland](/affordable-seo-auckland/), [small business website design in Auckland](/small-business-website-design-auckland/), and the [website cost and package guide for NZ small businesses](/affordable-web-design-auckland/website-cost-new-zealand-small-business/).
 
 ## Step 4: Improve reviews and review responses
 

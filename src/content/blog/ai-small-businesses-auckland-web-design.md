@@ -5,8 +5,6 @@ pubDate: 2025-06-18
 image: "/blog/pexels-photo-6153354-6153354-scaled.jpg"
 ---
 
-# How AI Will Transform Small Businesses in New Zealand
-
 
 Artificial Intelligence (AI) is set to revolutionize how small businesses operate in New Zealand, particularly in hubs like **Auckland**. From streamlining **web design** to enhancing everyday tasks, these changes promise significant gains in efficiency, creativity, and competitiveness.
 

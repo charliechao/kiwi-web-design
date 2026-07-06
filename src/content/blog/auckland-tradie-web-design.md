@@ -5,8 +5,6 @@ pubDate: 2025-06-24
 image: "/blog/ChatGPT-Image-Jun-24-2025-11_54_50-AM-1.png"
 ---
 
-# Why Every Auckland Tradie Needs a Professional Website
-
 
 If you’re a [tradie in Auckland](https://www.kiwiwebdesign.co.nz/website-design-auckland/)-whether you’re a plumber, electrician, builder, or landscaper-having a professional website is no longer optional. It’s essential. Your website is often the first impression potential customers get of your business. Here’s why investing in professional web design can set you apart and grow your business.
 
@@ -50,7 +48,7 @@ Many Auckland tradies still don’t have great websites. This is your chance to 
 ### Ready to Level Up?
 
 
-At our Auckland-based web design agency, we specialise in helping tradies get online, get noticed, and get more jobs. Whether you’re starting from scratch or need to upgrade your existing site, we’ll make the process easy. We also offer [SEO services](/seo-auckland/) specifically for trade businesses to drive consistent job enquiries.
+At our Auckland-based web design agency, we specialise in helping tradies get online, get noticed, and get more jobs. Whether you’re starting from scratch or need to upgrade your existing site, we’ll make the process easy. We also offer [SEO services](/affordable-seo-auckland/) specifically for trade businesses to drive consistent job enquiries.
 
 
 Let’s build a site that works as hard as you do and contact [Kiwi Web Design](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/) today.

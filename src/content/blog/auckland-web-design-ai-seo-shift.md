@@ -5,8 +5,6 @@ pubDate: 2025-09-07
 image: "/blog/SEO.jpg"
 ---
 
-# From SEO to AEO: How Online Search in New Zealand Is Shifting Towards AI, and What That Means for Auckland Web Design
-
 
 By Kiwi Web Design | Auckland Web Design Blog
 
@@ -17,7 +15,7 @@ By Kiwi Web Design | Auckland Web Design Blog
 The way New Zealanders search online is changing. People are moving from short keyword searches in Google to full conversations with tools like ChatGPT, voice assistants like Siri, and AI search engines like Perplexity. If your business isn’t showing up when users ask questions, you’re missing out.
 
 
-At Kiwi Web Design, we’ve evolved from traditional [SEO in Auckland](/seo-auckland/) to a full **AI-first approach**, helping Auckland businesses become discoverable in today’s search landscape. Explore our dedicated [AI SEO service for Auckland small businesses](/ai-seo-for-auckland-small-businesses/).
+At Kiwi Web Design, we’ve evolved from traditional [SEO in Auckland](/affordable-seo-auckland/) to a full **AI-first approach**, helping Auckland businesses become discoverable in today’s search landscape. Explore our dedicated [AI SEO service for Auckland small businesses](/ai-seo-for-auckland-small-businesses/).
 
 
 ### SEO vs AEO: What’s the Difference?

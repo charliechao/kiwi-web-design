@@ -5,8 +5,6 @@ pubDate: 2025-10-14
 image: "/blog/FB-Post.jpg"
 ---
 
-# How Much Business Are You Losing Without a Website?
-
 
 In today’s digital world, your website is more than just an online brochure, it’s your 24/7 salesperson. Yet, many Auckland small business owners still rely solely on social media or word of mouth to get new customers.
 
@@ -44,7 +42,7 @@ It’s like having a full-time salesperson that never complains, never takes hol
 ## 4. A Small Investment, Big Results
 
 
-The good news is that building a website doesn’t have to be expensive or complicated.At **Kiwi Web Design**, we specialise in creating **affordable web design** solutions for Auckland small businesses, especially [tradies](/tradie-website-design-auckland/), local services, and family-run companies. Pair your new site with [SEO services in Auckland](/seo-auckland/) to start generating consistent leads.
+The good news is that building a website doesn’t have to be expensive or complicated.At **Kiwi Web Design**, we specialise in creating **affordable web design** solutions for Auckland small businesses, especially [tradies](/tradie-website-design-auckland/), local services, and family-run companies. Pair your new site with [SEO services in Auckland](/affordable-seo-auckland/) to start generating consistent leads.
 
 
 You’ll get:✅ A modern, mobile-friendly website✅ Built to rank on Google✅ Set up for lead generation✅ Clear pricing and local support

@@ -5,8 +5,6 @@ pubDate: 2025-10-28
 image: "/blog/how-to-turn-your-website-into-a-24-7-salesperson-kiwi-web-design.jpg"
 ---
 
-# How to Turn Your Website into a 24/7 Salesperson
-
 
 **By Kiwi Web Design – Auckland’s Local Web Design Experts**
 
@@ -74,7 +72,7 @@ A 24/7 salesperson doesn’t just sell, they *educate*.Add helpful blog posts, F
 - “5 Reasons Local SEO Matters for Auckland Businesses”
 
 
-This not only helps your visitors but also improves your Google ranking, a core part of [SEO for Auckland businesses](/seo-auckland/) (SEO + AEO).
+This not only helps your visitors but also improves your Google ranking, a core part of [SEO for Auckland businesses](/affordable-seo-auckland/) (SEO + AEO).
 
 
 ### 5. Optimise for Speed, Mobile, and SEO

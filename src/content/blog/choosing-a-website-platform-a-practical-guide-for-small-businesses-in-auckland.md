@@ -5,8 +5,6 @@ pubDate: 2025-11-24
 image: "/blog/choosing-website-platform-auckland-featured.jpg"
 ---
 
-# Choosing a Website Platform: A Practical Guide for Small Businesses in Auckland
-
 
 ![Choosing the right website platform for small businesses in Auckland](https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/choosing-website-platform-auckland-featured.jpg)
 

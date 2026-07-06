@@ -42,7 +42,7 @@ For most small and mid-sized Auckland businesses, the goal is not just traffic. 
 
 ### Key Strengths & Capabilities
 
-[Kiwi Web Design](/seo-auckland/) ranks first because it is built around what Auckland small businesses usually need from SEO: clearer service pages, stronger local visibility, technical foundations, Google Business Profile support, AI-ready content structure, and a website that can turn search traffic into enquiries.
+[Kiwi Web Design](/affordable-seo-auckland/) ranks first because it is built around what Auckland small businesses usually need from SEO: clearer service pages, stronger local visibility, technical foundations, Google Business Profile support, AI-ready content structure, and a website that can turn search traffic into enquiries.
 
 Many SEO companies focus mainly on rankings and monthly reports. Kiwi Web Design takes a more practical view. The website, local SEO, AI SEO, and Google Ads pathway all need to work together as one lead-generation system. That makes the agency especially useful for service businesses where every enquiry matters.
 
@@ -258,10 +258,10 @@ Choose a larger agency if you need broad digital marketing support, complex repo
 
 ### Can Kiwi Web Design help with SEO and website design together?
 
-Yes. Kiwi Web Design works across [SEO Auckland](/seo-auckland/), [AI SEO](/ai-seo-for-auckland-small-businesses/), [website design](/small-business-website-design-auckland/), and [Google Ads](/google-ads/). That makes it useful when the website needs to rank better and convert visitors into leads.
+Yes. Kiwi Web Design works across [SEO Auckland](/affordable-seo-auckland/), [AI SEO](/ai-seo-for-auckland-small-businesses/), [website design](/small-business-website-design-auckland/), and [Google Ads](/google-ads/). That makes it useful when the website needs to rank better and convert visitors into leads.
 
 ---
 
 ## Related reading
 
-[SEO Auckland](/seo-auckland/) | [Local SEO Auckland](/local-seo-for-auckland-small-businesses/) | [AI SEO & GEO](/ai-seo-for-auckland-small-businesses/) | [Website Design Packages](/small-business-website-design-auckland/) | [Get a Free Quote](/website-designer-auckland/)
+[SEO Auckland](/affordable-seo-auckland/) | [Local SEO Auckland](/local-seo-for-auckland-small-businesses/) | [AI SEO & GEO](/ai-seo-for-auckland-small-businesses/) | [Website Design Packages](/small-business-website-design-auckland/) | [Get a Free Quote](/website-designer-auckland/)
