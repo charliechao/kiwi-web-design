@@ -1,0 +1,154 @@
+---
+// Thank-you page for the Google Ads landing page.
+// This is where the lp_lead_submit conversion event fires — nowhere else.
+// noindex + excluded from sitemap (astro.config.mjs).
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+---
+
+<Layout
+  title="Thanks — We'll Be in Touch | Kiwi Web Design"
+  description="Your strategy call request has been received. Charlie will be in touch within 1 business day."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/web-design-auckland-lp/thank-you/"
+  robots="noindex, nofollow"
+  chrome="minimal"
+>
+
+  <section class="ty-hero">
+    <div class="container ty-inner">
+      <span class="ty-check"><Icon name="CheckCircle" size={30} /></span>
+      <h1>Thanks — your details are in</h1>
+      <p class="ty-lead">Charlie will review your business and call you within <strong>1 business day</strong> to set up your free 15-minute strategy call.</p>
+
+      <div class="ty-steps">
+        <div class="ty-step">
+          <span class="ty-step-num">1</span>
+          <div>
+            <strong>We review first</strong>
+            <p>Before we call, we look at your current website (if you have one) and how your business shows up on Google.</p>
+          </div>
+        </div>
+        <div class="ty-step">
+          <span class="ty-step-num">2</span>
+          <div>
+            <strong>Charlie calls you</strong>
+            <p>A real conversation about your goals — not a sales script. If a new website isn't the right move, we'll say so.</p>
+          </div>
+        </div>
+        <div class="ty-step">
+          <span class="ty-step-num">3</span>
+          <div>
+            <strong>You get a clear plan</strong>
+            <p>If we're a good fit, you'll receive a fixed quote with pages, timeline, and price. No obligation either way.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="ty-urgent">Need to talk sooner? Call or text Charlie directly on <a href="tel:+64210396580">021 039 6580</a>.</p>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      // Fire the conversion event only when arriving from a real form submit.
+      // The flag is removed immediately so refreshes never double-count.
+      let lead: Record<string, string> | null = null;
+      try {
+        const raw = sessionStorage.getItem('kwd_lp_lead');
+        if (raw) {
+          sessionStorage.removeItem('kwd_lp_lead');
+          lead = JSON.parse(raw);
+        }
+      } catch { /* storage unavailable */ }
+
+      if (!lead) return;
+      const g = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+      if (typeof g !== 'function') return;
+
+      // User-provided data for enhanced conversions (hashed by Google client-side).
+      if (lead.email || lead.phone) {
+        g('set', 'user_data', {
+          email: lead.email || undefined,
+          phone_number: lead.phone || undefined,
+        });
+      }
+
+      g('event', 'lp_lead_submit', {
+        form_name: 'web-design-auckland-lp',
+      });
+    })();
+  </script>
+
+</Layout>
+
+<style>
+  .ty-hero {
+    background: var(--kwd-dark);
+    padding: 5rem 0 5.5rem;
+    min-height: 60vh;
+  }
+  .ty-inner { max-width: 660px; }
+  .ty-check {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--kwd-yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--kwd-dark);
+    margin-bottom: 1.5rem;
+  }
+  .ty-hero h1 {
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    color: #fff;
+    line-height: 1.12;
+    margin-bottom: 1rem;
+  }
+  .ty-lead {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.7;
+    margin-bottom: 2.75rem;
+  }
+  .ty-lead strong { color: var(--kwd-yellow); }
+
+  .ty-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.75rem;
+  }
+  .ty-step {
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+  }
+  .ty-step-num {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--kwd-font-body);
+  }
+  .ty-step strong { display: block; color: #fff; font-size: 0.95rem; margin-bottom: 0.3rem; }
+  .ty-step p { font-size: 0.86rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin: 0; }
+
+  .ty-urgent {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.7);
+    margin: 0;
+  }
+  .ty-urgent a { color: var(--kwd-yellow); font-weight: 700; }
+</style>

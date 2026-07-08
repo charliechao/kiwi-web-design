@@ -1,0 +1,1498 @@
+---
+// Google Ads landing page — noindex, excluded from sitemap (astro.config.mjs).
+// Conversion fires on /web-design-auckland-lp/thank-you/ only.
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import { Image } from 'astro:assets';
+import charliePhoto from '../assets/general/Kiwi-Web-Design-Owner-Charlie.jpeg';
+import beautyTouchPreview from '../assets/general/beauty-salon-website-design-seo-auckland.jpg';
+
+const included = [
+  { icon: "MessageCircle", title: "Strategy First", desc: "We map out who your customers are and what the site needs to say before any design starts." },
+  { icon: "PenTool", title: "Copywriting Included", desc: "Words that sell your services — you don't have to write a single page yourself." },
+  { icon: "Monitor", title: "Custom Design & Build", desc: "No templates. A fast, modern site designed around your business, not squeezed into a theme." },
+  { icon: "Smartphone", title: "Mobile Optimised", desc: "Most Auckland customers will find you on their phone. Your site will look sharp there first." },
+  { icon: "TrendingUp", title: "SEO-Ready Structure", desc: "Clean headings, service pages, and local SEO foundations so Google understands your business." },
+  { icon: "BarChart3", title: "Enquiry Tracking Set Up", desc: "Forms, analytics, and conversion tracking wired in — you'll know exactly where leads come from." },
+];
+
+const goodFit = [
+  "You run a service business in Auckland and want more enquiries, not just a prettier site",
+  "Your current website is outdated, or looks fine but never generates leads",
+  "You want one person who handles strategy, design, build, and launch",
+  "You're thinking about SEO or Google Ads later and want a site built ready for them",
+];
+
+const notFit = [
+  "You're looking for the cheapest possible website or a $300 template job",
+  "You want a DIY builder site you'll maintain yourself",
+  "You want to start before you've decided what the website needs to achieve",
+  "You're just collecting quotes with no real timeline",
+];
+
+// Verbatim 5-star Google reviews (kiwiwebdesign.co.nz Business Profile).
+const reviews = [
+  { name: "Eduardo Arnez", company: "Aesthetic Painting & Deco", text: "Charlie from Kiwi Web Design did an outstanding job designing our website. He was incredibly helpful throughout the entire process, offering great ideas and maintaining excellent communication. We're extremely happy with both the look and functionality of the final result. Highly recommend!" },
+  { name: "Francesco Moretti", text: "Kiwi Web Design doesn't just build website, they actually focus on getting you found online. Their approach to SEO and AI search made a big difference for us. We're now showing up in more places and getting more enquires." },
+  { name: "Charles Haddix", avatar: "/images/reviews/charles-haddix.png", text: "We recently got our website rebuilt by Kiwi Web Design in Auckland, and honestly, it was such a good experience. Charlie made everything really easy to understand and kept us in the loop the whole way through. The new site looks great on both phone and desktop, and we've already noticed more people finding us on Google and getting in touch. Couldn't recommend Kiwi Web Design enough if you're after an affordable, professional web designer in Auckland." },
+  { name: "Deborah Shaw", company: "Deborah Shaw Editing", avatar: "/images/reviews/deborah-shaw.png", text: "Charlie is fantastic to work with! I got stuck fiddling around with WordPress blocks, but Charlie came to the rescue. He understood what I was wanting with my website and made my ideas come together. Thank you!" },
+  { name: "Zane Barrett", company: "Barrett Access Scaffolding", text: "We recently worked with Kiwiweb to design and launch our new website, and we couldn't be happier with the results. The team was professional, responsive, and really took the time to understand our business. They helped us create a modern, easy-to-navigate site and incorporated some amazing features, including a scaffold cost calculator – the first of its kind in NZ! This has already set us apart in our industry and made quoting so much easier for our clients. Communication was clear and efficient throughout, and any tweaks we needed were handled quickly. I highly recommend Kiwiweb to anyone looking for a web design team that delivers both creativity and functionality." },
+  { name: "Steven Liu", company: "Kiwiland Constructions", avatar: "/images/reviews/steven-liu.png", text: "Outstanding Experience with Kiwi Web Design and Charlie! I couldn't be happier with the website that Kiwi Web Design created for me. From start to finish, Charlie was professional, responsive, and incredibly easy to work with. He took the time to understand exactly what I wanted, offered helpful suggestions, and delivered a final product that exceeded my expectations. The design is clean, modern, and user-friendly — exactly what I was hoping for. Charlie made the whole process smooth and stress-free, and he was always quick to answer any questions I had. His attention to detail and commitment to quality really stood out. If you're looking for a reliable, talented web designer who truly cares about your vision, I highly recommend Kiwi Web Design and Charlie. Five stars all the way!" },
+  { name: "Jack at Show Me Shorts", avatar: "/images/reviews/jack-show-me-shorts.png", text: "Kiwi Web Design were fantastic to work with. From the very beginning they really took the time to understand what I needed and offered smart, practical solutions. The team were professional, friendly and quick to respond whenever I had questions. If you're looking for a reliable, creative, and genuinely helpful web design team in New Zealand, I'd definitely recommend Kiwi Web Design." },
+  { name: "Elisabeth Krull", text: "Kiwi Web Design is helping me with an international website. I can highly recommend working with Charlie — both professionally and personally!" },
+  { name: "Gina Dellabarca", company: "Showme Short Film Festival", avatar: "/images/reviews/gina-dellabarca.png", text: "They provided a comprehensive and helpful website audit for us. Clear information. Great communication." },
+  { name: "Dave G", text: "Charlie was very responsive to my concerns and demonstrated a strong understanding of the issues I raised. Excellent service and support — thank you." },
+];
+
+// Full-colour Google "G" logo (official 4-colour mark), reused in the header + each review card.
+const googleG = '<path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>';
+const avatarColors = ['#d93b8f', '#5b8def', '#8b5cf6', '#0ea5a4', '#e0672c', '#3f7d4f', '#c0392b', '#2f6f9f'];
+
+const steps = [
+  { num: "1", title: "15-Minute Strategy Call", desc: "We talk about your business, your customers, and whether a new site will actually move the needle. Honest advice, no pressure." },
+  { num: "2", title: "Plan & Fixed Quote", desc: "You get a clear proposal: pages, copy, design direction, timeline, and one fixed price. No surprise invoices." },
+  { num: "3", title: "Design & Build", desc: "We write, design, and build. You review at each stage. Most sites are live in 2-3 weeks." },
+  { num: "4", title: "Launch & Grow", desc: "Analytics and enquiry tracking are live from day one. Add SEO or Google Ads when you're ready." },
+];
+
+// Screenshots only, deliberately no outbound links — this page has one job.
+// Full set — matches the homepage portfolio (index.astro) plus a couple of LP-only extras.
+const portfolio = [
+  { src: '/portfolio/barrett-access-scaffolding.webp', alt: 'Barrett Access Scaffolding website by Kiwi Web Design', caption: 'Barrett Access Scaffolding' },
+  { src: '/portfolio/prime-industrial.webp', alt: 'Prime Industrial website by Kiwi Web Design', caption: 'Prime Industrial' },
+  { src: '/portfolio/the-framers-guild.webp', alt: 'The Framers Guild website by Kiwi Web Design', caption: 'The Framers Guild' },
+  { src: '/portfolio/kiwiland-construction.webp', alt: 'Kiwiland Construction website by Kiwi Web Design', caption: 'Kiwiland Construction' },
+  { src: '/portfolio/melanoma-specialists.webp', alt: 'Melanoma Specialists website by Kiwi Web Design', caption: 'Melanoma Specialists' },
+  { src: '/portfolio/aesthetic-painting.webp', alt: 'Aesthetic Painting website by Kiwi Web Design', caption: 'Aesthetic Painting' },
+  { src: beautyTouchPreview.src, alt: 'Beauty Touch Auckland website by Kiwi Web Design', caption: 'Beauty Touch Auckland' },
+  { src: '/portfolio/gom.webp', alt: 'Goldwing website by Kiwi Web Design', caption: 'Goldwing' },
+  { src: '/portfolio/kebudel.webp', alt: 'Kebudel website by Kiwi Web Design', caption: 'Kebudel' },
+  { src: '/portfolio/asc-homes.webp', alt: 'ASC Homes website by Kiwi Web Design', caption: 'ASC Homes' },
+  { src: '/portfolio/mt-albert-business.jpg', alt: 'Mt Albert Business Association website by Kiwi Web Design', caption: 'Mt Albert Business Assoc.' },
+  { src: '/blog/600-21B675F7-8EB5-45A5-99242870729DC26D.png', alt: 'TopRated.nz platform by Kiwi Web Design', caption: 'TopRated.nz' },
+];
+
+const faqs = [
+  { q: "How much does a website cost?", a: "Most small business website projects start from $2,000 + GST. The exact price depends on pages and features — you'll get a fixed quote after the strategy call, before anything starts." },
+  { q: "How long until my site is live?", a: "Most small business websites go live in 2-3 weeks from project start. If you have a hard deadline, tell us on the call and we'll be straight about whether it's doable." },
+  { q: "Is the strategy call really free?", a: "Yes — 15 minutes, no obligation, no quote pressure. If a new website isn't the right move for your business right now, we'll tell you that too." },
+  { q: "Do I need SEO or Google Ads as well?", a: "Not on day one. Every site we build is structured ready for SEO and Google Ads, so you can add them later without rebuilding anything." },
+  { q: "Will you write the website content?", a: "Yes, we can help draft the content for your website, but you'll need to review and approve it based on your expertise before it goes live." },
+  { q: "Can you redesign my existing website?", a: "Yes. If your current site is outdated, slow, hard to update, or not generating enquiries, we can rebuild it with a clearer structure, better copy, and proper tracking." },
+  { q: "Do you use templates?", a: "No. We may reuse proven section patterns, but your website is planned, written, designed, and built around your business, services, customers, and goals." },
+  { q: "Will I own the website?", a: "Yes. Once the project is paid for, the website belongs to you. We can look after hosting, updates, and improvements, but you are not locked into staying with us." },
+  { q: "Can you set up enquiry tracking?", a: "Yes, we can set up enquiry tracking if required." },
+  { q: "What do I need before the call?", a: "Just your business name, current website if you have one, and a rough idea of what you want the website to achieve. We can help shape the rest." },
+];
+---
+
+<Layout
+  title="Web Design Auckland | Websites That Generate Enquiries | Kiwi Web Design"
+  description="Website design for Auckland small businesses that want more enquiries. Custom design, copywriting, and enquiry tracking included. Projects from $2,000 + GST. Book a free 15-minute strategy call."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/web-design-auckland-lp/"
+  robots="noindex, nofollow"
+  chrome="minimal"
+>
+
+  <!-- Minimal LP header: no nav menu, no leak paths — logo, phone, one CTA -->
+  <header class="lp-header">
+    <div class="container lp-header-inner">
+      <span class="lp-logo">
+        <img src="/logo-96.webp" alt="Kiwi Web Design" width="44" height="44" loading="eager" />
+        <span class="lp-logo-text">Kiwi Web Design</span>
+      </span>
+      <div class="lp-header-actions">
+        <a href="tel:+64210396580" class="lp-header-phone">
+          <Icon name="Phone" size={16} />
+          <span>021 039 6580</span>
+        </a>
+        <a href="#lead-form" class="lp-header-cta">Free Strategy Call</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero + form -->
+  <section class="lp-hero">
+    <span class="lp-orb lp-orb-yellow lp-orb-lg lp-orb--hero-1" aria-hidden="true"></span>
+    <span class="lp-orb lp-orb-gold lp-orb-md lp-orb--hero-2" aria-hidden="true"></span>
+    <div class="container lp-layout">
+
+      <div class="lp-pitch">
+        <p class="lp-eyebrow">Web Design · Auckland</p>
+        <h1>Website design for Auckland small businesses that want <span class="lp-title-accent">more&nbsp;enquiries</span></h1>
+        <p class="lp-lead">Your website should be your hardest-working salesperson. We design and build sites that explain what you do, rank on Google, and turn visitors into phone calls and enquiries — not just look pretty.</p>
+
+        <ul class="lp-trust">
+          <li><span class="lp-trust-icon"><Icon name="BadgeDollarSign" size={18} /></span> Projects from $2,000 + GST — fixed quote up front</li>
+          <li><span class="lp-trust-icon"><Icon name="Zap" size={18} /></span> Most sites live in 2-3 weeks</li>
+          <li><span class="lp-trust-icon"><Icon name="MapPin" size={18} /></span> Based in Grey Lynn — we meet Auckland clients in person</li>
+          <li><span class="lp-trust-icon"><Icon name="Star" size={18} /></span> 5★ Google rating from 50+ NZ businesses</li>
+        </ul>
+      </div>
+
+      <div class="lp-form-wrap" id="lead-form">
+        <h2 class="lp-form-title">Book a <span class="lp-title-accent">free 15-minute</span> strategy call</h2>
+        <p class="lp-form-sub">Tell us a bit about your business. We'll review it before we call, so the 15 minutes is about your goals — not a sales script. Fields marked * are required.</p>
+        <form class="lp-form" id="lp-form" name="web-design-auckland-lp" method="POST" action="https://api.web3forms.com/submit" data-lp-form>
+          <input type="hidden" name="access_key" value="e0a725e4-f764-4536-826c-df981c8bdf3b" />
+          <input type="hidden" name="subject" value="New Google Ads LP lead — web design Auckland" />
+          <input type="hidden" name="from_name" value="KWD Google Ads Landing Page" />
+          <input type="hidden" name="submitted_at" id="lp-submitted-at" value="" data-lp-submitted-at />
+          <input type="checkbox" name="botcheck" class="lp-botcheck" tabindex="-1" autocomplete="off" />
+
+          <div class="lp-row lp-row-2">
+            <label class="lp-label">
+              <span class="lp-label-text">Name <span class="req">*</span></span>
+              <input type="text" name="name" placeholder="Sarah Johnson" required />
+            </label>
+            <label class="lp-label">
+              <span class="lp-label-text">Business <span class="req">*</span></span>
+              <input type="text" name="business" placeholder="Your business name" required />
+            </label>
+          </div>
+          <div class="lp-row lp-row-2">
+            <label class="lp-label">
+              <span class="lp-label-text">Email <span class="req">*</span></span>
+              <input type="email" name="email" placeholder="you@yourbusiness.co.nz" required />
+            </label>
+            <label class="lp-label">
+              <span class="lp-label-text">Phone <span class="req">*</span></span>
+              <input type="tel" name="phone" placeholder="021 000 0000" required />
+            </label>
+          </div>
+          <div class="lp-row">
+            <label class="lp-label">
+              <span class="lp-label-text">Website</span>
+              <input type="text" name="website" placeholder="www.yourbusiness.co.nz (optional)" />
+            </label>
+          </div>
+          <div class="lp-row">
+            <label class="lp-label lp-label-area">
+              <span class="lp-label-text">Goal</span>
+              <textarea name="goal" rows="1" placeholder="What are you hoping to achieve? (optional)"></textarea>
+            </label>
+          </div>
+
+          <button type="submit" class="lp-submit" id="lp-submit" data-lp-submit>Book My Free Strategy Call →</button>
+          <p id="lp-status" aria-live="polite" style="display:none" class="lp-form-status" data-lp-status></p>
+          <p class="lp-privacy">No obligation. No spam. We reply within 1 business day.</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Google reviews -->
+  <section class="lp-section lp-section-dark">
+    <span class="lp-orb lp-orb-gold lp-orb-lg lp-orb--reviews" aria-hidden="true"></span>
+    <div class="container">
+      <div class="lp-reviews-head">
+        <span class="lp-reviews-badge">
+          <svg class="lp-g" viewBox="0 0 48 48" aria-hidden="true" set:html={googleG} />
+          <span class="lp-review-stars" aria-hidden="true">★★★★★</span>
+          <strong>5.0</strong>
+          <span class="lp-reviews-count">on Google Reviews</span>
+        </span>
+        <h2 class="lp-sec-title lp-reviews-title">What Auckland <span class="lp-title-accent">business owners say</span></h2>
+      </div>
+      <div class="lp-carousel">
+        <button type="button" class="lp-carousel-btn lp-carousel-prev" id="lp-rev-prev" aria-label="Previous reviews">‹</button>
+        <div class="lp-carousel-track" id="lp-reviews-track">
+          {reviews.map(({ name, company, avatar, text }, i) => (
+            <figure class="lp-review-card">
+              <div class="lp-review-top">
+                <svg class="lp-g" viewBox="0 0 48 48" aria-hidden="true" set:html={googleG} />
+                <span class="lp-review-stars" aria-label="Rated 5 out of 5">★★★★★</span>
+              </div>
+              <div class="lp-review-textwrap">
+                <p class="lp-review-text">{text}</p>
+                <button type="button" class="lp-review-more" hidden>Read more</button>
+              </div>
+              <figcaption class="lp-review-foot">
+                {avatar ? (
+                  <img class="lp-review-avatar" src={avatar} alt={`${name} avatar`} loading="lazy" width="40" height="40" />
+                ) : (
+                  <span class="lp-review-avatar" style={`background:${avatarColors[i % avatarColors.length]}`}>{name.charAt(0)}</span>
+                )}
+                <span class="lp-review-who">
+                  <span class="lp-review-name">{name}</span>
+                  {company && <span class="lp-review-co">{company}</span>}
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <button type="button" class="lp-carousel-btn lp-carousel-next" id="lp-rev-next" aria-label="Next reviews">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="lp-section lp-section-white">
+    <span class="lp-orb lp-orb-gold lp-orb-md lp-orb--problem" aria-hidden="true"></span>
+    <div class="container">
+      <p class="lp-sec-eyebrow">Sound familiar?</p>
+      <h2 class="lp-sec-title">Your website looks fine — so <span class="lp-title-accent">why is the phone quiet?</span></h2>
+      <div class="lp-problem-grid">
+        <div class="lp-problem-card">
+          <span class="lp-problem-icon"><Icon name="Clock" size={22} /></span>
+          <h3>It's outdated</h3>
+          <p>Built years ago, slow on mobile, and it makes your business look smaller than it is. Customers notice — then call your competitor.</p>
+        </div>
+        <div class="lp-problem-card">
+          <span class="lp-problem-icon"><Icon name="EyeOff" size={22} /></span>
+          <h3>Google can't find it</h3>
+          <p>No clear service pages, no local SEO structure, no reason for Google to rank you when Aucklanders search for what you do.</p>
+        </div>
+        <div class="lp-problem-card">
+          <span class="lp-problem-icon"><Icon name="PhoneOff" size={22} /></span>
+          <h3>It doesn't convert</h3>
+          <p>Visitors arrive, look around, and leave. No clear offer, no reason to enquire, no easy next step. Traffic without enquiries is just a stat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio proof -->
+  <section class="lp-section lp-section-cream">
+    <span class="lp-orb lp-orb-yellow lp-orb-lg lp-orb--portfolio" aria-hidden="true"></span>
+    <div class="container">
+      <p class="lp-sec-eyebrow">Recent work</p>
+      <h2 class="lp-sec-title">Websites we've built for <span class="lp-title-accent">businesses like yours</span></h2>
+      <div class="lp-carousel">
+        <button type="button" class="lp-carousel-btn lp-carousel-prev" id="lp-port-prev" aria-label="Previous work">‹</button>
+        <div class="lp-carousel-track" id="lp-portfolio-track">
+          {portfolio.map(({ src, alt, caption }) => (
+            <figure class="lp-portfolio-item">
+              <img src={src} alt={alt} loading="lazy" width="640" height="400" />
+              <figcaption>{caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <button type="button" class="lp-carousel-btn lp-carousel-next" id="lp-port-next" aria-label="Next work">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="lp-section lp-section-cream">
+    <div class="container">
+      <p class="lp-sec-eyebrow">What's included</p>
+      <h2 class="lp-sec-title">Everything a <span class="lp-title-accent">lead-generating website</span> needs — one fixed price</h2>
+      <div class="lp-included-grid">
+        {included.map(({ icon, title, desc }) => (
+          <div class="lp-included-card">
+            <span class="lp-included-icon"><Icon name={icon} size={20} /></span>
+            <div>
+              <strong>{title}</strong>
+              <p>{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Fit filter -->
+  <section class="lp-section lp-section-white">
+    <div class="container">
+      <p class="lp-sec-eyebrow">Is this right for you?</p>
+      <h2 class="lp-sec-title">We're <span class="lp-title-accent">not the right fit</span> for everyone</h2>
+      <div class="lp-fit-grid">
+        <div class="lp-fit-col lp-fit-yes">
+          <h3><Icon name="CheckCircle" size={20} /> A good fit if…</h3>
+          <ul>
+            {goodFit.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div class="lp-fit-col lp-fit-no">
+          <h3><Icon name="XCircle" size={20} /> Probably not the right fit if…</h3>
+          <ul>
+            {notFit.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility -->
+  <section class="lp-section lp-section-dark">
+    <span class="lp-orb lp-orb-yellow lp-orb-lg lp-orb--cred" aria-hidden="true"></span>
+    <div class="container lp-cred-layout">
+      <div class="lp-cred-photo">
+        <Image src={charliePhoto} alt="Charlie Chao, owner of Kiwi Web Design, Auckland" width={420} loading="lazy" />
+      </div>
+      <div class="lp-cred-text">
+        <p class="lp-sec-eyebrow">Who you'll work with</p>
+        <h2>You work with <span class="lp-title-accent">Charlie</span> — the person who actually builds your site</h2>
+        <p>No account managers, no offshore handoffs. Kiwi Web Design is run by Charlie Chao from Grey Lynn, Auckland. The person you talk to on the strategy call is the same person who writes, designs, and builds your website — and answers the phone after launch.</p>
+        <div class="lp-cred-stats">
+          <div><span class="lp-cred-num">5.0★</span><span class="lp-cred-label">Google Rating</span></div>
+          <div><span class="lp-cred-num">2-3 wks</span><span class="lp-cred-label">Typical Build</span></div>
+          <div><span class="lp-cred-num">1 day</span><span class="lp-cred-label">Reply Time</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="lp-section lp-section-white">
+    <div class="container">
+      <p class="lp-sec-eyebrow">How it works</p>
+      <h2 class="lp-sec-title">From first call to live site, <span class="lp-title-accent">without the runaround</span></h2>
+      <div class="lp-steps">
+        {steps.map(({ num, title, desc }) => (
+          <div class="lp-step">
+            <span class="lp-step-num">{num}</span>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="lp-section lp-section-cream">
+    <div class="container">
+      <p class="lp-sec-eyebrow">Common questions</p>
+      <h2 class="lp-sec-title">Straight answers <span class="lp-title-accent">before you book</span></h2>
+      <div class="lp-faq-list">
+        {faqs.map(({ q, a }) => (
+          <details class="lp-faq-item">
+            <summary class="lp-faq-q">{q}</summary>
+            <p class="lp-faq-a">{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA + second form -->
+  <section class="lp-final">
+    <span class="lp-orb lp-orb-yellow lp-orb-lg lp-orb--final" aria-hidden="true"></span>
+    <div class="container lp-final-grid">
+      <div class="lp-final-copy">
+        <p class="lp-sec-eyebrow">First steps</p>
+        <h2>Fill out the form and <span class="lp-title-accent">we'll be in touch</span></h2>
+        <p>Tell us where your website is at and what you want it to do. Charlie will review your business before replying, so the next conversation is useful from the start.</p>
+
+        <article class="lp-final-case" aria-label="Example Auckland service business website result">
+          <div class="lp-final-case-media">
+            <img src="/images/zane-charlie-final-cta.jpg" alt="Zane from Barrett Access Scaffolding with Charlie from Kiwi Web Design" loading="lazy" width="1200" height="670" />
+          </div>
+          <div class="lp-final-case-body">
+            <figure class="lp-final-review">
+              <div class="lp-review-top">
+                <svg class="lp-g" viewBox="0 0 48 48" aria-hidden="true" set:html={googleG} />
+                <span class="lp-review-stars" aria-label="Rated 5 out of 5">★★★★★</span>
+              </div>
+              <div class="lp-review-textwrap">
+                  <p class="lp-review-text">"Communication was clear and efficient throughout the entire process, and any tweaks or changes we needed were handled quickly. The end result looks fantastic and works perfectly."</p>
+              </div>
+            </figure>
+          </div>
+        </article>
+      </div>
+
+      <div class="lp-final-form-wrap" id="bottom-lead-form">
+        <div class="lp-final-form-head">
+          <h2 class="lp-form-title">Ready for a website that <span class="lp-title-accent">earns its keep?</span></h2>
+          <p class="lp-form-sub">Send the basics through here. Same free 15-minute strategy call, same honest advice, no obligation.</p>
+        </div>
+        <form class="lp-form" id="lp-final-form" name="web-design-auckland-lp-bottom" method="POST" action="https://api.web3forms.com/submit" data-lp-form>
+          <input type="hidden" name="access_key" value="e0a725e4-f764-4536-826c-df981c8bdf3b" />
+          <input type="hidden" name="subject" value="New Google Ads LP lead — bottom form" />
+          <input type="hidden" name="from_name" value="KWD Google Ads Landing Page" />
+          <input type="hidden" name="submitted_at" id="lp-final-submitted-at" value="" data-lp-submitted-at />
+          <input type="checkbox" name="botcheck" class="lp-botcheck" tabindex="-1" autocomplete="off" />
+
+          <div class="lp-row lp-row-2">
+            <label class="lp-label">
+              <span class="lp-label-text">Name <span class="req">*</span></span>
+              <input type="text" name="name" placeholder="Sarah Johnson" required />
+            </label>
+            <label class="lp-label">
+              <span class="lp-label-text">Business <span class="req">*</span></span>
+              <input type="text" name="business" placeholder="Your business name" required />
+            </label>
+          </div>
+          <div class="lp-row lp-row-2">
+            <label class="lp-label">
+              <span class="lp-label-text">Email <span class="req">*</span></span>
+              <input type="email" name="email" placeholder="you@yourbusiness.co.nz" required />
+            </label>
+            <label class="lp-label">
+              <span class="lp-label-text">Phone <span class="req">*</span></span>
+              <input type="tel" name="phone" placeholder="021 000 0000" required />
+            </label>
+          </div>
+          <div class="lp-row">
+            <label class="lp-label">
+              <span class="lp-label-text">Website</span>
+              <input type="text" name="website" placeholder="www.yourbusiness.co.nz (optional)" />
+            </label>
+          </div>
+          <div class="lp-row lp-final-goal-row">
+            <label class="lp-label lp-label-area">
+              <span class="lp-label-text">Goal</span>
+              <textarea name="goal" rows="2" placeholder="What are you hoping to achieve? (optional)"></textarea>
+            </label>
+          </div>
+
+          <div class="lp-final-form-actions">
+            <button type="submit" class="lp-submit" data-lp-submit>Send My Details →</button>
+            <p aria-live="polite" style="display:none" class="lp-form-status" data-lp-status></p>
+            <p class="lp-privacy">No obligation. No spam. We reply within 1 business day.</p>
+            <div class="lp-final-form-note">
+              <span>After you send it</span>
+              <p>Charlie reviews your site and replies with the most useful next step.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minimal footer: legal/contact info only, no link tree -->
+  <footer class="lp-footer">
+    <div class="container lp-footer-inner">
+      <p>© {new Date().getFullYear()} Kiwi Web Design · 147 Great North Road, Grey Lynn, Auckland</p>
+      <p>
+        <a href="tel:+64210396580">021 039 6580</a>
+        <span aria-hidden="true"> · </span>
+        <a href="mailto:Hi@KiwiWebDesign.co.nz">Hi@KiwiWebDesign.co.nz</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky CTA -->
+  <a href="#lead-form" class="lp-sticky-cta" id="lp-sticky-cta">Book My Free Strategy Call →</a>
+
+  <script>
+    (function () {
+      const minSubmitSeconds = 3;
+
+      function setStatus(status: HTMLElement, msg: string, isError: boolean) {
+        status.textContent = msg;
+        status.style.display = 'block';
+        status.className = 'lp-form-status ' + (isError ? 'lp-form-status--error' : 'lp-form-status--success');
+      }
+
+      function validateSubmission(form: HTMLFormElement) {
+        const formData = new FormData(form);
+        const name = String(formData.get('name') || '').trim();
+        const startedAt = Number(formData.get('submitted_at') || 0);
+        if (formData.get('botcheck')) return 'Submission blocked. Please refresh the page and try again.';
+        if (!startedAt || ((Date.now() - startedAt) / 1000) < minSubmitSeconds) {
+          return 'Please wait a few seconds before submitting.';
+        }
+        if (name.length < 2 || !/[a-z]/i.test(name)) return 'Please enter your name.';
+        return '';
+      }
+
+      document.querySelectorAll<HTMLFormElement>('form[data-lp-form]').forEach((form) => {
+        const btn = form.querySelector<HTMLButtonElement>('[data-lp-submit]');
+        const status = form.querySelector<HTMLElement>('[data-lp-status]');
+        const submittedAt = form.querySelector<HTMLInputElement>('[data-lp-submitted-at]');
+        if (submittedAt) submittedAt.value = String(Date.now());
+        if (!btn || !status) return;
+
+        const defaultBtnText = btn.textContent || 'Send My Details →';
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const validationError = validateSubmission(form);
+          if (validationError) {
+            setStatus(status, validationError, true);
+            return;
+          }
+          btn.disabled = true;
+          btn.textContent = 'Sending…';
+          status.style.display = 'none';
+          try {
+            const formData = new FormData(form);
+            const res = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(Object.fromEntries(formData)),
+            });
+            const data = await res.json();
+            if (data.success) {
+              // Hand lead details to the thank-you page for the conversion event
+              // (sessionStorage, not URL params — keeps PII out of logs/history).
+              try {
+                sessionStorage.setItem('kwd_lp_lead', JSON.stringify({
+                  email: String(formData.get('email') || ''),
+                  phone: String(formData.get('phone') || ''),
+                }));
+              } catch { /* storage unavailable — thank-you page still loads, event just has no params */ }
+              window.location.href = '/web-design-auckland-lp/thank-you/';
+            } else {
+              setStatus(status, data.message || 'Something went wrong. Please try again, or call 021 039 6580.', true);
+            }
+          } catch {
+            setStatus(status, 'Network error — please check your connection and try again, or call 021 039 6580.', true);
+          } finally {
+            btn.disabled = false;
+            btn.textContent = defaultBtnText;
+          }
+        });
+      });
+
+      // Hide the sticky mobile CTA while the form is on screen
+      const sticky = document.getElementById('lp-sticky-cta');
+      const formWrap = document.getElementById('lead-form');
+      if (sticky && formWrap && 'IntersectionObserver' in window) {
+        new IntersectionObserver(([entry]) => {
+          sticky.classList.toggle('lp-sticky-hidden', entry.isIntersecting);
+        }, { threshold: 0.1 }).observe(formWrap);
+      }
+
+      // Review cards: show "Read more" only when the clamped text actually overflows.
+      function initReviewClamp() {
+        document.querySelectorAll<HTMLElement>('.lp-review-card').forEach((card) => {
+          if (card.dataset.clampInit) return;
+          const textEl = card.querySelector<HTMLElement>('.lp-review-text');
+          const moreBtn = card.querySelector<HTMLButtonElement>('.lp-review-more');
+          if (!textEl || !moreBtn) return;
+          card.dataset.clampInit = '1';
+          if (textEl.scrollHeight - textEl.clientHeight > 4) {
+            moreBtn.hidden = false;
+            moreBtn.addEventListener('click', () => {
+              const expanded = card.classList.toggle('is-expanded');
+              moreBtn.textContent = expanded ? 'Read less' : 'Read more';
+            });
+          }
+        });
+      }
+      // Measure after fonts settle (line-heights shift once webfonts load).
+      const fontsApi = (document as Document & { fonts?: FontFaceSet }).fonts;
+      if (fontsApi?.ready) { fontsApi.ready.then(initReviewClamp); } else { initReviewClamp(); }
+
+      // Generic carousel: one card per step, loops forever, auto-advances slowly.
+      // Shared by the reviews carousel and the portfolio carousel.
+      function initCarousel(trackId: string, prevId: string, nextId: string, cardSelector: string, autoplayMs = 4500) {
+        const track = document.getElementById(trackId);
+        const prevBtn = document.getElementById(prevId) as HTMLButtonElement | null;
+        const nextBtn = document.getElementById(nextId) as HTMLButtonElement | null;
+        if (!track || !prevBtn || !nextBtn) return;
+
+        const stepBy = () => {
+          const card = track.querySelector<HTMLElement>(cardSelector);
+          return card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.9;
+        };
+        const maxScroll = () => track.scrollWidth - track.clientWidth;
+        const advance = (dir: 1 | -1) => {
+          if (dir === 1 && track.scrollLeft >= maxScroll() - 2) {
+            track.scrollTo({ left: 0, behavior: 'smooth' });
+          } else if (dir === -1 && track.scrollLeft <= 2) {
+            track.scrollTo({ left: maxScroll(), behavior: 'smooth' });
+          } else {
+            track.scrollBy({ left: dir * stepBy(), behavior: 'smooth' });
+          }
+        };
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let autoplayTimer: ReturnType<typeof setInterval> | null = null;
+        const stopAutoplay = () => { if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; } };
+        const startAutoplay = () => {
+          if (prefersReducedMotion || autoplayTimer) return;
+          autoplayTimer = setInterval(() => advance(1), autoplayMs);
+        };
+        const restartAutoplay = () => { stopAutoplay(); startAutoplay(); };
+
+        prevBtn.addEventListener('click', () => { advance(-1); restartAutoplay(); });
+        nextBtn.addEventListener('click', () => { advance(1); restartAutoplay(); });
+        track.addEventListener('mouseenter', stopAutoplay);
+        track.addEventListener('mouseleave', startAutoplay);
+        track.addEventListener('touchstart', stopAutoplay, { passive: true });
+        track.addEventListener('touchend', () => { stopAutoplay(); setTimeout(startAutoplay, 3000); }, { passive: true });
+
+        startAutoplay();
+      }
+
+      initCarousel('lp-reviews-track', 'lp-rev-prev', 'lp-rev-next', '.lp-review-card', 4500);
+      initCarousel('lp-portfolio-track', 'lp-port-prev', 'lp-port-next', '.lp-portfolio-item', 3800);
+    })();
+  </script>
+  <script is:inline src="https://web3forms.com/client/script.js" async defer></script>
+
+</Layout>
+
+<style>
+  /* ── Minimal header ── */
+  .lp-header {
+    background: var(--kwd-dark);
+    padding: 0.9rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+  .lp-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .lp-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+  .lp-logo img { border-radius: 50%; display: block; }
+  .lp-logo-text {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.1rem;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .lp-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .lp-header-phone {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .lp-header-phone:hover { color: var(--kwd-yellow); }
+  .lp-header-cta {
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.15s;
+  }
+  .lp-header-cta:hover { transform: translateY(-1px); }
+
+  .lp-title-accent {
+    color: var(--kwd-yellow);
+  }
+
+  /* ── Ambient background orbs ── */
+  .lp-orb {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(70px);
+  }
+  .lp-orb-yellow { background: radial-gradient(circle, rgba(251,232,166,0.55) 0%, rgba(251,232,166,0) 70%); }
+  .lp-orb-gold   { background: radial-gradient(circle, rgba(176,141,47,0.55) 0%, rgba(176,141,47,0) 70%); }
+  .lp-orb-lg { width: 34rem; height: 34rem; }
+  .lp-orb-md { width: 22rem; height: 22rem; }
+  .lp-orb--hero-1  { top: -10rem; right: -8rem; }
+  .lp-orb--hero-2  { bottom: -12rem; left: -6rem; }
+  .lp-orb--problem   { top: -8rem; right: 5%; }
+  .lp-orb--portfolio { bottom: -14rem; right: 10%; }
+  .lp-orb--cred      { bottom: -14rem; left: 8%; }
+  .lp-orb--reviews   { top: -12rem; right: -4rem; }
+  .lp-orb--final     { top: 50%; left: 50%; margin: -17rem 0 0 -17rem; }
+  @media (prefers-reduced-motion: no-preference) {
+    .lp-orb { animation: lp-orb-drift 24s ease-in-out infinite; }
+    .lp-orb--hero-2, .lp-orb--reviews { animation-duration: 30s; animation-direction: alternate-reverse; }
+    .lp-orb--cred, .lp-orb--final, .lp-orb--portfolio { animation-duration: 27s; animation-direction: reverse; }
+  }
+  @keyframes lp-orb-drift {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(-4%, 5%, 0) scale(1.12); }
+  }
+
+  /* ── Google reviews (dark) ── */
+  .lp-section-dark .lp-sec-title { color: #fff; }
+  .lp-reviews-head { margin-bottom: 2.5rem; }
+  .lp-reviews-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 999px;
+    padding: 0.5rem 1.1rem;
+    margin-bottom: 1.1rem;
+  }
+  .lp-reviews-badge strong { color: #fff; font-size: 0.95rem; }
+  .lp-reviews-count { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+  .lp-reviews-title { margin-bottom: 0; }
+  .lp-g { width: 22px; height: 22px; flex-shrink: 0; display: block; }
+  .lp-reviews-badge .lp-g { width: 20px; height: 20px; }
+
+  .lp-carousel { position: relative; }
+  .lp-carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+  }
+  .lp-carousel-track::-webkit-scrollbar { display: none; }
+  .lp-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(20,18,17,0.92);
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s, background 0.2s, transform 0.2s;
+  }
+  .lp-carousel-btn:hover { background: var(--kwd-yellow); color: var(--kwd-dark); }
+  .lp-carousel-prev { left: -1.1rem; }
+  .lp-carousel-next { right: -1.1rem; }
+  .lp-carousel-btn:disabled { opacity: 0; pointer-events: none; }
+  .lp-review-card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc((100% - 3rem) / 3);
+    min-height: 22rem;
+    scroll-snap-align: start;
+    background: rgba(255,255,255,0.04);
+    border: 0;
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+  .lp-review-top {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  .lp-review-stars { color: #f5b301; font-size: 1rem; letter-spacing: 0.05em; }
+  .lp-review-textwrap { flex: 1 1 auto; }
+  .lp-review-text {
+    margin: 0;
+    color: rgba(255,255,255,0.82);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .lp-review-card.is-expanded .lp-review-text {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+  .lp-review-more {
+    margin-top: 0.5rem;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--kwd-yellow);
+    font-family: var(--kwd-font-body);
+    font-weight: 600;
+    font-size: 0.82rem;
+    cursor: pointer;
+  }
+  .lp-review-more:hover { text-decoration: underline; }
+  .lp-review-foot {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+  }
+  .lp-review-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+  .lp-review-who { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+  .lp-review-name { font-size: 0.9rem; font-weight: 700; color: #fff; }
+  .lp-review-co   { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+
+  /* ── Portfolio (carousel, same rhythm as reviews) ── */
+  .lp-portfolio-item {
+    margin: 0;
+    flex: 0 0 calc((100% - 3rem) / 3);
+    scroll-snap-align: start;
+    background: linear-gradient(180deg, rgba(64, 54, 48, 0.98), rgba(39, 35, 32, 0.98));
+    border: 1px solid rgba(251,232,166,0.14);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+  }
+  .lp-portfolio-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 8 / 5;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+  .lp-portfolio-item figcaption {
+    padding: 0.8rem 1.1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--kwd-dark);
+  }
+
+  /* ── Minimal footer ── */
+  .lp-footer {
+    background: var(--kwd-dark);
+    padding: 2.5rem 0 1.75rem;
+  }
+  .lp-footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+  }
+  .lp-footer p { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin: 0; }
+  .lp-footer a { color: rgba(255,255,255,0.75); text-decoration: none; }
+  .lp-footer a:hover { color: var(--kwd-yellow); }
+
+  /* ── Hero ── */
+  .lp-hero {
+    background: var(--kwd-dark);
+    padding: 4rem 0 4.5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .lp-layout {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  /* allow both hero columns to shrink below content min-width (prevents form-card overflow at ~970px) */
+  .lp-pitch, .lp-form-wrap { min-width: 0; }
+  .lp-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 1rem;
+  }
+  .lp-pitch h1 {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    color: #fff;
+    line-height: 1.12;
+    margin-bottom: 1.25rem;
+  }
+  .lp-lead {
+    font-size: 1.02rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin-bottom: 2.25rem;
+    max-width: 520px;
+  }
+  .lp-trust {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .lp-trust li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+  .lp-trust-icon {
+    width: 2rem;
+    height: 2rem;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--kwd-yellow);
+  }
+
+  /* ── Form card ── */
+  .lp-form-wrap {
+    background: linear-gradient(180deg, rgba(64, 54, 48, 0.98), rgba(39, 35, 32, 0.98));
+    border: 1px solid rgba(251,232,166,0.14);
+    border-radius: 20px;
+    padding: 2.25rem;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.38);
+    scroll-margin-top: 2rem;
+  }
+  .lp-form-title {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 0.4rem;
+  }
+  .lp-form-title .lp-title-accent {
+    color: var(--kwd-yellow);
+  }
+  .lp-form-sub {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 1.75rem;
+    line-height: 1.55;
+  }
+  .lp-form { display: flex; flex-direction: column; gap: 0.7rem; }
+  .lp-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  /* Inline label: name sits left inside the box, evenly aligned across every row */
+  .lp-label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    border: 1.5px solid rgba(0,0,0,0.12);
+    border-radius: 8px;
+    background: #fff;
+    padding: 0 0.9rem;
+    transition: border-color 0.2s;
+    min-width: 0;
+  }
+  .lp-label:focus-within { border-color: var(--kwd-dark); }
+  .lp-label-text {
+    flex: 0 0 5rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--kwd-dark);
+    white-space: nowrap;
+  }
+  .lp-label-area { align-items: flex-start; }
+  .lp-label-area .lp-label-text { padding-top: 0.75rem; }
+  .lp-optional { font-weight: 400; color: var(--kwd-brown); }
+  .req { color: #d83b3b; }
+  .lp-label input,
+  .lp-label textarea {
+    flex: 1 1 auto;
+    padding: 0.65rem 0;
+    border: none;
+    font-size: 0.9rem;
+    font-family: var(--kwd-font-body);
+    color: var(--kwd-dark);
+    background: transparent;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .lp-label input:focus,
+  .lp-label textarea:focus { outline: none; }
+  .lp-label textarea { resize: vertical; min-height: 2.4rem; padding-top: 0.65rem; }
+  .lp-botcheck { display: none !important; }
+  .lp-submit {
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: var(--kwd-font-body);
+  }
+  .lp-submit:hover { background: #fff0ad; }
+  .lp-submit:disabled { opacity: 0.65; cursor: not-allowed; }
+  .lp-privacy {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.62);
+    text-align: center;
+    margin: 0;
+    opacity: 0.75;
+  }
+  .lp-form-status {
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 0.25rem 0 0;
+  }
+  .lp-form-status--success { background: #d1fae5; color: #065f46; border: 1.5px solid #6ee7b7; }
+  .lp-form-status--error   { background: #fee2e2; color: #991b1b; border: 1.5px solid #fca5a5; }
+
+  /* ── Sections ── */
+  .lp-section { padding: 4rem 0; position: relative; overflow: hidden; z-index: 0; }
+  .lp-section-white,
+  .lp-section-cream,
+  .lp-section-dark { background: var(--kwd-dark); }
+  .lp-sec-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin-bottom: 0.75rem;
+  }
+  .lp-sec-title {
+    font-size: clamp(1.5rem, 3vw, 2.15rem);
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+    max-width: 680px;
+  }
+
+  /* Problem cards */
+  .lp-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .lp-problem-card {
+    background: rgba(255,255,255,0.04);
+    border: 0;
+    border-radius: 14px;
+    padding: 1.75rem;
+  }
+  .lp-problem-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--kwd-yellow);
+    margin-bottom: 1rem;
+  }
+  .lp-problem-card h3 { font-size: 1.05rem; color: #fff; margin-bottom: 0.5rem; }
+  .lp-problem-card p  { font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height: 1.65; margin: 0; }
+
+  /* Included grid */
+  .lp-included-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .lp-included-card {
+    background: rgba(255,255,255,0.04);
+    border: 0;
+    border-radius: 12px;
+    padding: 1.4rem;
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+  }
+  .lp-included-icon {
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: var(--kwd-yellow);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--kwd-dark);
+  }
+  .lp-included-card strong { display: block; font-size: 0.92rem; color: #fff; margin-bottom: 0.25rem; }
+  .lp-included-card p { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.55; margin: 0; }
+
+  /* Fit filter */
+  .lp-fit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .lp-fit-col {
+    border-radius: 14px;
+    padding: 1.75rem;
+    background: rgba(255,255,255,0.04);
+    border: 0;
+  }
+  .lp-fit-col h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  .lp-fit-yes h3,
+  .lp-fit-no h3 { color: var(--kwd-yellow); }
+  .lp-fit-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+  .lp-fit-col li {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.55;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .lp-fit-col li::before { content: '·'; position: absolute; left: 0.25rem; font-weight: 700; }
+
+  /* Credibility */
+  .lp-cred-layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 3.5rem;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  .lp-cred-photo img {
+    border-radius: 16px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+  }
+  .lp-cred-text h2 {
+    font-size: clamp(1.5rem, 3vw, 2.15rem);
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 1.1rem;
+  }
+  .lp-cred-text p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+    max-width: 560px;
+  }
+  .lp-cred-stats { display: flex; gap: 2.5rem; }
+  .lp-cred-stats > div { display: flex; flex-direction: column; gap: 0.15rem; }
+  .lp-cred-num { font-family: var(--kwd-font-heading); font-size: 1.6rem; color: var(--kwd-yellow); }
+  .lp-cred-label { font-size: 0.72rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.07em; }
+
+  /* Steps */
+  .lp-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .lp-step {
+    border-top: 3px solid var(--kwd-yellow);
+    padding-top: 1.25rem;
+  }
+  .lp-step-num {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.75rem;
+    color: var(--kwd-gold, #b08d2f);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .lp-step h3 { font-size: 1rem; color: #fff; margin-bottom: 0.45rem; }
+  .lp-step p  { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin: 0; }
+
+  /* FAQ */
+  .lp-faq-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem 1rem;
+  }
+  .lp-faq-item { background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+  .lp-faq-item[open] { border-color: var(--kwd-gold, #b08d2f); }
+  .lp-faq-q {
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    user-select: none;
+  }
+  .lp-faq-q::-webkit-details-marker { display: none; }
+  .lp-faq-q::after { content: '+'; font-size: 1.25rem; font-weight: 400; color: rgba(255,255,255,0.5); flex-shrink: 0; }
+  .lp-faq-item[open] .lp-faq-q::after { content: '−'; }
+  .lp-faq-a { padding: 0 1.25rem 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.65; margin: 0; }
+
+  /* Final CTA + case form */
+  .lp-final {
+    background:
+      radial-gradient(circle at 10% 12%, rgba(251,232,166,0.13), transparent 34rem),
+      linear-gradient(180deg, #2b2522 0%, #171412 100%);
+    padding: clamp(4.5rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 4.5rem);
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .lp-final-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(2.5rem, 5vw, 4.25rem);
+    align-items: start;
+  }
+  .lp-final-copy,
+  .lp-final-form-wrap {
+    min-width: 0;
+    height: auto;
+  }
+  .lp-final-copy {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+  .lp-final h2 {
+    font-size: clamp(1.9rem, 3.6vw, 3rem);
+    color: #fff;
+    margin-bottom: 0.9rem;
+    line-height: 1.15;
+  }
+  .lp-final-copy > p:not(.lp-sec-eyebrow) {
+    font-size: 0.98rem;
+    color: rgba(255,255,255,0.68);
+    line-height: 1.65;
+    margin: 0 0 1.5rem;
+    max-width: 560px;
+  }
+  .lp-final-case {
+    margin: 2.25rem 0 0;
+    display: block;
+    position: relative;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: none;
+    min-height: 0;
+  }
+  .lp-final-case-media {
+    position: relative;
+    background: transparent;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.32);
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
+  .lp-final-case-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 42%, rgba(17,14,12,0.82) 100%);
+    pointer-events: none;
+  }
+  .lp-final-case-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+  .lp-final-case-body {
+    position: absolute;
+    left: clamp(1rem, 2vw, 1.4rem);
+    right: clamp(1rem, 2vw, 1.4rem);
+    bottom: clamp(1rem, 2vw, 1.35rem);
+    z-index: 2;
+    padding: 0;
+    max-width: 560px;
+  }
+  .lp-final-review {
+    display: block;
+    margin: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+  .lp-final-review .lp-review-text {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    color: rgba(255,255,255,0.9);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    text-shadow: 0 1px 14px rgba(0,0,0,0.55);
+  }
+  .lp-final-form-wrap {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    justify-content: flex-start;
+    padding-top: clamp(1.45rem, 2vw, 1.9rem);
+  }
+  .lp-final-form-head {
+    margin-bottom: clamp(1.4rem, 2.5vw, 2rem);
+  }
+  .lp-final-form-wrap .lp-form-title {
+    color: #fff;
+    font-size: clamp(1.9rem, 3.6vw, 3rem);
+    line-height: 1.15;
+    margin: 0 0 0.9rem;
+  }
+  .lp-final-form-wrap .lp-form-title .lp-title-accent { color: var(--kwd-yellow); }
+  .lp-final-form-wrap .lp-form-sub {
+    color: rgba(255,255,255,0.68);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 680px;
+  }
+  .lp-final-form-wrap .lp-form {
+    flex: none;
+    gap: clamp(0.85rem, 1.1vw, 1rem);
+  }
+  .lp-final-form-wrap .lp-label {
+    background: rgba(255,255,255,0.96);
+    border: 0;
+    box-shadow: 0 14px 34px rgba(0,0,0,0.16);
+    min-height: 3.05rem;
+  }
+  .lp-final-form-wrap .lp-label:focus-within {
+    box-shadow:
+      0 0 0 2px rgba(251,232,166,0.72),
+      0 14px 34px rgba(0,0,0,0.16);
+  }
+  .lp-final-goal-row {
+    flex: none;
+    display: flex;
+    min-height: 0;
+  }
+  .lp-final-goal-row .lp-label {
+    flex: 1 1 auto;
+  }
+  .lp-final-goal-row textarea {
+    min-height: 4.8rem;
+  }
+  .lp-final-form-actions {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 0.1rem;
+  }
+  .lp-final-form-wrap .lp-submit {
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    margin-top: 0.15rem;
+  }
+  .lp-final-form-wrap .lp-submit:hover { background: #fff0ad; }
+  .lp-final-form-wrap .lp-privacy {
+    color: rgba(255,255,255,0.56);
+    text-align: left;
+  }
+  .lp-final-form-note {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 0.2rem;
+    padding: 0.85rem 0.95rem;
+    border-radius: 12px;
+    background: rgba(251,232,166,0.11);
+    color: rgba(255,255,255,0.78);
+  }
+  .lp-final-form-note span {
+    color: var(--kwd-yellow);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .lp-final-form-note p {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  /* Sticky mobile CTA */
+  .lp-sticky-cta {
+    display: none;
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 50;
+    background: var(--kwd-dark);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+    transition: opacity 0.25s, transform 0.25s;
+  }
+  .lp-sticky-hidden { opacity: 0; transform: translateY(120%); pointer-events: none; }
+
+  @media (max-width: 960px) {
+    .lp-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .lp-problem-grid, .lp-included-grid { grid-template-columns: 1fr 1fr; }
+    .lp-steps { grid-template-columns: 1fr 1fr; gap: 2rem 1.5rem; }
+    .lp-cred-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .lp-cred-photo { max-width: 340px; }
+    .lp-final-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .lp-final-copy > p:not(.lp-sec-eyebrow) { max-width: 680px; }
+    .lp-final-form-wrap { justify-content: flex-start; padding-top: 0; }
+  }
+  @media (max-width: 720px) {
+    .lp-sticky-cta { display: block; }
+  }
+  @media (max-width: 960px) {
+    .lp-review-card, .lp-portfolio-item { flex-basis: calc((100% - 1.5rem) / 2); }
+  }
+  @media (max-width: 600px) {
+    .lp-problem-grid, .lp-included-grid, .lp-fit-grid, .lp-steps { grid-template-columns: 1fr; }
+    .lp-faq-list { grid-template-columns: 1fr; }
+    .lp-review-card, .lp-portfolio-item { flex-basis: 86%; }
+    .lp-carousel-btn { display: none; }
+    .lp-row-2 { grid-template-columns: 1fr; }
+    .lp-form-wrap { padding: 1.6rem; }
+    .lp-final-form-wrap,
+    .lp-final-copy { padding: 0; }
+    .lp-final-case-media,
+    .lp-final-case-media img { min-height: 0; }
+    .lp-final-case-media::after { display: none; }
+    .lp-final-case-body {
+      position: static;
+      padding: 1rem 0 0;
+      max-width: none;
+    }
+    .lp-final-review .lp-review-text {
+      text-shadow: none;
+      color: rgba(255,255,255,0.82);
+    }
+    .lp-final-goal-row,
+    .lp-final-goal-row textarea { min-height: 4.7rem; }
+    .lp-final-form-note { grid-template-columns: 1fr; gap: 0.35rem; }
+    .lp-final-form-note span { white-space: normal; }
+    .lp-section { padding: 3rem 0; }
+    .lp-logo-text { display: none; }
+    .lp-header-phone span { display: none; }
+    .lp-footer-inner { flex-direction: column; }
+  }
+</style>

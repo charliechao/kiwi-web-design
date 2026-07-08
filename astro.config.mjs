@@ -21,6 +21,9 @@ const sitemapExcludedPaths = new Set([
   '/website-branding/',
   '/zh/meta-ads/',
   '/zh/paid-ads/',
+  // Google Ads landing pages — noindex, paid traffic only.
+  '/web-design-auckland-lp/',
+  '/web-design-auckland-lp/thank-you/',
   // Defensive exclusions for utility/API routes if they are ever prerendered.
   '/404/',
   '/api/contact/',

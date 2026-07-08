@@ -12,9 +12,11 @@ interface Props {
   alternateUrl?: string;
   robots?: string;
   ogImage?: string;
+  /** 'minimal' hides the site Header/Footer — for ad landing pages that supply their own chrome */
+  chrome?: 'default' | 'minimal';
 }
 
-const { title, description, canonicalURL, schema, lang = 'en-NZ', alternateUrl, robots, ogImage } = Astro.props;
+const { title, description, canonicalURL, schema, lang = 'en-NZ', alternateUrl, robots, ogImage, chrome = 'default' } = Astro.props;
 
 const isZh = lang.startsWith('zh');
 const altLang = isZh ? 'en-NZ' : 'zh-Hans';
@@ -92,10 +94,10 @@ const schemaStr = schema
   </head>
 
   <body>
-    <Header />
+    {chrome !== 'minimal' && <Header />}
     <main>
       <slot />
     </main>
-    <Footer />
+    {chrome !== 'minimal' && <Footer />}
   </body>
 </html>
