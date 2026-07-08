@@ -6,7 +6,7 @@ image: "/blog/website-pricing-2026-ai-web-design.png"
 ---
 
 
-![Website pricing in 2026 compared to traditional 2020 website development costs](https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/01/website-pricing-2026-ai-web-design-1024x624.png)
+![Website pricing in 2026 compared to traditional 2020 website development costs](/blog/website-pricing-2026-ai-web-design.png)
 
 
 **AI Summary**

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
+import csHero from '../assets/general/Lavaranda-e1753415431519.jpg';
 
 const stats = [
   { fig: "5x", label: "Faster page speed" },
@@ -80,7 +81,7 @@ const schema = {
         </div>
         <div class="cs-hero-img">
           <img
-            src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Lavaranda-e1753415431519.jpg"
+            src={csHero.src}
             alt="La Veranda restaurant website by Kiwi Web Design Auckland"
             width="700"
             height="500"
@@ -165,7 +166,7 @@ const schema = {
     <div class="container">
       <div class="cs-screenshot-wrap">
         <img
-          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Lavaranda-e1753415431519.jpg"
+          src={csHero.src}
           alt="La Veranda restaurant website design by Kiwi Web Design"
           width="1200"
           height="700"

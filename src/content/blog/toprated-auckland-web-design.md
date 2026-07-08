@@ -6,7 +6,7 @@ image: "/blog/600-21B675F7-8EB5-45A5-99242870729DC26D.png"
 ---
 
 
-![toprate.zn homepage](https://www.kiwiwebdesign.co.nz/wp-content/uploads/2026/01/600-21B675F7-8EB5-45A5-99242870729DC26D.png)
+![toprate.zn homepage](/blog/600-21B675F7-8EB5-45A5-99242870729DC26D.png)
 
 
 Kiwi Web Design has officially launched **TopRated.nz**, a new Auckland-focused business directory designed to make it easier for people to find trusted local service businesses online.

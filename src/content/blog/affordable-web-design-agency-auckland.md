@@ -24,4 +24,4 @@ The recognition highlights Kiwi Web Design’s growing reputation in Auckland’
 About Kiwi Web DesignKiwi Web Design is an AI-driven web design agency based in Auckland, New Zealand. Specializing in [affordable WordPress websites](/small-business-website-design-auckland/) for [tradies](/tradie-website-design-auckland/) and small businesses, the company delivers transparent packages, fast turnaround times, and free in-person consultations across Auckland. Read more on our [about us page](/about-us/).
 
 
-ContactKiwi Web Design147 Great North Road, Grey Lynn, AucklandPhone: 021 039 6580Email: hi@kiwiwebdesign.co.nzWebsite: www.kiwiwebdesign.co.nz
+ContactKiwi Web Design147 Great North Road, Grey Lynn, AucklandPhone: 021 039 6580Email: hi@kiwiwebdesign.co.nzWebsite: [www.kiwiwebdesign.co.nz](https://www.kiwiwebdesign.co.nz/)

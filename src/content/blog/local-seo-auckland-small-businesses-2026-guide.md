@@ -3,7 +3,7 @@ title: "Local SEO for Auckland Small Businesses: A Step-by-Step 2026 Guide"
 description: "Practical 2026 local SEO guide for Auckland small businesses covering Google Business Profile, reviews, citations, local pages, map pack rankings, and AI search visibility."
 pubDate: 2026-04-28
 lastModified: 2026-04-28
-image: "/blog/local-seo-auckland-small-businesses-2026-guide.png"
+image: "/blog/local-seo-auckland-small-businesses-2026-guide.webp"
 articleSection: Local SEO
 keywords: "local SEO Auckland, Auckland small business SEO, Google Business Profile Auckland, Google Maps SEO, local SEO guide 2026"
 ---
@@ -26,7 +26,7 @@ In 2026, local SEO Auckland work needs to support three discovery paths:
 - Standard Google search results for suburb and service terms
 - AI search answers that summarise trusted local businesses and guides
 
-Google says local rankings are primarily based on [relevance, distance, and prominence](https://support.google.com/business/answer/7091). Your job is to make each of those signals obvious.
+Google says local rankings are primarily based on [relevance, distance, and prominence](https://support.google.com/business/). Your job is to make each of those signals obvious.
 
 ## Why does local SEO matter for Auckland small businesses?
 

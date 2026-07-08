@@ -9,7 +9,7 @@ image: "/blog/website-redesign-vs-rebuild-auckland-small-business.png"
 ## What’s Right for Auckland Small Businesses?
 
 
-![Female Auckland small business owner standing outside her shop, representing website redesign vs starting from scratch decisions.](https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/12/website-redesign-vs-rebuild-auckland-small-business-1024x572.png)
+![Female Auckland small business owner standing outside her shop, representing website redesign vs starting from scratch decisions.](/blog/website-redesign-vs-rebuild-auckland-small-business.png)
 
 
 ### Introduction

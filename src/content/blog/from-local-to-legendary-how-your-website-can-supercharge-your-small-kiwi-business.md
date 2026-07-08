@@ -208,7 +208,7 @@ Building a website is easier than ever with user-friendly platforms designed for
 | Snapps.ai | AI-powered tools, local business listings, SEO optimization, buyer review integration | NZ businesses needing strong local SEO | $66.25/month (5 sites) |
 | Dazzly | Intuitive editor, no coding needed, NZ-focused | Beginners and small budgets | Free to start |
 | Squarespace | Beautiful templates, built-in SEO, mobile-friendly | Visually appealing sites | $23/month (Business plan) |
-| [Wix](http://www.wix.com) | Drag-and-drop editor, e-commerce, multi-language support | Flexible, beginner-friendly sites | $27/month (Core plan) |
+| [Wix](https://www.wix.com) | Drag-and-drop editor, e-commerce, multi-language support | Flexible, beginner-friendly sites | $27/month (Core plan) |
 | Shopify | E-commerce focus, inventory management, NZ payment integration | Online stores | $29/month (Basic plan) |
 
 

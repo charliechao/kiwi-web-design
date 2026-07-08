@@ -6,7 +6,7 @@ image: "/blog/choosing-website-platform-auckland-featured.jpg"
 ---
 
 
-![Choosing the right website platform for small businesses in Auckland](https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/11/choosing-website-platform-auckland-featured.jpg)
+![Choosing the right website platform for small businesses in Auckland](/blog/choosing-website-platform-auckland-featured.jpg)
 
 
 Most business owners focus on design first. The smarter move is to start with the platform your website will run on. That choice affects how fast the site is, how secure it is, how easy it is to update and what you can realistically do in the future.
@@ -222,4 +222,4 @@ Based on our day-to-day work with local businesses:
 Choosing the right CMS is a strategic decision, not a design preference.Do it properly at the start and the website carries your business for years instead of holding it back.
 
 
-If you want help comparing your options or want an audit of what you have now, you can reach us anytime at [Kiwi Web Design](http://kiwiwebdesign.co.nz).
+If you want help comparing your options or want an audit of what you have now, you can reach us anytime at [Kiwi Web Design](/).

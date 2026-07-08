@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
+import csHero from '../assets/general/Auckland_Cleaner-e1750284778292.jpg';
 
 const stats = [
   { fig: "2x", label: "More mobile enquiries" },
@@ -80,7 +81,7 @@ const schema = {
         </div>
         <div class="cs-hero-img">
           <img
-            src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Cleaner-e1750284778292.jpg"
+            src={csHero.src}
             alt="Topline Services cleaning website by Kiwi Web Design Auckland"
             width="700"
             height="500"
@@ -165,7 +166,7 @@ const schema = {
     <div class="container">
       <div class="cs-screenshot-wrap">
         <img
-          src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/06/Auckland_Cleaner-e1750284778292.jpg"
+          src={csHero.src}
           alt="Topline Services cleaning website design by Kiwi Web Design"
           width="1200"
           height="700"

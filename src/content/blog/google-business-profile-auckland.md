@@ -41,7 +41,7 @@ The setup takes less than an hour. The optimisation is ongoing, but straightforw
 
 ## Step 1: Create or Claim Your Google Business Profile
 
-Go to [google.com/business](https://business.google.com) and sign in with a Google account you own.
+Go to [google.com/business](https://www.google.com/business/) and sign in with a Google account you own.
 
 Search for your business name.
 

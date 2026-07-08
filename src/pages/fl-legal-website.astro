@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
+import legalOverview from '../assets/general/Legal-e1753416217381.jpg';
+import legalShot1 from '../assets/case-studies/legal-website-auckland-1.jpg';
+import legalShot2 from '../assets/case-studies/legal-website-auckland-2.jpg';
+import legalShot3 from '../assets/case-studies/legal-website-auckland-3-e1771448878227.jpg';
 
 const stats = [
   { fig: "5x", label: "Faster page load speed" },
@@ -18,10 +22,10 @@ const deliverables = [
 ];
 
 const gallery = [
-  "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/07/Legal-e1753416217381.jpg",
-  "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/legal-website-auckland-1.jpg",
-  "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/legal-website-auckland-2.jpg",
-  "https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/legal-website-auckland-3.jpg",
+  legalOverview.src,
+  legalShot1.src,
+  legalShot2.src,
+  legalShot3.src,
 ];
 
 const schema = {
@@ -87,7 +91,7 @@ const schema = {
         </div>
         <div class="cs-hero-img">
           <img
-            src="https://www.kiwiwebdesign.co.nz/wp-content/uploads/2025/10/legal-website-auckland-1.jpg"
+            src={legalShot1.src}
             alt="FL Legal website by Kiwi Web Design Auckland"
             width="700"
             height="500"
