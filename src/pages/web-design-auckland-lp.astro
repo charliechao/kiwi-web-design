@@ -544,6 +544,24 @@ const faqs = [
       // Hide the sticky mobile CTA while the form is on screen
       const sticky = document.getElementById('lp-sticky-cta');
       const formWrap = document.getElementById('lead-form');
+      const header = document.querySelector<HTMLElement>('.lp-header');
+      const leadFormLinks = document.querySelectorAll<HTMLAnchorElement>('a[href="#lead-form"]');
+
+      leadFormLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          if (!formWrap || !window.matchMedia('(max-width: 720px)').matches) return;
+          event.preventDefault();
+          if (header) {
+            header.style.position = 'static';
+            header.style.top = 'auto';
+          }
+          const gap = 20;
+          const y = formWrap.getBoundingClientRect().top + window.scrollY - gap;
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+          history.replaceState(null, '', '#lead-form');
+        });
+      });
+
       if (sticky && formWrap && 'IntersectionObserver' in window) {
         new IntersectionObserver(([entry]) => {
           sticky.classList.toggle('lp-sticky-hidden', entry.isIntersecting);
@@ -626,8 +644,7 @@ const faqs = [
   .lp-header {
     background: var(--kwd-dark);
     padding: 0.9rem 0;
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 40;
   }
   .lp-header-inner {
