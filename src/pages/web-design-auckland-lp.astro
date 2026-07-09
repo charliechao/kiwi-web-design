@@ -1461,7 +1461,8 @@ const faqs = [
     .lp-final-form-wrap { justify-content: flex-start; padding-top: 0; }
   }
   @media (max-width: 720px) {
-    .lp-header { position: relative; }
+    .lp-header { position: static !important; top: auto !important; }
+    .lp-form-wrap { scroll-margin-top: 7rem; }
     .lp-sticky-cta { display: block; }
   }
   @media (max-width: 960px) {
