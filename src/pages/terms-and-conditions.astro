@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/terms-and-conditions/",
+      "url": "https://www.kiwiwebdesign.co.nz/terms-and-conditions/",
+      "name": "Terms and Conditions | Kiwi Web Design",
+      "description": "Plain New Zealand business terms and conditions for Kiwi Web Design services provided by Ika Tech Limited.",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/terms-and-conditions/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/terms-and-conditions/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Terms and Conditions" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "legalName": "Ika Tech Limited",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "NZBN",
+        "value": "9429052816840"
+      },
+      "url": "https://kiwiwebdesign.co.nz",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "telephone": "+64210396580"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Terms and Conditions | Kiwi Web Design"
+  description="Simple New Zealand business terms for Kiwi Web Design services, including quotes, payments, subscriptions, client responsibilities, and contact details."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/terms-and-conditions/"
+  schema={schema}
+>
+  <main class="terms-wrap">
+    <header class="terms-header">
+      <nav class="terms-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true"> / </span>
+        <span aria-current="page">Terms and Conditions</span>
+      </nav>
+      <h1>Terms and Conditions</h1>
+      <p class="terms-last-updated">Last updated: 9 July 2026</p>
+    </header>
+
+    <div class="terms-body">
+      <section>
+        <h2>1. Business Identity</h2>
+        <p>These terms apply to services provided by <strong>Ika Tech Limited</strong>, trading as <strong>Kiwi Web Design</strong>. NZBN: <strong>9429052816840</strong>. Our business address is 147 Great North Road, Grey Lynn, Auckland, New Zealand.</p>
+      </section>
+
+      <section>
+        <h2>2. Services</h2>
+        <p>Kiwi Web Design provides website design, SEO, Google Ads, Meta Ads, website hosting, website maintenance, and related digital marketing services. The exact work included in a project will be set out in the quote, proposal, invoice, or written agreement for that project.</p>
+      </section>
+
+      <section>
+        <h2>3. Quotes and Proposals</h2>
+        <p>Quotes and proposals are based on the information available at the time. If the project scope changes, or if extra pages, features, integrations, content, or revisions are requested, we may provide an updated quote before continuing that extra work.</p>
+      </section>
+
+      <section>
+        <h2>4. Payments</h2>
+        <p>Payment amounts, due dates, and payment stages will be shown in the relevant quote or invoice. Unless agreed otherwise in writing, invoices must be paid by the due date stated on the invoice.</p>
+      </section>
+
+      <section>
+        <h2>5. Deposits</h2>
+        <p>Some projects may require a deposit before work begins. Deposits secure project time, planning, and initial setup work. A project may be delayed if the deposit or required project information is not received on time.</p>
+      </section>
+
+      <section>
+        <h2>6. Ongoing Subscriptions and Cancellations</h2>
+        <p>Ongoing services such as hosting, maintenance, SEO, Google Ads management, Meta Ads management, and reporting may be billed monthly or on another agreed schedule. You may cancel ongoing services by giving written notice. Any cancellation terms, notice periods, or minimum terms in a quote or proposal will apply.</p>
+      </section>
+
+      <section>
+        <h2>7. Client Responsibilities</h2>
+        <p>You are responsible for providing accurate information, approvals, access details, images, content, and feedback needed for the work. Delays in providing these items may delay the project. You are also responsible for making sure that content you provide is accurate, lawful, and does not infringe someone else's rights.</p>
+      </section>
+
+      <section>
+        <h2>8. Third-Party Platforms</h2>
+        <p>Some work may involve third-party platforms such as Google, Meta, OpenAI, hosting providers, domain registrars, analytics tools, plugins, or software services. These platforms have their own terms, fees, policies, and availability. Kiwi Web Design does not control third-party platforms and is not responsible for changes, outages, suspensions, policy decisions, or fees charged by those providers.</p>
+      </section>
+
+      <section>
+        <h2>9. Refunds</h2>
+        <p>Because digital services involve planning, labour, setup, strategy, design, development, and management time, payments for work already completed or time already allocated are generally not refundable. If a project is cancelled, we will act reasonably and explain what has been completed and what, if anything, remains payable.</p>
+      </section>
+
+      <section>
+        <h2>10. Intellectual Property</h2>
+        <p>Once the agreed project fees have been paid, you may use the final approved website design, copy, and deliverables created for your business, unless a different arrangement is stated in writing. Kiwi Web Design may retain ownership of reusable methods, templates, code libraries, processes, tools, and know-how used to deliver the work.</p>
+      </section>
+
+      <section>
+        <h2>11. Limitation of Liability</h2>
+        <p>We aim to provide careful, practical, and professional services. However, we cannot guarantee specific rankings, traffic levels, sales, leads, ad results, or platform approvals. To the maximum extent permitted by New Zealand law, our liability is limited to the amount paid for the specific service giving rise to the claim.</p>
+      </section>
+
+      <section>
+        <h2>12. New Zealand Law</h2>
+        <p>These terms are governed by New Zealand law. If a dispute arises, both parties agree to try to resolve it in good faith first.</p>
+      </section>
+
+      <section>
+        <h2>13. Contact Details</h2>
+        <p>
+          <strong>Ika Tech Limited trading as Kiwi Web Design</strong><br />
+          147 Great North Road, Grey Lynn, Auckland, New Zealand<br />
+          Email: <a href="mailto:hi@kiwiwebdesign.co.nz">hi@kiwiwebdesign.co.nz</a><br />
+          Phone: <a href="tel:+64210396580">021 039 6580</a><br />
+          Website: <a href="https://kiwiwebdesign.co.nz">https://kiwiwebdesign.co.nz</a>
+        </p>
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .terms-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 5rem;
+  }
+
+  .terms-breadcrumb {
+    font-size: 0.8rem;
+    color: var(--kwd-brown);
+    margin-bottom: 1.5rem;
+  }
+  .terms-breadcrumb a {
+    color: var(--kwd-brown);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .terms-header {
+    border-bottom: 2px solid rgba(0,0,0,0.08);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .terms-header h1 {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    color: var(--kwd-dark);
+    line-height: 1.15;
+    margin: 0 0 0.5rem;
+  }
+  .terms-last-updated {
+    font-size: 0.82rem;
+    color: var(--kwd-brown);
+    margin: 0;
+  }
+
+  .terms-body section {
+    margin-bottom: 2rem;
+  }
+  .terms-body h2 {
+    font-size: 1.15rem;
+    color: var(--kwd-dark);
+    margin: 0 0 0.65rem;
+  }
+  .terms-body p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--kwd-brown);
+    margin: 0;
+  }
+  .terms-body a {
+    color: var(--kwd-dark);
+    font-weight: 700;
+  }
+</style>
