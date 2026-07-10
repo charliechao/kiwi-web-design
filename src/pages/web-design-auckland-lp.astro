@@ -138,7 +138,6 @@ const faqs = [
           <input type="hidden" name="access_key" value="e0a725e4-f764-4536-826c-df981c8bdf3b" />
           <input type="hidden" name="subject" value="New Google Ads LP lead — web design Auckland" />
           <input type="hidden" name="from_name" value="KWD Google Ads Landing Page" />
-          <input type="hidden" name="submitted_at" id="lp-submitted-at" value="" data-lp-submitted-at />
           <input type="checkbox" name="botcheck" class="lp-botcheck" tabindex="-1" autocomplete="off" />
 
           <div class="lp-row lp-row-2">
@@ -405,7 +404,6 @@ const faqs = [
           <input type="hidden" name="access_key" value="e0a725e4-f764-4536-826c-df981c8bdf3b" />
           <input type="hidden" name="subject" value="New Google Ads LP lead — bottom form" />
           <input type="hidden" name="from_name" value="KWD Google Ads Landing Page" />
-          <input type="hidden" name="submitted_at" id="lp-final-submitted-at" value="" data-lp-submitted-at />
           <input type="checkbox" name="botcheck" class="lp-botcheck" tabindex="-1" autocomplete="off" />
 
           <div class="lp-row lp-row-2">
@@ -488,10 +486,11 @@ const faqs = [
         status.className = 'lp-form-status ' + (isError ? 'lp-form-status--error' : 'lp-form-status--success');
       }
 
-      function validateSubmission(form: HTMLFormElement) {
+      function validateSubmission(form: HTMLFormElement, openedAt: number) {
         const formData = new FormData(form);
         const name = String(formData.get('name') || '').trim();
         if (formData.get('botcheck')) return 'Submission blocked. Please refresh the page and try again.';
+        if ((Date.now() - openedAt) / 1000 < 3) return 'Please wait a few seconds before submitting.';
         if (name.length < 2 || !/[a-z]/i.test(name)) return 'Please enter your name.';
         return '';
       }
@@ -499,15 +498,16 @@ const faqs = [
       document.querySelectorAll<HTMLFormElement>('form[data-lp-form]').forEach((form) => {
         const btn = form.querySelector<HTMLButtonElement>('[data-lp-submit]');
         const status = form.querySelector<HTMLElement>('[data-lp-status]');
-        const submittedAt = form.querySelector<HTMLInputElement>('[data-lp-submitted-at]');
-        if (submittedAt) submittedAt.value = String(Date.now());
+        // Timing bot-gate lives in JS only — never sent to Web3Forms
+        // (machine-looking payload fields can trip their spam filter).
+        const openedAt = Date.now();
         if (!btn || !status) return;
 
         const defaultBtnText = btn.textContent || 'Send My Details →';
 
         form.addEventListener('submit', async (e) => {
           e.preventDefault();
-          const validationError = validateSubmission(form);
+          const validationError = validateSubmission(form, openedAt);
           if (validationError) {
             setStatus(status, validationError, true);
             return;
@@ -517,7 +517,7 @@ const faqs = [
           status.style.display = 'none';
           try {
             const formData = new FormData(form);
-            formData.set('submitted_at', new Date().toISOString());
+            formData.delete('botcheck');
             const res = await fetch('https://api.web3forms.com/submit', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
