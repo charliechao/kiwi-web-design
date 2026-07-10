@@ -684,12 +684,12 @@
     },
     {
       "url": "/affordable-web-design-auckland/",
-      "title": "Free Web Design Resources for Auckland Small Businesses | Kiwi Web Design Blog",
-      "topic": "web design blog Auckland, small business resources",
-      "summary": "Blog index listing 36 published articles on web design, SEO, Google Ads, and digital marketing for Auckland small businesses",
+      "title": "Affordable Web Design Auckland | Kiwi Web Design",
+      "topic": "affordable web design Auckland, affordable website design, pricing",
+      "summary": "Hybrid commercial + content hub: pricing/CTA intro targeting the 'affordable web design Auckland' query cluster, followed by a blog index of 36+ articles on web design, SEO, Google Ads, and digital marketing for Auckland small businesses",
       "type": "blog-index",
-      "isHub": false,
-      "suggestedAnchorText": ["our blog", "web design resources", "free resources for Auckland businesses"]
+      "isHub": true,
+      "suggestedAnchorText": ["affordable web design Auckland", "affordable website design", "web design pricing and guides", "our blog"]
     }
   ],
 

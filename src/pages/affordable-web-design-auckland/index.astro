@@ -2,6 +2,9 @@
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import StatsRow from '../../components/StatsRow.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
 
 const allPosts = await getCollection('blog');
 const posts = allPosts.sort(
@@ -9,16 +12,25 @@ const posts = allPosts.sort(
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
+const stats = [
+  { number: "From $1,290", label: "Fixed-price websites, no lock-in" },
+  { number: "2–3 wks", label: "Typical delivery time" },
+  { number: "50+", label: "Auckland businesses helped" },
+  { number: "4.9★", label: "Average Google rating" },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Blog",
+      "@type": "CollectionPage",
       "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/",
-      "name": "Free Resources to Help Kiwi Small Businesses | Kiwi Web Design",
-      "description": "Web design, SEO, and online marketing guides for Auckland small businesses, written by Kiwi Web Design.",
+      "name": "Affordable Web Design Auckland | Kiwi Web Design",
+      "description": "Affordable web design for Auckland small businesses. Fixed-price websites from $1,290 + GST, no lock-in contracts, live in 2-3 weeks. Free guides and pricing resources below.",
       "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "publisher": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/#breadcrumb" },
       "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".blog-snippet", "h1"] }
@@ -28,14 +40,14 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "Free Resources", "item": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/" }
+        { "@type": "ListItem", "position": 2, "name": "Affordable Web Design Auckland", "item": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/" }
       ]
     },
     {
       "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "alternateName": "Web Design Auckland",
+      "alternateName": "Affordable Web Design Auckland",
       "url": "https://www.kiwiwebdesign.co.nz/",
       "telephone": "+64-21-039-6580",
       "email": "hi@kiwiwebdesign.co.nz",
@@ -51,6 +63,7 @@ const schema = {
         { "@type": "Place", "name": "Auckland" },
         { "@type": "Place", "name": "New Zealand" }
       ],
+      "priceRange": "$$",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "50", "bestRating": "5" },
       "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
     }
@@ -63,26 +76,38 @@ function formatDate(date: Date) {
 ---
 
 <Layout
-  title="Free web design resources for small businesses in Auckland"
-  description="Web design, SEO, and online marketing guides for Auckland small businesses. Free resources from Kiwi Web Design."
+  title="Affordable Web Design Auckland | From $1,290 | Kiwi Web Design"
+  description="Affordable web design for Auckland small businesses. Fixed-price websites from $1,290 + GST, no lock-in contracts, live in 2-3 weeks. Free guides and pricing resources below."
   canonicalURL="https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/"
   schema={schema}
 >
 
-  <section class="blog-hero section-dark">
-    <div class="container">
-      <p class="eyebrow">NZ Small Business Know-How</p>
-      <h1>Free Resources to Help Kiwi Small Businesses</h1>
-      <p class="hero-desc">Web design, SEO, and online marketing guides, written for Auckland business owners.</p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Auckland Web Design, Without the Agency Price Tag"
+    title="Affordable Web Design Auckland"
+    subtitle="Custom, fixed-price websites for Auckland small businesses, no lock-in contracts, no bloated agency overhead. Most projects are quoted in writing before you commit and live within 2-3 weeks."
+    ctaPrimary={{ text: 'Get a Free Quote', href: '/website-designer-auckland/' }}
+    ctaSecondary={{ text: 'See Full Packages', href: '/small-business-website-design-auckland/' }}
+  />
+
+  <StatsRow items={stats} accent={true} />
 
   <!-- AI citability snippet -->
   <div class="blog-snippet">
     <div class="container">
-      <p><strong>Kiwi Web Design</strong> publishes free web design, SEO, and digital marketing guides for Auckland and NZ small businesses, including website cost guides, Google Business Profile setup, and local SEO tips. Based in Grey Lynn, Auckland. Websites from $1,290 + GST. 4.9★ Google rating from 50+ clients.</p>
+      <p><strong>Kiwi Web Design</strong> builds affordable, custom websites for Auckland small businesses from $1,290 + GST, fixed price, no lock-in contracts, live in 2-3 weeks. Based in Grey Lynn, Auckland. 4.9★ Google rating from 50+ clients. This page also publishes free web design, SEO, and digital marketing guides, including website cost guides, Google Business Profile setup, and local SEO tips.</p>
     </div>
   </div>
+
+  <section class="section" style="padding-bottom: 0;">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Free Resources"
+        title="Guides to help you plan your website"
+        subtitle="Practical, no-fluff advice on web design, SEO, and online marketing for Auckland small businesses."
+      />
+    </div>
+  </section>
 
   <section class="section">
     <div class="container">
@@ -122,23 +147,6 @@ function formatDate(date: Date) {
 <style>
   .blog-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
   .blog-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
-
-  .blog-hero { padding: 5rem 0; }
-  .blog-hero h1 { color: var(--kwd-white); margin-bottom: 1rem; }
-  .eyebrow {
-    color: var(--kwd-yellow);
-    font-weight: 600;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 0.75rem;
-  }
-  .hero-desc {
-    color: rgba(255,255,255,0.75);
-    font-size: 1.05rem;
-    max-width: 560px;
-    margin: 0;
-  }
 
   .posts-grid {
     display: grid;
