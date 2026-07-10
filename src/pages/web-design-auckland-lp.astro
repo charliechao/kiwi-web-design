@@ -1509,10 +1509,25 @@ const faqs = [
     .lp-header { position: static !important; top: auto !important; }
     .lp-form-wrap { scroll-margin-top: 7rem; }
     .lp-google-badge {
-      bottom: 5.75rem;
+      bottom: 1rem;
       width: 128px;
     }
-    .lp-sticky-cta { display: block; }
+    .lp-sticky-cta {
+      display: block;
+      left: auto;
+      right: 0.75rem;
+      bottom: 7.5rem;
+      width: 58px;
+      min-height: 180px;
+      padding: 0.9rem 0.55rem;
+      writing-mode: vertical-rl;
+      transform: none;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      line-height: 1.25;
+      letter-spacing: 0.08em;
+    }
+    .lp-sticky-hidden { opacity: 0; transform: translateX(120%); pointer-events: none; }
   }
   @media (max-width: 960px) {
     .lp-review-card, .lp-portfolio-item { flex-basis: calc((100% - 1.5rem) / 2); }
