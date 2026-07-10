@@ -20,8 +20,8 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/affordable-seo-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/affordable-seo-auckland/",
-      "name": "Affordable SEO Auckland | SEO Services from $500/mo | Kiwi Web Design",
-      "description": "Affordable SEO Auckland for small businesses. Local SEO, Google Business Profile, technical fixes and content from $500/month. No lock-in. Based in Grey Lynn, Auckland.",
+      "name": "Affordable SEO Auckland | From $500/mo, No Lock-In",
+      "description": "Affordable SEO Auckland from $500/month, no lock-in. Local SEO & Google Business Profile work that ranks. Free audit, direct with Charlie.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -55,6 +55,7 @@ const schema = {
         "postalCode": "1021",
         "addressCountry": "NZ"
       },
+      "geo": { "@type": "GeoCoordinates", "latitude": -36.8626341, "longitude": 174.7488012 },
       "areaServed": [
         { "@type": "City", "name": "Auckland" },
         { "@type": "Country", "name": "New Zealand" }
@@ -66,6 +67,20 @@ const schema = {
         "bestRating": "5",
         "ratingCount": "50"
       },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Zane Barrett" },
+          "reviewBody": "Charlie really took the time to understand our business and built a site that actually ranks. We're getting enquiries we never would have found without SEO."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Jack" },
+          "reviewBody": "The SEO work was thorough and professional. They explained everything clearly and I can see real improvements in our Google rankings."
+        }
+      ],
       "logo": {
         "@type": "ImageObject",
         "url": "https://www.kiwiwebdesign.co.nz/favicon.png",
@@ -143,6 +158,7 @@ const seoServices = [
     title: "Local SEO Auckland",
     desc: "Dominate Google Maps and the local 3-Pack. We optimise your Google Business Profile, build local citations, and target the geo-specific keywords your customers are actually searching.",
     items: ["Google Business Profile optimisation", "Local citations & directory listings", "Map pack ranking", "Geo-targeted keyword strategy"],
+    href: "/google-business-profile-guide-for-auckland-businesses/",
   },
   {
     icon: "⚙️",
@@ -224,8 +240,8 @@ const faqsRight = faqs.slice(4);
 ---
 
 <Layout
-  title="Affordable SEO Auckland | SEO Services from $500/mo | Kiwi Web Design"
-  description="Affordable SEO Auckland for small businesses. Local SEO, Google Business Profile, technical fixes and content from $500/month. No lock-in. Free audit. Based in Grey Lynn."
+  title="Affordable SEO Auckland | From $500/mo, No Lock-In"
+  description="Affordable SEO Auckland from $500/month, no lock-in. Local SEO & Google Business Profile work that ranks. Free audit, direct with Charlie."
   canonicalURL="https://www.kiwiwebdesign.co.nz/affordable-seo-auckland/"
   schema={schema}
   alternateUrl="https://www.kiwiwebdesign.co.nz/zh/seo-auckland/"
@@ -249,7 +265,7 @@ const faqsRight = faqs.slice(4);
     <div class="container seo-trust-inner">
       <div class="stt-item">
         <span class="stt-num">4.9★</span>
-        <span class="stt-lbl">Google rating (50+ reviews)</span>
+        <span class="stt-lbl">Google rating (50+ reviews) &bull; <a href="https://www.google.com/maps/place/Kiwi+Web+Design" target="_blank" rel="noopener noreferrer" class="stt-review-link">Read our reviews</a></span>
       </div>
       <span class="stt-sep" aria-hidden="true"></span>
       <div class="stt-item">
@@ -543,6 +559,7 @@ const faqsRight = faqs.slice(4);
     <div class="container">
       <SectionHeader title="What our SEO clients say." />
       <TestimonialGrid items={reviews} cols={2} />
+      <p class="seo-reviews-more"><a href="/testimonials-reviews/">Read more client reviews →</a></p>
     </div>
   </section>
 
@@ -669,6 +686,13 @@ const faqsRight = faqs.slice(4);
     max-width: 140px;
     line-height: 1.35;
   }
+  .stt-review-link {
+    color: var(--kwd-dark);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .stt-review-link:hover { color: var(--kwd-brown); }
   .stt-sep {
     width: 1px;
     height: 3rem;
@@ -1337,6 +1361,19 @@ const faqsRight = faqs.slice(4);
     letter-spacing: 0.03em;
     margin: 0;
   }
+
+  .seo-reviews-more {
+    text-align: center;
+    margin: 1.75rem 0 0;
+  }
+  .seo-reviews-more a {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .seo-reviews-more a:hover { color: var(--kwd-brown); }
 
   /* ══════════════════════════════════════════
      ⑭ TEAM CARD — gradient overlay on image
