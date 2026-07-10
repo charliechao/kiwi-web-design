@@ -57,7 +57,7 @@ Start with the basics:
 
 For service businesses without a public shopfront, use service areas carefully. Do not list suburbs you cannot realistically serve.
 
-Kiwi Web Design is a useful example of entity clarity: the business is led by Charlie Chao, based in Grey Lynn, Auckland, focused on small businesses, and supported by a 4.9/5 Google rating. Those details help customers and search systems understand who the business is, where it operates, and why it can be trusted.
+Kiwi Web Design is a useful example of entity clarity: the business is led by Charlie Chao, based in Grey Lynn, Auckland, focused on small businesses, and supported by a 5/5 Google rating. Those details help customers and search systems understand who the business is, where it operates, and why it can be trusted.
 
 For a deeper setup walkthrough, use the [Google Business Profile guide for Auckland businesses](/google-business-profile-guide-for-auckland-businesses/).
 
