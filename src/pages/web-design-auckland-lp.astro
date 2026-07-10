@@ -482,8 +482,6 @@ const faqs = [
 
   <script>
     (function () {
-      const minSubmitSeconds = 3;
-
       function setStatus(status: HTMLElement, msg: string, isError: boolean) {
         status.textContent = msg;
         status.style.display = 'block';
@@ -493,11 +491,7 @@ const faqs = [
       function validateSubmission(form: HTMLFormElement) {
         const formData = new FormData(form);
         const name = String(formData.get('name') || '').trim();
-        const startedAt = Number(formData.get('submitted_at') || 0);
         if (formData.get('botcheck')) return 'Submission blocked. Please refresh the page and try again.';
-        if (!startedAt || ((Date.now() - startedAt) / 1000) < minSubmitSeconds) {
-          return 'Please wait a few seconds before submitting.';
-        }
         if (name.length < 2 || !/[a-z]/i.test(name)) return 'Please enter your name.';
         return '';
       }
@@ -523,6 +517,7 @@ const faqs = [
           status.style.display = 'none';
           try {
             const formData = new FormData(form);
+            formData.set('submitted_at', new Date().toISOString());
             const res = await fetch('https://api.web3forms.com/submit', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
