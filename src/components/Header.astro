@@ -14,6 +14,7 @@ const zhMap: Record<string, string> = {
   '/meta-ads/':                                 '/zh/meta-ads/',
   '/small-business-website-design-auckland/':   '/zh/small-business-website-design-auckland/',
   '/website-designer-auckland/':                '/zh/website-designer-auckland/',
+  '/affordable-web-design-auckland/website-cost-new-zealand-small-business/': '/zh/website-cost-new-zealand-small-business/',
 };
 const enMap = Object.fromEntries(Object.entries(zhMap).map(([en, zh]) => [zh, en]));
 const langSwitchHref = isZh ? (enMap[currentPath] ?? '/') : (zhMap[currentPath] ?? '/zh/');
@@ -37,7 +38,9 @@ const enNavLinks = [
 ];
 
 const zhNavLinks = [
-  { label: '网页设计',   href: '/zh/small-business-website-design-auckland/' },
+  { label: '网页设计',   href: '/zh/small-business-website-design-auckland/', children: [
+    { label: '费用计算器', href: '/zh/website-cost-new-zealand-small-business/' },
+  ]},
   { label: 'SEO优化',    href: '/zh/seo-auckland/', children: [
     { label: 'AI SEO & GEO', href: '/zh/ai-seo-for-auckland-small-businesses/' },
     { label: '本地SEO',       href: '/zh/local-seo-for-auckland-small-businesses/' },
