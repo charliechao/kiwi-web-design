@@ -85,9 +85,7 @@ const schemaStr = schema
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      (window.requestIdleCallback || function(fn){ setTimeout(fn, 0); })(function() {
-        gtag('config', 'G-T7CZRER80F');
-      });
+      gtag('config', 'G-T7CZRER80F');
     </script>
 
     {schemaStr && <script type="application/ld+json" is:inline set:html={schemaStr} />}
