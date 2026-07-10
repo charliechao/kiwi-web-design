@@ -467,6 +467,16 @@ const faqs = [
     </div>
   </footer>
 
+  <a
+    href="https://maps.app.goo.gl/7tmoFbMhrDQebSx68"
+    class="lp-google-badge"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="View Kiwi Web Design's Google Business Profile reviews"
+  >
+    <img src="/images/google-5-star-rating-badge.webp" alt="Google rating 5.0 stars" width="185" height="90" loading="lazy" />
+  </a>
+
   <!-- Mobile sticky CTA -->
   <a href="#lead-form" class="lp-sticky-cta" id="lp-sticky-cta">Book My Free Strategy Call →</a>
 
@@ -1444,6 +1454,24 @@ const faqs = [
     line-height: 1.45;
   }
 
+  .lp-google-badge {
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: 45;
+    display: block;
+    width: 150px;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .lp-google-badge:hover {
+    transform: translateY(-2px);
+  }
+  .lp-google-badge img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
   /* Sticky mobile CTA */
   .lp-sticky-cta {
     display: none;
@@ -1480,6 +1508,10 @@ const faqs = [
   @media (max-width: 720px) {
     .lp-header { position: static !important; top: auto !important; }
     .lp-form-wrap { scroll-margin-top: 7rem; }
+    .lp-google-badge {
+      bottom: 5.75rem;
+      width: 128px;
+    }
     .lp-sticky-cta { display: block; }
   }
   @media (max-width: 960px) {
