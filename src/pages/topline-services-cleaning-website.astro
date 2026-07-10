@@ -4,9 +4,9 @@ import CTABanner from '../components/CTABanner.astro';
 import csHero from '../assets/general/Auckland_Cleaner-e1750284778292.jpg';
 
 const stats = [
-  { fig: "2x", label: "More mobile enquiries" },
-  { fig: "4x", label: "Increase in calls" },
-  { fig: "85%", label: "Client satisfaction rating" },
+  { fig: "Services", label: "Cleaning options explained" },
+  { fig: "Quote", label: "Request form on every device" },
+  { fig: "Auckland", label: "Coverage areas presented" },
 ];
 
 const deliverables = [
@@ -26,7 +26,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/topline-services-cleaning-website/",
       "url": "https://www.kiwiwebdesign.co.nz/topline-services-cleaning-website/",
       "name": "Topline Services, Website Case Study | Kiwi Web Design",
-      "description": "How Kiwi Web Design rebuilt Topline Services' cleaning website for mobile-first conversion, doubling mobile enquiries and quadrupling inbound calls.",
+      "description": "How Kiwi Web Design rebuilt Topline Services' cleaning website with clear service pages, Auckland coverage information, and a mobile-first quote pathway.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/topline-services-cleaning-website/#breadcrumb" }
@@ -35,7 +35,7 @@ const schema = {
       "@type": "CreativeWork",
       "@id": "https://www.kiwiwebdesign.co.nz/topline-services-cleaning-website/#case-study",
       "name": "Case Study: Topline Services",
-      "description": "How Kiwi Web Design helped Topline Services generate more cleaning enquiries with a mobile-first website designed for quick quote requests.",
+      "description": "How Kiwi Web Design presented Topline Services' cleaning options, Auckland coverage, trust signals, and quote pathway in a mobile-first website.",
       "url": "https://www.kiwiwebdesign.co.nz/topline-services-cleaning-website/",
       "creator": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "about": { "@type": "LocalBusiness", "name": "Topline Services", "address": { "@type": "PostalAddress", "addressLocality": "Auckland", "addressCountry": "NZ" } },
@@ -62,7 +62,7 @@ const schema = {
 
 <Layout
   title="Topline Services, Website Case Study | Kiwi Web Design"
-  description="How Kiwi Web Design rebuilt Topline Services' cleaning website for mobile-first conversion, doubling mobile enquiries and quadrupling inbound calls."
+  description="How Kiwi Web Design rebuilt Topline Services' cleaning website with clear service pages, Auckland coverage information, and a mobile-first quote pathway."
   canonicalURL="https://www.kiwiwebdesign.co.nz/topline-services-cleaning-website/"
   schema={schema}
 >
@@ -76,8 +76,8 @@ const schema = {
             <span class="cs-tag">Case Study</span>
             <span class="cs-industry">Commercial & Residential Cleaning</span>
           </div>
-          <h1>Topline Services, 4x More Inbound Calls</h1>
-          <p>An Auckland cleaning business with great reviews and zero online presence to show for it. We rebuilt the site mobile-first with a clear quote path, mobile enquiries doubled and calls quadrupled.</p>
+          <h1>Topline Services Cleaning Website Case Study</h1>
+          <p>We rebuilt this Auckland cleaning website with clear service pages, coverage information, visible trust signals, and a quote pathway designed for mobile users.</p>
         </div>
         <div class="cs-hero-img">
           <img
@@ -124,8 +124,8 @@ const schema = {
             <span class="cs-client-value">Website Rebuild + Lead Gen</span>
           </div>
           <div class="cs-client-row">
-            <span class="cs-client-label">Results</span>
-            <span class="cs-client-value">4x inbound calls</span>
+            <span class="cs-client-label">Project Focus</span>
+            <span class="cs-client-value">Mobile quote enquiries</span>
           </div>
         </div>
         <div class="cs-overview-body">
@@ -180,8 +180,8 @@ const schema = {
   <section class="section" style="background: var(--kwd-dark);">
     <div class="container">
       <p class="cs-sub-eyebrow cs-sub-eyebrow-light">The Results</p>
-      <h2 class="cs-section-h2 cs-section-h2-light">Mobile enquiries doubled. Calls quadrupled. Exactly what a service business needs.</h2>
-      <p class="cs-section-p cs-section-p-light">The rebuilt site immediately converted more visitors into quote requests. Mobile enquiries doubled as the faster, clearer site removed friction for phone users. Inbound calls quadrupled, largely driven by the click-to-call button now visible on every page. Rebecca reported the site change as the biggest factor in growing the client base that quarter.</p>
+      <h2 class="cs-section-h2 cs-section-h2-light">A practical mobile journey for cleaning customers.</h2>
+      <p class="cs-section-p cs-section-p-light">The finished website lets homeowners and property managers understand the available cleaning services, check Auckland coverage, and request a quote from any device. Prominent contact actions reduce the steps between choosing a service and making an enquiry.</p>
       <div class="cs-results-grid">
         {stats.map(s => (
           <div class="cs-result-card">
@@ -193,12 +193,14 @@ const schema = {
     </div>
   </section>
 
-  <!-- Testimonial -->
-  <section class="section">
-    <div class="container">
-      <div class="cs-testimonial-wrap">
-        <blockquote>"The new site is clean and easy to use. I'm getting more enquiries from mobile, and customers say it's simple to book. Exactly what we needed."</blockquote>
-        <p class="cs-testimonial-author">- Rebecca, Topline Services</p>
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Project and related services</p>
+      <div class="rps-links">
+        <a href="https://toplineservices.co.nz/" target="_blank" rel="noopener noreferrer" class="rps-link">View Live Website</a>
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design</a>
+        <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO</a>
+        <a href="/testimonials-reviews/" class="rps-link">Case Studies</a>
       </div>
     </div>
   </section>
@@ -254,6 +256,11 @@ const schema = {
   .cs-testimonial-wrap { max-width: 760px; margin: 0 auto; text-align: center; }
   .cs-testimonial-wrap blockquote { font-family: var(--kwd-font-heading); font-size: clamp(1.2rem, 2.5vw, 1.625rem); color: var(--kwd-dark); line-height: 1.4; font-style: italic; margin: 0 0 1.5rem; }
   .cs-testimonial-author { font-size: 0.875rem; font-weight: 600; color: var(--kwd-brown); }
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link { font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; border: 1.5px solid rgba(0,0,0,0.1); color: var(--kwd-dark); text-decoration: none; transition: background 0.15s; }
+  .rps-link:hover { background: var(--kwd-yellow); }
   @media (max-width: 900px) {
     .cs-hero-inner { grid-template-columns: 1fr; }
     .cs-hero-img { display: none; }

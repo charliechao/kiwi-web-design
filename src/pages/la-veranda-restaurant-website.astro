@@ -4,9 +4,9 @@ import CTABanner from '../components/CTABanner.astro';
 import csHero from '../assets/general/Lavaranda-e1753415431519.jpg';
 
 const stats = [
-  { fig: "5x", label: "Faster page speed" },
-  { fig: "3x", label: "More reservation enquiries" },
-  { fig: "6x", label: "Organic visibility growth" },
+  { fig: "Menu", label: "Mobile-friendly HTML pages" },
+  { fig: "Booking", label: "Online reservation pathway" },
+  { fig: "Events", label: "Private function enquiries" },
 ];
 
 const deliverables = [
@@ -26,7 +26,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/la-veranda-restaurant-website/",
       "url": "https://www.kiwiwebdesign.co.nz/la-veranda-restaurant-website/",
       "name": "La Veranda Restaurant, Website Case Study | Kiwi Web Design",
-      "description": "How Kiwi Web Design rebuilt La Veranda's restaurant website with HTML menus, table reservations, and a design that captures the dining atmosphere, delivering 3x more enquiries.",
+      "description": "An archived Kiwi Web Design project for La Veranda, with HTML menus, table reservations, event enquiries, and an atmosphere-led restaurant design.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/la-veranda-restaurant-website/#breadcrumb" }
@@ -35,7 +35,7 @@ const schema = {
       "@type": "CreativeWork",
       "@id": "https://www.kiwiwebdesign.co.nz/la-veranda-restaurant-website/#case-study",
       "name": "Case Study: La Veranda",
-      "description": "How Kiwi Web Design helped La Veranda attract more diners and private events with a fast, elegant restaurant website that communicates the dining experience before guests arrive.",
+      "description": "An archived Kiwi Web Design project presenting La Veranda's dining experience, HTML menus, reservations, and private-event enquiries.",
       "url": "https://www.kiwiwebdesign.co.nz/la-veranda-restaurant-website/",
       "creator": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "about": { "@type": "LocalBusiness", "name": "La Veranda", "address": { "@type": "PostalAddress", "addressLocality": "Auckland", "addressCountry": "NZ" } },
@@ -62,7 +62,7 @@ const schema = {
 
 <Layout
   title="La Veranda Restaurant, Website Case Study | Kiwi Web Design"
-  description="How Kiwi Web Design rebuilt La Veranda's restaurant website with HTML menus, table reservations, and a design that captures the dining atmosphere, delivering 3x more enquiries."
+  description="An archived Kiwi Web Design project for La Veranda, with HTML menus, table reservations, event enquiries, and an atmosphere-led restaurant design."
   canonicalURL="https://www.kiwiwebdesign.co.nz/la-veranda-restaurant-website/"
   schema={schema}
 >
@@ -76,8 +76,8 @@ const schema = {
             <span class="cs-tag">Case Study</span>
             <span class="cs-industry">Hospitality, Restaurant & Events</span>
           </div>
-          <h1>La Veranda, 3x More Reservation Enquiries</h1>
-          <p>A refined Auckland dining venue with an exceptional experience, and a website that didn't match it. We rebuilt it with an atmosphere-first design, HTML menus, and frictionless reservations. Enquiries tripled.</p>
+          <h1>La Veranda Restaurant Website Archive</h1>
+          <p>This archived project shows an atmosphere-led restaurant website with mobile-friendly HTML menus, an online reservation pathway, and a dedicated functions enquiry page.</p>
         </div>
         <div class="cs-hero-img">
           <img
@@ -124,8 +124,8 @@ const schema = {
             <span class="cs-client-value">Website Rebuild + Reservations</span>
           </div>
           <div class="cs-client-row">
-            <span class="cs-client-label">Results</span>
-            <span class="cs-client-value">3x reservation enquiries</span>
+            <span class="cs-client-label">Status</span>
+            <span class="cs-client-value">Archived former client project</span>
           </div>
         </div>
         <div class="cs-overview-body">
@@ -143,7 +143,7 @@ const schema = {
     <div class="container cs-content-narrow">
       <p class="cs-sub-eyebrow">The Challenge</p>
       <h2 class="cs-section-h2">A PDF menu and no online reservations were costing them covers every week.</h2>
-      <p class="cs-section-p">The existing menu was a PDF, invisible to Google and unreadable on mobile without pinching. Guests searching "Italian restaurant Auckland" or "fine dining birthday dinner Auckland" weren't finding La Veranda in search results, because Google couldn't parse the menu content to understand what cuisine the restaurant offered.</p>
+      <p class="cs-section-p">The existing menu was a PDF that was awkward to read on mobile and separated important dining information from the main website experience. Rebuilding the menu as HTML made the content easier for guests to browse and easier for search engines to interpret in context.</p>
       <p class="cs-section-p">For those who did arrive on the site, there was no way to make a reservation online. The only option was a phone number. For a dining venue where many bookings happen at 10pm when someone is planning their Saturday, that's a significant conversion problem.</p>
     </div>
   </section>
@@ -180,8 +180,8 @@ const schema = {
   <section class="section" style="background: var(--kwd-dark);">
     <div class="container">
       <p class="cs-sub-eyebrow cs-sub-eyebrow-light">The Results</p>
-      <h2 class="cs-section-h2 cs-section-h2-light">From invisible on Google to 6x organic visibility, and 3x more reservations.</h2>
-      <p class="cs-section-p cs-section-p-light">The HTML menu pages immediately began ranking for cuisine and dining occasion searches, something the PDF menu had never allowed. Page speed improved fivefold. Reservation enquiries tripled within the first four weeks, and the functions page began generating private dining enquiries that had previously never come through the website at all.</p>
+      <h2 class="cs-section-h2 cs-section-h2-light">A restaurant experience designed to be understood before a guest arrives.</h2>
+      <p class="cs-section-p cs-section-p-light">The project brought the menu, venue atmosphere, reservations, and private-event information into one responsive experience. This is an archived former client project; the former client domain no longer hosts the website shown here.</p>
       <div class="cs-results-grid">
         {stats.map(s => (
           <div class="cs-result-card">
@@ -189,16 +189,6 @@ const schema = {
             <div class="cs-result-label">{s.label}</div>
           </div>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonial -->
-  <section class="section">
-    <div class="container">
-      <div class="cs-testimonial-wrap">
-        <blockquote>"Kiwi Web Design translated our brand into a beautiful, fast site. Guests can find what they need in seconds, and enquiries have never been easier."</blockquote>
-        <p class="cs-testimonial-author">- La Veranda</p>
       </div>
     </div>
   </section>
@@ -211,7 +201,6 @@ const schema = {
         <a href="/small-business-website-design-auckland/" class="rps-link">Web Design</a>
         <a href="/booking-appointment-websites-with-wordpress/" class="rps-link">Booking Websites</a>
         <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO</a>
-        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress</a>
         <a href="/testimonials-reviews/" class="rps-link">Case Studies</a>
       </div>
     </div>

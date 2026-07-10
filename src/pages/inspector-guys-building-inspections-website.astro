@@ -4,9 +4,9 @@ import CTABanner from '../components/CTABanner.astro';
 import csHero from '../assets/general/Auckland_Building_Inspector-e1750284793590.jpg';
 
 const stats = [
-  { fig: "3x", label: "More booking enquiries" },
-  { fig: "92%", label: "Mobile-ready score" },
-  { fig: "6x", label: "Organic traffic increase" },
+  { fig: "Services", label: "Inspection types explained" },
+  { fig: "Enquiry", label: "Structured booking form" },
+  { fig: "Mobile", label: "Responsive website build" },
 ];
 
 const deliverables = [
@@ -26,7 +26,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/inspector-guys-building-inspections-website/",
       "url": "https://www.kiwiwebdesign.co.nz/inspector-guys-building-inspections-website/",
       "name": "Inspector Guys Building Inspections, Website Case Study | Kiwi Web Design",
-      "description": "How Kiwi Web Design rebuilt Inspector Guys' website to generate 3x more booking enquiries with clearer service pages, trust signals, and a mobile-first design.",
+      "description": "How Kiwi Web Design rebuilt Inspector Guys' website with clearer inspection services, visible trust signals, and a structured booking enquiry form.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/inspector-guys-building-inspections-website/#breadcrumb" }
@@ -35,7 +35,7 @@ const schema = {
       "@type": "CreativeWork",
       "@id": "https://www.kiwiwebdesign.co.nz/inspector-guys-building-inspections-website/#case-study",
       "name": "Case Study: Inspector Guys Building Inspections",
-      "description": "How Kiwi Web Design helped Inspector Guys triple booking enquiries with a rebuilt website focused on trust, service clarity, and mobile usability.",
+      "description": "How Kiwi Web Design rebuilt Inspector Guys' website around trust, service clarity, and mobile usability.",
       "url": "https://www.kiwiwebdesign.co.nz/inspector-guys-building-inspections-website/",
       "creator": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "about": { "@type": "LocalBusiness", "name": "Inspector Guys Building Inspections", "address": { "@type": "PostalAddress", "addressLocality": "Auckland", "addressCountry": "NZ" } },
@@ -62,7 +62,7 @@ const schema = {
 
 <Layout
   title="Inspector Guys Building Inspections, Website Case Study | Kiwi Web Design"
-  description="How Kiwi Web Design rebuilt Inspector Guys' website to generate 3x more booking enquiries with clearer service pages, trust signals, and a mobile-first design."
+  description="How Kiwi Web Design rebuilt Inspector Guys' website with clearer inspection services, visible trust signals, and a structured booking enquiry form."
   canonicalURL="https://www.kiwiwebdesign.co.nz/inspector-guys-building-inspections-website/"
   schema={schema}
 >
@@ -76,8 +76,8 @@ const schema = {
             <span class="cs-tag">Case Study</span>
             <span class="cs-industry">Building Inspections</span>
           </div>
-          <h1>Inspector Guys, 3x More Booking Enquiries</h1>
-          <p>A trusted Auckland building inspector with a website that wasn't communicating that trust. We rebuilt it around pre-purchase buyer anxiety, bookings tripled and organic traffic increased sixfold.</p>
+          <h1>Inspector Guys Building Inspections Case Study</h1>
+          <p>We rebuilt this Auckland building inspection website around the questions property buyers ask, with clear service pages, visible trust signals, and a structured booking enquiry form.</p>
         </div>
         <div class="cs-hero-img">
           <img
@@ -124,8 +124,8 @@ const schema = {
             <span class="cs-client-value">Website Rebuild + Lead Gen</span>
           </div>
           <div class="cs-client-row">
-            <span class="cs-client-label">Results</span>
-            <span class="cs-client-value">3x booking enquiries</span>
+            <span class="cs-client-label">Project Focus</span>
+            <span class="cs-client-value">Trust + booking enquiries</span>
           </div>
         </div>
         <div class="cs-overview-body">
@@ -143,7 +143,7 @@ const schema = {
     <div class="container cs-content-narrow">
       <p class="cs-sub-eyebrow">The Challenge</p>
       <h2 class="cs-section-h2">Pre-purchase buyers need to trust you before they book, the old site didn't build that trust.</h2>
-      <p class="cs-section-p">Someone booking a building inspection is about to spend $400–700 to protect themselves on a property purchase worth hundreds of thousands. They research inspectors carefully. They look for qualifications, insurance, sample reports, and real reviews. If your website doesn't communicate those signals clearly, they move on to someone whose website does.</p>
+      <p class="cs-section-p">Someone booking a building inspection is making an important decision about a major property purchase. They research inspectors carefully and look for qualifications, insurance, sample reports, and genuine reviews. If a website does not communicate those signals clearly, it is difficult to establish trust before contact.</p>
       <p class="cs-section-p">The old Inspector Guys site had the credibility, it just wasn't visible. Services were described generically, credentials were buried, and the mobile experience was inconsistent. The booking process was a basic contact form with no structure, no service type, no property address, no urgency indicator.</p>
     </div>
   </section>
@@ -154,7 +154,7 @@ const schema = {
       <p class="cs-sub-eyebrow">What We Built</p>
       <h2 class="cs-section-h2">A trust-first website built for property buyers under pressure.</h2>
       <p class="cs-section-p">We structured the site around the buyer's journey: what types of inspection are available, what's included in each, how quickly reports are delivered, and what credentials Andy holds. Each service page ends with a structured booking enquiry form, property address, inspection type, and preferred timeframe, so enquiries arrive with the information needed to respond and schedule immediately.</p>
-      <p class="cs-section-p">A dedicated trust section displays qualifications, insurance details, and real Google reviews with schema markup. The mobile score went from inconsistent to 92%. LocalBusiness and ProfessionalService schema markup was added to improve local search visibility.</p>
+      <p class="cs-section-p">A dedicated trust section presents qualifications, insurance details, and customer reviews in context. The responsive build makes inspection information and enquiry actions easier to use on mobile, with LocalBusiness and ProfessionalService schema added for clearer entity information.</p>
       <div class="cs-deliverables">
         {deliverables.map(d => <span class="cs-chip">{d}</span>)}
       </div>
@@ -180,8 +180,8 @@ const schema = {
   <section class="section" style="background: var(--kwd-dark);">
     <div class="container">
       <p class="cs-sub-eyebrow cs-sub-eyebrow-light">The Results</p>
-      <h2 class="cs-section-h2 cs-section-h2-light">Booking enquiries tripled, from a clearer, faster website.</h2>
-      <p class="cs-section-p cs-section-p-light">The rebuilt site immediately improved conversion from visitor to enquiry. Organic traffic increased sixfold as the service pages began ranking for pre-purchase inspection searches across Auckland suburbs. The structured booking form reduced back-and-forth, Andy could respond to enquiries with a quote and availability without needing a follow-up call to get basic details.</p>
+      <h2 class="cs-section-h2 cs-section-h2-light">A clearer path from inspection research to enquiry.</h2>
+      <p class="cs-section-p cs-section-p-light">The finished website helps property buyers compare inspection types, understand what is included, and see the business credentials before enquiring. The structured form collects the property address, inspection type, and timeframe so the team can respond with more useful information.</p>
       <div class="cs-results-grid">
         {stats.map(s => (
           <div class="cs-result-card">
@@ -193,25 +193,15 @@ const schema = {
     </div>
   </section>
 
-  <!-- Testimonial -->
-  <section class="section">
-    <div class="container">
-      <div class="cs-testimonial-wrap">
-        <blockquote>"The new site feels professional and is much easier for customers to use. Calls and enquiries are simpler than ever, great job team."</blockquote>
-        <p class="cs-testimonial-author">- Andy, Inspector Guys Auckland</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Related services -->
   <section class="related-strip">
     <div class="container" style="max-width: 860px;">
       <p class="rps-label">Related services</p>
       <div class="rps-links">
+        <a href="https://inspectorguys.co.nz/" target="_blank" rel="noopener noreferrer" class="rps-link">View Live Website</a>
         <a href="/tradie-website-design-auckland/" class="rps-link">Tradie Sites</a>
         <a href="/small-business-website-design-auckland/" class="rps-link">Web Design</a>
         <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO</a>
-        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress</a>
         <a href="/testimonials-reviews/" class="rps-link">Case Studies</a>
       </div>
     </div>

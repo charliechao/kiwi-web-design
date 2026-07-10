@@ -198,7 +198,7 @@ If you are, it might be time to rethink how your website is built and what you a
 **About Kiwi Web Design**
 
 
-Kiwi Web Design is an Auckland-based [web design agency](/small-business-website-design-auckland/) specialising in AI-powered website builds for small businesses across New Zealand. We also offer [AI SEO optimisation](/ai-seo-for-auckland-small-businesses/) to help your new site get found in AI-driven search. We focus on fast delivery, modern design, and practical outcomes using current-generation AI tools.
+Kiwi Web Design is an Auckland-based [web design agency](/) specialising in AI-powered website builds for small businesses across New Zealand. We also offer [AI SEO optimisation](/ai-seo-for-auckland-small-businesses/) to help your new site get found in AI-driven search. We focus on fast delivery, modern design, and practical outcomes using current-generation AI tools.
 
 
 

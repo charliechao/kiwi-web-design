@@ -51,7 +51,7 @@ const schema = {
         "https://www.linkedin.com/in/gocharlie/",
         "https://www.kiwiwebdesign.co.nz/about-us/"
       ],
-      "knowsAbout": ["Web Design", "WordPress", "Local SEO", "Google Ads", "Small Business Marketing", "Auckland Businesses"],
+      "knowsAbout": ["Web Design", "Website Strategy", "Local SEO", "AI SEO", "Google Ads", "Small Business Marketing", "Auckland Businesses"],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "147 Great North Road",
@@ -66,13 +66,26 @@ const schema = {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "alternateName": "Web Design Auckland",
+      "legalName": "Ika Tech Limited",
+      "alternateName": "Kiwi Web Design Auckland",
       "description": "Auckland web design agency helping small businesses and tradies get affordable, lead-generating websites. Founded by Charlie Chao, based in Grey Lynn.",
       "url": "https://www.kiwiwebdesign.co.nz/",
-      "foundingDate": "2023",
       "founder": { "@id": "https://www.kiwiwebdesign.co.nz/#charlie" },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "NZBN",
+        "value": "9429052816840"
+      },
       "sameAs": [
-        "https://www.linkedin.com/in/gocharlie/"
+        "https://www.facebook.com/profile.php?id=61559560322941",
+        "https://www.instagram.com/kiwi_web_design/",
+        "https://www.linkedin.com/company/108270459/",
+        "https://www.youtube.com/@Kiwiwebdesign",
+        "https://www.sortlist.com/agency/kiwi-web-design",
+        "https://www.designrush.com/agency/profile/kiwi-web-design",
+        "https://techreviewer.co/companies/kiwi-web-design",
+        "https://www.trustindex.io/reviews/kiwiwebdesign.co.nz",
+        "https://www.openpr.com/news/archive/277321/Ika-Tech-Limited-T-A-Kiwi-Web-Design.html"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -84,7 +97,10 @@ const schema = {
       "email": "hi@kiwiwebdesign.co.nz",
       "telephone": "+64-21-039-6580",
       "priceRange": "$$",
-      "areaServed": "Auckland, New Zealand"
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ]
     },
     {
       "@type": "VideoObject",
@@ -127,8 +143,8 @@ const values = [
 const services = [
   { label: "Web Design", href: "/small-business-website-design-auckland/" },
   { label: "SEO Auckland", href: "/affordable-seo-auckland/" },
+  { label: "AI SEO", href: "/ai-seo-for-auckland-small-businesses/" },
   { label: "Google Ads", href: "/google-ads/" },
-  { label: "WordPress Design", href: "/wordpress-website-design-auckland/" },
   { label: "Local SEO", href: "/local-seo-for-auckland-small-businesses/" },
   { label: "Monthly Subscription", href: "/monthly-subscription/" },
 ];
@@ -259,7 +275,7 @@ const reviews = [
         <div class="about-story-card">
           <p class="asc-label">What I focus on</p>
           <ul class="asc-list">
-            <li><a href="/wordpress-website-design-auckland/" class="asc-link">WordPress websites that load fast and rank well</a></li>
+            <li><a href="/small-business-website-design-auckland/" class="asc-link">Websites that load quickly and give customers a clear enquiry path</a></li>
             <li><a href="/local-seo-for-auckland-small-businesses/" class="asc-link">Local SEO that puts Auckland businesses on the map</a></li>
             <li><a href="/google-ads/" class="asc-link">Google Ads campaigns that generate real leads</a></li>
             <li>AI-assisted workflows that reduce build time and unnecessary agency costs</li>

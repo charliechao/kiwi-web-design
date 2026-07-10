@@ -45,7 +45,7 @@ A website is the foundation for growth. From [online bookings](/booking-appointm
 ### ✅ Affordable Web Design in Auckland
 
 
-The best part? A professional website doesn’t need to cost a fortune. At **Kiwi Web Design**, we specialise in [**affordable web design Auckland**](/small-business-website-design-auckland/) services, with websites starting at just $1,290 and a fast 2–3 week turnaround. Using smart AI tools, we keep costs down while delivering high-quality websites for [tradies](/tradie-website-design-auckland/), [e-commerce stores](/ecommerce-website-auckland/), and local services. We also build on [WordPress](/wordpress-website-design-auckland/) for maximum flexibility.
+The best part? A professional website doesn’t need to cost a fortune. At **Kiwi Web Design**, we specialise in [**affordable web design Auckland**](/affordable-web-design-auckland/) services, with websites starting at just $1,290 and a fast 2–3 week turnaround. Using smart AI tools, we keep costs down while delivering high-quality websites for [tradies](/tradie-website-design-auckland/), [e-commerce stores](/ecommerce-website-auckland/), and local services. We also build on [WordPress](/wordpress-website-design-auckland/) for maximum flexibility.
 
 
 ### 📍 Local Support, Mt Albert Based

@@ -193,7 +193,7 @@ There is a significant perception gap. 52 percent of consumers see websites prim
 <div class="related-strip">
   <span class="rps-label">Related reading</span>
   <div class="rps-links">
-    <a class="rps-link" href="/small-business-website-design-auckland/">Website Design Auckland</a>
+    <a class="rps-link" href="/">Website Design Auckland</a>
     <a class="rps-link" href="/affordable-web-design-auckland/website-cost-new-zealand-small-business/">Website Cost NZ</a>
     <a class="rps-link" href="/affordable-seo-auckland/">Local SEO Auckland</a>
     <a class="rps-link" href="/google-ads/">Google Ads Auckland</a>

@@ -105,7 +105,7 @@ This changes how websites perform. People search with intent. They compare quick
 Search behaviour also reflects this density. Local keywords, suburb references, and clear service pages matter. Whether you choose a redesign or a rebuild, the end result needs to support discoverability and trust in a competitive local market.
 
 
-This is where [professional web design Auckland](/small-business-website-design-auckland/) businesses rely on becomes less about aesthetics and more about structure, messaging, and credibility.
+This is where [professional web design Auckland](/) businesses rely on becomes less about aesthetics and more about structure, messaging, and credibility.
 
 
 ## An Expert Perspective from Auckland

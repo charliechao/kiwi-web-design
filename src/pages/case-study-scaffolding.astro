@@ -3,10 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
 
 const stats = [
-  { fig: "+125%", label: "Increase in quote requests" },
-  { fig: "-34%", label: "Reduction in bounce rate" },
-  { fig: "3.8x", label: "More qualified leads" },
-  { fig: "8 weeks", label: "Full project sprint" },
+  { fig: "3", label: "Sector-specific service paths" },
+  { fig: "Quote", label: "Online enquiry calculator" },
+  { fig: "Mobile", label: "Responsive website build" },
+  { fig: "Auckland", label: "Local service coverage" },
 ];
 
 const deliverables = [
@@ -26,7 +26,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/case-study-scaffolding/",
       "url": "https://www.kiwiwebdesign.co.nz/case-study-scaffolding/",
       "name": "Barrett Access Scaffolding, Website Case Study | Kiwi Web Design",
-      "description": "How Kiwi Web Design rebuilt Barrett Access Scaffolding's website with sector landing pages and a quote calculator, delivering +125% quote requests in 3 months.",
+      "description": "How Kiwi Web Design rebuilt Barrett Access Scaffolding's website with sector landing pages, mobile-first design, and an online quote calculator.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/case-study-scaffolding/#breadcrumb" }
@@ -35,7 +35,7 @@ const schema = {
       "@type": "CreativeWork",
       "@id": "https://www.kiwiwebdesign.co.nz/case-study-scaffolding/#case-study",
       "name": "Case Study: Barrett Access Scaffolding",
-      "description": "How Kiwi Web Design helped Barrett Access Scaffolding capture more qualified leads with sector-specific landing pages and an online quote calculator.",
+      "description": "How Kiwi Web Design gave Barrett Access Scaffolding clearer customer pathways with sector-specific landing pages and an online quote calculator.",
       "url": "https://www.kiwiwebdesign.co.nz/case-study-scaffolding/",
       "creator": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "about": { "@type": "LocalBusiness", "name": "Barrett Access Scaffolding", "address": { "@type": "PostalAddress", "addressLocality": "Auckland", "addressCountry": "NZ" } },
@@ -62,7 +62,7 @@ const schema = {
 
 <Layout
   title="Barrett Access Scaffolding, Website Case Study | Kiwi Web Design"
-  description="How Kiwi Web Design rebuilt Barrett Access Scaffolding's website with sector landing pages and a quote calculator, delivering +125% quote requests in 3 months."
+  description="How Kiwi Web Design rebuilt Barrett Access Scaffolding's website with sector landing pages, mobile-first design, and an online quote calculator."
   canonicalURL="https://www.kiwiwebdesign.co.nz/case-study-scaffolding/"
   schema={schema}
 >
@@ -76,8 +76,8 @@ const schema = {
             <span class="cs-tag">Case Study</span>
             <span class="cs-industry">Scaffolding & Construction</span>
           </div>
-          <h1>Barrett Access Scaffolding, 125% More Quote Requests</h1>
-          <p>A generic trade website was sending qualified leads to competitors. We rebuilt it with sector-specific landing pages and a live quote calculator, quote requests jumped 125% in the first three months.</p>
+          <h1>Barrett Access Scaffolding Website Case Study</h1>
+          <p>We rebuilt this Auckland scaffolding website around three distinct customer groups, with sector-specific service paths, clearer project information, and an online quote calculator.</p>
         </div>
         <div class="cs-hero-img">
           <img
@@ -124,8 +124,8 @@ const schema = {
             <span class="cs-client-value">Website Rebuild + Lead Gen</span>
           </div>
           <div class="cs-client-row">
-            <span class="cs-client-label">Timeline</span>
-            <span class="cs-client-value">8 weeks</span>
+            <span class="cs-client-label">Project Focus</span>
+            <span class="cs-client-value">Service clarity + quote enquiries</span>
           </div>
         </div>
         <div class="cs-overview-body">
@@ -154,7 +154,7 @@ const schema = {
       <p class="cs-sub-eyebrow">What We Built</p>
       <h2 class="cs-section-h2">Sector landing pages and an online quote calculator.</h2>
       <p class="cs-section-p">We created three dedicated landing pages, residential, commercial, and industrial, each written for the specific audience and their specific concerns. Each page includes project type examples, typical scope, lead times, and an inline quote request form that captures the information needed to provide a real quote without a callback.</p>
-      <p class="cs-section-p">The quote calculator on the residential page lets homeowners enter their scaffolding dimensions and get an indicative price range immediately. This significantly increased quote form completions, visitors could see a number before committing to a contact.</p>
+      <p class="cs-section-p">The quote calculator on the residential page lets homeowners enter their scaffolding dimensions and receive an indicative price range before making contact. The supporting form also collects the job details the team needs for a more useful first conversation.</p>
       <div class="cs-deliverables">
         {deliverables.map(d => <span class="cs-chip">{d}</span>)}
       </div>
@@ -180,8 +180,8 @@ const schema = {
   <section class="section" style="background: var(--kwd-dark);">
     <div class="container">
       <p class="cs-sub-eyebrow cs-sub-eyebrow-light">The Results</p>
-      <h2 class="cs-section-h2 cs-section-h2-light">Qualified leads up 125% in the first quarter.</h2>
-      <p class="cs-section-p cs-section-p-light">The sector landing pages went live and immediately started converting more visitors into quote requests. The quote calculator on the residential page became the highest-converting element on the site. Bounce rate dropped by 34%, visitors were finding relevant content faster and staying longer.</p>
+      <h2 class="cs-section-h2 cs-section-h2-light">A clearer online path for residential, commercial, and industrial clients.</h2>
+      <p class="cs-section-p cs-section-p-light">The finished website gives each customer type a relevant route into the business. Visitors can understand the appropriate scaffolding service, review project information, and submit useful job details through the quote pathway on mobile or desktop.</p>
       <div class="cs-results-grid">
         {stats.map(s => (
           <div class="cs-result-card">
@@ -193,25 +193,15 @@ const schema = {
     </div>
   </section>
 
-  <!-- Testimonial -->
-  <section class="section">
-    <div class="container">
-      <div class="cs-testimonial-wrap">
-        <blockquote>"The new site finally tells the story we share on the scaffold. Our clients can get an instant estimate with the online calculator now, it's made a real difference to how many enquiries we get."</blockquote>
-        <p class="cs-testimonial-author">- Barrett Access Scaffolding</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Related services -->
   <section class="related-strip">
     <div class="container" style="max-width: 860px;">
       <p class="rps-label">Related services</p>
       <div class="rps-links">
+        <a href="https://www.barrettaccessscaffolding.com/" target="_blank" rel="noopener noreferrer" class="rps-link">View Live Website</a>
         <a href="/tradie-website-design-auckland/" class="rps-link">Tradie Sites</a>
         <a href="/small-business-website-design-auckland/" class="rps-link">Web Design</a>
         <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO</a>
-        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress</a>
         <a href="/testimonials-reviews/" class="rps-link">Case Studies</a>
       </div>
     </div>

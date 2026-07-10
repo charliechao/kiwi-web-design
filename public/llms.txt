@@ -1,20 +1,19 @@
 # Kiwi Web Design
 
-> Auckland web design agency helping small businesses generate leads through websites, SEO, and Google Ads. Founded by Charlie Chao. Based in Grey Lynn, Auckland, New Zealand. 5★ Google rating.
+> Kiwi Web Design is the trading name of Ika Tech Limited, an Auckland web design and digital marketing business founded by Charlie Chao. Based in Grey Lynn and serving businesses across New Zealand.
 
 ## Core Services
 
 - [Web Design for Auckland Small Businesses](https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/): Conversion-focused websites starting from $1,290. Mobile-first, fast-loading, built to turn visitors into enquiries, not just look good.
-- [SEO Auckland](https://www.kiwiwebdesign.co.nz/seo-auckland/): Local SEO targeting buyer keywords for Auckland businesses. Organic visibility that compounds over time and reduces reliance on paid ads.
+- [SEO Auckland](https://www.kiwiwebdesign.co.nz/affordable-seo-auckland/): Local SEO targeting buyer keywords for Auckland businesses. Organic visibility that compounds over time and reduces reliance on paid ads.
 - [Google Ads Auckland](https://www.kiwiwebdesign.co.nz/google-ads/): PPC campaign setup and management focused on generating calls and enquiries, not wasting ad spend.
 - [ChatGPT Ads NZ](https://www.kiwiwebdesign.co.nz/chatgpt-ads/): AI search advertising and ChatGPT Ads readiness for New Zealand businesses, including answer-ready landing pages, schema, tracking, and conversion paths.
 
 ## Website Types
 
-- [WordPress Website Design Auckland](https://www.kiwiwebdesign.co.nz/wordpress-website-design-auckland/): Custom WordPress builds for Auckland small businesses.
+- [Small Business Website Design Auckland](https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/): Conversion-focused website design for Auckland small businesses.
 - [Tradie Website Design Auckland](https://www.kiwiwebdesign.co.nz/tradie-website-design-auckland/): Websites for plumbers, electricians, builders, cleaners, and service tradies.
-- [eCommerce Website Auckland](https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/): Online store design with WooCommerce and Shopify.
-- [WooCommerce Website Design](https://www.kiwiwebdesign.co.nz/woocommerce-website-design-auckland/): WooCommerce builds for Auckland retailers.
+- [eCommerce Website Auckland](https://www.kiwiwebdesign.co.nz/ecommerce-website-auckland/): Online store strategy, design, setup, and conversion planning.
 - [Shopify Website Design](https://www.kiwiwebdesign.co.nz/shopify-website-design-auckland/): Shopify store design and setup in Auckland.
 
 ## Industries Served
@@ -37,19 +36,9 @@
 
 - [Local SEO for Auckland Small Businesses](https://www.kiwiwebdesign.co.nz/local-seo-for-auckland-small-businesses/): Google Maps and local pack optimisation for Auckland.
 - [Local SEO for Auckland Small Businesses: 2026 Guide](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/local-seo-auckland-small-businesses-2026-guide/): Step-by-step 2026 local SEO guide for Auckland small businesses covering Google Business Profile, reviews, citations, local landing pages, schema, tracking, and AI search visibility.
-- [WordPress SEO Optimisation](https://www.kiwiwebdesign.co.nz/wordpress-seo-optimisation/): On-page and technical SEO for WordPress sites.
 - [AI SEO for Auckland Small Businesses](https://www.kiwiwebdesign.co.nz/ai-seo-for-auckland-small-businesses/): GEO and AI search optimisation for visibility in ChatGPT, Perplexity, and Google AI Overviews.
 - [SEO for eCommerce](https://www.kiwiwebdesign.co.nz/seo-for-ecommerce/): Product and category page SEO for Auckland online stores.
 - [Google Business Profile Guide](https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/): How to optimise your Google Business Profile for Auckland local search.
-
-## WordPress Services
-
-- [WordPress Maintenance Auckland](https://www.kiwiwebdesign.co.nz/wordpress-maintenance-auckland/): Monthly WordPress care plans including updates, backups, and security.
-- [WordPress Website Rebuilds](https://www.kiwiwebdesign.co.nz/wordpress-website-rebuilds-auckland/): Migrate from Wix, Squarespace, or old WordPress to a modern site.
-- [WordPress AI Tools Integration](https://www.kiwiwebdesign.co.nz/wordpress-ai-tools-integration-auckland/): Add AI chatbots and automation to WordPress sites.
-- [Booking & Appointment Websites](https://www.kiwiwebdesign.co.nz/booking-appointment-websites-with-wordpress/): Online booking systems built on WordPress.
-- [Landing Pages & Funnels](https://www.kiwiwebdesign.co.nz/landing-pages-funnels-on-wordpress/): High-converting landing pages and sales funnels on WordPress.
-- [Membership Websites](https://www.kiwiwebdesign.co.nz/membership-subscription-websites-with-wordpress-auckland/): Subscription and membership site builds in Auckland.
 
 ## Pricing
 
@@ -60,8 +49,8 @@
 
 ## Case Studies
 
-- [Barrett Access Scaffolding](https://www.kiwiwebdesign.co.nz/case-study-scaffolding/): +125% increase in quote requests after new website launch.
-- [Beauty Touch Auckland](https://www.kiwiwebdesign.co.nz/beauty-touch-case-study/): New website designed and live in 3 weeks.
+- [Barrett Access Scaffolding](https://www.kiwiwebdesign.co.nz/case-study-scaffolding/): Scaffolding website with sector-specific service paths and an online quote calculator.
+- [Beauty Touch Auckland](https://www.kiwiwebdesign.co.nz/beauty-touch-case-study/): Beauty and wellness website with six treatment pages and integrated online booking.
 
 ## Blog
 
@@ -70,16 +59,29 @@
 
 ## Company
 
-- [About Kiwi Web Design](https://www.kiwiwebdesign.co.nz/about-us/): Founded by Charlie Chao. Grey Lynn-based agency delivering premium results at 50–70% less than traditional Auckland agencies.
-- [Our Process](https://www.kiwiwebdesign.co.nz/our-process/): How we work, free consultation, strategy, build, launch.
+- [About Kiwi Web Design](https://www.kiwiwebdesign.co.nz/about-us/): Founded by Charlie Chao. Grey Lynn-based web design and digital marketing business serving Auckland and wider New Zealand.
+- [Our Process](https://www.kiwiwebdesign.co.nz/website-design-process-in-auckland/): How we work, free consultation, strategy, build, launch.
 - [Client Reviews](https://www.kiwiwebdesign.co.nz/testimonials-reviews/): Google reviews and client testimonials.
+- [Press, Coverage & Public Profiles](https://www.kiwiwebdesign.co.nz/press-release-and-news/): Verified external publications, agency profiles, and public review sources.
+- [Legal Information](https://www.kiwiwebdesign.co.nz/legal-information/): Legal entity, NZBN, address, services, and advertiser transparency information.
 - [Contact / Free Consultation](https://www.kiwiwebdesign.co.nz/website-designer-auckland/): Book a free consultation in-person or online, Auckland-wide.
 - [FAQ](https://www.kiwiwebdesign.co.nz/faq/): Common questions about web design, SEO, and Google Ads for Auckland businesses.
 
 ## Contact
 
+- Legal entity: Ika Tech Limited
+- Trading name: Kiwi Web Design
+- NZBN: 9429052816840
 - Address: 147 Great North Road, Grey Lynn, Auckland 1021, New Zealand
 - Phone: +64 21 039 6580
 - Email: hi@kiwiwebdesign.co.nz
-- Google Rating: 5/5 stars
-- Service Area: Auckland, North Shore, South, West, East, Central
+- Service Area: Auckland and wider New Zealand
+
+## Verified External Profiles
+
+- [LinkedIn](https://nz.linkedin.com/company/kiwi-web-design)
+- [Sortlist](https://www.sortlist.com/agency/kiwi-web-design)
+- [DesignRush](https://www.designrush.com/agency/profile/kiwi-web-design)
+- [Techreviewer](https://techreviewer.co/companies/kiwi-web-design)
+- [Trustindex](https://www.trustindex.io/reviews/kiwiwebdesign.co.nz)
+- [openPR publisher archive](https://www.openpr.com/news/archive/277321/Ika-Tech-Limited-T-A-Kiwi-Web-Design.html)

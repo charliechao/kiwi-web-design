@@ -24,7 +24,7 @@ AI tools help small companies in Auckland create personalized marketing campaign
 ### 3. Web Design on Autopilot
 
 
-Generative AI tools are reshaping **web design** workflows: automatically generating layouts, drafting copy, resizing graphics, and offering customized visual suggestions. For many small businesses, these tools reduce reliance on expensive design services, enabling [professional-quality Auckland web design](/small-business-website-design-auckland/) on tighter budgets.
+Generative AI tools are reshaping **web design** workflows: automatically generating layouts, drafting copy, resizing graphics, and offering customized visual suggestions. For many small businesses, these tools reduce reliance on expensive design services, enabling [professional-quality Auckland web design](/) on tighter budgets.
 
 
 ### 4. Data-Driven Decision Making

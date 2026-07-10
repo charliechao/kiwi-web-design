@@ -51,7 +51,7 @@ Your website never sleeps. It answers questions, collects leads, and promotes yo
 ### 5️⃣ It’s More Affordable Than You Think
 
 
-Many Auckland small business owners assume building a website will cost thousands.But at **Kiwi Web Design**, we specialise in [**affordable web design Auckland**](/small-business-website-design-auckland/) packages, starting from just **$1,290**, with most sites completed within 2–3 weeks.
+Many Auckland small business owners assume building a website will cost thousands.But at **Kiwi Web Design**, we specialise in [**affordable web design Auckland**](/affordable-web-design-auckland/) packages, starting from just **$1,290**, with most sites completed within 2–3 weeks.
 
 
 We use smart AI-assisted tools to save time and reduce costs, while still delivering clean, professional, and fast-loading websites that perform well on Google.

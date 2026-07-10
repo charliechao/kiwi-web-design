@@ -7,100 +7,36 @@ import testimonialsImage from '../assets/services/kiwi-web-design-testimonials-a
 
 const reviews = [
   {
-    name: "Marcus Tane",
-    business: "Tane Scaffolding Ltd",
-    industry: "Construction",
+    name: "Zane Barrett",
+    business: "Barrett Access Scaffolding",
+    industry: "Scaffolding",
     rating: 5,
-    text: "Charlie built our site from scratch in under two weeks. We went from having nothing online to ranking on page one for 'scaffolding Auckland'. Enquiries started coming in within the first month. Worth every dollar.",
-    service: "Web Design + SEO",
+    text: "Professional, responsive, and they really took the time to understand our business.",
+    service: "Website Design",
   },
   {
-    name: "Jessica Liu",
-    business: "Radiance Beauty Studio",
-    industry: "Beauty",
+    name: "Jack",
+    business: "Show Me Shorts",
+    industry: "Film & Arts",
     rating: 5,
-    text: "The online booking system has completely changed how we run the salon. We're no longer chasing bookings through DMs. Clients book themselves, get automatic reminders, and no-shows have dropped dramatically. Charlie understood exactly what we needed.",
-    service: "Web Design + Booking System",
+    text: "They understood what I needed from the beginning and offered smart, practical solutions.",
+    service: "Website Support",
   },
   {
-    name: "Dr Sarah Petersen",
-    business: "Petersen Family Health",
-    industry: "Healthcare",
+    name: "Steven Liu",
+    business: "Auckland client",
+    industry: "Small Business",
     rating: 5,
-    text: "We needed a site that would work for both existing patients finding information and new patients deciding whether to register. Charlie built exactly that, clear practitioner profiles, a patient FAQ, and online booking. Our reception team spend less time on the phone.",
-    service: "Healthcare Web Design",
+    text: "Clean, modern, and user-friendly. The attention to detail really stood out.",
+    service: "Website Design",
   },
   {
-    name: "Raj Sharma",
-    business: "Sharma Electrical",
-    industry: "Trades",
+    name: "Gina Dellabarca",
+    business: "Auckland client",
+    industry: "Business Services",
     rating: 5,
-    text: "I was getting zero enquiries online. Within three months of launching the new site, I'm getting two to three calls a week from the website alone. Charlie set up Google Ads at the same time and it's paid for itself many times over.",
-    service: "Web Design + Google Ads",
-  },
-  {
-    name: "Marco Benedetti",
-    business: "La Veranda Ristorante",
-    industry: "Hospitality",
-    rating: 5,
-    text: "Our old site had a PDF menu and no reservations. Charlie rebuilt it with a proper HTML menu, which now ranks on Google for Italian restaurant searches, and integrated online reservations. Functions enquiries have increased noticeably since launch.",
-    service: "Restaurant Web Design",
-  },
-  {
-    name: "Claire Anderson",
-    business: "Anderson & Partners Solicitors",
-    industry: "Legal",
-    rating: 5,
-    text: "We needed a site that communicated authority and made it easy for clients in stressful situations to contact us. The practice area pages Charlie wrote and built are clear, empathetic, and genuinely useful. Our enquiry quality has improved, we're hearing fewer 'just wondering' calls.",
-    service: "Law Firm Web Design",
-  },
-  {
-    name: "Ngaire Williams",
-    business: "NW Bookkeeping Services",
-    industry: "Professional Services",
-    rating: 5,
-    text: "Simple, clean, professional, exactly what I asked for. Charlie listened to what I wanted and delivered it without overcomplicating things. The site loads fast, looks great on mobile, and I can update it myself when I need to.",
-    service: "Small Business Web Design",
-  },
-  {
-    name: "Tom Blackwood",
-    business: "Blackwood Plumbing",
-    industry: "Trades",
-    rating: 5,
-    text: "Had a basic site that wasn't generating anything. Charlie fixed the SEO, rewrote the homepage, and set up a Google Ads campaign targeting emergency plumber searches. Best business investment I've made this year. The phone rings every day now.",
-    service: "Web Design + SEO + Google Ads",
-  },
-  {
-    name: "Priya Naidoo",
-    business: "Kumeu Wellness Centre",
-    industry: "Wellness",
-    rating: 5,
-    text: "Charlie took time to understand what we do, yoga, pilates, massage, and wellness workshops, before designing anything. The result is a site that feels like us. Class bookings are up 40% since we switched to online scheduling.",
-    service: "Web Design + Booking System",
-  },
-  {
-    name: "Kevin Zhao",
-    business: "Zhao Property Group",
-    industry: "Real Estate",
-    rating: 5,
-    text: "Fast, professional, and honest about what we actually needed versus what we didn't. Charlie pushed back on some of our ideas in a good way, and the result is cleaner and more effective than what we'd originally planned. Highly recommend.",
-    service: "Business Web Design",
-  },
-  {
-    name: "Fiona Te Hira",
-    business: "Te Hira Cleaning Solutions",
-    industry: "Trades / Services",
-    rating: 5,
-    text: "We're a commercial cleaning company, not a glamorous industry. But Charlie made our site look as professional as any of our competitors, and the enquiry form captures exactly what we need from a potential client. We've won two commercial contracts from website enquiries this year.",
-    service: "Small Business Web Design",
-  },
-  {
-    name: "Daniel Park",
-    business: "North Shore Dental Care",
-    industry: "Healthcare",
-    rating: 5,
-    text: "The patient profiles and online booking were the main things we needed. Charlie delivered both cleanly and on time. Our Google ranking for dental searches in our area has improved steadily since the launch. The staff find the back-end easy to update too.",
-    service: "Healthcare Web Design + SEO",
+    text: "Clear information, great communication, and a genuinely helpful audit.",
+    service: "Website Audit",
   },
 ];
 
@@ -124,31 +60,6 @@ const schema = {
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
         { "@type": "ListItem", "position": 2, "name": "Reviews" }
       ]
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
-      "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "reviewCount": "37"
-      },
-      "review": reviews.map(r => ({
-        "@type": "Review",
-        "reviewBody": r.text,
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": String(r.rating),
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": r.name
-        }
-      }))
     }
   ]
 };
@@ -166,7 +77,7 @@ const schema = {
     <div class="container">
       <p class="rev-hero-eyebrow">Client Reviews</p>
       <h1>What Auckland businesses say about working with us.</h1>
-      <p class="rev-hero-sub">Real results for real Auckland businesses, tradies, restaurants, healthcare providers, and professional services across the region. Learn more <a href="/about-us/" style="color: rgba(255,255,255,0.85); text-decoration: underline;">about us</a> and how we work.</p>
+      <p class="rev-hero-sub">Feedback from Auckland clients who value clear communication, practical advice, and websites built around their business. Learn more <a href="/about-us/" style="color: rgba(255,255,255,0.85); text-decoration: underline;">about us</a> and how we work.</p>
 
       <!-- Aggregate stats -->
       <div class="rev-agg">
@@ -177,13 +88,13 @@ const schema = {
         </div>
         <div class="rev-agg-divider"></div>
         <div class="rev-agg-item">
-          <span class="rev-agg-score">37+</span>
-          <span class="rev-agg-label">verified reviews</span>
+          <span class="rev-agg-score">Google</span>
+          <span class="rev-agg-label">verified review source</span>
         </div>
         <div class="rev-agg-divider"></div>
         <div class="rev-agg-item">
-          <span class="rev-agg-score">8+</span>
-          <span class="rev-agg-label">industries served</span>
+          <span class="rev-agg-score">Direct</span>
+          <span class="rev-agg-label">work with Charlie</span>
         </div>
         <div class="rev-agg-divider"></div>
         <div class="rev-agg-item">
@@ -200,7 +111,7 @@ const schema = {
     imgTitle="Client reviews and testimonials Kiwi Web Design Auckland"
     eyebrow="Client Trust"
     title="Reviews are stronger when the page feels as credible as the words."
-    caption="A premium testimonial visual now breaks up the review list and reinforces the trust story before visitors read the individual comments."
+    caption="See what clients say about communication, practical advice, and working directly with Charlie."
   />
 
   <!-- Reviews grid -->
@@ -208,8 +119,8 @@ const schema = {
     <div class="container">
       <SectionHeader
         eyebrow="Client Testimonials"
-        title="Across industries, across Auckland."
-        subtitle="From tradies in South Auckland to professionals on the North Shore, here's what working with Kiwi Web Design is actually like."
+        title="Straight from our clients."
+        subtitle="Selected feedback from Auckland clients about working with Kiwi Web Design."
       />
       <div class="rev-grid">
         {reviews.map((review) => (
@@ -239,8 +150,8 @@ const schema = {
       <div class="rev-google-wrap">
         <div>
           <p class="rev-google-eyebrow">Verified on Google</p>
-          <h2>All reviews are verified through Google Business Profile.</h2>
-          <p>We don't cherry-pick testimonials from emails. Every review we publish is verifiable on our Google Business Profile, you can read them all there and see the complete unedited record. These clients came to us through our <a href="/small-business-website-design-auckland/">web design packages</a>, <a href="/affordable-seo-auckland/">SEO services</a>, and <a href="/website-designer-auckland/">direct enquiries</a>.</p>
+          <h2>Check the complete review record on Google.</h2>
+          <p>The selected feedback above is also published on our Google Business Profile. Visit Google to read the current rating and complete review record directly. Clients work with us through our <a href="/small-business-website-design-auckland/">web design packages</a>, <a href="/affordable-seo-auckland/">SEO services</a>, and <a href="/website-designer-auckland/">direct enquiries</a>.</p>
           <a href="https://www.google.com/maps/place/Kiwi+Web+Design" class="rev-google-btn" target="_blank" rel="noopener noreferrer">Read our Google reviews →</a>
         </div>
         <div class="rev-google-card">
@@ -249,7 +160,7 @@ const schema = {
             <div class="rev-stars rev-stars--gold">★★★★★</div>
             <span class="rev-gc-score">5.0 / 5.0</span>
           </div>
-          <p class="rev-gc-count">Based on 37+ Google reviews</p>
+          <p class="rev-gc-count">Current reviews available on Google</p>
           <p class="rev-gc-category">Web design agency · Auckland, NZ</p>
         </div>
       </div>

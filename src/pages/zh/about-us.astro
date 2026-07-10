@@ -66,12 +66,27 @@ const schema = {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
+      "legalName": "Ika Tech Limited",
       "alternateName": "奥克兰网页设计",
       "description": "奥克兰网站设计与数字营销团队，由 Charlie Chao 创立，服务全新西兰华人企业与本地中小企业。常驻 Grey Lynn，奥克兰。",
       "url": "https://www.kiwiwebdesign.co.nz/",
-      "foundingDate": "2023",
       "founder": { "@id": "https://www.kiwiwebdesign.co.nz/#charlie" },
-      "sameAs": ["https://www.linkedin.com/in/gocharlie/"],
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "NZBN",
+        "value": "9429052816840"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61559560322941",
+        "https://www.instagram.com/kiwi_web_design/",
+        "https://www.linkedin.com/company/108270459/",
+        "https://www.youtube.com/@Kiwiwebdesign",
+        "https://www.sortlist.com/agency/kiwi-web-design",
+        "https://www.designrush.com/agency/profile/kiwi-web-design",
+        "https://techreviewer.co/companies/kiwi-web-design",
+        "https://www.trustindex.io/reviews/kiwiwebdesign.co.nz",
+        "https://www.openpr.com/news/archive/277321/Ika-Tech-Limited-T-A-Kiwi-Web-Design.html"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "147 Great North Road",
@@ -82,7 +97,10 @@ const schema = {
       "email": "hi@kiwiwebdesign.co.nz",
       "telephone": "+64-21-039-6580",
       "priceRange": "$$",
-      "areaServed": "Auckland, New Zealand"
+      "areaServed": [
+        { "@type": "City", "name": "Auckland" },
+        { "@type": "Country", "name": "New Zealand" }
+      ]
     }
   ]
 };

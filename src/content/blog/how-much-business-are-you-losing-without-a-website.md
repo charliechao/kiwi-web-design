@@ -27,7 +27,7 @@ Even if you have a Facebook page, most people still expect a proper website, it 
 Every day you wait to get your website built, your competitors are climbing higher on Google and winning over your potential customers.
 
 
-With an [**affordable web design Auckland**](/small-business-website-design-auckland/) service, you don’t have to spend thousands. Modern tools and AI-driven systems (like the ones we use at Kiwi Web Design) make it possible to get a professional, high-performing website at a fraction of the cost, and much faster.
+With an [**affordable web design Auckland**](/affordable-web-design-auckland/) service, you don’t have to spend thousands. Modern tools and AI-driven systems (like the ones we use at Kiwi Web Design) make it possible to get a professional, high-performing website at a fraction of the cost, and much faster.
 
 
 ## 3. Your Website Works While You Sleep

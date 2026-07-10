@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
 
 const stats = [
-  { fig: "4x", label: "Increase in patient enquiries" },
-  { fig: "6x", label: "Organic visibility growth" },
-  { fig: "85%", label: "Improved mobile trust signals" },
+  { fig: "Profiles", label: "Specialist expertise presented" },
+  { fig: "Patients", label: "Condition information hub" },
+  { fig: "Access", label: "Responsive, readable design" },
 ];
 
 const deliverables = [
@@ -25,7 +25,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/melanoma-specialists-website/",
       "url": "https://www.kiwiwebdesign.co.nz/melanoma-specialists-website/",
       "name": "Melanoma Specialists, Website Case Study | Kiwi Web Design",
-      "description": "How Kiwi Web Design built a trust-first specialist healthcare website for Auckland Melanoma Specialists, delivering 4x patient enquiries and 6x organic visibility.",
+      "description": "How Kiwi Web Design built a trust-first healthcare website for Auckland Melanoma Specialists with clear patient information, specialist profiles, and accessible design.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/melanoma-specialists-website/#breadcrumb" }
@@ -61,7 +61,7 @@ const schema = {
 
 <Layout
   title="Melanoma Specialists, Website Case Study | Kiwi Web Design"
-  description="How Kiwi Web Design built a trust-first specialist healthcare website for Auckland Melanoma Specialists, delivering 4x patient enquiries and 6x organic visibility."
+  description="How Kiwi Web Design built a trust-first healthcare website for Auckland Melanoma Specialists with clear patient information, specialist profiles, and accessible design."
   canonicalURL="https://www.kiwiwebdesign.co.nz/melanoma-specialists-website/"
   schema={schema}
 >
@@ -75,7 +75,7 @@ const schema = {
             <span class="cs-tag">Case Study</span>
             <span class="cs-industry">Healthcare, Dermatology</span>
           </div>
-          <h1>Melanoma Specialists, 4x More Patient Enquiries</h1>
+          <h1>Auckland Melanoma Specialists Website Case Study</h1>
           <p>A specialist Auckland dermatology practice with advanced diagnostic capability, and a website that wasn't building the patient trust that high-stakes healthcare decisions require. We rebuilt it for clarity, access, and credibility.</p>
         </div>
         <div class="cs-hero-img">
@@ -123,8 +123,8 @@ const schema = {
             <span class="cs-client-value">Healthcare Website Rebuild</span>
           </div>
           <div class="cs-client-row">
-            <span class="cs-client-label">Results</span>
-            <span class="cs-client-value">4x patient enquiries</span>
+            <span class="cs-client-label">Project Focus</span>
+            <span class="cs-client-value">Patient trust + accessibility</span>
           </div>
         </div>
         <div class="cs-overview-body">
@@ -143,7 +143,7 @@ const schema = {
       <p class="cs-sub-eyebrow">The Challenge</p>
       <h2 class="cs-section-h2">Patients researching skin cancer need trust signals that a cluttered website can't provide.</h2>
       <p class="cs-section-p">Someone who has found an unusual mole, received a GP referral, or is researching melanoma treatment options for a family member is making a high-stakes decision. They research specialists carefully, looking for qualifications, experience with specific conditions, diagnostic technology used, and whether the practice is accepting new patients.</p>
-      <p class="cs-section-p">The old site had no specialist profile pages, no clear information about the diagnostic process, and no accessible patient information. The contact option was a basic form. Mobile navigation was difficult for older users, a significant portion of dermatology patients. The site wasn't ranking for any local search terms related to melanoma or skin cancer specialists in Auckland.</p>
+      <p class="cs-section-p">The old site had no specialist profile pages, no clear information about the diagnostic process, and no accessible patient information. The contact option was a basic form, and mobile navigation was difficult for older users. It also lacked dedicated, structured pages for the specialist conditions and services patients search for.</p>
     </div>
   </section>
 
@@ -153,7 +153,7 @@ const schema = {
       <p class="cs-sub-eyebrow">What We Built</p>
       <h2 class="cs-section-h2">A calm, clinical website built for patient trust and accessibility.</h2>
       <p class="cs-section-p">We designed a clean, clinical aesthetic with high-contrast text, large readable typography, and a calm colour palette that communicates care and professionalism. Specialist profile pages were built for each dermatologist, qualifications, areas of expertise, and a personal statement that helps patients feel confident about who they'll be seeing.</p>
-      <p class="cs-section-p">Condition and treatment information pages were structured to answer the questions patients actually ask, what is melanoma, what happens at a first appointment, what diagnostic technology is used, what does treatment involve. A patient information hub contains downloadable forms, referral information, and FAQ content. MedicalOrganization schema markup was applied to improve search visibility for specialist skin cancer terms in Auckland.</p>
+      <p class="cs-section-p">Condition and treatment information pages were structured to answer the questions patients actually ask: what melanoma is, what happens at a first appointment, which diagnostic technology is used, and what treatment may involve. A patient information hub contains downloadable forms, referral information, and FAQ content. MedicalOrganization schema markup was added to clarify the practice entity and services.</p>
       <div class="cs-deliverables">
         {deliverables.map(d => <span class="cs-chip">{d}</span>)}
       </div>
@@ -179,8 +179,8 @@ const schema = {
   <section class="section" style="background: var(--kwd-dark);">
     <div class="container">
       <p class="cs-sub-eyebrow cs-sub-eyebrow-light">The Results</p>
-      <h2 class="cs-section-h2 cs-section-h2-light">4x patient enquiries, from a website patients actually trust.</h2>
-      <p class="cs-section-p cs-section-p-light">The rebuilt site immediately improved conversion, patients arriving via Google search were finding clear, reassuring information and completing the appointment enquiry form at four times the previous rate. Organic search visibility increased sixfold as the specialist and condition pages began ranking for local dermatology and skin cancer searches. Patients now tell the practice the website made them feel confident before their first appointment.</p>
+      <h2 class="cs-section-h2 cs-section-h2-light">A calmer, clearer route to specialist information and care.</h2>
+      <p class="cs-section-p cs-section-p-light">The finished website brings specialist credentials, condition information, referral guidance, and appointment enquiries into one accessible experience. Patients and families can understand the practice and prepare for contact without working through dense or fragmented information.</p>
       <div class="cs-results-grid">
         {stats.map(s => (
           <div class="cs-result-card">
@@ -192,25 +192,15 @@ const schema = {
     </div>
   </section>
 
-  <!-- Testimonial -->
-  <section class="section">
-    <div class="container">
-      <div class="cs-testimonial-wrap">
-        <blockquote>"Kiwi Web Design made our website feel trustworthy and modern, patients now tell us it's easy to navigate and understand. We're very happy with the result."</blockquote>
-        <p class="cs-testimonial-author">- Auckland Melanoma Specialists</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Related services -->
   <section class="related-strip">
     <div class="container" style="max-width: 860px;">
       <p class="rps-label">Related services</p>
       <div class="rps-links">
+        <a href="https://nzmu.co.nz/" target="_blank" rel="noopener noreferrer" class="rps-link">View Live Website</a>
         <a href="/small-business-website-design-auckland/" class="rps-link">Web Design</a>
         <a href="/booking-appointment-websites-with-wordpress/" class="rps-link">Booking Websites</a>
         <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO</a>
-        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress</a>
         <a href="/testimonials-reviews/" class="rps-link">Case Studies</a>
       </div>
     </div>

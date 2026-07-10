@@ -210,10 +210,10 @@ Consider these examples of how these features benefit small businesses:
 - **Auckland Café**: By using a responsive WordPress site with local SEO for “best coffee in Auckland,” they increased foot traffic by 20%. A blog about local events kept content fresh, and secure online ordering boosted sales.
 
 
-- **Christchurch Boutique**: A visually appealing Shopify site with clear CTAs and social media integration doubled online sales. Listing in local directories like Yellow improved their Google ranking.
+- **Christchurch boutique example**: A visually appealing online store with clear calls to action, product information, and social links can make it easier for shoppers to browse and buy. Consistent local directory listings can also strengthen the business’s local entity signals.
 
 
-- **Wellington Tradie**: A fast, mobile-friendly site with testimonials and a .nz domain built trust, leading to a 30% increase in inquiries.
+- **Wellington tradie example**: A fast, mobile-friendly site with genuine testimonials, clear service areas, and a .nz domain can build trust and give prospective customers a direct enquiry path.
 
 
 ## Tools and Resources

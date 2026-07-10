@@ -56,7 +56,6 @@ const schema = {
         { "@type": "Place", "name": "Auckland" },
         { "@type": "Place", "name": "New Zealand" }
       ],
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "ratingCount": "50", "bestRating": "5" },
       "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
     },
     {
@@ -212,9 +211,9 @@ const process = [
 ];
 
 const reviews = [
-  { name: "Marcus Tane", company: "Tane Scaffolding Ltd", text: "Charlie在不到两周内从零开始建立了我们的网站。我们从没有任何网络存在，到在「奥克兰脚手架」上排在第一页。咨询在第一个月就开始涌来，物超所值。" },
-  { name: "Raj Sharma", company: "Sharma Electrical", text: "之前我在网上几乎没有获得任何咨询。新网站上线三个月内，我每周仅从网站就能接到两到三个电话。Charlie同时设置了Google广告，回报已经翻了好几倍。" },
-  { name: "Tom Blackwood", company: "Blackwood Plumbing", text: "之前有个基本网站但没带来任何业务。Charlie修复了SEO，重写了主页，并设置了针对紧急水管工搜索的Google广告活动。这是我今年做的最好的商业投资，现在每天电话不断。" },
+  { name: "Zane Barrett", company: "Barrett Access Scaffolding", text: "专业、响应及时，而且他们确实花时间了解我们的业务。" },
+  { name: "Jack", company: "Show Me Shorts", text: "他们从一开始就明白我的需求，并给出了聪明、实用的建议。" },
+  { name: "Gina Dellabarca", company: "奥克兰客户", text: "信息讲得清楚，沟通很好，网站审核也确实很有帮助。" },
 ];
 
 const faqs = [
@@ -326,30 +325,30 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Results strip (dark) -->
+  <!-- Delivery strip (dark) -->
   <section class="section" style="background: var(--kwd-dark);">
     <div class="container">
-      <SectionHeader eyebrow="真实成效" title="我们客户的成果。" light={true} />
+      <SectionHeader eyebrow="我们会做什么" title="把网站整理成更适合搜索和AI引用的结构。" light={true} />
       <div class="seo-results">
         <div class="seo-result">
-          <span class="sr-num">+125%</span>
-          <span class="sr-label">报价咨询量增长</span>
-          <span class="sr-industry">脚手架企业</span>
+          <span class="sr-num">技术</span>
+          <span class="sr-label">网站结构清楚、方便抓取</span>
+          <span class="sr-industry">打好搜索基础</span>
         </div>
         <div class="seo-result">
-          <span class="sr-num">3.8×</span>
-          <span class="sr-label">优质询盘增加</span>
-          <span class="sr-industry">建筑与施工行业</span>
+          <span class="sr-num">本地</span>
+          <span class="sr-label">加强奥克兰企业信息</span>
+          <span class="sr-industry">提升本地相关性</span>
         </div>
         <div class="seo-result">
-          <span class="sr-num">+87%</span>
-          <span class="sr-label">自然流量增长</span>
-          <span class="sr-industry">水管业务</span>
+          <span class="sr-num">内容</span>
+          <span class="sr-label">服务页面直接回答问题</span>
+          <span class="sr-industry">方便AI理解和引用</span>
         </div>
         <div class="seo-result">
-          <span class="sr-num">3–6月</span>
-          <span class="sr-label">平均见效时间</span>
-          <span class="sr-industry">大多数奥克兰企业</span>
+          <span class="sr-num">数据</span>
+          <span class="sr-label">GSC和GA4持续跟踪</span>
+          <span class="sr-industry">看清实际进展</span>
         </div>
       </div>
     </div>

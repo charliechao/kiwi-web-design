@@ -55,7 +55,7 @@ Common culprits:
 - Outdated WordPress themes with bloated code
 - No caching or content delivery network (CDN)
 
-**Fix:** Run your site through Google PageSpeed Insights (pagespeed.web.dev) and check your Core Web Vitals. A score below 50 on mobile is a red flag. If your site was built more than 3–4 years ago, a rebuild on a modern, fast platform may be more cost-effective than patching an old one. See our guide on [affordable website design in Auckland](/small-business-website-design-auckland/) for what a modern site should include.
+**Fix:** Run your site through Google PageSpeed Insights (pagespeed.web.dev) and check your Core Web Vitals. A score below 50 on mobile is a red flag. If your site was built more than 3–4 years ago, a rebuild on a modern, fast platform may be more cost-effective than patching an old one. See our guide on [affordable website design in Auckland](/affordable-web-design-auckland/) for what a modern site should include.
 
 ---
 
@@ -198,7 +198,7 @@ For local map pack rankings, the three most important factors are: proximity (ho
     <a class="rps-link" href="/local-seo-for-auckland-small-businesses/">Local SEO Auckland</a>
     <a class="rps-link" href="/affordable-seo-auckland/">SEO Services Auckland</a>
     <a class="rps-link" href="/google-business-profile-guide-for-auckland-businesses/">Google Business Profile Guide</a>
-    <a class="rps-link" href="/small-business-website-design-auckland/">Website Design Auckland</a>
+    <a class="rps-link" href="/">Website Design Auckland</a>
   </div>
 </div>
 

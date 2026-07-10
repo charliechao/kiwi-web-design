@@ -220,7 +220,7 @@ For small businesses with limited resources, an agency can handle complex tasks 
 ## Real-World Example
 
 
-Consider a small Auckland-based plumbing business struggling to attract customers. After optimizing their Google My Business profile and targeting keywords like “emergency plumber Auckland,” they started appearing in local search results. Within six months, their website traffic increased by 40%, and they saw a 25% rise in service bookings. This demonstrates how SEO can drive measurable growth for small businesses.
+Consider a small Auckland plumbing business that improves its Google Business Profile and creates a useful page for searches such as “emergency plumber Auckland.” Those changes give Google clearer information about the service, location, and availability, while giving prospective customers a direct route to call or request help. The actual traffic and booking impact will vary by competition, authority, reviews, and the quality of the website.
 
 
 ## Common SEO Mistakes to Avoid

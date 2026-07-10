@@ -4,10 +4,10 @@ import CTABanner from '../components/CTABanner.astro';
 import csHero from '../assets/case-studies/dryice-blasting-auckland.jpg';
 
 const stats = [
-  { fig: "+46%", label: "Uplift in quote requests" },
-  { fig: "+38%", label: "Faster page-load on mobile" },
-  { fig: "+32%", label: "Increase in CTA clicks" },
-  { fig: "$86k", label: "Revenue in first quarter" },
+  { fig: "8", label: "Specialist service pages" },
+  { fig: "Quote", label: "Structured enquiry pathway" },
+  { fig: "Mobile", label: "Responsive website build" },
+  { fig: "NZ-wide", label: "Service coverage" },
 ];
 
 const deliverables = [
@@ -27,7 +27,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/dryice-blasting-services-website/",
       "url": "https://www.kiwiwebdesign.co.nz/dryice-blasting-services-website/",
       "name": "Dryice Blasting Services, Website Case Study | Kiwi Web Design",
-      "description": "How Kiwi Web Design redesigned Dryice Blasting Services' website with conversion-focused UX, faster mobile performance, and a 46% uplift in quote requests.",
+      "description": "How Kiwi Web Design redesigned Dryice Blasting Services' website with clearer service pathways, mobile-first performance, and structured quote forms.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/dryice-blasting-services-website/#breadcrumb" }
@@ -36,7 +36,7 @@ const schema = {
       "@type": "CreativeWork",
       "@id": "https://www.kiwiwebdesign.co.nz/dryice-blasting-services-website/#case-study",
       "name": "Case Study: Dryice Blasting Services",
-      "description": "How Kiwi Web Design helped Dryice Blasting Services generate more qualified industrial leads with a rebuilt website focused on conversion and mobile performance.",
+      "description": "How Kiwi Web Design presented Dryice Blasting Services' specialist applications through clearer service pages, quote forms, and a mobile-first build.",
       "url": "https://www.kiwiwebdesign.co.nz/dryice-blasting-services-website/",
       "creator": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "about": { "@type": "LocalBusiness", "name": "Dryice Blasting Services", "address": { "@type": "PostalAddress", "addressLocality": "Auckland", "addressCountry": "NZ" } },
@@ -63,7 +63,7 @@ const schema = {
 
 <Layout
   title="Dryice Blasting Services, Website Case Study | Kiwi Web Design"
-  description="How Kiwi Web Design redesigned Dryice Blasting Services' website with conversion-focused UX, faster mobile performance, and a 46% uplift in quote requests."
+  description="How Kiwi Web Design redesigned Dryice Blasting Services' website with clearer service pathways, mobile-first performance, and structured quote forms."
   canonicalURL="https://www.kiwiwebdesign.co.nz/dryice-blasting-services-website/"
   schema={schema}
 >
@@ -77,8 +77,8 @@ const schema = {
             <span class="cs-tag">Case Study</span>
             <span class="cs-industry">Industrial Cleaning & Restoration</span>
           </div>
-          <h1>Dryice Blasting, 46% More Quote Requests</h1>
-          <p>A specialist industrial cleaning business with deep expertise and a website that buried it. We rebuilt the site around how their buyers actually search, and quote requests jumped 46% in 90 days.</p>
+          <h1>Dryice Blasting Services Website Case Study</h1>
+          <p>We reorganised this specialist industrial cleaning website around the services and project information buyers need before requesting a quote.</p>
         </div>
         <div class="cs-hero-img">
           <img
@@ -125,8 +125,8 @@ const schema = {
             <span class="cs-client-value">Website Redesign + Conversion</span>
           </div>
           <div class="cs-client-row">
-            <span class="cs-client-label">Results</span>
-            <span class="cs-client-value">+46% quote requests in 90 days</span>
+            <span class="cs-client-label">Project Focus</span>
+            <span class="cs-client-value">Service clarity + quote pathways</span>
           </div>
         </div>
         <div class="cs-overview-body">
@@ -155,7 +155,7 @@ const schema = {
       <p class="cs-sub-eyebrow">What We Built</p>
       <h2 class="cs-section-h2">A service buyer journey rebuilt for industrial decision-makers.</h2>
       <p class="cs-section-p">We mapped how industrial buyers evaluate suppliers and restructured the site information architecture around that journey. Service pages now lead with credentials, safety certification, project examples, and application types, then drive to a quote form that captures the information needed to respond quickly.</p>
-      <p class="cs-section-p">Mobile performance was rebuilt from the ground up, page load on mobile dropped by 38%, and every quote trigger was redesigned for thumb-tap usability. Schema markup was layered across service pages to boost visibility for Auckland industrial cleaning searches.</p>
+      <p class="cs-section-p">Mobile performance was rebuilt from the ground up, and every quote trigger was redesigned for easier use on worksite devices. Structured data was added to help search engines understand the business and its specialist services.</p>
       <div class="cs-deliverables">
         {deliverables.map(d => <span class="cs-chip">{d}</span>)}
       </div>
@@ -181,8 +181,8 @@ const schema = {
   <section class="section" style="background: var(--kwd-dark);">
     <div class="container">
       <p class="cs-sub-eyebrow cs-sub-eyebrow-light">The Results</p>
-      <h2 class="cs-section-h2 cs-section-h2-light">$86k in first quarter revenue, from a faster, clearer website.</h2>
-      <p class="cs-section-p cs-section-p-light">In the first 90 days post-launch, quote requests lifted 46%, CTA clicks increased 32%, and the faster mobile load significantly reduced bounce from worksite devices. The clearer service pages helped high-value industrial clients self-qualify before enquiring, improving lead quality alongside volume.</p>
+      <h2 class="cs-section-h2 cs-section-h2-light">A clearer website for specialist industrial enquiries.</h2>
+      <p class="cs-section-p cs-section-p-light">The rebuilt website presents the company’s applications, service process, and project evidence in a clearer order. Industrial buyers can assess fit, understand the work involved, and send the practical details needed for a quote from mobile or desktop.</p>
       <div class="cs-results-grid">
         {stats.map(s => (
           <div class="cs-result-card">
@@ -194,25 +194,15 @@ const schema = {
     </div>
   </section>
 
-  <!-- Testimonial -->
-  <section class="section">
-    <div class="container">
-      <div class="cs-testimonial-wrap">
-        <blockquote>"The Kiwi Web Design crew nailed the balance between technical detail and quick actions. Our industrial clients finally get the info they need, and the phone rings faster."</blockquote>
-        <p class="cs-testimonial-author">- Dryice Blasting Services</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Related services -->
   <section class="related-strip">
     <div class="container" style="max-width: 860px;">
       <p class="rps-label">Related services</p>
       <div class="rps-links">
+        <a href="https://dryiceblastingservices.co.nz/" target="_blank" rel="noopener noreferrer" class="rps-link">View Live Website</a>
         <a href="/small-business-website-design-auckland/" class="rps-link">Web Design</a>
         <a href="/tradie-website-design-auckland/" class="rps-link">Tradie Sites</a>
         <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO</a>
-        <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress</a>
         <a href="/testimonials-reviews/" class="rps-link">Case Studies</a>
       </div>
     </div>

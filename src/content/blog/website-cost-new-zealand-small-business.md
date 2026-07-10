@@ -191,18 +191,18 @@ Domains average $25 annually, both .co.nz and .nz are popular with NZ customers.
 
 ---
 
-## Real Auckland project examples
+## Illustrative Auckland project scopes
 
-The examples below are anonymised Auckland projects that show how scope drives investment.
+The examples below show how scope can influence investment. They are illustrative budgets, not published client results; your quote will depend on content, integrations, design requirements, and the current condition of your website.
 
 ### Professional services refresh
-Six-page WordPress build with service pages, lead magnets, and HubSpot sync. **Budget: $4,800 GST excl.** Result: enquiries up 38% within three months.
+Six-page professional-services website with service pages, lead magnets, and CRM integration. **Illustrative budget: $4,800 GST excl.**
 
 ### Boutique retailer launch
-WooCommerce store with 80 products, POS integration, and payment gateway setup. **Budget: $11,900 GST excl.** Result: 3.2× online revenue within six months.
+Online store with 80 products, POS integration, and payment gateway setup. **Illustrative budget: $11,900 GST excl.**
 
 ### Trades booking portal
-Custom scheduling module, Xero invoicing flow, and SMS reminders. **Budget: $22,500 GST excl.** Result: admin time reduced by 45% per week.
+Custom scheduling module, Xero invoicing flow, and SMS reminders. **Illustrative budget: $22,500 GST excl.**
 
 ---
 
