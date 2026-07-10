@@ -17,3 +17,13 @@
 - Awaiting Charlie's answer on the true review count (affects whether/how to correct the aggregateRating claim across many pages).
 - Awaiting Charlie's decision on whether to pursue a Google Ads defense for "affordable seo auckland" / "affordable seo" queries.
 - Remaining opportunity items from 2026-07-10 analysis: AI SEO Auckland page push, zh expansion.
+
+---
+
+# Addendum: sitewide rating correction (commit bf640ca)
+
+- Charlie confirmed: change 4.9 star to 5 star sitewide (review count question left unanswered/unresolved). Google Ads defense for this cluster: not now.
+- Replaced all 75 instances of "4.9" star rating across 33 files (schema ratingValue, visible "4.9★" stats, "4.9/5" text, EN + ZH pages) with "5". Used a Node script with 3 precise regex patterns (ratingValue quoted string, "4.9★", "4.9/5") to avoid false-positive matches on unrelated numbers (SVG path coords, geo longitudes like 174.9184 which contain the substring "4.9" coincidentally).
+- Did NOT touch the review count ("50+"/ratingCount "50") anywhere — that's still open, Charlie didn't address it in his answer.
+- Homepage schema has no aggregateRating node at all (never did), so nothing to change there — confirmed via grep, not an oversight.
+- Verified: 0 remaining "4.9" rating instances in dist/, spot-checked EN + ZH pages render "5★"/"5/5"/ratingValue:"5" correctly.
