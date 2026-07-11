@@ -6,7 +6,6 @@
     "totalBlogPosts": 31,
     "notes": "Hub pages should receive the most inbound internal links. Use suggestedAnchorText when linking TO this page."
   },
-
   "hubs": {
     "description": "High-priority link targets. Every supporting page should link to at least one hub.",
     "pages": [
@@ -22,7 +21,6 @@
       "/website-designer-auckland/"
     ]
   },
-
   "pages": [
     {
       "url": "/",
@@ -31,7 +29,11 @@
       "summary": "Homepage showcasing web design, SEO, and Google Ads services for Auckland small businesses with pricing, process, testimonials, and FAQ",
       "type": "home",
       "isHub": true,
-      "suggestedAnchorText": ["Kiwi Web Design", "Auckland web design", "web design Auckland"]
+      "suggestedAnchorText": [
+        "Kiwi Web Design",
+        "Auckland web design",
+        "web design Auckland"
+      ]
     },
     {
       "url": "/small-business-website-design-auckland/",
@@ -40,7 +42,12 @@
       "summary": "Small-business website service page with fixed-price packages, inclusions, process, reviews, and FAQs for Auckland businesses",
       "type": "service",
       "isHub": true,
-      "suggestedAnchorText": ["small business website design Auckland", "small business web design", "website packages Auckland", "small business website packages from $1,290"]
+      "suggestedAnchorText": [
+        "small business website design Auckland",
+        "small business web design",
+        "website packages Auckland",
+        "small business website packages from $1,290"
+      ]
     },
     {
       "url": "/affordable-seo-auckland/",
@@ -49,7 +56,13 @@
       "summary": "Comprehensive SEO service hub with 6 SEO categories, pricing, process, and case-study results for Auckland businesses",
       "type": "service",
       "isHub": true,
-      "suggestedAnchorText": ["SEO services Auckland", "SEO Auckland", "search engine optimisation Auckland", "local SEO services", "Auckland SEO"]
+      "suggestedAnchorText": [
+        "SEO services Auckland",
+        "SEO Auckland",
+        "search engine optimisation Auckland",
+        "local SEO services",
+        "Auckland SEO"
+      ]
     },
     {
       "url": "/paid-ads/",
@@ -58,7 +71,13 @@
       "summary": "Paid ads service hub covering Google Ads and Meta Ads management, landing pages, conversion tracking, and reporting for Auckland small businesses",
       "type": "service",
       "isHub": true,
-      "suggestedAnchorText": ["paid ads Auckland", "paid ads management", "Google Ads and Meta Ads", "PPC Auckland", "paid advertising Auckland"]
+      "suggestedAnchorText": [
+        "paid ads Auckland",
+        "paid ads management",
+        "Google Ads and Meta Ads",
+        "PPC Auckland",
+        "paid advertising Auckland"
+      ]
     },
     {
       "url": "/google-ads/",
@@ -67,7 +86,12 @@
       "summary": "Google Ads management service with setup, campaign optimisation, and conversion tracking from NZ$499 for Auckland small businesses",
       "type": "service",
       "isHub": true,
-      "suggestedAnchorText": ["Google Ads Auckland", "Google Ads management", "PPC Auckland", "paid search Auckland"]
+      "suggestedAnchorText": [
+        "Google Ads Auckland",
+        "Google Ads management",
+        "PPC Auckland",
+        "paid search Auckland"
+      ]
     },
     {
       "url": "/meta-ads/",
@@ -76,7 +100,13 @@
       "summary": "Meta Ads service page covering Facebook and Instagram advertising, creative testing, retargeting, lead forms, landing pages, and conversion tracking",
       "type": "service",
       "isHub": true,
-      "suggestedAnchorText": ["Meta Ads Auckland", "Facebook ads Auckland", "Instagram ads Auckland", "Meta Ads management", "social media advertising Auckland"]
+      "suggestedAnchorText": [
+        "Meta Ads Auckland",
+        "Facebook ads Auckland",
+        "Instagram ads Auckland",
+        "Meta Ads management",
+        "social media advertising Auckland"
+      ]
     },
     {
       "url": "/chatgpt-ads/",
@@ -85,7 +115,13 @@
       "summary": "ChatGPT Ads and AI search advertising readiness page for New Zealand businesses covering ChatGPT Search visibility, answer-ready landing pages, schema, tracking, and conversion paths",
       "type": "service",
       "isHub": true,
-      "suggestedAnchorText": ["ChatGPT Ads NZ", "ChatGPT Ads", "AI search advertising", "ChatGPT Search visibility", "AI ads New Zealand"]
+      "suggestedAnchorText": [
+        "ChatGPT Ads NZ",
+        "ChatGPT Ads",
+        "AI search advertising",
+        "ChatGPT Search visibility",
+        "AI ads New Zealand"
+      ]
     },
     {
       "url": "/wordpress-website-design-auckland/",
@@ -94,7 +130,12 @@
       "summary": "WordPress-specific service hub covering advantages, platform comparison, and why WordPress is the right choice for Auckland SMEs",
       "type": "service",
       "isHub": true,
-      "suggestedAnchorText": ["WordPress website design Auckland", "WordPress websites Auckland", "WordPress web design", "custom WordPress sites"]
+      "suggestedAnchorText": [
+        "WordPress website design Auckland",
+        "WordPress websites Auckland",
+        "WordPress web design",
+        "custom WordPress sites"
+      ]
     },
     {
       "url": "/local-seo-for-auckland-small-businesses/",
@@ -103,7 +144,12 @@
       "summary": "Specialised local SEO hub covering Google Business Profile, map pack rankings, citations, and local search for Auckland businesses",
       "type": "service",
       "isHub": true,
-      "suggestedAnchorText": ["local SEO Auckland", "local SEO for Auckland businesses", "Google Business Profile optimisation", "map pack rankings Auckland"]
+      "suggestedAnchorText": [
+        "local SEO Auckland",
+        "local SEO for Auckland businesses",
+        "Google Business Profile optimisation",
+        "map pack rankings Auckland"
+      ]
     },
     {
       "url": "/ecommerce-website-auckland/",
@@ -112,7 +158,12 @@
       "summary": "eCommerce store design hub for Auckland businesses covering WooCommerce and Shopify options",
       "type": "service",
       "isHub": true,
-      "suggestedAnchorText": ["eCommerce website Auckland", "online store design Auckland", "eCommerce web design", "WooCommerce or Shopify Auckland"]
+      "suggestedAnchorText": [
+        "eCommerce website Auckland",
+        "online store design Auckland",
+        "eCommerce web design",
+        "WooCommerce or Shopify Auckland"
+      ]
     },
     {
       "url": "/website-designer-auckland/",
@@ -121,7 +172,13 @@
       "summary": "Contact and consultation booking page, free 30-minute consultation for Auckland businesses",
       "type": "utility",
       "isHub": false,
-      "suggestedAnchorText": ["contact us", "free consultation", "get a quote", "work with us", "book a free call"]
+      "suggestedAnchorText": [
+        "contact us",
+        "free consultation",
+        "get a quote",
+        "work with us",
+        "book a free call"
+      ]
     },
     {
       "url": "/about-us/",
@@ -130,7 +187,12 @@
       "summary": "Story of Charlie Chao, founder of Kiwi Web Design, covering his background, values, and approach to Auckland small business web design",
       "type": "editorial",
       "isHub": false,
-      "suggestedAnchorText": ["about Kiwi Web Design", "Charlie Chao", "our team", "about us"]
+      "suggestedAnchorText": [
+        "about Kiwi Web Design",
+        "Charlie Chao",
+        "our team",
+        "about us"
+      ]
     },
     {
       "url": "/website-design-process-in-auckland/",
@@ -139,7 +201,11 @@
       "summary": "Six-step website design process (Discovery Call → Scope & Quote → Design → Build → Review & Launch → Training) with a 21-day timeline",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["website design process", "our 6-step process", "how we build Auckland websites"]
+      "suggestedAnchorText": [
+        "website design process",
+        "our 6-step process",
+        "how we build Auckland websites"
+      ]
     },
     {
       "url": "/work-with-us/",
@@ -148,7 +214,11 @@
       "summary": "Partnership opportunities for developers, designers, SEO specialists, copywriters, and referral partners",
       "type": "utility",
       "isHub": false,
-      "suggestedAnchorText": ["work with us", "partner with us", "referral partner"]
+      "suggestedAnchorText": [
+        "work with us",
+        "partner with us",
+        "referral partner"
+      ]
     },
     {
       "url": "/website-hosting-auckland/",
@@ -157,7 +227,11 @@
       "summary": "Managed WordPress hosting plans (Starter $49, Managed $99, Full Care $199/mo) with daily backups, SSL, and local Auckland support",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["website hosting Auckland", "managed WordPress hosting", "NZ-based website hosting"]
+      "suggestedAnchorText": [
+        "website hosting Auckland",
+        "managed WordPress hosting",
+        "NZ-based website hosting"
+      ]
     },
     {
       "url": "/wordpress-maintenance-auckland/",
@@ -166,7 +240,11 @@
       "summary": "WordPress maintenance plans covering security updates, backups, performance monitoring, and ongoing site care for Auckland businesses",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["WordPress maintenance Auckland", "WordPress care plans", "ongoing WordPress support"]
+      "suggestedAnchorText": [
+        "WordPress maintenance Auckland",
+        "WordPress care plans",
+        "ongoing WordPress support"
+      ]
     },
     {
       "url": "/wordpress-website-rebuilds-auckland/",
@@ -175,7 +253,11 @@
       "summary": "Complete website rebuild service for outdated or underperforming WordPress sites, new design, migrated content, improved SEO foundations",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["WordPress website rebuild", "website rebuild Auckland", "redesign your WordPress site"]
+      "suggestedAnchorText": [
+        "WordPress website rebuild",
+        "website rebuild Auckland",
+        "redesign your WordPress site"
+      ]
     },
     {
       "url": "/wordpress-seo-optimisation/",
@@ -184,7 +266,11 @@
       "summary": "WordPress-specific SEO configuration covering Yoast/RankMath setup, schema, XML sitemap, and page-level optimisation",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["WordPress SEO optimisation", "on-page SEO setup", "WordPress SEO configuration"]
+      "suggestedAnchorText": [
+        "WordPress SEO optimisation",
+        "on-page SEO setup",
+        "WordPress SEO configuration"
+      ]
     },
     {
       "url": "/ai-seo-for-auckland-small-businesses/",
@@ -193,7 +279,11 @@
       "summary": "AI-powered SEO service covering AI-assisted keyword research, content optimisation, and competitive analysis for Auckland SMEs",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["AI-powered SEO Auckland", "AI SEO for small businesses", "AI-driven search optimisation"]
+      "suggestedAnchorText": [
+        "AI-powered SEO Auckland",
+        "AI SEO for small businesses",
+        "AI-driven search optimisation"
+      ]
     },
     {
       "url": "/ai-content-setup-for-websites/",
@@ -202,7 +292,11 @@
       "summary": "AI-assisted content creation and content strategy for websites, structure, SEO optimisation, and copywriting for service and product pages",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["AI content setup", "AI-assisted website copywriting", "AI content strategy"]
+      "suggestedAnchorText": [
+        "AI content setup",
+        "AI-assisted website copywriting",
+        "AI content strategy"
+      ]
     },
     {
       "url": "/wordpress-ai-tools-integration-auckland/",
@@ -211,7 +305,11 @@
       "summary": "AI tools integration for WordPress sites covering automation, content generation, and customer engagement tools",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["WordPress AI tools integration", "AI tools for WordPress", "AI automation WordPress"]
+      "suggestedAnchorText": [
+        "WordPress AI tools integration",
+        "AI tools for WordPress",
+        "AI automation WordPress"
+      ]
     },
     {
       "url": "/domain-management-auckland/",
@@ -220,7 +318,11 @@
       "summary": "Domain registration, management, renewal, and transfer services for Auckland business websites",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["domain management Auckland", "domain registration NZ", "business domain setup"]
+      "suggestedAnchorText": [
+        "domain management Auckland",
+        "domain registration NZ",
+        "business domain setup"
+      ]
     },
     {
       "url": "/email-setup-business-email-hosting/",
@@ -229,7 +331,11 @@
       "summary": "Professional business email setup for Auckland SMEs, Microsoft 365 or Google Workspace, DNS configuration, and all-device setup",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["business email setup Auckland", "professional email hosting", "Microsoft 365 or Google Workspace setup"]
+      "suggestedAnchorText": [
+        "business email setup Auckland",
+        "professional email hosting",
+        "Microsoft 365 or Google Workspace setup"
+      ]
     },
     {
       "url": "/website-training-and-handover/",
@@ -238,7 +344,11 @@
       "summary": "Structured website training and full credentials handover included with every Kiwi Web Design build, WordPress editing, forms, plugins, media",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["website training and handover", "WordPress training Auckland", "website management training"]
+      "suggestedAnchorText": [
+        "website training and handover",
+        "WordPress training Auckland",
+        "website management training"
+      ]
     },
     {
       "url": "/website-copywriting-auckland/",
@@ -247,7 +357,11 @@
       "summary": "Professional website copywriting service for Auckland businesses, service pages, about pages, landing pages, and blog content",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["website copywriting Auckland", "professional web copywriting", "website content writing"]
+      "suggestedAnchorText": [
+        "website copywriting Auckland",
+        "professional web copywriting",
+        "website content writing"
+      ]
     },
     {
       "url": "/website-branding/",
@@ -256,7 +370,11 @@
       "summary": "Brand identity and visual design service for websites, logo, colours, typography, and brand guidelines",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["website branding Auckland", "brand identity design", "logo and branding"]
+      "suggestedAnchorText": [
+        "website branding Auckland",
+        "brand identity design",
+        "logo and branding"
+      ]
     },
     {
       "url": "/landing-pages-funnels-on-wordpress/",
@@ -265,7 +383,11 @@
       "summary": "High-converting landing page and sales funnel design built on WordPress for Auckland lead generation campaigns",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["landing pages on WordPress", "sales funnel design", "high-converting landing pages Auckland"]
+      "suggestedAnchorText": [
+        "landing pages on WordPress",
+        "sales funnel design",
+        "high-converting landing pages Auckland"
+      ]
     },
     {
       "url": "/booking-appointment-websites-with-wordpress/",
@@ -274,7 +396,11 @@
       "summary": "WordPress websites with online booking and appointment scheduling systems for service businesses in Auckland",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["booking website WordPress", "online appointment booking", "booking system integration"]
+      "suggestedAnchorText": [
+        "booking website WordPress",
+        "online appointment booking",
+        "booking system integration"
+      ]
     },
     {
       "url": "/membership-subscription-websites-with-wordpress-auckland/",
@@ -283,7 +409,11 @@
       "summary": "WordPress membership and subscription site setup for Auckland businesses offering gated content or recurring billing",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["membership website WordPress", "subscription site Auckland", "members-only website"]
+      "suggestedAnchorText": [
+        "membership website WordPress",
+        "subscription site Auckland",
+        "members-only website"
+      ]
     },
     {
       "url": "/monthly-subscription/",
@@ -292,7 +422,11 @@
       "summary": "Subscription-based ongoing website maintenance, updates, and support plans for Auckland businesses",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["monthly website subscription", "ongoing support plan", "monthly website maintenance"]
+      "suggestedAnchorText": [
+        "monthly website subscription",
+        "ongoing support plan",
+        "monthly website maintenance"
+      ]
     },
     {
       "url": "/analytics-reporting-for-auckland-small-business-websites/",
@@ -301,7 +435,11 @@
       "summary": "Google Analytics 4 setup and monthly reporting service for Auckland small business websites",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["website analytics Auckland", "Google Analytics setup", "monthly reporting service"]
+      "suggestedAnchorText": [
+        "website analytics Auckland",
+        "Google Analytics setup",
+        "monthly reporting service"
+      ]
     },
     {
       "url": "/website-security-for-auckland-small-businesses/",
@@ -310,7 +448,11 @@
       "summary": "Website security hardening, malware protection, and security monitoring for Auckland small business WordPress sites",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["website security Auckland", "WordPress security hardening", "website protection"]
+      "suggestedAnchorText": [
+        "website security Auckland",
+        "WordPress security hardening",
+        "website protection"
+      ]
     },
     {
       "url": "/malware-cleanup-for-auckland-small-business-websites/",
@@ -319,7 +461,11 @@
       "summary": "Malware detection, removal, and site recovery service for hacked or infected WordPress sites in Auckland",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["malware cleanup Auckland", "hacked website recovery", "WordPress malware removal"]
+      "suggestedAnchorText": [
+        "malware cleanup Auckland",
+        "hacked website recovery",
+        "WordPress malware removal"
+      ]
     },
     {
       "url": "/website-backup-and-restoration-for-auckland-small-businesses/",
@@ -328,7 +474,11 @@
       "summary": "Automated backup management and disaster recovery service for Auckland business websites",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["website backups Auckland", "backup and restoration service", "disaster recovery Auckland"]
+      "suggestedAnchorText": [
+        "website backups Auckland",
+        "backup and restoration service",
+        "disaster recovery Auckland"
+      ]
     },
     {
       "url": "/google-business-profile-guide-for-auckland-businesses/",
@@ -337,7 +487,11 @@
       "summary": "Complete setup and optimisation guide for Google Business Profile for Auckland small businesses wanting map pack visibility",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["Google Business Profile guide", "GBP optimisation Auckland", "Google Business Profile setup"]
+      "suggestedAnchorText": [
+        "Google Business Profile guide",
+        "GBP optimisation Auckland",
+        "Google Business Profile setup"
+      ]
     },
     {
       "url": "/woocommerce-website-design-auckland/",
@@ -346,7 +500,11 @@
       "summary": "WooCommerce store design and setup for Auckland businesses wanting to sell online using WordPress",
       "type": "service",
       "isHub": false,
-      "suggestedAnchorText": ["WooCommerce website design Auckland", "WooCommerce store setup", "WooCommerce Auckland"]
+      "suggestedAnchorText": [
+        "WooCommerce website design Auckland",
+        "WooCommerce store setup",
+        "WooCommerce Auckland"
+      ]
     },
     {
       "url": "/shopify-website-design-auckland/",
@@ -355,7 +513,11 @@
       "summary": "Shopify store design and configuration for Auckland retailers and product businesses",
       "type": "service",
       "isHub": false,
-      "suggestedAnchorText": ["Shopify website design Auckland", "Shopify store setup", "Shopify Auckland"]
+      "suggestedAnchorText": [
+        "Shopify website design Auckland",
+        "Shopify store setup",
+        "Shopify Auckland"
+      ]
     },
     {
       "url": "/seo-for-ecommerce/",
@@ -364,7 +526,11 @@
       "summary": "SEO optimisation specifically for eCommerce and online stores, product pages, category pages, structured data",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["eCommerce SEO", "SEO for online stores", "product page SEO"]
+      "suggestedAnchorText": [
+        "eCommerce SEO",
+        "SEO for online stores",
+        "product page SEO"
+      ]
     },
     {
       "url": "/wordpress-plugins-for-small-businesses-in-auckland/",
@@ -373,7 +539,11 @@
       "summary": "Plugin selection and setup guidance for Auckland small business WordPress sites, essential plugins by category",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["WordPress plugins guide", "essential WordPress plugins", "plugins for small business"]
+      "suggestedAnchorText": [
+        "WordPress plugins guide",
+        "essential WordPress plugins",
+        "plugins for small business"
+      ]
     },
     {
       "url": "/wordpress-themes-for-auckland-small-businesses/",
@@ -382,7 +552,11 @@
       "summary": "WordPress theme selection guidance for Auckland small businesses, what to look for in a business theme",
       "type": "service-support",
       "isHub": false,
-      "suggestedAnchorText": ["WordPress themes Auckland", "best WordPress themes for small business", "business WordPress themes"]
+      "suggestedAnchorText": [
+        "WordPress themes Auckland",
+        "best WordPress themes for small business",
+        "business WordPress themes"
+      ]
     },
     {
       "url": "/industries-we-serve-in-auckland/",
@@ -391,7 +565,10 @@
       "summary": "Overview of all industries and sectors served by Kiwi Web Design in Auckland, trades, beauty, health, legal, restaurants, retail, and more",
       "type": "industry",
       "isHub": false,
-      "suggestedAnchorText": ["industries we serve", "industry-specific web design Auckland"]
+      "suggestedAnchorText": [
+        "industries we serve",
+        "industry-specific web design Auckland"
+      ]
     },
     {
       "url": "/tradie-website-design-auckland/",
@@ -400,7 +577,11 @@
       "summary": "Specialised web design for Auckland tradespeople, builders, plumbers, electricians, roofers, focused on lead generation",
       "type": "industry",
       "isHub": false,
-      "suggestedAnchorText": ["tradie website design Auckland", "trades web design", "website for tradespeople Auckland"]
+      "suggestedAnchorText": [
+        "tradie website design Auckland",
+        "trades web design",
+        "website for tradespeople Auckland"
+      ]
     },
     {
       "url": "/how-kiwi-web-design-helps-auckand-lawyers/",
@@ -409,7 +590,11 @@
       "summary": "Specialised web design for Auckland law firms and legal professionals, credibility, compliance, and client acquisition",
       "type": "industry",
       "isHub": false,
-      "suggestedAnchorText": ["law firm web design Auckland", "website for lawyers Auckland", "legal website design"]
+      "suggestedAnchorText": [
+        "law firm web design Auckland",
+        "website for lawyers Auckland",
+        "legal website design"
+      ]
     },
     {
       "url": "/how-kiwi-web-design-helps-auckland-beauty-industry/",
@@ -418,7 +603,11 @@
       "summary": "Specialised web design for Auckland beauty salons, spas, and wellness businesses, bookings, portfolio, and local SEO",
       "type": "industry",
       "isHub": false,
-      "suggestedAnchorText": ["beauty salon website design Auckland", "spa and salon web design", "beauty industry website"]
+      "suggestedAnchorText": [
+        "beauty salon website design Auckland",
+        "spa and salon web design",
+        "beauty industry website"
+      ]
     },
     {
       "url": "/how-kiwi-web-design-helps-auckland-healthcare/",
@@ -427,7 +616,11 @@
       "summary": "Specialised web design for Auckland healthcare providers, medical and dental practices, patient trust, compliance, and appointment booking",
       "type": "industry",
       "isHub": false,
-      "suggestedAnchorText": ["healthcare website design Auckland", "medical practice website Auckland", "dental website design"]
+      "suggestedAnchorText": [
+        "healthcare website design Auckland",
+        "medical practice website Auckland",
+        "dental website design"
+      ]
     },
     {
       "url": "/how-kiwi-web-design-helps-auckland-restaurants/",
@@ -436,7 +629,11 @@
       "summary": "Specialised web design for Auckland restaurants, cafes, and hospitality businesses, menus, bookings, and local SEO",
       "type": "industry",
       "isHub": false,
-      "suggestedAnchorText": ["restaurant website design Auckland", "hospitality web design Auckland", "cafe website Auckland"]
+      "suggestedAnchorText": [
+        "restaurant website design Auckland",
+        "hospitality web design Auckland",
+        "cafe website Auckland"
+      ]
     },
     {
       "url": "/north-shore-website-design/",
@@ -445,7 +642,10 @@
       "summary": "Web design services for businesses in North Shore Auckland suburbs, Takapuna, Devonport, Milford, Birkenhead",
       "type": "location",
       "isHub": false,
-      "suggestedAnchorText": ["North Shore website design", "web design North Shore Auckland"]
+      "suggestedAnchorText": [
+        "North Shore website design",
+        "web design North Shore Auckland"
+      ]
     },
     {
       "url": "/south-auckland-web-design/",
@@ -454,7 +654,10 @@
       "summary": "Web design services for businesses in South Auckland, Manukau, Papatoetoe, Otahuhu, Otara",
       "type": "location",
       "isHub": false,
-      "suggestedAnchorText": ["South Auckland web design", "website design Manukau"]
+      "suggestedAnchorText": [
+        "South Auckland web design",
+        "website design Manukau"
+      ]
     },
     {
       "url": "/east-auckland-web-design/",
@@ -463,7 +666,11 @@
       "summary": "Web design services for businesses in East Auckland, Howick, Botany, Pakuranga, Flat Bush",
       "type": "location",
       "isHub": false,
-      "suggestedAnchorText": ["East Auckland web design", "website design Howick", "Botany web design"]
+      "suggestedAnchorText": [
+        "East Auckland web design",
+        "website design Howick",
+        "Botany web design"
+      ]
     },
     {
       "url": "/west-auckland-web-design/",
@@ -472,7 +679,10 @@
       "summary": "Web design services for businesses in West Auckland, Henderson, New Lynn, Waitakere, Swanson",
       "type": "location",
       "isHub": false,
-      "suggestedAnchorText": ["West Auckland web design", "website design Henderson"]
+      "suggestedAnchorText": [
+        "West Auckland web design",
+        "website design Henderson"
+      ]
     },
     {
       "url": "/central-auckland-web-design/",
@@ -481,7 +691,10 @@
       "summary": "Web design services for businesses in Central Auckland, CBD, Ponsonby, Grey Lynn, Newmarket, Parnell",
       "type": "location",
       "isHub": false,
-      "suggestedAnchorText": ["Central Auckland web design", "CBD website design Auckland"]
+      "suggestedAnchorText": [
+        "Central Auckland web design",
+        "CBD website design Auckland"
+      ]
     },
     {
       "url": "/beauty-touch-case-study/",
@@ -491,7 +704,11 @@
       "type": "case-study",
       "isHub": false,
       "industry": "beauty",
-      "suggestedAnchorText": ["Beauty Touch case study", "beauty salon booking website", "salon website case study"]
+      "suggestedAnchorText": [
+        "Beauty Touch case study",
+        "beauty salon booking website",
+        "salon website case study"
+      ]
     },
     {
       "url": "/case-study-scaffolding/",
@@ -501,7 +718,11 @@
       "type": "case-study",
       "isHub": false,
       "industry": "trades",
-      "suggestedAnchorText": ["scaffolding website case study", "tradie lead generation case study", "Barrett Access Scaffolding"]
+      "suggestedAnchorText": [
+        "scaffolding website case study",
+        "tradie lead generation case study",
+        "Barrett Access Scaffolding"
+      ]
     },
     {
       "url": "/dryice-blasting-services-website/",
@@ -511,7 +732,10 @@
       "type": "case-study",
       "isHub": false,
       "industry": "industrial",
-      "suggestedAnchorText": ["dry ice blasting website", "industrial services website Auckland"]
+      "suggestedAnchorText": [
+        "dry ice blasting website",
+        "industrial services website Auckland"
+      ]
     },
     {
       "url": "/fl-legal-website/",
@@ -521,7 +745,11 @@
       "type": "case-study",
       "isHub": false,
       "industry": "legal",
-      "suggestedAnchorText": ["law firm website case study", "FL Legal website", "legal website case study Auckland"]
+      "suggestedAnchorText": [
+        "law firm website case study",
+        "FL Legal website",
+        "legal website case study Auckland"
+      ]
     },
     {
       "url": "/inspector-guys-building-inspections-website/",
@@ -531,7 +759,11 @@
       "type": "case-study",
       "isHub": false,
       "industry": "trades",
-      "suggestedAnchorText": ["building inspection website case study", "Inspector Guys website", "inspection company website Auckland"]
+      "suggestedAnchorText": [
+        "building inspection website case study",
+        "Inspector Guys website",
+        "inspection company website Auckland"
+      ]
     },
     {
       "url": "/kiwiland-construction-website/",
@@ -541,7 +773,11 @@
       "type": "case-study",
       "isHub": false,
       "industry": "trades",
-      "suggestedAnchorText": ["construction company website Auckland", "Kiwiland Construction website", "building company website case study"]
+      "suggestedAnchorText": [
+        "construction company website Auckland",
+        "Kiwiland Construction website",
+        "building company website case study"
+      ]
     },
     {
       "url": "/la-veranda-restaurant-website/",
@@ -551,7 +787,11 @@
       "type": "case-study",
       "isHub": false,
       "industry": "hospitality",
-      "suggestedAnchorText": ["restaurant website case study", "La Veranda website", "restaurant website design Auckland"]
+      "suggestedAnchorText": [
+        "restaurant website case study",
+        "La Veranda website",
+        "restaurant website design Auckland"
+      ]
     },
     {
       "url": "/melanoma-specialists-website/",
@@ -561,7 +801,11 @@
       "type": "case-study",
       "isHub": false,
       "industry": "healthcare",
-      "suggestedAnchorText": ["medical specialist website Auckland", "Melanoma Specialists website", "healthcare website case study"]
+      "suggestedAnchorText": [
+        "medical specialist website Auckland",
+        "Melanoma Specialists website",
+        "healthcare website case study"
+      ]
     },
     {
       "url": "/topline-services-cleaning-website/",
@@ -571,7 +815,11 @@
       "type": "case-study",
       "isHub": false,
       "industry": "services",
-      "suggestedAnchorText": ["cleaning services website Auckland", "Topline Services website", "commercial cleaning website case study"]
+      "suggestedAnchorText": [
+        "cleaning services website Auckland",
+        "Topline Services website",
+        "commercial cleaning website case study"
+      ]
     },
     {
       "url": "/7-best-web-design-agencies-in-auckland-2026/",
@@ -580,7 +828,10 @@
       "summary": "Editorial comparison of the 7 best Auckland web design agencies in 2026, Kiwi Web Design ranked #1 for small businesses",
       "type": "editorial",
       "isHub": false,
-      "suggestedAnchorText": ["best web design agencies Auckland", "top Auckland web designers 2026"]
+      "suggestedAnchorText": [
+        "best web design agencies Auckland",
+        "top Auckland web designers 2026"
+      ]
     },
     {
       "url": "/faq/",
@@ -589,7 +840,11 @@
       "summary": "Comprehensive FAQ with 30+ questions organised across 6 categories, pricing, process, SEO, maintenance, WordPress, hosting",
       "type": "utility",
       "isHub": false,
-      "suggestedAnchorText": ["frequently asked questions", "web design FAQ", "common questions answered"]
+      "suggestedAnchorText": [
+        "frequently asked questions",
+        "web design FAQ",
+        "common questions answered"
+      ]
     },
     {
       "url": "/testimonials-reviews/",
@@ -598,7 +853,12 @@
       "summary": "Collection of client testimonials and Google reviews from Auckland small businesses",
       "type": "utility",
       "isHub": false,
-      "suggestedAnchorText": ["client reviews", "testimonials", "what our clients say", "Google reviews"]
+      "suggestedAnchorText": [
+        "client reviews",
+        "testimonials",
+        "what our clients say",
+        "Google reviews"
+      ]
     },
     {
       "url": "/press-release-and-news/",
@@ -607,7 +867,11 @@
       "summary": "Verified external publications, agency directory profiles, review sources, and Ika Tech Limited publisher records",
       "type": "utility",
       "isHub": false,
-      "suggestedAnchorText": ["press and public profiles", "external coverage", "Kiwi Web Design profiles"]
+      "suggestedAnchorText": [
+        "press and public profiles",
+        "external coverage",
+        "Kiwi Web Design profiles"
+      ]
     },
     {
       "url": "/privacy-policy/",
@@ -616,7 +880,9 @@
       "summary": "Privacy policy under NZ Privacy Act 2020 covering data collection, usage, storage, and client rights",
       "type": "legal",
       "isHub": false,
-      "suggestedAnchorText": ["privacy policy"]
+      "suggestedAnchorText": [
+        "privacy policy"
+      ]
     },
     {
       "url": "/thank-you/",
@@ -625,7 +891,9 @@
       "summary": "Post-form-submission confirmation page with next steps and links to key service pages",
       "type": "utility",
       "isHub": false,
-      "suggestedAnchorText": ["thank you page"]
+      "suggestedAnchorText": [
+        "thank you page"
+      ]
     },
     {
       "url": "/zh/",
@@ -634,7 +902,10 @@
       "summary": "Simplified Chinese landing page for Auckland Chinese-speaking SME owners, services, about, FAQ in Mandarin",
       "type": "lang",
       "isHub": false,
-      "suggestedAnchorText": ["中文服务", "Chinese language page"]
+      "suggestedAnchorText": [
+        "中文服务",
+        "Chinese language page"
+      ]
     },
     {
       "url": "/zh/paid-ads/",
@@ -643,7 +914,12 @@
       "summary": "Simplified Chinese paid ads service page covering Google Ads, Meta Ads, landing pages, tracking, pricing, and free consultation",
       "type": "service",
       "isHub": false,
-      "suggestedAnchorText": ["奥克兰付费广告", "Google广告与Meta广告", "付费广告服务", "中文广告服务"]
+      "suggestedAnchorText": [
+        "奥克兰付费广告",
+        "Google广告与Meta广告",
+        "付费广告服务",
+        "中文广告服务"
+      ]
     },
     {
       "url": "/zh/meta-ads/",
@@ -652,7 +928,12 @@
       "summary": "Simplified Chinese Meta Ads page for Auckland businesses covering Facebook and Instagram campaigns, creative testing, retargeting, lead forms, and tracking",
       "type": "service",
       "isHub": false,
-      "suggestedAnchorText": ["Meta广告服务", "Facebook广告奥克兰", "Instagram广告奥克兰", "奥克兰Meta广告"]
+      "suggestedAnchorText": [
+        "Meta广告服务",
+        "Facebook广告奥克兰",
+        "Instagram广告奥克兰",
+        "奥克兰Meta广告"
+      ]
     },
     {
       "url": "/affordable-web-design-auckland/",
@@ -661,44 +942,326 @@
       "summary": "Hybrid commercial + content hub: pricing/CTA intro targeting the 'affordable web design Auckland' query cluster, followed by a blog index of 36+ articles on web design, SEO, Google Ads, and digital marketing for Auckland small businesses",
       "type": "blog-index",
       "isHub": true,
-      "suggestedAnchorText": ["affordable web design Auckland", "affordable website design", "web design pricing and guides", "our blog"]
+      "suggestedAnchorText": [
+        "affordable web design Auckland",
+        "affordable website design",
+        "web design pricing and guides",
+        "our blog"
+      ]
     }
   ],
-
   "blogPosts": [
-    { "url": "/affordable-web-design-auckland/seo-vs-google-ads-auckland-small-business/", "title": "SEO vs Google Ads: What Should Auckland Small Businesses Invest In?", "topic": "SEO vs Google Ads Auckland", "relatedServices": ["/affordable-seo-auckland/", "/google-ads/", "/local-seo-for-auckland-small-businesses/"] },
-    { "url": "/affordable-web-design-auckland/traditional-seo-is-changing-why-auckland-businesses-must-prepare-for-ai-driven-search-aeo-geo/", "title": "Traditional SEO is Changing, Why Auckland Businesses Must Prepare for AI-Driven Search", "topic": "AI SEO, GEO, AEO", "relatedServices": ["/affordable-seo-auckland/", "/ai-seo-for-auckland-small-businesses/"] },
-    { "url": "/affordable-web-design-auckland/ai-website-pricing-2026/", "title": "Are You Still Paying 2020 Prices for a Website in 2026?", "topic": "website pricing 2026", "relatedServices": ["/small-business-website-design-auckland/", "/website-designer-auckland/"] },
-    { "url": "/affordable-web-design-auckland/more-than-half-of-nz-businesses-still-lack-a-website-as-consumer-expectations-rise/", "title": "More Than Half of NZ Businesses Still Lack a Website", "topic": "NZ business statistics, website importance", "relatedServices": ["/small-business-website-design-auckland/", "/website-designer-auckland/"] },
-    { "url": "/affordable-web-design-auckland/seo-for-trades-auckland/", "title": "SEO for Trades Auckland", "topic": "trades SEO Auckland", "relatedServices": ["/affordable-seo-auckland/", "/tradie-website-design-auckland/", "/local-seo-for-auckland-small-businesses/"] },
-    { "url": "/affordable-web-design-auckland/toprated-auckland-web-design/", "title": "Top Rated Auckland Web Design", "topic": "top rated web design Auckland", "relatedServices": ["/small-business-website-design-auckland/", "/testimonials-reviews/"] },
-    { "url": "/affordable-web-design-auckland/website-redesign-vs-starting-from-scratch/", "title": "Website Redesign vs Starting from Scratch", "topic": "website redesign vs rebuild", "relatedServices": ["/wordpress-website-rebuilds-auckland/", "/small-business-website-design-auckland/"] },
-    { "url": "/affordable-web-design-auckland/choosing-a-website-platform-a-practical-guide-for-small-businesses-in-auckland/", "title": "Choosing a Website Platform: A Practical Guide", "topic": "website platform comparison Auckland", "relatedServices": ["/wordpress-website-design-auckland/", "/small-business-website-design-auckland/"] },
-    { "url": "/affordable-web-design-auckland/how-a-good-website-helps-you-compete-with-bigger-brands-in-auckland/", "title": "How a Good Website Helps You Compete with Bigger Brands", "topic": "website competitive advantage", "relatedServices": ["/small-business-website-design-auckland/", "/affordable-seo-auckland/"] },
-    { "url": "/affordable-web-design-auckland/how-to-turn-your-website-into-a-24-7-salesperson/", "title": "How to Turn Your Website Into a 24/7 Salesperson", "topic": "website lead generation", "relatedServices": ["/small-business-website-design-auckland/", "/landing-pages-funnels-on-wordpress/"] },
-    { "url": "/affordable-web-design-auckland/top-5-pages-every-auckland-small-business-website-should-have/", "title": "Top 5 Pages Every Auckland Small Business Website Should Have", "topic": "website page structure", "relatedServices": ["/small-business-website-design-auckland/", "/website-copywriting-auckland/"] },
-    { "url": "/affordable-web-design-auckland/how-to-write-website-content-web-design-auckland/", "title": "How to Write Website Content: Web Design Auckland", "topic": "website copywriting guide", "relatedServices": ["/website-copywriting-auckland/", "/small-business-website-design-auckland/"] },
-    { "url": "/affordable-web-design-auckland/affordable-web-design-auckland-2025-why-small-business-needs-website/", "title": "Affordable Web Design Auckland 2025, Why Small Businesses Need Websites", "topic": "affordable web design Auckland 2025", "relatedServices": ["/small-business-website-design-auckland/", "/website-designer-auckland/"] },
-    { "url": "/affordable-web-design-auckland/affordable-web-design-auckland-facebook-risk/", "title": "The Facebook Risk: Why Relying on Social Media Alone Costs You Customers", "topic": "social media vs website", "relatedServices": ["/small-business-website-design-auckland/", "/affordable-seo-auckland/"] },
-    { "url": "/affordable-web-design-auckland/affordable-web-design-auckland-how-competitors-get-found-on-google/", "title": "How Your Competitors Get Found on Google", "topic": "Google visibility, competitors SEO", "relatedServices": ["/affordable-seo-auckland/", "/local-seo-for-auckland-small-businesses/", "/google-ads/"] },
-    { "url": "/affordable-web-design-auckland/how-much-business-are-you-losing-without-a-website/", "title": "How Much Business Are You Losing Without a Website?", "topic": "cost of no website", "relatedServices": ["/small-business-website-design-auckland/", "/website-designer-auckland/"] },
-    { "url": "/affordable-web-design-auckland/auckland-web-design-ai-seo-shift/", "title": "The Auckland Web Design Shift: How AI and SEO Are Changing Competitive Advantage", "topic": "AI and SEO web design shift", "relatedServices": ["/affordable-seo-auckland/", "/ai-seo-for-auckland-small-businesses/"] },
-    { "url": "/affordable-web-design-auckland/ai-first-web-design/", "title": "AI-First Web Design: What It Means for Small Businesses", "topic": "AI web design", "relatedServices": ["/wordpress-ai-tools-integration-auckland/", "/ai-content-setup-for-websites/"] },
-    { "url": "/affordable-web-design-auckland/choosing-the-right-web-designer-in-auckland-a-simple-guide/", "title": "Choosing the Right Web Designer in Auckland: A Simple Guide", "topic": "choosing web designer Auckland", "relatedServices": ["/small-business-website-design-auckland/", "/website-designer-auckland/"] },
-    { "url": "/affordable-web-design-auckland/website-cost-new-zealand-small-business/", "title": "Website Cost Calculator NZ (2026) | Instant Price Estimate", "topic": "website cost NZ, website cost calculator", "summary": "Top organic asset (~60% of site's organic clicks). Interactive cost calculator, NZ price tables, and FAQ, no email required.", "isHub": true, "relatedServices": ["/small-business-website-design-auckland/", "/website-designer-auckland/", "/ecommerce-website-auckland/"], "suggestedAnchorText": ["free website cost calculator", "website cost calculator", "instant NZD estimate"] },
-    { "url": "/affordable-web-design-auckland/wordpress-for-small-business-nz/", "title": "WordPress for Small Business in NZ", "topic": "WordPress NZ small business", "relatedServices": ["/wordpress-website-design-auckland/", "/wordpress-maintenance-auckland/"] },
-    { "url": "/affordable-web-design-auckland/auckland-web-design-mistakes/", "title": "Auckland Web Design Mistakes: What NOT to Do", "topic": "web design mistakes Auckland", "relatedServices": ["/small-business-website-design-auckland/", "/website-design-process-in-auckland/"] },
-    { "url": "/affordable-web-design-auckland/auckland-tradie-web-design/", "title": "Auckland Tradie Web Design", "topic": "tradie web design Auckland", "relatedServices": ["/tradie-website-design-auckland/", "/affordable-seo-auckland/"] },
-    { "url": "/affordable-web-design-auckland/ai-small-businesses-auckland-web-design/", "title": "How AI Is Changing Web Design for Small Businesses in Auckland", "topic": "AI web design Auckland", "relatedServices": ["/ai-seo-for-auckland-small-businesses/", "/ai-content-setup-for-websites/"] },
-    { "url": "/affordable-web-design-auckland/how-to-choose-the-best-web-design-agency-for-your-small-business-in-nz/", "title": "How to Choose the Best Web Design Agency for Your Small Business in NZ", "topic": "web design agency selection NZ", "relatedServices": ["/small-business-website-design-auckland/", "/testimonials-reviews/"] },
-    { "url": "/affordable-web-design-auckland/10-essential-features-every-small-business-website-in-nz-must-have/", "title": "10 Essential Features Every Small Business Website in NZ Must Have", "topic": "website features checklist NZ", "relatedServices": ["/small-business-website-design-auckland/", "/wordpress-website-design-auckland/"] },
-    { "url": "/affordable-web-design-auckland/how-seo-helps-small-new-zealand-businesses-grow/", "title": "How SEO Helps Small New Zealand Businesses Grow", "topic": "SEO for NZ small business growth", "relatedServices": ["/affordable-seo-auckland/", "/local-seo-for-auckland-small-businesses/"] },
-    { "url": "/affordable-web-design-auckland/5-reasons-why-small-kiwi-businesses-need-a-website/", "title": "5 Reasons Why Small Kiwi Businesses Need a Website", "topic": "why small businesses need websites NZ", "relatedServices": ["/small-business-website-design-auckland/", "/website-designer-auckland/"] },
-    { "url": "/affordable-web-design-auckland/facebook-page-for-sme/", "title": "Facebook Page for SMEs: A Necessity or Distraction?", "topic": "social media SMEs NZ", "relatedServices": ["/small-business-website-design-auckland/", "/affordable-seo-auckland/"] },
-    { "url": "/affordable-web-design-auckland/from-local-to-legendary-how-your-website-can-supercharge-your-small-kiwi-business/", "title": "From Local to Legendary: How Your Website Can Supercharge Your Small Kiwi Business", "topic": "website growth NZ small business", "relatedServices": ["/small-business-website-design-auckland/", "/affordable-seo-auckland/"] },
-    { "url": "/affordable-web-design-auckland/how-to-make-your-website-look-professional-without-spending-a-fortune/", "title": "How to Make Your Website Look Professional Without Spending a Fortune", "topic": "professional website on a budget", "relatedServices": ["/small-business-website-design-auckland/", "/website-branding/"] }
+    {
+      "url": "/affordable-web-design-auckland/seo-vs-google-ads-auckland-small-business/",
+      "title": "SEO vs Google Ads: What Should Auckland Small Businesses Invest In?",
+      "topic": "SEO vs Google Ads Auckland",
+      "relatedServices": [
+        "/affordable-seo-auckland/",
+        "/google-ads/",
+        "/local-seo-for-auckland-small-businesses/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/traditional-seo-is-changing-why-auckland-businesses-must-prepare-for-ai-driven-search-aeo-geo/",
+      "title": "Schema Markup for AI Search: How ChatGPT and Google AI Overviews Actually Read Your Website",
+      "topic": "schema markup, structured data, AEO",
+      "relatedServices": [
+        "/ai-seo-for-auckland-small-businesses/",
+        "/affordable-seo-auckland/",
+        "/affordable-web-design-auckland/eeat-for-ai-search-auckland-small-business/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/ai-website-pricing-2026/",
+      "title": "Are You Still Paying 2020 Prices for a Website in 2026?",
+      "topic": "website pricing 2026",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/website-designer-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/more-than-half-of-nz-businesses-still-lack-a-website-as-consumer-expectations-rise/",
+      "title": "More Than Half of NZ Businesses Still Lack a Website",
+      "topic": "NZ business statistics, website importance",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/website-designer-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/seo-for-trades-auckland/",
+      "title": "SEO for Trades Auckland",
+      "topic": "trades SEO Auckland",
+      "relatedServices": [
+        "/affordable-seo-auckland/",
+        "/tradie-website-design-auckland/",
+        "/local-seo-for-auckland-small-businesses/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/toprated-auckland-web-design/",
+      "title": "Top Rated Auckland Web Design",
+      "topic": "top rated web design Auckland",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/testimonials-reviews/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/website-redesign-vs-starting-from-scratch/",
+      "title": "Website Redesign vs Starting from Scratch",
+      "topic": "website redesign vs rebuild",
+      "relatedServices": [
+        "/wordpress-website-rebuilds-auckland/",
+        "/small-business-website-design-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/choosing-a-website-platform-a-practical-guide-for-small-businesses-in-auckland/",
+      "title": "Choosing a Website Platform: A Practical Guide",
+      "topic": "website platform comparison Auckland",
+      "relatedServices": [
+        "/wordpress-website-design-auckland/",
+        "/small-business-website-design-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/how-a-good-website-helps-you-compete-with-bigger-brands-in-auckland/",
+      "title": "How a Good Website Helps You Compete with Bigger Brands",
+      "topic": "website competitive advantage",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/affordable-seo-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/how-to-turn-your-website-into-a-24-7-salesperson/",
+      "title": "How to Turn Your Website Into a 24/7 Salesperson",
+      "topic": "website lead generation",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/landing-pages-funnels-on-wordpress/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/top-5-pages-every-auckland-small-business-website-should-have/",
+      "title": "Top 5 Pages Every Auckland Small Business Website Should Have",
+      "topic": "website page structure",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/website-copywriting-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/how-to-write-website-content-web-design-auckland/",
+      "title": "How to Write Website Content: Web Design Auckland",
+      "topic": "website copywriting guide",
+      "relatedServices": [
+        "/website-copywriting-auckland/",
+        "/small-business-website-design-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/affordable-web-design-auckland-2025-why-small-business-needs-website/",
+      "title": "Affordable Web Design Auckland 2025, Why Small Businesses Need Websites",
+      "topic": "affordable web design Auckland 2025",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/website-designer-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/affordable-web-design-auckland-facebook-risk/",
+      "title": "The Facebook Risk: Why Relying on Social Media Alone Costs You Customers",
+      "topic": "social media vs website",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/affordable-seo-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/affordable-web-design-auckland-how-competitors-get-found-on-google/",
+      "title": "How Your Competitors Get Found on Google",
+      "topic": "Google visibility, competitors SEO",
+      "relatedServices": [
+        "/affordable-seo-auckland/",
+        "/local-seo-for-auckland-small-businesses/",
+        "/google-ads/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/how-much-business-are-you-losing-without-a-website/",
+      "title": "How Much Business Are You Losing Without a Website?",
+      "topic": "cost of no website",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/website-designer-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/auckland-web-design-ai-seo-shift/",
+      "title": "The Auckland Web Design Shift: How AI and SEO Are Changing Competitive Advantage",
+      "topic": "AI and SEO web design shift",
+      "relatedServices": [
+        "/affordable-seo-auckland/",
+        "/ai-seo-for-auckland-small-businesses/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/ai-first-web-design/",
+      "title": "AI-First Web Design: What It Means for Small Businesses",
+      "topic": "AI web design",
+      "relatedServices": [
+        "/wordpress-ai-tools-integration-auckland/",
+        "/ai-content-setup-for-websites/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/choosing-the-right-web-designer-in-auckland-a-simple-guide/",
+      "title": "Choosing the Right Web Designer in Auckland: A Simple Guide",
+      "topic": "choosing web designer Auckland",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/website-designer-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/website-cost-new-zealand-small-business/",
+      "title": "Website Cost Calculator NZ (2026) | Instant Price Estimate",
+      "topic": "website cost NZ, website cost calculator",
+      "summary": "Top organic asset (~60% of site's organic clicks). Interactive cost calculator, NZ price tables, and FAQ, no email required.",
+      "isHub": true,
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/website-designer-auckland/",
+        "/ecommerce-website-auckland/"
+      ],
+      "suggestedAnchorText": [
+        "free website cost calculator",
+        "website cost calculator",
+        "instant NZD estimate"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/wordpress-for-small-business-nz/",
+      "title": "WordPress for Small Business in NZ",
+      "topic": "WordPress NZ small business",
+      "relatedServices": [
+        "/wordpress-website-design-auckland/",
+        "/wordpress-maintenance-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/auckland-web-design-mistakes/",
+      "title": "Auckland Web Design Mistakes: What NOT to Do",
+      "topic": "web design mistakes Auckland",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/website-design-process-in-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/auckland-tradie-web-design/",
+      "title": "Auckland Tradie Web Design",
+      "topic": "tradie web design Auckland",
+      "relatedServices": [
+        "/tradie-website-design-auckland/",
+        "/affordable-seo-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/ai-small-businesses-auckland-web-design/",
+      "title": "How AI Is Changing Web Design for Small Businesses in Auckland",
+      "topic": "AI web design Auckland",
+      "relatedServices": [
+        "/ai-seo-for-auckland-small-businesses/",
+        "/ai-content-setup-for-websites/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/how-to-choose-the-best-web-design-agency-for-your-small-business-in-nz/",
+      "title": "How to Choose the Best Web Design Agency for Your Small Business in NZ",
+      "topic": "web design agency selection NZ",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/testimonials-reviews/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/10-essential-features-every-small-business-website-in-nz-must-have/",
+      "title": "10 Essential Features Every Small Business Website in NZ Must Have",
+      "topic": "website features checklist NZ",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/wordpress-website-design-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/how-seo-helps-small-new-zealand-businesses-grow/",
+      "title": "How SEO Helps Small New Zealand Businesses Grow",
+      "topic": "SEO for NZ small business growth",
+      "relatedServices": [
+        "/affordable-seo-auckland/",
+        "/local-seo-for-auckland-small-businesses/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/5-reasons-why-small-kiwi-businesses-need-a-website/",
+      "title": "5 Reasons Why Small Kiwi Businesses Need a Website",
+      "topic": "why small businesses need websites NZ",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/website-designer-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/facebook-page-for-sme/",
+      "title": "Facebook Page for SMEs: A Necessity or Distraction?",
+      "topic": "social media SMEs NZ",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/affordable-seo-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/from-local-to-legendary-how-your-website-can-supercharge-your-small-kiwi-business/",
+      "title": "From Local to Legendary: How Your Website Can Supercharge Your Small Kiwi Business",
+      "topic": "website growth NZ small business",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/affordable-seo-auckland/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/how-to-make-your-website-look-professional-without-spending-a-fortune/",
+      "title": "How to Make Your Website Look Professional Without Spending a Fortune",
+      "topic": "professional website on a budget",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/website-branding/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/eeat-for-ai-search-auckland-small-business/",
+      "title": "E-E-A-T Explained: Why Google and AI Platforms Trust (or Ignore) Your Auckland Business",
+      "topic": "E-E-A-T, AI trust signals",
+      "relatedServices": [
+        "/ai-seo-for-auckland-small-businesses/",
+        "/google-business-profile-guide-for-auckland-businesses/",
+        "/affordable-web-design-auckland/do-backlinks-still-matter-auckland-small-business/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/do-backlinks-still-matter-auckland-small-business/",
+      "title": "Do Backlinks Still Matter in 2026? A Straight Answer for Auckland Small Businesses",
+      "topic": "backlinks, off-page SEO",
+      "relatedServices": [
+        "/affordable-seo-auckland/",
+        "/affordable-web-design-auckland/eeat-for-ai-search-auckland-small-business/"
+      ]
+    }
   ],
-
   "linkingRules": {
     "hubInbound": "Every supporting page must link to at least one hub using descriptive anchor text from suggestedAnchorText.",
     "hubOutbound": "Hub pages should link down to their supporting pages and to related hubs.",
