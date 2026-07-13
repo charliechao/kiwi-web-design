@@ -654,6 +654,16 @@ const faqs = [
 
       initCarousel('lp-reviews-track', 'lp-rev-prev', 'lp-rev-next', '.lp-review-card', 4500);
       initCarousel('lp-portfolio-track', 'lp-port-prev', 'lp-port-next', '.lp-portfolio-item', 3800);
+
+      // Track phone taps/clicks — fires once per link even on rapid double-taps.
+      document.querySelectorAll<HTMLAnchorElement>('a[href^="tel:"]').forEach((link) => {
+        link.addEventListener('click', () => {
+          const g = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+          if (typeof g === 'function') {
+            g('event', 'phone_click', { link_location: link.closest('.lp-header') ? 'header' : 'footer' });
+          }
+        }, { once: false });
+      });
     })();
   </script>
   <script is:inline src="https://web3forms.com/client/script.js" async defer></script>
