@@ -368,6 +368,22 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Service coverage -->
+  <section class="lp-section lp-section-dark" id="services">
+    <div class="container">
+      <p class="lp-sec-eyebrow">What we do</p>
+      <h2 class="lp-sec-title">Web design services <span class="lp-title-accent">across Auckland</span></h2>
+      <p class="lp-coverage-intro">Kiwi Web Design is an Auckland website design company based in Grey Lynn — an independent local alternative to a big web design agency. We build and redesign websites for small businesses across the whole Auckland region, from the CBD and North Shore to West, East and South Auckland.</p>
+      <ul class="lp-coverage-list">
+        <li>Website design and web design for Auckland small businesses</li>
+        <li>Website redesign for outdated or underperforming sites</li>
+        <li>Small business website design from $2,000 + GST, fixed quote</li>
+        <li>Your website designer and web developer are the same person — Charlie</li>
+        <li>Fast, modern-stack builds — SEO-ready from day one, no fragile plugins</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- Final CTA + second form -->
   <section class="lp-final">
     <span class="lp-orb lp-orb-yellow lp-orb-lg lp-orb--final" aria-hidden="true"></span>
@@ -1088,6 +1104,41 @@ const faqs = [
     max-width: 680px;
   }
 
+  /* Service coverage */
+  .lp-coverage-intro {
+    color: rgba(255,255,255,0.72);
+    line-height: 1.7;
+    max-width: 680px;
+    margin: -1.25rem 0 1.75rem;
+    font-size: 0.95rem;
+  }
+  .lp-coverage-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 2rem;
+    max-width: 880px;
+  }
+  .lp-coverage-list li {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .lp-coverage-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--kwd-yellow);
+  }
+
   /* Problem cards */
   .lp-problem-grid {
     display: grid;
@@ -1504,6 +1555,7 @@ const faqs = [
   @media (max-width: 720px) {
     .lp-header { position: static !important; top: auto !important; }
     .lp-form-wrap { scroll-margin-top: 7rem; }
+    .lp-coverage-list { grid-template-columns: 1fr; }
     .lp-google-badge {
       bottom: 1rem;
       width: 128px;
