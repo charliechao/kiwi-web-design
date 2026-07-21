@@ -161,33 +161,6 @@ const process = [
   { step: '4', title: 'Launch and grow', desc: 'The site goes live with the next-step plan for local SEO, AI SEO, Google Ads, or ongoing optimisation.' },
 ];
 
-const packages = [
-  {
-    name: 'Launch & Get Found',
-    price: 'From $1,290',
-    desc: 'For Auckland businesses that need a professional, AI-ready website foundation and clean local-search basics.',
-    features: ['Conversion-focused web design', 'AI-ready website structure', 'On-page local SEO', 'Mobile-first speed optimisation', 'Contact and lead-capture setup'],
-    highlight: false,
-    tag: '',
-  },
-  {
-    name: 'Lead Growth Engine',
-    price: 'From $2,690',
-    desc: 'Auckland web design plus SEO, AI-ready content foundations, and Google Ads working together as one lead-generation system.',
-    features: ['Conversion-focused website', 'Local SEO and AI SEO setup', 'AI-ready content and schema foundations', 'Google Ads campaign foundation', 'Lead landing pages', 'Tracking and call measurement'],
-    highlight: true,
-    tag: 'Most Popular',
-  },
-  {
-    name: 'Sales Accelerator',
-    price: 'From $3,890',
-    desc: 'For Auckland businesses ready to scale with ongoing SEO, Google Ads management, and conversion improvement.',
-    features: ['Monthly SEO and AI search optimisation', 'Lead landing pages', 'Monthly reporting', 'Priority support', 'Growth recommendations'],
-    highlight: false,
-    tag: '',
-  },
-];
-
 const techStack = [
   { name: 'Shopify', desc: 'Ecommerce stores for product catalogues, checkout, and online sales.', logo: siShopify, viewBox: '0 0 24 24' },
   { name: 'Astro', desc: 'Fast static builds for high-performance marketing websites.', logo: siAstro, viewBox: '0 0 24 24' },
@@ -291,7 +264,6 @@ const exploreGroups = [
         <p class="hp-lead hp-hero-seq" style="--hero-delay: 0.3s;">Kiwi Web Design is a Grey Lynn web design studio building conversion-focused websites for Auckland small businesses. Every build is AI-ready and structured for growth, so local SEO, AI SEO, and Google Ads can turn clicks into calls, quote requests, and steady enquiries.</p>
         <div class="hp-ctas hp-hero-seq" style="--hero-delay: 0.42s;">
           <a href="/website-designer-auckland/" class="hp-btn-primary">Book a Free Consultation</a>
-          <a href="#packages" class="hp-btn-secondary">See Pricing</a>
         </div>
         <div class="hp-proof-row hp-hero-seq" style="--hero-delay: 0.52s;">
           <a href="https://share.google/nciRqe4rK6ywabSVx" target="_blank" rel="noopener" class="hp-review-pill">
@@ -593,35 +565,6 @@ const exploreGroups = [
       card.addEventListener('focusout', deactivate);
     });
   </script>
-
-  <section class="section hp-packages-section" id="packages">
-    <div class="container" data-reveal>
-      <div class="hp-motion-heading" style="--motion-delay: 0ms;">
-        <SectionHeader
-          eyebrow="Pricing"
-          title="Start with website design. Grow into SEO and Google Ads."
-          subtitle="Structured for Auckland businesses that need better presentation, stronger lead flow, and an AI-ready website foundation."
-        />
-      </div>
-      <div class="packages-grid">
-        {packages.map(({ name, price, desc, features, highlight, tag }, index) => (
-          <div class:list={['pkg-card', 'hp-motion-item', highlight && 'pkg-highlight']} style={`--motion-delay: ${140 + index * 120}ms;`}>
-            {tag && <span class="pkg-tag">{tag}</span>}
-            <h3 class="pkg-name">{name}</h3>
-            <p class="pkg-price">{price}</p>
-            <p class="pkg-desc">{desc}</p>
-            <ul class="pkg-features">
-              {features.map((feature) => (
-                <li>{feature}</li>
-              ))}
-            </ul>
-            <a href="/website-designer-auckland/" class:list={['pkg-cta', highlight && 'pkg-cta-accent']}>Get Started -&gt;</a>
-          </div>
-        ))}
-      </div>
-      <p class="hp-packages-note">Not sure which package fits your budget? Try our <a href="/affordable-web-design-auckland/website-cost-new-zealand-small-business/">free website cost calculator</a> for an instant NZD estimate.</p>
-    </div>
-  </section>
 
   <section class="section hp-faq-section">
     <div class="container faq-layout" data-reveal>
@@ -967,21 +910,6 @@ const exploreGroups = [
 </Layout>
 
 <style>
-  .hp-packages-note {
-    text-align: center;
-    margin: 2rem auto 0;
-    max-width: 560px;
-    font-size: 0.92rem;
-    color: var(--kwd-brown);
-  }
-  .hp-packages-note a {
-    color: var(--kwd-dark);
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  .hp-packages-note a:hover { color: var(--kwd-brown); }
-
   .hp-hero {
     position: relative;
     overflow: hidden;
@@ -1246,9 +1174,7 @@ const exploreGroups = [
   }
 
   .hp-btn-primary,
-  .hp-btn-secondary,
-  .hp-btn-dark,
-  .pkg-cta {
+  .hp-btn-dark {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1262,43 +1188,26 @@ const exploreGroups = [
     transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
   }
 
-  .hp-btn-primary,
-  .pkg-cta-accent {
+  .hp-btn-primary {
     background: var(--kwd-yellow);
     color: var(--kwd-dark);
   }
 
-  .hp-btn-secondary {
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.04);
-  }
-
-  .hp-btn-dark,
-  .pkg-cta {
+  .hp-btn-dark {
     background: var(--kwd-dark);
     color: #fff;
   }
 
   .hp-btn-primary:hover,
-  .hp-btn-secondary:hover,
-  .hp-btn-dark:hover,
-  .pkg-cta:hover {
+  .hp-btn-dark:hover {
     transform: translateY(-2px);
   }
 
-  .hp-btn-primary:hover,
-  .pkg-cta-accent:hover {
+  .hp-btn-primary:hover {
     background: var(--kwd-gold);
   }
 
-  .hp-btn-secondary:hover {
-    border-color: rgba(251, 232, 166, 0.65);
-    color: var(--kwd-yellow);
-  }
-
-  .hp-btn-dark:hover,
-  .pkg-cta:hover {
+  .hp-btn-dark:hover {
     background: #433a36;
   }
 
@@ -1343,8 +1252,6 @@ const exploreGroups = [
   .hp-mini-note,
   .reviews-trust p,
   .faq-sidebar-sub,
-  .pkg-desc,
-  .pkg-features li,
   .service-card p,
   .hp-adv-card p,
   .explore-link {
@@ -1445,8 +1352,6 @@ const exploreGroups = [
   .hp-stage-title,
   .service-card h3,
   .hp-adv-card h3,
-  .pkg-name,
-  .pkg-price,
   .faq-sidebar-title,
   .portfolio-caption {
     margin: 0;
@@ -1470,15 +1375,13 @@ const exploreGroups = [
   .hp-stage-cards,
   .service-grid,
   .hp-adv-grid,
-  .packages-grid,
   .explore-grid {
     display: grid;
     gap: 1rem;
   }
 
   .hp-stage-cards,
-  .service-grid,
-  .packages-grid {
+  .service-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -1493,7 +1396,6 @@ const exploreGroups = [
   .hp-stat-card,
   .service-card,
   .hp-adv-card,
-  .pkg-card,
   .explore-card {
     border-radius: 22px;
     border: 1px solid rgba(44, 41, 39, 0.08);
@@ -1502,8 +1404,7 @@ const exploreGroups = [
 
   .hp-stat-card,
   .service-card,
-  .hp-adv-card,
-  .pkg-card {
+  .hp-adv-card {
     background: #fff8ef;
   }
 
@@ -1512,8 +1413,7 @@ const exploreGroups = [
     padding: 1.2rem 1.25rem;
   }
 
-  .hp-stat-number,
-  .pkg-price {
+  .hp-stat-number {
     font-family: var(--kwd-font-heading);
     line-height: 1;
   }
@@ -1527,8 +1427,6 @@ const exploreGroups = [
   .hp-stat-label,
   .service-card p,
   .hp-adv-card p,
-  .pkg-desc,
-  .pkg-features li,
   .faq-sidebar-sub,
   .explore-link {
     color: var(--kwd-brown);
@@ -1549,15 +1447,13 @@ const exploreGroups = [
     gap: 0.9rem;
   }
 
-  .hp-checklist li,
-  .pkg-features li {
+  .hp-checklist li {
     position: relative;
     padding-left: 1.4rem;
     line-height: 1.65;
   }
 
-  .hp-checklist li::before,
-  .pkg-features li::before {
+  .hp-checklist li::before {
     content: '';
     position: absolute;
     top: 0.7rem;
@@ -1570,7 +1466,6 @@ const exploreGroups = [
 
   .service-card,
   .hp-adv-card,
-  .pkg-card,
   .explore-card {
     padding: 1.4rem;
   }
@@ -2104,55 +1999,6 @@ const exploreGroups = [
     }
   }
 
-  .pkg-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    background: linear-gradient(180deg, #fff 0%, #fbf8f1 100%);
-  }
-
-  .pkg-highlight {
-    border-color: rgba(251, 232, 166, 0.4);
-    background: linear-gradient(180deg, #241f1d 0%, #161311 100%);
-  }
-
-  .pkg-tag {
-    display: inline-block;
-    align-self: flex-start;
-    padding: 0.28rem 0.8rem;
-    border-radius: 999px;
-    background: var(--kwd-yellow);
-    color: var(--kwd-dark);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .pkg-name {
-    font-size: 1rem;
-    font-family: var(--kwd-font-body);
-    color: var(--kwd-dark);
-  }
-
-  .pkg-highlight .pkg-name {
-    color: #fff;
-  }
-
-  .pkg-price {
-    font-size: 1.9rem;
-    color: var(--kwd-dark);
-  }
-
-  .pkg-highlight .pkg-price {
-    color: var(--kwd-yellow);
-  }
-
-  .pkg-highlight .pkg-desc,
-  .pkg-highlight .pkg-features li {
-    color: rgba(255, 255, 255, 0.74);
-  }
-
   .faq-layout {
     display: grid;
     grid-template-columns: 320px minmax(0, 1fr);
@@ -2246,7 +2092,6 @@ const exploreGroups = [
     }
 
     .service-grid,
-    .packages-grid,
     .explore-grid {
       grid-template-columns: 1fr 1fr;
     }
@@ -2270,7 +2115,6 @@ const exploreGroups = [
     .hp-stage-cards,
     .service-grid,
     .hp-adv-grid,
-    .packages-grid,
     .explore-grid {
       grid-template-columns: 1fr;
     }
