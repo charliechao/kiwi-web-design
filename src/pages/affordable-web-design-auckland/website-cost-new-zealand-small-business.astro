@@ -215,6 +215,7 @@ const schema = [
     <section class="kwd-calculator-section" aria-labelledby="kwd-calculator-heading">
       <div class="kwd-calculator-card" id="kwd-cost-calculator">
         <h2 id="kwd-calculator-heading">Website cost calculator (estimates in NZD)</h2>
+        <p class="kwd-calculator-intro">Choose the closest project type and size. You can fine-tune the estimate with optional features and ongoing care.</p>
         <form name="website-cost-calculator" id="website-cost-calculator">
           <fieldset class="kwd-field-group">
             <legend>Site type</legend>
@@ -247,61 +248,87 @@ const schema = [
               <input type="number" id="kwd-products" min="0" value="40" inputmode="numeric">
             </label>
           </div>
-          <fieldset class="kwd-field-group kwd-checkbox">
-            <legend>Add-ons</legend>
-            <label>
-              <input type="checkbox" id="kwd-add-bookings" class="kwd-addon" value="bookings">
-              <span>Online bookings/appointments</span>
-            </label>
-            <label>
-              <input type="checkbox" id="kwd-add-blog" class="kwd-addon" value="blog">
-              <span>Blog setup</span>
-            </label>
-            <label>
-              <input type="checkbox" id="kwd-add-seo" class="kwd-addon" value="seo">
-              <span>Basic on-page SEO setup</span>
-            </label>
-            <label>
-              <input type="checkbox" id="kwd-add-payment" class="kwd-addon" value="payment" disabled>
-              <span>Payment gateway setup (eCommerce only)</span>
-            </label>
-            <label>
-              <input type="checkbox" id="kwd-add-integration" class="kwd-addon" value="integration">
-              <span>Third-party integration (e.g., Xero/CRM)</span>
-            </label>
-          </fieldset>
-          <div class="kwd-inline-fields">
-            <label>
-              Hosting/Care
-              <select id="kwd-hosting">
-                <option value="none">None</option>
-                <option value="basic">Basic ($25/mo)</option>
-                <option value="business">Business ($59/mo)</option>
-                <option value="managed">Managed ($99/mo)</option>
-              </select>
-            </label>
-            <label>
-              GST (15%)
-              <span style="display:flex; align-items:center; gap:0.5rem; margin-top:0.35rem;">
-                <input type="checkbox" id="kwd-gst-toggle" aria-label="Include GST in total">
-                <span>Toggle GST</span>
-              </span>
-            </label>
-          </div>
+          <details class="kwd-options-disclosure">
+            <summary>
+              <span>Optional extras and ongoing care <small id="kwd-options-summary">No extras selected</small></span>
+              <span class="kwd-disclosure-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="kwd-options-content">
+              <fieldset class="kwd-field-group kwd-checkbox">
+                <legend>Add-ons</legend>
+                <label>
+                  <input type="checkbox" id="kwd-add-bookings" class="kwd-addon" value="bookings">
+                  <span>Online bookings/appointments</span>
+                </label>
+                <label>
+                  <input type="checkbox" id="kwd-add-blog" class="kwd-addon" value="blog">
+                  <span>Blog setup</span>
+                </label>
+                <label>
+                  <input type="checkbox" id="kwd-add-seo" class="kwd-addon" value="seo">
+                  <span>Basic on-page SEO setup</span>
+                </label>
+                <label>
+                  <input type="checkbox" id="kwd-add-payment" class="kwd-addon" value="payment" disabled>
+                  <span>Payment gateway setup (eCommerce only)</span>
+                </label>
+                <label>
+                  <input type="checkbox" id="kwd-add-integration" class="kwd-addon" value="integration">
+                  <span>Third-party integration (e.g., Xero/CRM)</span>
+                </label>
+              </fieldset>
+              <div class="kwd-inline-fields">
+                <label>
+                  Hosting/Care
+                  <select id="kwd-hosting">
+                    <option value="none">None</option>
+                    <option value="basic">Basic ($25/mo)</option>
+                    <option value="business">Business ($59/mo)</option>
+                    <option value="managed">Managed ($99/mo)</option>
+                  </select>
+                </label>
+                <label>
+                  GST (15%)
+                  <span class="kwd-gst-control">
+                    <input type="checkbox" id="kwd-gst-toggle" aria-label="Include GST in total">
+                    <span>Include GST in estimate</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </details>
         </form>
-        <div class="kwd-breakdown">
-          <ul id="kwd-breakdown-list"></ul>
-          <div class="kwd-total-line" aria-live="polite">
-            <span id="kwd-total-label">Estimated total (GST excl.)</span>
-            <span id="kwd-total">$0</span>
+        <div class="kwd-result-panel">
+          <div class="kwd-result-total">
+            <span class="kwd-result-kicker">Your estimated investment</span>
+            <div class="kwd-total-line" aria-live="polite">
+              <span id="kwd-total">$0</span>
+              <small id="kwd-total-label">GST excl.</small>
+            </div>
           </div>
+          <div class="kwd-result-fit">
+            <span class="kwd-result-kicker">Recommended project fit</span>
+            <strong id="kwd-recommendation">Growth website</strong>
+            <p id="kwd-recommendation-copy">A service-led website with room for stronger SEO and lead-generation content.</p>
+          </div>
+          <ul class="kwd-result-assurances" aria-label="Fixed-price scope benefits">
+            <li><span aria-hidden="true">&#10003;</span> Your selections reviewed by Charlie</li>
+            <li><span aria-hidden="true">&#10003;</span> Exact inclusions and fixed price confirmed</li>
+            <li><span aria-hidden="true">&#10003;</span> No obligation to proceed</li>
+          </ul>
         </div>
-        <!-- Inline quote form — shown directly after the total -->
+        <div class="kwd-breakdown">
+          <p class="kwd-breakdown-heading">Estimate breakdown</p>
+          <ul id="kwd-breakdown-list"></ul>
+        </div>
+        <!-- Inline quote form - shown directly after the result -->
         <div class="kwd-quote-form" id="kwd-quote-form">
-          <p class="kwd-qf-heading">Want this confirmed? Get a free, fixed quote:</p>
+          <p class="kwd-qf-kicker">Free fixed-price scope</p>
+          <h3 class="kwd-qf-heading">Let Charlie confirm exactly what your website will include.</h3>
+          <p class="kwd-qf-intro">Send your estimate for a personal scope review. You will get clear inclusions and a fixed price, with no obligation to proceed.</p>
           <form id="kwd-calc-contact-form" novalidate>
             <input type="hidden" name="access_key" value="e0a725e4-f764-4536-826c-df981c8bdf3b" />
-            <input type="hidden" name="subject" value="Website cost enquiry from KWD calculator" />
+            <input type="hidden" name="subject" value="Fixed-price website scope request from KWD calculator" />
             <input type="hidden" name="from_name" value="KWD Cost Calculator" />
             <input type="hidden" id="kwd-calc-estimate-field" name="calculator_estimate" value="" />
             <input type="hidden" id="kwd-calc-site-type-field" name="site_type" value="" />
@@ -312,16 +339,27 @@ const schema = [
             <input type="hidden" id="kwd-calc-gst-field" name="gst_included" value="" />
             <input type="hidden" id="kwd-calc-breakdown-field" name="calculator_breakdown" value="" />
             <input type="hidden" id="kwd-calc-total-field" name="calculator_total" value="" />
+            <input type="hidden" id="kwd-calc-recommendation-field" name="recommended_project_fit" value="" />
             <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
             <div class="kwd-qf-fields">
-              <input class="kwd-qf-input" type="text" id="kwd-qf-name" name="name" placeholder="Your name *" required autocomplete="name" />
-              <input class="kwd-qf-input" type="tel" id="kwd-qf-contact" name="contact" placeholder="Phone or email *" required autocomplete="tel" />
+              <label class="kwd-qf-field">
+                <span>Your name</span>
+                <input class="kwd-qf-input" type="text" id="kwd-qf-name" name="name" required autocomplete="name" />
+              </label>
+              <label class="kwd-qf-field">
+                <span>Email address</span>
+                <input class="kwd-qf-input" type="email" id="kwd-qf-email" name="email" required autocomplete="email" inputmode="email" />
+              </label>
+              <label class="kwd-qf-field kwd-qf-phone">
+                <span>Phone <small>(optional)</small></span>
+                <input class="kwd-qf-input" type="tel" id="kwd-qf-phone" name="phone" autocomplete="tel" inputmode="tel" />
+              </label>
             </div>
-            <button class="kwd-qf-btn" type="submit" id="kwd-qf-btn">Send My Details →</button>
+            <button class="kwd-qf-btn" type="submit" id="kwd-qf-btn">Get My Fixed-Price Scope</button>
             <p class="kwd-qf-status" id="kwd-qf-status" aria-live="polite" hidden></p>
           </form>
-          <p class="kwd-qf-trust">No obligation &middot; No spam &middot; Charlie replies within 2 business hours</p>
-          <p class="kwd-disclaimer">Figures are estimates to help with planning. For a fixed price, use the form above.</p>
+          <p class="kwd-qf-trust">Your estimate goes directly to Charlie &middot; No spam &middot; Reply within 2 business hours</p>
+          <p class="kwd-disclaimer">The calculator is for planning. Your fixed-price scope will confirm the final investment before any work starts.</p>
         </div>
       </div>
     </section>
@@ -602,9 +640,15 @@ const schema = [
   }
   #kwd-website-cost-nz .kwd-calculator-card h2 {
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     font-size: 1.6rem;
     color: var(--kwd-dark);
+  }
+  #kwd-website-cost-nz .kwd-calculator-intro {
+    margin: 0 0 1.5rem;
+    max-width: 65ch;
+    color: var(--kwd-brown);
+    line-height: 1.6;
   }
   #kwd-website-cost-nz .kwd-calculator-card fieldset {
     border: none;
@@ -638,6 +682,11 @@ const schema = [
   #kwd-website-cost-nz .kwd-checkbox input {
     margin-top: 0.2rem;
   }
+  #kwd-website-cost-nz .kwd-radio-group label:has(input:checked),
+  #kwd-website-cost-nz .kwd-checkbox label:has(input:checked) {
+    border-color: var(--kwd-dark);
+    background: #fff9df;
+  }
   #kwd-website-cost-nz label span {
     font-size: 0.95rem;
     color: var(--kwd-dark);
@@ -663,10 +712,80 @@ const schema = [
     background: #ffffff;
     color: var(--kwd-dark);
   }
-  #kwd-website-cost-nz .kwd-breakdown {
+  #kwd-website-cost-nz .kwd-options-disclosure {
     margin-top: 1.5rem;
-    border-top: 1px solid #c8c2b8;
-    padding-top: 1.25rem;
+  }
+  #kwd-website-cost-nz .kwd-options-disclosure summary {
+    display: none;
+  }
+  #kwd-website-cost-nz details.kwd-options-disclosure:not([open]) > .kwd-options-content {
+    display: block;
+  }
+  #kwd-website-cost-nz .kwd-gst-control {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.55rem;
+    margin-top: 0.7rem;
+    font-weight: 500;
+  }
+  #kwd-website-cost-nz .kwd-gst-control input {
+    margin: 0;
+  }
+  #kwd-website-cost-nz .kwd-result-panel {
+    margin-top: 1.75rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: var(--kwd-dark);
+    color: var(--kwd-cream);
+    display: grid;
+    gap: 1.25rem;
+  }
+  #kwd-website-cost-nz .kwd-result-kicker {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--kwd-yellow);
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+  #kwd-website-cost-nz .kwd-result-fit strong {
+    display: block;
+    color: var(--kwd-cream);
+    font-size: 1.3rem;
+  }
+  #kwd-website-cost-nz .kwd-result-fit p {
+    margin: 0.4rem 0 0;
+    color: rgba(242, 241, 229, 0.78);
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  #kwd-website-cost-nz .kwd-result-assurances {
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0 0;
+    border-top: 1px solid rgba(251, 232, 166, 0.24);
+    display: grid;
+    gap: 0.5rem;
+    color: rgba(242, 241, 229, 0.9);
+    font-size: 0.88rem;
+  }
+  #kwd-website-cost-nz .kwd-result-assurances li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  #kwd-website-cost-nz .kwd-result-assurances li span {
+    color: var(--kwd-yellow);
+  }
+  #kwd-website-cost-nz .kwd-breakdown {
+    margin-top: 1rem;
+    padding: 0 0.25rem;
+  }
+  #kwd-website-cost-nz .kwd-breakdown-heading {
+    margin: 0 0 0.45rem;
+    color: var(--kwd-brown);
+    font-size: 0.82rem;
+    font-weight: 600;
   }
   #kwd-website-cost-nz .kwd-breakdown ul {
     list-style: none;
@@ -682,17 +801,21 @@ const schema = [
     color: var(--kwd-dark);
   }
   #kwd-website-cost-nz .kwd-total-line {
-    font-size: 1.25rem;
-    font-weight: 700;
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    color: var(--kwd-dark);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+    color: var(--kwd-yellow);
+  }
+  #kwd-website-cost-nz .kwd-total-line #kwd-total {
+    font-size: clamp(2.1rem, 7vw, 3rem);
+    line-height: 1;
+    font-weight: 700;
   }
   #kwd-website-cost-nz .kwd-total-line small {
     font-weight: 500;
-    color: var(--kwd-brown);
+    color: rgba(242, 241, 229, 0.72);
+    font-size: 0.82rem;
   }
   #kwd-website-cost-nz .kwd-disclaimer {
     font-size: 0.82rem;
@@ -704,18 +827,44 @@ const schema = [
   #kwd-website-cost-nz .kwd-quote-form {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 2px solid var(--kwd-dark);
+    border-top: 1px solid #c8c2b8;
+  }
+  #kwd-website-cost-nz .kwd-qf-kicker {
+    margin: 0 0 0.35rem;
+    color: var(--kwd-brown);
+    font-size: 0.82rem;
+    font-weight: 600;
   }
   #kwd-website-cost-nz .kwd-qf-heading {
-    font-size: 1.05rem;
+    font-family: var(--kwd-font-heading);
+    font-size: 1.45rem;
+    line-height: 1.2;
     font-weight: 700;
     color: var(--kwd-dark);
-    margin: 0 0 0.9rem;
+    margin: 0 0 0.5rem;
+  }
+  #kwd-website-cost-nz .kwd-qf-intro {
+    margin: 0 0 1rem;
+    color: var(--kwd-brown);
+    font-size: 0.92rem;
+    line-height: 1.6;
   }
   #kwd-website-cost-nz .kwd-qf-fields {
     display: grid;
     gap: 0.65rem;
     margin-bottom: 0.75rem;
+  }
+  #kwd-website-cost-nz .kwd-qf-field {
+    display: grid;
+    gap: 0.35rem;
+    color: var(--kwd-dark);
+    font-size: 0.84rem;
+    font-weight: 600;
+  }
+  #kwd-website-cost-nz .kwd-qf-field small {
+    color: var(--kwd-brown);
+    font-size: inherit;
+    font-weight: 500;
   }
   #kwd-website-cost-nz .kwd-qf-input {
     width: 100%;
@@ -740,7 +889,7 @@ const schema = [
     font-family: var(--kwd-font-body);
     font-size: 1rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0;
     border: none;
     border-radius: 8px;
     padding: 0.9rem 1.5rem;
@@ -778,6 +927,9 @@ const schema = [
   @media (min-width: 500px) {
     #kwd-website-cost-nz .kwd-qf-fields {
       grid-template-columns: 1fr 1fr;
+    }
+    #kwd-website-cost-nz .kwd-qf-phone {
+      grid-column: 1 / -1;
     }
   }
   #kwd-website-cost-nz .kwd-toc {
@@ -969,6 +1121,14 @@ const schema = [
     #kwd-website-cost-nz .kwd-case-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+    #kwd-website-cost-nz .kwd-result-panel {
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+      align-items: start;
+    }
+    #kwd-website-cost-nz .kwd-result-assurances {
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
   @media (max-width: 640px) {
     #kwd-website-cost-nz {
@@ -976,6 +1136,61 @@ const schema = [
     }
     #kwd-website-cost-nz .kwd-container {
       padding: 2rem 1.5rem;
+    }
+    #kwd-website-cost-nz .kwd-calculator-card {
+      padding: 1.25rem;
+    }
+    #kwd-website-cost-nz .kwd-options-disclosure {
+      margin-top: 1.25rem;
+      border-top: 1px solid #c8c2b8;
+      border-bottom: 1px solid #c8c2b8;
+    }
+    #kwd-website-cost-nz .kwd-options-disclosure summary {
+      min-height: 3.5rem;
+      padding: 0.75rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--kwd-dark);
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+    }
+    #kwd-website-cost-nz .kwd-options-disclosure summary::-webkit-details-marker {
+      display: none;
+    }
+    #kwd-website-cost-nz .kwd-options-disclosure summary small {
+      display: block;
+      margin-top: 0.15rem;
+      color: var(--kwd-brown);
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    #kwd-website-cost-nz .kwd-disclosure-icon {
+      flex: 0 0 2rem;
+      height: 2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #c8c2b8;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+    #kwd-website-cost-nz .kwd-options-disclosure[open] .kwd-disclosure-icon {
+      transform: rotate(45deg);
+    }
+    #kwd-website-cost-nz details.kwd-options-disclosure:not([open]) > .kwd-options-content {
+      display: none;
+    }
+    #kwd-website-cost-nz .kwd-options-content {
+      padding: 1rem 0 1.25rem;
+    }
+    #kwd-website-cost-nz .kwd-result-panel {
+      margin-top: 1.25rem;
+      padding: 1.25rem;
     }
   }
 </style>
@@ -997,6 +1212,9 @@ const schema = [
     const breakdownList = calculator.querySelector("#kwd-breakdown-list");
     const totalLabel = calculator.querySelector("#kwd-total-label");
     const totalValue = calculator.querySelector("#kwd-total");
+    const recommendationValue = calculator.querySelector("#kwd-recommendation");
+    const recommendationCopy = calculator.querySelector("#kwd-recommendation-copy");
+    const optionsSummary = calculator.querySelector("#kwd-options-summary");
     const addOnCheckboxes = Array.from(calculator.querySelectorAll(".kwd-addon"));
     const paymentCheckbox = calculator.querySelector("#kwd-add-payment");
 
@@ -1045,6 +1263,37 @@ const schema = [
       if (field) field.value = value;
     }
 
+    function getRecommendation(siteType, pageCount) {
+      if (siteType === "one-page") {
+        return {
+          name: "Focused landing page",
+          copy: "A streamlined page for a campaign, new offer, or business that needs one clear conversion path."
+        };
+      }
+      if (siteType === "ecommerce") {
+        return {
+          name: "eCommerce website",
+          copy: "An online store scoped around your catalogue, payments, shipping rules, and customer journey."
+        };
+      }
+      if (siteType === "custom") {
+        return {
+          name: "Custom website project",
+          copy: "A discovery-led build for integrations, bespoke workflows, or requirements beyond a standard website."
+        };
+      }
+      if (pageCount <= 5) {
+        return {
+          name: "Starter business website",
+          copy: "A lean small-business website focused on credibility, enquiries, and the essential service pages."
+        };
+      }
+      return {
+        name: "Growth business website",
+        copy: "A service-led website with room for stronger SEO, proof, and lead-generation content."
+      };
+    }
+
     function updateVisibility() {
       const siteType = getSiteType();
       const showPageInput = siteType === "one-page" || siteType === "small-business";
@@ -1070,6 +1319,7 @@ const schema = [
       const selectedAddOns = [];
       let pageCount = "Not applicable";
       let productCount = "Not applicable";
+      let pageQuantity = 0;
 
       const base = baseCosts[siteType] || 0;
       subtotal += base;
@@ -1077,6 +1327,7 @@ const schema = [
 
       if (siteType === "one-page" || siteType === "small-business") {
         const pages = Math.max(0, parseInt(pagesInput.value, 10) || 0);
+        pageQuantity = pages;
         pageCount = String(pages);
         const includedPages = siteType === "one-page" ? 1 : 5;
         const extraPages = Math.max(0, pages - includedPages);
@@ -1120,8 +1371,17 @@ const schema = [
 
       const gstOn = gstToggle.checked;
       const total = gstOn ? subtotal * 1.15 : subtotal;
-      totalLabel.textContent = gstOn ? "Estimated total (Incl. GST)" : "Estimated total (GST excl.)";
+      totalLabel.textContent = gstOn ? "Including GST" : "Excluding GST";
       totalValue.textContent = formatCurrency(total);
+
+      const recommendation = getRecommendation(siteType, pageQuantity);
+      recommendationValue.textContent = recommendation.name;
+      recommendationCopy.textContent = recommendation.copy;
+
+      const selectedOptionCount = selectedAddOns.length + (hosting && hosting.amount > 0 ? 1 : 0) + (gstOn ? 1 : 0);
+      optionsSummary.textContent = selectedOptionCount === 0
+        ? "No extras selected"
+        : selectedOptionCount + (selectedOptionCount === 1 ? " option selected" : " options selected");
 
       // Keep the hidden form field in sync so submissions include the current estimate
       const totalText = formatCurrency(total) + (gstOn ? " (incl. GST)" : " (excl. GST)");
@@ -1137,6 +1397,7 @@ const schema = [
       setHiddenField("kwd-calc-gst-field", gstOn ? "Yes" : "No");
       setHiddenField("kwd-calc-breakdown-field", breakdownText);
       setHiddenField("kwd-calc-total-field", totalText);
+      setHiddenField("kwd-calc-recommendation-field", recommendation.name);
 
       breakdownList.innerHTML = breakdown
         .map(function (item) {
@@ -1203,15 +1464,16 @@ const schema = [
         const botcheck = calcForm.querySelector('[name="botcheck"]');
         if (botcheck && botcheck.checked) return;
 
-        const name    = (document.getElementById("kwd-qf-name").value || "").trim();
-        const contact = (document.getElementById("kwd-qf-contact").value || "").trim();
+        const name = (document.getElementById("kwd-qf-name").value || "").trim();
+        const emailInput = document.getElementById("kwd-qf-email");
+        const email = (emailInput.value || "").trim();
 
         if (name.length < 2) {
           showQFStatus("Please enter your name.", true);
           return;
         }
-        if (contact.length < 5) {
-          showQFStatus("Please enter your phone number or email address.", true);
+        if (!email || !emailInput.validity.valid) {
+          showQFStatus("Please enter a valid email address.", true);
           return;
         }
 
@@ -1232,7 +1494,7 @@ const schema = [
           .then(function (res) { return res.json(); })
           .then(function (data) {
             if (data.success) {
-              showQFStatus("Thanks! Charlie will be in touch within 2 business hours.", false);
+              showQFStatus("Thanks. Charlie will review your estimate and reply with the next steps within 2 business hours.", false);
               calcForm.reset();
               updateEstimate();
               const trackEvent = window.gtag;
@@ -1249,7 +1511,7 @@ const schema = [
           })
           .finally(function () {
             qfBtn.disabled = false;
-            qfBtn.textContent = "Send My Details \u2192";
+            qfBtn.textContent = "Get My Fixed-Price Scope";
           });
       });
     }
