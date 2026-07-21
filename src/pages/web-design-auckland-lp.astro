@@ -656,19 +656,24 @@ const faqs = [
       initCarousel('lp-reviews-track', 'lp-rev-prev', 'lp-rev-next', '.lp-review-card', 4500);
       initCarousel('lp-portfolio-track', 'lp-port-prev', 'lp-port-next', '.lp-portfolio-item', 3800);
 
-      // Track phone + email taps/clicks — fires once per link even on rapid double-taps.
-      const trackContactClicks = (selector: string, eventName: string) => {
-        document.querySelectorAll<HTMLAnchorElement>(selector).forEach((link) => {
-          link.addEventListener('click', () => {
-            const g = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
-            if (typeof g === 'function') {
-              g('event', eventName, { link_location: link.closest('.lp-header') ? 'header' : 'footer' });
-            }
-          }, { once: false });
-        });
-      };
-      trackContactClicks('a[href^="tel:"]', 'phone_click');
-      trackContactClicks('a[href^="mailto:"]', 'email_click');
+      // Track phone + email taps/clicks. Delegated and resolved at click time
+      // because Cloudflare email obfuscation rewrites mailto: hrefs after load —
+      // listeners bound to `a[href^="mailto:"]` at parse time never attach.
+      document.addEventListener('click', (e) => {
+        const link = (e.target as Element | null)?.closest?.('a');
+        if (!link) return;
+        const href = link.getAttribute('href') || '';
+        const eventName = href.startsWith('tel:')
+          ? 'phone_click'
+          : href.startsWith('mailto:')
+            ? 'email_click'
+            : null;
+        if (!eventName) return;
+        const g = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+        if (typeof g === 'function') {
+          g('event', eventName, { link_location: link.closest('.lp-header') ? 'header' : 'footer' });
+        }
+      });
     })();
   </script>
   <script is:inline src="https://web3forms.com/client/script.js" async defer></script>
