@@ -4,7 +4,6 @@ import PageHero from '../components/PageHero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
-import TestimonialGrid from '../components/TestimonialGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import { Image } from 'astro:assets';
@@ -214,10 +213,22 @@ const industries = [
   "Automotive & mechanical",
 ];
 
-const reviews = [
-  { name: "Zane Barrett", company: "Barrett Access Scaffolding", text: "Charlie ran our Google Ads campaign and the enquiries started coming within the first week. Clear reporting, zero jargon, and they actually care about results." },
-  { name: "Jack", company: "Show Me Shorts", text: "They set up our ads properly from the start, tracked conversions, managed the budget carefully, and the ROI has been solid. Exactly what we needed." },
+// Live campaign we run for a North Shore furniture assembly business (anonymised).
+// Google Ads dashboard, 30-day period (Jun 23 – Jul 22 2026).
+const resultMetrics = [
+  { num: "16.67%", label: "Conversion rate", color: "#6ba4f8" },
+  { num: "$28.11", label: "Cost per conversion", color: "#f26a5f" },
+  { num: "10.83%", label: "Click-through rate", color: "#fbbc05" },
+  { num: "12", label: "Conversions in 30 days", color: "#5bbd7a" },
 ];
+
+// The client's own words (recreated as chat bubbles, anonymised).
+const clientMessages = [
+  "I got around 7 requests last week. 5 were from WhatsApp, 2 from SMS.",
+  "I had 4 jobs booked from the 8th to the 21st of June. WhatsApp and SMS for this period gave me 14 requests.",
+];
+
+const recentBookings = ["Orewa — booked", "Silverdale", "Rosedale", "Glenfield — booked", "Birkenhead", "Silverdale"];
 
 const faqs = [
   { q: "How quickly can Google Ads start generating leads?", a: "Typically within 24–72 hours of a campaign going live. This is one of the key advantages of Google Ads over SEO, you can start generating enquiries immediately once your ads are approved and running." },
@@ -242,8 +253,8 @@ const faqs = [
     title="Get more leads this week with Google Ads."
     subtitle="Targeted Google Ads campaigns for Auckland small businesses. We set up, manage, and optimise campaigns that send high-intent traffic to pages built to convert."
     badgeText="Setup from NZ$499"
-    ctaPrimary={{ text: "Book a Free Consultation", href: "/website-designer-auckland/" }}
-    ctaSecondary={{ text: "How It Works", href: "#process" }}
+    ctaPrimary={{ text: "Get a Free Ads Audit", href: "/website-designer-auckland/" }}
+    ctaSecondary={{ text: "See Real Results", href: "#results" }}
     centered={true}
   />
 
@@ -312,7 +323,7 @@ const faqs = [
       <div class="container">
         <p class="ga-band-eyebrow">The team behind your campaigns</p>
         <h2 class="ga-band-title">We manage every dollar like it's our own.</h2>
-        <a href="/case-study-scaffolding/" class="ga-band-link">See the Barrett Access Scaffolding website project →</a>
+        <a href="#results" class="ga-band-link">See a live campaign's results →</a>
       </div>
     </div>
   </section>
@@ -350,19 +361,56 @@ const faqs = [
             <li>Negative keyword management</li>
             <li>Bid optimisation</li>
             <li>Monthly performance report</li>
-            <li>Direct access to your account manager</li>
+            <li>Direct access to Charlie, no account managers</li>
           </ul>
-          <a href="/website-designer-auckland/" class="ga-cta-btn">Get a Free Quote</a>
+          <a href="/website-designer-auckland/" class="ga-cta-btn">Get a Free Ads Audit</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="section" style="background: var(--kwd-cream);">
+  <!-- Real results proof -->
+  <section class="section ga-results" id="results">
     <div class="container">
-      <SectionHeader eyebrow="Client Reviews" title="What our Google Ads clients say." />
-      <TestimonialGrid items={reviews} cols={2} />
+      <SectionHeader
+        eyebrow="Real Results"
+        title="A live Google Ads campaign, real booked jobs."
+        light={true}
+        subtitle="Here's a campaign we currently run for a North Shore furniture assembly business. Same ad budget as before we took over, but now the enquiries come in almost every week."
+      />
+
+      <div class="ga-metrics">
+        {resultMetrics.map(({ num, label, color }) => (
+          <div class="ga-metric">
+            <span class="ga-metric-num" style={`color: ${color};`}>{num}</span>
+            <span class="ga-metric-lbl">{label}</span>
+          </div>
+        ))}
+      </div>
+      <p class="ga-metrics-note">Live Google Ads account, 30-day period (June–July 2026).</p>
+
+      <div class="ga-proof-grid">
+        <div class="ga-chat">
+          <p class="ga-chat-head">In the client's words</p>
+          {clientMessages.map((msg) => (
+            <div class="ga-bubble"><p>{msg}</p></div>
+          ))}
+          <div class="ga-bubble ga-bubble-list">
+            <p class="ga-bubble-list-title">Recent bookings:</p>
+            <ul>
+              {recentBookings.map((b) => (<li>{b}</li>))}
+            </ul>
+          </div>
+          <p class="ga-chat-foot">Messages from a North Shore furniture assembly business we manage Google Ads for. Business name withheld for privacy.</p>
+        </div>
+
+        <div class="ga-proof-context">
+          <h3>From wasted spend to enquiries every week.</h3>
+          <p>Before we took over, this account was burning through its budget with almost nothing to show for it. We rebuilt the campaign around high-intent local searches, added proper negative keywords, and installed real conversion tracking.</p>
+          <p>Now the same monthly budget delivers a steady stream of enquiries at around <strong>$28 per lead</strong>, and the owner books furniture-assembly jobs right across the North Shore.</p>
+          <a href="/website-designer-auckland/" class="ga-proof-cta">Get a Free Ads Audit →</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -440,8 +488,8 @@ const faqs = [
   <CTABanner
     variant="yellow"
     title="Ready to get more leads this week?"
-    subtitle="Free strategy session, we'll map your market and estimate your cost-per-lead. Call 021 039 6580 or book online."
-    ctaPrimary={{ text: "Book a Free Consultation", href: "/website-designer-auckland/" }}
+    subtitle="Free Ads audit, we'll map your market and estimate your cost-per-lead. Call 021 039 6580 or book online."
+    ctaPrimary={{ text: "Get a Free Ads Audit", href: "/website-designer-auckland/" }}
     ctaSecondary={{ text: "Learn About SEO Too", href: "/affordable-seo-auckland/" }}
   />
 
@@ -553,6 +601,134 @@ const faqs = [
   }
   .ga-band-link:hover { border-color: var(--kwd-yellow); }
 
+  /* Real results proof */
+  .ga-results { background: var(--kwd-dark); }
+  .ga-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .ga-metric {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .ga-metric-num {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    line-height: 1;
+  }
+  .ga-metric-lbl {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.4;
+  }
+  .ga-metrics-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-top: 1rem;
+  }
+  .ga-proof-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    margin-top: 3.5rem;
+    align-items: start;
+  }
+  .ga-chat { display: flex; flex-direction: column; gap: 0.9rem; }
+  .ga-chat-head {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-yellow);
+    margin: 0 0 0.35rem;
+  }
+  .ga-bubble {
+    background: #f4f2e9;
+    border-radius: 4px 16px 16px 16px;
+    padding: 0.9rem 1.15rem;
+    max-width: 94%;
+    align-self: flex-start;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+  .ga-bubble p { margin: 0; font-size: 0.9rem; color: var(--kwd-dark); line-height: 1.55; }
+  .ga-bubble-list-title { font-weight: 700; margin-bottom: 0.5rem !important; }
+  .ga-bubble-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem 1rem;
+  }
+  .ga-bubble-list li {
+    font-size: 0.85rem;
+    color: var(--kwd-brown);
+    position: relative;
+    padding-left: 1.15rem;
+    line-height: 1.4;
+  }
+  .ga-bubble-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #4caf67;
+    font-weight: 700;
+  }
+  .ga-chat-foot {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.42);
+    margin: 0.4rem 0 0;
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .ga-proof-context { padding-top: 2.5rem; }
+  .ga-proof-context h3 {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    color: #fff;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+  .ga-proof-context p {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.75;
+    margin: 0 0 1rem;
+  }
+  .ga-proof-context strong { color: var(--kwd-yellow); }
+  .ga-proof-cta {
+    display: inline-block;
+    margin-top: 0.75rem;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.8rem 1.6rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .ga-proof-cta:hover { background: var(--kwd-gold); }
+  @media (max-width: 900px) {
+    .ga-metrics { grid-template-columns: repeat(2, 1fr); }
+    .ga-proof-grid { grid-template-columns: 1fr; gap: 2.25rem; }
+    .ga-proof-context { padding-top: 0; }
+  }
+  @media (max-width: 580px) {
+    .ga-bubble-list ul { grid-template-columns: 1fr; }
+  }
+
   /* Consultation split section */
   .ga-consult-section { background: var(--kwd-cream); }
   .ga-consult-split {
@@ -650,8 +826,8 @@ const faqs = [
   /* AI citability snippet */
   .ga-snippet {
     background: var(--kwd-cream);
-    border-left: 4px solid var(--kwd-gold);
-    padding: 1.1rem 0;
+    border-top: 3px solid var(--kwd-gold);
+    padding: 1.35rem 0;
   }
   .ga-snippet .container {
     font-size: 0.92rem;
