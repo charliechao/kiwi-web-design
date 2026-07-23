@@ -89,7 +89,7 @@ import Icon from '../../components/Icon.astro';
       }
 
       g('event', 'lp_lead_submit', {
-        form_name: 'web-design-auckland-lp',
+        form_name: lead.formName || 'web-design-auckland-lp',
         lead_id: leadId,
         lead_landing_page: lead.leadContext?.landing_page || '',
       });
