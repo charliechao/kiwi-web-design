@@ -1191,7 +1191,7 @@ const schema = [
     }
 
     if (calcForm && qfBtn && qfStatus) {
-      calcForm.addEventListener("submit", function (e) {
+      calcForm.addEventListener("submit", async function (e) {
         e.preventDefault();
 
         // Honeypot bot check
@@ -1216,6 +1216,10 @@ const schema = [
 
         updateEstimate();
 
+        const leadTracking = window.kwdLeadTracking;
+        const leadContext = leadTracking
+          ? await leadTracking.prepare(calcForm, "website_cost_calculator_zh")
+          : null;
         const payload = {};
         new FormData(calcForm).forEach(function (val, key) { payload[key] = val; });
 
@@ -1230,10 +1234,8 @@ const schema = [
               showQFStatus("谢谢！Charlie 会在2个工作小时内联系你。", false);
               calcForm.reset();
               updateEstimate();
-              const trackEvent = window.gtag;
-              if (typeof trackEvent === 'function') {
-                trackEvent('event', 'form_submit', { form_id: 'kwd-calc-contact-form', form_name: 'website_cost_calculator_zh' });
-                trackEvent('event', 'generate_lead', { form_id: 'kwd-calc-contact-form', form_name: 'website_cost_calculator_zh' });
+              if (leadContext && leadTracking) {
+                leadTracking.trackLead(leadContext, 'kwd-calc-contact-form', 'website_cost_calculator_zh');
               }
             } else {
               showQFStatus(data.message || "出现问题，请重试。", true);

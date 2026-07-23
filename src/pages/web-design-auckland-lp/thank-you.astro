@@ -52,7 +52,13 @@ import Icon from '../../components/Icon.astro';
     (function () {
       // Fire the conversion event only when arriving from a real form submit.
       // The flag is removed immediately so refreshes never double-count.
-      let lead: Record<string, string> | null = null;
+      let lead: {
+        email?: string;
+        phone?: string;
+        formId?: string;
+        formName?: string;
+        leadContext?: KwdLeadContext | null;
+      } | null = null;
       try {
         const raw = sessionStorage.getItem('kwd_lp_lead');
         if (raw) {
@@ -73,12 +79,24 @@ import Icon from '../../components/Icon.astro';
         });
       }
 
+      const leadId = lead.leadContext?.lead_id || '';
+      if (lead.leadContext && window.kwdLeadTracking) {
+        window.kwdLeadTracking.trackLead(
+          lead.leadContext,
+          lead.formId || 'lp-form',
+          lead.formName || 'web-design-auckland-lp',
+        );
+      }
+
       g('event', 'lp_lead_submit', {
         form_name: 'web-design-auckland-lp',
+        lead_id: leadId,
+        lead_landing_page: lead.leadContext?.landing_page || '',
       });
 
       g('event', 'conversion', {
         send_to: 'AW-17470213514/PauiCJ6o9M0cEIqbuYpB',
+        transaction_id: leadId,
       });
     })();
   </script>

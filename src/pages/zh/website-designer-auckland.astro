@@ -423,6 +423,10 @@ const reviews = [
         btn.textContent = '发送中…';
         status.style.display = 'none';
         try {
+          const leadTracking = window.kwdLeadTracking;
+          const leadContext = leadTracking
+            ? await leadTracking.prepare(form, 'contact_zh')
+            : null;
           const res  = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -433,6 +437,9 @@ const reviews = [
             setStatus('感谢你的留言！我们会尽快回复。', false);
             form.reset();
             if (submittedAt) submittedAt.value = String(Date.now());
+            if (leadContext && leadTracking) {
+              leadTracking.trackLead(leadContext, 'contact-form', 'contact_zh');
+            }
           } else {
             setStatus(data.message || '提交失败，请稍后重试。', true);
           }

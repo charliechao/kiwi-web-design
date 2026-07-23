@@ -412,6 +412,10 @@ const reviews = [
         btn.textContent = 'Sending…';
         status.style.display = 'none';
         try {
+          const leadTracking = window.kwdLeadTracking;
+          const leadContext = leadTracking
+            ? await leadTracking.prepare(form, 'contact')
+            : null;
           const res  = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -422,10 +426,8 @@ const reviews = [
             setStatus("Message sent! We'll be in touch within 1 business day.", false);
             form.reset();
             if (submittedAt) submittedAt.value = String(Date.now());
-            const trackEvent = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
-            if (typeof trackEvent === 'function') {
-              trackEvent('event', 'form_submit', { form_id: 'contact-form', form_name: 'contact' });
-              trackEvent('event', 'generate_lead', { form_id: 'contact-form', form_name: 'contact' });
+            if (leadContext && leadTracking) {
+              leadTracking.trackLead(leadContext, 'contact-form', 'contact');
             }
           } else {
             setStatus(data.message || 'Something went wrong. Please try again.', true);

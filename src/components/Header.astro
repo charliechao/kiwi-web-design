@@ -19,7 +19,13 @@ const zhMap: Record<string, string> = {
 const enMap = Object.fromEntries(Object.entries(zhMap).map(([en, zh]) => [zh, en]));
 const langSwitchHref = isZh ? (enMap[currentPath] ?? '/') : (zhMap[currentPath] ?? '/zh/');
 
-const enNavLinks = [
+interface NavLink {
+  label: string;
+  href: string;
+  children?: Array<{ label: string; href: string }>;
+}
+
+const enNavLinks: NavLink[] = [
   { label: 'Web Design', href: '/' },
   { label: 'SEO',        href: '/affordable-seo-auckland/' },
   { label: 'Google Ads', href: '/google-ads/' },
@@ -28,7 +34,7 @@ const enNavLinks = [
   { label: '中文',        href: langSwitchHref },
 ];
 
-const zhNavLinks = [
+const zhNavLinks: NavLink[] = [
   { label: '网页设计',   href: '/zh/small-business-website-design-auckland/', children: [
     { label: '费用计算器', href: '/zh/website-cost-new-zealand-small-business/' },
   ]},

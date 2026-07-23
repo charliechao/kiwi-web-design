@@ -533,6 +533,11 @@ const faqs = [
           btn.textContent = 'Sending…';
           status.style.display = 'none';
           try {
+            const formName = form.name || 'web-design-auckland-lp';
+            const leadTracking = window.kwdLeadTracking;
+            const leadContext = leadTracking
+              ? await leadTracking.prepare(form, formName)
+              : null;
             const formData = new FormData(form);
             formData.delete('botcheck');
             const res = await fetch('https://api.web3forms.com/submit', {
@@ -548,6 +553,9 @@ const faqs = [
                 sessionStorage.setItem('kwd_lp_lead', JSON.stringify({
                   email: String(formData.get('email') || ''),
                   phone: String(formData.get('phone') || ''),
+                  formId: form.id,
+                  formName,
+                  leadContext,
                 }));
               } catch { /* storage unavailable — thank-you page still loads, event just has no params */ }
               window.location.href = '/web-design-auckland-lp/thank-you/';
