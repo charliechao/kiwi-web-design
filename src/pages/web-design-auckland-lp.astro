@@ -533,7 +533,7 @@ const faqs = [
           btn.textContent = 'Sending…';
           status.style.display = 'none';
           try {
-            const formName = form.name || 'web-design-auckland-lp';
+            const formName = form.getAttribute('name') || 'web-design-auckland-lp';
             const leadTracking = window.kwdLeadTracking;
             const leadContext = leadTracking
               ? await leadTracking.prepare(form, formName)
