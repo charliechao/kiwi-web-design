@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
-import TestimonialGrid from '../components/TestimonialGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import { Image } from 'astro:assets';
@@ -11,18 +10,6 @@ import office1 from '../assets/general/office1.jpg';
 import office2 from '../assets/general/office2.jpg';
 import beautyTouchPreview from '../assets/general/beauty-salon-website-design-seo-auckland.jpg';
 import Icon from '../components/Icon.astro';
-import {
-  siAstro,
-  siClaude,
-  siCloudflare,
-  siCss,
-  siGoogle,
-  siGoogleanalytics,
-  siGooglesearchconsole,
-  siHtml5,
-  siJavascript,
-  siShopify,
-} from 'simple-icons';
 
 const schema = {
   "@context": "https://schema.org",
@@ -40,8 +27,8 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/",
       url: 'https://www.kiwiwebdesign.co.nz/',
-      name: 'Web Design Auckland | Website Design & SEO | Kiwi Web Design',
-      description: 'Web design Auckland small businesses trust: conversion-focused, AI-ready website design from a Grey Lynn studio, backed by local SEO, AI SEO, and Google Ads.',
+      name: 'Web Design & Digital Marketing Auckland | Kiwi Web Design',
+      description: 'Auckland web design and digital marketing agency for service businesses. Website, local SEO, and Google Ads built as one lead generation system. Grey Lynn based.',
       isPartOf: { '@id': 'https://www.kiwiwebdesign.co.nz/#website' },
       about: { '@id': 'https://www.kiwiwebdesign.co.nz/#organization' },
       inLanguage: 'en-NZ'
@@ -107,89 +94,66 @@ const services = [
   {
     icon: 'WD',
     title: 'Website Design',
-    desc: 'AI-ready, conversion-focused websites for Auckland small businesses, built as the foundation for SEO, AI SEO, and Google Ads.',
+    role: 'Convert',
+    desc: 'The foundation of the system: a fast, credible website engineered to turn visitors into calls, quote requests, and bookings.',
     href: '/small-business-website-design-auckland/',
   },
   {
     icon: 'SEO',
     title: 'SEO Auckland',
-    desc: 'Local SEO and AI SEO for Auckland businesses that need better Google visibility, stronger Maps coverage, and qualified organic traffic.',
+    role: 'Compound',
+    desc: 'Local SEO and AI SEO that grow your Google and Maps visibility month over month, so qualified traffic keeps arriving without paying per click.',
     href: '/affordable-seo-auckland/',
   },
   {
     icon: 'ADS',
     title: 'Google Ads',
-    desc: 'Google Ads campaigns and landing-page systems built to turn buying-intent clicks into calls, quote requests, and booked jobs.',
+    role: 'Accelerate',
+    desc: 'Buying-intent traffic from day one. Campaigns and landing pages tuned to a cost per lead that makes sense for your margins.',
     href: '/google-ads/',
   },
 ];
 
 const stats = [
-  { number: '50+', label: 'Projects completed' },
-  { number: '5\u2605', label: 'Average Google rating' },
-  { number: 'Direct', label: 'Work with Charlie' },
-  { number: '2-3 wks', label: 'Average delivery' },
+  { number: '50+', label: 'NZ businesses helped' },
+  { number: '5\u2605', label: 'Google rating' },
+  { number: '$28', label: 'Cost per lead on a live client Ads campaign' },
+  { number: '2-3 wks', label: 'Typical website launch' },
 ];
 
 const whyUs = [
-  {
-    icon: '01',
-    title: 'Direct with Charlie Chao',
-    desc: 'You work directly with Charlie from strategy through launch, so the message stays sharp and the project keeps moving.',
-  },
-  {
-    icon: '02',
-    title: 'Website first, growth system second',
-    desc: 'We build the website as the AI-ready conversion foundation, then layer local SEO, AI SEO, and Google Ads around it.',
-  },
-  {
-    icon: '03',
-    title: 'Clear pricing from $1,290',
-    desc: 'Small businesses need momentum, not vague retainers. We scope around real commercial goals and explain the numbers upfront.',
-  },
-  {
-    icon: '04',
-    title: 'Grey Lynn based, Auckland focused',
-    desc: 'We understand local search intent, suburb-level trust signals, and the way Auckland buyers decide who to contact.',
-  },
+  'Direct with Charlie Chao from strategy through launch, no account managers, no offshore handoff',
+  'Website, SEO, and Google Ads under one roof, all pointing at the same conversion goal',
+  'Clear pricing upfront: websites from $1,290, SEO from $500/month, no lock-in contracts',
+  'Grey Lynn based with real Auckland suburb intent and local search knowledge',
 ];
 
 const process = [
-  { step: '1', title: 'Consultation', desc: 'We map the offer, the customer, and the best path to conversion before touching design.' },
-  { step: '2', title: 'Website strategy', desc: 'You get a clear web design direction, practical scope, and pricing that line up with how the business actually wins leads.' },
-  { step: '3', title: 'Build', desc: 'We design and build quickly, keeping the website structure focused on trust, clarity, action, and AI-ready content signals.' },
-  { step: '4', title: 'Launch and grow', desc: 'The site goes live with the next-step plan for local SEO, AI SEO, Google Ads, or ongoing optimisation.' },
+  { step: '1', title: 'Free growth plan', desc: 'We audit your website, rankings, and ad opportunity, then map the fastest path to more enquiries. No cost, no pressure.' },
+  { step: '2', title: 'Foundation: the website', desc: 'We build or tune the site so visitors convert. Clear offer, trust signals, fast pages, and enquiry tracking wired in from day one.' },
+  { step: '3', title: 'Visibility: SEO + Google Ads', desc: 'Local SEO compounds your organic reach while Google Ads brings buying-intent traffic immediately. Each channel feeds the same pipeline.' },
+  { step: '4', title: 'Report and scale', desc: 'Monthly plain-English reporting tied to enquiries, not vanity metrics. We scale what works and cut what does not.' },
 ];
 
-const techStack = [
-  { name: 'Shopify', desc: 'Ecommerce stores for product catalogues, checkout, and online sales.', logo: siShopify, viewBox: '0 0 24 24' },
-  { name: 'Astro', desc: 'Fast static builds for high-performance marketing websites.', logo: siAstro, viewBox: '0 0 24 24' },
-  { name: 'HTML5', desc: 'Semantic structure that helps browsers, users, and search engines.', logo: siHtml5, viewBox: '0 0 24 24' },
-  { name: 'CSS3', desc: 'Responsive visual systems for polished layouts across devices.', logo: siCss, viewBox: '0 0 24 24' },
-  { name: 'JavaScript', desc: 'Interactive features that make websites feel useful and alive.', logo: siJavascript, viewBox: '0 0 24 24' },
-  {
-    name: 'OpenAI',
-    desc: 'AI workflows for content, automation, and smarter website foundations.',
-    logo: {
-      title: 'OpenAI',
-      hex: '111111',
-      path: 'M14.949 6.547a3.94 3.94 0 0 0-.348-3.273 4.11 4.11 0 0 0-4.4-1.934A4.1 4.1 0 0 0 8.423.2 4.15 4.15 0 0 0 6.305.086a4.1 4.1 0 0 0-1.891.948 4.04 4.04 0 0 0-1.158 1.753 4.1 4.1 0 0 0-1.563.679A4 4 0 0 0 .554 4.72a3.99 3.99 0 0 0 .502 4.731 3.94 3.94 0 0 0 .346 3.274 4.11 4.11 0 0 0 4.402 1.933c.382.425.852.764 1.377.995.526.231 1.095.35 1.67.346 1.78.002 3.358-1.132 3.901-2.804a4.1 4.1 0 0 0 1.563-.68 4 4 0 0 0 1.14-1.253 3.99 3.99 0 0 0-.506-4.716m-6.097 8.406a3.05 3.05 0 0 1-1.945-.694l.096-.054 3.23-1.838a.53.53 0 0 0 .265-.455v-4.49l1.366.778q.02.011.025.035v3.722c-.003 1.653-1.361 2.992-3.037 2.996m-6.53-2.75a2.95 2.95 0 0 1-.36-2.01l.095.057L5.29 12.09a.53.53 0 0 0 .527 0l3.949-2.246v1.555a.05.05 0 0 1-.022.041L6.473 13.3c-1.454.826-3.311.335-4.15-1.098m-.85-6.94A3.02 3.02 0 0 1 3.07 3.949v3.785a.51.51 0 0 0 .262.451l3.93 2.237-1.366.779a.05.05 0 0 1-.048 0L2.585 9.342a2.98 2.98 0 0 1-1.113-4.094zm11.216 2.571L8.747 5.576l1.362-.776a.05.05 0 0 1 .048 0l3.265 1.86a3 3 0 0 1 1.173 1.207 2.96 2.96 0 0 1-.27 3.2 3.05 3.05 0 0 1-1.36.997V8.279a.52.52 0 0 0-.276-.445m1.36-2.015-.097-.057-3.226-1.855a.53.53 0 0 0-.53 0L6.249 6.153V4.598a.04.04 0 0 1 .019-.04L9.533 2.7a3.07 3.07 0 0 1 3.257.139c.474.325.843.778 1.066 1.303.223.526.289 1.103.191 1.664zM5.503 8.575 4.139 7.8a.05.05 0 0 1-.026-.037V4.049c0-.57.166-1.127.476-1.607s.752-.864 1.275-1.105a3.08 3.08 0 0 1 3.234.41l-.096.054-3.23 1.838a.53.53 0 0 0-.265.455zm.742-1.577 1.758-1 1.762 1v2l-1.755 1-1.762-1z',
-    },
-    viewBox: '0 0 16 16',
-  },
-  { name: 'Claude', desc: 'AI-assisted strategy, writing, planning, and implementation support.', logo: siClaude, viewBox: '0 0 24 24' },
-  { name: 'Google', desc: 'Search visibility, business discovery, and performance marketing.', logo: siGoogle, viewBox: '0 0 24 24' },
-  { name: 'Cloudflare', desc: 'Fast hosting, CDN, security, and modern deployment workflows.', logo: siCloudflare, viewBox: '0 0 24 24' },
-  { name: 'Google Analytics', desc: 'Traffic and lead tracking so decisions are based on real data.', logo: siGoogleanalytics, viewBox: '0 0 24 24' },
-  { name: 'Search Console', desc: 'SEO diagnostics for indexing, queries, and search performance.', logo: siGooglesearchconsole, viewBox: '0 0 24 24' },
-];
-
+// Verbatim 5-star Google reviews (kiwiwebdesign.co.nz Business Profile). Shared with /web-design-auckland-lp/.
 const reviews = [
-  { name: 'Zane Barrett', company: 'Barrett Access Scaffolding', text: 'Professional, responsive, and they really took the time to understand our business.' },
-  { name: 'Jack', company: 'Show Me Shorts', text: 'They understood what I needed from the beginning and offered smart, practical solutions.' },
-  { name: 'Steven Liu', company: 'Client', text: 'Clean, modern, and user-friendly. The attention to detail really stood out.' },
-  { name: 'Gina Dellabarca', company: 'Client', text: 'Clear information, great communication, and a genuinely helpful audit.' },
+  { name: "Eduardo Arnez", company: "Aesthetic Painting & Deco", text: "Charlie from Kiwi Web Design did an outstanding job designing our website. He was incredibly helpful throughout the entire process, offering great ideas and maintaining excellent communication. We're extremely happy with both the look and functionality of the final result. Highly recommend!" },
+  { name: "Francesco Moretti", text: "Kiwi Web Design doesn't just build website, they actually focus on getting you found online. Their approach to SEO and AI search made a big difference for us. We're now showing up in more places and getting more enquires." },
+  { name: "Charles Haddix", avatar: "/images/reviews/charles-haddix.png", text: "We recently got our website rebuilt by Kiwi Web Design in Auckland, and honestly, it was such a good experience. Charlie made everything really easy to understand and kept us in the loop the whole way through. The new site looks great on both phone and desktop, and we've already noticed more people finding us on Google and getting in touch. Couldn't recommend Kiwi Web Design enough if you're after an affordable, professional web designer in Auckland." },
+  { name: "Deborah Shaw", company: "Deborah Shaw Editing", avatar: "/images/reviews/deborah-shaw.png", text: "Charlie is fantastic to work with! I got stuck fiddling around with WordPress blocks, but Charlie came to the rescue. He understood what I was wanting with my website and made my ideas come together. Thank you!" },
+  { name: "Zane Barrett", company: "Barrett Access Scaffolding", text: "We recently worked with Kiwiweb to design and launch our new website, and we couldn't be happier with the results. The team was professional, responsive, and really took the time to understand our business. They helped us create a modern, easy-to-navigate site and incorporated some amazing features, including a scaffold cost calculator – the first of its kind in NZ! This has already set us apart in our industry and made quoting so much easier for our clients. Communication was clear and efficient throughout, and any tweaks we needed were handled quickly. I highly recommend Kiwiweb to anyone looking for a web design team that delivers both creativity and functionality." },
+  { name: "Steven Liu", company: "Kiwiland Constructions", avatar: "/images/reviews/steven-liu.png", text: "Outstanding Experience with Kiwi Web Design and Charlie! I couldn't be happier with the website that Kiwi Web Design created for me. From start to finish, Charlie was professional, responsive, and incredibly easy to work with. He took the time to understand exactly what I wanted, offered helpful suggestions, and delivered a final product that exceeded my expectations. The design is clean, modern, and user-friendly — exactly what I was hoping for. Charlie made the whole process smooth and stress-free, and he was always quick to answer any questions I had. His attention to detail and commitment to quality really stood out. If you're looking for a reliable, talented web designer who truly cares about your vision, I highly recommend Kiwi Web Design and Charlie. Five stars all the way!" },
+  { name: "Jack at Show Me Shorts", avatar: "/images/reviews/jack-show-me-shorts.png", text: "Kiwi Web Design were fantastic to work with. From the very beginning they really took the time to understand what I needed and offered smart, practical solutions. The team were professional, friendly and quick to respond whenever I had questions. If you're looking for a reliable, creative, and genuinely helpful web design team in New Zealand, I'd definitely recommend Kiwi Web Design." },
+  { name: "Tony S", company: "Streetfood Network", avatar: "/images/reviews/tony-s.png", text: "Charlie from Kiwi Web Design has been great to work with. He communicates clearly, responds promptly, and makes the process easy to understand. The pricing has been reasonable, and I've appreciated his practical approach to building and improving our Streetfood Network website. I would recommend Kiwi Web Design to any small business looking for reliable website support. Business has since taken off and the Website is amazing!" },
+  { name: "Iby V.", company: "Yoga Teacher", text: "Charlie from Kiwi Web Design helped me design a flyer for my studio, and I'm really happy with the result. He was easy to communicate with, understood what I needed, and created something professional, clean, and aligned with the feeling of my business. The process was smooth and thoughtful, and I appreciated the care he put into making the flyer look polished and effective. I'd happily recommend Charlie and Kiwi Web Design to any small business owner who needs help with design, websites, or digital marketing." },
+  { name: "Elisabeth Krull", text: "Kiwi Web Design is helping me with an international website. I can highly recommend working with Charlie — both professionally and personally!" },
+  { name: "Gina Dellabarca", company: "Showme Short Film Festival", avatar: "/images/reviews/gina-dellabarca.png", text: "They provided a comprehensive and helpful website audit for us. Clear information. Great communication." },
+  { name: "Dave G", text: "Charlie was very responsive to my concerns and demonstrated a strong understanding of the issues I raised. Excellent service and support — thank you." },
 ];
+
+// Full-colour Google "G" logo (official 4-colour mark).
+const googleG = '<path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>';
+const avatarColors = ['#d93b8f', '#5b8def', '#8b5cf6', '#0ea5a4', '#e0672c', '#3f7d4f', '#c0392b', '#2f6f9f'];
 
 const portfolio = [
   { src: '/portfolio/prime-industrial.webp', alt: 'Prime Industrial website', caption: 'Prime Industrial', href: 'https://primeindustrial.co.nz/' },
@@ -207,10 +171,11 @@ const portfolio = [
 const portfolioLoop = [...portfolio, ...portfolio];
 
 const faqs = [
+  { q: 'Do you just build websites, or run the marketing too?', a: 'Both. The website is the foundation, then we run <a href="/affordable-seo-auckland/">SEO</a> and <a href="/google-ads/">Google Ads</a> on top of it as one system. You can start with just a website, and add the growth channels when you want steady lead flow.' },
   { q: 'How much does a small business website cost in Auckland?', a: 'Our packages start from $1,290 for a lead-focused website. More complex builds are priced accordingly, and you know the cost upfront. Use our <a href="/affordable-web-design-auckland/website-cost-new-zealand-small-business/">free website cost calculator</a> to get an instant NZ estimate.' },
-  { q: 'Do I need just a website, or website + SEO + Google Ads?', a: 'If you need a credible online presence fast, start with the website. Every build starts with an AI-ready foundation, then <a href="/affordable-seo-auckland/">SEO</a>, <a href="/ai-seo-for-auckland-small-businesses/">AI SEO</a>, and sometimes <a href="/google-ads/">Google Ads</a> can build on top when you need steady lead flow.' },
-  { q: 'Can a web design company in Auckland help with leads, not just design?', a: 'Yes. Good web design should improve enquiries by making the offer clearer, building trust faster, and giving SEO and Google Ads traffic a stronger page to land on.' },
-  { q: 'What is the difference between web design and SEO for Auckland small businesses?', a: 'Web design improves how well your website converts visitors. SEO improves how often qualified people find you in Google and Maps. The strongest local setup is usually both together.' },
+  { q: 'What does a full lead generation system cost per month?', a: 'A typical setup: website from $1,290 one-off, <a href="/affordable-seo-auckland/">SEO from $500/month</a>, and Google Ads management scoped to your budget and goals. No lock-in contracts on any of it. Every engagement starts with a free growth plan so you only pay for what your business actually needs.' },
+  { q: 'How fast will I see leads?', a: 'Google Ads can generate enquiries within days of launch. SEO typically shows meaningful movement in 3-6 months and compounds from there. A conversion-focused website improves enquiry rates immediately. That is why the system uses all three: fast results while the long-term channels build.' },
+  { q: 'Can a web design company in Auckland help with leads, not just design?', a: 'Yes. Good web design should improve enquiries by making the offer clearer, building trust faster, and giving SEO and Google Ads traffic a stronger page to land on. That is exactly how we build.' },
 ];
 
 const exploreGroups = [
@@ -245,8 +210,8 @@ const exploreGroups = [
 ---
 
 <Layout
-  title="Web Design Auckland | Website Design & SEO | Kiwi Web Design"
-  description="Web design Auckland small businesses trust: conversion-focused, AI-ready website design from a Grey Lynn studio, backed by local SEO, AI SEO, and Google Ads."
+  title="Web Design & Digital Marketing Auckland | Kiwi Web Design"
+  description="Auckland web design and digital marketing agency for service businesses. Website, local SEO, and Google Ads built as one lead generation system. Grey Lynn based."
   canonicalURL="https://www.kiwiwebdesign.co.nz/"
   schema={schema}
   alternateUrl="https://www.kiwiwebdesign.co.nz/zh/"
@@ -257,13 +222,14 @@ const exploreGroups = [
     <div class="container hp-hero-shell">
       <div class="hp-hero-copy">
         <div class="hp-kicker-row">
-          <p class="hp-eyebrow hp-hero-seq" style="--hero-delay: 0.04s;">Web Design Auckland</p>
+          <p class="hp-eyebrow hp-hero-seq" style="--hero-delay: 0.04s;">Web Design &amp; Digital Marketing Auckland</p>
           <span class="hp-location-pill hp-hero-seq" style="--hero-delay: 0.12s;">Grey Lynn, Auckland</span>
         </div>
-        <h1 class="hp-headline hp-hero-seq" style="--hero-delay: 0.18s;">Web design Auckland businesses can use to generate more leads.</h1>
-        <p class="hp-lead hp-hero-seq" style="--hero-delay: 0.3s;">Kiwi Web Design is a Grey Lynn web design studio building conversion-focused websites for Auckland small businesses. Every build is AI-ready and structured for growth, so local SEO, AI SEO, and Google Ads can turn clicks into calls, quote requests, and steady enquiries.</p>
+        <h1 class="hp-headline hp-hero-seq" style="--hero-delay: 0.18s;">Web design and digital marketing that turn Auckland businesses into lead machines.</h1>
+        <p class="hp-lead hp-hero-seq" style="--hero-delay: 0.3s;">Kiwi Web Design is an Auckland digital marketing agency for service businesses. We build the website, rank it with local SEO and AI SEO, and drive buying-intent traffic with Google Ads. One system, one goal: steady, qualified enquiries.</p>
         <div class="hp-ctas hp-hero-seq" style="--hero-delay: 0.42s;">
-          <a href="/website-designer-auckland/" class="hp-btn-primary">Book a Free Consultation</a>
+          <a href="/website-designer-auckland/" class="hp-btn-primary">Get a Free Growth Plan</a>
+          <a href="#results" class="hp-btn-secondary">See Client Results</a>
         </div>
         <div class="hp-proof-row hp-hero-seq" style="--hero-delay: 0.52s;">
           <a href="https://share.google/nciRqe4rK6ywabSVx" target="_blank" rel="noopener" class="hp-review-pill">
@@ -273,7 +239,7 @@ const exploreGroups = [
               <p class="htc-sub">Read verified reviews from Auckland clients</p>
             </div>
           </a>
-          <p class="hp-mini-note">Work directly with Charlie Chao. Free consultation online or in person. Typical launch timeline: 2-3 weeks.</p>
+          <p class="hp-mini-note">Work directly with Charlie Chao. Free growth plan, no obligation. Websites live in 2-3 weeks.</p>
         </div>
       </div>
 
@@ -306,75 +272,41 @@ const exploreGroups = [
     </div>
   </section>
 
-  <section class="section hp-intro-section">
-    <div class="container hp-intro-grid" data-reveal>
-      <div class="hp-intro-copy">
-        <div class="hp-motion-heading" style="--motion-delay: 0ms;">
-          <SectionHeader
-            eyebrow="Why Auckland businesses switch"
-            title="Web design Auckland businesses can rely on."
-            subtitle="Your website should explain the offer fast, build trust quickly, and make calling or enquiring feel like the obvious next step."
-            align="left"
-          />
+  <!-- The lead generation system — the repositioning made visible -->
+  <section class="section hp-system-section" id="system">
+    <div class="container" data-reveal>
+      <div class="hp-motion-heading" style="--motion-delay: 0ms;">
+        <SectionHeader
+          eyebrow="The Lead Generation System"
+          title="One system. Three engines. Steady enquiries."
+          subtitle="A website alone is not a marketing strategy. We build all three parts to point at the same goal: qualified leads for your business."
+        />
+      </div>
+      <div class="hp-system-flow">
+        <div class="hp-sys-stage hp-motion-item" style="--motion-delay: 140ms;">
+          <span class="hp-sys-num">01</span>
+          <span class="hp-sys-role">Convert</span>
+          <h3>Website</h3>
+          <p>A fast, credible site that explains your offer in seconds and turns visitors into calls and quote requests.</p>
         </div>
-        <p class="hp-intro-text hp-motion-item" style="--motion-delay: 160ms;">That is the gap most small-business websites miss. They may look acceptable, but they do not explain the value fast enough, they bury trust signals, and they give buyers too much to think about. We build the website as an AI-ready conversion foundation, then support it with <a href="/affordable-seo-auckland/">SEO</a>, <a href="/ai-seo-for-auckland-small-businesses/">AI SEO</a>, and <a href="/google-ads/">Google Ads</a> when growth needs more fuel.</p>
-        <ul class="hp-checklist">
-          <li class="hp-motion-item" style="--motion-delay: 260ms;">Sharper above-the-fold messaging so buyers understand your service and suburb coverage immediately.</li>
-          <li class="hp-motion-item" style="--motion-delay: 340ms;">Proof-led layouts with reviews, case studies, schema foundations, and local trust signals that support Google Maps and AI search visibility.</li>
-          <li class="hp-motion-item" style="--motion-delay: 420ms;">Conversion paths tuned for quote requests, calls, bookings, and paid or organic traffic from Auckland search.</li>
-        </ul>
-      </div>
-
-      <div class="hp-adv-grid">
-        {whyUs.map(({ icon, title, desc }, index) => (
-          <article class="hp-adv-card hp-motion-item" style={`--motion-delay: ${220 + index * 100}ms;`}>
-            <div class="hp-adv-icon">
-              {icon}
-            </div>
-            <h3>{title}</h3>
-            <p>{desc}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section hp-video-section">
-    <div class="container hp-video-shell" data-reveal>
-      <div class="hp-video-copy">
-        <div class="hp-motion-heading" style="--motion-delay: 0ms;">
-          <SectionHeader
-            eyebrow="Watch the process"
-            title="How Kiwi Web Design helps Auckland small businesses build better websites."
-            subtitle="See how our AI-first process keeps website design clear, efficient, and focused on generating real enquiries."
-            align="left"
-          />
+        <span class="hp-sys-arrow" aria-hidden="true">→</span>
+        <div class="hp-sys-stage hp-motion-item" style="--motion-delay: 240ms;">
+          <span class="hp-sys-num">02</span>
+          <span class="hp-sys-role">Compound</span>
+          <h3>SEO</h3>
+          <p>Local and AI search visibility that grows month over month, bringing free, qualified traffic that keeps arriving.</p>
         </div>
-        <a href="https://www.youtube.com/watch?v=n9BFps8DyRY" target="_blank" rel="noopener noreferrer" class="hp-video-fallback hp-motion-item" style="--motion-delay: 180ms;">Watch on YouTube</a>
+        <span class="hp-sys-arrow" aria-hidden="true">→</span>
+        <div class="hp-sys-stage hp-motion-item" style="--motion-delay: 340ms;">
+          <span class="hp-sys-num">03</span>
+          <span class="hp-sys-role">Accelerate</span>
+          <h3>Google Ads</h3>
+          <p>Buying-intent traffic from day one, tuned to a cost per lead that makes sense while the SEO compounds.</p>
+        </div>
       </div>
-
-      <div class="hp-video-card hp-motion-item" style="--motion-delay: 160ms;">
-        <button
-          type="button"
-          class="hp-video-trigger"
-          data-video-trigger
-          data-embed-url="https://www.youtube-nocookie.com/embed/n9BFps8DyRY?autoplay=1&rel=0&modestbranding=1"
-          aria-label="Play Auckland Web Design for Small Businesses video"
-        >
-          <img
-            src="https://i.ytimg.com/vi/n9BFps8DyRY/maxresdefault.jpg"
-            alt="Auckland Web Design for Small Businesses video thumbnail"
-            width="1280"
-            height="720"
-            loading="lazy"
-          />
-          <span class="hp-video-overlay" aria-hidden="true"></span>
-          <span class="hp-video-play" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false">
-              <path d="M8 5v14l11-7Z" />
-            </svg>
-          </span>
-        </button>
+      <div class="hp-sys-outcome hp-motion-item" style="--motion-delay: 440ms;">
+        <p>The output is not a website. It is a pipeline of <strong>steady, qualified enquiries</strong> you can plan a business around.</p>
+        <a href="/website-designer-auckland/" class="hp-sys-outcome-cta">Get a Free Growth Plan →</a>
       </div>
     </div>
   </section>
@@ -383,15 +315,16 @@ const exploreGroups = [
     <div class="container" data-reveal>
       <div class="hp-motion-heading" style="--motion-delay: 0ms;">
         <SectionHeader
-          eyebrow="The system"
-          title="Your website is the foundation. SEO and Google Ads scale it."
-          subtitle="The strongest results come when your web design, local search visibility, AI-ready website structure, and paid traffic all point at the same conversion goal."
+          eyebrow="Services"
+          title="Three services. One conversion goal."
+          subtitle="Start with the part your business needs most. Every service is built to work with the others, not sold as a separate silo."
         />
       </div>
       <div class="service-grid">
-        {services.map(({ icon, title, desc, href }, index) => (
+        {services.map(({ icon, title, role, desc, href }, index) => (
           <a href={href} class="service-card hp-motion-item" style={`--motion-delay: ${140 + index * 110}ms;`}>
             <div class="service-icon"><Icon name={icon} size={24} /></div>
+            <span class="service-role">{role}</span>
             <h3>{title}</h3>
             <p>{desc}</p>
             <span>Learn more -&gt;</span>
@@ -415,31 +348,37 @@ const exploreGroups = [
         <div class="hp-motion-heading" style="--motion-delay: 0ms;">
           <SectionHeader
             eyebrow="Local and hands-on"
-            title="Grey Lynn based. Built for Auckland small businesses."
-            subtitle="We keep the process direct, the pricing clear, and the work tied to what your business needs to rank, convert, and grow."
+            title="An Auckland agency without the agency overhead."
+            subtitle="Direct communication, clear pricing, and marketing decisions tied to what your business needs to rank, convert, and grow."
             align="left"
           />
         </div>
-        <p class="hp-intro-text hp-motion-item" style="--motion-delay: 150ms;">You are not passed through layers of account managers. Charlie Chao works closely with you to shape the message, tighten the offer, and build a website that gives Auckland buyers enough confidence to call, enquire, or request a quote.</p>
-        <div class="hp-studio-note hp-motion-item" style="--motion-delay: 260ms;">
-          <strong>Best fit:</strong> service businesses, professional firms, tradies, restaurants, clinics, and local brands that need more than a generic template and want a practical path into SEO or Google Ads.
+        <p class="hp-intro-text hp-motion-item" style="--motion-delay: 150ms;">You are not passed through layers of account managers. Charlie Chao works with you directly on strategy, the website, the SEO, and the ad campaigns, so decisions are fast and nothing gets lost in translation.</p>
+        <ul class="hp-checklist">
+          {whyUs.map((point, index) => (
+            <li class="hp-motion-item" style={`--motion-delay: ${230 + index * 80}ms;`}>{point}</li>
+          ))}
+        </ul>
+        <div class="hp-studio-note hp-motion-item" style="--motion-delay: 560ms;">
+          <strong>Best fit:</strong> service businesses, professional firms, tradies, restaurants, clinics, and local brands that want steady enquiries, not just a nicer website.
+          <a href="https://www.youtube.com/watch?v=n9BFps8DyRY" target="_blank" rel="noopener noreferrer" class="hp-studio-video-link">Watch how we work on YouTube →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section hp-work-section">
+  <section class="section hp-work-section" id="results">
     <div class="container hp-work-shell">
       <div class="hp-work-intro" data-reveal>
         <div class="hp-motion-heading" style="--motion-delay: 0ms;">
           <SectionHeader
-            eyebrow="Selected Work"
-            title="Website design for real Auckland businesses."
-            subtitle="From tradies to restaurants to law firms, every project is designed around clarity, credibility, and lead generation."
+            eyebrow="Client Results"
+            title="Real projects. Real enquiries."
+            subtitle="From tradies to restaurants to professional firms, every project is designed around clarity, credibility, and lead generation."
             align="left"
           />
         </div>
-        <a href="/website-designer-auckland/" class="hp-btn-primary hp-motion-item" style="--motion-delay: 140ms;">Start Your Project</a>
+        <a href="/website-designer-auckland/" class="hp-btn-primary hp-motion-item" style="--motion-delay: 140ms;">Get a Free Growth Plan</a>
       </div>
 
       <div class="portfolio-carousel" data-portfolio-carousel data-reveal>
@@ -483,35 +422,71 @@ const exploreGroups = [
           </div>
         </div>
       </div>
+
+      <div class="hp-result-callout" data-reveal>
+        <div class="hp-result-badge hp-motion-item" style="--motion-delay: 100ms;">
+          <span class="hp-result-badge-label">Case in point</span>
+          <span class="hp-result-badge-name">Northshore Assembly · Google Ads</span>
+        </div>
+        <div class="hp-result-stats">
+          <div class="hp-result-stat hp-motion-item" style="--motion-delay: 180ms;">
+            <span class="hp-result-num">0 → 12</span>
+            <span class="hp-result-lbl">tracked enquiries per month after we rebuilt the campaign</span>
+          </div>
+          <div class="hp-result-stat hp-motion-item" style="--motion-delay: 260ms;">
+            <span class="hp-result-num">$28</span>
+            <span class="hp-result-lbl">cost per lead, on the same monthly ad budget as before</span>
+          </div>
+          <div class="hp-result-stat hp-motion-item" style="--motion-delay: 340ms;">
+            <span class="hp-result-num">~3/wk</span>
+            <span class="hp-result-lbl">new enquiries a week for a one-person service business</span>
+          </div>
+        </div>
+        <a href="/google-ads/" class="hp-result-link hp-motion-item" style="--motion-delay: 420ms;">See how our Google Ads management works →</a>
+      </div>
     </div>
   </section>
 
-  <section class="section hp-proof-section">
-    <div class="container hp-proof-layout" data-reveal>
-      <div class="hp-proof-copy">
-        <div class="hp-motion-heading" style="--motion-delay: 0ms;">
-          <SectionHeader
-            eyebrow="Client Reviews"
-            title="Trusted by Auckland businesses that need leads, not fluff."
-        
-            align="left"
-          />
-        </div>
-        <div class="reviews-trust hp-motion-item" style="--motion-delay: 180ms;">
-          <div class="reviews-stars" aria-label="5 stars">
-            <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
-            <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
-            <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
-            <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
-            <svg viewBox="0 0 20 20" fill="#f5a523" aria-hidden="true"><path d="m10 1 2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
-            <span class="reviews-google-label">Google</span>
-          </div>
-          <p>5/5 Google rating from Auckland clients</p>
-        </div>
+  <!-- Google reviews carousel — ported from /web-design-auckland-lp/ (lp-* classes kept for a faithful port) -->
+  <section class="section hp-reviews-section" id="reviews">
+    <div class="container" data-reveal>
+      <div class="lp-reviews-head hp-motion-heading" style="--motion-delay: 0ms;">
+        <span class="lp-reviews-badge">
+          <svg class="lp-g" viewBox="0 0 48 48" aria-hidden="true" set:html={googleG} />
+          <span class="lp-review-stars" aria-hidden="true">★★★★★</span>
+          <strong>5.0</strong>
+          <span class="lp-reviews-count">on Google Reviews</span>
+        </span>
+        <h2 class="lp-reviews-title">What Auckland business owners say.</h2>
       </div>
-
-      <div class="hp-proof-cards hp-motion-testimonials" style="--motion-delay: 180ms;">
-        <TestimonialGrid items={reviews} cols={2} />
+      <div class="lp-carousel hp-motion-item" style="--motion-delay: 160ms;">
+        <button type="button" class="lp-carousel-btn lp-carousel-prev" id="lp-rev-prev" aria-label="Previous reviews">‹</button>
+        <div class="lp-carousel-track" id="lp-reviews-track">
+          {reviews.map(({ name, company, avatar, text }, i) => (
+            <figure class="lp-review-card">
+              <div class="lp-review-top">
+                <svg class="lp-g" viewBox="0 0 48 48" aria-hidden="true" set:html={googleG} />
+                <span class="lp-review-stars" aria-label="Rated 5 out of 5">★★★★★</span>
+              </div>
+              <div class="lp-review-textwrap">
+                <p class="lp-review-text">{text}</p>
+                <button type="button" class="lp-review-more" hidden>Read more</button>
+              </div>
+              <figcaption class="lp-review-foot">
+                {avatar ? (
+                  <img class="lp-review-avatar" src={avatar} alt={`${name} avatar`} loading="lazy" width="40" height="40" />
+                ) : (
+                  <span class="lp-review-avatar" style={`background:${avatarColors[i % avatarColors.length]}`}>{name.charAt(0)}</span>
+                )}
+                <span class="lp-review-who">
+                  <span class="lp-review-name">{name}</span>
+                  {company && <span class="lp-review-co">{company}</span>}
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <button type="button" class="lp-carousel-btn lp-carousel-next" id="lp-rev-next" aria-label="Next reviews">›</button>
       </div>
     </div>
   </section>
@@ -521,8 +496,8 @@ const exploreGroups = [
       <div class="hp-motion-heading" style="--motion-delay: 0ms;">
         <SectionHeader
           eyebrow="How It Works"
-          title="A practical web design process with growth built in."
-          subtitle="Clear scope, quick execution, and an AI-ready website that can grow into SEO, AI SEO, or Google Ads when you are ready."
+          title="From free growth plan to steady enquiries."
+          subtitle="A clear engagement with no lock-in at any stage. You always know what we are doing, why, and what it is producing."
         />
       </div>
       <div class="hp-motion-process" style="--motion-delay: 140ms;">
@@ -531,46 +506,73 @@ const exploreGroups = [
     </div>
   </section>
 
-  <section class="section hp-tech-section">
-    <div class="container hp-tech-layout" data-reveal>
-      <div class="hp-tech-heading hp-motion-heading" style="--motion-delay: 0ms;">
-        <p class="hp-tech-eyebrow">Tools of the trade</p>
-        <h2>Technology Capabilities</h2>
-      </div>
-      <div class="tech-grid">
-        {techStack.map(({ name, desc, logo, viewBox }, index) => (
-          <article class="tech-card hp-motion-item" data-tech-card style={`--motion-delay: ${120 + index * 45}ms;`} tabindex="0" aria-label={`${name}: ${desc}`}>
-            <svg viewBox={viewBox} class="tech-logo" aria-hidden="true" style={`--tech-color: #${logo.hex};`}>
-              <path d={logo.path}></path>
-            </svg>
-            <span class="sr-only">{name}</span>
-            <span class="tech-tooltip" aria-hidden="true">
-              <strong>{name}</strong>
-              <span>{desc}</span>
-            </span>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <script>
-    document.querySelectorAll('[data-tech-card]').forEach((card) => {
-      const activate = () => card.classList.add('is-active');
-      const deactivate = () => card.classList.remove('is-active');
+    // Reviews carousel: one card per step, loops, auto-advances. Ported from /web-design-auckland-lp/.
+    (() => {
+      function initReviewClamp() {
+        document.querySelectorAll<HTMLElement>('.lp-review-card').forEach((card) => {
+          if (card.dataset.clampInit) return;
+          const textEl = card.querySelector<HTMLElement>('.lp-review-text');
+          const moreBtn = card.querySelector<HTMLButtonElement>('.lp-review-more');
+          if (!textEl || !moreBtn) return;
+          card.dataset.clampInit = '1';
+          if (textEl.scrollHeight - textEl.clientHeight > 4) {
+            moreBtn.hidden = false;
+            moreBtn.addEventListener('click', () => {
+              const expanded = card.classList.toggle('is-expanded');
+              moreBtn.textContent = expanded ? 'Read less' : 'Read more';
+            });
+          }
+        });
+      }
+      const fontsApi = (document as Document & { fonts?: FontFaceSet }).fonts;
+      if (fontsApi?.ready) { fontsApi.ready.then(initReviewClamp); } else { initReviewClamp(); }
 
-      card.addEventListener('pointerenter', activate);
-      card.addEventListener('pointerleave', deactivate);
-      card.addEventListener('focusin', activate);
-      card.addEventListener('focusout', deactivate);
-    });
+      const track = document.getElementById('lp-reviews-track');
+      const prevBtn = document.getElementById('lp-rev-prev') as HTMLButtonElement | null;
+      const nextBtn = document.getElementById('lp-rev-next') as HTMLButtonElement | null;
+      if (!track || !prevBtn || !nextBtn) return;
+
+      const stepBy = () => {
+        const card = track.querySelector<HTMLElement>('.lp-review-card');
+        return card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.9;
+      };
+      const maxScroll = () => track.scrollWidth - track.clientWidth;
+      const advance = (dir: 1 | -1) => {
+        if (dir === 1 && track.scrollLeft >= maxScroll() - 2) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else if (dir === -1 && track.scrollLeft <= 2) {
+          track.scrollTo({ left: maxScroll(), behavior: 'smooth' });
+        } else {
+          track.scrollBy({ left: dir * stepBy(), behavior: 'smooth' });
+        }
+      };
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let autoplayTimer: ReturnType<typeof setInterval> | null = null;
+      const stopAutoplay = () => { if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; } };
+      const startAutoplay = () => {
+        if (prefersReducedMotion || autoplayTimer) return;
+        autoplayTimer = setInterval(() => advance(1), 4500);
+      };
+      const restartAutoplay = () => { stopAutoplay(); startAutoplay(); };
+
+      prevBtn.addEventListener('click', () => { advance(-1); restartAutoplay(); });
+      nextBtn.addEventListener('click', () => { advance(1); restartAutoplay(); });
+      track.addEventListener('mouseenter', stopAutoplay);
+      track.addEventListener('mouseleave', startAutoplay);
+      track.addEventListener('touchstart', stopAutoplay, { passive: true });
+      track.addEventListener('touchend', () => { stopAutoplay(); setTimeout(startAutoplay, 3000); }, { passive: true });
+
+      startAutoplay();
+    })();
   </script>
 
   <section class="section hp-faq-section">
     <div class="container faq-layout" data-reveal>
       <div class="hp-motion-item hp-motion-soft" style="--motion-delay: 0ms;">
         <p class="faq-eyebrow">FAQs</p>
-        <h2 class="faq-sidebar-title">Questions Auckland business owners ask before hiring a web designer.</h2>
+        <h2 class="faq-sidebar-title">Questions Auckland business owners ask before hiring us.</h2>
         <p class="faq-sidebar-sub">If you do not see your question here, reach out and we will answer directly.</p>
         <a href="/website-designer-auckland/" class="hp-btn-dark" style="margin-top: 1.5rem; display: inline-flex;">Ask a Question</a>
       </div>
@@ -607,38 +609,24 @@ const exploreGroups = [
   <div class="hp-home-cta hp-motion-cta" data-reveal>
     <CTABanner
       variant="yellow"
-      title="Need web design Auckland businesses can grow from?"
-      subtitle="Book a free consultation to plan the right mix of website design, SEO, AI SEO, and Google Ads for your business."
-      ctaPrimary={{ text: 'Book a Free Consultation', href: '/website-designer-auckland/' }}
+      title="Want steady enquiries, not just a new website?"
+      subtitle="Get a free growth plan: we'll map the right mix of website, SEO, and Google Ads for your business. Call 021 039 6580 or request online."
+      ctaPrimary={{ text: 'Get a Free Growth Plan', href: '/website-designer-auckland/' }}
       ctaSecondary={{ text: 'See Our Packages', href: '/small-business-website-design-auckland/' }}
     />
   </div>
 
+  <a
+    href="https://maps.app.goo.gl/7tmoFbMhrDQebSx68"
+    class="hp-google-badge"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="View Kiwi Web Design's Google Business Profile reviews"
+  >
+    <img src="/images/google-5-star-rating-badge.webp" alt="Google rating 5.0 stars" width="185" height="90" loading="lazy" />
+  </a>
+
   <script is:inline>
-    (() => {
-      const trigger = document.querySelector('[data-video-trigger]');
-      if (!trigger) return;
-
-      trigger.addEventListener('click', () => {
-        const embedUrl = trigger.getAttribute('data-embed-url');
-        if (!embedUrl) return;
-
-        const iframe = document.createElement('iframe');
-        iframe.src = embedUrl;
-        iframe.title = 'Auckland Web Design for Small Businesses | Why Choose Kiwi Web Design';
-        iframe.loading = 'lazy';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.allowFullscreen = true;
-        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-        iframe.className = 'hp-video-iframe';
-        iframe.style.display = 'block';
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.border = '0';
-        trigger.replaceWith(iframe);
-      }, { once: true });
-    })();
-
     (() => {
       const root = document.documentElement;
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -2180,5 +2168,393 @@ const exploreGroups = [
     .hp-stage-window-shell {
       display: none;
     }
+  }
+
+  /* ══════════════════════════════════════════
+     Hero secondary CTA
+  ══════════════════════════════════════════ */
+  .hp-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.88);
+    padding: 0.875rem 1.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .hp-btn-secondary:hover {
+    border-color: var(--kwd-yellow);
+    color: var(--kwd-yellow);
+  }
+
+  /* ══════════════════════════════════════════
+     THE LEAD GENERATION SYSTEM
+  ══════════════════════════════════════════ */
+  .hp-system-section { background: var(--kwd-cream); }
+  .hp-system-flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+    margin-top: 2.5rem;
+  }
+  .hp-sys-stage {
+    background: #fff;
+    border: 1px solid rgba(44, 41, 39, 0.08);
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 10px 30px rgba(22, 19, 16, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+  }
+  .hp-sys-num {
+    font-family: var(--kwd-font-heading);
+    font-size: 2.2rem;
+    color: var(--kwd-dark);
+    opacity: 0.22;
+    line-height: 1;
+  }
+  .hp-sys-role {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.2rem 0.7rem;
+    border-radius: 100px;
+    margin-top: 0.25rem;
+  }
+  .hp-sys-stage h3 {
+    font-family: var(--kwd-font-heading);
+    font-size: 1.45rem;
+    color: var(--kwd-dark);
+    margin: 0.25rem 0 0;
+    line-height: 1.15;
+  }
+  .hp-sys-stage p {
+    font-size: 0.9rem;
+    color: var(--kwd-brown, #534a45);
+    line-height: 1.65;
+    margin: 0;
+  }
+  .hp-sys-arrow {
+    align-self: center;
+    font-size: 1.75rem;
+    color: var(--kwd-dark);
+    opacity: 0.35;
+    font-weight: 700;
+  }
+  .hp-sys-outcome {
+    margin-top: 2rem;
+    background: var(--kwd-dark);
+    border-radius: 16px;
+    padding: 1.75rem 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .hp-sys-outcome p {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 620px;
+  }
+  .hp-sys-outcome strong { color: var(--kwd-yellow); }
+  .hp-sys-outcome-cta {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .hp-sys-outcome-cta:hover { background: var(--kwd-gold, #f3d97a); }
+
+  /* Service card role tag */
+  .service-role {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.66rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background: var(--kwd-cream);
+    color: var(--kwd-dark);
+    border: 1px solid rgba(44, 41, 39, 0.12);
+    padding: 0.18rem 0.65rem;
+    border-radius: 100px;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Studio video link */
+  .hp-studio-video-link {
+    display: block;
+    margin-top: 0.6rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    text-decoration: none;
+    font-size: 0.88rem;
+  }
+  .hp-studio-video-link:hover { text-decoration: underline; }
+
+  /* ══════════════════════════════════════════
+     NORTHSHORE RESULTS CALLOUT
+  ══════════════════════════════════════════ */
+  .hp-result-callout {
+    margin-top: 3rem;
+    background: var(--kwd-dark);
+    border-radius: 18px;
+    padding: 2.5rem 2.5rem 2.25rem;
+  }
+  .hp-result-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+  }
+  .hp-result-badge-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.25rem 0.8rem;
+    border-radius: 100px;
+  }
+  .hp-result-badge-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .hp-result-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .hp-result-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .hp-result-num {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--kwd-yellow);
+    line-height: 1;
+  }
+  .hp-result-lbl {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.55;
+    max-width: 260px;
+  }
+  .hp-result-link {
+    display: inline-block;
+    margin-top: 1.75rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--kwd-yellow);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .hp-result-link:hover { text-decoration: underline; }
+
+  /* ══════════════════════════════════════════
+     GOOGLE REVIEWS CAROUSEL (ported from LP)
+  ══════════════════════════════════════════ */
+  .hp-reviews-section { background: var(--kwd-dark); }
+  .lp-reviews-head { margin-bottom: 2.5rem; }
+  .lp-reviews-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 999px;
+    padding: 0.5rem 1.1rem;
+    margin-bottom: 1.1rem;
+  }
+  .lp-reviews-badge strong { color: #fff; font-size: 0.95rem; }
+  .lp-reviews-count { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+  .lp-reviews-title {
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    color: #fff;
+    margin: 0;
+    line-height: 1.15;
+  }
+  .lp-g { width: 22px; height: 22px; flex-shrink: 0; display: block; }
+  .lp-reviews-badge .lp-g { width: 20px; height: 20px; }
+
+  .lp-carousel { position: relative; }
+  .lp-carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+  }
+  .lp-carousel-track::-webkit-scrollbar { display: none; }
+  .lp-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(20,18,17,0.92);
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s, background 0.2s, transform 0.2s;
+  }
+  .lp-carousel-btn:hover { background: var(--kwd-yellow); color: var(--kwd-dark); }
+  .lp-carousel-prev { left: -1.1rem; }
+  .lp-carousel-next { right: -1.1rem; }
+  .lp-review-card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc((100% - 3rem) / 3);
+    min-height: 22rem;
+    scroll-snap-align: start;
+    background: rgba(255,255,255,0.04);
+    border: 0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 0;
+  }
+  .lp-review-top {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  .lp-review-stars { color: #f5b301; font-size: 1rem; letter-spacing: 0.05em; }
+  .lp-review-textwrap { flex: 1 1 auto; }
+  .lp-review-text {
+    margin: 0;
+    color: rgba(255,255,255,0.82);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .lp-review-card.is-expanded .lp-review-text {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+  .lp-review-more {
+    margin-top: 0.5rem;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--kwd-yellow);
+    font-family: var(--kwd-font-body);
+    font-weight: 600;
+    font-size: 0.82rem;
+    cursor: pointer;
+  }
+  .lp-review-more:hover { text-decoration: underline; }
+  .lp-review-foot {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+  }
+  .lp-review-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+  .lp-review-who { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+  .lp-review-name { font-size: 0.9rem; font-weight: 700; color: #fff; }
+  .lp-review-co   { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+
+  /* ══════════════════════════════════════════
+     FLOATING GOOGLE BADGE
+  ══════════════════════════════════════════ */
+  .hp-google-badge {
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: 45;
+    display: block;
+    width: 150px;
+    transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+  }
+  .hp-google-badge:hover { transform: translateY(-2px); }
+  .hp-google-badge img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* ══════════════════════════════════════════
+     NEW SECTIONS — RESPONSIVE
+  ══════════════════════════════════════════ */
+  @media (max-width: 960px) {
+    .hp-system-flow {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .hp-sys-arrow {
+      transform: rotate(90deg);
+      justify-self: center;
+      font-size: 1.4rem;
+    }
+    .lp-review-card { flex: 0 0 calc((100% - 1.5rem) / 2); }
+    .hp-result-stats { grid-template-columns: 1fr; gap: 1.5rem; }
+    .hp-result-callout { padding: 2rem 1.75rem; }
+  }
+  @media (max-width: 720px) {
+    .hp-google-badge { display: none; }
+    .lp-review-card { flex: 0 0 92%; }
+    .lp-carousel-prev { left: -0.5rem; }
+    .lp-carousel-next { right: -0.5rem; }
+    .hp-sys-outcome { padding: 1.5rem; }
   }
 </style>
