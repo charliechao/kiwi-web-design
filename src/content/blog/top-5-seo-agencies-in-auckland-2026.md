@@ -208,7 +208,7 @@ Digigo is a reasonable shortlist option for Auckland businesses that want SEO bu
 
 Auckland's SEO market in 2026 includes large digital agencies, specialist SEO providers, and leaner website-led growth partners. The best choice depends on whether you need a full marketing department, a specialist SEO campaign, or a practical local SEO system that turns traffic into leads.
 
-For most Auckland small businesses, [Kiwi Web Design](/website-designer-auckland/) is the strongest first conversation because the offer connects SEO, website structure, AI search readiness, and conversion.
+For most Auckland small businesses, [Kiwi Web Design](/contact/) is the strongest first conversation because the offer connects SEO, website structure, AI search readiness, and conversion.
 
 ---
 
@@ -264,4 +264,4 @@ Yes. Kiwi Web Design works across [SEO Auckland](/affordable-seo-auckland/), [AI
 
 ## Related reading
 
-[SEO Auckland](/affordable-seo-auckland/) | [Local SEO Auckland](/local-seo-for-auckland-small-businesses/) | [AI SEO & GEO](/ai-seo-for-auckland-small-businesses/) | [Website Design Packages](/small-business-website-design-auckland/) | [Get a Free Quote](/website-designer-auckland/)
+[SEO Auckland](/affordable-seo-auckland/) | [Local SEO Auckland](/local-seo-for-auckland-small-businesses/) | [AI SEO & GEO](/ai-seo-for-auckland-small-businesses/) | [Website Design Packages](/small-business-website-design-auckland/) | [Get a Free Quote](/contact/)

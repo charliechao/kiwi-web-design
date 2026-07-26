@@ -48,4 +48,4 @@ This is a different question from *which platform* to build on (we've covered th
 
 Don't ask "which option is best" — ask "what is this website actually for?" A landing page to validate an idea before you've made a sale is a different job than a site meant to be your main source of new customers for the next three years. Match the option to the job, not to whichever one sounds cheapest or most impressive.
 
-If you've concluded the job needs a real, converting website and you'd rather not manage the process yourself, that's exactly what we do — [get in touch](/website-designer-auckland/) and we'll give you a straight answer about whether an agency build actually makes sense for where your business is right now, even if that answer is "not yet."
+If you've concluded the job needs a real, converting website and you'd rather not manage the process yourself, that's exactly what we do — [get in touch](/contact/) and we'll give you a straight answer about whether an agency build actually makes sense for where your business is right now, even if that answer is "not yet."

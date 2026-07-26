@@ -417,7 +417,7 @@ Kiwi Web Design review:
 No generic advice.Clear next steps tailored to your trade and service areas.
 
 
-[Book](https://www.kiwiwebdesign.co.nz/website-designer-auckland/)your free session now and let’s build a predictable lead system for your trade business.
+[Book](https://www.kiwiwebdesign.co.nz/contact/)your free session now and let’s build a predictable lead system for your trade business.
 
 
 

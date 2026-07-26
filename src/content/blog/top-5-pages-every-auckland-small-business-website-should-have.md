@@ -156,7 +156,7 @@ A regularly updated blog shows Google (and customers) that your business is acti
 Your website doesn’t need to be big, it just needs to be **smart**.Start with these five pages and make sure each one answers the most important question your visitor has: *“Can I trust this business to solve my problem?”*
 
 
-If you’re not sure whether your current site ticks all these boxes, Kiwi Web Design offers **free website audits and local SEO reviews** for Auckland businesses. Good [website copywriting](/website-copywriting-auckland/) for each of these pages also makes a significant difference in conversions. [Get in touch](/website-designer-auckland/) to discuss your options.
+If you’re not sure whether your current site ticks all these boxes, Kiwi Web Design offers **free website audits and local SEO reviews** for Auckland businesses. Good [website copywriting](/website-copywriting-auckland/) for each of these pages also makes a significant difference in conversions. [Get in touch](/contact/) to discuss your options.
 
 
-👉 [Book a Free Consultation](https://www.kiwiwebdesign.co.nz/website-designer-auckland/)Let’s make your website work harder for you, 24/7.
+👉 [Book a Free Consultation](https://www.kiwiwebdesign.co.nz/contact/)Let’s make your website work harder for you, 24/7.

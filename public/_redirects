@@ -1,8 +1,4 @@
 # Legacy WordPress-era URLs still indexed (July 2026)
-/Contact/ /website-designer-auckland/ 301
-/Contact /website-designer-auckland/ 301
-/contact/ /website-designer-auckland/ 301
-/contact /website-designer-auckland/ 301
 /seo-auckland/ /affordable-seo-auckland/ 301
 /seo-auckland /affordable-seo-auckland/ 301
 /website-design-auckland/ / 301
@@ -35,3 +31,7 @@
 # Retired constructed case study (July 2026)
 /custom-florist-website-design-auckland/ /ecommerce-website-auckland/ 301
 /custom-florist-website-design-auckland /ecommerce-website-auckland/ 301
+
+# Contact page renamed off a keyword-stuffed URL (July 2026)
+/website-designer-auckland/ /contact/ 301
+/website-designer-auckland /contact/ 301

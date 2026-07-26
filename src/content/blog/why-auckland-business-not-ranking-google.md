@@ -164,7 +164,7 @@ After that, work through on-page SEO fixes, then move on to content and citation
 
 We work with Auckland small businesses to improve their Google visibility from the ground up. Our [local SEO service](/local-seo-for-auckland-small-businesses/) covers technical fixes, on-page optimisation, GBP setup, and local citation building. We also build fast, SEO-ready websites from $1,290 + GST if your current site is past saving.
 
-[Get in touch](/website-designer-auckland/) for a free conversation about your current ranking situation and what it would take to fix it.
+[Get in touch](/contact/) for a free conversation about your current ranking situation and what it would take to fix it.
 
 ---
 

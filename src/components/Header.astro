@@ -13,7 +13,7 @@ const zhMap: Record<string, string> = {
   '/google-ads/':                               '/zh/google-ads/',
   '/meta-ads/':                                 '/zh/meta-ads/',
   '/small-business-website-design-auckland/':   '/zh/small-business-website-design-auckland/',
-  '/website-designer-auckland/':                '/zh/website-designer-auckland/',
+  '/contact/':                '/zh/website-designer-auckland/',
   '/affordable-web-design-auckland/website-cost-new-zealand-small-business/': '/zh/website-cost-new-zealand-small-business/',
 };
 const enMap = Object.fromEntries(Object.entries(zhMap).map(([en, zh]) => [zh, en]));
@@ -46,7 +46,7 @@ const zhNavLinks: NavLink[] = [
 ];
 
 const navLinks = isZh ? zhNavLinks : enNavLinks;
-const ctaHref  = isZh ? '/zh/website-designer-auckland/' : '/website-designer-auckland/';
+const ctaHref  = isZh ? '/zh/website-designer-auckland/' : '/contact/';
 const ctaLabel = isZh ? '免费咨询' : 'Free Growth Plan';
 const logoHref = isZh ? '/zh/' : '/';
 ---

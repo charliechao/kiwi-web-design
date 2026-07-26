@@ -51,7 +51,7 @@ You’ll get:✅ A modern, mobile-friendly website✅ Built to rank on Google✅
 ## Ready to See How Much Business You’re Missing?
 
 
-Let’s find out exactly what opportunities your business is leaving on the table.👉 **Book your FREE website audit today** and we’ll show you where you could be gaining more customers online. [Get in touch with us here](/website-designer-auckland/) to get started.
+Let’s find out exactly what opportunities your business is leaving on the table.👉 **Book your FREE website audit today** and we’ll show you where you could be gaining more customers online. [Get in touch with us here](/contact/) to get started.
 
 
 📞 021 039 6580🌐 [www.kiwiwebdesign.co.nz](https://www.kiwiwebdesign.co.nz)✉️ hi@kiwiwebdesign.co.nz

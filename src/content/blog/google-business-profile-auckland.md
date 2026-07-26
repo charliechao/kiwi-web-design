@@ -347,4 +347,4 @@ If you want a complete local presence:
 
 Kiwi Web Design works with Auckland small businesses to build this from the ground up.
 
-[Book a free strategy session](/website-designer-auckland/) and we'll review your current Google presence, identify what's missing, and give you a clear plan, no jargon, no upsells.
+[Book a free strategy session](/contact/) and we'll review your current Google presence, identify what's missing, and give you a clear plan, no jargon, no upsells.

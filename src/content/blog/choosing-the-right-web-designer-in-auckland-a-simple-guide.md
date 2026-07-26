@@ -165,4 +165,4 @@ Their answers will reveal their expertise and professionalism.
 Choosing the right web designer in Auckland sets the foundation for your online growth. At **Kiwi Web Design**, we blend local market insight with global best practices to craft websites that convert visitors into customers.
 
 
-**[Visit our contact page](/website-designer-auckland/)** today for a free consultation, and let’s build a website that drives real results for your Auckland business!
+**[Visit our contact page](/contact/)** today for a free consultation, and let’s build a website that drives real results for your Auckland business!

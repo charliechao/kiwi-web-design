@@ -72,4 +72,4 @@ Agility is your competitive edge.
 A strong website is more than digital real estate-it’s your most powerful business tool. If you’re ready to compete with the bigger brands in Auckland, we can help.
 
 
-[**Contact Kiwi Web Design**](https://www.kiwiwebdesign.co.nz/website-designer-auckland/) today to discuss how we can design a website that helps you attract more local customers and grow your business.
+[**Contact Kiwi Web Design**](https://www.kiwiwebdesign.co.nz/contact/) today to discuss how we can design a website that helps you attract more local customers and grow your business.

@@ -267,7 +267,7 @@ We can help you:
 
 If you are unsure where to start, the safest first step is a short review of your website, Google Business Profile, search visibility, and current enquiry flow.
 
-[Book a free consultation](/website-designer-auckland/) and we will tell you honestly whether SEO, Google Ads, or website improvements should come first.
+[Book a free consultation](/contact/) and we will tell you honestly whether SEO, Google Ads, or website improvements should come first.
 
 ---
 

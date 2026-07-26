@@ -194,4 +194,4 @@ Yes, but it usually works indirectly. AI tools can recommend businesses, summari
 
 ## Ready to improve your local visibility?
 
-Kiwi Web Design helps Auckland small businesses turn local search visibility into calls, quote requests, and booked work. If you want a practical plan for Google Business Profile, suburb pages, reviews, tracking, and AI search visibility, [book a free local SEO audit or consultation](/website-designer-auckland/).
+Kiwi Web Design helps Auckland small businesses turn local search visibility into calls, quote requests, and booked work. If you want a practical plan for Google Business Profile, suburb pages, reviews, tracking, and AI search visibility, [book a free local SEO audit or consultation](/contact/).

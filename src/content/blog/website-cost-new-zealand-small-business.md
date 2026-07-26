@@ -83,9 +83,9 @@ These ranges reflect real Auckland projects, not overseas benchmarks. GST, conte
       <div id="kc-result" style="font-size:1.6rem;font-weight:700;color:#fbe8a6;line-height:1">$2,500 – $6,000</div>
       <div id="kc-annual" style="font-size:0.8rem;color:rgba(255,255,255,0.45);margin-top:0.3rem">+ ~$708/yr ongoing</div>
     </div>
-    <a href="/website-designer-auckland/" style="background:#fbe8a6;color:#2c2927;padding:0.75rem 1.5rem;border-radius:6px;font-weight:700;font-size:0.82rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.07em;white-space:nowrap">Get a fixed quote →</a>
+    <a href="/contact/" style="background:#fbe8a6;color:#2c2927;padding:0.75rem 1.5rem;border-radius:6px;font-weight:700;font-size:0.82rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.07em;white-space:nowrap">Get a fixed quote →</a>
   </div>
-  <p style="font-size:0.73rem;color:rgba(0,0,0,0.4);margin:0.75rem 0 0;line-height:1.5">Ballpark estimate to help you plan. For a fixed quote, <a href="/website-designer-auckland/" style="color:#2c2927">contact Kiwi Web Design</a>.</p>
+  <p style="font-size:0.73rem;color:rgba(0,0,0,0.4);margin:0.75rem 0 0;line-height:1.5">Ballpark estimate to help you plan. For a fixed quote, <a href="/contact/" style="color:#2c2927">contact Kiwi Web Design</a>.</p>
 </div>
 
 <script>

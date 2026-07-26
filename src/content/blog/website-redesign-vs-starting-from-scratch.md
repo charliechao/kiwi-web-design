@@ -111,7 +111,7 @@ This is where [professional web design Auckland](/) businesses rely on becomes l
 ## An Expert Perspective from Auckland
 
 
-At [Kiwi Web Design](https://www.kiwiwebdesign.co.nz/website-designer-auckland/), the starting point is not “rebuild or redesign” as a default answer. It is an assessment of what already exists and whether it is helping or holding the business back.
+At [Kiwi Web Design](https://www.kiwiwebdesign.co.nz/contact/), the starting point is not “rebuild or redesign” as a default answer. It is an assessment of what already exists and whether it is helping or holding the business back.
 
 
 For some clients, a redesign preserves valuable search equity and improves results quickly. For others, starting fresh removes technical and messaging debt that would otherwise slow growth for years.

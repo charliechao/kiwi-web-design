@@ -166,7 +166,7 @@ Kiwi Web Design works with small businesses across New Zealand to improve their 
 
 If you don't have a website at all, now is the right time to close the gap highlighted in this research. See our [website design process in Auckland](/website-design-process-in-auckland/) to understand exactly what getting started looks like.
 
-[Get in touch](/website-designer-auckland/) if you want a clear, practical review of your current digital presence and a plan to improve it.
+[Get in touch](/contact/) if you want a clear, practical review of your current digital presence and a plan to improve it.
 
 ---
 

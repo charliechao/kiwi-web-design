@@ -31,7 +31,11 @@ const schema = {
       description: 'Auckland web design and digital marketing agency for service businesses. Website, local SEO, and Google Ads built as one lead generation system. Grey Lynn based.',
       isPartOf: { '@id': 'https://www.kiwiwebdesign.co.nz/#website' },
       about: { '@id': 'https://www.kiwiwebdesign.co.nz/#organization' },
-      inLanguage: 'en-NZ'
+      inLanguage: 'en-NZ',
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['.hp-lead', '.hp-stage-cards']
+      }
     },
     {
       '@type': ['Organization', 'ProfessionalService'],
@@ -86,6 +90,78 @@ const schema = {
       contentUrl: 'https://www.youtube.com/watch?v=n9BFps8DyRY',
       publisher: { '@id': 'https://www.kiwiwebdesign.co.nz/#organization' },
       isPartOf: { '@id': 'https://www.kiwiwebdesign.co.nz/' }
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/#service',
+      name: 'Small Business Website Design Auckland',
+      serviceType: 'Website Design',
+      category: 'Web Development',
+      description: 'Conversion-focused website design for Auckland small businesses, live in 2-3 weeks.',
+      provider: { '@id': 'https://www.kiwiwebdesign.co.nz/#organization' },
+      areaServed: [
+        { '@type': 'City', name: 'Auckland' },
+        { '@type': 'Country', name: 'New Zealand' }
+      ],
+      url: 'https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/'
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.kiwiwebdesign.co.nz/affordable-seo-auckland/#service',
+      name: 'SEO Auckland',
+      serviceType: 'SEO Agency Services',
+      category: 'Digital Marketing',
+      description: 'Local SEO and AI SEO for Auckland small businesses, growing organic Google and Maps visibility month over month.',
+      provider: { '@id': 'https://www.kiwiwebdesign.co.nz/#organization' },
+      areaServed: [
+        { '@type': 'City', name: 'Auckland' },
+        { '@type': 'Country', name: 'New Zealand' }
+      ],
+      url: 'https://www.kiwiwebdesign.co.nz/affordable-seo-auckland/'
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.kiwiwebdesign.co.nz/google-ads/#service',
+      name: 'Google Ads Management Auckland',
+      serviceType: 'Google Ads Management',
+      category: 'Digital Marketing',
+      description: 'Google Ads campaign setup and management for Auckland small businesses, tuned to a cost per lead that fits your margins.',
+      provider: { '@id': 'https://www.kiwiwebdesign.co.nz/#organization' },
+      areaServed: [
+        { '@type': 'City', name: 'Auckland' },
+        { '@type': 'Country', name: 'New Zealand' }
+      ],
+      url: 'https://www.kiwiwebdesign.co.nz/google-ads/'
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Do you just build websites, or run the marketing too?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Both. The website is the foundation, then we run SEO and Google Ads on top of it as one system. You can start with just a website, and add the growth channels when you want steady lead flow.' }
+        },
+        {
+          '@type': 'Question',
+          name: 'How much does a small business website cost in Auckland?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Every project gets a fixed, custom quote based on your pages, features, and platform, no published price list and no surprises. Use our free website cost calculator for an instant NZ ballpark, or book a free consultation for an exact quote.' }
+        },
+        {
+          '@type': 'Question',
+          name: 'What does a full lead generation system cost per month?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Every system is scoped to your business: website, SEO, and Google Ads are quoted individually based on your goals and competition, with no lock-in contracts on any of it. Every engagement starts with a free growth plan so you only pay for what your business actually needs.' }
+        },
+        {
+          '@type': 'Question',
+          name: 'How fast will I see leads?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Google Ads can generate enquiries within days of launch. SEO typically shows meaningful movement in 3-6 months and compounds from there. A conversion-focused website improves enquiry rates immediately. That is why the system uses all three: fast results while the long-term channels build.' }
+        },
+        {
+          '@type': 'Question',
+          name: 'Can a web design company in Auckland help with leads, not just design?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes. Good web design should improve enquiries by making the offer clearer, building trust faster, and giving SEO and Google Ads traffic a stronger page to land on. That is exactly how we build.' }
+        }
+      ]
     }
   ]
 };
@@ -124,7 +200,7 @@ const stats = [
 const whyUs = [
   'Direct with Charlie Chao from strategy through launch, no account managers, no offshore handoff',
   'Website, SEO, and Google Ads under one roof, all pointing at the same conversion goal',
-  'Clear pricing upfront: websites from $1,290, SEO from $500/month, no lock-in contracts',
+  'Every quote is scoped to your business, no published price list, no lock-in contracts',
   'Grey Lynn based with real Auckland suburb intent and local search knowledge',
 ];
 
@@ -172,8 +248,8 @@ const portfolioLoop = [...portfolio, ...portfolio];
 
 const faqs = [
   { q: 'Do you just build websites, or run the marketing too?', a: 'Both. The website is the foundation, then we run <a href="/affordable-seo-auckland/">SEO</a> and <a href="/google-ads/">Google Ads</a> on top of it as one system. You can start with just a website, and add the growth channels when you want steady lead flow.' },
-  { q: 'How much does a small business website cost in Auckland?', a: 'Our packages start from $1,290 for a lead-focused website. More complex builds are priced accordingly, and you know the cost upfront. Use our <a href="/affordable-web-design-auckland/website-cost-new-zealand-small-business/">free website cost calculator</a> to get an instant NZ estimate.' },
-  { q: 'What does a full lead generation system cost per month?', a: 'A typical setup: website from $1,290 one-off, <a href="/affordable-seo-auckland/">SEO from $500/month</a>, and Google Ads management scoped to your budget and goals. No lock-in contracts on any of it. Every engagement starts with a free growth plan so you only pay for what your business actually needs.' },
+  { q: 'How much does a small business website cost in Auckland?', a: 'Every project gets a fixed, custom quote based on your pages, features, and platform, no published price list and no surprises. Use our <a href="/affordable-web-design-auckland/website-cost-new-zealand-small-business/">free website cost calculator</a> to get an instant NZ estimate, or book a free consultation for an exact quote.' },
+  { q: 'What does a full lead generation system cost per month?', a: 'Every system is scoped to your business: website, <a href="/affordable-seo-auckland/">SEO</a>, and Google Ads are quoted individually based on your goals and competition. No lock-in contracts on any of it. Every engagement starts with a free growth plan so you only pay for what your business actually needs.' },
   { q: 'How fast will I see leads?', a: 'Google Ads can generate enquiries within days of launch. SEO typically shows meaningful movement in 3-6 months and compounds from there. A conversion-focused website improves enquiry rates immediately. That is why the system uses all three: fast results while the long-term channels build.' },
   { q: 'Can a web design company in Auckland help with leads, not just design?', a: 'Yes. Good web design should improve enquiries by making the offer clearer, building trust faster, and giving SEO and Google Ads traffic a stronger page to land on. That is exactly how we build.' },
 ];
@@ -228,7 +304,7 @@ const exploreGroups = [
         <h1 class="hp-headline hp-hero-seq" style="--hero-delay: 0.18s;">Web design and digital marketing that turn Auckland businesses into lead machines.</h1>
         <p class="hp-lead hp-hero-seq" style="--hero-delay: 0.3s;">Kiwi Web Design is an Auckland digital marketing agency for service businesses. We build the website, rank it with local SEO and AI SEO, and drive buying-intent traffic with Google Ads. One system, one goal: steady, qualified enquiries.</p>
         <div class="hp-ctas hp-hero-seq" style="--hero-delay: 0.42s;">
-          <a href="/website-designer-auckland/" class="hp-btn-primary">Get a Free Growth Plan</a>
+          <a href="/contact/" class="hp-btn-primary">Get a Free Growth Plan</a>
           <a href="#results" class="hp-btn-secondary">See Client Results</a>
         </div>
         <div class="hp-proof-row hp-hero-seq" style="--hero-delay: 0.52s;">
@@ -306,7 +382,7 @@ const exploreGroups = [
       </div>
       <div class="hp-sys-outcome hp-motion-item" style="--motion-delay: 440ms;">
         <p>The output is not a website. It is a pipeline of <strong>steady, qualified enquiries</strong> you can plan a business around.</p>
-        <a href="/website-designer-auckland/" class="hp-sys-outcome-cta">Get a Free Growth Plan →</a>
+        <a href="/contact/" class="hp-sys-outcome-cta">Get a Free Growth Plan →</a>
       </div>
     </div>
   </section>
@@ -378,7 +454,7 @@ const exploreGroups = [
             align="left"
           />
         </div>
-        <a href="/website-designer-auckland/" class="hp-btn-primary hp-motion-item" style="--motion-delay: 140ms;">Get a Free Growth Plan</a>
+        <a href="/contact/" class="hp-btn-primary hp-motion-item" style="--motion-delay: 140ms;">Get a Free Growth Plan</a>
       </div>
 
       <div class="portfolio-carousel" data-portfolio-carousel data-reveal>
@@ -574,7 +650,7 @@ const exploreGroups = [
         <p class="faq-eyebrow">FAQs</p>
         <h2 class="faq-sidebar-title">Questions Auckland business owners ask before hiring us.</h2>
         <p class="faq-sidebar-sub">If you do not see your question here, reach out and we will answer directly.</p>
-        <a href="/website-designer-auckland/" class="hp-btn-dark" style="margin-top: 1.5rem; display: inline-flex;">Ask a Question</a>
+        <a href="/contact/" class="hp-btn-dark" style="margin-top: 1.5rem; display: inline-flex;">Ask a Question</a>
       </div>
       <div class="hp-motion-faq hp-motion-soft" style="--motion-delay: 120ms;">
         <FAQAccordion items={faqs} title="" />
@@ -611,7 +687,7 @@ const exploreGroups = [
       variant="yellow"
       title="Want steady enquiries, not just a new website?"
       subtitle="Get a free growth plan: we'll map the right mix of website, SEO, and Google Ads for your business. Call 021 039 6580 or request online."
-      ctaPrimary={{ text: 'Get a Free Growth Plan', href: '/website-designer-auckland/' }}
+      ctaPrimary={{ text: 'Get a Free Growth Plan', href: '/contact/' }}
       ctaSecondary={{ text: 'See Our Packages', href: '/small-business-website-design-auckland/' }}
     />
   </div>
