@@ -35,3 +35,6 @@
 # Contact page renamed off a keyword-stuffed URL (July 2026)
 /website-designer-auckland/ /contact/ 301
 /website-designer-auckland /contact/ 301
+# Legacy capitalised WordPress-era contact URL (still indexed, pos ~15)
+/Contact/ /contact/ 301
+/Contact /contact/ 301
