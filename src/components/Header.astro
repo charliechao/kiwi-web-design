@@ -26,7 +26,9 @@ interface NavLink {
 }
 
 const enNavLinks: NavLink[] = [
-  { label: 'Web Design', href: '/small-business-website-design-auckland/' },
+  // "Web Design" points at the homepage: the homepage owns the "web design Auckland"
+  // head term, so this sitewide anchor should reinforce it, not the service page.
+  { label: 'Web Design', href: '/' },
   { label: 'SEO',        href: '/affordable-seo-auckland/' },
   { label: 'Google Ads', href: '/google-ads/' },
   { label: 'About',      href: '/about-us/' },

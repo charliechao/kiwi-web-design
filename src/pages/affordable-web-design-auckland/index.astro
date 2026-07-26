@@ -13,8 +13,8 @@ const posts = allPosts.sort(
 );
 
 const stats = [
-  { number: "From $1,290", label: "Fixed-price websites, no lock-in" },
-  { number: "2–3 wks", label: "Typical delivery time" },
+  { number: `${allPosts.length}+`, label: "Free guides published" },
+  { number: "Weekly", label: "New practical advice" },
   { number: "50+", label: "Auckland businesses helped" },
   { number: "5★", label: "Average Google rating" },
 ];
@@ -26,8 +26,8 @@ const schema = {
       "@type": "CollectionPage",
       "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/",
-      "name": "Affordable Web Design Auckland | Kiwi Web Design",
-      "description": "Affordable web design for Auckland small businesses. Fixed-price websites from $1,290 + GST, no lock-in contracts, live in 2-3 weeks. Free guides and pricing resources below.",
+      "name": "Web Design & Small Business Guides | Kiwi Web Design Blog",
+      "description": "Free, practical guides on web design, SEO, and digital marketing for Auckland small businesses. Website cost guides, Google Business Profile setup, local SEO, and more.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -40,14 +40,14 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "Affordable Web Design Auckland", "item": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/" }
+        { "@type": "ListItem", "position": 2, "name": "Blog & Guides", "item": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/" }
       ]
     },
     {
       "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
-      "alternateName": "Affordable Web Design Auckland",
+      "alternateName": "Kiwi Web Design Auckland",
       "url": "https://www.kiwiwebdesign.co.nz/",
       "telephone": "+64-21-039-6580",
       "email": "hi@kiwiwebdesign.co.nz",
@@ -75,18 +75,18 @@ function formatDate(date: Date) {
 ---
 
 <Layout
-  title="Affordable Web Design Auckland | From $1,290 | Kiwi Web Design"
-  description="Affordable web design for Auckland small businesses. Fixed-price websites from $1,290 + GST, no lock-in contracts, live in 2-3 weeks. Free guides and pricing resources below."
+  title="Web Design & Small Business Guides | Kiwi Web Design Blog"
+  description="Free, practical guides on web design, SEO, and digital marketing for Auckland small businesses. Website cost guides, Google Business Profile setup, local SEO, and more."
   canonicalURL="https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/"
   schema={schema}
 >
 
   <PageHero
-    eyebrow="Auckland Web Design, Without the Agency Price Tag"
-    title="Affordable Web Design Auckland"
-    subtitle="Custom, fixed-price websites for Auckland small businesses, no lock-in contracts, no bloated agency overhead. Most projects are quoted in writing before you commit and live within 2-3 weeks."
+    eyebrow="Blog & Free Guides"
+    title="Web Design & Small Business Guides"
+    subtitle="Practical, no-fluff advice on websites, SEO, and digital marketing for Auckland small business owners. Written by Charlie Chao at Kiwi Web Design."
     ctaPrimary={{ text: 'Get a Free Quote', href: '/contact/' }}
-    ctaSecondary={{ text: 'See Full Packages', href: '/small-business-website-design-auckland/' }}
+    ctaSecondary={{ text: 'See Web Design Packages', href: '/small-business-website-design-auckland/' }}
   />
 
   <StatsRow items={stats} accent={true} />
@@ -94,7 +94,7 @@ function formatDate(date: Date) {
   <!-- AI citability snippet -->
   <div class="blog-snippet">
     <div class="container">
-      <p><strong>Kiwi Web Design</strong> builds affordable, custom websites for Auckland small businesses from $1,290 + GST, fixed price, no lock-in contracts, live in 2-3 weeks. Based in Grey Lynn, Auckland, with a 5★ Google rating. This page also publishes free web design, SEO, and digital marketing guides, including website cost guides, Google Business Profile setup, and local SEO tips.</p>
+      <p>This is the <strong>Kiwi Web Design</strong> blog: free, practical guides on web design, SEO, and digital marketing for Auckland small businesses, including website cost guides, Google Business Profile setup, and local SEO tips. Kiwi Web Design is based in Grey Lynn, Auckland, with a 5★ Google rating. For services and pricing, see <a href="/">web design Auckland</a>.</p>
     </div>
   </div>
 
