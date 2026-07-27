@@ -1,15 +1,17 @@
 ---
-title: "DIY Builder, Freelancer, or Agency? What Actually Makes Sense for an Auckland Small Business in 2026"
-description: "Wix, an AI site builder, a freelancer, or an agency — here's an honest breakdown of what each option actually gets you, and when each one makes sense."
+title: "Website Builder, Freelancer, or Agency? What Actually Makes Sense for a Small Business in NZ (2026)"
+description: "Wix, an AI website builder, a freelancer, or an agency — an honest breakdown for small businesses across New Zealand of what each option actually gets you, and when each one makes sense."
 pubDate: 2026-07-11
 image: "/blog/website-redesign-vs-rebuild-auckland-small-business.png"
 ---
 
-If you've started looking into getting a website, you've probably hit the same fork in the road every Auckland small business owner hits: build it yourself with a DIY builder, hire a freelancer, or go with an agency. Every option gets pitched as the obvious answer by whoever's selling it. Here's the honest version, including where we think a DIY builder is genuinely the right call.
+If you've started looking into getting a website, you've probably hit the same fork in the road every small business owner in NZ hits: build it yourself with a website builder, hire a freelancer, or go with an agency. Every option gets pitched as the obvious answer by whoever's selling it. Here's the honest version, including where we think a DIY builder is genuinely the right call.
 
 This is a different question from *which platform* to build on (we've covered that in our [guide to choosing a website platform](/affordable-web-design-auckland/choosing-a-website-platform-a-practical-guide-for-small-businesses-in-auckland/)). This is about *who does the work* — and increasingly, that question now includes a fourth option that didn't exist a few years ago: AI website builders.
 
-## DIY Builders (Wix, Squarespace, and AI Site Builders)
+## Website Builders (Wix, Squarespace, and AI Site Builders)
+
+A website builder is the DIY route: you sign up, pick a template or prompt an AI builder, and publish it yourself. It's the fastest way for any small business in NZ to get something live today.
 
 **What you get:** Full control, the lowest upfront cost, and — with the newer AI-powered builders — a working site generated from a text prompt in minutes rather than a blank template you have to fill in yourself.
 
