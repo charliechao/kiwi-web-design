@@ -503,9 +503,6 @@ const faqs = [
     <img src="/images/google-5-star-rating-badge.webp" alt="Google rating 5.0 stars" width="185" height="90" loading="lazy" />
   </a>
 
-  <!-- Mobile sticky CTA -->
-  <a href="#lead-form" class="lp-sticky-cta" id="lp-sticky-cta">Book My Free Strategy Call →</a>
-
   <script>
     (function () {
       function setStatus(status: HTMLElement, msg: string, isError: boolean) {
@@ -582,11 +579,8 @@ const faqs = [
         });
       });
 
-      // Hide the sticky mobile CTA while the form is on screen
-      const sticky = document.getElementById('lp-sticky-cta');
-      const formWrap = document.getElementById('lead-form');
       const header = document.querySelector<HTMLElement>('.lp-header');
-      // Covers the header CTA, the mid-page CTA bands and the sticky bar —
+      // Covers the header CTA and the mid-page CTA bands —
       // any in-page link pointing at either lead form.
       const leadFormLinks = document.querySelectorAll<HTMLAnchorElement>(
         'a[href="#lead-form"], a[href="#bottom-lead-form"]'
@@ -608,12 +602,6 @@ const faqs = [
           history.replaceState(null, '', `#${targetId}`);
         });
       });
-
-      if (sticky && formWrap && 'IntersectionObserver' in window) {
-        new IntersectionObserver(([entry]) => {
-          sticky.classList.toggle('lp-sticky-hidden', entry.isIntersecting);
-        }, { threshold: 0.1 }).observe(formWrap);
-      }
 
       // Review cards: show "Read more" only when the clamped text actually overflows.
       function initReviewClamp() {
@@ -1630,29 +1618,6 @@ const faqs = [
     background: var(--kwd-amber-hover);
   }
 
-  /* Sticky mobile CTA */
-  .lp-sticky-cta {
-    display: none;
-    position: fixed;
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    z-index: 50;
-    background: var(--kwd-amber);
-    color: var(--kwd-dark);
-    text-align: center;
-    padding: 1.05rem;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
-    transition: opacity 0.25s, transform 0.25s;
-  }
-  .lp-sticky-hidden { opacity: 0; transform: translateY(120%); pointer-events: none; }
-
   @media (max-width: 960px) {
     .lp-layout { grid-template-columns: 1fr; gap: 2.5rem; }
     .lp-problem-grid, .lp-included-grid { grid-template-columns: 1fr 1fr; }
@@ -1671,22 +1636,6 @@ const faqs = [
       bottom: 1rem;
       width: 128px;
     }
-    .lp-sticky-cta {
-      display: block;
-      left: auto;
-      right: 0.75rem;
-      bottom: 7.5rem;
-      width: 58px;
-      min-height: 180px;
-      padding: 0.9rem 0.55rem;
-      writing-mode: vertical-rl;
-      transform: none;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      line-height: 1.25;
-      letter-spacing: 0.08em;
-    }
-    .lp-sticky-hidden { opacity: 0; transform: translateX(120%); pointer-events: none; }
   }
   @media (max-width: 960px) {
     .lp-review-card, .lp-portfolio-item { flex-basis: calc((100% - 1.5rem) / 2); }
