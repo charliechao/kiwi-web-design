@@ -148,24 +148,14 @@ const faqs = [
               <input type="text" name="name" placeholder="Sarah Johnson" required />
             </label>
             <label class="lp-label">
-              <span class="lp-label-text">Business <span class="req">*</span></span>
-              <input type="text" name="business" placeholder="Your business name" required />
-            </label>
-          </div>
-          <div class="lp-row lp-row-2">
-            <label class="lp-label">
-              <span class="lp-label-text">Email <span class="req">*</span></span>
-              <input type="email" name="email" placeholder="you@yourbusiness.co.nz" required />
-            </label>
-            <label class="lp-label">
               <span class="lp-label-text">Phone <span class="req">*</span></span>
               <input type="tel" name="phone" placeholder="021 000 0000" required />
             </label>
           </div>
           <div class="lp-row">
             <label class="lp-label">
-              <span class="lp-label-text">Website</span>
-              <input type="text" name="website" placeholder="www.yourbusiness.co.nz (optional)" />
+              <span class="lp-label-text">Email <span class="req">*</span></span>
+              <input type="email" name="email" placeholder="you@yourbusiness.co.nz" required />
             </label>
           </div>
           <div class="lp-row">
@@ -460,24 +450,14 @@ const faqs = [
               <input type="text" name="name" placeholder="Sarah Johnson" required />
             </label>
             <label class="lp-label">
-              <span class="lp-label-text">Business <span class="req">*</span></span>
-              <input type="text" name="business" placeholder="Your business name" required />
-            </label>
-          </div>
-          <div class="lp-row lp-row-2">
-            <label class="lp-label">
-              <span class="lp-label-text">Email <span class="req">*</span></span>
-              <input type="email" name="email" placeholder="you@yourbusiness.co.nz" required />
-            </label>
-            <label class="lp-label">
               <span class="lp-label-text">Phone <span class="req">*</span></span>
               <input type="tel" name="phone" placeholder="021 000 0000" required />
             </label>
           </div>
           <div class="lp-row">
             <label class="lp-label">
-              <span class="lp-label-text">Website</span>
-              <input type="text" name="website" placeholder="www.yourbusiness.co.nz (optional)" />
+              <span class="lp-label-text">Email <span class="req">*</span></span>
+              <input type="email" name="email" placeholder="you@yourbusiness.co.nz" required />
             </label>
           </div>
           <div class="lp-row lp-final-goal-row">
@@ -977,8 +957,10 @@ const faqs = [
     align-items: center;
     gap: 0.4rem;
     font-size: 0.88rem;
-    font-weight: 600;
-    color: #2f6f4f;
+    font-weight: 700;
+    /* Raw --kwd-amber (#f1b90a) only hits ~1.9:1 on this card's white
+       background — fails WCAG AA. Same hue, darkened for ~4.9:1 contrast. */
+    color: #8a6d00;
     line-height: 1.4;
   }
   .lp-portfolio-result svg { flex-shrink: 0; }
