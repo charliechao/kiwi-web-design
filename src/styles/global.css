@@ -41,6 +41,9 @@
 @theme {
   --color-kwd-yellow: #fbe8a6;
   --color-kwd-gold:   #f3d97a;
+  /* True logo yellow (sampled from logo-96.webp) — use for primary CTAs */
+  --color-kwd-amber:       #f1b90a;
+  --color-kwd-amber-hover: #ffc61a;
   --color-kwd-dark:   #2c2927;
   --color-kwd-brown:  #534a45;
   --color-kwd-cream:  #f2f1e5;
@@ -53,6 +56,9 @@
 :root {
   --kwd-yellow:        #fbe8a6;
   --kwd-gold:          #f3d97a;
+  /* True logo yellow (sampled from logo-96.webp) — use for primary CTAs */
+  --kwd-amber:         #f1b90a;
+  --kwd-amber-hover:   #ffc61a;
   --kwd-dark:          #2c2927;
   --kwd-brown:         #534a45;
   --kwd-cream:         #f2f1e5;

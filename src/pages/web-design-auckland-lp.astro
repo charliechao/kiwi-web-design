@@ -59,19 +59,20 @@ const steps = [
 
 // Screenshots only, deliberately no outbound links — this page has one job.
 // Full set — matches the homepage portfolio (index.astro) plus a couple of LP-only extras.
+// `result` is a qualitative outcome statement (no hard metrics claimed).
 const portfolio = [
-  { src: '/portfolio/barrett-access-scaffolding.webp', alt: 'Barrett Access Scaffolding website by Kiwi Web Design', caption: 'Barrett Access Scaffolding' },
-  { src: '/portfolio/prime-industrial.webp', alt: 'Prime Industrial website by Kiwi Web Design', caption: 'Prime Industrial' },
-  { src: '/portfolio/the-framers-guild.webp', alt: 'The Framers Guild website by Kiwi Web Design', caption: 'The Framers Guild' },
-  { src: '/portfolio/kiwiland-construction.webp', alt: 'Kiwiland Construction website by Kiwi Web Design', caption: 'Kiwiland Construction' },
-  { src: '/portfolio/melanoma-specialists.webp', alt: 'Melanoma Specialists website by Kiwi Web Design', caption: 'Melanoma Specialists' },
-  { src: '/portfolio/aesthetic-painting.webp', alt: 'Aesthetic Painting website by Kiwi Web Design', caption: 'Aesthetic Painting' },
-  { src: beautyTouchPreview.src, alt: 'Beauty Touch Auckland website by Kiwi Web Design', caption: 'Beauty Touch Auckland' },
-  { src: '/portfolio/gom.webp', alt: 'Goldwing website by Kiwi Web Design', caption: 'Goldwing' },
-  { src: '/portfolio/kebudel.webp', alt: 'Kebudel website by Kiwi Web Design', caption: 'Kebudel' },
-  { src: '/portfolio/asc-homes.webp', alt: 'ASC Homes website by Kiwi Web Design', caption: 'ASC Homes' },
-  { src: '/portfolio/mt-albert-business.jpg', alt: 'Mt Albert Business Association website by Kiwi Web Design', caption: 'Mt Albert Business Assoc.' },
-  { src: '/blog/600-21B675F7-8EB5-45A5-99242870729DC26D.png', alt: 'TopRated.nz platform by Kiwi Web Design', caption: 'TopRated.nz' },
+  { src: '/portfolio/barrett-access-scaffolding.webp', alt: 'Barrett Access Scaffolding website by Kiwi Web Design', caption: 'Barrett Access Scaffolding', result: 'More phone calls and quote requests' },
+  { src: '/portfolio/prime-industrial.webp', alt: 'Prime Industrial website by Kiwi Web Design', caption: 'Prime Industrial', result: 'Stronger trust from first-time visitors' },
+  { src: '/portfolio/the-framers-guild.webp', alt: 'The Framers Guild website by Kiwi Web Design', caption: 'The Framers Guild', result: 'Better engagement across every page' },
+  { src: '/portfolio/kiwiland-construction.webp', alt: 'Kiwiland Construction website by Kiwi Web Design', caption: 'Kiwiland Construction', result: 'More email enquiries from Google' },
+  { src: '/portfolio/melanoma-specialists.webp', alt: 'Melanoma Specialists website by Kiwi Web Design', caption: 'Melanoma Specialists', result: 'Clearer booking journey for patients' },
+  { src: '/portfolio/aesthetic-painting.webp', alt: 'Aesthetic Painting website by Kiwi Web Design', caption: 'Aesthetic Painting', result: 'Higher conversion from visitor to enquiry' },
+  { src: beautyTouchPreview.src, alt: 'Beauty Touch Auckland website by Kiwi Web Design', caption: 'Beauty Touch Auckland', result: 'More online bookings and enquiries' },
+  { src: '/portfolio/gom.webp', alt: 'Goldwing website by Kiwi Web Design', caption: 'Goldwing', result: 'A more professional first impression' },
+  { src: '/portfolio/kebudel.webp', alt: 'Kebudel website by Kiwi Web Design', caption: 'Kebudel', result: 'Better engagement from new visitors' },
+  { src: '/portfolio/asc-homes.webp', alt: 'ASC Homes website by Kiwi Web Design', caption: 'ASC Homes', result: 'Stronger trust with prospective clients' },
+  { src: '/portfolio/mt-albert-business.jpg', alt: 'Mt Albert Business Association website by Kiwi Web Design', caption: 'Mt Albert Business Assoc.', result: 'Easier for members to find and contact' },
+  { src: '/blog/600-21B675F7-8EB5-45A5-99242870729DC26D.png', alt: 'TopRated.nz platform by Kiwi Web Design', caption: 'TopRated.nz', result: 'Higher engagement across the platform' },
 ];
 
 const faqs = [
@@ -263,15 +264,29 @@ const faqs = [
       <div class="lp-carousel">
         <button type="button" class="lp-carousel-btn lp-carousel-prev" id="lp-port-prev" aria-label="Previous work">‹</button>
         <div class="lp-carousel-track" id="lp-portfolio-track">
-          {portfolio.map(({ src, alt, caption }) => (
+          {portfolio.map(({ src, alt, caption, result }) => (
             <figure class="lp-portfolio-item">
               <img src={src} alt={alt} loading="lazy" width="640" height="400" />
-              <figcaption>{caption}</figcaption>
+              <figcaption>
+                <span class="lp-portfolio-name">{caption}</span>
+                <span class="lp-portfolio-result">
+                  <Icon name="TrendingUp" size={15} />
+                  {result}
+                </span>
+              </figcaption>
             </figure>
           ))}
         </div>
         <button type="button" class="lp-carousel-btn lp-carousel-next" id="lp-port-next" aria-label="Next work">›</button>
       </div>
+    </div>
+  </section>
+
+  <!-- Mid-page CTA 1 (after proof) -->
+  <section class="lp-cta-band">
+    <div class="container lp-cta-band-inner">
+      <p class="lp-cta-band-text">Want a website like these for your business?</p>
+      <a href="#lead-form" class="lp-cta-band-btn">Book My Free Strategy Call →</a>
     </div>
   </section>
 
@@ -336,6 +351,14 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Mid-page CTA 2 (after credibility) -->
+  <section class="lp-cta-band">
+    <div class="container lp-cta-band-inner">
+      <p class="lp-cta-band-text">Talk to Charlie directly — 15 minutes, no obligation.</p>
+      <a href="#bottom-lead-form" class="lp-cta-band-btn">Book My Free Strategy Call →</a>
+    </div>
+  </section>
+
   <!-- Process -->
   <section class="lp-section lp-section-white">
     <div class="container">
@@ -350,6 +373,14 @@ const faqs = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- Mid-page CTA 3 (after process) -->
+  <section class="lp-cta-band">
+    <div class="container lp-cta-band-inner">
+      <p class="lp-cta-band-text">Ready to start? Step one takes 15 minutes.</p>
+      <a href="#bottom-lead-form" class="lp-cta-band-btn">Book My Free Strategy Call →</a>
     </div>
   </section>
 
@@ -575,20 +606,26 @@ const faqs = [
       const sticky = document.getElementById('lp-sticky-cta');
       const formWrap = document.getElementById('lead-form');
       const header = document.querySelector<HTMLElement>('.lp-header');
-      const leadFormLinks = document.querySelectorAll<HTMLAnchorElement>('a[href="#lead-form"]');
+      // Covers the header CTA, the mid-page CTA bands and the sticky bar —
+      // any in-page link pointing at either lead form.
+      const leadFormLinks = document.querySelectorAll<HTMLAnchorElement>(
+        'a[href="#lead-form"], a[href="#bottom-lead-form"]'
+      );
 
       leadFormLinks.forEach((link) => {
         link.addEventListener('click', (event) => {
-          if (!formWrap || !window.matchMedia('(max-width: 720px)').matches) return;
+          const targetId = (link.getAttribute('href') || '').slice(1);
+          const target = document.getElementById(targetId);
+          if (!target || !window.matchMedia('(max-width: 720px)').matches) return;
           event.preventDefault();
           if (header) {
             header.style.position = 'static';
             header.style.top = 'auto';
           }
           const gap = 20;
-          const y = formWrap.getBoundingClientRect().top + window.scrollY - gap;
+          const y = target.getBoundingClientRect().top + window.scrollY - gap;
           window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
-          history.replaceState(null, '', '#lead-form');
+          history.replaceState(null, '', `#${targetId}`);
         });
       });
 
@@ -729,24 +766,24 @@ const faqs = [
     text-decoration: none;
     white-space: nowrap;
   }
-  .lp-header-phone:hover { color: var(--kwd-yellow); }
+  .lp-header-phone:hover { color: var(--kwd-amber); }
   .lp-header-cta {
-    background: var(--kwd-yellow);
+    background: var(--kwd-amber);
     color: var(--kwd-dark);
-    padding: 0.6rem 1.25rem;
+    padding: 0.7rem 1.4rem;
     border-radius: 8px;
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     text-decoration: none;
     white-space: nowrap;
-    transition: transform 0.15s;
+    transition: transform 0.15s, background 0.15s;
   }
-  .lp-header-cta:hover { transform: translateY(-1px); }
+  .lp-header-cta:hover { transform: translateY(-1px); background: var(--kwd-amber-hover); }
 
   .lp-title-accent {
-    color: var(--kwd-yellow);
+    color: var(--kwd-amber);
   }
 
   /* ── Ambient background orbs ── */
@@ -757,7 +794,8 @@ const faqs = [
     pointer-events: none;
     filter: blur(70px);
   }
-  .lp-orb-yellow { background: radial-gradient(circle, rgba(251,232,166,0.55) 0%, rgba(251,232,166,0) 70%); }
+  /* Ambient glow tinted to the logo amber (#f1b90a) for brand consistency */
+  .lp-orb-yellow { background: radial-gradient(circle, rgba(241,185,10,0.42) 0%, rgba(241,185,10,0) 70%); }
   .lp-orb-gold   { background: radial-gradient(circle, rgba(176,141,47,0.55) 0%, rgba(176,141,47,0) 70%); }
   .lp-orb-lg { width: 34rem; height: 34rem; }
   .lp-orb-md { width: 22rem; height: 22rem; }
@@ -828,7 +866,7 @@ const faqs = [
     cursor: pointer;
     transition: opacity 0.2s, background 0.2s, transform 0.2s;
   }
-  .lp-carousel-btn:hover { background: var(--kwd-yellow); color: var(--kwd-dark); }
+  .lp-carousel-btn:hover { background: var(--kwd-amber); color: var(--kwd-dark); }
   .lp-carousel-prev { left: -1.1rem; }
   .lp-carousel-next { right: -1.1rem; }
   .lp-carousel-btn:disabled { opacity: 0; pointer-events: none; }
@@ -836,7 +874,7 @@ const faqs = [
     display: flex;
     flex-direction: column;
     flex: 0 0 calc((100% - 3rem) / 3);
-    min-height: 22rem;
+    min-height: 24.5rem;
     scroll-snap-align: start;
     background: rgba(255,255,255,0.04);
     border: 0;
@@ -853,9 +891,9 @@ const faqs = [
   .lp-review-textwrap { flex: 1 1 auto; }
   .lp-review-text {
     margin: 0;
-    color: rgba(255,255,255,0.82);
-    font-size: 0.9rem;
-    line-height: 1.65;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.98rem;
+    line-height: 1.72;
     display: -webkit-box;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
@@ -870,7 +908,7 @@ const faqs = [
     background: none;
     border: none;
     padding: 0;
-    color: var(--kwd-yellow);
+    color: var(--kwd-amber);
     font-family: var(--kwd-font-body);
     font-weight: 600;
     font-size: 0.82rem;
@@ -900,8 +938,8 @@ const faqs = [
     object-position: center;
   }
   .lp-review-who { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
-  .lp-review-name { font-size: 0.9rem; font-weight: 700; color: #fff; }
-  .lp-review-co   { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+  .lp-review-name { font-size: 0.98rem; font-weight: 700; color: #fff; }
+  .lp-review-co   { font-size: 0.86rem; color: rgba(255,255,255,0.6); }
 
   /* ── Portfolio (carousel, same rhythm as reviews) ── */
   .lp-portfolio-item {
@@ -923,11 +961,27 @@ const faqs = [
     display: block;
   }
   .lp-portfolio-item figcaption {
-    padding: 0.8rem 1.1rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--kwd-dark);
+    padding: 0.95rem 1.15rem 1.05rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
   }
+  .lp-portfolio-name {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--kwd-dark);
+    line-height: 1.3;
+  }
+  .lp-portfolio-result {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #2f6f4f;
+    line-height: 1.4;
+  }
+  .lp-portfolio-result svg { flex-shrink: 0; }
 
   /* ── Minimal footer ── */
   .lp-footer {
@@ -940,9 +994,9 @@ const faqs = [
     flex-wrap: wrap;
     gap: 0.5rem 2rem;
   }
-  .lp-footer p { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin: 0; }
+  .lp-footer p { font-size: 0.88rem; color: rgba(255,255,255,0.58); margin: 0; }
   .lp-footer a { color: rgba(255,255,255,0.75); text-decoration: none; }
-  .lp-footer a:hover { color: var(--kwd-yellow); }
+  .lp-footer a:hover { color: var(--kwd-amber); }
 
   /* ── Hero ── */
   .lp-hero {
@@ -965,7 +1019,7 @@ const faqs = [
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--kwd-yellow);
+    color: var(--kwd-amber);
     margin-bottom: 1rem;
   }
   .lp-pitch h1 {
@@ -975,9 +1029,9 @@ const faqs = [
     margin-bottom: 1.25rem;
   }
   .lp-lead {
-    font-size: 1.02rem;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.7;
+    font-size: 1.14rem;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.72;
     margin-bottom: 2.25rem;
     max-width: 520px;
   }
@@ -993,9 +1047,10 @@ const faqs = [
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    color: rgba(255,255,255,0.85);
-    font-size: 0.92rem;
+    color: rgba(255,255,255,0.88);
+    font-size: 1rem;
     font-weight: 500;
+    line-height: 1.5;
   }
   .lp-trust-icon {
     width: 2rem;
@@ -1006,7 +1061,7 @@ const faqs = [
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: var(--kwd-yellow);
+    color: var(--kwd-amber);
   }
 
   /* ── Form card ── */
@@ -1024,13 +1079,13 @@ const faqs = [
     margin-bottom: 0.4rem;
   }
   .lp-form-title .lp-title-accent {
-    color: var(--kwd-yellow);
+    color: var(--kwd-amber);
   }
   .lp-form-sub {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.72);
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.78);
     margin-bottom: 1.75rem;
-    line-height: 1.55;
+    line-height: 1.65;
   }
   .lp-form { display: flex; flex-direction: column; gap: 0.7rem; }
   .lp-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
@@ -1049,8 +1104,8 @@ const faqs = [
   }
   .lp-label:focus-within { border-color: var(--kwd-dark); }
   .lp-label-text {
-    flex: 0 0 5rem;
-    font-size: 0.78rem;
+    flex: 0 0 5.25rem;
+    font-size: 0.86rem;
     font-weight: 600;
     color: var(--kwd-dark);
     white-space: nowrap;
@@ -1062,9 +1117,10 @@ const faqs = [
   .lp-label input,
   .lp-label textarea {
     flex: 1 1 auto;
-    padding: 0.65rem 0;
+    padding: 0.72rem 0;
     border: none;
-    font-size: 0.9rem;
+    /* 1rem/16px also stops iOS Safari zooming in on focus */
+    font-size: 1rem;
     font-family: var(--kwd-font-body);
     color: var(--kwd-dark);
     background: transparent;
@@ -1078,23 +1134,23 @@ const faqs = [
   #lp-form .lp-label-area textarea { min-height: 4.8rem; }
   .lp-botcheck { display: none !important; }
   .lp-submit {
-    background: var(--kwd-yellow);
+    background: var(--kwd-amber);
     color: var(--kwd-dark);
-    padding: 1rem 2rem;
+    padding: 1.15rem 2rem;
     border: none;
     border-radius: 8px;
     font-weight: 700;
-    font-size: 0.92rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     cursor: pointer;
     transition: background 0.2s;
     font-family: var(--kwd-font-body);
   }
-  .lp-submit:hover { background: #fff0ad; }
+  .lp-submit:hover { background: var(--kwd-amber-hover); }
   .lp-submit:disabled { opacity: 0.65; cursor: not-allowed; }
   .lp-privacy {
-    font-size: 0.75rem;
+    font-size: 0.82rem;
     color: rgba(255,255,255,0.62);
     text-align: center;
     margin: 0;
@@ -1112,16 +1168,16 @@ const faqs = [
   .lp-form-status--error   { background: #fee2e2; color: #991b1b; border: 1.5px solid #fca5a5; }
 
   /* ── Sections ── */
-  .lp-section { padding: 4rem 0; position: relative; overflow: hidden; z-index: 0; }
+  .lp-section { padding: 5.75rem 0; position: relative; overflow: hidden; z-index: 0; }
   .lp-section-white,
   .lp-section-cream,
   .lp-section-dark { background: var(--kwd-dark); }
   .lp-sec-eyebrow {
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--kwd-yellow);
+    color: var(--kwd-amber);
     margin-bottom: 0.75rem;
   }
   .lp-sec-title {
@@ -1134,11 +1190,11 @@ const faqs = [
 
   /* Service coverage */
   .lp-coverage-intro {
-    color: rgba(255,255,255,0.72);
-    line-height: 1.7;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.75;
     max-width: 680px;
     margin: -1.25rem 0 1.75rem;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
   }
   .lp-coverage-list {
     list-style: none;
@@ -1150,9 +1206,9 @@ const faqs = [
     max-width: 880px;
   }
   .lp-coverage-list li {
-    color: rgba(255,255,255,0.6);
-    font-size: 0.9rem;
-    line-height: 1.55;
+    color: rgba(255,255,255,0.72);
+    font-size: 1rem;
+    line-height: 1.7;
     padding-left: 1.1rem;
     position: relative;
   }
@@ -1164,7 +1220,7 @@ const faqs = [
     width: 0.4rem;
     height: 0.4rem;
     border-radius: 50%;
-    background: var(--kwd-yellow);
+    background: var(--kwd-amber);
   }
 
   /* Problem cards */
@@ -1187,11 +1243,11 @@ const faqs = [
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--kwd-yellow);
+    color: var(--kwd-amber);
     margin-bottom: 1rem;
   }
-  .lp-problem-card h3 { font-size: 1.05rem; color: #fff; margin-bottom: 0.5rem; }
-  .lp-problem-card p  { font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height: 1.65; margin: 0; }
+  .lp-problem-card h3 { font-size: 1.18rem; color: #fff; margin-bottom: 0.55rem; }
+  .lp-problem-card p  { font-size: 1rem; color: rgba(255,255,255,0.72); line-height: 1.7; margin: 0; }
 
   /* Included grid */
   .lp-included-grid {
@@ -1212,15 +1268,15 @@ const faqs = [
     flex-shrink: 0;
     width: 2.25rem;
     height: 2.25rem;
-    background: var(--kwd-yellow);
+    background: var(--kwd-amber);
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--kwd-dark);
   }
-  .lp-included-card strong { display: block; font-size: 0.92rem; color: #fff; margin-bottom: 0.25rem; }
-  .lp-included-card p { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.55; margin: 0; }
+  .lp-included-card strong { display: block; font-size: 1.05rem; color: #fff; margin-bottom: 0.3rem; }
+  .lp-included-card p { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.65; margin: 0; }
 
   /* Fit filter */
   .lp-fit-grid {
@@ -1243,12 +1299,12 @@ const faqs = [
     margin-bottom: 1rem;
   }
   .lp-fit-yes h3,
-  .lp-fit-no h3 { color: var(--kwd-yellow); }
+  .lp-fit-no h3 { color: var(--kwd-amber); }
   .lp-fit-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.7rem; }
   .lp-fit-col li {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.82);
-    line-height: 1.55;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
     padding-left: 1.1rem;
     position: relative;
   }
@@ -1275,15 +1331,15 @@ const faqs = [
     margin-bottom: 1.1rem;
   }
   .lp-cred-text p {
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.7;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.75;
     margin-bottom: 1.75rem;
     max-width: 560px;
   }
   .lp-cred-stats { display: flex; gap: 2.5rem; }
   .lp-cred-stats > div { display: flex; flex-direction: column; gap: 0.15rem; }
-  .lp-cred-num { font-family: var(--kwd-font-heading); font-size: 1.6rem; color: var(--kwd-yellow); }
+  .lp-cred-num { font-family: var(--kwd-font-heading); font-size: 1.6rem; color: var(--kwd-amber); }
   .lp-cred-label { font-size: 0.72rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.07em; }
 
   /* Steps */
@@ -1293,7 +1349,7 @@ const faqs = [
     gap: 1.5rem;
   }
   .lp-step {
-    border-top: 3px solid var(--kwd-yellow);
+    border-top: 3px solid var(--kwd-amber);
     padding-top: 1.25rem;
   }
   .lp-step-num {
@@ -1303,8 +1359,8 @@ const faqs = [
     display: block;
     margin-bottom: 0.4rem;
   }
-  .lp-step h3 { font-size: 1rem; color: #fff; margin-bottom: 0.45rem; }
-  .lp-step p  { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin: 0; }
+  .lp-step h3 { font-size: 1.12rem; color: #fff; margin-bottom: 0.5rem; }
+  .lp-step p  { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.7; margin: 0; }
 
   /* FAQ */
   .lp-faq-list {
@@ -1315,8 +1371,8 @@ const faqs = [
   .lp-faq-item { background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
   .lp-faq-item[open] { border-color: var(--kwd-gold, #b08d2f); }
   .lp-faq-q {
-    padding: 1rem 1.25rem;
-    font-size: 0.95rem;
+    padding: 1.15rem 1.25rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: #fff;
     cursor: pointer;
@@ -1330,7 +1386,7 @@ const faqs = [
   .lp-faq-q::-webkit-details-marker { display: none; }
   .lp-faq-q::after { content: '+'; font-size: 1.25rem; font-weight: 400; color: rgba(255,255,255,0.5); flex-shrink: 0; }
   .lp-faq-item[open] .lp-faq-q::after { content: '−'; }
-  .lp-faq-a { padding: 0 1.25rem 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.65; margin: 0; }
+  .lp-faq-a { padding: 0 1.25rem 1.15rem; font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.75; margin: 0; }
 
   /* Final CTA + case form */
   .lp-final {
@@ -1456,7 +1512,7 @@ const faqs = [
     line-height: 1.15;
     margin: 0 0 0.9rem;
   }
-  .lp-final-form-wrap .lp-form-title .lp-title-accent { color: var(--kwd-yellow); }
+  .lp-final-form-wrap .lp-form-title .lp-title-accent { color: var(--kwd-amber); }
   .lp-final-form-wrap .lp-form-sub {
     color: rgba(255,255,255,0.68);
     line-height: 1.6;
@@ -1495,11 +1551,11 @@ const faqs = [
     margin-top: 0.1rem;
   }
   .lp-final-form-wrap .lp-submit {
-    background: var(--kwd-yellow);
+    background: var(--kwd-amber);
     color: var(--kwd-dark);
     margin-top: 0.15rem;
   }
-  .lp-final-form-wrap .lp-submit:hover { background: #fff0ad; }
+  .lp-final-form-wrap .lp-submit:hover { background: var(--kwd-amber-hover); }
   .lp-final-form-wrap .lp-privacy {
     color: rgba(255,255,255,0.56);
     text-align: left;
@@ -1516,7 +1572,7 @@ const faqs = [
     color: rgba(255,255,255,0.78);
   }
   .lp-final-form-note span {
-    color: var(--kwd-yellow);
+    color: var(--kwd-amber);
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 0.12em;
@@ -1547,6 +1603,51 @@ const faqs = [
     height: auto;
   }
 
+  /* Mid-page CTA bands — break up the long stretch between the two forms */
+  .lp-cta-band {
+    background: var(--kwd-dark);
+    /* Top gap comes from the previous section's bottom padding; this supplies the
+       bottom gap, and the next section's top padding is zeroed out below. */
+    padding: 0 0 5.75rem;
+  }
+  .lp-cta-band + .lp-section { padding-top: 0; }
+  .lp-cta-band-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem 2rem;
+    text-align: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+  }
+  .lp-cta-band-text {
+    margin: 0;
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+    color: #fff;
+    line-height: 1.3;
+  }
+  .lp-cta-band-btn {
+    background: var(--kwd-amber);
+    color: var(--kwd-dark);
+    padding: 1.05rem 2.1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .lp-cta-band-btn:hover {
+    transform: translateY(-2px);
+    background: var(--kwd-amber-hover);
+  }
+
   /* Sticky mobile CTA */
   .lp-sticky-cta {
     display: none;
@@ -1555,13 +1656,13 @@ const faqs = [
     right: 1rem;
     bottom: 1rem;
     z-index: 50;
-    background: var(--kwd-dark);
-    color: #fff;
+    background: var(--kwd-amber);
+    color: var(--kwd-dark);
     text-align: center;
-    padding: 1rem;
+    padding: 1.05rem;
     border-radius: 12px;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     text-decoration: none;
@@ -1633,7 +1734,10 @@ const faqs = [
     .lp-final-goal-row textarea { min-height: 4.7rem; }
     .lp-final-form-note { grid-template-columns: 1fr; gap: 0.35rem; }
     .lp-final-form-note span { white-space: normal; }
-    .lp-section { padding: 3rem 0; }
+    .lp-section { padding: 3.5rem 0; }
+    .lp-cta-band { padding-bottom: 3.5rem; }
+    .lp-cta-band-inner { padding: 1.5rem 1.25rem; }
+    .lp-cta-band-btn { width: 100%; text-align: center; white-space: normal; }
     .lp-logo-text { display: none; }
     .lp-header-phone span { display: none; }
     .lp-footer-inner { flex-direction: column; }
