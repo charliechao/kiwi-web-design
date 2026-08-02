@@ -17,6 +17,12 @@ const included = [
   { icon: "BarChart3", title: "Enquiry Tracking Set Up", desc: "Forms, analytics, and conversion tracking wired in — you'll know exactly where leads come from." },
 ];
 
+const impactPoints = [
+  { title: "A better website makes every other dollar work harder", desc: "SEO, Google Ads, referrals — they all lead back to your website. If it doesn't convert, that spend goes to waste." },
+  { title: "Every enquiry starts on this one page", desc: "Ad clicks, Google searches, word of mouth — they all land on your website first. That's where the sale is won or lost." },
+  { title: "We build websites around results, not just looks", desc: "Every site we build is planned, written, and structured to turn visitors into real enquiries." },
+];
+
 const goodFit = [
   "You run a service business in Auckland and want more enquiries, not just a prettier site",
   "Your current website is outdated, or looks fine but never generates leads",
@@ -273,9 +279,22 @@ const faqs = [
   </section>
 
   <!-- Mid-page CTA 1 (after proof) -->
-  <section class="lp-cta-band">
-    <div class="container lp-cta-band-inner">
-      <p class="lp-cta-band-text">Want a website like these for your business?</p>
+  <section class="lp-section lp-section-dark lp-impact">
+    <span class="lp-orb lp-orb-gold lp-orb-md lp-orb--impact" aria-hidden="true"></span>
+    <div class="container">
+      <p class="lp-sec-eyebrow">Why it matters</p>
+      <h2 class="lp-sec-title">Ready to turn your website into <span class="lp-title-accent">a sales machine?</span></h2>
+      <ul class="lp-impact-list">
+        {impactPoints.map(({ title, desc }) => (
+          <li>
+            <span class="lp-impact-check"><Icon name="Check" size={14} /></span>
+            <div>
+              <strong>{title}</strong>
+              <p>{desc}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
       <a href="#lead-form" class="lp-cta-band-btn">Get In Touch →</a>
     </div>
   </section>
@@ -761,6 +780,7 @@ const faqs = [
   .lp-orb--hero-2  { bottom: -12rem; left: -6rem; }
   .lp-orb--problem   { top: -8rem; right: 5%; }
   .lp-orb--portfolio { bottom: -14rem; right: 10%; }
+  .lp-orb--impact    { top: -6rem; left: 8%; }
   .lp-orb--cred      { bottom: -14rem; left: 8%; }
   .lp-orb--reviews   { top: -12rem; right: -4rem; }
   .lp-orb--final     { top: 50%; left: 50%; margin: -17rem 0 0 -17rem; }
@@ -1594,6 +1614,48 @@ const faqs = [
     transform: translateY(-2px);
     background: var(--kwd-amber-hover);
   }
+
+  /* "Why it matters" band — headline + checklist + CTA */
+  .lp-impact .lp-sec-title { max-width: 640px; }
+  .lp-impact-list {
+    list-style: none;
+    margin: 0 0 2.5rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 640px;
+  }
+  .lp-impact-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .lp-impact-check {
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-top: 0.15rem;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--kwd-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lp-impact-list strong {
+    display: block;
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+  .lp-impact-list p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.65;
+  }
+  .lp-impact .lp-cta-band-btn { display: inline-block; }
 
   @media (max-width: 960px) {
     .lp-layout { grid-template-columns: 1fr; gap: 2.5rem; }
