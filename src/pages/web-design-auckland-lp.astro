@@ -3,6 +3,7 @@
 // Conversion fires on /web-design-auckland-lp/thank-you/ only.
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
+import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 import charliePhoto from '../assets/general/Kiwi-Web-Design-Owner-Charlie.jpeg';
 import beautyTouchPreview from '../assets/general/beauty-salon-website-design-seo-auckland.jpg';
@@ -97,19 +98,19 @@ const faqs = [
   chrome="minimal"
 >
 
-  <!-- Minimal LP header: no nav menu, no leak paths — logo, phone, one CTA -->
+  <!-- Minimal LP header: no nav menu — logo (links home), phone, one CTA -->
   <header class="lp-header">
     <div class="container lp-header-inner">
-      <span class="lp-logo">
+      <a class="lp-logo" href="https://www.kiwiwebdesign.co.nz/">
         <img src="/logo-96.webp" alt="Kiwi Web Design" width="44" height="44" loading="eager" />
         <span class="lp-logo-text">Kiwi Web Design</span>
-      </span>
+      </a>
       <div class="lp-header-actions">
         <a href="tel:+64210396580" class="lp-header-phone">
           <Icon name="Phone" size={16} />
           <span>021 039 6580</span>
         </a>
-        <a href="#lead-form" class="lp-header-cta">Free Strategy Call</a>
+        <a href="#lead-form" class="lp-header-cta">Free Consultation</a>
       </div>
     </div>
   </header>
@@ -126,7 +127,7 @@ const faqs = [
         <p class="lp-lead">Your website should be your hardest-working salesperson. We design and build sites that explain what you do, rank on Google, and turn visitors into phone calls and enquiries — not just look pretty.</p>
 
         <ul class="lp-trust">
-          <li><span class="lp-trust-icon"><Icon name="BadgeDollarSign" size={18} /></span> Projects from $2,000 + GST — fixed quote up front</li>
+          <li><span class="lp-trust-icon"><Icon name="TrendingUp" size={18} /></span> Turn your website into a sales machine</li>
           <li><span class="lp-trust-icon"><Icon name="Zap" size={18} /></span> Most sites live in 2-3 weeks</li>
           <li><span class="lp-trust-icon"><Icon name="MapPin" size={18} /></span> Based in Grey Lynn — we meet Auckland clients in person</li>
           <li><span class="lp-trust-icon"><Icon name="Star" size={18} /></span> 5★ Google rating from NZ clients</li>
@@ -134,8 +135,7 @@ const faqs = [
       </div>
 
       <div class="lp-form-wrap" id="lead-form">
-        <h2 class="lp-form-title">Book a <span class="lp-title-accent">free 15-minute</span> strategy call</h2>
-        <p class="lp-form-sub">Tell us a bit about your business. We'll review it before we call, so the 15 minutes is about your goals — not a sales script. Fields marked * are required.</p>
+        <h2 class="lp-form-title">Work with Kiwi Web Design and sign up for a <span class="lp-title-accent">free consultation</span></h2>
         <form class="lp-form" id="lp-form" name="web-design-auckland-lp" method="POST" action="https://api.web3forms.com/submit" data-lp-form>
           <input type="hidden" name="access_key" value="e0a725e4-f764-4536-826c-df981c8bdf3b" />
           <input type="hidden" name="subject" value="New Google Ads LP lead — web design Auckland" />
@@ -165,7 +165,7 @@ const faqs = [
             </label>
           </div>
 
-          <button type="submit" class="lp-submit" id="lp-submit" data-lp-submit>Book My Free Strategy Call →</button>
+          <button type="submit" class="lp-submit" id="lp-submit" data-lp-submit>Get In Touch →</button>
           <p id="lp-status" aria-live="polite" style="display:none" class="lp-form-status" data-lp-status></p>
           <p class="lp-privacy">No obligation. No spam. We reply within 1 business day.</p>
         </form>
@@ -276,7 +276,7 @@ const faqs = [
   <section class="lp-cta-band">
     <div class="container lp-cta-band-inner">
       <p class="lp-cta-band-text">Want a website like these for your business?</p>
-      <a href="#lead-form" class="lp-cta-band-btn">Book My Free Strategy Call →</a>
+      <a href="#lead-form" class="lp-cta-band-btn">Get In Touch →</a>
     </div>
   </section>
 
@@ -345,7 +345,7 @@ const faqs = [
   <section class="lp-cta-band">
     <div class="container lp-cta-band-inner">
       <p class="lp-cta-band-text">Talk to Charlie directly — 15 minutes, no obligation.</p>
-      <a href="#bottom-lead-form" class="lp-cta-band-btn">Book My Free Strategy Call →</a>
+      <a href="#bottom-lead-form" class="lp-cta-band-btn">Get In Touch →</a>
     </div>
   </section>
 
@@ -370,7 +370,7 @@ const faqs = [
   <section class="lp-cta-band">
     <div class="container lp-cta-band-inner">
       <p class="lp-cta-band-text">Ready to start? Step one takes 15 minutes.</p>
-      <a href="#bottom-lead-form" class="lp-cta-band-btn">Book My Free Strategy Call →</a>
+      <a href="#bottom-lead-form" class="lp-cta-band-btn">Get In Touch →</a>
     </div>
   </section>
 
@@ -481,17 +481,7 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Minimal footer: legal/contact info only, no link tree -->
-  <footer class="lp-footer">
-    <div class="container lp-footer-inner">
-      <p>© {new Date().getFullYear()} Kiwi Web Design · 147 Great North Road, Grey Lynn, Auckland</p>
-      <p>
-        <a href="tel:+64210396580">021 039 6580</a>
-        <span aria-hidden="true"> · </span>
-        <a href="mailto:Hi@KiwiWebDesign.co.nz">Hi@KiwiWebDesign.co.nz</a>
-      </p>
-    </div>
-  </footer>
+  <Footer />
 
   <a
     href="https://maps.app.goo.gl/7tmoFbMhrDQebSx68"
@@ -579,7 +569,6 @@ const faqs = [
         });
       });
 
-      const header = document.querySelector<HTMLElement>('.lp-header');
       // Covers the header CTA and the mid-page CTA bands —
       // any in-page link pointing at either lead form.
       const leadFormLinks = document.querySelectorAll<HTMLAnchorElement>(
@@ -592,10 +581,6 @@ const faqs = [
           const target = document.getElementById(targetId);
           if (!target || !window.matchMedia('(max-width: 720px)').matches) return;
           event.preventDefault();
-          if (header) {
-            header.style.position = 'static';
-            header.style.top = 'auto';
-          }
           const gap = 20;
           const y = target.getBoundingClientRect().top + window.scrollY - gap;
           window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
@@ -701,6 +686,10 @@ const faqs = [
     position: relative;
     z-index: 40;
   }
+  /* Sticky on desktop only — mobile keeps it in normal flow */
+  @media (min-width: 721px) {
+    .lp-header { position: sticky; top: 0; }
+  }
   .lp-header-inner {
     display: flex;
     align-items: center;
@@ -711,6 +700,7 @@ const faqs = [
     display: flex;
     align-items: center;
     gap: 0.65rem;
+    text-decoration: none;
   }
   .lp-logo img { border-radius: 50%; display: block; }
   .lp-logo-text {
@@ -952,21 +942,6 @@ const faqs = [
     line-height: 1.4;
   }
   .lp-portfolio-result svg { flex-shrink: 0; }
-
-  /* ── Minimal footer ── */
-  .lp-footer {
-    background: var(--kwd-dark);
-    padding: 2.5rem 0 1.75rem;
-  }
-  .lp-footer-inner {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem 2rem;
-  }
-  .lp-footer p { font-size: 0.88rem; color: rgba(255,255,255,0.58); margin: 0; }
-  .lp-footer a { color: rgba(255,255,255,0.75); text-decoration: none; }
-  .lp-footer a:hover { color: var(--kwd-amber); }
 
   /* ── Hero ── */
   .lp-hero {
@@ -1629,7 +1604,6 @@ const faqs = [
     .lp-final-form-wrap { justify-content: flex-start; padding-top: 0; }
   }
   @media (max-width: 720px) {
-    .lp-header { position: static !important; top: auto !important; }
     .lp-form-wrap { scroll-margin-top: 7rem; }
     .lp-coverage-list { grid-template-columns: 1fr; }
     .lp-google-badge {
@@ -1671,6 +1645,5 @@ const faqs = [
     .lp-cta-band-btn { width: 100%; text-align: center; white-space: normal; }
     .lp-logo-text { display: none; }
     .lp-header-phone span { display: none; }
-    .lp-footer-inner { flex-direction: column; }
   }
 </style>
