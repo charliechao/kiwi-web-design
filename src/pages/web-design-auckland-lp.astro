@@ -1610,6 +1610,19 @@ const faqs = [
       bottom: 1rem;
       width: 128px;
     }
+    /* Mobile header: drop the CTA button, make the phone number the one
+       prominent action so a visitor can call straight away. */
+    .lp-header-cta { display: none; }
+    .lp-header-actions { flex: 1 1 auto; justify-content: flex-end; }
+    .lp-header-phone {
+      background: var(--kwd-amber);
+      color: var(--kwd-dark);
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .lp-header-phone:hover { color: var(--kwd-dark); background: var(--kwd-amber-hover); }
   }
   @media (max-width: 960px) {
     .lp-review-card, .lp-portfolio-item { flex-basis: calc((100% - 1.5rem) / 2); }
@@ -1644,6 +1657,5 @@ const faqs = [
     .lp-cta-band-inner { padding: 1.5rem 1.25rem; }
     .lp-cta-band-btn { width: 100%; text-align: center; white-space: normal; }
     .lp-logo-text { display: none; }
-    .lp-header-phone span { display: none; }
   }
 </style>
