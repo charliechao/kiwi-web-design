@@ -490,7 +490,7 @@ const faqs = [
     rel="noopener noreferrer"
     aria-label="View Kiwi Web Design's Google Business Profile reviews"
   >
-    <img src="/images/google-5-star-rating-badge.webp" alt="Google rating 5.0 stars" width="185" height="90" loading="lazy" />
+    <img src="/images/google-5-star-rating-badge.webp" alt="Google rating 5.0 stars" width="185" height="90" loading="eager" />
   </a>
 
   <script>
@@ -764,7 +764,9 @@ const faqs = [
   .lp-orb--cred      { bottom: -14rem; left: 8%; }
   .lp-orb--reviews   { top: -12rem; right: -4rem; }
   .lp-orb--final     { top: 50%; left: 50%; margin: -17rem 0 0 -17rem; }
-  @media (prefers-reduced-motion: no-preference) {
+  /* Animation only on desktop — continuous blur+transform repaint is expensive
+     on throttled mobile CPUs and was tanking LCP/Speed Index there. */
+  @media (prefers-reduced-motion: no-preference) and (min-width: 721px) {
     .lp-orb { animation: lp-orb-drift 24s ease-in-out infinite; }
     .lp-orb--hero-2, .lp-orb--reviews { animation-duration: 30s; animation-direction: alternate-reverse; }
     .lp-orb--cred, .lp-orb--final, .lp-orb--portfolio { animation-duration: 27s; animation-direction: reverse; }
@@ -1610,6 +1612,11 @@ const faqs = [
       bottom: 1rem;
       width: 128px;
     }
+    /* Smaller, lighter-blur orbs on mobile — cuts the paint cost of the
+       (now static, see above) glow so it doesn't compete with LCP. */
+    .lp-orb { filter: blur(40px); }
+    .lp-orb-lg { width: 18rem; height: 18rem; }
+    .lp-orb-md { width: 12rem; height: 12rem; }
     /* Mobile header: drop the CTA button, make the phone number the one
        prominent action so a visitor can call straight away. */
     .lp-header-cta { display: none; }
