@@ -497,12 +497,12 @@ const faqs = [
           </div>
 
           <div class="lp-final-form-actions">
-            <button type="submit" class="lp-submit" data-lp-submit>Send My Details →</button>
+            <button type="submit" class="lp-submit" data-lp-submit>Get in touch</button>
             <p aria-live="polite" style="display:none" class="lp-form-status" data-lp-status></p>
             <p class="lp-privacy">No obligation. No spam. We reply within 1 business day.</p>
             <div class="lp-final-form-note">
               <span>After you send it</span>
-              <p>Charlie reviews your site and replies with the most useful next step.</p>
+              <p>Charlie reviews your information and replies with the most useful next step.</p>
             </div>
           </div>
         </form>
@@ -547,7 +547,7 @@ const faqs = [
         const openedAt = Date.now();
         if (!btn || !status) return;
 
-        const defaultBtnText = btn.textContent || 'Send My Details →';
+        const defaultBtnText = btn.textContent || 'Get in touch';
 
         form.addEventListener('submit', async (e) => {
           e.preventDefault();
