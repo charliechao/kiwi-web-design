@@ -51,3 +51,55 @@ Static/unoptimised assets (videos, SVGs, favicons): place in `public/` (copied v
 - No React/Vue/Svelte, vanilla Astro components only. Use `<script is:inline>` for third-party CDN libraries (e.g. Vanta.js, Three.js) that need browser globals.
 - Cloudflare adapter is present but only for image processing at build time, there are no Cloudflare Workers/KV/D1 bindings in use.
 - `lucide-astro` is installed for icon use but icons are currently rendered via the custom `Icon.astro` mapper, not imported directly from `lucide-astro`.
+
+<!-- SHARED_BRAIN:START -->
+## Shared brain connection (managed)
+
+This project uses the shared AI brain and external-tools hub at:
+
+`C:\Users\charl\OneDrive\Desktop\AI Tools`
+
+Project ID: `kiwi_web_design_site`
+
+This block is used by both Codex and Claude Code. Keep project-specific instructions outside the managed markers.
+
+### At the start of a task
+
+1. Read `C:\Users\charl\OneDrive\Desktop\AI Tools\AGENTS.md` and `C:\Users\charl\OneDrive\Desktop\AI Tools\brain\GOVERNANCE.md`.
+2. Load the project-safe context:
+
+   ```powershell
+   python "C:\Users\charl\OneDrive\Desktop\AI Tools\scripts\brain.py" context --project kiwi_web_design_site
+   ```
+
+3. Treat approved knowledge as guidance, candidate knowledge as unapproved suggestions, and current project files/API/runtime state as the source of truth for facts that may have changed.
+4. For external tools, use the tool profile named in the project context, if one is registered. Never copy credentials into this repository or print secret values.
+
+### Automatic learning loop
+
+At the end of every meaningful task:
+
+1. Decide whether the work produced a durable preference, guardrail, decision, lesson, playbook, warning, or reusable fact. Skip routine outcomes, raw logs, one-off content, secrets, personal data, and easily rediscovered details.
+2. Search existing approved and candidate knowledge before adding anything:
+
+   ```powershell
+   python "C:\Users\charl\OneDrive\Desktop\AI Tools\scripts\brain.py" search "<short lesson query>" --project kiwi_web_design_site --include-candidates
+   ```
+
+3. If the learning is genuinely new, add one concise evidence-backed candidate. Use project scope by default:
+
+   ```powershell
+   python "C:\Users\charl\OneDrive\Desktop\AI Tools\scripts\brain.py" add-candidate --title "<durable title>" --summary "<what was learned and when it applies>" --type lesson --scope-level project --project kiwi_web_design_site --source "<evidence path or URL>"
+   ```
+
+4. Use business or global scope only when the lesson is reusable across those boundaries and contains no client-specific facts. Never put one client's IDs, performance, contacts, content, or confidential data into another project's context.
+5. Candidates may be shared immediately as clearly labelled suggestions, but they are not authoritative. Promote only after independent verification:
+
+   ```powershell
+   python "C:\Users\charl\OneDrive\Desktop\AI Tools\scripts\brain.py" promote <candidate-id> --evidence-note "<how it was independently verified>"
+   ```
+
+6. Run `python "C:\Users\charl\OneDrive\Desktop\AI Tools\scripts\brain.py" validate` after a brain change.
+
+The user's standing authorization covers these concise candidate updates in the shared brain, including after a review-only task. It does not authorize edits to the reviewed project, external mutations, deployment, sending, spending, or candidate promotion.
+<!-- SHARED_BRAIN:END -->
