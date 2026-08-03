@@ -361,9 +361,21 @@ const faqs = [
   </section>
 
   <!-- Mid-page CTA 2 (after credibility) -->
-  <section class="lp-cta-band">
-    <div class="container lp-cta-band-inner">
-      <p class="lp-cta-band-text">Talk to Charlie directly — 15 minutes, no obligation.</p>
+  <section class="lp-section lp-section-dark lp-testimonial-cta">
+    <span class="lp-orb lp-orb-yellow lp-orb-md lp-orb--testimonial" aria-hidden="true"></span>
+    <div class="container">
+      <h2 class="lp-sec-title">The best time to fix your website was <span class="lp-title-accent">six months ago</span>. The second best time is now</h2>
+      <figure class="lp-testimonial-spotlight">
+        <div class="lp-review-top">
+          <svg class="lp-g" viewBox="0 0 48 48" aria-hidden="true" set:html={googleG} />
+          <span class="lp-review-stars" aria-label="Rated 5 out of 5">★★★★★</span>
+        </div>
+        <p class="lp-review-text">"Charlie from Kiwi Web Design has been great to work with. He communicates clearly, responds promptly, and makes the process easy to understand. The pricing has been reasonable, and I've appreciated his practical approach to building and improving our Streetfood Network website. I would recommend Kiwi Web Design to any small business looking for reliable website support. Business has since taken off and the Website is amazing!"</p>
+        <figcaption>
+          <span class="lp-review-name">Tony S</span>
+          <span class="lp-review-co">Streetfood Network</span>
+        </figcaption>
+      </figure>
       <a href="#bottom-lead-form" class="lp-cta-band-btn">Get In Touch →</a>
     </div>
   </section>
@@ -781,6 +793,7 @@ const faqs = [
   .lp-orb--problem   { top: -8rem; right: 5%; }
   .lp-orb--portfolio { bottom: -14rem; right: 10%; }
   .lp-orb--impact    { top: -6rem; left: 8%; }
+  .lp-orb--testimonial { top: -6rem; right: 10%; }
   .lp-orb--cred      { bottom: -14rem; left: 8%; }
   .lp-orb--reviews   { top: -12rem; right: -4rem; }
   .lp-orb--final     { top: 50%; left: 50%; margin: -17rem 0 0 -17rem; }
@@ -1656,6 +1669,35 @@ const faqs = [
     line-height: 1.65;
   }
   .lp-impact .lp-cta-band-btn { display: inline-block; }
+
+  /* "Talk to Charlie" band — headline + spotlighted review + CTA */
+  .lp-testimonial-spotlight {
+    margin: 0 auto 2.5rem;
+    max-width: 640px;
+    text-align: center;
+  }
+  .lp-testimonial-spotlight .lp-review-top { justify-content: center; }
+  .lp-testimonial-spotlight .lp-review-text {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .lp-testimonial-spotlight figcaption {
+    margin-top: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .lp-testimonial-spotlight .lp-review-name { font-size: 0.95rem; font-weight: 700; color: #fff; }
+  .lp-testimonial-spotlight .lp-review-co { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+  .lp-testimonial-cta .lp-cta-band-btn { display: block; }
+  @media (min-width: 721px) {
+    .lp-testimonial-cta .lp-cta-band-btn {
+      width: fit-content;
+      margin: 0 auto;
+    }
+  }
 
   @media (max-width: 960px) {
     .lp-layout { grid-template-columns: 1fr; gap: 2.5rem; }
