@@ -1677,7 +1677,11 @@ const faqs = [
     color: rgba(255,255,255,0.7);
     line-height: 1.65;
   }
-  .lp-impact .lp-cta-band-btn { display: inline-block; }
+  .lp-impact .lp-cta-band-btn {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+  }
 
   /* "Talk to Charlie" band — headline + spotlighted review + CTA */
   .lp-testimonial-cta .lp-sec-title {
