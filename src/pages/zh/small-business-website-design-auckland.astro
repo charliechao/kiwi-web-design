@@ -125,7 +125,7 @@ const schema = {
 };
 
 const stats = [
-  { number: "起价$1,290", label: "网站套餐起价" },
+  { number: "按范围", label: "提供清楚项目报价" },
   { number: "2–3周", label: "常见上线时间" },
   { number: "50+", label: "新西兰合作企业" },
   { number: "5★", label: "Google平均评分" },
@@ -189,8 +189,6 @@ const process = [
 const packages = [
   {
     name: "Launch & Get Found",
-    price: "起价$1,290",
-    note: "+ GST",
     desc: "适合先把网站基础做好：页面清楚、手机端体验好，也让客户更容易找到你。",
     items: [
       "网站结构和页面设计",
@@ -205,8 +203,6 @@ const packages = [
   },
   {
     name: "Lead Growth Engine",
-    price: "起价$2,690",
-    note: "+ GST",
     desc: "适合想把网站、SEO、AI搜索和Google广告一起规划的企业，用更完整的方式增加询盘。",
     items: [
       "网站和询盘路径规划",
@@ -223,8 +219,6 @@ const packages = [
   },
   {
     name: "Sales Accelerator",
-    price: "起价$3,890",
-    note: "+ GST",
     desc: "适合已经准备持续推广的企业，重点放在稳定获客、持续优化和数据复盘。",
     items: [
       "每月SEO和AI搜索优化",
@@ -240,7 +234,7 @@ const packages = [
 ];
 
 const faqs = [
-  { q: "奥克兰小企业建设网站需要多少钱？", a: "我们的套餐与英文首页保持一致：Launch & Get Found 起价 $1,290 + GST，Lead Growth Engine 起价 $2,690 + GST，Sales Accelerator 起价 $3,890 + GST。项目开始前会给固定报价，把包含内容讲清楚。" },
+  { q: "奥克兰小企业建设网站如何报价？", a: "我们会根据页面数量、内容准备、预约或电商功能、SEO和询盘追踪需求提供项目建议和书面报价。开始前会把范围、交付内容和时间表讲清楚。" },
   { q: "建设网站需要多长时间？", a: "大多数项目在收到内容后2-3周内完成。功能更复杂的网站可能需要4-6周。我们会提前告诉你时间表。" },
   { q: "我需要自己准备内容吗？", a: "你最了解自己的业务，所以服务介绍、照片和基本资料最好由你提供。但我们会帮你整理网站结构，也可以协助撰写文案和选择图片。" },
   { q: "网站建成后我能自己更新内容吗？", a: "可以。我们会做交接培训，让你可以自己更新文字、图片和页面内容。你也可以选择维护计划，让我们帮你处理日常修改。" },
@@ -268,8 +262,8 @@ const reviews = [
   <PageHero
     eyebrow="奥克兰小企业网页设计"
     title="网站不只是门面，应该帮你带来客户。"
-    subtitle="我们为新西兰华人企业、小企业和个体经营者设计专业网站。起价 $1,290，通常2-3周上线，中文沟通，可远程合作，也可在奥克兰面谈。"
-    badgeText="起价$1,290 + GST"
+    subtitle="我们为新西兰华人企业、小企业和个体经营者设计专业网站。通常2-3周上线，中文沟通，可远程合作，也可在奥克兰面谈。"
+    badgeText="按项目范围提供清楚报价"
     ctaPrimary={{ text: "获取免费报价", href: "/zh/website-designer-auckland/" }}
     ctaSecondary={{ text: "查看套餐", href: "#packages" }}
     centered={true}
@@ -278,7 +272,7 @@ const reviews = [
   <!-- AI citability snippet -->
   <div class="smb-snippet">
     <div class="container">
-  <p><strong>Kiwi Web Design</strong> 为新西兰华人企业和小企业设计专业网站，起价 <strong>$1,290 + GST</strong>。常见套餐包括 Launch & Get Found（起价$1,290）、Lead Growth Engine（起价$2,690）和 Sales Accelerator（起价$3,890）。每个项目都会把网站结构、SEO / AI SEO、Google Ads基础和询盘追踪一起考虑。公司位于奥克兰 Grey Lynn，中文沟通，固定报价，Google评分 <strong>5★</strong>。</p>
+  <p><strong>Kiwi Web Design</strong> 为新西兰华人企业和小企业设计专业网站。我们会根据网站结构、SEO / AI SEO、Google Ads基础和询盘追踪需求安排合适的服务方案。公司位于奥克兰 Grey Lynn，中文沟通，支持全新西兰合作，Google评分 <strong>5★</strong>。</p>
     </div>
   </div>
 
@@ -378,19 +372,15 @@ const reviews = [
   <section class="section" style="background: var(--kwd-cream);" id="packages">
     <div class="container">
       <SectionHeader
-        eyebrow="套餐与价格"
-        title="价格先讲清楚，再开始做。"
-        subtitle="项目开始前提供固定报价，你会清楚知道总费用和包含内容。"
+        eyebrow="服务方案"
+        title="适合不同阶段小企业的网站方案。"
+        subtitle="项目开始前会确认范围、交付内容和时间表，再提供清楚的项目建议和报价。"
       />
       <div class="sbwd-packages">
         {packages.map((pkg) => (
           <div class:list={['sbwd-pkg', pkg.highlight && 'sbwd-pkg--featured']}>
             {pkg.tag && <span class="sbwd-pkg-tag">{pkg.tag}</span>}
             <p class="sbwd-pkg-name">{pkg.name}</p>
-            <div class="sbwd-pkg-price-wrap">
-              <span class="sbwd-pkg-price">{pkg.price}</span>
-              <span class="sbwd-pkg-note">{pkg.note}</span>
-            </div>
             <p class="sbwd-pkg-desc">{pkg.desc}</p>
             <ul class="sbwd-pkg-list">
               {pkg.items.map((item) => (
@@ -401,7 +391,7 @@ const reviews = [
           </div>
         ))}
       </div>
-      <p class="sbwd-pkg-note-bottom">所有价格均不含GST。大型或复杂项目可提供定制报价。<a href="/zh/website-designer-auckland/">联系我们获取报价 →</a>，或使用<a href="/zh/website-cost-new-zealand-small-business/">免费费用计算器</a>先获取即时预估。</p>
+      <p class="sbwd-pkg-note-bottom">大型或复杂项目会按实际需求定制服务范围。<a href="/zh/website-designer-auckland/">联系我们讨论你的项目 →</a></p>
     </div>
   </section>
 

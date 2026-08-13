@@ -209,12 +209,6 @@ const caseStudies = [
   },
 ];
 
-const pricingTiers = [
-  { name: "Launch & Get Found", price: "起价 $1,290", pages: "网站 + 本地搜索基础", desc: "适合先把网站基础打好的企业：页面清楚、手机端体验好，也做好基础本地SEO。", popular: false },
-  { name: "Lead Growth Engine", price: "起价 $2,690", pages: "网站 + SEO + Google Ads基础", desc: "适合想把网站、SEO、AI搜索和Google广告一起规划的企业，用一个更完整的方式增加询盘。", popular: true },
-  { name: "Sales Accelerator", price: "起价 $3,890", pages: "持续增长与转化优化", desc: "适合已经准备持续投放和优化的企业，重点放在SEO、广告管理、落地页和转化提升。", popular: false },
-];
-
 const serviceRegions = [
   "奥克兰",
   "汉密尔顿",
@@ -234,8 +228,8 @@ const reasons = [
   },
   {
     num: "02",
-    title: "透明定价，无隐性收费",
-    body: "开始前先把范围和价格讲清楚。你会知道自己付的是什么、会得到什么，不会做到一半才追加费用。",
+    title: "范围清楚，过程透明",
+    body: "开始前先把项目范围、交付内容和时间表讲清楚。你会知道每一步在做什么，不会做到一半才临时增加内容。",
   },
   {
     num: "03",
@@ -251,8 +245,8 @@ const reasons = [
 
 const faqs = [
   {
-    q: "网站开发费用是多少？",
-    a: "我们的套餐与英文首页保持一致：Launch & Get Found 起价 $1,290，Lead Growth Engine 起价 $2,690，Sales Accelerator 起价 $3,890。实际价格会根据页面数量、内容准备、SEO、Google Ads和询盘追踪范围确认，开始前会给你一份清楚的固定报价。可以用我们的<a href=\"/zh/website-cost-new-zealand-small-business/\">免费费用计算器</a>先获取一个即时预估。",
+    q: "网站项目如何报价？",
+    a: "我们会先了解你的页面数量、内容准备、SEO、Google Ads和询盘追踪需求，再提供清楚的项目建议和书面报价。开始前会把范围、交付内容和时间表确认清楚。",
   },
   {
     q: "网站开发需要多长时间？",
@@ -319,7 +313,7 @@ const faqs = [
           </div>
           <div class="zh-stat">
             <span class="zh-stat-num">固定</span>
-            <span class="zh-stat-lbl">价格，不按小时计费</span>
+            <span class="zh-stat-lbl">项目范围和交付内容先确认</span>
           </div>
           <div class="zh-stat">
             <span class="zh-stat-num">全国</span>
@@ -333,7 +327,7 @@ const faqs = [
   <!-- AI citability snippet -->
   <div class="zh-snippet">
     <div class="container">
-      <p><strong>Kiwi Web Design</strong> 是奥克兰 Grey Lynn 的网站设计与数字营销团队，由 Charlie Chao 创立。我们主要帮助新西兰华人企业和本地中小企业做网站、SEO、AI搜索优化和 Google 广告。网站套餐起价 <strong>$1,290 NZD</strong>，本地 SEO 起价 <strong>$500/月</strong>。中文沟通，固定报价，支持全新西兰远程合作，Google 评分 <strong>5★</strong>。</p>
+      <p><strong>Kiwi Web Design</strong> 是奥克兰 Grey Lynn 的网站设计与数字营销团队，由 Charlie Chao 创立。我们主要帮助新西兰华人企业和本地中小企业做网站、SEO、AI搜索优化和 Google 广告。服务会按你的业务目标、项目范围和增长计划来安排，开始前提供清楚的项目建议和报价。中文沟通，支持全新西兰远程合作，Google 评分 <strong>5★</strong>。</p>
     </div>
   </div>
 
@@ -383,7 +377,7 @@ const faqs = [
       <div class="zh-section-header">
         <p class="zh-section-eyebrow">网站开发流程</p>
         <h2 class="zh-section-title">从第一次沟通到上线，都用中文讲清楚。</h2>
-        <p class="zh-section-subtitle">流程简单透明，你知道每一步在做什么、什么时候完成、费用是多少。</p>
+        <p class="zh-section-subtitle">流程简单透明，你知道每一步在做什么、什么时候完成、会交付哪些内容。</p>
       </div>
       <div class="zh-process-split">
         <div class="zh-process">
@@ -475,29 +469,6 @@ const faqs = [
           </a>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section class="section" style="background: var(--kwd-dark);">
-    <div class="container" style="max-width: 900px;">
-      <div class="zh-section-header" style="color: #fff;">
-        <p class="zh-section-eyebrow" style="color: var(--kwd-yellow);">网站开发价格</p>
-        <h2 class="zh-section-title" style="color: #fff;">价格先讲清楚，再开始做。</h2>
-        <p class="zh-section-subtitle" style="color: rgba(255,255,255,0.65);">下面是常见网站与推广套餐的起步价格。最终报价会按你的实际需求确认。</p>
-      </div>
-      <div class="zh-pricing-grid">
-        {pricingTiers.map(tier => (
-          <div class={`zh-pricing-card${tier.popular ? ' zh-pricing-card--popular' : ''}`}>
-            {tier.popular && <span class="zh-popular-badge">最受欢迎</span>}
-            <p class="zh-pricing-name">{tier.name}</p>
-            <p class="zh-pricing-price">{tier.price}</p>
-            <p class="zh-pricing-pages">{tier.pages}</p>
-            <p class="zh-pricing-desc">{tier.desc}</p>
-          </div>
-        ))}
-      </div>
-      <p class="zh-pricing-note">每个套餐都会围绕网站、SEO / AI SEO、Google广告和询盘转化来规划。<a href={contactPage} class="zh-pricing-cta-link">获取精确报价 →</a></p>
     </div>
   </section>
 
