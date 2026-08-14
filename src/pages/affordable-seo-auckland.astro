@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
-import TestimonialGrid from '../components/TestimonialGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import { Image } from 'astro:assets';
@@ -172,11 +171,6 @@ const process = [
   { step: "4", title: "Monthly Reporting", desc: "Readable reports showing where rankings are moving, what we did, and what's next. You always know what you're paying for." },
 ];
 
-const reviews = [
-  { name: "Zane Barrett", company: "Barrett Access Scaffolding", text: "Charlie really took the time to understand our business and built a site that actually ranks. We're getting enquiries we never would have found without SEO." },
-  { name: "Jack", company: "Show Me Shorts", text: "The SEO work was thorough and professional. They explained everything clearly and I can see real improvements in our Google rankings." },
-];
-
 const caseStudies = [
   {
     name: "Barrett Access Scaffolding",
@@ -233,14 +227,9 @@ const faqsRight = faqs.slice(4);
     imgNatural={true}
   />
 
-  <!-- ② TRUST STRIP — 5 visual stats -->
+  <!-- ② TRUST STRIP -->
   <div class="seo-trust-strip">
     <div class="container seo-trust-inner">
-      <div class="stt-item">
-        <span class="stt-num">5★</span>
-        <span class="stt-lbl">5/5 Google rating &bull; <a href="https://www.google.com/maps/place/Kiwi+Web+Design" target="_blank" rel="noopener noreferrer" class="stt-review-link">Read our reviews</a></span>
-      </div>
-      <span class="stt-sep" aria-hidden="true"></span>
       <div class="stt-item">
         <span class="stt-num">Direct</span>
         <span class="stt-lbl">Access to Charlie, no middlemen</span>
@@ -267,7 +256,7 @@ const faqsRight = faqs.slice(4);
   <div class="seo-snippet">
     <div class="container seo-snippet-inner">
       <p class="seo-snippet-label">🔍 What is Kiwi Web Design?</p>
-      <p><strong>Kiwi Web Design</strong> is an <strong>SEO agency in Auckland</strong> providing affordable search engine optimisation that Auckland small businesses can sustain: local SEO, Google Business Profile optimisation, technical SEO, content strategy, and plain-English reporting, with no lock-in contracts and pricing scoped to your competition and goals. Based in Grey Lynn, Auckland. 5/5 Google rating. Free SEO audit available.</p>
+      <p><strong>Kiwi Web Design</strong> is an <strong>SEO agency in Auckland</strong> providing affordable search engine optimisation that Auckland small businesses can sustain: local SEO, Google Business Profile optimisation, technical SEO, content strategy, and plain-English reporting, with no lock-in contracts and pricing scoped to your competition and goals. Based in Grey Lynn, Auckland. Free SEO audit available.</p>
     </div>
   </div>
 
@@ -292,8 +281,7 @@ const faqsRight = faqs.slice(4);
           <p class="scc-note">Could get your site penalised</p>
         </div>
         <div class="scc-right">
-          <span class="scc-badge">Save up to 70%</span>
-          <p class="scc-heading">✅ Kiwi Web Design</p>
+                   <p class="scc-heading">✅ Kiwi Web Design</p>
           <ul class="scc-list">
             <li>Same work as big agencies: GBP, on-page, technical, content</li>
             <li>No account-manager layer: you pay for the work, not the overhead</li>
@@ -301,7 +289,7 @@ const faqsRight = faqs.slice(4);
             <li>Monthly reports tied to actual enquiries, not just screenshots</li>
             <li>No lock-in. Stay because the work is moving, not because you have to.</li>
           </ul>
-          <p class="scc-note">Same quality. Fraction of the cost.</p>
+          <p class="scc-note">Same quality. Lower cost.</p>
         </div>
       </div>
     </div>
@@ -335,7 +323,7 @@ const faqsRight = faqs.slice(4);
   <!-- ⑥ RESULTS STRIP — dark section with large numbers -->
   <section class="section seo-results-dark">
     <div class="container">
-      <SectionHeader title="The kind of work that moves Auckland campaigns forward." light={true} />
+      <SectionHeader title="SEO campaigns that move Auckland businesses forward" light={true} />
       <div class="seo-results">
         <div class="seo-result">
           <span class="sr-num">GBP</span>
@@ -445,7 +433,7 @@ const faqsRight = faqs.slice(4);
           <p>Most Auckland small businesses don't need a big-agency process with layers of account managers and monthly pitch decks. They need a search engine optimisation partner in Auckland who understands local search intent, fixes the website alongside the keywords, and stays accountable to leads.</p>
           <p>We keep costs low by staying lean: you work directly with Charlie, not a junior passing messages up the chain. Faster decisions, no miscommunication, and none of the overhead that inflates agency retainers.</p>
           <div class="seo-about-pills">
-            <span class="seo-pill">Charlie direct</span>
+            <span class="seo-pill">Direct access</span>
             <span class="seo-pill">No lock-in</span>
             <span class="seo-pill">One invoice</span>
             <span class="seo-pill">Auckland-based</span>
@@ -475,8 +463,7 @@ const faqsRight = faqs.slice(4);
       <div class="seo-pkg-grid">
         <div class="seo-pkg">
           <h3>Starter SEO</h3>
-          <p class="seo-price">Free Quote</p>
-          <p class="seo-pkg-desc">Ideal for small businesses in less competitive niches wanting to establish Google visibility without a big commitment.</p>
+                    <p class="seo-pkg-desc">Ideal for small businesses in less competitive niches wanting to establish Google visibility without a big commitment.</p>
           <ul class="seo-pkg-list">
             <li>Google Business Profile optimisation</li>
             <li>On-page SEO for up to 5 pages</li>
@@ -488,8 +475,7 @@ const faqsRight = faqs.slice(4);
         <div class="seo-pkg seo-pkg-highlight">
           <span class="seo-pkg-tag">Most Popular</span>
           <h3>Growth SEO</h3>
-          <p class="seo-price">Free Quote</p>
-          <p class="seo-pkg-desc">For competitive Auckland markets wanting consistent, compounding lead flow from organic search.</p>
+                 <p class="seo-pkg-desc">For competitive Auckland markets wanting consistent, compounding lead flow from organic search.</p>
           <ul class="seo-pkg-list">
             <li>Full technical SEO audit &amp; fixes</li>
             <li>On-page optimisation across all pages</li>
@@ -502,8 +488,7 @@ const faqsRight = faqs.slice(4);
         </div>
         <div class="seo-pkg">
           <h3>Authority SEO</h3>
-          <p class="seo-price">Free Quote</p>
-          <p class="seo-pkg-desc">For highly competitive niches (legal, finance, healthcare) where dominating search in your category is the goal.</p>
+                 <p class="seo-pkg-desc">For highly competitive niches (legal, finance, healthcare) where dominating search in your category is the goal.</p>
           <ul class="seo-pkg-list">
             <li>Everything in Growth SEO</li>
             <li>Content strategy &amp; pillar pages</li>
@@ -518,24 +503,6 @@ const faqsRight = faqs.slice(4);
     </div>
   </section>
 
-  <!-- ⑫ PULL QUOTE — featured testimonial -->
-  <div class="seo-featured-quote">
-    <div class="container">
-      <p class="sfq-mark" aria-hidden="true">"</p>
-      <p class="sfq-text">Charlie really took the time to understand our business and built a site that actually ranks. We're getting enquiries we never would have found without SEO.</p>
-      <p class="sfq-author">Zane Barrett, Barrett Access Scaffolding</p>
-    </div>
-  </div>
-
-  <!-- ⑬ TESTIMONIALS -->
-  <section class="section" style="background: var(--kwd-cream);">
-    <div class="container">
-      <SectionHeader title="What our SEO clients say." />
-      <TestimonialGrid items={reviews} cols={2} />
-      <p class="seo-reviews-more"><a href="/testimonials-reviews/">Read more client reviews →</a></p>
-    </div>
-  </section>
-
   <!-- ⑭ TEAM CARD — gradient image overlay -->
   <div class="container seo-team-card-wrap">
     <div class="seo-team-card">
@@ -546,10 +513,6 @@ const faqsRight = faqs.slice(4);
           <div class="stn-item">
             <span class="stn-num">50+</span>
             <span class="stn-lbl">NZ client projects</span>
-          </div>
-          <div class="stn-item">
-            <span class="stn-num">5★</span>
-            <span class="stn-lbl">Google rating</span>
           </div>
           <div class="stn-item">
             <span class="stn-num">3–6 mo</span>
@@ -659,13 +622,6 @@ const faqsRight = faqs.slice(4);
     max-width: 140px;
     line-height: 1.35;
   }
-  .stt-review-link {
-    color: var(--kwd-dark);
-    font-weight: 700;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  .stt-review-link:hover { color: var(--kwd-brown); }
   .stt-sep {
     width: 1px;
     height: 3rem;
@@ -1301,52 +1257,6 @@ const faqsRight = faqs.slice(4);
   .seo-pkg-btn:hover { background: var(--kwd-gold); }
   .seo-pkg-btn-accent { background: var(--kwd-yellow); }
   .seo-pkg-btn-accent:hover { background: var(--kwd-gold); }
-
-  /* ══════════════════════════════════════════
-     ⑫ FEATURED PULL QUOTE
-  ══════════════════════════════════════════ */
-  .seo-featured-quote {
-    background: var(--kwd-dark);
-    padding: 4rem 0;
-    text-align: center;
-  }
-  .seo-featured-quote .container { max-width: 780px; }
-  .sfq-mark {
-    font-family: var(--kwd-font-heading);
-    font-size: 5rem;
-    color: var(--kwd-yellow);
-    line-height: 0.5;
-    margin: 0 0 1.25rem;
-    display: block;
-  }
-  .sfq-text {
-    font-family: var(--kwd-font-heading);
-    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-    color: #fff;
-    line-height: 1.45;
-    font-style: italic;
-    margin: 0 0 1.5rem;
-  }
-  .sfq-author {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    margin: 0;
-  }
-
-  .seo-reviews-more {
-    text-align: center;
-    margin: 1.75rem 0 0;
-  }
-  .seo-reviews-more a {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--kwd-dark);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  .seo-reviews-more a:hover { color: var(--kwd-brown); }
 
   /* ══════════════════════════════════════════
      ⑭ TEAM CARD — gradient overlay on image
