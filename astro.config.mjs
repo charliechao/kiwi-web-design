@@ -6,11 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 const sitemapExcludedPaths = new Set([
   // GSC URL Inspection cleanup, 2026-06-23: keep the submitted sitemap focused
   // on pages Google currently treats as valuable, canonical, and index-worthy.
-  '/affordable-web-design-auckland/affordable-web-design-auckland-2025-why-small-business-needs-website/',
-  '/affordable-web-design-auckland/auckland-web-design-ai-seo-shift/',
   '/affordable-web-design-auckland/best-seo-company-auckland-small-businesses/',
-  '/affordable-web-design-auckland/choosing-a-website-platform-a-practical-guide-for-small-businesses-in-auckland/',
-  '/affordable-web-design-auckland/seo-vs-google-ads-auckland-small-business/',
   '/affordable-web-design-auckland/why-auckland-business-not-ranking-google/',
   '/custom-florist-website-design-auckland/',
   '/malware-cleanup-for-auckland-small-business-websites/',

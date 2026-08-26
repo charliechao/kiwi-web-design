@@ -1,0 +1,145 @@
+WEB DESIGN AGENCY BRIEF AND CONTRACT CHECKLIST
+Kiwi Web Design | kiwiwebdesign.co.nz
+
+Use this template to brief and compare New Zealand web designers. Complete the
+business section once, then ask every supplier to answer the same questions.
+
+1. BUSINESS AND CUSTOMER BRIEF
+
+Business name:
+Primary contact and decision-maker:
+Current website (if any):
+Target launch date and reason:
+Budget range excluding GST:
+
+Primary customer groups:
+-
+-
+-
+
+The questions customers ask before choosing us:
+-
+-
+-
+
+The main actions visitors should complete:
+[ ] Call
+[ ] Submit a quote request
+[ ] Book an appointment
+[ ] Buy online
+[ ] Visit a location
+[ ] Download information
+[ ] Other:
+
+Services, products, locations, or audiences that may need separate pages:
+-
+-
+-
+
+Required integrations (booking, payment, CRM, email, inventory, other):
+-
+
+2. PROPOSAL SCOPE
+
+[ ] Discovery and customer research are described.
+[ ] Page list and purpose of each page are documented.
+[ ] Copywriting responsibilities and word/page limits are documented.
+[ ] Image, video, font, and licence responsibilities are documented.
+[ ] Product, service, or data-entry limits are documented.
+[ ] Forms, booking, checkout, and integrations are specified.
+[ ] Mobile, browser, accessibility, and performance testing are specified.
+[ ] Revisions, feedback method, and approval stages are specified.
+[ ] Migration and redirects from the old website are included where needed.
+[ ] Launch, training, and handover are included.
+
+3. OWNERSHIP AND ACCESS
+
+Ask the supplier to name the owner and administrator for each account.
+
+Domain registrar:
+Domain registrant or holder:
+DNS access:
+Hosting account:
+CMS administrator or source repository:
+Google Analytics:
+Google Search Console:
+Google Business Profile:
+Advertising accounts:
+Form or email-delivery service:
+Booking or merchant account:
+Plugin, theme, font, and image licences:
+Backup location and restore access:
+
+[ ] The business can move the website to another provider.
+[ ] The contract explains any proprietary platform restrictions.
+[ ] Final design, content, code, and data rights are documented.
+[ ] An exit and transfer process is documented.
+
+4. SEARCH AND MEASUREMENT
+
+[ ] Search research and intended page topics are documented.
+[ ] Unique titles, descriptions, headings, and internal links are included.
+[ ] Canonical URLs, sitemap, and accurate structured data are included.
+[ ] Existing URL redirects are mapped before launch.
+[ ] Search Console and analytics access belong to the business.
+[ ] Meaningful actions are tracked, not only page views.
+[ ] Form, call, booking, and sale attribution limits are explained.
+[ ] Test and spam activity can be separated from business reporting.
+[ ] Post-launch monitoring and reporting are defined.
+
+5. PRIVACY, SECURITY, AND OPERATIONS
+
+[ ] Each form collects only information the business needs.
+[ ] The privacy statement and data processors are identified.
+[ ] Submission storage, delivery, access, and retention are documented.
+[ ] Security updates, backups, and recovery responsibilities are documented.
+[ ] Ongoing maintenance is priced separately from the initial build.
+[ ] Support response times and out-of-scope rates are documented.
+[ ] Software and licence renewal costs are listed.
+
+6. PRICE COMPARISON
+
+Initial build excluding GST:
+GST:
+Required first-year licences:
+Hosting:
+Maintenance:
+Copywriting:
+Photography or stock images:
+Product or content entry:
+SEO beyond launch setup:
+Analytics or reporting:
+Other required costs:
+Optional costs:
+
+Total expected first-year cost:
+Expected annual cost after year one:
+
+7. AGREEMENT AND ACCEPTANCE
+
+[ ] Payment milestones and deposit terms are clear.
+[ ] Cancellation, pause, delay, and refund terms are clear.
+[ ] The process for additional scope is clear.
+[ ] Verbal promises have been added to the written agreement.
+[ ] Important features have testable acceptance criteria.
+[ ] The person authorised to approve work is named.
+[ ] The handover package and date are documented.
+
+SUPPLIER NOTES
+
+Agency or designer:
+Primary contact:
+Proposal date and expiry:
+What they understood particularly well:
+
+Questions still unanswered:
+-
+-
+-
+
+Material exclusions or risks:
+-
+-
+-
+
+Final decision and reason:

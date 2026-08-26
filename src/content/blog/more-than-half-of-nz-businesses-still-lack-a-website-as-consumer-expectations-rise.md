@@ -1,8 +1,8 @@
 ---
-title: More Than Half of NZ Businesses Still Lack a Website as Consumer Expectations Rise
-description: "InternetNZ 2025: only 53% of NZ businesses have a website, unchanged since 2022, while consumer expectations keep rising. Key stats and what it means for your business."
+title: Nearly Half of NZ Businesses Still Lack a Website as Consumer Expectations Rise
+description: "InternetNZ 2025: 47% of NZ businesses lack a website, while 61% rate websites as their most important digital tool. See the primary data and what it means."
 pubDate: 2025-12-02
-lastModified: 2025-12-02
+lastModified: 2026-08-26
 image: "/blog/nz-business-website-statistics-2025-internetnz-report.png"
 articleSection: NZ Business Research
 keywords: "NZ business website statistics, InternetNZ 2025, small business website NZ, .nz domain trust, AI adoption NZ businesses, website adoption New Zealand"
@@ -10,17 +10,16 @@ keywords: "NZ business website statistics, InternetNZ 2025, small business websi
 
 <div class="kwd-snippet">
 
-**Key findings, InternetNZ Research 2025 (750 businesses · 500 consumers):**
+**Key findings, InternetNZ Research 2025 (750 businesses and 500 consumers):**
 
-- Only **53% of NZ businesses** have a website, unchanged since 2022
-- **61%** say a website is their most important digital tool, yet less than half have one
+- **53% of NZ businesses** have a website, unchanged since 2022, so **47% do not**
+- **61%** rank a website as the most important digital tool for business success
 - **68%** of NZ businesses now use AI tools in daily operations
 - **74%** of businesses agree a .nz domain is more trustworthy (up from 58% in 2020)
-- **52%** of consumers see websites primarily as a sales channel, only **25%** of businesses do
+- **52%** of consumers see online sales as a main website benefit, compared with **35%** of businesses
 
 </div>
-
-New research from [InternetNZ](https://internetnz.nz/) shows that New Zealand businesses know a strong online presence matters, yet many are still falling behind. While 61 percent of businesses say a website is their most important digital tool, only 53 percent actually have one. That gap hasn't improved since 2022.
+InternetNZ's [2025 .nz consumers and businesses research](https://internetnz.nz/dotnz-research/2025-nz-consumers-and-businesses-research/) shows that New Zealand businesses know a strong online presence matters, yet many are still falling behind. While 61 percent of businesses rank a website as the most important digital tool for business success, only 53 percent actually have one. That figure is unchanged from the 2022 survey.
 
 At the same time, consumers are expecting faster service, more personalisation, and better online experiences. These two trends are moving in opposite directions, which creates real risks for small businesses that still rely on social media or email alone.
 
@@ -32,7 +31,7 @@ The report shows a clear mismatch between what businesses say is important and w
 
 **Key findings:**
 
-- **61 percent** of businesses rank their website as their most important digital tool, but **only 53 percent** have one
+- **61 percent** of businesses rank a website as the most important digital tool for business success, but **only 53 percent** have one
 - Email is ranked second most important, yet its usage is declining as customers shift to messaging and live chat
 - Businesses overestimate the impact of social media, consumers consistently place lower value on social channels as a way to get information or engage
 
@@ -46,7 +45,7 @@ The research confirms that website adoption has stayed flat since 2022. Just **5
 
 At the same time:
 
-- **A third of businesses** see websites as a way to make sales
+- **Just over a third of businesses** see websites as a way to make sales
 - **More than half of consumers** see online sales as the primary benefit of a website
 
 This creates a problem. Businesses are underestimating one of the main reasons customers visit their website in the first place.
@@ -57,14 +56,14 @@ This creates a problem. Businesses are underestimating one of the main reasons c
 
 AI is rapidly changing how customers interact with businesses online.
 
-**The report highlights four major shifts in consumer behaviour after AI adoption:**
+**Businesses surveyed reported four changes in customer behaviour alongside greater AI use:**
 
 - Higher expectations for speed and efficiency
 - Increased demand for personalised experiences
 - More use of self-service tools
 - More after-hours engagement
 
-Consumers expect instant answers, personalised recommendations, and 24/7 convenience. Businesses relying solely on email or social media often can't meet these expectations.
+These are reported survey perceptions rather than a claim that every consumer now expects the same experience. They still point to a practical need for accurate information and clear self-service options.
 
 ---
 
@@ -79,7 +78,7 @@ Businesses mostly use AI for:
 - Data analysis
 - Workflow automation
 
-This shift matters because as AI-driven speed becomes normal, customers expect the same level of responsiveness everywhere, including on websites. Businesses without a website or without modern functionality fall behind.
+This shift matters because AI can influence expectations around speed, self-service, and personalisation. A website gives a business a controlled place to provide accurate answers and define where human help is available.
 
 ---
 
@@ -119,7 +118,7 @@ The report reinforces the strong position of .nz:
 - Businesses choose .nz because it signals credibility, supports a local identity, and builds trust
 - Agreement that .nz is more trustworthy has grown to **74 percent** among businesses (up from 58 percent in 2020)
 
-For small businesses serving a local market, .nz remains the strongest indicator of trust.
+For small businesses serving a local market, a .nz domain can be one useful signal of local identity and trust. It does not replace clear ownership, accurate contact information, real evidence, or a reliable customer experience.
 
 ---
 
@@ -130,15 +129,13 @@ For small businesses serving a local market, .nz remains the strongest indicator
 | NZ businesses with a website | 53% |
 | Businesses ranking website as most important digital tool | 61% |
 | NZ businesses using AI tools | 68% |
-| Consumers who see websites primarily as a sales channel | 52% |
-| Businesses who see websites primarily as a sales channel | 25% |
-| Businesses who see websites primarily for credibility | 42% |
-| Consumers who see websites primarily for credibility | 17% |
+| Consumers who see online sales as a main website benefit | 52% |
+| Businesses who see online sales as a main website benefit | 35% |
 | Businesses using a .nz domain | 70% |
 | Businesses agreeing .nz is more trustworthy (2025) | 74% |
 | Businesses agreeing .nz is more trustworthy (2020) | 58% |
 
-*Source: InternetNZ ".nz Consumers and Businesses Research Summary 2025", survey conducted July–August 2025, sample of 750 businesses and 500 consumers.*
+*Source: InternetNZ [2025 research page](https://internetnz.nz/dotnz-research/2025-nz-consumers-and-businesses-research/) and [.nz consumers and businesses summary report](https://internetnz.nz/assets/DotNZ-Research-2025-Summary.pdf). The online survey ran from 31 July to 21 August 2025 and included 750 businesses and 500 consumers. InternetNZ reports margins of error of +/-3.6% and +/-4.4% respectively.*
 
 ---
 
@@ -154,7 +151,7 @@ Customers expect:
 - Easy online transactions
 - Personalised experiences driven by AI
 
-A website is the only channel that allows a business to meet all of these expectations in one place. Social media alone is not enough. Email alone is not enough. A modern [small business website in Auckland](/small-business-website-design-auckland/) backed by solid domain ownership remains the foundation of a trustworthy digital presence.
+A website can bring detailed information, transactions, enquiries, and owned content together in one place. Social media, email, messaging, and a website each serve different roles. A modern [small business website in Auckland](/small-business-website-design-auckland/) backed by clear domain ownership can provide a stable foundation between those channels.
 
 For many businesses, the first practical step is reviewing whether their website exists, whether it still represents their brand, and whether it meets current customer expectations.
 
@@ -174,19 +171,19 @@ If you don't have a website at all, now is the right time to close the gap highl
 
 **What percentage of NZ businesses have a website?**
 
-According to InternetNZ research conducted July–August 2025 across 750 NZ businesses, only 53 percent of New Zealand businesses have a website. This figure has remained unchanged since 2022, despite 61 percent of businesses ranking a website as their most important digital tool.
+According to InternetNZ research conducted from 31 July to 21 August 2025 across 750 NZ businesses, 53 percent of New Zealand businesses have a website and 47 percent do not. Website adoption was unchanged from the 2022 survey, despite 61 percent ranking a website as the most important digital tool for business success.
 
-**Do NZ consumers trust .nz domains more than .com?**
+**Do NZ businesses see .nz domains as more trustworthy than other domains?**
 
-Yes. InternetNZ 2025 data shows 74 percent of NZ businesses agree that a .nz domain is more trustworthy, up from 58 percent in 2020. Seven out of ten NZ businesses with a website already use a .nz domain. For small businesses serving a local market, a .nz domain remains the strongest available trust signal.
+InternetNZ 2025 data shows 74 percent of businesses surveyed agree that .nz is more trustworthy than other domain names, up from 58 percent in 2020. Seven out of ten surveyed businesses with a website use a .nz domain. This statistic describes surveyed business perceptions; it does not mean a domain alone makes a website trustworthy.
 
 **How many NZ businesses use AI tools?**
 
-68 percent of New Zealand businesses now use some form of AI in their daily operations, according to the InternetNZ 2025 survey. Common uses include content creation, customer service chatbots, data analysis, and workflow automation. As AI-driven speed becomes the norm, customers increasingly expect the same level of responsiveness from every business website they visit.
+68 percent of businesses surveyed said they use AI. Reported uses included writing and grammar, content creation, data analysis, image or video generation, customer-facing websites and apps, and customer support. The survey does not establish that every business uses AI daily or that every consumer expects an AI experience.
 
 **How do NZ consumers view business websites compared to how businesses view them?**
 
-There is a significant perception gap. 52 percent of consumers see websites primarily as a sales channel, while only 25 percent of businesses do. Businesses tend to view their website mainly as a credibility or information tool, a mismatch that causes them to underinvest in e-commerce and transactional features their customers actually want.
+There is a clear perception gap in the survey. 52 percent of consumers selected online sales as a main website benefit, while 35 percent of businesses did. That does not mean every business should add ecommerce, but it is a useful prompt to check whether customers can complete the transaction or enquiry they expect.
 
 ---
 
@@ -199,128 +196,3 @@ There is a significant perception gap. 52 percent of consumers see websites prim
     <a class="rps-link" href="/google-ads/">Google Ads Auckland</a>
   </div>
 </div>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "NewsArticle",
-      "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/more-than-half-of-nz-businesses-still-lack-a-website-as-consumer-expectations-rise/#article",
-      "headline": "More Than Half of NZ Businesses Still Lack a Website as Consumer Expectations Rise",
-      "description": "InternetNZ 2025: only 53% of NZ businesses have a website, unchanged since 2022, while consumer expectations keep rising. Key stats and what it means for your business.",
-      "datePublished": "2025-12-02T00:00:00+13:00",
-      "dateModified": "2025-12-02T00:00:00+13:00",
-      "articleSection": "NZ Business Research",
-      "keywords": "NZ business website statistics, InternetNZ 2025, small business website NZ, .nz domain trust, AI adoption NZ businesses",
-      "inLanguage": "en-NZ",
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://www.kiwiwebdesign.co.nz/blog/nz-business-website-statistics-2025-internetnz-report.png",
-        "width": 1200,
-        "height": 630
-      },
-      "author": {
-        "@type": "Person",
-        "@id": "https://www.kiwiwebdesign.co.nz/#charlie",
-        "name": "Charlie Chao",
-        "url": "https://www.kiwiwebdesign.co.nz/about-us/",
-        "jobTitle": "Founder, Kiwi Web Design"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "@id": "https://www.kiwiwebdesign.co.nz/#organization",
-        "name": "Kiwi Web Design",
-        "url": "https://www.kiwiwebdesign.co.nz/"
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/more-than-half-of-nz-businesses-still-lack-a-website-as-consumer-expectations-rise/"
-      },
-      "about": [
-        {
-          "@type": "Thing",
-          "name": "Website adoption among New Zealand businesses",
-          "description": "The rate at which New Zealand businesses have established an online presence via a website"
-        },
-        {
-          "@type": "Thing",
-          "name": "Consumer digital expectations in New Zealand",
-          "description": "How New Zealand consumers expect to interact with businesses online in 2025"
-        }
-      ],
-      "mentions": [
-        {
-          "@type": "Organization",
-          "name": "InternetNZ",
-          "url": "https://internetnz.nz/",
-          "sameAs": "https://en.wikipedia.org/wiki/InternetNZ"
-        }
-      ],
-      "citation": [
-        {
-          "@type": "Report",
-          "name": ".nz Consumers and Businesses Research Summary 2025",
-          "author": {
-            "@type": "Organization",
-            "name": "InternetNZ",
-            "url": "https://internetnz.nz/"
-          },
-          "datePublished": "2025",
-          "description": "Survey of 750 New Zealand businesses and 500 consumers conducted July–August 2025, examining website adoption, digital tool usage, consumer behaviour, and .nz domain trust.",
-          "publisher": {
-            "@type": "Organization",
-            "name": "InternetNZ"
-          }
-        }
-      ],
-      "isAccessibleForFree": true
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/more-than-half-of-nz-businesses-still-lack-a-website-as-consumer-expectations-rise/",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [".kwd-snippet", ".post-title"]
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What percentage of NZ businesses have a website?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "According to InternetNZ research conducted July–August 2025, only 53 percent of New Zealand businesses have a website. This figure has remained unchanged since 2022, despite 61 percent of businesses ranking a website as their most important digital tool."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do NZ consumers trust .nz domains more than .com?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. InternetNZ 2025 data shows 74 percent of NZ businesses agree that a .nz domain is more trustworthy, up from 58 percent in 2020. Seven out of ten NZ businesses with a website already use a .nz domain."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How many NZ businesses use AI tools?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "68 percent of New Zealand businesses now use some form of AI in their daily operations, according to InternetNZ 2025 survey data. Common uses include content creation, customer service chatbots, data analysis, and workflow automation."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do NZ consumers view business websites compared to how businesses view them?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "52 percent of NZ consumers see websites primarily as a sales channel, while only 25 percent of businesses do. Businesses tend to view their website mainly as a credibility or information tool, a mismatch that causes them to underinvest in transactional features their customers actually want."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>

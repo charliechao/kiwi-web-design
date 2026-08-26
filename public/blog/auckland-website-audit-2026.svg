@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Auckland small-business website audit, August 2026</title>
+  <desc id="desc">Bar chart showing the frequency of seven website checks across seven accessible client websites.</desc>
+  <rect width="1200" height="675" fill="#f7f7f2"/>
+  <rect x="64" y="52" width="1072" height="571" rx="8" fill="#ffffff" stroke="#deded7"/>
+  <text x="104" y="112" fill="#171717" font-family="Arial, sans-serif" font-size="38" font-weight="700">Auckland website field audit</text>
+  <text x="104" y="148" fill="#595959" font-family="Arial, sans-serif" font-size="20">Seven accessible homepages from eight live KWD case-study links, checked 26 August 2026</text>
+  <g font-family="Arial, sans-serif" font-size="19" fill="#242424">
+    <text x="104" y="210">Page title</text><rect x="400" y="188" width="600" height="28" fill="#155e75"/><text x="1020" y="210" font-weight="700">7/7</text>
+    <text x="104" y="266">Mobile viewport</text><rect x="400" y="244" width="600" height="28" fill="#155e75"/><text x="1020" y="266" font-weight="700">7/7</text>
+    <text x="104" y="322">Clear action</text><rect x="400" y="300" width="600" height="28" fill="#155e75"/><text x="1020" y="322" font-weight="700">7/7</text>
+    <text x="104" y="378">Enquiry form</text><rect x="400" y="356" width="514" height="28" fill="#2f7d67"/><text x="934" y="378" font-weight="700">6/7</text>
+    <text x="104" y="434">Meta description</text><rect x="400" y="412" width="257" height="28" fill="#d18424"/><text x="677" y="434" font-weight="700">3/7</text>
+    <text x="104" y="490">Exactly one H1</text><rect x="400" y="468" width="257" height="28" fill="#d18424"/><text x="677" y="490" font-weight="700">3/7</text>
+    <text x="104" y="546">JSON-LD detected</text><rect x="400" y="524" width="4" height="28" fill="#b84a3d"/><text x="424" y="546" font-weight="700">0/7</text>
+  </g>
+  <text x="104" y="592" fill="#666666" font-family="Arial, sans-serif" font-size="16">One additional domain could not be audited because its TLS certificate had expired. Snapshot, not a market estimate.</text>
+</svg>

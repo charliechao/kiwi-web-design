@@ -38,3 +38,19 @@
 # Legacy capitalised WordPress-era contact URL (still indexed, pos ~15)
 /Contact/ /contact/ 301
 /Contact /contact/ 301
+
+# Consolidated small-business website guides (August 2026)
+/affordable-web-design-auckland/affordable-web-design-auckland-2025-why-small-business-needs-website/ /affordable-web-design-auckland/from-local-to-legendary-how-your-website-can-supercharge-your-small-kiwi-business/ 301
+/affordable-web-design-auckland/affordable-web-design-auckland-2025-why-small-business-needs-website /affordable-web-design-auckland/from-local-to-legendary-how-your-website-can-supercharge-your-small-kiwi-business/ 301
+/affordable-web-design-auckland/5-reasons-why-small-kiwi-businesses-need-a-website/ /affordable-web-design-auckland/from-local-to-legendary-how-your-website-can-supercharge-your-small-kiwi-business/ 301
+/affordable-web-design-auckland/5-reasons-why-small-kiwi-businesses-need-a-website /affordable-web-design-auckland/from-local-to-legendary-how-your-website-can-supercharge-your-small-kiwi-business/ 301
+/affordable-web-design-auckland/top-5-pages-every-auckland-small-business-website-should-have/ /affordable-web-design-auckland/10-essential-features-every-small-business-website-in-nz-must-have/ 301
+/affordable-web-design-auckland/top-5-pages-every-auckland-small-business-website-should-have /affordable-web-design-auckland/10-essential-features-every-small-business-website-in-nz-must-have/ 301
+/affordable-web-design-auckland/choosing-the-right-web-designer-in-auckland-a-simple-guide/ /affordable-web-design-auckland/how-to-choose-the-best-web-design-agency-for-your-small-business-in-nz/ 301
+/affordable-web-design-auckland/choosing-the-right-web-designer-in-auckland-a-simple-guide /affordable-web-design-auckland/how-to-choose-the-best-web-design-agency-for-your-small-business-in-nz/ 301
+/affordable-web-design-auckland/how-a-good-website-helps-you-compete-with-bigger-brands-in-auckland/ /small-business-website-design-auckland/ 301
+/affordable-web-design-auckland/how-a-good-website-helps-you-compete-with-bigger-brands-in-auckland /small-business-website-design-auckland/ 301
+
+# Consolidated AI search guides (August 2026)
+/affordable-web-design-auckland/auckland-web-design-ai-seo-shift/ /affordable-web-design-auckland/traditional-seo-is-changing-why-auckland-businesses-must-prepare-for-ai-driven-search-aeo-geo/ 301
+/affordable-web-design-auckland/auckland-web-design-ai-seo-shift /affordable-web-design-auckland/traditional-seo-is-changing-why-auckland-businesses-must-prepare-for-ai-driven-search-aeo-geo/ 301

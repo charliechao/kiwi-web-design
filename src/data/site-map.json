@@ -3,7 +3,7 @@
     "generated": "2026-07-10",
     "purpose": "Internal linking reference for Kiwi Web Design Astro site",
     "totalPages": 101,
-    "totalBlogPosts": 31,
+    "totalBlogPosts": 35,
     "notes": "Hub pages should receive the most inbound internal links. Use suggestedAnchorText when linking TO this page."
   },
   "hubs": {
@@ -953,8 +953,8 @@
   "blogPosts": [
     {
       "url": "/affordable-web-design-auckland/seo-vs-google-ads-auckland-small-business/",
-      "title": "SEO vs Google Ads: What Should Auckland Small Businesses Invest In?",
-      "topic": "SEO vs Google Ads Auckland",
+      "title": "SEO vs Google Ads: Two Real NZ Small-Business Evidence Cases",
+      "topic": "SEO vs Google Ads Auckland, first-party evidence",
       "relatedServices": [
         "/affordable-seo-auckland/",
         "/google-ads/",
@@ -962,9 +962,29 @@
       ]
     },
     {
+      "url": "/affordable-web-design-auckland/auckland-small-business-website-field-audit-2026/",
+      "title": "Auckland Small-Business Website Audit: 8 Live Sites Checked",
+      "topic": "Auckland small-business website field audit",
+      "relatedServices": [
+        "/technical-seo-auckland/",
+        "/small-business-website-design-auckland/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/what-auckland-website-buyers-actually-ask/",
+      "title": "What Auckland Website Buyers Actually Ask: 6 Real Enquiries",
+      "topic": "website buyer questions, anonymised enquiry research",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/website-design-process-in-auckland/",
+        "/contact/"
+      ]
+    },
+    {
       "url": "/affordable-web-design-auckland/traditional-seo-is-changing-why-auckland-businesses-must-prepare-for-ai-driven-search-aeo-geo/",
-      "title": "Schema Markup for AI Search: How ChatGPT and Google AI Overviews Actually Read Your Website",
-      "topic": "schema markup, structured data, AEO",
+      "title": "Schema Markup and AI Search: What It Does and Does Not Do",
+      "topic": "schema markup, structured data, AI search limitations",
       "relatedServices": [
         "/ai-seo-for-auckland-small-businesses/",
         "/affordable-seo-auckland/",
@@ -982,7 +1002,7 @@
     },
     {
       "url": "/affordable-web-design-auckland/more-than-half-of-nz-businesses-still-lack-a-website-as-consumer-expectations-rise/",
-      "title": "More Than Half of NZ Businesses Still Lack a Website",
+      "title": "Nearly Half of NZ Businesses Still Lack a Website",
       "topic": "NZ business statistics, website importance",
       "relatedServices": [
         "/small-business-website-design-auckland/",
@@ -1019,20 +1039,12 @@
     },
     {
       "url": "/affordable-web-design-auckland/choosing-a-website-platform-a-practical-guide-for-small-businesses-in-auckland/",
-      "title": "Choosing a Website Platform: A Practical Guide",
-      "topic": "website platform comparison Auckland",
+      "title": "Website Platform Decision Log: 4 Real Small-Business Scopes",
+      "topic": "WordPress, Shopify, booking and landing-page platform decisions",
       "relatedServices": [
         "/wordpress-website-design-auckland/",
+        "/shopify-website-design-auckland/",
         "/small-business-website-design-auckland/"
-      ]
-    },
-    {
-      "url": "/affordable-web-design-auckland/how-a-good-website-helps-you-compete-with-bigger-brands-in-auckland/",
-      "title": "How a Good Website Helps You Compete with Bigger Brands",
-      "topic": "website competitive advantage",
-      "relatedServices": [
-        "/small-business-website-design-auckland/",
-        "/affordable-seo-auckland/"
       ]
     },
     {
@@ -1045,30 +1057,12 @@
       ]
     },
     {
-      "url": "/affordable-web-design-auckland/top-5-pages-every-auckland-small-business-website-should-have/",
-      "title": "Top 5 Pages Every Auckland Small Business Website Should Have",
-      "topic": "website page structure",
-      "relatedServices": [
-        "/small-business-website-design-auckland/",
-        "/website-copywriting-auckland/"
-      ]
-    },
-    {
       "url": "/affordable-web-design-auckland/how-to-write-website-content-web-design-auckland/",
       "title": "How to Write Website Content: Web Design Auckland",
       "topic": "website copywriting guide",
       "relatedServices": [
         "/website-copywriting-auckland/",
         "/small-business-website-design-auckland/"
-      ]
-    },
-    {
-      "url": "/affordable-web-design-auckland/affordable-web-design-auckland-2025-why-small-business-needs-website/",
-      "title": "Affordable Web Design Auckland 2025, Why Small Businesses Need Websites",
-      "topic": "affordable web design Auckland 2025",
-      "relatedServices": [
-        "/small-business-website-design-auckland/",
-        "/contact/"
       ]
     },
     {
@@ -1100,30 +1094,12 @@
       ]
     },
     {
-      "url": "/affordable-web-design-auckland/auckland-web-design-ai-seo-shift/",
-      "title": "The Auckland Web Design Shift: How AI and SEO Are Changing Competitive Advantage",
-      "topic": "AI and SEO web design shift",
-      "relatedServices": [
-        "/affordable-seo-auckland/",
-        "/ai-seo-for-auckland-small-businesses/"
-      ]
-    },
-    {
       "url": "/affordable-web-design-auckland/ai-first-web-design/",
-      "title": "AI-First Web Design: What It Means for Small Businesses",
-      "topic": "AI web design",
+      "title": "AI-Assisted Web Design Build Log: What KWD Automates and Reviews",
+      "topic": "AI-assisted web design workflow, human review and QA",
       "relatedServices": [
         "/wordpress-ai-tools-integration-auckland/",
         "/ai-content-setup-for-websites/"
-      ]
-    },
-    {
-      "url": "/affordable-web-design-auckland/choosing-the-right-web-designer-in-auckland-a-simple-guide/",
-      "title": "Choosing the Right Web Designer in Auckland: A Simple Guide",
-      "topic": "choosing web designer Auckland",
-      "relatedServices": [
-        "/small-business-website-design-auckland/",
-        "/contact/"
       ]
     },
     {
@@ -1145,8 +1121,8 @@
     },
     {
       "url": "/affordable-web-design-auckland/wordpress-for-small-business-nz/",
-      "title": "WordPress for Small Business in NZ",
-      "topic": "WordPress NZ small business",
+      "title": "Is WordPress Right for a New Zealand Small Business?",
+      "topic": "WordPress platform choice, ownership and maintenance",
       "relatedServices": [
         "/wordpress-website-design-auckland/",
         "/wordpress-maintenance-auckland/"
@@ -1172,8 +1148,8 @@
     },
     {
       "url": "/affordable-web-design-auckland/ai-small-businesses-auckland-web-design/",
-      "title": "How AI Is Changing Web Design for Small Businesses in Auckland",
-      "topic": "AI web design Auckland",
+      "title": "How New Zealand Small Businesses Can Use AI: 6 Practical Workflows",
+      "topic": "practical AI workflows for NZ small businesses",
       "relatedServices": [
         "/ai-seo-for-auckland-small-businesses/",
         "/ai-content-setup-for-websites/"
@@ -1181,8 +1157,8 @@
     },
     {
       "url": "/affordable-web-design-auckland/how-to-choose-the-best-web-design-agency-for-your-small-business-in-nz/",
-      "title": "How to Choose the Best Web Design Agency for Your Small Business in NZ",
-      "topic": "web design agency selection NZ",
+      "title": "How to Choose a Web Design Agency in New Zealand",
+      "topic": "how to choose a web design agency NZ",
       "relatedServices": [
         "/small-business-website-design-auckland/",
         "/testimonials-reviews/"
@@ -1190,8 +1166,8 @@
     },
     {
       "url": "/affordable-web-design-auckland/10-essential-features-every-small-business-website-in-nz-must-have/",
-      "title": "10 Essential Features Every Small Business Website in NZ Must Have",
-      "topic": "website features checklist NZ",
+      "title": "10 Essential Features for a Small Business Website in NZ",
+      "topic": "small business website features NZ",
       "relatedServices": [
         "/small-business-website-design-auckland/",
         "/wordpress-website-design-auckland/"
@@ -1207,18 +1183,9 @@
       ]
     },
     {
-      "url": "/affordable-web-design-auckland/5-reasons-why-small-kiwi-businesses-need-a-website/",
-      "title": "5 Reasons Why Small Kiwi Businesses Need a Website",
-      "topic": "why small businesses need websites NZ",
-      "relatedServices": [
-        "/small-business-website-design-auckland/",
-        "/contact/"
-      ]
-    },
-    {
       "url": "/affordable-web-design-auckland/facebook-page-for-sme/",
-      "title": "Facebook Page for SMEs: A Necessity or Distraction?",
-      "topic": "social media SMEs NZ",
+      "title": "How to Create a Facebook Page for a Small Kiwi Business",
+      "topic": "Facebook Page setup for NZ small businesses",
       "relatedServices": [
         "/small-business-website-design-auckland/",
         "/affordable-seo-auckland/"
@@ -1226,8 +1193,8 @@
     },
     {
       "url": "/affordable-web-design-auckland/from-local-to-legendary-how-your-website-can-supercharge-your-small-kiwi-business/",
-      "title": "From Local to Legendary: How Your Website Can Supercharge Your Small Kiwi Business",
-      "topic": "website growth NZ small business",
+      "title": "Why Small Businesses in New Zealand Need a Website",
+      "topic": "why small businesses need a website NZ",
       "relatedServices": [
         "/small-business-website-design-auckland/",
         "/affordable-seo-auckland/"
@@ -1244,12 +1211,32 @@
     },
     {
       "url": "/affordable-web-design-auckland/eeat-for-ai-search-auckland-small-business/",
-      "title": "E-E-A-T Explained: Why Google and AI Platforms Trust (or Ignore) Your Auckland Business",
-      "topic": "E-E-A-T, AI trust signals",
+      "title": "E-E-A-T for Small Businesses: A Practical Trust Checklist",
+      "topic": "E-E-A-T, people-first content and verifiable trust",
       "relatedServices": [
         "/ai-seo-for-auckland-small-businesses/",
         "/google-business-profile-guide-for-auckland-businesses/",
         "/affordable-web-design-auckland/do-backlinks-still-matter-auckland-small-business/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/top-5-seo-agencies-in-auckland-2026/",
+      "title": "5 Auckland SEO Agencies to Compare in 2026",
+      "topic": "unranked Auckland SEO agency comparison",
+      "relatedServices": [
+        "/affordable-seo-auckland/",
+        "/local-seo-for-auckland-small-businesses/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/affordable-web-design-auckland/新西兰华人创业宝典从零到一打造你的成功小公/",
+      "title": "Charlie 的新西兰华人创业与网站获客指南",
+      "topic": "新西兰华人创业、双语网站、平台选择和获客衡量",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/local-seo-for-auckland-small-businesses/",
+        "/google-ads/"
       ]
     },
     {
