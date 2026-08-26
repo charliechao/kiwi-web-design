@@ -10,7 +10,6 @@ import charlieImg from '../assets/general/Charlie-SEO-e1755040051671.png';
 import aboutImg from '../assets/general/about.jpg';
 import about3Img from '../assets/general/about3.jpg';
 import aucklandCBDImg from '../assets/general/Auckland-CBD.jpg';
-import beautyImg from '../assets/general/beauty-salon-website-design-seo-auckland.jpg';
 
 const schema = {
   "@context": "https://schema.org",
@@ -171,27 +170,6 @@ const process = [
   { step: "4", title: "Monthly Reporting", desc: "Readable reports showing where rankings are moving, what we did, and what's next. You always know what you're paying for." },
 ];
 
-const caseStudies = [
-  {
-    name: "Barrett Access Scaffolding",
-    imgSrc: "/portfolio/barrett-access-scaffolding.webp",
-    imgAlt: "Barrett Access Scaffolding website — Kiwi Web Design Auckland SEO project",
-    summary: "For Barrett Access Scaffolding, we paired sector landing pages with clearer local intent, Google Business Profile updates, and enquiry routing that matched residential, commercial, and industrial searches.",
-    takeaway: "The SEO lesson: better local landing pages and better-fit enquiry paths usually lift lead quality before you even start chasing harder keywords.",
-    href: "/case-study-scaffolding/",
-    cta: "Read the Barrett case study",
-  },
-  {
-    name: "Beauty Touch Auckland",
-    imgSrc: beautyImg.src,
-    imgAlt: "Beauty Touch Auckland salon website — Kiwi Web Design SEO project",
-    summary: "For Beauty Touch Auckland, we launched service pages, booking-ready structure, and Google Business Profile support so the business could show up more credibly for branded and treatment-led local searches.",
-    takeaway: "The SEO lesson: many Auckland small businesses need cleaner service-page structure and stronger local trust signals before advanced SEO campaigns make sense.",
-    href: "/beauty-touch-case-study/",
-    cta: "Read the Beauty Touch case study",
-  },
-];
-
 const faqs = [
   { q: "What does affordable SEO actually mean in Auckland?", a: "Affordable SEO in Auckland means getting the work that actually moves rankings, local SEO, Google Business Profile, on-page optimisation, technical fixes, and reporting, without big-agency overhead. Every engagement starts with a free audit so we can scope work and pricing to your situation, with no lock-in contracts." },
   { q: "How much should a small business pay for SEO in Auckland?", a: "It varies by competition. Low-competition suburbs and niches need less ongoing investment to show real movement, while high-competition industries like legal, finance, or medical typically need more sustained investment to compete. Every engagement starts with a free audit so we can quote based on your actual competition, not a generic price list." },
@@ -217,7 +195,7 @@ const faqsRight = faqs.slice(4);
   <!-- ① HERO — split layout with Charlie photo -->
   <PageHero
     eyebrow="SEO Auckland"
-    title="SEO Auckland: affordable rankings, no lock-in"
+    title="SEO Auckland: affordable SEO services for small Kiwi businesses, no lock-in"
     subtitle="Big-agency SEO retainers cost far more than most small businesses need to spend. We deliver the same results at a fraction of the cost. No lock-in, direct contact with Charlie, and reporting tied to real enquiries."
     badgeText="Free SEO audit, no obligation"
     ctaPrimary={{ text: "Get a Free SEO Audit", href: "/contact/" }}
@@ -349,32 +327,6 @@ const faqsRight = faqs.slice(4);
           <span class="sr-label">Typical time to meaningful movement</span>
           <span class="sr-industry">Most Auckland campaigns</span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑦ CASE STUDIES — cards with screenshot thumbnails -->
-  <section class="section seo-proof-section">
-    <div class="container">
-      <SectionHeader
-        eyebrow="SEO Case Studies"
-        title="What affordable SEO work looks like on real Auckland projects"
-        subtitle="Grounded examples from live client work. Not made-up ranking wins or cherry-picked screenshots."
-      />
-      <div class="seo-case-grid">
-        {caseStudies.map(({ name, imgSrc, imgAlt, summary, takeaway, href, cta }) => (
-          <article class="seo-case-card">
-            <div class="seo-case-thumb">
-              <img src={imgSrc} alt={imgAlt} width="600" height="180" loading="lazy" decoding="async" />
-            </div>
-            <div class="seo-case-body">
-              <p class="seo-case-name">{name}</p>
-              <p class="seo-case-summary">{summary}</p>
-              <p class="seo-case-takeaway">{takeaway}</p>
-              <a href={href} class="seo-case-link">{cta} →</a>
-            </div>
-          </article>
-        ))}
       </div>
     </div>
   </section>
@@ -837,78 +789,6 @@ const faqsRight = faqs.slice(4);
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
-
-  /* ══════════════════════════════════════════
-     ⑦ CASE STUDIES — with thumbnails
-  ══════════════════════════════════════════ */
-  .seo-proof-section {
-    background: linear-gradient(180deg, #f7f3ea 0%, #ffffff 100%);
-  }
-  .seo-case-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.75rem;
-    margin-top: 2rem;
-  }
-  .seo-case-card {
-    border-radius: 18px;
-    background: #fff;
-    border: 1px solid rgba(44, 41, 39, 0.08);
-    box-shadow: 0 12px 32px rgba(22, 19, 16, 0.07);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .seo-case-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 24px 52px rgba(22, 19, 16, 0.13);
-  }
-  .seo-case-thumb {
-    height: 190px;
-    overflow: hidden;
-    flex-shrink: 0;
-    background: var(--kwd-cream);
-  }
-  .seo-case-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .seo-case-card:hover .seo-case-thumb img { transform: scale(1.04); }
-  .seo-case-body {
-    padding: 1.75rem;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-  .seo-case-name {
-    margin: 0 0 0.75rem;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--kwd-dark);
-  }
-  .seo-case-summary,
-  .seo-case-takeaway {
-    margin: 0;
-    font-size: 0.91rem;
-    line-height: 1.7;
-    color: var(--kwd-brown);
-  }
-  .seo-case-summary { margin-bottom: 0.75rem; }
-  .seo-case-takeaway { margin-bottom: 1.25rem; }
-  .seo-case-link {
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--kwd-dark);
-    text-decoration: none;
-    margin-top: auto;
-  }
-  .seo-case-link:hover { color: var(--kwd-gold); }
 
   /* ══════════════════════════════════════════
      ⑧ PHOTO BAND
@@ -1416,7 +1296,6 @@ const faqsRight = faqs.slice(4);
     .seo-trust-inner { justify-content: flex-start; gap: 1.5rem; }
     .stt-sep { display: none; }
     .seo-results { grid-template-columns: repeat(2, 1fr); }
-    .seo-case-grid { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
     .seo-pkg-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
     .seo-about-split { grid-template-columns: 1fr; gap: 2rem; }
     .seo-about-img-wrap { aspect-ratio: 16/9; max-height: 340px; }
