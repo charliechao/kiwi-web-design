@@ -1,0 +1,412 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import onPageSeoImage from '../assets/services/WordPress-SEO-Auckland.jpg';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/on-page-seo-auckland/",
+      "url": "https://www.kiwiwebdesign.co.nz/on-page-seo-auckland/",
+      "name": "On-Page SEO Auckland | Content, Keywords and Internal Links | Kiwi Web Design",
+      "description": "On-page SEO services for Auckland businesses. We improve keyword targeting, search intent, service-page content, titles, headings, internal links, and local relevance.",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/on-page-seo-auckland/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".opseo-snippet", "h1"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/on-page-seo-auckland/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "SEO Auckland", "item": "https://www.kiwiwebdesign.co.nz/affordable-seo-auckland/" },
+        { "@type": "ListItem", "position": 3, "name": "On-Page SEO Auckland", "item": "https://www.kiwiwebdesign.co.nz/on-page-seo-auckland/" }
+      ]
+    },
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/on-page-seo-auckland/#service",
+      "name": "On-Page SEO Auckland",
+      "serviceType": "On-Page Search Engine Optimisation",
+      "category": "Digital Marketing",
+      "description": "On-page SEO for Auckland businesses, including keyword research, search-intent mapping, service-page content, headings, meta tags, internal links, and local relevance.",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "url": "https://www.kiwiwebdesign.co.nz/on-page-seo-auckland/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is on-page SEO?", "acceptedAnswer": { "@type": "Answer", "text": "On-page SEO improves the content and HTML elements on individual pages so they better match what people search for and are easier for search engines to understand. It includes keyword targeting, search intent, titles, headings, meta descriptions, internal links, image text, and useful page content." } },
+        { "@type": "Question", "name": "Is on-page SEO just adding more keywords?", "acceptedAnswer": { "@type": "Answer", "text": "No. Effective on-page SEO starts with the searcher's need, then gives that page a clear purpose and accurate information. Adding the same keyword repeatedly can make a page less useful. The goal is to make the right page genuinely helpful and easy to interpret." } },
+        { "@type": "Question", "name": "Can you improve existing service pages?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We audit existing pages for intent, coverage, titles, headings, internal links, calls to action, and local relevance. We can refresh pages that are underperforming without discarding the useful content already there." } },
+        { "@type": "Question", "name": "How does on-page SEO work with local SEO?", "acceptedAnswer": { "@type": "Answer", "text": "For Auckland businesses, on-page SEO makes service and location pages clearer for the searches customers actually make. It works alongside Google Business Profile optimisation, local citations, reviews, and technically sound site foundations." } },
+        { "@type": "Question", "name": "How long does on-page SEO take to work?", "acceptedAnswer": { "@type": "Answer", "text": "Updates can be implemented promptly, but search engines still need to crawl, process, and assess them. The timing depends on the site, competition, query, page history, and the quality of the content and technical foundation." } }
+      ]
+    }
+  ]
+};
+
+const services = [
+  {
+    icon: "Search",
+    title: "Keyword and Page Mapping",
+    desc: "We match the searches that matter to the pages best placed to answer them, so your site has a clearer role for every important service and topic.",
+    items: ["Keyword opportunity review", "One topic per page", "Service-page priorities", "Content gap mapping"],
+  },
+  {
+    icon: "ClipboardCheck",
+    title: "Search Intent and Content",
+    desc: "A page needs to meet the reason behind the search. We strengthen the useful details, proof, and next steps people expect to find.",
+    items: ["Buyer-intent content", "Clear service explanations", "Useful question coverage", "Conversion-path review"],
+  },
+  {
+    icon: "PenTool",
+    title: "Titles, Headings and Meta",
+    desc: "We give each page a precise hierarchy and search-result presentation without turning the copy into a list of repeated phrases.",
+    items: ["Title tag improvements", "Meta description review", "Heading hierarchy", "Readable page structure"],
+  },
+  {
+    icon: "Link2",
+    title: "Internal Linking",
+    desc: "Relevant internal links help visitors continue their research and help search engines understand how your services, locations, and guides connect.",
+    items: ["Service-page links", "Topic clusters", "Navigation review", "Anchor-text improvements"],
+  },
+  {
+    icon: "MapPin",
+    title: "Local Service Relevance",
+    desc: "For Auckland businesses, we make service and location information specific, accurate, and useful without creating thin near-duplicate suburb pages.",
+    items: ["Auckland service coverage", "Location-page guidance", "Business details review", "Local proof placement"],
+  },
+  {
+    icon: "BarChart3",
+    title: "Content Refresh Priorities",
+    desc: "We identify the pages with the clearest opportunity, then focus improvements where they can support the services and enquiries you care about.",
+    items: ["Existing-page audit", "Opportunity prioritisation", "Content refresh plan", "Measurement setup"],
+  },
+];
+
+const reviewItems = [
+  "Target queries and the pages that should serve them",
+  "Search intent, service detail, and meaningful next steps",
+  "Page titles, headings, descriptions, and image text",
+  "Internal links between services, locations, and supporting guides",
+  "Local relevance, entity details, and trust information",
+  "Content gaps and the pages worth improving first",
+];
+
+const process = [
+  { step: "1", title: "Review", desc: "We look at your key pages, relevant searches, and the gaps between what customers need and what the site currently answers." },
+  { step: "2", title: "Map", desc: "We create a practical plan for which pages should target which topics, and where a refresh or new page adds real value." },
+  { step: "3", title: "Optimise", desc: "We improve content, headings, metadata, internal links, and calls to action while preserving your business voice." },
+  { step: "4", title: "Measure", desc: "We monitor visibility and engagement signals, then use the findings to guide the next round of SEO work." },
+];
+
+const faqs = [
+  { q: "What is on-page SEO?", a: "On-page SEO improves the content and HTML elements on individual pages so they better match what people search for and are easier for search engines to understand. It includes keyword targeting, search intent, titles, headings, meta descriptions, internal links, image text, and useful page content." },
+  { q: "Is on-page SEO just adding more keywords?", a: "No. Effective on-page SEO starts with the searcher's need, then gives that page a clear purpose and accurate information. Adding the same keyword repeatedly can make a page less useful. The goal is to make the right page genuinely helpful and easy to interpret." },
+  { q: "Can you improve existing service pages?", a: "Yes. We audit existing pages for intent, coverage, titles, headings, internal links, calls to action, and local relevance. We can refresh pages that are underperforming without discarding the useful content already there." },
+  { q: "How does on-page SEO work with local SEO?", a: "For Auckland businesses, on-page SEO makes service and location pages clearer for the searches customers actually make. It works alongside <a href=\"/local-seo-for-auckland-small-businesses/\">Google Business Profile and local SEO work</a>, reviews, and technically sound site foundations." },
+  { q: "How long does on-page SEO take to work?", a: "Updates can be implemented promptly, but search engines still need to crawl, process, and assess them. The timing depends on the site, competition, query, page history, and the quality of the content and technical foundation." },
+];
+---
+
+<Layout
+  title="On-Page SEO Auckland | Content, Keywords and Internal Links | Kiwi Web Design"
+  description="On-page SEO services for Auckland businesses. We improve keyword targeting, search intent, service-page content, titles, headings, internal links, and local relevance."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/on-page-seo-auckland/"
+  schema={schema}
+>
+  <PageHero
+    eyebrow="On-Page SEO Auckland"
+    title="Make every important page clearer, more useful, and easier to find"
+    subtitle="On-page SEO for Auckland businesses. We improve the content, structure, internal links, and local relevance that connect your services with the searches your customers make."
+    ctaPrimary={{ text: "Get an On-Page SEO Review", href: "/contact/" }}
+    ctaSecondary={{ text: "View SEO Services", href: "/affordable-seo-auckland/" }}
+    imgSrc={onPageSeoImage.src}
+    imgAlt="On-page SEO checklist and content optimisation for an Auckland small business"
+    imgTitle="On-page SEO Auckland"
+  />
+
+  <div class="opseo-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design provides on-page SEO for Auckland businesses.</strong> We improve the pages that matter most to your customers through clearer search-intent targeting, useful service content, titles, headings, internal links, local relevance, and accurate page-level signals.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Improve"
+        title="Page-level SEO that serves customers first"
+        subtitle="The goal is not to fill pages with keywords. It is to make the right page the clearest and most useful answer for a relevant search."
+      />
+      <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container opseo-explainer">
+      <div>
+        <p class="opseo-eyebrow">Why It Matters</p>
+        <h2>Better content structure creates a stronger path from search to enquiry</h2>
+        <p>When a service page is vague, hard to scan, or targeting the wrong question, it can miss both the customer and the search engine. On-page SEO makes the value, service details, and next step easier to understand.</p>
+        <p>For Auckland businesses, this often means improving the pages you already have before expanding the site: explaining the service properly, using the language customers use, showing where you work, and linking naturally to the next relevant page.</p>
+        <a href="/affordable-seo-auckland/" class="opseo-link">See our full SEO service</a>
+      </div>
+      <div class="opseo-checklist-wrap">
+        <h3>Pages are often ready for a refresh when</h3>
+        <ul class="opseo-checklist">
+          <li>They get impressions but do not earn clicks</li>
+          <li>They describe a service too briefly or too broadly</li>
+          <li>Multiple pages compete for the same search</li>
+          <li>Visitors do not have a clear next action</li>
+          <li>Important service and location pages are disconnected</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section opseo-review-section">
+    <div class="container opseo-review-grid">
+      <div class="opseo-review-copy">
+        <p class="opseo-eyebrow">On-Page SEO Review</p>
+        <h2>Start with a practical plan for your key pages</h2>
+        <p>We identify the pages worth improving first, clarify what each one should cover, and make the work easier to prioritise around real services and enquiries.</p>
+        <a href="/contact/" class="opseo-review-button">Book an On-Page SEO Review</a>
+      </div>
+      <ul class="opseo-review-list">
+        {reviewItems.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="Review the pages, then improve the right things"
+        subtitle="A focused process keeps content work connected to search intent and business priorities."
+      />
+      <ProcessSteps items={process} />
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="On-Page SEO Questions"
+        subtitle="Straight answers for Auckland businesses improving their service pages and content."
+      />
+    </div>
+  </section>
+
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/affordable-seo-auckland/" class="rps-link">SEO Services Auckland</a>
+        <a href="/technical-seo-auckland/" class="rps-link">Technical SEO</a>
+        <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO Auckland</a>
+        <a href="/website-copywriting-auckland/" class="rps-link">Website Copywriting</a>
+        <a href="/analytics-reporting-for-auckland-small-business-websites/" class="rps-link">Analytics and Reporting</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Want your key pages to work harder?"
+    subtitle="Start with an on-page SEO review and get a clear view of the content and structure worth improving first."
+    ctaPrimary={{ text: "Get an On-Page SEO Review", href: "/contact/" }}
+    ctaSecondary={{ text: "View SEO Services", href: "/affordable-seo-auckland/" }}
+  />
+</Layout>
+
+<style>
+  .opseo-snippet {
+    background: #fff8e1;
+    border-left: 4px solid var(--kwd-yellow);
+    padding: 1rem 0;
+  }
+  .opseo-snippet p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--kwd-dark);
+  }
+
+  .opseo-explainer {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: start;
+    max-width: 1060px;
+  }
+  .opseo-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-brown);
+    margin: 0 0 0.75rem;
+  }
+  .opseo-explainer h2,
+  .opseo-review-copy h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    color: var(--kwd-dark);
+    margin-bottom: 1rem;
+  }
+  .opseo-explainer p {
+    color: var(--kwd-brown);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .opseo-link {
+    display: inline-block;
+    color: var(--kwd-dark);
+    font-weight: 700;
+    margin-top: 0.25rem;
+  }
+  .opseo-checklist-wrap {
+    border-left: 4px solid var(--kwd-yellow);
+    padding: 1.75rem 0 1.75rem 1.75rem;
+  }
+  .opseo-checklist-wrap h3 {
+    color: var(--kwd-dark);
+    font-family: var(--kwd-font-body);
+    font-size: 1rem;
+    margin: 0 0 1rem;
+  }
+  .opseo-checklist,
+  .opseo-review-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .opseo-checklist li,
+  .opseo-review-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.55;
+  }
+  .opseo-checklist li {
+    color: var(--kwd-brown);
+    font-size: 0.9rem;
+  }
+  .opseo-checklist li::before,
+  .opseo-review-list li::before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: var(--kwd-gold);
+  }
+
+  .opseo-review-section { background: var(--kwd-dark); }
+  .opseo-review-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .opseo-review-copy .opseo-eyebrow { color: var(--kwd-yellow); }
+  .opseo-review-copy h2 { color: #fff; }
+  .opseo-review-copy p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .opseo-review-button {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.875rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .opseo-review-button:hover { background: var(--kwd-gold); }
+  .opseo-review-list {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 1.75rem;
+  }
+  .opseo-review-list li {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.9rem;
+  }
+  .opseo-review-list li::before { color: var(--kwd-yellow); }
+
+  .related-strip {
+    background: var(--kwd-cream);
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+  }
+  .rps-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.6rem;
+  }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    color: var(--kwd-dark);
+    text-decoration: none;
+  }
+  .rps-link:hover { background: #e8e7db; }
+
+  @media (max-width: 800px) {
+    .opseo-explainer,
+    .opseo-review-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>

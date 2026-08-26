@@ -1,0 +1,412 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import technicalSeoImage from '../assets/services/WordPress-SEO-Auckland.jpg';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/technical-seo-auckland/",
+      "url": "https://www.kiwiwebdesign.co.nz/technical-seo-auckland/",
+      "name": "Technical SEO Auckland | Site Speed, Crawling and Schema | Kiwi Web Design",
+      "description": "Technical SEO services for Auckland businesses. We audit and improve crawlability, indexing, page speed, Core Web Vitals, mobile usability, redirects, and schema markup.",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/technical-seo-auckland/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".tseo-snippet", "h1"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/technical-seo-auckland/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "SEO Auckland", "item": "https://www.kiwiwebdesign.co.nz/affordable-seo-auckland/" },
+        { "@type": "ListItem", "position": 3, "name": "Technical SEO Auckland", "item": "https://www.kiwiwebdesign.co.nz/technical-seo-auckland/" }
+      ]
+    },
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/technical-seo-auckland/#service",
+      "name": "Technical SEO Auckland",
+      "serviceType": "Technical Search Engine Optimisation",
+      "category": "Digital Marketing",
+      "description": "Technical SEO audits and fixes for Auckland websites, including crawlability, indexing, page speed, Core Web Vitals, redirects, mobile usability, and schema markup.",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "url": "https://www.kiwiwebdesign.co.nz/technical-seo-auckland/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is technical SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Technical SEO is the work that helps search engines crawl, index, and understand a website reliably. It covers page speed, Core Web Vitals, mobile usability, XML sitemaps, robots.txt, redirects, canonical tags, structured data, and error resolution." } },
+        { "@type": "Question", "name": "Will technical SEO improve rankings?", "acceptedAnswer": { "@type": "Answer", "text": "Technical SEO removes issues that can prevent pages from being crawled, indexed, or used well on mobile. It gives content and local SEO work a reliable foundation, but it does not replace useful content, relevant services, or local trust signals." } },
+        { "@type": "Question", "name": "How do you find technical SEO problems?", "acceptedAnswer": { "@type": "Answer", "text": "We start with an audit of crawlability, indexing, performance, mobile usability, internal links, redirects, schema, and Search Console signals. We then prioritise fixes by likely impact and implementation effort." } },
+        { "@type": "Question", "name": "Can you improve a website built by another developer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can audit websites built on WordPress, Shopify, WooCommerce, and other common platforms. We identify the issues, explain the priority, and can implement the agreed fixes where access and the platform allow." } },
+        { "@type": "Question", "name": "How long does technical SEO take?", "acceptedAnswer": { "@type": "Answer", "text": "The audit is the first step. Straightforward fixes such as broken redirects, metadata conflicts, sitemap issues, and basic image optimisation can often be addressed quickly. Larger speed, architecture, or platform issues are planned in stages." } }
+      ]
+    }
+  ]
+};
+
+const services = [
+  {
+    icon: "Search",
+    title: "Crawlability and Indexing",
+    desc: "We check whether important pages can be found, crawled, and indexed correctly, then resolve the technical barriers getting in the way.",
+    items: ["XML sitemap review", "robots.txt checks", "Indexing issue diagnosis", "Internal link paths"],
+  },
+  {
+    icon: "Zap",
+    title: "Site Speed and Core Web Vitals",
+    desc: "A slow site frustrates visitors and can weaken organic performance. We identify the scripts, images, layout shifts, and server factors worth fixing.",
+    items: ["Page speed audit", "Largest Contentful Paint", "Layout shift reduction", "Image and script review"],
+  },
+  {
+    icon: "Link2",
+    title: "URLs, Redirects and Canonicals",
+    desc: "Clean URLs and clear canonical signals help search engines understand the right version of every page and preserve value when content moves.",
+    items: ["Redirect mapping", "Canonical tag checks", "Broken link fixes", "Duplicate-page diagnosis"],
+  },
+  {
+    icon: "ClipboardCheck",
+    title: "Schema Markup",
+    desc: "Structured data gives search engines clear information about your business, services, pages, and content where it accurately applies.",
+    items: ["LocalBusiness schema", "Service schema", "FAQ markup review", "Validation and cleanup"],
+  },
+  {
+    icon: "Smartphone",
+    title: "Mobile Usability",
+    desc: "Most local searches happen on phones. We check the technical details that affect how well your key pages load, render, and work on mobile.",
+    items: ["Responsive rendering", "Tap-target review", "Mobile page speed", "Content layout checks"],
+  },
+  {
+    icon: "BarChart3",
+    title: "Technical Monitoring",
+    desc: "We use the right diagnostics to surface recurring errors and measure whether fixes are improving the foundation your SEO work relies on.",
+    items: ["Search Console review", "Crawl error tracking", "Performance monitoring", "Prioritised action list"],
+  },
+];
+
+const auditItems = [
+  "Important pages, crawl paths, and indexing coverage",
+  "Sitemaps, robots directives, canonicals, and redirects",
+  "Mobile performance and Core Web Vitals opportunities",
+  "Broken links, duplicate-page signals, and site architecture",
+  "Structured data accuracy and rich-result eligibility",
+  "Search Console errors and actionable technical warnings",
+];
+
+const process = [
+  { step: "1", title: "Audit", desc: "We review how search engines and visitors experience your site, then identify the blockers and missed opportunities." },
+  { step: "2", title: "Prioritise", desc: "You receive a clear plan that separates urgent issues from useful improvements and explains what comes first." },
+  { step: "3", title: "Implement", desc: "We make the agreed fixes carefully, keeping your existing content, tracking, and conversion paths in view." },
+  { step: "4", title: "Measure", desc: "We monitor the technical signals and use the findings to support your ongoing content and local SEO work." },
+];
+
+const faqs = [
+  { q: "What is technical SEO?", a: "Technical SEO is the work that helps search engines crawl, index, and understand a website reliably. It covers page speed, Core Web Vitals, mobile usability, XML sitemaps, robots.txt, redirects, canonical tags, structured data, and error resolution." },
+  { q: "Will technical SEO improve rankings?", a: "Technical SEO removes issues that can prevent pages from being crawled, indexed, or used well on mobile. It gives content and <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO</a> work a reliable foundation, but it does not replace useful content, relevant services, or local trust signals." },
+  { q: "How do you find technical SEO problems?", a: "We start with an audit of crawlability, indexing, performance, mobile usability, internal links, redirects, schema, and Search Console signals. We then prioritise fixes by likely impact and implementation effort." },
+  { q: "Can you improve a website built by another developer?", a: "Yes. We can audit websites built on WordPress, Shopify, WooCommerce, and other common platforms. We identify the issues, explain the priority, and can implement the agreed fixes where access and the platform allow." },
+  { q: "How long does technical SEO take?", a: "The audit is the first step. Straightforward fixes such as broken redirects, metadata conflicts, sitemap issues, and basic image optimisation can often be addressed quickly. Larger speed, architecture, or platform issues are planned in stages." },
+];
+---
+
+<Layout
+  title="Technical SEO Auckland | Site Speed, Crawling and Schema | Kiwi Web Design"
+  description="Technical SEO services for Auckland businesses. We audit and improve crawlability, indexing, page speed, Core Web Vitals, mobile usability, redirects, and schema markup."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/technical-seo-auckland/"
+  schema={schema}
+>
+  <PageHero
+    eyebrow="Technical SEO Auckland"
+    title="Make your website easier for Google to crawl, understand, and rank"
+    subtitle="Technical SEO audits and fixes for Auckland businesses. We improve the foundations behind your search visibility: speed, indexing, mobile usability, redirects, and schema."
+    ctaPrimary={{ text: "Get a Technical SEO Audit", href: "/contact/" }}
+    ctaSecondary={{ text: "View SEO Services", href: "/affordable-seo-auckland/" }}
+    imgSrc={technicalSeoImage.src}
+    imgAlt="Technical SEO audit and website optimisation for an Auckland small business"
+    imgTitle="Technical SEO Auckland"
+  />
+
+  <div class="tseo-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design provides technical SEO for Auckland businesses.</strong> We audit and improve the behind-the-scenes factors that support organic visibility: crawlability, indexing, page speed, Core Web Vitals, mobile usability, redirects, canonical tags, and accurate schema markup.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="What We Fix"
+        title="The technical foundation behind search visibility"
+        subtitle="A technically healthy website gives Google a clearer route to your important pages and gives visitors a smoother experience once they arrive."
+      />
+      <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container tseo-explainer">
+      <div>
+        <p class="tseo-eyebrow">Why It Matters</p>
+        <h2>Good content needs a reliable technical base</h2>
+        <p>Technical SEO does not replace useful service pages, local relevance, or a clear offer. It makes sure the work you are already doing is not undermined by crawl errors, slow loading, duplicate signals, or pages Google cannot interpret properly.</p>
+        <p>For Auckland businesses, the practical goal is simple: make your key pages easy to find, quick to use on mobile, and clear enough for search engines to understand the business and services behind them.</p>
+        <a href="/affordable-seo-auckland/" class="tseo-link">See our full SEO service</a>
+      </div>
+      <div class="tseo-checklist-wrap">
+        <h3>Common signs it is time for an audit</h3>
+        <ul class="tseo-checklist">
+          <li>Important pages are not appearing in Google</li>
+          <li>Search Console shows indexing or page-experience issues</li>
+          <li>Mobile pages feel slow or shift while loading</li>
+          <li>A redesign, migration, or URL change has just happened</li>
+          <li>Traffic has dropped and the cause is unclear</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tseo-audit-section">
+    <div class="container tseo-audit-grid">
+      <div class="tseo-audit-copy">
+        <p class="tseo-eyebrow">Technical SEO Audit</p>
+        <h2>Start with a clear, prioritised picture of your site</h2>
+        <p>We check the essentials, explain what matters, and focus the first round of work on fixes that support visibility, usability, and future SEO activity.</p>
+        <a href="/contact/" class="tseo-audit-button">Book a Technical SEO Audit</a>
+      </div>
+      <ul class="tseo-audit-list">
+        {auditItems.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="Audit first, then fix what matters"
+        subtitle="Clear priorities keep technical SEO focused on the work that supports your business goals."
+      />
+      <ProcessSteps items={process} />
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Technical SEO Questions"
+        subtitle="Straight answers for Auckland businesses considering a technical SEO audit."
+      />
+    </div>
+  </section>
+
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/affordable-seo-auckland/" class="rps-link">SEO Services Auckland</a>
+        <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO Auckland</a>
+        <a href="/wordpress-seo-optimisation/" class="rps-link">WordPress SEO</a>
+        <a href="/seo-for-ecommerce/" class="rps-link">eCommerce SEO</a>
+        <a href="/analytics-reporting-for-auckland-small-business-websites/" class="rps-link">Analytics and Reporting</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Not sure what is holding your site back?"
+    subtitle="Start with a technical SEO audit and get a practical, prioritised view of the fixes worth making."
+    ctaPrimary={{ text: "Get a Technical SEO Audit", href: "/contact/" }}
+    ctaSecondary={{ text: "View SEO Services", href: "/affordable-seo-auckland/" }}
+  />
+</Layout>
+
+<style>
+  .tseo-snippet {
+    background: #fff8e1;
+    border-left: 4px solid var(--kwd-yellow);
+    padding: 1rem 0;
+  }
+  .tseo-snippet p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--kwd-dark);
+  }
+
+  .tseo-explainer {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: start;
+    max-width: 1060px;
+  }
+  .tseo-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-brown);
+    margin: 0 0 0.75rem;
+  }
+  .tseo-explainer h2,
+  .tseo-audit-copy h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    color: var(--kwd-dark);
+    margin-bottom: 1rem;
+  }
+  .tseo-explainer p {
+    color: var(--kwd-brown);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .tseo-link {
+    display: inline-block;
+    color: var(--kwd-dark);
+    font-weight: 700;
+    margin-top: 0.25rem;
+  }
+  .tseo-checklist-wrap {
+    border-left: 4px solid var(--kwd-yellow);
+    padding: 1.75rem 0 1.75rem 1.75rem;
+  }
+  .tseo-checklist-wrap h3 {
+    color: var(--kwd-dark);
+    font-family: var(--kwd-font-body);
+    font-size: 1rem;
+    margin: 0 0 1rem;
+  }
+  .tseo-checklist,
+  .tseo-audit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .tseo-checklist li,
+  .tseo-audit-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.55;
+  }
+  .tseo-checklist li {
+    color: var(--kwd-brown);
+    font-size: 0.9rem;
+  }
+  .tseo-checklist li::before,
+  .tseo-audit-list li::before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: var(--kwd-gold);
+  }
+
+  .tseo-audit-section { background: var(--kwd-dark); }
+  .tseo-audit-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .tseo-audit-copy .tseo-eyebrow { color: var(--kwd-yellow); }
+  .tseo-audit-copy h2 { color: #fff; }
+  .tseo-audit-copy p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .tseo-audit-button {
+    display: inline-block;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    padding: 0.875rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .tseo-audit-button:hover { background: var(--kwd-gold); }
+  .tseo-audit-list {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 1.75rem;
+  }
+  .tseo-audit-list li {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.9rem;
+  }
+  .tseo-audit-list li::before { color: var(--kwd-yellow); }
+
+  .related-strip {
+    background: var(--kwd-cream);
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+  }
+  .rps-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.6rem;
+  }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    color: var(--kwd-dark);
+    text-decoration: none;
+  }
+  .rps-link:hover { background: #e8e7db; }
+
+  @media (max-width: 800px) {
+    .tseo-explainer,
+    .tseo-audit-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>

@@ -1,0 +1,349 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import linkBuildingImage from '../assets/services/WordPress-SEO-Auckland.jpg';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/link-building-auckland/",
+      "url": "https://www.kiwiwebdesign.co.nz/link-building-auckland/",
+      "name": "Link Building Auckland | Ethical Authority Building | Kiwi Web Design",
+      "description": "Ethical link building for Auckland businesses. We focus on relevant local references, accurate business listings, useful content, and earned mentions without paid or automated link schemes.",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/link-building-auckland/#breadcrumb" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".lb-snippet", "h1"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/link-building-auckland/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "SEO Auckland", "item": "https://www.kiwiwebdesign.co.nz/affordable-seo-auckland/" },
+        { "@type": "ListItem", "position": 3, "name": "Link Building Auckland", "item": "https://www.kiwiwebdesign.co.nz/link-building-auckland/" }
+      ]
+    },
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "alternateName": "Web Design Auckland",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/link-building-auckland/#service",
+      "name": "Link Building Auckland",
+      "serviceType": "Link Building and Authority Building",
+      "category": "Digital Marketing",
+      "description": "Ethical link building for Auckland businesses, focused on relevant local references, accurate business listings, useful content, and earned mentions rather than paid or automated link schemes.",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "url": "https://www.kiwiwebdesign.co.nz/link-building-auckland/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is ethical link building?", "acceptedAnswer": { "@type": "Answer", "text": "Ethical link building is the work of earning relevant, useful references to a business and its content. It can include accurate local listings, industry relationships, useful resources, and coverage that exists because it helps people, not because it is manufactured to manipulate rankings." } },
+        { "@type": "Question", "name": "Do you buy backlinks?", "acceptedAnswer": { "@type": "Answer", "text": "No. We do not buy or sell links for ranking purposes, use automated link-building services, or arrange reciprocal links simply to pass ranking value. Those practices conflict with Google's spam policies and can create unnecessary risk." } },
+        { "@type": "Question", "name": "Are local directory listings still useful?", "acceptedAnswer": { "@type": "Answer", "text": "Accurate listings on relevant local and industry resources can help customers find and verify a business. We focus on quality, relevance, and consistent business details rather than submitting a site to large volumes of low-quality directories." } },
+        { "@type": "Question", "name": "How long does link building take?", "acceptedAnswer": { "@type": "Answer", "text": "Building useful, relevant references is gradual. The timing depends on the business, the existing site, the sector, and whether there is genuinely useful content or a credible reason for another organisation to mention it." } },
+        { "@type": "Question", "name": "Can link building work without good content?", "acceptedAnswer": { "@type": "Answer", "text": "Not well. Sustainable authority building works best alongside helpful service pages, clear business information, and content worth referring to. We assess that foundation before recommending outreach or listing work." } }
+      ]
+    }
+  ]
+};
+
+const services = [
+  {
+    icon: "MapPin",
+    title: "Relevant Local Listings",
+    desc: "We identify credible local and industry resources where accurate business information helps prospective customers find and verify your business.",
+    items: ["Business detail consistency", "Local relevance checks", "Industry directory review", "Duplicate listing cleanup"],
+  },
+  {
+    icon: "Building2",
+    title: "Genuine Business References",
+    desc: "Relationships with suppliers, associations, community groups, and collaborators can create useful references when they are real and relevant.",
+    items: ["Existing relationship review", "Partner-page opportunities", "Association profiles", "Community involvement"],
+  },
+  {
+    icon: "PenTool",
+    title: "Useful Content Assets",
+    desc: "Practical guides, calculators, local resources, and clear service information give people a reason to reference your website naturally.",
+    items: ["Resource-page ideas", "Service content depth", "Local guides", "Shareable business assets"],
+  },
+  {
+    icon: "Search",
+    title: "Link Profile Review",
+    desc: "We assess the quality and relevance of existing referring sites so the work starts with a realistic picture rather than a raw link count.",
+    items: ["Referring-domain review", "Relevance assessment", "Risk-flag review", "Competitor context"],
+  },
+  {
+    icon: "Link2",
+    title: "Internal Link Structure",
+    desc: "Authority also needs to move around your own site. We make key service and supporting pages easier for people and search engines to find.",
+    items: ["Important-page coverage", "Contextual links", "Anchor-text clarity", "Topic connections"],
+  },
+  {
+    icon: "ClipboardCheck",
+    title: "Clear, Accountable Reporting",
+    desc: "We explain what was done, why it was relevant, and how it supports the broader SEO plan, without dressing up activity as a ranking guarantee.",
+    items: ["Work completed", "Reference quality context", "Content opportunities", "Next priorities"],
+  },
+];
+
+const principles = [
+  "No bought links or paid placements intended to pass ranking value",
+  "No automated link-building tools or bulk directory submissions",
+  "No reciprocal-link arrangements made only for SEO",
+  "No press-release syndication used just to manufacture links",
+  "No ranking promises based on link quantity",
+];
+
+const process = [
+  { step: "1", title: "Assess", desc: "We review the existing site, relevant references, content foundation, and the local or industry opportunities that are genuinely credible." },
+  { step: "2", title: "Prioritise", desc: "We identify the clearest opportunities based on relevance to customers and the business, not a target number of links." },
+  { step: "3", title: "Build", desc: "We improve the relevant listings, content, and relationship-led opportunities that are appropriate for the agreed SEO plan." },
+  { step: "4", title: "Report", desc: "You see what was completed and how it fits with the technical, on-page, and local SEO work around it." },
+];
+
+const faqs = [
+  { q: "What is ethical link building?", a: "Ethical link building is the work of earning relevant, useful references to a business and its content. It can include accurate local listings, industry relationships, useful resources, and coverage that exists because it helps people, not because it is manufactured to manipulate rankings." },
+  { q: "Do you buy backlinks?", a: "No. We do not buy or sell links for ranking purposes, use automated link-building services, or arrange reciprocal links simply to pass ranking value. Those practices conflict with <a href=\"https://developers.google.com/search/docs/essentials/spam-policies\">Google's spam policies</a> and can create unnecessary risk." },
+  { q: "Are local directory listings still useful?", a: "Accurate listings on relevant local and industry resources can help customers find and verify a business. We focus on quality, relevance, and consistent business details rather than submitting a site to large volumes of low-quality directories." },
+  { q: "How long does link building take?", a: "Building useful, relevant references is gradual. The timing depends on the business, the existing site, the sector, and whether there is genuinely useful content or a credible reason for another organisation to mention it." },
+  { q: "Can link building work without good content?", a: "Not well. Sustainable authority building works best alongside helpful service pages, clear business information, and content worth referring to. We assess that foundation before recommending outreach or listing work." },
+];
+---
+
+<Layout
+  title="Link Building Auckland | Ethical Authority Building | Kiwi Web Design"
+  description="Ethical link building for Auckland businesses. We focus on relevant local references, accurate business listings, useful content, and earned mentions without paid or automated link schemes."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/link-building-auckland/"
+  schema={schema}
+>
+  <PageHero
+    eyebrow="Link Building Auckland"
+    title="Build the kind of online references your customers can trust"
+    subtitle="Link building for Auckland businesses that favours relevance, useful content, and genuine business references over shortcuts that put your website at risk."
+    ctaPrimary={{ text: "Discuss Link Building", href: "/contact/" }}
+    ctaSecondary={{ text: "View SEO Services", href: "/affordable-seo-auckland/" }}
+    imgSrc={linkBuildingImage.src}
+    imgAlt="Ethical link building and SEO planning for an Auckland small business"
+    imgTitle="Link building Auckland"
+  />
+
+  <div class="lb-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design provides ethical link building for Auckland businesses.</strong> We focus on relevant local references, accurate business listings, useful content, and earned mentions that support a credible long-term SEO foundation. We do not buy links, use automated link schemes, or promise rankings from link quantity.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How We Build Authority"
+        title="Useful references, built on a credible business foundation"
+        subtitle="Link building works best when it reflects the real relationships, resources, and expertise behind your business."
+      />
+      <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container lb-explainer">
+      <div>
+        <p class="lb-eyebrow">Why It Matters</p>
+        <h2>Authority is more than a link count</h2>
+        <p>A useful reference from a relevant source can help people discover and trust your business. A pile of manufactured links does not create the same value, and can create risk if it exists primarily to manipulate search rankings.</p>
+        <p>We start with the quality of your website, services, local information, and existing relationships. That gives the work a practical purpose beyond SEO alone and supports the rest of your <a href="/affordable-seo-auckland/">SEO strategy</a>.</p>
+      </div>
+      <div class="lb-principles-wrap">
+        <h3>Our link-building guardrails</h3>
+        <ul class="lb-principles">
+          {principles.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section lb-process-section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="How It Works"
+        title="A considered approach, not a volume target"
+        subtitle="Every opportunity is judged by its relevance to your business and customers, not by a promise of fast rankings."
+        light={true}
+      />
+      <ProcessSteps items={process} dark={true} />
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container" style="max-width: 860px;">
+      <FAQAccordion
+        items={faqs}
+        title="Link Building Questions"
+        subtitle="Clear answers for Auckland businesses looking for sustainable authority building."
+      />
+    </div>
+  </section>
+
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related services</p>
+      <div class="rps-links">
+        <a href="/affordable-seo-auckland/" class="rps-link">SEO Services Auckland</a>
+        <a href="/on-page-seo-auckland/" class="rps-link">On-Page SEO</a>
+        <a href="/technical-seo-auckland/" class="rps-link">Technical SEO</a>
+        <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO Auckland</a>
+        <a href="/website-copywriting-auckland/" class="rps-link">Website Copywriting</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Want to build authority without shortcuts?"
+    subtitle="Start with a realistic review of your website, existing references, and the opportunities that make sense for your business."
+    ctaPrimary={{ text: "Discuss Link Building", href: "/contact/" }}
+    ctaSecondary={{ text: "View SEO Services", href: "/affordable-seo-auckland/" }}
+  />
+</Layout>
+
+<style>
+  .lb-snippet {
+    background: #fff8e1;
+    border-left: 4px solid var(--kwd-yellow);
+    padding: 1rem 0;
+  }
+  .lb-snippet p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--kwd-dark);
+  }
+
+  .lb-explainer {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: start;
+    max-width: 1060px;
+  }
+  .lb-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kwd-brown);
+    margin: 0 0 0.75rem;
+  }
+  .lb-explainer h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    color: var(--kwd-dark);
+    margin-bottom: 1rem;
+  }
+  .lb-explainer p {
+    color: var(--kwd-brown);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .lb-explainer p a {
+    color: var(--kwd-dark);
+    font-weight: 700;
+  }
+  .lb-principles-wrap {
+    border-left: 4px solid var(--kwd-yellow);
+    padding: 1.75rem 0 1.75rem 1.75rem;
+  }
+  .lb-principles-wrap h3 {
+    color: var(--kwd-dark);
+    font-family: var(--kwd-font-body);
+    font-size: 1rem;
+    margin: 0 0 1rem;
+  }
+  .lb-principles {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .lb-principles li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--kwd-brown);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+  .lb-principles li::before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: var(--kwd-gold);
+  }
+
+  .lb-process-section { background: var(--kwd-dark); }
+
+  .related-strip {
+    background: var(--kwd-cream);
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+  }
+  .rps-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.6rem;
+  }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    color: var(--kwd-dark);
+    text-decoration: none;
+  }
+  .rps-link:hover { background: #e8e7db; }
+
+  @media (max-width: 800px) {
+    .lb-explainer { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
