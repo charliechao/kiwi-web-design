@@ -95,6 +95,7 @@ const schema = {
   canonicalURL={canonicalURL}
   schema={schema}
   lang={pageLang}
+  preferredSources
 >
 
   <!-- Reading progress bar -->
@@ -128,6 +129,11 @@ const schema = {
       <div class="post-content prose">
         <Content />
       </div>
+
+      <aside class="preferred-source" aria-label={isChinese ? 'Google 偏好来源' : 'Google Preferred Sources'}>
+        <p>{isChinese ? '想持续看到 Kiwi Web Design 的实用指南？' : 'Want more practical guides from Kiwi Web Design?'}</p>
+        <div google-add-preferred-source-btn data-theme="light"></div>
+      </aside>
 
       <!-- CTA -->
       <aside class="post-cta">
@@ -337,6 +343,20 @@ const schema = {
   }
   .prose :global(a:hover) {
     text-decoration-color: var(--kwd-dark);
+  }
+
+  .preferred-source {
+    margin: 3rem 0;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid rgba(44, 41, 39, 0.12);
+    border-left: 4px solid var(--kwd-gold);
+    background: var(--kwd-cream);
+  }
+  .preferred-source p {
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--kwd-dark);
   }
   .prose :global(strong) {
     font-weight: 700;

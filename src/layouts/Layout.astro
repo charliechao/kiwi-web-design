@@ -14,9 +14,11 @@ interface Props {
   ogImage?: string;
   /** 'minimal' hides the site Header/Footer — for ad landing pages that supply their own chrome */
   chrome?: 'default' | 'minimal';
+  /** Loads Google's Preferred Sources library for editorial pages that render the native button. */
+  preferredSources?: boolean;
 }
 
-const { title, description, canonicalURL, schema, lang = 'en-NZ', alternateUrl, robots, ogImage, chrome = 'default' } = Astro.props;
+const { title, description, canonicalURL, schema, lang = 'en-NZ', alternateUrl, robots, ogImage, chrome = 'default', preferredSources = false } = Astro.props;
 
 const isZh = lang.startsWith('zh');
 const altLang = isZh ? 'en-NZ' : 'zh-Hans';
@@ -91,6 +93,10 @@ const schemaStr = schema
     <script>
       import '../scripts/lead-attribution';
     </script>
+
+    {preferredSources && (
+      <script is:inline async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+    )}
 
     {schemaStr && <script type="application/ld+json" is:inline set:html={schemaStr} />}
   </head>
