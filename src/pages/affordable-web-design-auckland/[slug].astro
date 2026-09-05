@@ -2,6 +2,8 @@
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import AuthorProfile from '../../components/AuthorProfile.astro';
+import { AUTHOR } from '../../data/author';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -57,10 +59,19 @@ const schema = {
       "author": {
         "@type": "Person",
         "@id": "https://www.kiwiwebdesign.co.nz/#charlie",
-        "name": "Charlie Chao",
-        "url": "https://www.kiwiwebdesign.co.nz/about-us/",
-        "sameAs": ["https://www.linkedin.com/in/gocharlie/"],
-        "jobTitle": "Founder, Kiwi Web Design",
+        "name": AUTHOR.name,
+        "givenName": AUTHOR.givenName,
+        "familyName": AUTHOR.familyName,
+        "url": AUTHOR.absoluteUrl,
+        "image": {
+          "@type": "ImageObject",
+          "url": AUTHOR.absoluteImage,
+          "width": AUTHOR.imageWidth,
+          "height": AUTHOR.imageHeight
+        },
+        "sameAs": [AUTHOR.linkedin],
+        "jobTitle": AUTHOR.role,
+        "description": AUTHOR.bio,
         "worksFor": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" }
       },
       "publisher": {
@@ -115,7 +126,7 @@ const schema = {
       </nav>
       <div class="post-meta">
         <time datetime={pubDate.toISOString()} class="post-date">{formatDate(pubDate)}</time>
-        <span class="post-author">by <a href="https://www.linkedin.com/in/gocharlie/" target="_blank" rel="noopener" class="author-link">Charlie Chao</a></span>
+        <AuthorProfile variant="inline" isChinese={isChinese} />
       </div>
       <h1 class="post-title">{title}</h1>
       <p class="post-desc">{description}</p>
@@ -129,6 +140,8 @@ const schema = {
       <div class="post-content prose">
         <Content />
       </div>
+
+      <AuthorProfile variant="card" isChinese={isChinese} />
 
       <aside class="preferred-source" aria-label={isChinese ? 'Google 偏好来源' : 'Google Preferred Sources'}>
         <p>{isChinese ? '想持续看到 Kiwi Web Design 的实用指南？' : 'Want more practical guides from Kiwi Web Design?'}</p>
@@ -236,7 +249,8 @@ const schema = {
   .post-meta {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    flex-wrap: wrap;
+    gap: 1rem 1.25rem;
     margin-bottom: 1.25rem;
   }
   .post-date {
@@ -246,19 +260,6 @@ const schema = {
     letter-spacing: 0.1em;
     color: var(--kwd-gold);
   }
-  .post-author {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.4);
-    letter-spacing: 0.04em;
-  }
-  .author-link {
-    color: rgba(255,255,255,0.55);
-    text-decoration: underline;
-    text-decoration-color: rgba(255,255,255,0.2);
-    text-underline-offset: 2px;
-    transition: color 0.2s;
-  }
-  .author-link:hover { color: var(--kwd-yellow); }
 
   .post-title {
     font-family: var(--kwd-font-heading);
@@ -601,6 +602,7 @@ const schema = {
 
   @media (max-width: 640px) {
     .post-hero { padding: 5.5rem 0 3.5rem; }
+    .post-meta { align-items: flex-start; }
     .prose :global(blockquote) { margin: 2rem -1.5rem; }
     .post-cta { padding: 2rem 1.5rem; }
   }
