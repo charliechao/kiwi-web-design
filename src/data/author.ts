@@ -1,0 +1,16 @@
+export const AUTHOR = {
+  name: 'Charlie Chao',
+  givenName: 'Charlie',
+  familyName: 'Chao',
+  role: 'Founder & Digital Marketing Strategist',
+  shortRole: 'Founder, Kiwi Web Design',
+  url: '/about-us/',
+  absoluteUrl: 'https://www.kiwiwebdesign.co.nz/about-us/',
+  linkedin: 'https://www.linkedin.com/in/gocharlie/',
+  image: '/images/charlie-chao-author.webp',
+  absoluteImage: 'https://www.kiwiwebdesign.co.nz/images/charlie-chao-author.webp',
+  imageWidth: 256,
+  imageHeight: 256,
+  bio: 'Charlie Chao is the founder and digital marketing strategist at Kiwi Web Design, helping Auckland small businesses generate leads through websites, local SEO and Google Ads.',
+  bioZh: 'Charlie Chao 是 Kiwi Web Design 创始人及数字营销策略顾问，专注帮助奥克兰小企业通过网站、本地 SEO 和 Google Ads 获得更多潜在客户。',
+} as const;
