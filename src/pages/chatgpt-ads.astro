@@ -2,16 +2,16 @@
 import PaidAdsServicePage from '../components/PaidAdsServicePage.astro';
 
 const canonicalURL = 'https://www.kiwiwebdesign.co.nz/chatgpt-ads/';
-const title = 'ChatGPT Ads NZ | AI Search Advertising for Auckland Businesses';
-const description = 'ChatGPT Ads and AI search advertising strategy for New Zealand businesses. Prepare for ChatGPT placements, AI search visibility, landing pages, tracking, and conversion.';
+const title = 'ChatGPT Ads NZ | ChatGPT Advertising for Auckland Businesses';
+const description = 'ChatGPT Ads management for New Zealand businesses. Campaign strategy, creative, landing pages, tracking, and optimisation for advertisers using ChatGPT Ads Manager.';
 
 const faqs = [
-  { q: 'Are ChatGPT Ads available in New Zealand?', a: 'ChatGPT Search is available broadly in regions where ChatGPT is available, but direct paid ChatGPT ad options are still an emerging channel and may depend on rollout, market, account access, or campaign type. We treat this as ChatGPT Ads readiness plus AI search visibility, so your website, offers, landing pages, and tracking are ready as the channel opens.' },
-  { q: 'How are ChatGPT Ads different from Google Ads?', a: 'Google Ads targets keyword searches on Google. ChatGPT Ads and AI search advertising are more conversational: people ask for recommendations, comparisons, product ideas, local options, or next steps. The landing page needs to answer questions clearly enough for both people and AI systems.' },
-  { q: 'Can ChatGPT send traffic without paid ads?', a: 'Yes. ChatGPT Search can include links to web sources. That makes AI-readable pages, structured content, schema, useful answers, and clear business information important even before paid placements become widely available.' },
-  { q: 'Should I wait until ChatGPT Ads are fully mature?', a: 'No. The practical work can start now: strengthen service pages, build answer-ready content, prepare tracking, clarify offers, and connect paid traffic to pages that convert. Waiting until the platform is crowded usually makes testing more expensive.' },
-  { q: 'What New Zealand businesses suit ChatGPT Ads readiness?', a: 'Good fits include eCommerce stores, tourism operators, local service businesses, healthcare clinics, professional services, education providers, and any business where customers compare options before enquiring or buying.' },
-  { q: 'How do you measure ChatGPT Ads and AI search traffic?', a: 'We use GA4, Search Console, UTM tagging, form source fields, call tracking where appropriate, referral analysis, and landing-page conversion data. Early AI search attribution can be imperfect, so the measurement setup needs to capture both direct and assisted enquiries.' },
+  { q: 'Are ChatGPT Ads available in New Zealand?', a: 'Yes. OpenAI currently lists New Zealand as available for self-service ChatGPT Ads Manager access. Eligibility depends on the legal entity being based in a supported country and on the account meeting OpenAI advertising requirements.' },
+  { q: 'How are ChatGPT Ads different from Google Ads?', a: 'Google Ads primarily captures keyword-driven search intent. ChatGPT Ads can reach people while they are exploring, comparing, and deciding inside a conversational experience. The ad is separate from the ChatGPT answer and appears as a clearly labelled sponsored placement.' },
+  { q: 'Where do ChatGPT Ads appear?', a: 'OpenAI says ads can appear below ChatGPT responses. The ad unit can include the advertiser name, favicon, headline, description, landing page, and image creative.' },
+  { q: 'Do ChatGPT Ads influence ChatGPT answers?', a: 'No. OpenAI states that ads are separate from ChatGPT answers and advertisers cannot shape, rank, or alter the response itself.' },
+  { q: 'What New Zealand businesses are a good fit for ChatGPT Ads?', a: 'The strongest candidates are businesses where customers research, compare, or ask for recommendations before buying. That can include local services, professional services, tourism, education, healthcare, and eCommerce, but the right channel depends on your offer and customer journey.' },
+  { q: 'How do you measure ChatGPT Ads?', a: 'We use platform reporting alongside GA4, UTM tagging, form-source fields, call tracking where appropriate, and landing-page conversion data. The goal is to measure qualified enquiries and sales activity rather than clicks alone.' },
 ];
 
 const schema = {
@@ -31,8 +31,8 @@ const schema = {
         cssSelector: ['.hero-copy h1', '.hero-subtitle', '.answer-strip p'],
       },
       citation: [
-        'https://openai.com/index/introducing-chatgpt-search/',
-        'https://openai.com/policies/row-privacy-policy/',
+        'https://help.openai.com/en/articles/20001047',
+        'https://help.openai.com/en/articles/20001245',
       ],
     },
     {
@@ -47,18 +47,14 @@ const schema = {
     {
       '@type': 'Service',
       '@id': `${canonicalURL}#service`,
-      name: 'ChatGPT Ads and AI Search Advertising NZ',
-      serviceType: 'AI search advertising and ChatGPT Ads readiness',
+      name: 'ChatGPT Ads Management NZ',
+      serviceType: 'ChatGPT advertising strategy and management',
       provider: { '@type': 'LocalBusiness', name: 'Kiwi Web Design', url: 'https://www.kiwiwebdesign.co.nz/' },
       areaServed: [
         { '@type': 'City', name: 'Auckland' },
         { '@type': 'Country', name: 'New Zealand' },
       ],
       description,
-      offers: [
-        { '@type': 'Offer', name: 'ChatGPT Ads Readiness Setup', price: '499', priceCurrency: 'NZD', url: canonicalURL },
-        { '@type': 'Offer', name: 'AI Search Advertising Management', price: '399', priceCurrency: 'NZD', url: canonicalURL },
-      ],
     },
     {
       '@type': 'FAQPage',
@@ -79,76 +75,75 @@ const schema = {
   canonicalURL={canonicalURL}
   schema={schema}
   eyebrow="ChatGPT Ads NZ"
-  h1="Prepare your business for ChatGPT Ads and AI search."
-  subtitle="ChatGPT is becoming a discovery channel. We help New Zealand businesses prepare for paid AI placements, source-linked ChatGPT Search visibility, landing pages, tracking, and conversion before the channel gets crowded."
-  badgeText="ChatGPT Ads and AI search advertising readiness for New Zealand businesses"
-  primaryCta={{ text: 'Book a free AI ads consultation', href: '/contact/' }}
-  secondaryCta={{ text: 'View Paid Ads', href: '/paid-ads/' }}
-  proof={['ChatGPT Search', 'AI answer visibility', 'Landing pages', 'Conversion tracking']}
+  h1="Reach customers while they are exploring, comparing, and deciding in ChatGPT."
+  subtitle="ChatGPT Ads are now available to self-service advertisers in New Zealand. We help Auckland and NZ businesses plan campaigns, prepare creative and landing pages, set up measurement, and test the channel against real lead and sales outcomes."
+  badgeText="ChatGPT Ads management for New Zealand businesses"
+  primaryCta={{ text: 'Book a free ChatGPT Ads consultation', href: '/contact/' }}
+  secondaryCta={{ text: 'View all Paid Ads', href: '/paid-ads/' }}
+  proof={['NZ Ads Manager available', 'Campaign strategy', 'Landing pages', 'Conversion tracking']}
   snippetLabel="Quick answer"
-  snippet="ChatGPT Ads are an emerging AI advertising channel, not yet as settled as Google Ads or Meta Ads in New Zealand. The immediate opportunity is to prepare for how people now ask AI tools for recommendations, comparisons, product ideas, and local services. Kiwi Web Design helps Auckland and New Zealand businesses build ChatGPT Ads readiness through AI-readable landing pages, structured service content, schema, llms.txt visibility, product or service feed planning, GA4 tracking, and conversion-focused enquiry paths. If paid ChatGPT placements become available for your account or market, your website will already have the pages, offers, tracking, and reporting needed to test the channel properly."
-  introEyebrow="AI search strategy"
+  snippet="ChatGPT Ads are available to self-service advertisers in New Zealand through OpenAI Ads Manager. Ads are clearly labelled sponsored placements shown separately from ChatGPT answers. Kiwi Web Design helps Auckland and New Zealand businesses plan the campaign, prepare creative and landing pages, configure measurement, and judge the channel by qualified enquiries and sales rather than novelty."
+  introEyebrow="AI advertising strategy"
   introTitle="What are ChatGPT Ads in New Zealand?"
-  introText="ChatGPT Ads are best understood as the next layer of paid discovery around AI-assisted search. Some users are no longer typing short keywords. They are asking complete questions, comparing providers, and expecting a direct recommendation. Your website needs to be ready for that behaviour whether the visit comes from a source link, a recommendation, or a paid placement."
+  introText="ChatGPT Ads let businesses reach people during conversational research and decision-making. Instead of relying only on a short keyword, the surrounding conversation can indicate what the user is trying to accomplish. That creates a different advertising environment from traditional search and makes message relevance, creative, landing-page clarity, and measurement especially important."
   channels={[
     {
-      icon: 'Search',
-      title: 'ChatGPT Search visibility',
-      desc: 'Make your business easier to understand, cite, and recommend when AI systems answer commercial questions.',
-      items: ['Answer-first service pages', 'Structured data', 'llms.txt visibility', 'Clear source-worthy content'],
+      icon: 'MessageCircle',
+      title: 'Conversational intent',
+      desc: 'Build campaigns around the questions, comparisons, and decisions customers make while using ChatGPT.',
+      items: ['Buyer-question research', 'Offer positioning', 'Message testing', 'Landing-page alignment'],
     },
     {
       icon: 'BadgeDollarSign',
-      title: 'Paid placement readiness',
-      desc: 'Prepare the offers, landing pages, tracking, and reporting needed to test AI ad placements as access becomes available.',
-      items: ['Offer structure', 'Landing-page testing', 'UTM and GA4 setup', 'Conversion reporting'],
+      title: 'Campaign management',
+      desc: 'Set up and manage ChatGPT Ads with controlled testing, clear measurement, and decisions based on business outcomes.',
+      items: ['Ads Manager setup', 'Creative preparation', 'UTM and GA4 tracking', 'Ongoing optimisation'],
     },
   ]}
   featureEyebrow="What we manage"
-  featureTitle="AI ads need a stronger answer, not just another campaign."
-  featureText="A ChatGPT Ads strategy is part paid media, part AI search optimisation, and part conversion design. The page needs to answer buyer questions clearly enough for a human to trust it and an AI system to understand it."
+  featureTitle="A new ad channel still needs the same commercial discipline."
+  featureText="ChatGPT Ads are new enough that broad performance benchmarks are still developing. That makes disciplined testing more important, not less. We focus on the offer, creative, landing page, tracking, and lead quality before deciding whether to scale."
   features={[
-    { icon: 'Sparkles', title: 'AI-citable landing pages', desc: 'We structure pages with direct answers, proof, FAQs, schema, and clear service detail so they work for people and AI search systems.' },
-    { icon: 'Map', title: 'Prompt-intent mapping', desc: 'We map the questions your buyers may ask ChatGPT, Google AI Overviews, Perplexity, or other AI tools before they choose a provider.' },
-    { icon: 'ShoppingCart', title: 'Product and service readiness', desc: 'For stores and service businesses, we prepare product, service, location, and offer information for cleaner AI discovery.' },
-    { icon: 'ClipboardCheck', title: 'Measurement and attribution', desc: 'We set up practical tracking so enquiries from AI search, paid tests, and landing pages can be reviewed without guesswork.' },
+    { icon: 'Search', title: 'Intent and audience research', desc: 'We map the situations, questions, comparisons, and buyer needs most relevant to your offer.' },
+    { icon: 'Sparkles', title: 'Creative and message development', desc: 'We prepare clear headlines, descriptions, image creative, and offer angles suited to a conversational discovery environment.' },
+    { icon: 'Globe', title: 'Conversion-focused landing pages', desc: 'We improve or build the destination page so the next step is obvious once someone clicks your sponsored placement.' },
+    { icon: 'ClipboardCheck', title: 'Measurement and attribution', desc: 'We connect platform reporting with GA4, UTM tracking, forms, calls, and lead quality so optimisation is tied to real outcomes.' },
   ]}
   processEyebrow="Our process"
-  processTitle="Research, prepare, launch, and measure."
-  processText="Because this channel is still developing, the smartest approach is to build the foundations first, then test paid opportunities when the platform access and economics make sense."
+  processTitle="Plan, launch, measure, and improve."
+  processText="We treat ChatGPT Ads as a performance channel, not a technology experiment. The campaign only earns more budget when the data and lead quality justify it."
   process={[
-    { icon: 'Search', title: 'Research demand and prompts', desc: 'We identify the questions, comparisons, services, products, and local terms your buyers are likely to ask AI tools.' },
-    { icon: 'Globe', title: 'Build AI-readable pages', desc: 'We improve or create landing pages with answer-first content, FAQs, schema, internal links, proof, and clear calls to action.' },
-    { icon: 'Link2', title: 'Prepare campaign assets', desc: 'We shape offers, landing paths, feed requirements, UTM structure, and conversion events before ad spend starts moving.' },
-    { icon: 'BadgeDollarSign', title: 'Test and optimise', desc: 'When paid access is available, we test carefully, compare with Google Ads and Meta Ads, and scale only where the data supports it.' },
+    { icon: 'Search', title: 'Review the market and offer', desc: 'We assess your service, customer journey, existing channels, landing pages, and whether ChatGPT Ads are a sensible test for your business.' },
+    { icon: 'Map', title: 'Build the campaign plan', desc: 'We define the buyer situations, campaign structure, creative direction, landing path, and measurement plan before launch.' },
+    { icon: 'Globe', title: 'Prepare creative and landing pages', desc: 'We make sure the sponsored message and destination page answer the customer clearly and lead to a trackable next step.' },
+    { icon: 'ClipboardCheck', title: 'Launch and optimise', desc: 'We review delivery, clicks, conversion behaviour, lead quality, and cost efficiency, then refine or stop what is not working.' },
   ]}
   pricing={{
-    eyebrow: 'Pricing',
-    title: 'Start with readiness, then test paid AI ads when access is real',
-    setupLabel: 'Readiness setup from',
-    setupPrice: 'NZ$499',
-    monthlyLabel: 'Management from',
-    monthlyPrice: 'NZ$399/mo',
-    note: 'Ad spend and platform access are separate. If direct ChatGPT ad inventory is not available for your account yet, we focus on AI search visibility, landing pages, tracking, and launch preparation.',
-    items: ['AI search and prompt-intent research', 'ChatGPT Ads landing-page plan', 'Schema and answer-ready page structure', 'Tracking and monthly optimisation guidance'],
+    eyebrow: 'Scope',
+    title: 'Campaign scope is quoted after we review the opportunity',
+    setupLabel: 'Campaign setup',
+    setupPrice: 'Custom scope',
+    monthlyLabel: 'Ongoing management',
+    monthlyPrice: 'Custom scope',
+    note: 'We do not publish a generic management price because campaign complexity, creative requirements, landing-page work, and tracking needs vary. Ad spend is separate and paid directly to the platform.',
+    items: ['Campaign and intent research', 'Creative and landing-page plan', 'Tracking and attribution setup', 'Ongoing optimisation where appropriate'],
   }}
   faqs={faqs}
   sourceLinks={[
-    { text: 'OpenAI: Introducing ChatGPT Search', href: 'https://openai.com/index/introducing-chatgpt-search/' },
-    { text: 'OpenAI Privacy Policy', href: 'https://openai.com/policies/row-privacy-policy/' },
+    { text: 'OpenAI: Ads in ChatGPT', href: 'https://help.openai.com/en/articles/20001047' },
+    { text: 'OpenAI: Ads Manager Availability', href: 'https://help.openai.com/en/articles/20001245' },
   ]}
   relatedLabel="Related services"
   related={[
     { text: 'Paid Ads Auckland', href: '/paid-ads/' },
     { text: 'Google Ads Auckland', href: '/google-ads/' },
-    { text: 'Meta Ads Auckland', href: '/meta-ads/' },
     { text: 'AI SEO & GEO', href: '/ai-seo-for-auckland-small-businesses/' },
     { text: 'Landing Pages', href: '/landing-pages-funnels-on-wordpress/' },
     { text: 'Analytics Reporting', href: '/analytics-reporting-for-auckland-small-business-websites/' },
   ]}
   finalCta={{
-    title: 'Want to be ready before AI ads get expensive?',
-    subtitle: 'Book a free consultation and we will tell you honestly whether ChatGPT Ads readiness, Google Ads, Meta Ads, SEO, or landing-page work should come first.',
+    title: 'Want to know whether ChatGPT Ads are worth testing for your business?',
+    subtitle: 'Book a free consultation and we will compare the opportunity with Google Ads, SEO, and your existing lead channels before recommending where to spend.',
     primaryText: 'Book a free consultation',
     primaryHref: '/contact/',
     secondaryText: 'Call 021 039 6580',
