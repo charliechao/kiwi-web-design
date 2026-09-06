@@ -28,9 +28,44 @@ const OG_IMAGE = 'https://www.kiwiwebdesign.co.nz/og-image.png';
 const resolvedCanonical = canonicalURL ?? new URL(Astro.url.pathname, Astro.site).href;
 const resolvedOgImage = ogImage ?? OG_IMAGE;
 
+// Service pricing is intentionally kept private. These routes may still define legacy
+// offer data in their page source, but pricing fields are removed before JSON-LD is rendered.
+const privatePricingPaths = new Set([
+  '/affordable-seo-auckland/',
+  '/ai-seo-for-auckland-small-businesses/',
+  '/local-seo-for-auckland-small-businesses/',
+  '/paid-ads/',
+  '/google-ads/',
+  '/chatgpt-ads/',
+]);
+
+const stripPricingFields = (value: unknown): unknown => {
+  if (Array.isArray(value)) return value.map(stripPricingFields);
+  if (!value || typeof value !== 'object') return value;
+
+  const blockedKeys = new Set([
+    'price',
+    'priceCurrency',
+    'lowPrice',
+    'highPrice',
+    'priceRange',
+    'priceSpecification',
+  ]);
+
+  return Object.fromEntries(
+    Object.entries(value as Record<string, unknown>)
+      .filter(([key]) => !blockedKeys.has(key))
+      .map(([key, child]) => [key, stripPricingFields(child)])
+  );
+};
+
+const schemaForOutput = schema && privatePricingPaths.has(Astro.url.pathname)
+  ? stripPricingFields(schema)
+  : schema;
+
 // Escape </script> sequences so JSON-LD doesn't break the HTML parser
-const schemaStr = schema
-  ? JSON.stringify(schema).replace(/<\/script>/gi, '<\\/script>')
+const schemaStr = schemaForOutput
+  ? JSON.stringify(schemaForOutput).replace(/<\/script>/gi, '<\\/script>')
   : null;
 ---
 
