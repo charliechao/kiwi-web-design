@@ -10,16 +10,34 @@ const releases = [
     date: '2026-05-15',
     dateDisplay: '15 May 2026',
     title: 'Kiwi Web Design Ranked First in New 2026 Guide to SEO Agencies in Auckland',
-    summary: "InfoNews coverage of Kiwi Web Design's 2026 Auckland SEO agency guide, with a link to the agency's SEO service page.",
+    summary: "A company-supplied release published by InfoNews covering Kiwi Web Design's 2026 Auckland SEO agency guide and linking to the agency's SEO service page.",
     source: 'InfoNews',
     sourceUrl: 'https://www.infonews.co.nz/news.cfm?id=129007',
-    category: 'Published Coverage',
+    category: 'Published Release',
+  },
+  {
+    date: '2026-05-15',
+    dateDisplay: '15 May 2026',
+    title: 'Kiwi Web Design Ranked First in New 2026 Guide to SEO Agencies in Auckland',
+    summary: "A distributed copy of Kiwi Web Design's 2026 Auckland SEO agency guide release, published on Market Press Release.",
+    source: 'Market Press Release',
+    sourceUrl: 'https://www.marketpressrelease.com/Kiwi-Web-Design-Ranked-First-in-New-2026-Guide-to-SEO-Agencies-in-Auckland-1778804248.html',
+    category: 'Published Release',
+  },
+  {
+    date: '2026-05-15',
+    dateDisplay: '15 May 2026',
+    title: 'Kiwi Web Design Ranked First in New 2026 Guide to SEO Agencies in Auckland',
+    summary: "A distributed copy of Kiwi Web Design's 2026 Auckland SEO agency guide release, published on ForPressRelease.",
+    source: 'ForPressRelease',
+    sourceUrl: 'https://www.forpressrelease.com/forpressrelease/671134/3/kiwi-web-design-ranked-first-in-new-2026-guide-to-seo-agencies-in-auckland',
+    category: 'Published Release',
   },
   {
     date: '2026-01-05',
     dateDisplay: '5 January 2026',
     title: 'Top Web Design Agencies in Auckland Reviewed for 2026',
-    summary: 'openPR coverage introducing the updated Auckland web design agency comparison guide from Kiwi Web Design.',
+    summary: 'An Ika Tech Limited, trading as Kiwi Web Design, release published by openPR introducing the updated Auckland web design agency comparison guide.',
     source: 'openPR',
     sourceUrl: 'https://www.openpr.com/news/4335211/top-web-design-agencies-in-auckland-reviewed-for-2026',
     category: 'Published Release',
@@ -28,10 +46,28 @@ const releases = [
     date: '2025-12-04',
     dateDisplay: '4 December 2025',
     title: 'Kiwi Web Design Helps Auckland Builder Kiwiland Construction Launch a New Website',
-    summary: 'openPR coverage of the Kiwiland Construction website project, naming Ika Tech Limited, Kiwi Web Design, Kiwiland Construction, Steven Liu, Charlie Chao, and the live client website.',
+    summary: 'An openPR project release naming Ika Tech Limited, Kiwi Web Design, Kiwiland Construction, Steven Liu, Charlie Chao, and the live client website.',
     source: 'openPR',
     sourceUrl: 'https://www.openpr.com/news/4299557/kiwi-web-design-helps-auckland-builder-kiwiland-construction',
     category: 'Client Project',
+  },
+  {
+    date: '2025-08-19',
+    dateDisplay: '19 August 2025',
+    title: 'Top Auckland Web Design Agencies in 2025',
+    summary: "A Kiwi Web Design release published by InfoNews presenting the agency's 2025 Auckland web design comparison and ranking.",
+    source: 'InfoNews',
+    sourceUrl: 'https://www.infonews.co.nz/news.cfm?id=127533',
+    category: 'Published Release',
+  },
+  {
+    date: '2025-08-18',
+    dateDisplay: '18 August 2025',
+    title: 'Top Auckland Web Design Agencies in 2025',
+    summary: 'A PRLog release from Ika Tech Limited, trading as Kiwi Web Design, presenting the 2025 Auckland web design agency ranking.',
+    source: 'PRLog',
+    sourceUrl: 'https://www.prlog.org/13094086-top-auckland-web-design-agencies-in-2025.html',
+    category: 'Published Release',
   },
 ];
 
@@ -50,6 +86,16 @@ const profiles = [
     name: 'DesignRush',
     description: 'Agency profile with portfolio information and client reviews sourced from public review platforms.',
     url: 'https://www.designrush.com/agency/profile/kiwi-web-design',
+  },
+  {
+    name: 'DesignRush Auckland Web Design Directory',
+    description: 'Auckland web design directory page listing Kiwi Web Design with its Auckland location, service lines, portfolio information, and public rating data.',
+    url: 'https://www.designrush.com/agency/website-design-development/nz/auckland',
+  },
+  {
+    name: 'TechBehemoths Auckland Web Design Directory',
+    description: 'Auckland web design directory listing Kiwi Web Design as a verified company and showing web design, SEO, and web development services.',
+    url: 'https://techbehemoths.com/companies/web-design/auckland',
   },
   {
     name: 'Techreviewer',
@@ -82,7 +128,7 @@ const schema = {
       url: 'https://www.kiwiwebdesign.co.nz/press-release-and-news/',
       name: 'Press, Coverage & Public Profiles | Kiwi Web Design Auckland',
       description: 'Verified external coverage, published releases, public agency profiles, and review sources for Kiwi Web Design in Auckland.',
-      dateModified: '2026-07-10',
+      dateModified: '2026-09-06',
       inLanguage: 'en-NZ',
       isPartOf: { '@id': 'https://www.kiwiwebdesign.co.nz/#website' },
       about: { '@id': 'https://www.kiwiwebdesign.co.nz/#organization' },
@@ -153,6 +199,7 @@ const categoryColours: Record<string, string> = {
   <section class="section releases-section">
     <div class="container news-inner">
       <SectionHeader eyebrow="Published Externally" title="Coverage and releases" align="left" />
+      <p class="section-intro">These are externally hosted pages. Where the underlying release was supplied by Kiwi Web Design or Ika Tech Limited, it is listed here as a publication record rather than an independent editorial endorsement.</p>
       <div class="releases-list">
         {releases.map(item => (
           <article class="release-card">
