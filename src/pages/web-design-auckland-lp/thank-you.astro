@@ -68,6 +68,16 @@ import Icon from '../../components/Icon.astro';
       } catch { /* storage unavailable */ }
 
       if (!lead) return;
+
+      const leadId = lead.leadContext?.lead_id || '';
+      if (lead.leadContext && window.kwdLeadTracking) {
+        window.kwdLeadTracking.trackLead(
+          lead.leadContext,
+          lead.formId || 'lp-form',
+          lead.formName || 'web-design-auckland-lp',
+        );
+      }
+
       const g = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
       if (typeof g !== 'function') return;
 
@@ -77,15 +87,6 @@ import Icon from '../../components/Icon.astro';
           email: lead.email || undefined,
           phone_number: lead.phone || undefined,
         });
-      }
-
-      const leadId = lead.leadContext?.lead_id || '';
-      if (lead.leadContext && window.kwdLeadTracking) {
-        window.kwdLeadTracking.trackLead(
-          lead.leadContext,
-          lead.formId || 'lp-form',
-          lead.formName || 'web-design-auckland-lp',
-        );
       }
 
       g('event', 'lp_lead_submit', {
