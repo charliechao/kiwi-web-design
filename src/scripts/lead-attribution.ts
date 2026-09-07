@@ -105,6 +105,15 @@ function createLeadId() {
   return `kwd_${Date.now().toString(36)}_${randomPart}`;
 }
 
+function createPhoneClickId() {
+  if (typeof crypto.randomUUID === 'function') {
+    return `kwd_phone_${crypto.randomUUID()}`;
+  }
+
+  const randomPart = Math.random().toString(36).slice(2, 12);
+  return `kwd_phone_${Date.now().toString(36)}_${randomPart}`;
+}
+
 function getGaValue(field: 'client_id' | 'session_id') {
   return new Promise<string>((resolve) => {
     const gtag = window.gtag;
@@ -195,5 +204,40 @@ function trackLead(context: KwdLeadContext, formId: string, formName: string) {
     // Conversion reporting must never break a successful lead submission.
   }
 }
+
+function trackPhoneClick() {
+  try {
+    const gtag = window.gtag;
+    if (typeof gtag === 'function') {
+      gtag('event', 'phone_click', {
+        event_category: 'engagement',
+        page_path: window.location.pathname,
+      });
+    }
+  } catch {
+    // Tracking must never interfere with call navigation.
+  }
+
+  try {
+    window.oaiq?.(
+      'measure',
+      'custom',
+      { type: 'custom' },
+      {
+        custom_event_name: 'phone_click',
+        event_id: createPhoneClickId(),
+      }
+    );
+  } catch {
+    // Tracking must never interfere with call navigation.
+  }
+}
+
+document.addEventListener('click', (event) => {
+  const target = event.target;
+  if (!(target instanceof Element)) return;
+  if (!target.closest('a[href^="tel:"]')) return;
+  trackPhoneClick();
+});
 
 window.kwdLeadTracking = { prepare, trackLead };
