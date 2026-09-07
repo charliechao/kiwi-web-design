@@ -194,8 +194,13 @@ const values = [
           </div>
         </div>
         <div class="wwu-apply-form-wrap">
-          <form class="wwu-form" name="work-with-us" method="POST" action="/api/contact">
+          <form class="wwu-form" name="work-with-us" method="POST" action="https://api.web3forms.com/submit">
+            <input type="hidden" name="access_key" value="e0a725e4-f764-4536-826c-df981c8bdf3b" />
+            <input type="hidden" name="subject" value="New collaborator introduction from KWD Work With Us form" />
+            <input type="hidden" name="from_name" value="Kiwi Web Design Website" />
             <input type="hidden" name="form_type" value="work-with-us" />
+            <input type="hidden" name="redirect" value="https://www.kiwiwebdesign.co.nz/thank-you/" />
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" />
             <div class="wwu-form-row">
               <label class="wwu-form-label">
                 Your Name <span class="req">*</span>
