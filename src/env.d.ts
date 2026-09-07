@@ -24,6 +24,7 @@ interface KwdLeadContext {
 interface Window {
   dataLayer: unknown[];
   gtag?: (...args: unknown[]) => void;
+  oaiq?: (...args: unknown[]) => void;
   kwdLeadTracking?: {
     prepare(form: HTMLFormElement, formName: string): Promise<KwdLeadContext>;
     trackLead(context: KwdLeadContext, formId: string, formName: string): void;

@@ -171,9 +171,6 @@ async function prepare(form: HTMLFormElement, formName: string): Promise<KwdLead
 }
 
 function trackLead(context: KwdLeadContext, formId: string, formName: string) {
-  const gtag = window.gtag;
-  if (typeof gtag !== 'function') return;
-
   const eventParameters = {
     lead_id: context.lead_id,
     form_id: formId,
@@ -181,8 +178,22 @@ function trackLead(context: KwdLeadContext, formId: string, formName: string) {
     lead_landing_page: context.landing_page,
   };
 
-  gtag('event', 'form_submit', eventParameters);
-  gtag('event', 'generate_lead', eventParameters);
+  const gtag = window.gtag;
+  if (typeof gtag === 'function') {
+    gtag('event', 'form_submit', eventParameters);
+    gtag('event', 'generate_lead', eventParameters);
+  }
+
+  try {
+    window.oaiq?.(
+      'measure',
+      'lead_created',
+      { type: 'customer_action' },
+      { event_id: context.lead_id }
+    );
+  } catch {
+    // Conversion reporting must never break a successful lead submission.
+  }
 }
 
 window.kwdLeadTracking = { prepare, trackLead };
