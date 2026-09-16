@@ -1,0 +1,637 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTABanner from '../components/CTABanner.astro';
+import PageVisual from '../components/PageVisual.astro';
+import gbpImage from '../assets/services/google-business-profile-setup-optimisation-auckland.png';
+
+const canonicalURL = 'https://www.kiwiwebdesign.co.nz/google-business-profile-audit-auckland/';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': canonicalURL,
+      url: canonicalURL,
+      name: 'Google Business Profile Score and Local SEO Audit | Auckland',
+      description: 'Use this free Google Business Profile scorecard to check photos, posts, reviews, Q&A, categories, and website linking, then get practical Local SEO fixes for your Auckland business.',
+      inLanguage: 'en-NZ',
+      isPartOf: { '@id': 'https://www.kiwiwebdesign.co.nz/#website' },
+      about: { '@id': 'https://www.kiwiwebdesign.co.nz/#organization' },
+      breadcrumb: { '@id': `${canonicalURL}#breadcrumb` },
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['.gbp-audit-snippet', '.gbp-audit-hero h1']
+      }
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonicalURL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.kiwiwebdesign.co.nz/' },
+        { '@type': 'ListItem', position: 2, name: 'Google Business Profile Audit', item: canonicalURL }
+      ]
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What does the Google Business Profile score check?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The score checks six visible profile foundations: photos, recent posts, 10 or more reviews, answered Q&A, accurate categories, and a working website link. It is a self-assessment, not a ranking prediction.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does this tool access my Google Business Profile account?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'No. This checklist does not request access to a Google account or collect profile data. You select the items that are already complete and receive practical next steps.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Will a high Google Business Profile score guarantee local rankings?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'No. Local visibility also depends on search relevance, location, competition, website quality, and other signals. The score helps identify important profile foundations you can improve.'
+          }
+        }
+      ]
+    }
+  ]
+};
+
+const checks = [
+  {
+    id: 'photos',
+    weight: 15,
+    title: 'Photos uploaded',
+    detail: 'Your profile has recent, real photos of your work, team, premises, or service vehicles.',
+    recommendation: 'Add a useful set of real photos first, then keep the gallery current with completed work, team, and location images.'
+  },
+  {
+    id: 'posts',
+    weight: 15,
+    title: 'Posts active',
+    detail: 'You have published a useful update, offer, event, or project post within the past week.',
+    recommendation: 'Publish one helpful post this week. Use a real image, one clear topic, and a relevant action for customers.'
+  },
+  {
+    id: 'reviews',
+    weight: 20,
+    title: '10 or more reviews',
+    detail: 'Your profile has at least 10 genuine customer reviews and you reply to them thoughtfully.',
+    recommendation: 'Make review requests part of your finished-job or completed-service process. Respond to every review calmly and specifically.'
+  },
+  {
+    id: 'questions',
+    weight: 10,
+    title: 'Q&A populated',
+    detail: 'Common customer questions have useful, accurate answers in the profile Q&A section.',
+    recommendation: 'Add answers for the questions customers ask before contacting you, such as service areas, availability, parking, booking, or turnaround time.'
+  },
+  {
+    id: 'categories',
+    weight: 20,
+    title: 'Categories set',
+    detail: 'Your primary category is precise and relevant secondary categories reflect the services you genuinely offer.',
+    recommendation: 'Review your primary category first. Choose the clearest match for your main service, then add only genuinely relevant secondary categories.'
+  },
+  {
+    id: 'website',
+    weight: 20,
+    title: 'Website linked',
+    detail: 'Your profile links to a working page that clearly explains the business, service, or location customers searched for.',
+    recommendation: 'Add or update the website link. Send customers to the most relevant, mobile-friendly page rather than a generic or broken destination.'
+  }
+];
+---
+
+<Layout
+  title="Google Business Profile Score and Local SEO Audit | Auckland"
+  description="Check your Google Business Profile score in 60 seconds. Review photos, posts, reviews, Q&A, categories, and website linking, then get practical Local SEO fixes for your Auckland business."
+  canonicalURL={canonicalURL}
+  schema={schema}
+>
+  <section class="gbp-audit-hero">
+    <div class="container gbp-audit-hero-inner">
+      <div>
+        <p class="gbp-audit-kicker">Free local visibility tool</p>
+        <h1>Check your Google Business Profile score</h1>
+        <p class="gbp-audit-lead">Answer six quick questions about your profile. You will get a practical 0 to 100 score and a focused list of what to improve first.</p>
+        <div class="gbp-audit-hero-actions">
+          <a href="#gbp-scorecard" class="gbp-audit-primary">Start the scorecard</a>
+          <a href="/google-business-profile-guide-for-auckland-businesses/" class="gbp-audit-secondary">Read the GBP guide</a>
+        </div>
+      </div>
+      <div class="gbp-audit-hero-note" aria-label="What the scorecard covers">
+        <p>Six profile foundations</p>
+        <ul>
+          <li>Photos and posts</li>
+          <li>Reviews and Q&A</li>
+          <li>Categories and website link</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="gbp-audit-snippet">
+    <div class="container">
+      <p><strong>This free Google Business Profile scorecard</strong> helps Auckland businesses review six visible Local SEO foundations: photos, active posts, customer reviews, Q&A, categories, and the website link. It is a self-assessment tool, not a ranking guarantee or a replacement for a full Local SEO audit.</p>
+    </div>
+  </div>
+
+  <section class="gbp-audit-section" id="gbp-scorecard" aria-labelledby="gbp-scorecard-title">
+    <div class="container gbp-audit-layout">
+      <div class="gbp-audit-intro">
+        <p class="gbp-audit-kicker gbp-audit-kicker-dark">Your scorecard</p>
+        <h2 id="gbp-scorecard-title">Mark what is already in place</h2>
+        <p>Choose only the items you can confirm today. Your score updates immediately and the remaining items become your next actions.</p>
+        <p class="gbp-audit-privacy">No Google account connection. No profile data is collected.</p>
+      </div>
+
+      <div class="gbp-audit-tool" data-gbp-audit>
+        <form class="gbp-audit-checklist" aria-describedby="gbp-audit-help">
+          <p class="sr-only" id="gbp-audit-help">Select every Google Business Profile item that is already complete.</p>
+          {checks.map((check) => (
+            <label class="gbp-audit-check" for={`gbp-${check.id}`}>
+              <input id={`gbp-${check.id}`} type="checkbox" data-weight={check.weight} data-recommendation={check.recommendation} />
+              <span class="gbp-audit-check-control" aria-hidden="true"></span>
+              <span class="gbp-audit-check-copy">
+                <strong>{check.title}</strong>
+                <span>{check.detail}</span>
+              </span>
+              <span class="gbp-audit-weight">{check.weight} pts</span>
+            </label>
+          ))}
+        </form>
+
+        <aside class="gbp-audit-result" aria-label="Google Business Profile score">
+          <p class="gbp-audit-result-label">Your GBP foundation score</p>
+          <div class="gbp-audit-score-row">
+            <output class="gbp-audit-score" data-score aria-live="polite">0</output>
+            <span>/ 100</span>
+          </div>
+          <p class="gbp-audit-status" data-status>Start with the essentials</p>
+          <div class="gbp-audit-progress" role="progressbar" aria-label="Google Business Profile score" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span data-progress></span>
+          </div>
+          <div class="gbp-audit-recommendations" data-recommendations aria-live="polite">
+            <p>Select the profile items already completed to see your first priorities.</p>
+          </div>
+          <div class="gbp-audit-result-actions">
+            <a href="/contact/" class="gbp-audit-primary">Get a practical audit</a>
+            <button type="button" class="gbp-audit-reset" data-reset>Start again</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <PageVisual
+    imgSrc={gbpImage.src}
+    imgAlt="Google Business Profile optimisation dashboard for an Auckland business"
+    imgTitle="Google Business Profile score and Local SEO audit for Auckland businesses"
+    eyebrow="What the score covers"
+    title="A stronger profile makes it easier for customers to choose you"
+    caption="The scorecard focuses on the visible profile details customers use to decide whether to call, visit, or click through to your website."
+  />
+
+  <section class="gbp-audit-explainer" aria-labelledby="gbp-audit-explainer-title">
+    <div class="container gbp-audit-explainer-inner">
+      <div>
+        <p class="gbp-audit-kicker gbp-audit-kicker-dark">Use the result well</p>
+        <h2 id="gbp-audit-explainer-title">A score is a starting point, not a ranking promise</h2>
+      </div>
+      <p>Local visibility also depends on how closely your business matches the search, where the customer is searching from, local competition, and the quality of your website. Use the recommendations to complete the essentials, then work through the wider <a href="/local-seo-for-auckland-small-businesses/">Local SEO foundations</a>.</p>
+    </div>
+  </section>
+
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Keep improving</p>
+      <div class="rps-links">
+        <a href="/google-business-profile-guide-for-auckland-businesses/" class="rps-link">Google Business Profile Guide</a>
+        <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO Auckland</a>
+        <a href="/affordable-seo-auckland/" class="rps-link">SEO Services</a>
+        <a href="/contact/" class="rps-link">Request a Practical Audit</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Want an expert set of eyes on your local visibility?"
+    subtitle="We can review your profile, website, and local search foundations, then give you a clear priority list."
+    ctaPrimary={{ text: "Request a Local SEO Audit", href: "/contact/" }}
+    ctaSecondary={{ text: "See Local SEO Services", href: "/local-seo-for-auckland-small-businesses/" }}
+  />
+</Layout>
+
+<style>
+  .gbp-audit-hero {
+    background: var(--kwd-dark);
+    color: #f8f5ec;
+    padding: clamp(4rem, 9vw, 7rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+  }
+
+  .gbp-audit-hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.65fr);
+    align-items: end;
+    gap: clamp(2.5rem, 7vw, 7rem);
+  }
+
+  .gbp-audit-kicker {
+    color: var(--kwd-yellow);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.9rem;
+    text-transform: uppercase;
+  }
+
+  .gbp-audit-kicker-dark { color: #9b4b32; }
+
+  .gbp-audit-hero h1 {
+    color: #f8f5ec;
+    font-size: clamp(2.45rem, 5vw, 4.5rem);
+    line-height: 1.02;
+    margin: 0;
+    max-width: 760px;
+  }
+
+  .gbp-audit-lead {
+    color: rgba(248, 245, 236, 0.78);
+    font-size: 1.08rem;
+    line-height: 1.7;
+    margin: 1.3rem 0 0;
+    max-width: 620px;
+  }
+
+  .gbp-audit-hero-actions,
+  .gbp-audit-result-actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .gbp-audit-primary,
+  .gbp-audit-secondary,
+  .gbp-audit-reset {
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+  }
+
+  .gbp-audit-primary {
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+  }
+
+  .gbp-audit-primary:hover { background: var(--kwd-gold); }
+
+  .gbp-audit-secondary {
+    border-color: rgba(248, 245, 236, 0.6);
+    color: #f8f5ec;
+  }
+
+  .gbp-audit-secondary:hover { border-color: #f8f5ec; }
+
+  .gbp-audit-hero-note {
+    border-top: 1px solid rgba(248, 245, 236, 0.35);
+    padding-top: 1.15rem;
+  }
+
+  .gbp-audit-hero-note p {
+    color: var(--kwd-yellow);
+    font-size: 0.86rem;
+    font-weight: 700;
+    margin: 0 0 0.8rem;
+  }
+
+  .gbp-audit-hero-note ul {
+    color: rgba(248, 245, 236, 0.74);
+    line-height: 1.9;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gbp-audit-hero-note li::before {
+    color: #73b69e;
+    content: '•';
+    margin-right: 0.6rem;
+  }
+
+  .gbp-audit-snippet {
+    background: #f2f1e5;
+    padding: 1.1rem 0;
+  }
+
+  .gbp-audit-snippet p {
+    color: var(--kwd-dark);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .gbp-audit-section { padding: clamp(3.75rem, 8vw, 7rem) 0; }
+
+  .gbp-audit-layout {
+    display: grid;
+    gap: 2.75rem;
+    grid-template-columns: minmax(210px, 0.45fr) minmax(0, 1fr);
+  }
+
+  .gbp-audit-intro h2,
+  .gbp-audit-explainer h2 {
+    color: var(--kwd-dark);
+    font-size: clamp(1.85rem, 3vw, 2.7rem);
+    line-height: 1.12;
+    margin: 0;
+  }
+
+  .gbp-audit-intro > p:not(.gbp-audit-kicker) {
+    color: #55504a;
+    line-height: 1.75;
+    margin: 1rem 0 0;
+  }
+
+  .gbp-audit-privacy {
+    color: #2f6b62 !important;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .gbp-audit-tool {
+    border: 1px solid #d8d3c7;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .gbp-audit-checklist { margin: 0; }
+
+  .gbp-audit-check {
+    align-items: center;
+    border-bottom: 1px solid #e6e1d7;
+    cursor: pointer;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    padding: 1.15rem 1.2rem;
+    transition: background-color 160ms ease;
+  }
+
+  .gbp-audit-check:hover { background: #fbfaf5; }
+  .gbp-audit-check:last-child { border-bottom: 0; }
+
+  .gbp-audit-check input {
+    height: 1px;
+    opacity: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .gbp-audit-check-control {
+    border: 1.5px solid #8b847a;
+    border-radius: 3px;
+    display: block;
+    height: 20px;
+    position: relative;
+    width: 20px;
+  }
+
+  .gbp-audit-check input:focus-visible + .gbp-audit-check-control {
+    outline: 3px solid rgba(47, 107, 98, 0.35);
+    outline-offset: 3px;
+  }
+
+  .gbp-audit-check input:checked + .gbp-audit-check-control {
+    background: #2f6b62;
+    border-color: #2f6b62;
+  }
+
+  .gbp-audit-check input:checked + .gbp-audit-check-control::after {
+    border-bottom: 2px solid #f8f5ec;
+    border-right: 2px solid #f8f5ec;
+    content: '';
+    height: 9px;
+    left: 6px;
+    position: absolute;
+    top: 3px;
+    transform: rotate(42deg);
+    width: 5px;
+  }
+
+  .gbp-audit-check-copy { display: grid; gap: 0.26rem; }
+
+  .gbp-audit-check-copy strong { color: var(--kwd-dark); font-size: 1rem; }
+
+  .gbp-audit-check-copy span {
+    color: #625c55;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .gbp-audit-weight {
+    color: #9b4b32;
+    font-size: 0.76rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .gbp-audit-result {
+    background: #f2f1e5;
+    border-top: 1px solid #d8d3c7;
+    padding: clamp(1.4rem, 3vw, 2rem);
+  }
+
+  .gbp-audit-result-label {
+    color: #625c55;
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .gbp-audit-score-row {
+    align-items: baseline;
+    color: #625c55;
+    display: flex;
+    gap: 0.35rem;
+    margin-top: 0.2rem;
+  }
+
+  .gbp-audit-score {
+    color: var(--kwd-dark);
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    line-height: 1;
+  }
+
+  .gbp-audit-status {
+    color: #2f6b62;
+    font-size: 0.96rem;
+    font-weight: 700;
+    margin: 0.6rem 0 0;
+  }
+
+  .gbp-audit-progress {
+    background: #d8d3c7;
+    border-radius: 999px;
+    height: 8px;
+    margin-top: 1rem;
+    overflow: hidden;
+  }
+
+  .gbp-audit-progress span {
+    background: #2f6b62;
+    display: block;
+    height: 100%;
+    transition: width 220ms ease-out;
+    width: 0;
+  }
+
+  .gbp-audit-recommendations {
+    border-top: 1px solid #d8d3c7;
+    margin-top: 1.35rem;
+    padding-top: 1.15rem;
+  }
+
+  .gbp-audit-recommendations > p {
+    color: #625c55;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .gbp-audit-recommendations h3 {
+    color: var(--kwd-dark);
+    font-size: 1rem;
+    margin: 0 0 0.7rem;
+  }
+
+  .gbp-audit-recommendations ul {
+    color: #625c55;
+    display: grid;
+    gap: 0.7rem;
+    line-height: 1.55;
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+
+  .gbp-audit-reset {
+    background: transparent;
+    border-color: #8b847a;
+    color: var(--kwd-dark);
+  }
+
+  .gbp-audit-reset:hover { border-color: var(--kwd-dark); }
+
+  .gbp-audit-explainer { background: #f8f5ec; padding: clamp(3.5rem, 7vw, 6rem) 0; }
+
+  .gbp-audit-explainer-inner {
+    align-items: start;
+    display: grid;
+    gap: clamp(2rem, 6vw, 6rem);
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+  }
+
+  .gbp-audit-explainer p {
+    color: #4d4842;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .gbp-audit-explainer a { color: #2f6b62; font-weight: 700; }
+
+  @media (max-width: 800px) {
+    .gbp-audit-hero-inner,
+    .gbp-audit-layout,
+    .gbp-audit-explainer-inner { grid-template-columns: 1fr; }
+
+    .gbp-audit-hero-note { max-width: 420px; }
+  }
+
+  @media (max-width: 560px) {
+    .gbp-audit-check {
+      align-items: start;
+      grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .gbp-audit-weight { grid-column: 2; }
+    .gbp-audit-primary,
+    .gbp-audit-secondary,
+    .gbp-audit-reset { width: 100%; }
+  }
+</style>
+
+<script>
+  const audit = document.querySelector('[data-gbp-audit]');
+
+  if (audit) {
+    const inputs = Array.from(audit.querySelectorAll<HTMLInputElement>('input[type="checkbox"]'));
+    const scoreOutput = audit.querySelector<HTMLOutputElement>('[data-score]');
+    const statusOutput = audit.querySelector<HTMLElement>('[data-status]');
+    const progress = audit.querySelector<HTMLElement>('[data-progress]');
+    const progressbar = audit.querySelector<HTMLElement>('[role="progressbar"]');
+    const recommendations = audit.querySelector<HTMLElement>('[data-recommendations]');
+    const resetButton = audit.querySelector<HTMLButtonElement>('[data-reset]');
+
+    if (!scoreOutput || !statusOutput || !progress || !progressbar || !recommendations || !resetButton) {
+      throw new Error('Google Business Profile audit controls are incomplete.');
+    }
+
+    const getStatus = (score: number) => {
+      if (score === 100) return 'A strong profile foundation is in place';
+      if (score >= 70) return 'Good foundations, with a few clear improvements';
+      if (score >= 40) return 'Useful foundations, with important gaps to close';
+      return 'Start with the essentials';
+    };
+
+    const updateScore = () => {
+      const completed = inputs.filter((input) => input.checked);
+      const remaining = inputs.filter((input) => !input.checked);
+      const score = completed.reduce((total, input) => total + Number(input.dataset.weight || 0), 0);
+
+      scoreOutput.textContent = String(score);
+      statusOutput.textContent = getStatus(score);
+      progress.style.width = `${score}%`;
+      progressbar.setAttribute('aria-valuenow', String(score));
+
+      if (remaining.length === 0) {
+        recommendations.innerHTML = '<h3>Keep the profile current</h3><p>All six foundations are in place. Review your profile regularly so photos, posts, replies, categories, and website link stay accurate as the business changes.</p>';
+        return;
+      }
+
+      const nextSteps = remaining
+        .map((input) => `<li>${input.dataset.recommendation ?? ''}</li>`)
+        .join('');
+      recommendations.innerHTML = `<h3>Your next ${remaining.length === 1 ? 'priority' : 'priorities'}</h3><ul>${nextSteps}</ul>`;
+    };
+
+    inputs.forEach((input) => input.addEventListener('change', updateScore));
+    resetButton.addEventListener('click', () => {
+      inputs.forEach((input) => { input.checked = false; });
+      updateScore();
+      inputs[0]?.focus();
+    });
+
+    updateScore();
+  }
+</script>

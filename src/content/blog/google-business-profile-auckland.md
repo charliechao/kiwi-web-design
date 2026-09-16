@@ -269,6 +269,14 @@ Check these monthly. If direction requests are spiking from a particular suburb,
 
 ---
 
+## Check Your Google Business Profile Score
+
+Before working through every improvement, use our [Google Business Profile Scorecard](/google-business-profile-audit-auckland/) to check six visible foundations: photos, recent posts, 10 or more reviews, Q&A, categories, and website linking. It gives you a quick 0 to 100 self-assessment and specific next steps for the items that are still incomplete.
+
+The score is not a ranking promise. It is a practical way to identify what should be fixed first before you invest time in broader Local SEO work.
+
+---
+
 ## Common Mistakes Auckland Businesses Make
 
 After reviewing dozens of Auckland business profiles, the same issues appear repeatedly.
