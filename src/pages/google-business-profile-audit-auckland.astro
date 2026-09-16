@@ -116,7 +116,7 @@ const checks = [
   canonicalURL={canonicalURL}
   schema={schema}
 >
-  <section class="gbp-audit-hero">
+  <section class="gbp-audit-hero" id="gbp-audit-hero">
     <div class="container gbp-audit-hero-inner">
       <div>
         <p class="gbp-audit-kicker">Free local visibility tool</p>
@@ -236,6 +236,8 @@ const checks = [
     background: var(--kwd-dark);
     color: #f8f5ec;
     padding: clamp(4rem, 9vw, 7rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+    overflow: hidden;
+    position: relative;
   }
 
   .gbp-audit-hero-inner {
@@ -243,6 +245,14 @@ const checks = [
     grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.65fr);
     align-items: end;
     gap: clamp(2.5rem, 7vw, 7rem);
+    position: relative;
+    z-index: 1;
+  }
+
+  .gbp-audit-hero :global(.vanta-canvas) {
+    inset: 0 !important;
+    position: absolute !important;
+    z-index: 0 !important;
   }
 
   .gbp-audit-kicker {
@@ -395,6 +405,7 @@ const checks = [
     gap: 1rem;
     grid-template-columns: auto minmax(0, 1fr) auto;
     padding: 1.15rem 1.2rem;
+    position: relative;
     transition: background-color 160ms ease;
   }
 
@@ -402,10 +413,15 @@ const checks = [
   .gbp-audit-check:last-child { border-bottom: 0; }
 
   .gbp-audit-check input {
-    height: 1px;
+    cursor: pointer;
+    height: 20px;
+    left: 1.2rem;
+    margin: 0;
     opacity: 0;
     position: absolute;
-    width: 1px;
+    top: 1.15rem;
+    width: 20px;
+    z-index: 1;
   }
 
   .gbp-audit-check-control {
@@ -413,6 +429,7 @@ const checks = [
     border-radius: 3px;
     display: block;
     height: 20px;
+    pointer-events: none;
     position: relative;
     width: 20px;
   }
@@ -634,4 +651,34 @@ const checks = [
 
     updateScore();
   }
+</script>
+
+<!-- Vanta.js local-search background for hero -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.birds.min.js"></script>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || typeof VANTA === 'undefined') return;
+
+    VANTA.BIRDS({
+      el: '#gbp-audit-hero',
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200,
+      minWidth: 200,
+      scale: 1.0,
+      scaleMobile: 0.75,
+      backgroundColor: 0x2c2927,
+      color1: 0xf3d97a,
+      color2: 0xfbe8a6,
+      birdSize: 1.2,
+      wingSpan: 25,
+      speedLimit: 4,
+      separation: 60,
+      alignment: 50,
+      cohesion: 50,
+      quantity: 3,
+    });
+  });
 </script>
