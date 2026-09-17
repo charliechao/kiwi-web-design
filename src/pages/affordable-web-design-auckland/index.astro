@@ -23,24 +23,36 @@ const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "CollectionPage",
+      "@type": ["CollectionPage", "Blog"],
       "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/",
-      "name": "Web Design & Small Business Guides | Kiwi Web Design Blog",
-      "description": "Free, practical guides on web design, SEO, and digital marketing for Auckland small businesses. Website cost guides, Google Business Profile setup, local SEO, and more.",
+      "name": "Web Design Auckland: Costs & How to Choose | Kiwi Web Design",
+      "description": "What web design costs in Auckland, how to choose a designer, and how to get found on Google. Practical guides from Kiwi Web Design, Grey Lynn.",
+      "keywords": "web design Auckland, website design Auckland, web design cost NZ, choosing a web designer Auckland",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "publisher": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/#breadcrumb" },
-      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".blog-snippet", "h1"] }
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".blog-snippet", "h1"] },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Web design, SEO and marketing guides for Auckland small businesses",
+        "numberOfItems": posts.length,
+        "itemListElement": posts.map((post: CollectionEntry<'blog'>, i: number) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": post.data.title,
+          "url": `https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/${post.slug}/`
+        }))
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "Blog & Guides", "item": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/" }
+        { "@type": "ListItem", "position": 2, "name": "Web Design Auckland", "item": "https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/" }
       ]
     },
     {
@@ -75,15 +87,15 @@ function formatDate(date: Date) {
 ---
 
 <Layout
-  title="Web Design & Small Business Guides | Kiwi Web Design Blog"
-  description="Free, practical guides on web design, SEO, and digital marketing for Auckland small businesses. Website cost guides, Google Business Profile setup, local SEO, and more."
+  title="Web Design Auckland: Costs & How to Choose | Kiwi Web Design"
+  description="What web design costs in Auckland, how to choose a designer, and how to get found on Google. Practical guides from Kiwi Web Design, Grey Lynn."
   canonicalURL="https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/"
   schema={schema}
 >
 
   <PageHero
-    eyebrow="Blog & Free Guides"
-    title="Web Design & Small Business Guides"
+    eyebrow="Auckland Web Design Advice"
+    title="Web Design Auckland: Costs, Options and How to Choose"
     subtitle="Practical, no-fluff advice on websites, SEO, and digital marketing for Auckland small business owners. Written by Charlie Chao at Kiwi Web Design."
     ctaPrimary={{ text: 'Get a Free Quote', href: '/contact/' }}
     ctaSecondary={{ text: 'See Web Design Packages', href: '/small-business-website-design-auckland/' }}
