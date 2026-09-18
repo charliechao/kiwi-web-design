@@ -101,3 +101,28 @@ test('protected calculator output matches the pre-release build', () => {
   const html = readFileSync('dist/affordable-web-design-auckland/website-cost-new-zealand-small-business/index.html');
   assert.equal(createHash('sha256').update(html).digest('hex').toUpperCase(), '96B16A81B40453B32FC8117E757ABD3735F99D276FCA049B32BE1C32F4B2C2F3');
 });
+
+test('the four guides use distinct cover files in their hero, listing and article schema', () => {
+  const covers = [
+    ['chatgpt-ads-new-zealand-guide', 'chatgpt-ads-nz-launch-cover.webp'],
+    ['chatgpt-ads-vs-google-search-ads-nz', 'chatgpt-ads-search-comparison-cover.webp'],
+    ['chatgpt-ads-conversion-tracking-nz', 'chatgpt-ads-conversion-tracking-cover.webp'],
+    ['chatgpt-ads-context-hints-nz-examples', 'chatgpt-ads-context-hints-cover.webp'],
+  ];
+  const digests = new Set();
+  const listing = page(blogPrefix).html;
+  for (const [slug, image] of covers) {
+    const imagePath = `/blog/${image}`;
+    const { nodes } = page(`${blogPrefix}${slug}/`);
+    assert.ok(nodes.some((node) => attr(node, 'style')?.includes(imagePath)));
+    assert.ok(listing.includes(imagePath));
+    const schema = nodes.filter((node) => node.tagName === 'script' && attr(node, 'type') === 'application/ld+json')
+      .flatMap((node) => { const data = JSON.parse(text(node)); return data['@graph'] || []; });
+    assert.equal(schema.find((item) => item['@type'] === 'Article').image.url, origin + imagePath);
+    const source = readFileSync(join('public', imagePath));
+    assert.ok(source.length < 200_000, 'Keep cover downloads below 200 KB');
+    assert.deepEqual(readFileSync(join('dist', imagePath)), source);
+    digests.add(createHash('sha256').update(source).digest('hex'));
+  }
+  assert.equal(digests.size, 4, 'Each guide must have a different image');
+});

@@ -3,7 +3,7 @@ title: "ChatGPT Ads in New Zealand: A Business Launch Guide"
 description: "Check NZ advertiser eligibility, Auckland targeting and launch requirements, then use KWD's decision brief to plan a measurable ChatGPT Ads test."
 pubDate: 2026-09-19
 lastModified: 2026-09-19
-image: "/blog/Auckland.jpg"
+image: "/blog/chatgpt-ads-nz-launch-cover.webp"
 articleSection: "ChatGPT Ads"
 keywords: ["ChatGPT Ads NZ", "ChatGPT advertising New Zealand", "ChatGPT Ads Auckland"]
 ---

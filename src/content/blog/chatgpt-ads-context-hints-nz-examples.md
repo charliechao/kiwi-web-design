@@ -3,7 +3,7 @@ title: "ChatGPT Ads Context Hints: Three Worked NZ Examples"
 description: "See how a NZ service, activity provider and online shop could turn buyer needs into truthful context hints, ad copy and landing-page briefs."
 pubDate: 2026-09-19
 lastModified: 2026-09-19
-image: "/blog/Auckland-861.jpg"
+image: "/blog/chatgpt-ads-context-hints-cover.webp"
 articleSection: "ChatGPT Ads"
 keywords: ["ChatGPT Ads context hints", "ChatGPT advertising examples", "ChatGPT Ads NZ"]
 ---

@@ -3,7 +3,7 @@ title: "ChatGPT Ads vs Google Search Ads: A NZ Business Decision Guide"
 description: "Compare ChatGPT Ads with Google Search Ads using buyer situations, eligibility, geography and lead quality, with practical NZ examples and a test framework."
 pubDate: 2026-09-19
 lastModified: 2026-09-19
-image: "/blog/Auckland-861.jpg"
+image: "/blog/chatgpt-ads-search-comparison-cover.webp"
 articleSection: "ChatGPT Ads"
 keywords: ["ChatGPT Ads vs Google Ads", "ChatGPT Ads NZ", "Google Search Ads NZ"]
 ---

@@ -3,7 +3,7 @@ title: "ChatGPT Ads Conversion Tracking: Inside KWD's Enquiry Setup"
 description: "A source-based walkthrough of KWD's lead IDs, session attribution and successful-form events, plus a checklist for validating ChatGPT Ads conversions."
 pubDate: 2026-09-19
 lastModified: 2026-09-19
-image: "/blog/Auckland.jpg"
+image: "/blog/chatgpt-ads-conversion-tracking-cover.webp"
 articleSection: "ChatGPT Ads"
 keywords: ["ChatGPT Ads conversion tracking", "OpenAI Ads pixel", "ChatGPT Ads GA4"]
 ---
