@@ -20,6 +20,7 @@ const sitemapExcludedPaths = new Set([
   // Google Ads landing pages — noindex, paid traffic only.
   '/web-design-auckland-lp/',
   '/web-design-auckland-lp/thank-you/',
+  '/small-business-website-lp/',
   // Defensive exclusion for the utility page if it is ever prerendered.
   '/404/',
 ]);

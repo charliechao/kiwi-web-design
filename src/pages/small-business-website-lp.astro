@@ -1,0 +1,123 @@
+---
+// Google Ads landing page — noindex, excluded from sitemap (astro.config.mjs).
+// Serves the Small Business ad group: owners, often getting their first proper
+// website, who search without "Auckland" and ask about cost, ownership and where
+// to start. No prices on this page (decided 2026-09-18).
+// Conversion fires on /web-design-auckland-lp/thank-you/ only; form_name tells the variants apart.
+import AdsLandingPage from '../components/ads-lp/AdsLandingPage.astro';
+import type { AdsLpContent } from '../components/ads-lp/shared';
+
+const content: AdsLpContent = {
+  meta: {
+    title: "Small Business Website Design | Done For You | Kiwi Web Design",
+    description: "Small business website design, done for you. Charlie at Kiwi Web Design plans, designs and builds your website, with one fixed quote up front and a site you own. Book a free consultation.",
+    canonicalURL: "https://www.kiwiwebdesign.co.nz/small-business-website-lp/",
+  },
+  forms: {
+    topName: "small-business-website-lp",
+    bottomName: "small-business-website-lp-bottom",
+    topSubject: "New Google Ads LP lead — small business website",
+    bottomSubject: "New Google Ads LP lead — small business website (bottom form)",
+    goalPlaceholder: "What does your business do, and what do you need the website for? (optional)",
+  },
+  hero: {
+    eyebrow: "Small Business Websites · Auckland",
+    title: { pre: "Small business website design, ", accent: "done for you" },
+    lead: "Whether you're just starting out or your current site isn't pulling its weight, I plan, design and build a website that explains what you do and makes it easy for customers to get in touch. I help with the words too, so you're never starting from a blank page.",
+    trust: [
+      { icon: "ClipboardCheck", text: "One fixed quote before any work starts" },
+      { icon: "CheckCircle", text: "The website is yours, with no lock-in" },
+      { icon: "Zap", text: "Most sites live in 2-3 weeks" },
+      { icon: "Star", text: "5★ Google rating from NZ clients" },
+    ],
+    formTitle: { pre: "Tell me about your business and get a ", accent: "free consultation" },
+  },
+  reviews: {
+    title: { pre: "What ", accent: "small business owners", post: " say" },
+    first: ["Tony S", "Deborah Shaw", "Eduardo Arnez", "Charles Haddix", "Steven Liu"],
+  },
+  problem: {
+    eyebrow: "Sound familiar?",
+    title: { pre: "Getting a website sorted ", accent: "shouldn't be this hard" },
+    cards: [
+      { icon: "Clock", title: "No time to do it yourself", text: "DIY website builders look easy until you're three evenings in and still stuck on the home page. Your time is better spent running the business." },
+      { icon: "Map", title: "Not sure where to start", text: "Which pages do you need? What should they say? What happens with the domain and email? It's hard to know what matters when it's your first proper website." },
+      { icon: "PhoneOff", title: "Customers can't find or trust you", text: "People look you up before they get in touch. No website, or one that looks unfinished, sends them to the next business on the list." },
+    ],
+  },
+  portfolio: {
+    title: { pre: "Websites I've built for ", accent: "small businesses like yours" },
+    first: ["Beauty Touch Auckland", "Aesthetic Painting", "The Framers Guild", "Barrett Access Scaffolding", "Kiwiland Construction"],
+  },
+  impact: {
+    eyebrow: "Starting a new business?",
+    title: { pre: "You don't need to have it ", accent: "all figured out" },
+    points: [
+      { title: "Bring what you have", desc: "A logo, a few photos, a rough list of services, or just an idea. That's enough to get started." },
+      { title: "I'll help shape the pages and the words", desc: "I'll work out which pages you need and help draft the content, so you're not staring at a blank page." },
+      { title: "Launch with the essentials, grow from there", desc: "Start with a site that explains what you do and makes it easy to get in touch. SEO or Google Ads can be added later without rebuilding anything." },
+    ],
+  },
+  included: {
+    title: { pre: "Everything your ", accent: "small business website", post: " needs — one fixed quote" },
+    items: [
+      { icon: "MessageCircle", title: "Strategy First", desc: "I work out who your customers are and what the site needs to say before any design starts." },
+      { icon: "PenTool", title: "Help With the Words", desc: "I help draft the content for every page. You review and approve it, but you won't be writing it from scratch." },
+      { icon: "Monitor", title: "Custom Design & Build", desc: "No templates. Your site is designed and built around your business, your services and your customers." },
+      { icon: "Smartphone", title: "Mobile Optimised", desc: "Most customers will find you on their phone. Your site will look sharp there first." },
+      { icon: "TrendingUp", title: "SEO-Ready Structure", desc: "Clean headings, service pages and local SEO foundations, so Google understands what you do." },
+      { icon: "CheckCircle", title: "You Own It", desc: "Once the project is paid for, the website belongs to you. You're not locked into staying with me." },
+    ],
+  },
+  fit: {
+    title: { pre: "I'm ", accent: "not the right fit", post: " for everyone" },
+    good: [
+      "You're starting a new business, or you've never had a proper website",
+      "You'd rather have it done for you than spend your evenings on a DIY builder",
+      "You want a website you own, without being tied to one provider",
+      "You want one person to help with the pages, the words, the design and the setup",
+    ],
+    notFit: [
+      "You're looking for the cheapest possible template job",
+      "You want to build and maintain the site yourself on a DIY builder",
+      "You're just collecting quotes with no real timeline",
+    ],
+  },
+  testimonialTitle: { pre: "Your customers are already ", accent: "looking you up online" },
+  ctaBandText: "A clear, professional website makes it easier for customers to choose you.",
+  faq: {
+    title: { pre: "Straight answers ", accent: "before you get in touch" },
+    items: [
+      { q: "I'm just starting out. Where do I begin?", a: "Send me the basics: what your business does and who your customers are. On the free consultation we'll work out which pages you need, what they should say, and what you'll need to gather. You don't need anything prepared." },
+      { q: "Is it a one-off cost or a monthly fee?", a: "Before any work starts you get a clear proposal with one fixed price for the build, so there are no surprise invoices. If there are ongoing costs, like your domain name or hosting, I'll explain them on the call so you know exactly what to expect." },
+      { q: "Will I own the website?", a: "Yes. Once the project is paid for, the website belongs to you. I can look after hosting, updates, and improvements, but you are not locked into staying with me." },
+      { q: "How long until my site is live?", a: "Most small business websites go live in 2-3 weeks from project start. If you have a hard deadline, tell me on the call and I'll be straight about whether it's doable." },
+      { q: "Will you write the website content?", a: "Yes, I can help draft the content for your website, but you'll need to review and approve it based on your expertise before it goes live." },
+      { q: "Do I need a logo and photos first?", a: "Not necessarily. If you have them, we'll use them. If you don't, tell me on the call and I'll suggest the simplest way to get what the site needs." },
+      { q: "Can customers book or enquire through the website?", a: "Every site has a clear way to get in touch, and I can set up online booking if your business needs it. Tell me how customers book with you now and I'll recommend the simplest option." },
+      { q: "Is the consultation really free?", a: "Yes — 15 minutes, no obligation, no quote pressure. If a new website isn't the right move for your business right now, I'll tell you that too." },
+      { q: "Do I need SEO or Google Ads as well?", a: "Not on day one. Every site I build is structured ready for SEO and Google Ads, so you can add them later without rebuilding anything." },
+    ],
+  },
+  coverage: {
+    eyebrow: "What I do",
+    title: { pre: "Small business websites ", accent: "across Auckland" },
+    intro: "Kiwi Web Design is an independent web design studio based in Grey Lynn, Auckland. I design and build websites for small businesses, sole traders and new businesses across the Auckland region, from the CBD and North Shore to West, East and South Auckland.",
+    items: [
+      "New websites for new and growing small businesses",
+      "Websites for trades, local services, hospitality, beauty and health businesses",
+      "A fresh start for DIY or template sites that no longer fit your business",
+      "Your website designer and web developer are the same person — Charlie",
+    ],
+  },
+  final: {
+    eyebrow: "First steps",
+    title: { pre: "Tell me about your business and ", accent: "I'll be in touch" },
+    body: "Share what your business does and where you're at with your website. I'll look over it before replying, so the next conversation is useful from the start.",
+    formTitle: { pre: "Ready for a website that ", accent: "works for your business?" },
+    formSub: "Send the basics through here. Same free consultation, same honest advice, no obligation.",
+  },
+};
+---
+
+<AdsLandingPage content={content} />
