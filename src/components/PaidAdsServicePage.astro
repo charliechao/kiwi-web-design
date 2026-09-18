@@ -177,6 +177,8 @@ const {
     </div>
   </section>
 
+  <slot name="after-intro" />
+
   <section class="paid-section cream">
     <div class="paid-shell capability-grid">
       <div class="feature-copy">
@@ -244,6 +246,7 @@ const {
   </section>
 
   <section class="paid-section">
+    <slot name="resources" />
     <div class="paid-shell faq-grid">
       {faqs.map((faq) => (
         <details>

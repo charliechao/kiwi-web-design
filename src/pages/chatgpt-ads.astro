@@ -7,11 +7,12 @@ const description = 'ChatGPT Ads management for New Zealand businesses. Campaign
 
 const faqs = [
   { q: 'Are ChatGPT Ads available in New Zealand?', a: 'Yes. OpenAI currently lists New Zealand as available for self-service ChatGPT Ads Manager access. Eligibility depends on the legal entity being based in a supported country and on the account meeting OpenAI advertising requirements.' },
-  { q: 'How are ChatGPT Ads different from Google Ads?', a: 'Google Ads primarily captures keyword-driven search intent. ChatGPT Ads can reach people while they are exploring, comparing, and deciding inside a conversational experience. The ad is separate from the ChatGPT answer and appears as a clearly labelled sponsored placement.' },
+  { q: 'How are ChatGPT Ads different from Google Search Ads?', a: 'Google Search Ads can match keywords to searches. ChatGPT Ads use conversational context to help match sponsored placements to relevant situations. Context hints are not exact-match keywords or guaranteed triggers. Neither buying an ad nor adding a hint buys a recommendation inside a ChatGPT answer.' },
   { q: 'Where do ChatGPT Ads appear?', a: 'OpenAI says ads can appear below ChatGPT responses. The ad unit can include the advertiser name, favicon, headline, description, landing page, and image creative.' },
   { q: 'Do ChatGPT Ads influence ChatGPT answers?', a: 'No. OpenAI states that ads are separate from ChatGPT answers and advertisers cannot shape, rank, or alter the response itself.' },
-  { q: 'What New Zealand businesses are a good fit for ChatGPT Ads?', a: 'The strongest candidates are businesses where customers research, compare, or ask for recommendations before buying. That can include local services, professional services, tourism, education, healthcare, and eCommerce, but the right channel depends on your offer and customer journey.' },
-  { q: 'How do you measure ChatGPT Ads?', a: 'We use platform reporting alongside GA4, UTM tagging, form-source fields, call tracking where appropriate, and landing-page conversion data. The goal is to measure qualified enquiries and sales activity rather than clicks alone.' },
+  { q: 'What New Zealand businesses should consider ChatGPT Ads?', a: 'Eligible retail, tourism and local-service offers may be worth assessing when customers compare options before buying. Check the offer against current policies first. Health and financial service ads are generally prohibited outside the US, and legal service ads are prohibited there, so these are not general NZ campaign recommendations.' },
+  { q: 'Can you target only Auckland?', a: 'We check the location controls available in your account and campaign type before recommending an Auckland-only test. Regional and city options vary by country. New product-feed campaigns currently use country-level targeting, so an Auckland service area should not be assumed to be enforceable.' },
+  { q: 'How do you measure ChatGPT Ads?', a: 'We plan platform conversion measurement alongside GA4, tagged links and lead-source records. An enquiry, a qualified lead and a sale are different outcomes. Our tracking walkthrough shows how KWD dispatches a lead event after a successful form response; it is not a claim of measured ChatGPT campaign results.' },
 ];
 
 const schema = {
@@ -26,10 +27,7 @@ const schema = {
       inLanguage: 'en-NZ',
       isPartOf: { '@id': 'https://www.kiwiwebdesign.co.nz/#website' },
       breadcrumb: { '@id': `${canonicalURL}#breadcrumb` },
-      speakable: {
-        '@type': 'SpeakableSpecification',
-        cssSelector: ['.hero-copy h1', '.hero-subtitle', '.answer-strip p'],
-      },
+      dateModified: '2026-09-19',
       citation: [
         'https://help.openai.com/en/articles/20001047',
         'https://help.openai.com/en/articles/20001245',
@@ -49,7 +47,7 @@ const schema = {
       '@id': `${canonicalURL}#service`,
       name: 'ChatGPT Ads Management NZ',
       serviceType: 'ChatGPT advertising strategy and management',
-      provider: { '@type': 'LocalBusiness', name: 'Kiwi Web Design', url: 'https://www.kiwiwebdesign.co.nz/' },
+      provider: { '@id': 'https://www.kiwiwebdesign.co.nz/#organization' },
       areaServed: [
         { '@type': 'City', name: 'Auckland' },
         { '@type': 'Country', name: 'New Zealand' },
@@ -75,11 +73,11 @@ const schema = {
   canonicalURL={canonicalURL}
   schema={schema}
   eyebrow="ChatGPT Ads NZ"
-  h1="Reach customers while they are exploring, comparing, and deciding in ChatGPT."
+  h1="ChatGPT Ads Management in Auckland & New Zealand"
   subtitle="ChatGPT Ads are now available to self-service advertisers in New Zealand. We help Auckland and NZ businesses plan campaigns, prepare creative and landing pages, set up measurement, and test the channel against real lead and sales outcomes."
   badgeText="ChatGPT Ads management for New Zealand businesses"
   primaryCta={{ text: 'Book a free ChatGPT Ads consultation', href: '/contact/' }}
-  secondaryCta={{ text: 'View all Paid Ads', href: '/paid-ads/' }}
+  secondaryCta={{ text: 'Check campaign readiness', href: '/chatgpt-ads-readiness-check/' }}
   proof={['NZ Ads Manager available', 'Campaign strategy', 'Landing pages', 'Conversion tracking']}
   snippetLabel="Quick answer"
   snippet="ChatGPT Ads are available to self-service advertisers in New Zealand through OpenAI Ads Manager. Ads are clearly labelled sponsored placements shown separately from ChatGPT answers. Kiwi Web Design helps Auckland and New Zealand businesses plan the campaign, prepare creative and landing pages, configure measurement, and judge the channel by qualified enquiries and sales rather than novelty."
@@ -113,7 +111,7 @@ const schema = {
   processTitle="Plan, launch, measure, and improve."
   processText="We treat ChatGPT Ads as a performance channel, not a technology experiment. The campaign only earns more budget when the data and lead quality justify it."
   process={[
-    { icon: 'Search', title: 'Review the market and offer', desc: 'We assess your service, customer journey, existing channels, landing pages, and whether ChatGPT Ads are a sensible test for your business.' },
+    { icon: 'Search', title: 'Check eligibility and commercial fit', desc: 'We check advertising policies, account access, available location controls, your offer and existing channels before recommending a test.' },
     { icon: 'Map', title: 'Build the campaign plan', desc: 'We define the buyer situations, campaign structure, creative direction, landing path, and measurement plan before launch.' },
     { icon: 'Globe', title: 'Prepare creative and landing pages', desc: 'We make sure the sponsored message and destination page answer the customer clearly and lead to a trackable next step.' },
     { icon: 'ClipboardCheck', title: 'Launch and optimise', desc: 'We review delivery, clicks, conversion behaviour, lead quality, and cost efficiency, then refine or stop what is not working.' },
@@ -125,13 +123,15 @@ const schema = {
     setupPrice: 'Custom scope',
     monthlyLabel: 'Ongoing management',
     monthlyPrice: 'Custom scope',
-    note: 'We do not publish a generic management price because campaign complexity, creative requirements, landing-page work, and tracking needs vary. Ad spend is separate and paid directly to the platform.',
+    note: 'We agree the creative, landing-page work, tracking, reporting and account responsibilities before launch. Ad spend is separate and paid directly to the platform.',
     items: ['Campaign and intent research', 'Creative and landing-page plan', 'Tracking and attribution setup', 'Ongoing optimisation where appropriate'],
   }}
   faqs={faqs}
   sourceLinks={[
     { text: 'OpenAI: Ads in ChatGPT', href: 'https://help.openai.com/en/articles/20001047' },
     { text: 'OpenAI: Ads Manager Availability', href: 'https://help.openai.com/en/articles/20001245' },
+    { text: 'OpenAI: Advertising policies', href: 'https://openai.com/policies/ad-policies/' },
+    { text: 'OpenAI: Campaign location controls', href: 'https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads' },
   ]}
   relatedLabel="Related services"
   related={[
@@ -149,4 +149,48 @@ const schema = {
     secondaryText: 'Call 021 039 6580',
     secondaryHref: 'tel:+64210396580',
   }}
-/>
+>
+  <section slot="after-intro" class="hub-band" aria-labelledby="fit-title">
+    <div class="hub-shell">
+      <p class="hub-meta">Kiwi Web Design editorial team | Sources checked 19 September 2026</p>
+      <h2 id="fit-title">Is this the right channel for your business?</h2>
+      <p>Our recommendation starts with a business decision, not a promise that a new platform will outperform your existing channels.</p>
+      <dl class="fit-list">
+        <div><dt>Consider a controlled test</dt><dd>Your offer is eligible, the available geography matches your customers, the destination answers a real buying question, and someone can follow up and qualify enquiries.</dd></div>
+        <div><dt>Fix the foundations first</dt><dd>Your form is unreliable, your delivery area is unclear, or clicks cannot be connected to a useful business outcome. More traffic will not resolve these problems.</dd></div>
+        <div><dt>Choose another channel</dt><dd>Your offer is restricted by advertising policy, the available targeting cannot serve your area, or the test would displace an essential source of proven enquiries.</dd></div>
+      </dl>
+      <p><strong>Auckland example:</strong> a local activity provider might answer a parent's question about a rainy-day outing with a page showing age suitability, location, availability and booking terms. A broad homepage leaves those decisions unresolved. This is an illustrative planning example, not a client result.</p>
+      <p>Paid placements and organic AI visibility are separate. For earning mentions in answers, see our <a href="/ai-seo-for-auckland-small-businesses/">AI SEO service</a>. Advertising does not buy those mentions.</p>
+    </div>
+  </section>
+  <section slot="resources" class="hub-resources hub-shell" aria-labelledby="guides-title">
+    <h2 id="guides-title">ChatGPT Ads: the NZ business resource hub</h2>
+    <p>Start with eligibility, then build a test you can explain and measure.</p>
+    <ul class="guide-list">
+      <li><a href="/affordable-web-design-auckland/chatgpt-ads-new-zealand-guide/">ChatGPT Ads in New Zealand: the launch decision guide</a><p>Account access, Auckland targeting, policy checks and a practical launch brief.</p></li>
+      <li><a href="/affordable-web-design-auckland/chatgpt-ads-vs-google-search-ads-nz/">ChatGPT Ads vs Google Search Ads</a><p>A channel decision framework with illustrative NZ business scenarios.</p></li>
+      <li><a href="/affordable-web-design-auckland/chatgpt-ads-conversion-tracking-nz/">Inside KWD's enquiry tracking setup</a><p>What our source code records, what a lead event means, and how to validate measurement.</p></li>
+      <li><a href="/affordable-web-design-auckland/chatgpt-ads-context-hints-nz-examples/">Context hints: three worked NZ examples</a><p>Turn a specific customer situation into a truthful hint, ad and destination brief.</p></li>
+      <li><a href="/chatgpt-ads-readiness-check/">Interactive ChatGPT Ads readiness checklist</a><p>Identify gaps in your offer, account, landing page, measurement and follow-up plan.</p></li>
+    </ul>
+  </section>
+</PaidAdsServicePage>
+
+<style>
+  .hub-shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; color: #182b25; }
+  .hub-band { padding: 48px 0; background: #edf4f0; }
+  .hub-meta { font-size: 0.875rem; color: #435b51; }
+  .hub-shell h2 { font-size: 2rem; line-height: 1.2; letter-spacing: 0; margin: 0 0 20px; }
+  .hub-shell p, .hub-shell dd { line-height: 1.7; }
+  .hub-shell a { color: #24513e; text-underline-offset: 4px; font-weight: 700; }
+  .fit-list { margin: 28px 0; }
+  .fit-list > div { display: grid; grid-template-columns: minmax(160px, 0.4fr) minmax(0, 1fr); gap: 24px; border-top: 1px solid #c6d6cc; padding: 18px 0; }
+  .fit-list dt { font-weight: 700; }
+  .fit-list dd { margin: 0; }
+  .hub-resources { padding-bottom: 56px; }
+  .guide-list { list-style: none; padding: 0; margin: 24px 0 0; }
+  .guide-list li { padding: 20px 0; border-top: 1px solid #c6d6cc; }
+  .guide-list p { margin: 8px 0 0; }
+  @media (max-width: 600px) { .fit-list > div { grid-template-columns: 1fr; gap: 8px; } .hub-shell h2 { font-size: 1.65rem; } }
+</style>

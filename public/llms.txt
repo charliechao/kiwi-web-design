@@ -7,7 +7,15 @@
 - [Web Design for Auckland Small Businesses](https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/): Conversion-focused websites with fixed, project-specific quotes. Mobile-first, fast-loading, built to turn visitors into enquiries, not just look good.
 - [SEO Auckland](https://www.kiwiwebdesign.co.nz/affordable-seo-auckland/): Local SEO targeting buyer keywords for Auckland businesses. Organic visibility that compounds over time and reduces reliance on paid ads.
 - [Google Ads Auckland](https://www.kiwiwebdesign.co.nz/google-ads/): PPC campaign setup and management focused on generating calls and enquiries, not wasting ad spend.
-- [ChatGPT Ads NZ](https://www.kiwiwebdesign.co.nz/chatgpt-ads/): AI search advertising and ChatGPT Ads readiness for New Zealand businesses, including answer-ready landing pages, schema, tracking, and conversion paths.
+- [ChatGPT Ads NZ](https://www.kiwiwebdesign.co.nz/chatgpt-ads/): Paid ChatGPT campaign strategy and management for eligible NZ businesses, with launch guidance, measurement, worked examples and readiness checks. Paid placements are separate from organic AI recommendations.
+
+## ChatGPT Ads Resources
+
+- [NZ ChatGPT Ads Launch Guide](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/chatgpt-ads-new-zealand-guide/): Account eligibility, offer policies, Auckland location controls and KWD's launch decision brief. Sources checked 19 September 2026.
+- [ChatGPT Ads vs Google Search Ads](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/chatgpt-ads-vs-google-search-ads-nz/): A channel decision framework using illustrative NZ business scenarios and qualified-outcome definitions, not performance benchmarks.
+- [Inside KWD's Enquiry Tracking](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/chatgpt-ads-conversion-tracking-nz/): A source-based account of session attribution, lead IDs and successful-form event dispatch, with validation steps and evidence limits.
+- [Context Hints: Three NZ Examples](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/chatgpt-ads-context-hints-nz-examples/): KWD-authored illustrative briefs connecting buyer situations, truthful hints, creative and landing pages. Not client results.
+- [ChatGPT Ads Readiness Checklist](https://www.kiwiwebdesign.co.nz/chatgpt-ads-readiness-check/): Interactive self-assessment of six campaign prerequisites with specific recommendations. Not OpenAI approval or a performance forecast.
 
 ## Website Types
 

@@ -1,10 +1,10 @@
 {
   "_meta": {
-    "generated": "2026-07-10",
+    "generated": "2026-09-19",
     "purpose": "Internal linking reference for Kiwi Web Design Astro site",
-    "totalPages": 101,
-    "totalBlogPosts": 35,
-    "notes": "Hub pages should receive the most inbound internal links. Use suggestedAnchorText when linking TO this page."
+    "totalPages": 72,
+    "totalBlogPosts": 36,
+    "notes": "Counts describe entries in this linking reference, not a complete route inventory. Hub pages should receive the most inbound internal links. Use suggestedAnchorText when linking TO this page."
   },
   "hubs": {
     "description": "High-priority link targets. Every supporting page should link to at least one hub.",
@@ -110,18 +110,27 @@
     },
     {
       "url": "/chatgpt-ads/",
-      "title": "ChatGPT Ads NZ | AI Search Advertising for Auckland Businesses",
-      "topic": "ChatGPT Ads NZ, AI search advertising, ChatGPT Search visibility",
-      "summary": "ChatGPT Ads and AI search advertising readiness page for New Zealand businesses covering ChatGPT Search visibility, answer-ready landing pages, schema, tracking, and conversion paths",
+      "title": "ChatGPT Ads NZ | ChatGPT Advertising for Auckland Businesses",
+      "topic": "ChatGPT Ads NZ, paid ChatGPT advertising, Auckland campaign management",
+      "summary": "ChatGPT Ads management hub with eligibility checks, NZ launch guidance, Google Search comparison, firsthand tracking implementation, illustrative context hints and an interactive readiness checklist",
       "type": "service",
       "isHub": true,
       "suggestedAnchorText": [
         "ChatGPT Ads NZ",
         "ChatGPT Ads",
         "AI search advertising",
-        "ChatGPT Search visibility",
+        "ChatGPT Ads management Auckland",
         "AI ads New Zealand"
       ]
+    },
+    {
+      "url": "/chatgpt-ads-readiness-check/",
+      "title": "ChatGPT Ads Readiness Checklist for NZ Businesses",
+      "topic": "ChatGPT Ads readiness, campaign preparation NZ",
+      "summary": "Six-requirement self-assessment with specific fixes for offer eligibility, account access and geography, creative, landing pages, measurement and lead follow-up. Not an approval or performance forecast.",
+      "type": "tool",
+      "isHub": false,
+      "suggestedAnchorText": ["ChatGPT Ads readiness checklist", "check campaign readiness"]
     },
     {
       "url": "/wordpress-website-design-auckland/",
@@ -964,6 +973,30 @@
     }
   ],
   "blogPosts": [
+    {
+      "url": "/affordable-web-design-auckland/chatgpt-ads-new-zealand-guide/",
+      "title": "ChatGPT Ads in New Zealand: A Business Launch Guide",
+      "topic": "NZ advertiser eligibility, Auckland targeting, launch decision brief",
+      "relatedServices": ["/chatgpt-ads/", "/chatgpt-ads-readiness-check/"]
+    },
+    {
+      "url": "/affordable-web-design-auckland/chatgpt-ads-vs-google-search-ads-nz/",
+      "title": "ChatGPT Ads vs Google Search Ads: A NZ Business Decision Guide",
+      "topic": "channel selection, NZ buyer scenarios, qualified outcomes",
+      "relatedServices": ["/chatgpt-ads/", "/google-ads/", "/paid-ads/"]
+    },
+    {
+      "url": "/affordable-web-design-auckland/chatgpt-ads-conversion-tracking-nz/",
+      "title": "ChatGPT Ads Conversion Tracking: Inside KWD's Enquiry Setup",
+      "topic": "source-based KWD measurement walkthrough, lead IDs, pixel event boundaries",
+      "relatedServices": ["/chatgpt-ads/", "/analytics-reporting-for-auckland-small-business-websites/"]
+    },
+    {
+      "url": "/affordable-web-design-auckland/chatgpt-ads-context-hints-nz-examples/",
+      "title": "ChatGPT Ads Context Hints: Three Worked NZ Examples",
+      "topic": "illustrative context hints, truthful creative, destination alignment",
+      "relatedServices": ["/chatgpt-ads/", "/landing-pages-funnels-on-wordpress/"]
+    },
     {
       "url": "/affordable-web-design-auckland/seo-vs-google-ads-auckland-small-business/",
       "title": "SEO vs Google Ads: Two Real NZ Small-Business Evidence Cases",
