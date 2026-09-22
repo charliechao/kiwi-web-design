@@ -13,11 +13,14 @@ const sitemapExcludedPaths = new Set([
   // "google ads auckland"). Linking it from every page while withholding it
   // from the sitemap was contradictory.
   //
-  // Thin, indexable, and intentionally kept out of the submitted sitemap:
-  '/affordable-web-design-auckland/why-auckland-business-not-ranking-google/',
-  '/press-release-and-news/',
+  // 2026-09-22, same pass: /website-branding/ (1,016 words),
+  // /affordable-web-design-auckland/why-auckland-business-not-ranking-google/
+  // (2,044 words) and /press-release-and-news/ (718 words) also removed. The
+  // first two are linked from the web design and SEO hubs, so withholding them
+  // from the sitemap worked against their own hubs. None is thin content.
+  //
+  // Genuinely thin, indexable, intentionally withheld:
   '/thank-you/',
-  '/website-branding/',
   '/zh/paid-ads/',
   // noindex pages — the sitemap must agree with the robots meta tag.
   '/meta-ads/',
