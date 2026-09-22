@@ -9,7 +9,6 @@ const sitemapExcludedPaths = new Set([
   '/affordable-web-design-auckland/best-seo-company-auckland-small-businesses/',
   '/affordable-web-design-auckland/why-auckland-business-not-ranking-google/',
   '/custom-florist-website-design-auckland/',
-  '/malware-cleanup-for-auckland-small-business-websites/',
   '/meta-ads/',
   '/paid-ads/',
   '/press-release-and-news/',

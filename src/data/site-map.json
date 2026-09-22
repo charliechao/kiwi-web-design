@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "generated": "2026-09-19",
+    "generated": "2026-09-22",
     "purpose": "Internal linking reference for Kiwi Web Design Astro site",
-    "totalPages": 72,
+    "totalPages": 66,
     "totalBlogPosts": 36,
     "notes": "Counts describe entries in this linking reference, not a complete route inventory. Hub pages should receive the most inbound internal links. Use suggestedAnchorText when linking TO this page."
   },
@@ -130,7 +130,10 @@
       "summary": "Six-requirement self-assessment with specific fixes for offer eligibility, account access and geography, creative, landing pages, measurement and lead follow-up. Not an approval or performance forecast.",
       "type": "tool",
       "isHub": false,
-      "suggestedAnchorText": ["ChatGPT Ads readiness checklist", "check campaign readiness"]
+      "suggestedAnchorText": [
+        "ChatGPT Ads readiness checklist",
+        "check campaign readiness"
+      ]
     },
     {
       "url": "/wordpress-website-design-auckland/",
@@ -243,16 +246,16 @@
       ]
     },
     {
-      "url": "/wordpress-maintenance-auckland/",
-      "title": "WordPress Maintenance Auckland | Kiwi Web Design",
-      "topic": "WordPress maintenance Auckland, WordPress care plan",
-      "summary": "WordPress maintenance plans covering security updates, backups, performance monitoring, and ongoing site care for Auckland businesses",
+      "url": "/monthly-subscription/",
+      "title": "WordPress Maintenance Auckland | Website Care Plan & Managed Hosting",
+      "topic": "wordpress maintenance auckland, website care plan, managed hosting, website security, backups",
+      "summary": "Consolidated website care plan: managed WordPress hosting, core/plugin updates, security and firewall, daily offsite backups, malware cleanup, analytics and monthly reporting, 30 minutes content editing, training and handover. Absorbed six former standalone pages in September 2026.",
       "type": "service-support",
       "isHub": false,
       "suggestedAnchorText": [
-        "WordPress maintenance Auckland",
-        "WordPress care plans",
-        "ongoing WordPress support"
+        "website care plan",
+        "WordPress maintenance",
+        "website maintenance Auckland"
       ]
     },
     {
@@ -347,19 +350,6 @@
       ]
     },
     {
-      "url": "/website-training-and-handover/",
-      "title": "Website Training & Handover Auckland | Learn to Manage Your Site",
-      "topic": "website training Auckland, WordPress handover",
-      "summary": "Structured website training and full credentials handover included with every Kiwi Web Design build, WordPress editing, forms, plugins, media",
-      "type": "service-support",
-      "isHub": false,
-      "suggestedAnchorText": [
-        "website training and handover",
-        "WordPress training Auckland",
-        "website management training"
-      ]
-    },
-    {
       "url": "/website-copywriting-auckland/",
       "title": "Website Copywriting Auckland | Kiwi Web Design",
       "topic": "website copywriting Auckland, web content writing",
@@ -422,71 +412,6 @@
         "membership website WordPress",
         "subscription site Auckland",
         "members-only website"
-      ]
-    },
-    {
-      "url": "/monthly-subscription/",
-      "title": "Monthly Website Subscription Plan | Kiwi Web Design",
-      "topic": "monthly website subscription, ongoing support plan",
-      "summary": "Subscription-based ongoing website maintenance, updates, and support plans for Auckland businesses",
-      "type": "service-support",
-      "isHub": false,
-      "suggestedAnchorText": [
-        "monthly website subscription",
-        "ongoing support plan",
-        "monthly website maintenance"
-      ]
-    },
-    {
-      "url": "/analytics-reporting-for-auckland-small-business-websites/",
-      "title": "Analytics & Reporting for Auckland Business Websites | Kiwi Web Design",
-      "topic": "website analytics Auckland, Google Analytics reporting",
-      "summary": "Google Analytics 4 setup and monthly reporting service for Auckland small business websites",
-      "type": "service-support",
-      "isHub": false,
-      "suggestedAnchorText": [
-        "website analytics Auckland",
-        "Google Analytics setup",
-        "monthly reporting service"
-      ]
-    },
-    {
-      "url": "/website-security-for-auckland-small-businesses/",
-      "title": "Website Security for Auckland Small Businesses | Kiwi Web Design",
-      "topic": "website security Auckland, WordPress security",
-      "summary": "Website security hardening, malware protection, and security monitoring for Auckland small business WordPress sites",
-      "type": "service-support",
-      "isHub": false,
-      "suggestedAnchorText": [
-        "website security Auckland",
-        "WordPress security hardening",
-        "website protection"
-      ]
-    },
-    {
-      "url": "/malware-cleanup-for-auckland-small-business-websites/",
-      "title": "Malware Cleanup & Removal for Auckland Websites | Kiwi Web Design",
-      "topic": "malware cleanup Auckland, website hack recovery",
-      "summary": "Malware detection, removal, and site recovery service for hacked or infected WordPress sites in Auckland",
-      "type": "service-support",
-      "isHub": false,
-      "suggestedAnchorText": [
-        "malware cleanup Auckland",
-        "hacked website recovery",
-        "WordPress malware removal"
-      ]
-    },
-    {
-      "url": "/website-backup-and-restoration-for-auckland-small-businesses/",
-      "title": "Website Backup & Restoration for Auckland Small Businesses | Kiwi Web Design",
-      "topic": "website backups Auckland, disaster recovery",
-      "summary": "Automated backup management and disaster recovery service for Auckland business websites",
-      "type": "service-support",
-      "isHub": false,
-      "suggestedAnchorText": [
-        "website backups Auckland",
-        "backup and restoration service",
-        "disaster recovery Auckland"
       ]
     },
     {
@@ -977,25 +902,38 @@
       "url": "/affordable-web-design-auckland/chatgpt-ads-new-zealand-guide/",
       "title": "ChatGPT Ads in New Zealand: A Business Launch Guide",
       "topic": "NZ advertiser eligibility, Auckland targeting, launch decision brief",
-      "relatedServices": ["/chatgpt-ads/", "/chatgpt-ads-readiness-check/"]
+      "relatedServices": [
+        "/chatgpt-ads/",
+        "/chatgpt-ads-readiness-check/"
+      ]
     },
     {
       "url": "/affordable-web-design-auckland/chatgpt-ads-vs-google-search-ads-nz/",
       "title": "ChatGPT Ads vs Google Search Ads: A NZ Business Decision Guide",
       "topic": "channel selection, NZ buyer scenarios, qualified outcomes",
-      "relatedServices": ["/chatgpt-ads/", "/google-ads/", "/paid-ads/"]
+      "relatedServices": [
+        "/chatgpt-ads/",
+        "/google-ads/",
+        "/paid-ads/"
+      ]
     },
     {
       "url": "/affordable-web-design-auckland/chatgpt-ads-conversion-tracking-nz/",
       "title": "ChatGPT Ads Conversion Tracking: Inside KWD's Enquiry Setup",
       "topic": "source-based KWD measurement walkthrough, lead IDs, pixel event boundaries",
-      "relatedServices": ["/chatgpt-ads/", "/analytics-reporting-for-auckland-small-business-websites/"]
+      "relatedServices": [
+        "/chatgpt-ads/",
+        "/monthly-subscription/"
+      ]
     },
     {
       "url": "/affordable-web-design-auckland/chatgpt-ads-context-hints-nz-examples/",
       "title": "ChatGPT Ads Context Hints: Three Worked NZ Examples",
       "topic": "illustrative context hints, truthful creative, destination alignment",
-      "relatedServices": ["/chatgpt-ads/", "/landing-pages-funnels-on-wordpress/"]
+      "relatedServices": [
+        "/chatgpt-ads/",
+        "/landing-pages-funnels-on-wordpress/"
+      ]
     },
     {
       "url": "/affordable-web-design-auckland/seo-vs-google-ads-auckland-small-business/",
@@ -1171,7 +1109,7 @@
       "topic": "WordPress platform choice, ownership and maintenance",
       "relatedServices": [
         "/wordpress-website-design-auckland/",
-        "/wordpress-maintenance-auckland/"
+        "/monthly-subscription/"
       ]
     },
     {

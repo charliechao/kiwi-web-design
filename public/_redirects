@@ -54,3 +54,19 @@
 # Consolidated AI search guides (August 2026)
 /affordable-web-design-auckland/auckland-web-design-ai-seo-shift/ /affordable-web-design-auckland/traditional-seo-is-changing-why-auckland-businesses-must-prepare-for-ai-driven-search-aeo-geo/ 301
 /affordable-web-design-auckland/auckland-web-design-ai-seo-shift /affordable-web-design-auckland/traditional-seo-is-changing-why-auckland-businesses-must-prepare-for-ai-driven-search-aeo-geo/ 301
+
+# Consolidated website care plan (September 2026)
+# Six thin, near-duplicate care pages merged into /monthly-subscription/,
+# which now carries the full detail for each of them.
+/wordpress-maintenance-auckland/ /monthly-subscription/ 301
+/wordpress-maintenance-auckland /monthly-subscription/ 301
+/website-security-for-auckland-small-businesses/ /monthly-subscription/ 301
+/website-security-for-auckland-small-businesses /monthly-subscription/ 301
+/website-backup-and-restoration-for-auckland-small-businesses/ /monthly-subscription/ 301
+/website-backup-and-restoration-for-auckland-small-businesses /monthly-subscription/ 301
+/malware-cleanup-for-auckland-small-business-websites/ /monthly-subscription/ 301
+/malware-cleanup-for-auckland-small-business-websites /monthly-subscription/ 301
+/website-training-and-handover/ /monthly-subscription/ 301
+/website-training-and-handover /monthly-subscription/ 301
+/analytics-reporting-for-auckland-small-business-websites/ /monthly-subscription/ 301
+/analytics-reporting-for-auckland-small-business-websites /monthly-subscription/ 301

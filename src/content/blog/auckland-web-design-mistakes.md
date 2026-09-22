@@ -60,7 +60,7 @@ Running a small business in Auckland? Your website is often the first point of c
 ### 9. Missing Analytics and Tracking
 
 
-**Mistake:** Not installing Google Analytics or other tracking tools to measure performance.**Why It Matters:** Without data, you can’t identify what’s working or where improvements are needed.**How to Avoid:** Set up Google Analytics and Google Search Console, define goals (like form submissions), and review reports monthly. Our [analytics and reporting service](/analytics-reporting-for-auckland-small-business-websites/) can handle this for you.
+**Mistake:** Not installing Google Analytics or other tracking tools to measure performance.**Why It Matters:** Without data, you can’t identify what’s working or where improvements are needed.**How to Avoid:** Set up Google Analytics and Google Search Console, define goals (like form submissions), and review reports monthly. Our [analytics and reporting service](/monthly-subscription/) can handle this for you.
 
 
 ### 10. Lack of Fresh Content

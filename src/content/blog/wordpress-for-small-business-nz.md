@@ -146,4 +146,4 @@ If the business will not fund maintenance and nobody will manage updates, WordPr
 
 Choose WordPress when its flexibility and content management solve real operating needs, and when the business has a maintenance plan. Do not choose it solely because it is popular or because a developer uses it for every project.
 
-Kiwi Web Design builds [WordPress websites in Auckland](/wordpress-website-design-auckland/) and also works with other approaches when they better fit the brief. We can help map the content, integrations, ownership, and ongoing costs before a platform is selected. For existing sites, our [WordPress maintenance service](/wordpress-maintenance-auckland/) covers the upkeep that should be planned from the beginning.
+Kiwi Web Design builds [WordPress websites in Auckland](/wordpress-website-design-auckland/) and also works with other approaches when they better fit the brief. We can help map the content, integrations, ownership, and ongoing costs before a platform is selected. For existing sites, our [WordPress maintenance service](/monthly-subscription/) covers the upkeep that should be planned from the beginning.

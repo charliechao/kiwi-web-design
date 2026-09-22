@@ -7,35 +7,6 @@ import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import subscriptionImage from '../assets/services/website-security-auckland-dashboard-style.jpg';
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://www.kiwiwebdesign.co.nz/monthly-subscription/",
-      "url": "https://www.kiwiwebdesign.co.nz/monthly-subscription/",
-      "name": "Monthly Subscription",
-      "description": "Pay monthly instead of a lump sum. $59/mo (excl. GST) includes hosting, updates, security, and 30 mins changes. Auckland small-business friendly.",
-      "inLanguage": "en-NZ",
-      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
-      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/monthly-subscription/#breadcrumb" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://www.kiwiwebdesign.co.nz/monthly-subscription/#breadcrumb",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
-        { "@type": "ListItem", "position": 2, "name": "Monthly Subscription" }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
-      "name": "Kiwi Web Design",
-      "url": "https://www.kiwiwebdesign.co.nz/"
-    }
-  ]
-};
 
 const included = [
   {
@@ -89,27 +60,165 @@ const comparisonItems = [
   { label: "No lock-in contract", included: true },
 ];
 
-const faqs = [
-  { q: "Do I need to have my website built by you to use the subscription?", a: "Usually yes, we manage sites we've built or migrated to our hosting environment. If you have an existing <a href=\"/wordpress-website-design-auckland/\">WordPress site</a> on another host, we can migrate it over as part of the setup. Get in touch and we'll let you know if it's compatible." },
-  { q: "Is there a minimum contract period?", a: "No lock-in. The subscription runs month-to-month. You can cancel at any time with 30 days notice. We don't believe in trapping clients, we'd rather earn your continued business." },
-  { q: "What if I need more than 30 minutes of changes in a month?", a: "Additional time is billed at our standard hourly rate of $120/hr + GST. We'll always let you know if a request is going to exceed your monthly allocation before we start." },
-  { q: "What happens if my site goes down?", a: "We monitor uptime 24/7. If your site goes offline, we're alerted immediately and will investigate and resolve it as a priority, typically within 1–2 hours during business hours." },
-  { q: "Does the subscription include SEO?", a: "The subscription covers <a href=\"/website-hosting-auckland/\">hosting</a>, <a href=\"/wordpress-maintenance-auckland/\">maintenance</a>, updates, and minor content changes. SEO is a separate service. We offer local SEO and WordPress SEO packages that can be bundled with your subscription. Ask us about a combined plan." },
-  { q: "Can I upgrade later if I want more support?", a: "Yes. We can customise a plan with additional change hours, monthly blog publishing, or SEO management if your needs grow. Just ask." },
+
+const coverage = [
+  {
+    title: "WordPress core and plugin updates",
+    desc: "Outdated plugins are the single most common cause of WordPress sites being compromised. Every month we apply core, theme, and plugin updates, and we take a restore point before we touch anything so an update conflict never becomes your problem.",
+    items: [
+      "WordPress core updates applied and tested",
+      "Plugin and theme updates, checked for conflicts",
+      "A backup taken before every update run",
+      "Deprecated or abandoned plugins flagged and replaced",
+    ],
+  },
+  {
+    title: "Website security, SSL and firewall",
+    desc: "Automated bots scan the internet continuously for vulnerable WordPress installations. Your site does not need to be well known to be targeted. Security runs quietly in the background so you never have to deal with a hacked site.",
+    items: [
+      "SSL certificate issued, renewed and monitored",
+      "Web application firewall filtering malicious traffic",
+      "Scheduled malware scanning across files and database",
+      "Login protection against brute force attempts",
+      "Hardening: file editing disabled, XML-RPC managed, security headers set",
+    ],
+  },
+  {
+    title: "Daily backups and fast restoration",
+    desc: "Most shared hosting keeps weekly backups on the same server as your site, which is no help if the account itself is compromised or suspended. We keep an independent daily copy offsite, so there is always a clean point to go back to.",
+    items: [
+      "Automated daily backups of files and database",
+      "Stored offsite, separate from the web server",
+      "30 days of restore history retained",
+      "Backups verified, not just created",
+      "Full restore typically completed within 1 to 3 hours",
+    ],
+  },
+  {
+    title: "Malware cleanup and hack recovery",
+    desc: "If the worst happens, cleanup is covered by your plan rather than billed as an emergency. Reinfection happens when the entry point is left open, so we close it rather than just removing the visible symptoms.",
+    items: [
+      "Diagnosis of the infection and how it got in",
+      "Malware removal, or a clean restore where that is faster",
+      "The entry point closed and the site hardened afterwards",
+      "Google blacklist and Search Console warning removal",
+      "A written incident report explaining what happened",
+    ],
+  },
+  {
+    title: "Analytics, Search Console and monthly reporting",
+    desc: "Without measurement you cannot tell whether your website is earning its keep. You get a plain-English monthly summary rather than being left to interpret a raw GA4 dashboard.",
+    items: [
+      "GA4 installed and configured properly",
+      "Google Search Console connected and monitored",
+      "Enquiry and phone-click conversion tracking",
+      "A monthly report: traffic, top pages, sources, conversions",
+      "Month-on-month comparison so trends are visible",
+    ],
+  },
+  {
+    title: "Content changes, training and handover",
+    desc: "Thirty minutes of changes each month covers the things that would otherwise sit on your to-do list for weeks. And if you would rather do it yourself, we will show you how, properly.",
+    items: [
+      "30 minutes of content editing each month",
+      "Text, images, prices, opening hours, new pages",
+      "A structured walkthrough of editing your own site",
+      "Written notes or a recording to refer back to",
+      "Full credentials handover, no dependency by design",
+    ],
+  },
 ];
+
+const faqs = [
+  { q: "What is included in the care plan?", a: "Managed WordPress hosting, core and plugin updates, website security and firewall, daily offsite backups, malware cleanup if you ever need it, analytics and a monthly report, 30 minutes of content editing, and priority support. One monthly fee, no lock-in." },
+  { q: "Do I need a care plan if my website is brand new?", a: "A new site is the ideal time to start. Updates are released constantly for WordPress core, plugins, and themes, and vulnerabilities accumulate quickly without regular maintenance. The first 6 to 12 months are when most sites become exposed if left unattended." },
+  { q: "Can you maintain a WordPress site you did not build?", a: "Yes. We can take over any WordPress site. We start with an audit to understand the current state of the site, its plugins, and any existing issues. If it turns out the site needs more than maintenance, we also offer <a href=\"/wordpress-website-rebuilds-auckland/\">WordPress website rebuilds</a>." },
+  { q: "What happens if my site gets hacked while I am on the plan?", a: "Malware removal is covered. We diagnose the infection, clean it, close the entry point that allowed it, restore from a clean backup if that is faster, and handle any Google blacklist removal. There is no extra charge beyond your plan." },
+  { q: "How likely is my small business website to be attacked?", a: "More likely than most people expect. Automated bots scan continuously for vulnerable WordPress installations, and small business sites are targeted precisely because they tend to be less well protected. It is rarely personal and almost never manual." },
+  { q: "Do I need security if my site is a simple brochure with no logins?", a: "Yes. Every WordPress site has a login page even if your visitors never see it, and attackers target the backend rather than the front end. A compromised brochure site can be used to send spam or host phishing pages without you noticing anything." },
+  { q: "Does my hosting company not already back up my site?", a: "Most shared hosting includes server-level backups, but they are often weekly, stored on the same server, and may exclude the database. If the hosting account itself is compromised or suspended, those backups can go with it. An independent daily offsite backup is a separate safety net." },
+  { q: "How far back can I restore, and how long does it take?", a: "We retain 30 days of history, so a problem you only notice three weeks later is still recoverable. A full restore usually takes 1 to 3 hours depending on site size; partial restores of just the database or specific files are faster." },
+  { q: "Is there a minimum contract period?", a: "No lock-in. The plan runs month-to-month and you can cancel with 30 days notice. We would rather earn your continued business than trap you in a contract." },
+  { q: "What counts as a content change?", a: "Text updates, image swaps, adding or removing pages, menu changes, price updates, publishing blog posts, anything that does not require custom development. Major new features or a redesign are quoted separately." },
+  { q: "What if I need more than 30 minutes of changes in a month?", a: "Additional time is billed at our standard hourly rate, and we will always tell you before starting if a request is going to exceed your monthly allocation. If you regularly need more, we can add a discounted block of prepaid hours." },
+  { q: "Can I still learn to manage the site myself?", a: "Yes, and we encourage it. Every build includes a structured handover session walking through your actual site, plus written notes or a recording. The plan is there to take work off your plate, not to make you dependent on us." },
+  { q: "Does the plan include SEO?", a: "No, SEO is a separate service. The plan covers hosting, maintenance, security, backups, reporting, and minor content changes. We offer <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO</a> and <a href=\"/wordpress-seo-optimisation/\">WordPress SEO</a> as add-ons that can be bundled with your plan." },
+  { q: "What about domains and email?", a: "Those are handled separately, and we offer both: <a href=\"/domain-management-auckland/\">domain management</a> for DNS, renewals and transfers, and <a href=\"/email-setup-business-email-hosting/\">business email setup</a> on Microsoft 365 or Google Workspace." },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/monthly-subscription/",
+      "url": "https://www.kiwiwebdesign.co.nz/monthly-subscription/",
+      "name": "WordPress Maintenance Auckland | Website Care Plan & Managed Hosting",
+      "description": "WordPress maintenance, security, daily backups, malware cleanup and monthly reporting in one care plan for Auckland small businesses. No lock-in contract.",
+      "mainEntity": { "@id": "https://www.kiwiwebdesign.co.nz/monthly-subscription/#service" },
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/monthly-subscription/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/monthly-subscription/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Maintenance & Website Care" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/monthly-subscription/#service",
+      "name": "WordPress maintenance and website care plan",
+      "serviceType": "Website maintenance",
+      "description": "A single monthly plan covering managed WordPress hosting, core and plugin updates, website security, daily offsite backups, malware cleanup, analytics reporting, and 30 minutes of content editing.",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "What the care plan covers",
+        "itemListElement": coverage.map((c) => ({
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": c.title, "description": c.desc }
+        }))
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/monthly-subscription/#faq",
+      "mainEntity": faqs.map((f) => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a.replace(/<[^>]+>/g, "") }
+      }))
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "url": "https://www.kiwiwebdesign.co.nz/"
+    }
+  ]
+};
+
 ---
 
 <Layout
-  title="Monthly Subscription | Managed WordPress Hosting & Maintenance Auckland"
-  description="Pay monthly instead of a lump sum. $59/mo (excl. GST) includes hosting, updates, security, and 30 mins changes. Auckland small-business friendly."
+  title="WordPress Maintenance Auckland | Website Care Plan & Managed Hosting"
+  description="WordPress maintenance, security, daily backups, malware cleanup and monthly reporting in one care plan for Auckland small businesses. No lock-in contract."
   canonicalURL="https://www.kiwiwebdesign.co.nz/monthly-subscription/"
   schema={schema}
 >
 
   <PageHero
-    eyebrow="Monthly Subscription"
-    title="Your website. Taken care of. Every month"
-    subtitle="Managed WordPress hosting, security, updates, and 30 minutes of content editing, all for a single monthly fee. No surprises, no lock-in."
+    eyebrow="Website Care Plan"
+    title="WordPress maintenance and website care for Auckland businesses"
+    subtitle="Managed hosting, security, daily backups, updates, malware protection, and 30 minutes of content editing, all for a single monthly fee. No surprises, no lock-in."
     badgeText="$59/mo + GST"
     ctaPrimary={{ text: "Get Started", href: "/contact/" }}
     ctaSecondary={{ text: "See What's Included", href: "#included" }}
@@ -160,6 +269,28 @@ const faqs = [
         subtitle="We don't hide things in the fine print. Here's exactly what you get each month."
       />
       <ServiceGrid items={included} cols={3} />
+    </div>
+  </section>
+
+  <!-- Deep coverage detail -->
+  <section class="section" id="covered" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="In Detail"
+        title="What the care plan actually covers"
+        subtitle="The full detail behind each part of the plan, so you know exactly what you are paying for."
+      />
+      <div class="ms-cover">
+        {coverage.map(({ title, desc, items }) => (
+          <article class="ms-cover-item">
+            <h3 class="ms-cover-title">{title}</h3>
+            <p class="ms-cover-desc">{desc}</p>
+            <ul class="ms-cover-list">
+              {items.map((i) => <li>{i}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -252,8 +383,9 @@ const faqs = [
     <div class="container" style="max-width: 860px;">
       <p class="rps-label">Related services</p>
       <div class="rps-links">
-        <a href="/wordpress-maintenance-auckland/" class="rps-link">WordPress Maintenance</a>
         <a href="/website-hosting-auckland/" class="rps-link">Website Hosting</a>
+        <a href="/domain-management-auckland/" class="rps-link">Domain Management</a>
+        <a href="/email-setup-business-email-hosting/" class="rps-link">Business Email</a>
         <a href="/wordpress-website-design-auckland/" class="rps-link">WordPress Design</a>
         <a href="/small-business-website-design-auckland/" class="rps-link">Web Design Packages</a>
         <a href="/contact/" class="rps-link">Contact</a>
@@ -475,6 +607,52 @@ const faqs = [
     .ms-addons { grid-template-columns: 1fr; }
   }
 
+  .ms-cover {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+    margin-top: 2.5rem;
+  }
+  .ms-cover-item {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 16px;
+    padding: 1.75rem;
+  }
+  .ms-cover-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.65rem;
+  }
+  .ms-cover-desc {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: rgba(44,41,39,0.78);
+    margin-bottom: 1rem;
+  }
+  .ms-cover-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .ms-cover-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .ms-cover-list li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #2f7d4f;
+    font-weight: 700;
+  }
+  @media (max-width: 820px) {
+    .ms-cover { grid-template-columns: 1fr; gap: 1.25rem; }
+  }
   .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
   .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
   .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }

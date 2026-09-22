@@ -175,7 +175,7 @@ The foundations include:
 
 Measure actions that matter, such as submitted enquiries, bookings, calls, or purchases. Page views can show interest, but they are not leads.
 
-Our [technical SEO service](/technical-seo-auckland/) covers crawlability and site foundations, while [analytics and reporting](/analytics-reporting-for-auckland-small-business-websites/) focuses on understanding what visitors actually do.
+Our [technical SEO service](/technical-seo-auckland/) covers crawlability and site foundations, while [analytics and reporting](/monthly-subscription/) focuses on understanding what visitors actually do.
 
 ## 10. Ownership, privacy, handover, and maintenance
 
