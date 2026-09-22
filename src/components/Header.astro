@@ -26,9 +26,12 @@ interface NavLink {
 }
 
 const enNavLinks: NavLink[] = [
-  // "Web Design" points at the homepage: the homepage owns the "web design Auckland"
-  // head term, so this sitewide anchor should reinforce it, not the service page.
-  { label: 'Web Design', href: '/' },
+  // "Web Design" points at the web design service hub. The homepage is the
+  // digital marketing hub above all three pillars, so it cannot also be one of
+  // them. /affordable-web-design-auckland/ holds the "web design Auckland" head
+  // term (pos ~11) and keeps its sitewide anchor under the "Blog" label below;
+  // it is deliberately left untouched while that ranking settles.
+  { label: 'Web Design', href: '/small-business-website-design-auckland/' },
   { label: 'SEO', href: '/affordable-seo-auckland/', children: [
     { label: 'AI SEO', href: '/ai-seo-for-auckland-small-businesses/' },
     { label: 'Local SEO', href: '/local-seo-for-auckland-small-businesses/' },

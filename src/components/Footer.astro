@@ -4,12 +4,13 @@ const currentPath = Astro.url.pathname;
 const isZh = currentPath.startsWith('/zh');
 
 const enServices = [
-  // "Web Design" anchor points at the homepage (it owns the head term);
-  // the service page keeps a qualified anchor so users still have the path.
-  { label: 'Web Design',      href: '/' },
-  { label: 'Web Design Packages', href: '/small-business-website-design-auckland/' },
+  // "Web Design" anchors the web design service hub. The duplicate "Web Design
+  // Packages" entry pointing at the same URL is gone; "Website Care Plan" takes
+  // the freed slot so the consolidated plan has a sitewide path.
+  { label: 'Web Design',      href: '/small-business-website-design-auckland/' },
   { label: 'SEO',             href: '/affordable-seo-auckland/' },
   { label: 'Google Ads',      href: '/google-ads/' },
+  { label: 'Website Care Plan', href: '/monthly-subscription/' },
 ];
 
 const zhServices = [

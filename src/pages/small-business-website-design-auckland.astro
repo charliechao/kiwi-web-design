@@ -212,6 +212,83 @@ const reviews = [
 // Full-colour Google "G" logo (official 4-colour mark).
 const googleG = '<path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>';
 const avatarColors = ['#d93b8f', '#5b8def', '#8b5cf6', '#0ea5a4', '#e0672c', '#3f7d4f', '#c0392b', '#2f6f9f'];
+
+// Web design hub: every page in the web design cluster hangs off this one.
+// The homepage is the digital marketing hub above the three pillars;
+// /affordable-web-design-auckland/ holds the "web design Auckland" head term
+// and is deliberately untouched, so this page does the structural work.
+const hubGroups = [
+  {
+    heading: "Website types and platforms",
+    links: [
+      { label: "WordPress website design", href: "/wordpress-website-design-auckland/" },
+      { label: "Shopify website design", href: "/shopify-website-design-auckland/" },
+      { label: "WooCommerce website design", href: "/woocommerce-website-design-auckland/" },
+      { label: "eCommerce websites", href: "/ecommerce-website-auckland/" },
+      { label: "Tradie websites", href: "/tradie-website-design-auckland/" },
+      { label: "Booking and appointment websites", href: "/booking-appointment-websites-with-wordpress/" },
+      { label: "Membership and subscription websites", href: "/membership-subscription-websites-with-wordpress-auckland/" },
+      { label: "Landing pages and funnels", href: "/landing-pages-funnels-on-wordpress/" },
+      { label: "Website rebuilds", href: "/wordpress-website-rebuilds-auckland/" },
+    ],
+  },
+  {
+    heading: "Design, content and setup",
+    links: [
+      { label: "Website branding", href: "/website-branding/" },
+      { label: "Website copywriting", href: "/website-copywriting-auckland/" },
+      { label: "Our design process", href: "/website-design-process-in-auckland/" },
+      { label: "WordPress theme selection", href: "/wordpress-themes-for-auckland-small-businesses/" },
+      { label: "WordPress plugins", href: "/wordpress-plugins-for-small-businesses-in-auckland/" },
+      { label: "WordPress and AI tools", href: "/wordpress-ai-tools-integration-auckland/" },
+      { label: "AI content setup", href: "/ai-content-setup-for-websites/" },
+    ],
+  },
+  {
+    heading: "Industries we build for",
+    links: [
+      { label: "All industries we serve", href: "/industries-we-serve-in-auckland/" },
+      { label: "Lawyers and legal firms", href: "/how-kiwi-web-design-helps-auckand-lawyers/" },
+      { label: "Healthcare and clinics", href: "/how-kiwi-web-design-helps-auckland-healthcare/" },
+      { label: "Restaurants and cafes", href: "/how-kiwi-web-design-helps-auckland-restaurants/" },
+      { label: "Beauty and wellness", href: "/how-kiwi-web-design-helps-auckland-beauty-industry/" },
+    ],
+  },
+  {
+    heading: "Areas we serve",
+    links: [
+      { label: "Central Auckland", href: "/central-auckland-web-design/" },
+      { label: "North Shore", href: "/north-shore-website-design/" },
+      { label: "West Auckland", href: "/west-auckland-web-design/" },
+      { label: "South Auckland", href: "/south-auckland-web-design/" },
+      { label: "East Auckland", href: "/east-auckland-web-design/" },
+    ],
+  },
+  {
+    heading: "Client case studies",
+    links: [
+      { label: "Barrett Access Scaffolding", href: "/case-study-scaffolding/" },
+      { label: "Kiwiland Construction", href: "/kiwiland-construction-website/" },
+      { label: "Beauty Touch", href: "/beauty-touch-case-study/" },
+      { label: "La Veranda Restaurant", href: "/la-veranda-restaurant-website/" },
+      { label: "Melanoma Specialists", href: "/melanoma-specialists-website/" },
+      { label: "FL Legal", href: "/fl-legal-website/" },
+      { label: "Inspector Guys Building Inspections", href: "/inspector-guys-building-inspections-website/" },
+      { label: "Dryice Blasting Services", href: "/dryice-blasting-services-website/" },
+      { label: "Topline Services", href: "/topline-services-cleaning-website/" },
+    ],
+  },
+  {
+    heading: "After your site is live",
+    links: [
+      { label: "Website care plan", href: "/monthly-subscription/" },
+      { label: "Website hosting", href: "/website-hosting-auckland/" },
+      { label: "Domain management", href: "/domain-management-auckland/" },
+      { label: "Business email setup", href: "/email-setup-business-email-hosting/" },
+    ],
+  },
+];
+
 ---
 
 <Layout
@@ -459,44 +536,25 @@ const avatarColors = ['#d93b8f', '#5b8def', '#8b5cf6', '#0ea5a4', '#e0672c', '#3
     </div>
   </section>
 
-  <!-- Related services -->
-  <section class="related-strip">
-    <div class="container" style="max-width: 860px;">
-      <p class="rps-label">Related services</p>
-      <div class="rps-links">
-        <a href="/tradie-website-design-auckland/" class="rps-link">Tradie Websites</a>
-        <a href="/ecommerce-website-auckland/" class="rps-link">eCommerce Websites</a>
-        <a href="/woocommerce-website-design-auckland/" class="rps-link">WooCommerce Design</a>
-        <a href="/shopify-website-design-auckland/" class="rps-link">Shopify Design</a>
-        <a href="/website-copywriting-auckland/" class="rps-link">Website Copywriting</a>
-        <a href="/website-branding/" class="rps-link">Website Branding</a>
-        <a href="/website-design-process-in-auckland/" class="rps-link">Our Design Process</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Case studies -->
-  <section class="related-strip">
-    <div class="container" style="max-width: 860px;">
-      <p class="rps-label">Client case studies</p>
-      <div class="rps-links">
-        <a href="/case-study-scaffolding/" class="rps-link">Barrett Access Scaffolding case study</a>
-        <a href="/beauty-touch-case-study/" class="rps-link">Beauty Touch booking website</a>
-        <a href="/ecommerce-website-auckland/" class="rps-link">eCommerce website design</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Areas we serve -->
-  <section class="related-strip">
-    <div class="container" style="max-width: 860px;">
-      <p class="rps-label">Areas we serve</p>
-      <div class="rps-links">
-        <a href="/north-shore-website-design/" class="rps-link">North Shore</a>
-        <a href="/south-auckland-web-design/" class="rps-link">South Auckland</a>
-        <a href="/west-auckland-web-design/" class="rps-link">West Auckland</a>
-        <a href="/east-auckland-web-design/" class="rps-link">East Auckland</a>
-        <a href="/central-auckland-web-design/" class="rps-link">Central Auckland</a>
+  <!-- Web design hub: the full cluster -->
+  <section class="section sbwd-hub" id="explore">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Explore"
+        title="Everything we build, and everywhere we build it"
+        subtitle="Every part of our web design work, from platform choice to what happens after launch."
+      />
+      <div class="sbwd-hub-grid">
+        {hubGroups.map(({ heading, links }) => (
+          <div class="sbwd-hub-group">
+            <h3 class="sbwd-hub-heading">{heading}</h3>
+            <ul class="sbwd-hub-list">
+              {links.map(({ label, href }) => (
+                <li><a href={href}>{label}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -798,6 +856,46 @@ const avatarColors = ['#d93b8f', '#5b8def', '#8b5cf6', '#0ea5a4', '#e0672c', '#3
     .sbwd-industries { grid-template-columns: 1fr; }
   }
 
+  .sbwd-hub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.25rem 2rem;
+    margin-top: 2.5rem;
+  }
+  .sbwd-hub-heading {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .sbwd-hub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .sbwd-hub-list a {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: var(--kwd-dark);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+  .sbwd-hub-list a:hover {
+    border-bottom-color: var(--kwd-dark);
+  }
+  @media (max-width: 900px) {
+    .sbwd-hub-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem 1.5rem; }
+  }
+  @media (max-width: 600px) {
+    .sbwd-hub-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+  }
   .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
   .rps-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.6rem; }
   .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
