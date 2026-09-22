@@ -1,0 +1,307 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import StatsRow from '../components/StatsRow.astro';
+import CTABanner from '../components/CTABanner.astro';
+import scaffoldImg from '../assets/case-studies/Barrett-Access-Scaffolding-Company.jpg';
+import kiwilandImg from '../assets/case-studies/Kiwiland-e1753410581810.jpg';
+import beautyImg from '../assets/general/beauty-salon-website-design-seo-auckland.jpg';
+import veranda from '../assets/general/Lavaranda-e1753415431519.jpg';
+import melanomaImg from '../assets/case-studies/Specialist-e1753415885359.jpg';
+import legalImg from '../assets/case-studies/legal-website-auckland-1.jpg';
+import inspectorImg from '../assets/general/Auckland_Building_Inspector-e1750284793590.jpg';
+import dryiceImg from '../assets/case-studies/dryice-blasting-auckland.jpg';
+import cleanerImg from '../assets/general/Auckland_Cleaner-e1750284778292.jpg';
+
+// Portfolio index. The nine case studies previously had no parent page and never
+// linked to each other, so each sat on its own with almost no internal support.
+const projects = [
+  {
+    name: 'Barrett Access Scaffolding',
+    href: '/case-study-scaffolding/',
+    img: scaffoldImg,
+    alt: 'Barrett Access Scaffolding website built by Kiwi Web Design',
+    sector: 'Scaffolding, Auckland',
+    summary: 'Rebuilt with three sector landing pages and an online quote calculator, the first of its kind in New Zealand scaffolding.',
+  },
+  {
+    name: 'Kiwiland Construction',
+    href: '/kiwiland-construction-website/',
+    img: kiwilandImg,
+    alt: 'Kiwiland Construction website built by Kiwi Web Design',
+    sector: 'Construction, Auckland',
+    summary: 'Clear service pages and a project portfolio that lets prospective clients judge the work before they call.',
+  },
+  {
+    name: 'Beauty Touch Auckland',
+    href: '/beauty-touch-case-study/',
+    img: beautyImg,
+    alt: 'Beauty Touch Auckland booking website built by Kiwi Web Design',
+    sector: 'Beauty, Auckland',
+    summary: 'A booking-first website with six treatment pages, visible pricing, and online appointments.',
+  },
+  {
+    name: 'Auckland Melanoma Specialists',
+    href: '/melanoma-specialists-website/',
+    img: melanomaImg,
+    alt: 'Auckland Melanoma Specialists website built by Kiwi Web Design',
+    sector: 'Healthcare, Auckland',
+    summary: 'A trust-first healthcare site with clear patient pathways and specialist credentials up front.',
+  },
+  {
+    name: 'FL Legal',
+    href: '/fl-legal-website/',
+    img: legalImg,
+    alt: 'FL Legal website built by Kiwi Web Design',
+    sector: 'Legal, Auckland',
+    summary: 'Practice-area content and solicitor profiles structured so the right client finds the right lawyer.',
+  },
+  {
+    name: 'Inspector Guys',
+    href: '/inspector-guys-building-inspections-website/',
+    img: inspectorImg,
+    alt: 'Inspector Guys building inspections website built by Kiwi Web Design',
+    sector: 'Building inspections, Auckland',
+    summary: 'Clearer inspection services with trust signals moved above the fold and a simpler enquiry path.',
+  },
+  {
+    name: 'Dryice Blasting Services',
+    href: '/dryice-blasting-services-website/',
+    img: dryiceImg,
+    alt: 'Dryice Blasting Services website built by Kiwi Web Design',
+    sector: 'Industrial cleaning, Auckland',
+    summary: 'Redesigned around clearer service pathways and mobile-first pages for on-site enquiries.',
+  },
+  {
+    name: 'Topline Services',
+    href: '/topline-services-cleaning-website/',
+    img: cleanerImg,
+    alt: 'Topline Services cleaning website built by Kiwi Web Design',
+    sector: 'Commercial cleaning, Auckland',
+    summary: 'Distinct service pages plus Auckland coverage information so enquiries arrive already qualified.',
+  },
+  {
+    name: 'La Veranda Restaurant',
+    href: '/la-veranda-restaurant-website/',
+    img: veranda,
+    alt: 'La Veranda restaurant website built by Kiwi Web Design',
+    sector: 'Hospitality, Auckland (archived)',
+    summary: 'HTML menus, table reservations, and event enquiries. Archived, but still a useful reference build.',
+  },
+];
+
+const stats = [
+  { number: `${projects.length}`, label: 'Client projects documented' },
+  { number: '50+', label: 'NZ businesses helped' },
+  { number: '5★', label: 'Average Google rating' },
+  { number: '2–3 wks', label: 'Typical build time' },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/case-studies/",
+      "url": "https://www.kiwiwebdesign.co.nz/case-studies/",
+      "name": "Client Case Studies | Kiwi Web Design",
+      "description": "Real Auckland website projects by Kiwi Web Design, across scaffolding, construction, beauty, healthcare, legal, building inspections, and cleaning.",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/case-studies/#breadcrumb" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Kiwi Web Design client case studies",
+        "numberOfItems": projects.length,
+        "itemListElement": projects.map((p, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": `${p.name} website case study`,
+          "url": `https://www.kiwiwebdesign.co.nz${p.href}`
+        }))
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/case-studies/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://www.kiwiwebdesign.co.nz/case-studies/" }
+      ]
+    },
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "priceRange": "$$"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Client Case Studies | Auckland Website Projects"
+  description="Real Auckland website projects by Kiwi Web Design: scaffolding, construction, beauty, healthcare, legal, building inspections, and commercial cleaning."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/case-studies/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Our Work"
+    title="Real Auckland businesses, real websites"
+    subtitle="Every project below is a live client build with the thinking behind it written up. No stock mockups, no invented results."
+    ctaPrimary={{ text: 'Get a Free Quote', href: '/contact/' }}
+    ctaSecondary={{ text: 'See Web Design Packages', href: '/small-business-website-design-auckland/' }}
+    centered={true}
+  />
+
+  <StatsRow items={stats} accent={true} />
+
+  <div class="cs-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> has documented {projects.length} client website projects across Auckland, spanning scaffolding, construction, beauty, healthcare, legal, building inspections, and commercial cleaning. Each case study explains the problem, what was built, and what changed for the business.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Case Studies"
+        title="Projects and what they were built to fix"
+        subtitle="Pick any project to read the full write-up."
+      />
+      <div class="cs-grid">
+        {projects.map(({ name, href, img, alt, sector, summary }) => (
+          <a href={href} class="cs-card">
+            <div class="cs-media">
+              <Image src={img} alt={alt} width={520} height={340} class="cs-img" />
+            </div>
+            <div class="cs-body">
+              <p class="cs-sector">{sector}</p>
+              <h3 class="cs-name">{name}</h3>
+              <p class="cs-summary">{summary}</p>
+              <span class="cs-link">Read the case study →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related</p>
+      <div class="rps-links">
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design Packages</a>
+        <a href="/industries-we-serve-in-auckland/" class="rps-link">Industries We Serve</a>
+        <a href="/areas-we-serve/" class="rps-link">Areas We Serve</a>
+        <a href="/testimonials-reviews/" class="rps-link">Client Reviews</a>
+        <a href="/contact/" class="rps-link">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Want your business to be the next one on this page?"
+    subtitle="Free consultation, in person or online, Auckland-wide. Call 021 039 6580 or request a quote below."
+    ctaPrimary={{ text: 'Get a Free Quote', href: '/contact/' }}
+    ctaSecondary={{ text: 'See Areas We Serve', href: '/areas-we-serve/' }}
+  />
+
+</Layout>
+
+<style>
+  .cs-snippet { background: var(--kwd-cream); padding: 1.75rem 0; }
+  .cs-snippet p {
+    max-width: 860px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--kwd-dark);
+  }
+
+  .cs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-top: 2.5rem;
+  }
+  .cs-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.18s, transform 0.18s;
+  }
+  .cs-card:hover {
+    border-color: var(--kwd-dark);
+    transform: translateY(-3px);
+  }
+  .cs-media { aspect-ratio: 16 / 10; overflow: hidden; }
+  .cs-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cs-body { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+  .cs-sector {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--kwd-brown);
+    margin: 0;
+  }
+  .cs-name { font-size: 1.1rem; margin: 0; }
+  .cs-summary { font-size: 0.88rem; line-height: 1.55; color: rgba(44,41,39,0.78); margin: 0; flex: 1; }
+  .cs-link { font-size: 0.85rem; font-weight: 600; color: var(--kwd-dark); margin-top: 0.4rem; }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.6rem;
+  }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.1);
+    color: var(--kwd-dark);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .rps-link:hover { background: #e8e7db; }
+
+  @media (max-width: 900px) {
+    .cs-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  }
+  @media (max-width: 620px) {
+    .cs-grid { grid-template-columns: 1fr; }
+  }
+</style>

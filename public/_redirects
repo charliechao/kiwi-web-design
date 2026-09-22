@@ -70,3 +70,7 @@
 /website-training-and-handover /monthly-subscription/ 301
 /analytics-reporting-for-auckland-small-business-websites/ /monthly-subscription/ 301
 /analytics-reporting-for-auckland-small-business-websites /monthly-subscription/ 301
+
+# Typo fix: "auckand" -> "auckland" (September 2026)
+/how-kiwi-web-design-helps-auckand-lawyers/ /how-kiwi-web-design-helps-auckland-lawyers/ 301
+/how-kiwi-web-design-helps-auckand-lawyers /how-kiwi-web-design-helps-auckland-lawyers/ 301

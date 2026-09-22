@@ -1,0 +1,259 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import CTABanner from '../components/CTABanner.astro';
+import centralImg from '../assets/general/Auckland-CBD.jpg';
+import northImg from '../assets/general/north-shore-website-design-auckland-kiwi-web-design.jpg';
+import westImg from '../assets/general/West-Auckland.jpg';
+import southImg from '../assets/general/rainbows-end-south-auckland.jpg';
+import eastImg from '../assets/general/Botany.jpg';
+
+// Locations index. Deliberately slugged /areas-we-serve/ rather than anything
+// containing "web-design-auckland": /affordable-web-design-auckland/ holds that
+// head term at pos ~11 and must not be given a new internal competitor.
+const areas = [
+  {
+    name: 'Central Auckland',
+    href: '/central-auckland-web-design/',
+    img: centralImg,
+    alt: 'Auckland CBD skyline, where Kiwi Web Design builds websites for central Auckland businesses',
+    suburbs: 'CBD, Ponsonby, Grey Lynn, Parnell, Newmarket, Mount Eden',
+    note: 'Dense, competitive, and design-led. Central businesses are judged against the best-looking sites in the country.',
+  },
+  {
+    name: 'North Shore',
+    href: '/north-shore-website-design/',
+    img: northImg,
+    alt: 'North Shore coastline, where Kiwi Web Design builds websites for Takapuna and Albany businesses',
+    suburbs: 'Takapuna, Albany, Milford, Devonport',
+    note: 'Established local businesses competing with CBD firms for the same customers.',
+  },
+  {
+    name: 'West Auckland',
+    href: '/west-auckland-web-design/',
+    img: westImg,
+    alt: 'West Auckland bush and coastline, where Kiwi Web Design builds websites for Henderson and Kumeu businesses',
+    suburbs: 'Henderson, New Lynn, Kumeu, Titirangi',
+    note: 'Independent operators with real character, usually underserved by template websites.',
+  },
+  {
+    name: 'South Auckland',
+    href: '/south-auckland-web-design/',
+    img: southImg,
+    alt: 'South Auckland landmark, where Kiwi Web Design builds websites for Manukau and Papakura businesses',
+    suburbs: 'Manukau, Papakura, Pukekohe, Takanini',
+    note: 'Fast-growing trade and service businesses where getting online early still wins ground.',
+  },
+  {
+    name: 'East Auckland',
+    href: '/east-auckland-web-design/',
+    img: eastImg,
+    alt: 'Botany in East Auckland, where Kiwi Web Design builds websites for Howick and Pakuranga businesses',
+    suburbs: 'Howick, Botany, Pakuranga, Flat Bush',
+    note: 'Customers research thoroughly before they call, so the website has to hold up to scrutiny.',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.kiwiwebdesign.co.nz/areas-we-serve/",
+      "url": "https://www.kiwiwebdesign.co.nz/areas-we-serve/",
+      "name": "Areas We Serve in Auckland | Kiwi Web Design",
+      "description": "Kiwi Web Design builds websites for small businesses across central Auckland, the North Shore, West Auckland, South Auckland, and East Auckland.",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
+      "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/areas-we-serve/#breadcrumb" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Auckland areas served by Kiwi Web Design",
+        "numberOfItems": areas.length,
+        "itemListElement": areas.map((a, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": a.name,
+          "url": `https://www.kiwiwebdesign.co.nz${a.href}`
+        }))
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.kiwiwebdesign.co.nz/areas-we-serve/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kiwiwebdesign.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Areas We Serve", "item": "https://www.kiwiwebdesign.co.nz/areas-we-serve/" }
+      ]
+    },
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.kiwiwebdesign.co.nz/#organization",
+      "name": "Kiwi Web Design",
+      "url": "https://www.kiwiwebdesign.co.nz/",
+      "telephone": "+64-21-039-6580",
+      "email": "hi@kiwiwebdesign.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147 Great North Road",
+        "addressLocality": "Grey Lynn",
+        "addressRegion": "Auckland",
+        "postalCode": "1021",
+        "addressCountry": "NZ"
+      },
+      "areaServed": areas.map((a) => ({ "@type": "Place", "name": `${a.name}, Auckland` })),
+      "priceRange": "$$"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Areas We Serve in Auckland | Kiwi Web Design"
+  description="Kiwi Web Design builds small business websites right across Auckland: the CBD and central suburbs, North Shore, West Auckland, South Auckland, and East Auckland."
+  canonicalURL="https://www.kiwiwebdesign.co.nz/areas-we-serve/"
+  schema={schema}
+>
+
+  <PageHero
+    eyebrow="Areas We Serve"
+    title="We build websites right across Auckland"
+    subtitle="Charlie works with small businesses in every part of the city, in person where it helps. Pick your area to see how we work locally, or just get in touch."
+    ctaPrimary={{ text: 'Get a Free Quote', href: '/contact/' }}
+    ctaSecondary={{ text: 'See Web Design Packages', href: '/small-business-website-design-auckland/' }}
+    centered={true}
+  />
+
+  <div class="areas-snippet">
+    <div class="container">
+      <p><strong>Kiwi Web Design</strong> is an Auckland web design studio based in Grey Lynn, serving small businesses across central Auckland, the North Shore, West Auckland, South Auckland, and East Auckland. Every area page below covers the suburbs we work in and what tends to matter most for businesses there.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Auckland-wide"
+        title="Find your part of the city"
+        subtitle="Same service and same pricing everywhere, but local context makes a difference to how a site is built."
+      />
+      <div class="areas-grid">
+        {areas.map(({ name, href, img, alt, suburbs, note }) => (
+          <a href={href} class="area-card">
+            <div class="area-media">
+              <Image src={img} alt={alt} width={520} height={340} class="area-img" />
+            </div>
+            <div class="area-body">
+              <h3 class="area-name">{name}</h3>
+              <p class="area-suburbs">{suburbs}</p>
+              <p class="area-note">{note}</p>
+              <span class="area-link">View {name} web design →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="related-strip">
+    <div class="container" style="max-width: 860px;">
+      <p class="rps-label">Related</p>
+      <div class="rps-links">
+        <a href="/small-business-website-design-auckland/" class="rps-link">Web Design Packages</a>
+        <a href="/case-studies/" class="rps-link">Client Case Studies</a>
+        <a href="/industries-we-serve-in-auckland/" class="rps-link">Industries We Serve</a>
+        <a href="/local-seo-for-auckland-small-businesses/" class="rps-link">Local SEO</a>
+        <a href="/contact/" class="rps-link">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    variant="yellow"
+    title="Wherever you are in Auckland, the first meeting is free"
+    subtitle="In person or online, whichever suits. Call 021 039 6580 or request a quote and Charlie will come back to you."
+    ctaPrimary={{ text: 'Get a Free Quote', href: '/contact/' }}
+    ctaSecondary={{ text: 'See Our Work', href: '/case-studies/' }}
+  />
+
+</Layout>
+
+<style>
+  .areas-snippet { background: var(--kwd-cream); padding: 1.75rem 0; }
+  .areas-snippet p {
+    max-width: 860px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--kwd-dark);
+  }
+
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-top: 2.5rem;
+  }
+  .area-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.18s, transform 0.18s;
+  }
+  .area-card:hover {
+    border-color: var(--kwd-dark);
+    transform: translateY(-3px);
+  }
+  .area-media { aspect-ratio: 16 / 10; overflow: hidden; }
+  .area-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .area-body { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+  .area-name { font-size: 1.15rem; margin: 0; }
+  .area-suburbs {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--kwd-brown);
+    margin: 0;
+  }
+  .area-note { font-size: 0.88rem; line-height: 1.55; color: rgba(44,41,39,0.78); margin: 0; flex: 1; }
+  .area-link { font-size: 0.85rem; font-weight: 600; color: var(--kwd-dark); margin-top: 0.4rem; }
+
+  .related-strip { background: var(--kwd-cream); padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,0.07); }
+  .rps-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--kwd-brown);
+    margin-bottom: 0.6rem;
+  }
+  .rps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .rps-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.1);
+    color: var(--kwd-dark);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .rps-link:hover { background: #e8e7db; }
+
+  @media (max-width: 900px) {
+    .areas-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  }
+  @media (max-width: 620px) {
+    .areas-grid { grid-template-columns: 1fr; }
+  }
+</style>
