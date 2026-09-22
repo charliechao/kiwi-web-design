@@ -6,16 +6,22 @@ import tailwindcss from '@tailwindcss/vite';
 const sitemapExcludedPaths = new Set([
   // GSC URL Inspection cleanup, 2026-06-23: keep the submitted sitemap focused
   // on pages Google currently treats as valuable, canonical, and index-worthy.
-  '/affordable-web-design-auckland/best-seo-company-auckland-small-businesses/',
+  //
+  // /paid-ads/ was removed from this list on 2026-09-22. It is the Ads pillar
+  // hub, indexable, linked sitewide from the nav, and already earning 453
+  // impressions over 90 days (pos 1.0 for "meta ads management", 8.1 for
+  // "google ads auckland"). Linking it from every page while withholding it
+  // from the sitemap was contradictory.
+  //
+  // Thin, indexable, and intentionally kept out of the submitted sitemap:
   '/affordable-web-design-auckland/why-auckland-business-not-ranking-google/',
-  '/custom-florist-website-design-auckland/',
-  '/meta-ads/',
-  '/paid-ads/',
   '/press-release-and-news/',
   '/thank-you/',
   '/website-branding/',
-  '/zh/meta-ads/',
   '/zh/paid-ads/',
+  // noindex pages — the sitemap must agree with the robots meta tag.
+  '/meta-ads/',
+  '/zh/meta-ads/',
   // Google Ads landing pages — noindex, paid traffic only.
   '/web-design-auckland-lp/',
   '/web-design-auckland-lp/thank-you/',
