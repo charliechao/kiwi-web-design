@@ -38,6 +38,7 @@ const schema = {
       "name": "Kiwi Web Design",
       "alternateName": "Auckland Website Consultation",
       "url": "https://www.kiwiwebdesign.co.nz/",
+      "hasMap": "https://maps.app.goo.gl/GPR4oAFEXSrnSJ2F8?g_st=ic",
       "telephone": "+64-21-039-6580",
       "email": "hi@kiwiwebdesign.co.nz",
       "address": {
@@ -45,7 +46,7 @@ const schema = {
         "streetAddress": "147 Great North Road",
         "addressLocality": "Grey Lynn",
         "addressRegion": "Auckland",
-        "postalCode": "1021",
+        "postalCode": "1025",
         "addressCountry": "NZ"
       },
       "areaServed": [
@@ -239,6 +240,29 @@ const reviews = [
         </form>
       </div>
 
+    </div>
+  </section>
+
+  <section class="contact-map-section" aria-labelledby="contact-map-title">
+    <div class="container contact-map-layout">
+      <div class="contact-map-copy">
+        <p class="contact-eyebrow contact-eyebrow--dark">Visit us</p>
+        <h2 id="contact-map-title">Find Kiwi Web Design in Grey Lynn</h2>
+        <p>Our office is at 147 Great North Road. Meet in person when it is useful, or book a video call from anywhere in New Zealand.</p>
+        <a class="contact-map-link" href="https://maps.app.goo.gl/GPR4oAFEXSrnSJ2F8?g_st=ic" target="_blank" rel="noopener noreferrer">
+          <Icon name="MapPin" size={18} />
+          Open in Google Maps
+        </a>
+      </div>
+      <div class="contact-map-frame">
+        <iframe
+          title="Kiwi Web Design location at 147 Great North Road, Grey Lynn, Auckland"
+          src="https://maps.google.com/maps?q=Kiwi%20Web%20Design%2C%20147%20Great%20North%20Road%2C%20Grey%20Lynn%2C%20Auckland%201025&z=16&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
   </section>
 
@@ -455,6 +479,53 @@ const reviews = [
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
+  }
+
+  .contact-map-section {
+    background: var(--kwd-cream);
+    padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+  }
+  .contact-map-layout {
+    align-items: center;
+    display: grid;
+    gap: clamp(2rem, 6vw, 5rem);
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  }
+  .contact-eyebrow--dark { color: var(--kwd-brown); }
+  .contact-map-copy h2 {
+    color: var(--kwd-dark);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .contact-map-copy > p:not(.contact-eyebrow) {
+    color: var(--kwd-brown);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .contact-map-link {
+    align-items: center;
+    color: var(--kwd-dark);
+    display: inline-flex;
+    font-size: 0.9rem;
+    font-weight: 700;
+    gap: 0.5rem;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+  }
+  .contact-map-link:hover { color: var(--kwd-brown); }
+  .contact-map-frame {
+    background: #ddd;
+    border: 1px solid rgba(44, 41, 39, 0.16);
+    border-radius: 8px;
+    min-height: 420px;
+    overflow: hidden;
+  }
+  .contact-map-frame iframe {
+    border: 0;
+    display: block;
+    height: 420px;
+    width: 100%;
   }
 
   /* Info side */
@@ -712,6 +783,7 @@ const reviews = [
 
   @media (max-width: 960px) {
     .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-map-layout { grid-template-columns: 1fr; }
     .contact-final-inner { grid-template-columns: repeat(2, 1fr); }
     .form-row-2 { grid-template-columns: 1fr; }
   }
