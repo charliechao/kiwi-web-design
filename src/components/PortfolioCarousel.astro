@@ -1,0 +1,246 @@
+---
+// Auto-scrolling client-results carousel. Mirrors the carousel on the home page (src/pages/index.astro).
+import beautyTouchPreview from '../assets/general/beauty-salon-website-design-seo-auckland.jpg';
+
+interface Props {
+  linkLabel?: string;
+}
+
+const { linkLabel = 'Visit website ->' } = Astro.props;
+
+const portfolio = [
+  { src: '/portfolio/prime-industrial.webp', alt: 'Prime Industrial website', caption: 'Prime Industrial', href: 'https://primeindustrial.co.nz/' },
+  { src: '/portfolio/barrett-access-scaffolding.webp', alt: 'Barrett Access Scaffolding website', caption: 'Barrett Access Scaffolding', href: 'https://www.barrettaccessscaffolding.com/' },
+  { src: beautyTouchPreview.src, alt: 'Beauty Touch Auckland website', caption: 'Beauty Touch Auckland', href: 'https://www.beautytouch.co.nz/' },
+  { src: '/portfolio/gom.webp', alt: 'Goldwing website', caption: 'Goldwing', href: 'https://gom.co.nz/' },
+  { src: '/portfolio/the-framers-guild.webp', alt: 'The Framers Guild framing website', caption: 'The Framers Guild', href: 'https://theframersguild.co.nz/' },
+  { src: '/portfolio/kebudel.webp', alt: 'Kebudel website', caption: 'Kebudel', href: 'https://kebudel.com/' },
+  { src: '/portfolio/asc-homes.webp', alt: 'ASC Homes website', caption: 'ASC Homes', href: 'https://asc-homes.pages.dev/' },
+  { src: '/portfolio/aesthetic-painting.webp', alt: 'Aesthetic Painting website', caption: 'Aesthetic Painting', href: 'https://aestheticpainting.co.nz/' },
+  { src: '/portfolio/mt-albert-business.jpg', alt: 'Mt Albert Business Association website', caption: 'Mt Albert Business Assoc.', href: 'https://mtalbert.org.nz/' },
+  { src: '/blog/600-21B675F7-8EB5-45A5-99242870729DC26D.png', alt: 'TopRated.nz platform', caption: 'TopRated.nz', href: 'https://www.toprated.nz/' },
+];
+
+const portfolioLoop = [...portfolio, ...portfolio];
+---
+
+<div class="portfolio-carousel" data-portfolio-carousel>
+  <div class="portfolio-viewport">
+    <div class="portfolio-track">
+      {portfolioLoop.map(({ src, alt, caption, href }, index) => {
+        const isClone = index >= portfolio.length;
+        return (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class:list={['portfolio-item', isClone && 'is-clone']}
+            aria-hidden={isClone ? 'true' : undefined}
+            tabindex={isClone ? '-1' : undefined}
+          >
+            <img src={src} alt={isClone ? '' : alt} width="400" height="280" loading="lazy" class="portfolio-img" />
+            <span class="portfolio-caption">
+              <span>{caption}</span>
+              <span class="portfolio-arrow">{linkLabel}</span>
+            </span>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</div>
+
+<script>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const motionActive = () => !prefersReducedMotion.matches;
+
+  document.querySelectorAll<HTMLElement>('[data-portfolio-carousel]').forEach((carousel) => {
+    const viewport = carousel.querySelector<HTMLElement>('.portfolio-viewport');
+    if (!viewport) return;
+
+    let frame = 0;
+    let lastFrame = 0;
+    let hoverPaused = false;
+    let focusPaused = false;
+    let pointerActivated = false;
+    let pointerTimer = 0;
+
+    const getSpeed = () => (window.innerWidth < 720 ? 22 : 34);
+    const paused = () => !motionActive() || hoverPaused || focusPaused;
+
+    const step = (time: number) => {
+      if (!paused()) {
+        if (!lastFrame) lastFrame = time;
+        viewport.scrollLeft += getSpeed() * ((time - lastFrame) / 1000);
+        const resetPoint = viewport.scrollWidth / 2;
+        if (viewport.scrollLeft >= resetPoint) viewport.scrollLeft -= resetPoint;
+      }
+      lastFrame = time;
+      frame = window.requestAnimationFrame(step);
+    };
+
+    const sync = () => {
+      if (!motionActive()) {
+        if (frame) window.cancelAnimationFrame(frame);
+        frame = 0;
+        lastFrame = 0;
+        return;
+      }
+      if (!frame) frame = window.requestAnimationFrame(step);
+    };
+
+    const resume = () => {
+      hoverPaused = false;
+      focusPaused = false;
+      lastFrame = 0;
+      sync();
+    };
+
+    carousel.addEventListener('mouseenter', () => { hoverPaused = true; });
+    carousel.addEventListener('mouseleave', resume);
+
+    carousel.addEventListener('pointerdown', () => {
+      pointerActivated = true;
+      window.clearTimeout(pointerTimer);
+      pointerTimer = window.setTimeout(() => { pointerActivated = false; }, 500);
+    });
+
+    carousel.addEventListener('click', (event) => {
+      if (!pointerActivated) return;
+      const target = event.target instanceof Element ? event.target.closest<HTMLElement>('.portfolio-item') : null;
+      if (!target) return;
+      target.blur();
+      resume();
+      window.clearTimeout(pointerTimer);
+      window.setTimeout(() => {
+        pointerActivated = false;
+        resume();
+      }, 150);
+    });
+
+    carousel.addEventListener('focusin', () => {
+      if (!pointerActivated) focusPaused = true;
+    });
+    carousel.addEventListener('focusout', () => {
+      if (!carousel.contains(document.activeElement)) resume();
+    });
+
+    prefersReducedMotion.addEventListener('change', sync);
+    sync();
+  });
+</script>
+
+<style>
+  .portfolio-carousel {
+    position: relative;
+  }
+
+  .portfolio-carousel::before,
+  .portfolio-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(2rem, 6vw, 5rem);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .portfolio-carousel::before {
+    left: 0;
+    background: linear-gradient(90deg, #181513 5%, rgba(24, 21, 19, 0));
+  }
+
+  .portfolio-carousel::after {
+    right: 0;
+    background: linear-gradient(270deg, #181513 5%, rgba(24, 21, 19, 0));
+  }
+
+  .portfolio-viewport {
+    overflow-x: auto;
+    padding-block: 0.25rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+    overscroll-behavior-x: contain;
+  }
+
+  .portfolio-viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+  }
+
+  .portfolio-item {
+    position: relative;
+    display: block;
+    flex: 0 0 clamp(16rem, 24vw, 21rem);
+    min-height: 25rem;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #282320;
+    margin: 0;
+    color: inherit;
+    text-decoration: none;
+    scroll-snap-align: start;
+  }
+
+  .portfolio-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(19, 17, 15, 0.08) 28%, rgba(19, 17, 15, 0.86) 100%);
+  }
+
+  .portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+
+  .portfolio-item:is(:hover, :focus-visible) .portfolio-img {
+    transform: scale(1.04);
+  }
+
+  .portfolio-caption {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    align-items: flex-end;
+    margin: 0;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .portfolio-arrow {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 720px) {
+    .portfolio-item {
+      flex-basis: min(78vw, 18.5rem);
+      min-height: 22rem;
+    }
+
+    .portfolio-caption {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
