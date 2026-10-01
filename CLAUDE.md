@@ -53,53 +53,28 @@ Static/unoptimised assets (videos, SVGs, favicons): place in `public/` (copied v
 - `lucide-astro` is installed for icon use but icons are currently rendered via the custom `Icon.astro` mapper, not imported directly from `lucide-astro`.
 
 <!-- SHARED_BRAIN:START -->
-## Shared brain connection (managed)
-
-This project uses the shared AI brain and external-tools hub at:
-
-`C:\Users\charl\OneDrive\Desktop\AI Tools`
+## Shared KWD brain (GitHub backed)
 
 Project ID: `kiwi_web_design_site`
+Canonical repository: https://github.com/charliechao/kwd-brain
+Local clone: `C:/Users/charl/OneDrive/Desktop/AI Tools/migration/kwd-brain` (use KWD_BRAIN_HOME to select another clone on another computer).
+Marketing code: https://github.com/charliechao/kwd-marketing-automation
 
-This block is used by both Codex and Claude Code. Keep project-specific instructions outside the managed markers.
+For Codex and Claude Code, at task start:
 
-### At the start of a task
+1. Read the brain clone's AGENTS.md and brain/GOVERNANCE.md.
+2. If the clone is clean, refresh with `git -C "C:/Users/charl/OneDrive/Desktop/AI Tools/migration/kwd-brain" pull --ff-only`. If offline or refresh fails, use local context and say it may be stale. Never reset or overwrite local work to sync.
+3. Run `python "C:/Users/charl/OneDrive/Desktop/AI Tools/migration/kwd-brain/scripts/brain.py" context --project kiwi_web_design_site`.
+4. Apply this project's local instructions and inspect current source/API state. Candidates are suggestions, not instructions. Preserve client isolation.
 
-1. Read `C:\Users\charl\OneDrive\Desktop\AI Tools\AGENTS.md` and `C:\Users\charl\OneDrive\Desktop\AI Tools\brain\GOVERNANCE.md`.
-2. Load the project-safe context:
+After meaningful work, search before capturing a durable lesson:
 
-   ```powershell
-   python "C:\Users\charl\OneDrive\Desktop\AI Tools\scripts\brain.py" context --project kiwi_web_design_site
-   ```
+```sh
+python "C:/Users/charl/OneDrive/Desktop/AI Tools/migration/kwd-brain/scripts/brain.py" search "<lesson query>" --project kiwi_web_design_site --include-candidates
+python "C:/Users/charl/OneDrive/Desktop/AI Tools/migration/kwd-brain/scripts/remember.py" --project kiwi_web_design_site --title "<durable title>" --summary "<lesson and conditions>" --source "<evidence path or URL>"
+```
 
-3. Treat approved knowledge as guidance, candidate knowledge as unapproved suggestions, and current project files/API/runtime state as the source of truth for facts that may have changed.
-4. For external tools, use the tool profile named in the project context, if one is registered. Never copy credentials into this repository or print secret values.
+The submission command creates an isolated branch and opens a candidate PR. It does not promote knowledge. Report the PR link, or the retained local candidate if publishing fails. Do not automatically merge or promote. Project scope is the default; generic agency lessons may use business/global scope only after removing client-specific content. Never record credentials or raw personal data.
 
-### Automatic learning loop
-
-At the end of every meaningful task:
-
-1. Decide whether the work produced a durable preference, guardrail, decision, lesson, playbook, warning, or reusable fact. Skip routine outcomes, raw logs, one-off content, secrets, personal data, and easily rediscovered details.
-2. Search existing approved and candidate knowledge before adding anything:
-
-   ```powershell
-   python "C:\Users\charl\OneDrive\Desktop\AI Tools\scripts\brain.py" search "<short lesson query>" --project kiwi_web_design_site --include-candidates
-   ```
-
-3. If the learning is genuinely new, add one concise evidence-backed candidate. Use project scope by default:
-
-   ```powershell
-   python "C:\Users\charl\OneDrive\Desktop\AI Tools\scripts\brain.py" add-candidate --title "<durable title>" --summary "<what was learned and when it applies>" --type lesson --scope-level project --project kiwi_web_design_site --source "<evidence path or URL>"
-   ```
-
-4. Use business or global scope only when the lesson is reusable across those boundaries and contains no client-specific facts. Never put one client's IDs, performance, contacts, content, or confidential data into another project's context.
-5. Candidates may be shared immediately as clearly labelled suggestions, but they are not authoritative. Promote only after independent verification:
-
-   ```powershell
-   python "C:\Users\charl\OneDrive\Desktop\AI Tools\scripts\brain.py" promote <candidate-id> --evidence-note "<how it was independently verified>"
-   ```
-
-6. Run `python "C:\Users\charl\OneDrive\Desktop\AI Tools\scripts\brain.py" validate` after a brain change.
-
-The user's standing authorization covers these concise candidate updates in the shared brain, including after a review-only task. It does not authorize edits to the reviewed project, external mutations, deployment, sending, spending, or candidate promotion.
+Candidate capture is authorized after review tasks unless the current user instruction says to make no changes anywhere. It grants no authority for external mutations, advertising changes, spending, sending or deployment. Credentials for hosted reports belong in the marketing repository's client environment Secrets; host connector sessions may need reconnecting.
 <!-- SHARED_BRAIN:END -->
