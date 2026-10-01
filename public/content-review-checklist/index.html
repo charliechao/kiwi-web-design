@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>KWD Content Review Checklist</title>
+  <style>
+    :root {
+      --bg: #f7f6ef;
+      --card: #ffffff;
+      --text: #2c2927;
+      --muted: #6f6a64;
+      --line: #e5e0d7;
+      --accent: #d7a900;
+      --accent-soft: #fbe8a6;
+      --done: #e9f5ec;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 20px 72px; }
+    h1 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 44px); line-height: 1.1; }
+    .intro { margin: 0 0 24px; color: var(--muted); max-width: 760px; }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247,246,239,.96);
+      backdrop-filter: blur(8px);
+      padding: 12px 0 16px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 24px;
+    }
+    .progress-line { display:flex; justify-content:space-between; gap:16px; align-items:center; margin-bottom:8px; }
+    .progress-line strong { font-size: 17px; }
+    .progress-shell { width:100%; height:12px; background:#ddd8cf; border-radius:99px; overflow:hidden; }
+    .progress-bar { height:100%; width:0%; background:var(--accent); transition:width .2s ease; }
+    .controls { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+    input[type="search"] {
+      flex:1 1 280px; min-width:220px; padding:11px 13px; border:1px solid var(--line);
+      border-radius:10px; background:white; color:var(--text); font:inherit;
+    }
+    button {
+      border:1px solid var(--line); background:white; color:var(--text); padding:10px 13px;
+      border-radius:10px; font:inherit; cursor:pointer;
+    }
+    button:hover { border-color:#bbb4aa; }
+    section {
+      background:var(--card); border:1px solid var(--line); border-radius:16px;
+      margin:18px 0; overflow:hidden;
+    }
+    section h2 {
+      margin:0; padding:18px 20px 12px; font-size:20px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .section-count { font-size:13px; color:var(--muted); font-weight:600; white-space:nowrap; }
+    .items { border-top:1px solid var(--line); }
+    .item {
+      display:grid; grid-template-columns:28px minmax(0,1fr) auto;
+      gap:10px; align-items:center; padding:13px 16px 13px 20px; border-bottom:1px solid var(--line);
+    }
+    .item:last-child { border-bottom:0; }
+    .item.done { background:var(--done); }
+    .item.hidden { display:none; }
+    .item input[type="checkbox"] { width:20px; height:20px; accent-color:#4b8f5f; cursor:pointer; }
+    .item-title { font-weight:650; }
+    .item-path { display:block; color:var(--muted); font-size:12px; margin-top:2px; overflow-wrap:anywhere; }
+    .item a {
+      color:#3a342f; text-decoration:none; border:1px solid var(--line); border-radius:8px;
+      padding:7px 10px; font-size:13px; white-space:nowrap; background:white;
+    }
+    .item a:hover { text-decoration:underline; }
+    .empty { display:none; padding:24px; text-align:center; color:var(--muted); }
+    .note {
+      margin-top:28px; padding:16px 18px; border-radius:12px; background:var(--accent-soft);
+      font-size:14px;
+    }
+    @media (max-width: 650px) {
+      .wrap { padding:20px 14px 56px; }
+      .item { grid-template-columns:26px 1fr; padding:13px 12px 13px 14px; }
+      .item a { grid-column:2; justify-self:start; }
+      section h2 { padding:16px 14px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>KWD Content Review Checklist</h1>
+    <p class="intro">Review each live Kiwi Web Design page and tick it off once the copy sounds natural, human and consistent with KWD's lead-generation positioning. Your progress is saved automatically in this browser.</p>
+
+    <div class="toolbar">
+      <div class="progress-line">
+        <strong id="progressText">0 of 0 complete</strong>
+        <span id="progressPct">0%</span>
+      </div>
+      <div class="progress-shell" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search pages..." aria-label="Search pages" />
+        <button id="toggleCompleted" type="button">Hide completed</button>
+        <button id="reset" type="button">Reset all</button>
+      </div>
+    </div>
+
+    <div id="checklist"></div>
+    <div class="empty" id="empty">No pages match your search.</div>
+
+    <div class="note"><strong>Suggested order:</strong> finish the main sales pages first, then service pages, support/location/industry pages, case studies, resources, Chinese pages, and finally legal pages.</div>
+  </main>
+
+  <script>
+    const base = 'https://www.kiwiwebdesign.co.nz';
+    const sections = [
+      {
+        title: '1. Main sales pages',
+        pages: [
+          ['Homepage','/'],
+          ['Web Design','/small-business-website-design-auckland/'],
+          ['SEO Auckland','/affordable-seo-auckland/'],
+          ['AI SEO / GEO','/ai-seo-for-auckland-small-businesses/'],
+          ['Local SEO','/local-seo-for-auckland-small-businesses/'],
+          ['Paid Ads Overview','/paid-ads/'],
+          ['Google Ads','/google-ads/'],
+          ['ChatGPT Ads','/chatgpt-ads/'],
+          ['About Us','/about-us/'],
+          ['Contact / Free Growth Plan','/contact/'],
+          ['FAQ','/faq/'],
+          ['Reviews / Testimonials','/testimonials-reviews/'],
+          ['Our Process','/website-design-process-in-auckland/'],
+          ['Case Studies Hub','/case-studies/']
+        ]
+      },
+      {
+        title: '2. Web design service pages',
+        pages: [
+          ['WordPress Website Design','/wordpress-website-design-auckland/'],
+          ['Shopify Website Design','/shopify-website-design-auckland/'],
+          ['WooCommerce Website Design','/woocommerce-website-design-auckland/'],
+          ['eCommerce Website Design','/ecommerce-website-auckland/'],
+          ['Booking & Appointment Websites','/booking-appointment-websites-with-wordpress/'],
+          ['Membership & Subscription Websites','/membership-subscription-websites-with-wordpress-auckland/'],
+          ['Landing Pages & Funnels','/landing-pages-funnels-on-wordpress/'],
+          ['Website Rebuilds','/wordpress-website-rebuilds-auckland/'],
+          ['Website Branding','/website-branding/'],
+          ['Website Copywriting','/website-copywriting-auckland/'],
+          ['WordPress Themes','/wordpress-themes-for-auckland-small-businesses/'],
+          ['WordPress Plugins','/wordpress-plugins-for-small-businesses-in-auckland/'],
+          ['WordPress + AI Tools','/wordpress-ai-tools-integration-auckland/'],
+          ['AI Content Setup','/ai-content-setup-for-websites/']
+        ]
+      },
+      {
+        title: '3. SEO supporting service pages',
+        pages: [
+          ['Google Business Profile','/google-business-profile-guide-for-auckland-businesses/'],
+          ['Technical SEO','/technical-seo-auckland/'],
+          ['On-Page SEO','/on-page-seo-auckland/'],
+          ['Link Building','/link-building-auckland/'],
+          ['eCommerce SEO','/seo-for-ecommerce/'],
+          ['Analytics & Reporting','/analytics-reporting-for-auckland-small-business-websites/']
+        ]
+      },
+      {
+        title: '4. Website support / recurring revenue',
+        pages: [
+          ['Website Care / WordPress Maintenance','/monthly-subscription/'],
+          ['Website Hosting','/website-hosting-auckland/'],
+          ['Domain Management','/domain-management-auckland/'],
+          ['Business Email Setup','/email-setup-business-email-hosting/']
+        ]
+      },
+      {
+        title: '5. Industry pages',
+        pages: [
+          ['Industries We Serve','/industries-we-serve-in-auckland/'],
+          ['Tradies','/tradie-website-design-auckland/'],
+          ['Beauty & Wellness','/how-kiwi-web-design-helps-auckland-beauty-industry/'],
+          ['Restaurants & Cafés','/how-kiwi-web-design-helps-auckland-restaurants/'],
+          ['Healthcare & Medical','/how-kiwi-web-design-helps-auckland-healthcare/'],
+          ['Lawyers & Law Firms','/how-kiwi-web-design-helps-auckland-lawyers/'],
+          ['eCommerce & Retail','/ecommerce-website-auckland/']
+        ]
+      },
+      {
+        title: '6. Auckland location pages',
+        pages: [
+          ['Areas We Serve','/areas-we-serve/'],
+          ['Central Auckland','/central-auckland-web-design/'],
+          ['North Shore','/north-shore-website-design/'],
+          ['West Auckland','/west-auckland-web-design/'],
+          ['South Auckland','/south-auckland-web-design/'],
+          ['East Auckland','/east-auckland-web-design/']
+        ]
+      },
+      {
+        title: '7. Case studies',
+        pages: [
+          ['Barrett Access Scaffolding','/case-study-scaffolding/'],
+          ['Kiwiland Construction','/kiwiland-construction-website/'],
+          ['Beauty Touch Auckland','/beauty-touch-case-study/'],
+          ['La Veranda Restaurant','/la-veranda-restaurant-website/'],
+          ['Melanoma Specialists','/melanoma-specialists-website/'],
+          ['FL Legal','/fl-legal-website/'],
+          ['Inspector Guys Building Inspections','/inspector-guys-building-inspections-website/'],
+          ['Dryice Blasting Services','/dryice-blasting-services-website/'],
+          ['Topline Services','/topline-services-cleaning-website/']
+        ]
+      },
+      {
+        title: '8. Resources & comparison pages',
+        pages: [
+          ['Blog / Web Design Advice Hub','/affordable-web-design-auckland/'],
+          ['Website Cost Calculator','/affordable-web-design-auckland/website-cost-new-zealand-small-business/'],
+          ['7 Best Web Design Agencies in Auckland','/7-best-web-design-agencies-in-auckland-2026/'],
+          ['Google Business Profile Guide','/google-business-profile-guide-for-auckland-businesses/']
+        ]
+      },
+      {
+        title: '9. Blog articles',
+        pages: [
+          ['ChatGPT Ads Context Hints: Three Worked NZ Examples','/affordable-web-design-auckland/chatgpt-ads-context-hints-three-worked-nz-examples/'],
+          ['ChatGPT Ads vs Google Search Ads: A NZ Business Decision Guide','/affordable-web-design-auckland/chatgpt-ads-vs-google-search-ads-nz-business-decision-guide/'],
+          ['ChatGPT Ads in New Zealand: A Business Launch Guide','/affordable-web-design-auckland/chatgpt-ads-new-zealand-business-launch-guide/'],
+          ['ChatGPT Ads Conversion Tracking: Inside KWD\'s Enquiry Setup','/affordable-web-design-auckland/chatgpt-ads-conversion-tracking/'],
+          ['Auckland Small-Business Website Audit: 8 Live Sites Checked','/affordable-web-design-auckland/auckland-small-business-website-audit/'],
+          ['What Auckland Website Buyers Actually Ask: 6 Real Enquiries','/affordable-web-design-auckland/what-auckland-website-buyers-actually-ask/'],
+          ['Website Builder, Freelancer, or Agency?','/affordable-web-design-auckland/website-builder-freelancer-or-agency/'],
+          ['Do Backlinks Still Matter in 2026?','/affordable-web-design-auckland/do-backlinks-still-matter/'],
+          ['E-E-A-T for Small Businesses','/affordable-web-design-auckland/eeat-for-small-businesses/'],
+          ['SEO vs Google Ads: Two Real NZ Small-Business Evidence Cases','/affordable-web-design-auckland/seo-vs-google-ads/'],
+          ['5 Auckland SEO Agencies to Compare in 2026','/affordable-web-design-auckland/auckland-seo-agencies/'],
+          ['Local SEO for Auckland Small Businesses','/affordable-web-design-auckland/local-seo-auckland-small-business-guide/'],
+          ['Why Your Auckland Business Isn\'t Ranking on Google','/affordable-web-design-auckland/why-auckland-business-not-ranking-google/'],
+          ['How to Set Up and Optimise Your Google Business Profile','/affordable-web-design-auckland/google-business-profile-auckland/'],
+          ['Schema Markup and AI Search','/affordable-web-design-auckland/schema-markup-ai-search/'],
+          ['SEO for Trades in Auckland','/affordable-web-design-auckland/seo-for-trades-auckland/'],
+          ['Are You Still Paying 2020 Prices for a Website in 2026?','/affordable-web-design-auckland/website-prices-2026/'],
+          ['Kiwi Web Design Launches TopRated.nz','/affordable-web-design-auckland/kiwi-web-design-launches-toprated-nz/'],
+          ['Charlie 的新西兰华人创业与网站获客指南','/affordable-web-design-auckland/chinese-entrepreneur-guide-nz/'],
+          ['Website Redesign vs Starting from Scratch','/affordable-web-design-auckland/website-redesign-vs-starting-from-scratch/'],
+          ['Nearly Half of NZ Businesses Still Lack a Website','/affordable-web-design-auckland/nz-businesses-without-website/'],
+          ['Website Platform Decision Log','/affordable-web-design-auckland/website-platform-decision-log/'],
+          ['How to Make Your Website Look Professional Without Spending a Fortune','/affordable-web-design-auckland/how-to-make-website-look-professional/'],
+          ['Top 5 Pages Every Auckland Small Business Website Should Have','/affordable-web-design-auckland/top-5-pages-small-business-website/'],
+          ['How to Turn Your Website into a 24/7 Salesperson','/affordable-web-design-auckland/website-24-7-salesperson/'],
+          ['How to Write Website Content That Actually Brings You Enquiries','/affordable-web-design-auckland/write-website-content-enquiries/'],
+          ['How Much Business Are You Losing Without a Website?','/affordable-web-design-auckland/business-lost-without-website/'],
+          ['Your Competitors Already Have a Website','/affordable-web-design-auckland/competitors-have-a-website/'],
+          ['Why Relying Only on a Facebook Page Is Risky','/affordable-web-design-auckland/facebook-page-vs-website/'],
+          ['AI-Assisted Web Design Build Log','/affordable-web-design-auckland/ai-assisted-web-design-build-log/'],
+          ['Is WordPress Right for a New Zealand Small Business?','/affordable-web-design-auckland/is-wordpress-right-for-nz-small-business/'],
+          ['How Much Does a Website Cost in New Zealand?','/affordable-web-design-auckland/how-much-does-a-website-cost-nz/'],
+          ['Top 10 Web Design Mistakes Small Businesses Make','/affordable-web-design-auckland/web-design-mistakes-small-businesses/'],
+          ['Why Every Auckland Tradie Needs a Professional Website','/affordable-web-design-auckland/auckland-tradie-website/'],
+          ['How New Zealand Small Businesses Can Use AI','/affordable-web-design-auckland/how-nz-small-businesses-can-use-ai/'],
+          ['How to Choose a Web Design Agency in New Zealand','/affordable-web-design-auckland/how-to-choose-web-design-agency-nz/'],
+          ['10 Essential Features for a Small Business Website in NZ','/affordable-web-design-auckland/small-business-website-features-nz/'],
+          ['Why Small Businesses in New Zealand Need a Website','/affordable-web-design-auckland/why-small-business-needs-website-nz/'],
+          ['How SEO Helps Small New Zealand Businesses Grow','/affordable-web-design-auckland/how-seo-helps-small-business-nz/'],
+          ['How to Create a Facebook Page for a Small Kiwi Business','/affordable-web-design-auckland/create-facebook-page-small-business-nz/']
+        ]
+      },
+      {
+        title: '10. Chinese pages',
+        pages: [
+          ['中文首页','/zh/'],
+          ['网页设计','/zh/small-business-website-design-auckland/'],
+          ['网站费用计算器','/zh/website-cost-new-zealand-small-business/'],
+          ['SEO优化','/zh/seo-auckland/'],
+          ['AI SEO / GEO','/zh/ai-seo-for-auckland-small-businesses/'],
+          ['本地SEO','/zh/local-seo-for-auckland-small-businesses/'],
+          ['Google广告','/zh/google-ads/'],
+          ['关于我们','/zh/about-us/']
+        ]
+      },
+      {
+        title: '11. Legal pages',
+        pages: [
+          ['Legal Information','/legal-information/'],
+          ['Terms & Conditions','/terms-and-conditions/'],
+          ['Privacy Policy','/privacy-policy/']
+        ]
+      }
+    ];
+
+    const storageKey = 'kwd-content-review-v1';
+    let state = {};
+    try { state = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch(e) {}
+    let hideCompleted = false;
+
+    const checklist = document.getElementById('checklist');
+    const search = document.getElementById('search');
+    const progressText = document.getElementById('progressText');
+    const progressPct = document.getElementById('progressPct');
+    const progressBar = document.getElementById('progressBar');
+    const empty = document.getElementById('empty');
+
+    function idFor(path, title) { return btoa(unescape(encodeURIComponent(path + '|' + title))).replace(/=+$/,''); }
+
+    function render() {
+      checklist.innerHTML = '';
+      const q = search.value.trim().toLowerCase();
+      let total = 0, done = 0, visible = 0;
+
+      sections.forEach(section => {
+        const sec = document.createElement('section');
+        const heading = document.createElement('h2');
+        const title = document.createElement('span');
+        title.textContent = section.title;
+        const count = document.createElement('span');
+        count.className = 'section-count';
+        heading.append(title, count);
+        sec.appendChild(heading);
+
+        const items = document.createElement('div');
+        items.className = 'items';
+        let sectionTotal = 0, sectionDone = 0, sectionVisible = 0;
+
+        section.pages.forEach(([name,path]) => {
+          total++; sectionTotal++;
+          const id = idFor(path, name);
+          const checked = !!state[id];
+          if (checked) { done++; sectionDone++; }
+
+          const matches = !q || (name + ' ' + path).toLowerCase().includes(q);
+          const shouldHide = !matches || (hideCompleted && checked);
+          if (!shouldHide) { visible++; sectionVisible++; }
+
+          const row = document.createElement('div');
+          row.className = 'item' + (checked ? ' done' : '') + (shouldHide ? ' hidden' : '');
+
+          const cb = document.createElement('input');
+          cb.type = 'checkbox';
+          cb.checked = checked;
+          cb.setAttribute('aria-label', 'Mark ' + name + ' complete');
+          cb.addEventListener('change', () => {
+            state[id] = cb.checked;
+            localStorage.setItem(storageKey, JSON.stringify(state));
+            render();
+          });
+
+          const info = document.createElement('div');
+          const itemTitle = document.createElement('div');
+          itemTitle.className = 'item-title';
+          itemTitle.textContent = name;
+          const itemPath = document.createElement('span');
+          itemPath.className = 'item-path';
+          itemPath.textContent = path;
+          info.append(itemTitle, itemPath);
+
+          const link = document.createElement('a');
+          link.href = base + path;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.textContent = 'Open page ↗';
+
+          row.append(cb, info, link);
+          items.appendChild(row);
+        });
+
+        count.textContent = sectionDone + '/' + sectionTotal;
+        if (sectionVisible > 0 || (!q && !hideCompleted)) {
+          sec.appendChild(items);
+          checklist.appendChild(sec);
+        }
+      });
+
+      const pct = total ? Math.round(done / total * 100) : 0;
+      progressText.textContent = done + ' of ' + total + ' complete';
+      progressPct.textContent = pct + '%';
+      progressBar.style.width = pct + '%';
+      empty.style.display = visible === 0 ? 'block' : 'none';
+      document.getElementById('toggleCompleted').textContent = hideCompleted ? 'Show completed' : 'Hide completed';
+    }
+
+    search.addEventListener('input', render);
+    document.getElementById('toggleCompleted').addEventListener('click', () => { hideCompleted = !hideCompleted; render(); });
+    document.getElementById('reset').addEventListener('click', () => {
+      if (confirm('Reset every checkbox on this checklist?')) {
+        state = {};
+        localStorage.removeItem(storageKey);
+        render();
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>
