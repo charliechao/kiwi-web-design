@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">ChatGPT Ads versus Google Search Ads: real New Zealand results</title>
+  <desc id="desc">Kiwi Web Design's 39-day comparison: ChatGPT Ads, 269 clicks and 7 tracked lead events for NZ$975.79; Google Search Ads, 48 clicks and 1 primary form conversion for NZ$1,229.95.</desc>
+  <rect width="1200" height="630" fill="#f2f1e5"/>
+  <rect x="0" y="0" width="1200" height="15" fill="#d6a64b"/>
+  <text x="70" y="77" fill="#6a5645" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="3">KIWI WEB DESIGN · FIRST-PARTY NZ DATA</text>
+  <text x="70" y="151" fill="#2c2927" font-family="Georgia, serif" font-size="53" font-weight="700">ChatGPT Ads vs Google Search Ads</text>
+  <text x="70" y="195" fill="#6a5645" font-family="Arial, sans-serif" font-size="27">39 reporting days · 3 Sep–11 Oct 2026 · NZ dollars</text>
+  <rect x="70" y="238" width="505" height="287" rx="19" fill="#2c2927"/>
+  <rect x="625" y="238" width="505" height="287" rx="19" fill="#fffdf7" stroke="#d7d1c3" stroke-width="2"/>
+  <text x="105" y="290" fill="#fbe8a6" font-family="Arial, sans-serif" font-size="27" font-weight="700">ChatGPT Ads</text>
+  <text x="660" y="290" fill="#2c2927" font-family="Arial, sans-serif" font-size="27" font-weight="700">Google Search Ads</text>
+  <text x="105" y="376" fill="#ffffff" font-family="Georgia, serif" font-size="75" font-weight="700">269</text>
+  <text x="105" y="410" fill="#d3cfc4" font-family="Arial, sans-serif" font-size="21">clicks</text>
+  <text x="365" y="376" fill="#fbe8a6" font-family="Georgia, serif" font-size="75" font-weight="700">7</text>
+  <text x="365" y="410" fill="#d3cfc4" font-family="Arial, sans-serif" font-size="21">lead events</text>
+  <text x="660" y="376" fill="#2c2927" font-family="Georgia, serif" font-size="75" font-weight="700">48</text>
+  <text x="660" y="410" fill="#6a5645" font-family="Arial, sans-serif" font-size="21">clicks</text>
+  <text x="921" y="376" fill="#8a6a30" font-family="Georgia, serif" font-size="75" font-weight="700">1</text>
+  <text x="921" y="410" fill="#6a5645" font-family="Arial, sans-serif" font-size="21">primary form event</text>
+  <line x1="105" y1="437" x2="540" y2="437" stroke="#7c786f" stroke-width="1"/>
+  <line x1="660" y1="437" x2="1095" y2="437" stroke="#d7d1c3" stroke-width="1"/>
+  <text x="105" y="486" fill="#ffffff" font-family="Arial, sans-serif" font-size="29" font-weight="700">NZ$975.79 spent</text>
+  <text x="660" y="486" fill="#2c2927" font-family="Arial, sans-serif" font-size="29" font-weight="700">NZ$1,229.95 spent</text>
+  <text x="70" y="580" fill="#6a5645" font-family="Arial, sans-serif" font-size="21">One Auckland business · Platform-tracked events, not confirmed customers</text>
+</svg>

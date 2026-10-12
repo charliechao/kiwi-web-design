@@ -2,7 +2,7 @@
 title: "ChatGPT Ads vs Google Search Ads: A NZ Business Decision Guide"
 description: "Compare ChatGPT Ads with Google Search Ads using buyer situations, eligibility, geography and lead quality, with practical NZ examples and a test framework."
 pubDate: 2026-09-19
-lastModified: 2026-09-19
+lastModified: 2026-10-12
 image: "/blog/chatgpt-ads-search-comparison-cover.webp"
 articleSection: "ChatGPT Ads"
 keywords: ["ChatGPT Ads vs Google Ads", "ChatGPT Ads NZ", "Google Search Ads NZ"]
@@ -15,6 +15,8 @@ keywords: ["ChatGPT Ads vs Google Ads", "ChatGPT Ads NZ", "Google Search Ads NZ"
 </div>
 
 *Sources checked 19 September 2026. The scenarios and decision rules are KWD's recommendations, not reported campaign results.*
+
+**Looking for measured results?** Read [our 39-day NZ ChatGPT Ads versus Google Search case study](/affordable-web-design-auckland/chatgpt-ads-vs-google-ads-nz-real-results-2026/) for first-party spend, clicks and tracked lead events from Kiwi Web Design's own accounts.
 
 ## Compare Search with ChatGPT, not all of Google Ads
 
