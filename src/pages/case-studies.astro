@@ -14,9 +14,9 @@ import legalImg from '../assets/case-studies/legal-website-auckland-1.jpg';
 import inspectorImg from '../assets/general/Auckland_Building_Inspector-e1750284793590.jpg';
 import dryiceImg from '../assets/case-studies/dryice-blasting-auckland.jpg';
 import cleanerImg from '../assets/general/Auckland_Cleaner-e1750284778292.jpg';
+import aestheticImg from '../assets/case-studies/aesthetic-painting.webp';
 
-// Portfolio index. The nine case studies previously had no parent page and never
-// linked to each other, so each sat on its own with almost no internal support.
+// Portfolio index links client projects together through a shared parent page.
 const projects = [
   {
     name: 'Barrett Access Scaffolding',
@@ -33,6 +33,14 @@ const projects = [
     alt: 'Kiwiland Construction website built by Kiwi Web Design',
     sector: 'Construction, Auckland',
     summary: 'Clear service pages and a project portfolio that lets prospective clients judge the work before they call.',
+  },
+  {
+    name: 'Aesthetic Painting & Decorating',
+    href: '/aesthetic-painting-website-case-study/',
+    img: aestheticImg,
+    alt: 'Aesthetic Painting & Decorating website built by Kiwi Web Design',
+    sector: 'Painting, Auckland and West Auckland projects',
+    summary: 'A photo-led site with distinct painting services, a real project gallery and a clear quote path.',
   },
   {
     name: 'Beauty Touch Auckland',
@@ -107,7 +115,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/case-studies/",
       "url": "https://www.kiwiwebdesign.co.nz/case-studies/",
       "name": "Client Case Studies | Kiwi Web Design",
-      "description": "Real Auckland website projects by Kiwi Web Design, across scaffolding, construction, beauty, healthcare, legal, building inspections, and cleaning.",
+      "description": "Real Auckland website projects by Kiwi Web Design, across scaffolding, construction, painting, beauty, healthcare, legal, building inspections, and cleaning.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -159,7 +167,7 @@ const schema = {
 
 <Layout
   title="Client Case Studies | Auckland Website Projects"
-  description="Real Auckland website projects by Kiwi Web Design: scaffolding, construction, beauty, healthcare, legal, building inspections, and commercial cleaning."
+  description="Real Auckland website projects by Kiwi Web Design: scaffolding, construction, painting, beauty, healthcare, legal, building inspections, and commercial cleaning."
   canonicalURL="https://www.kiwiwebdesign.co.nz/case-studies/"
   schema={schema}
 >
@@ -177,7 +185,7 @@ const schema = {
 
   <div class="cs-snippet">
     <div class="container">
-      <p><strong>Kiwi Web Design</strong> has documented {projects.length} client website projects across Auckland, spanning scaffolding, construction, beauty, healthcare, legal, building inspections, and commercial cleaning. Each case study explains the problem, what was built, and what changed for the business.</p>
+      <p><strong>Kiwi Web Design</strong> has documented {projects.length} client website projects across Auckland, spanning scaffolding, construction, painting, beauty, healthcare, legal, building inspections, and commercial cleaning. Each case study explains the problem, what was built, and what changed for the business.</p>
     </div>
   </div>
 

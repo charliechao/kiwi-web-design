@@ -59,6 +59,7 @@
 
 ## Case Studies
 
+- [Aesthetic Painting & Decorating](https://www.kiwiwebdesign.co.nz/aesthetic-painting-website-case-study/): Auckland painting website with service pages, a quote route and gallery projects in Huia, Sunnyvale and Te Atatu.
 - [Barrett Access Scaffolding](https://www.kiwiwebdesign.co.nz/case-study-scaffolding/): Scaffolding website with sector-specific service paths and an online quote calculator.
 - [Beauty Touch Auckland](https://www.kiwiwebdesign.co.nz/beauty-touch-case-study/): Beauty and wellness website with six treatment pages and integrated online booking.
 

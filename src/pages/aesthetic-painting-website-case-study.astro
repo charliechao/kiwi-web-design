@@ -1,0 +1,189 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import CTABanner from '../components/CTABanner.astro';
+import websiteImage from '../assets/case-studies/aesthetic-painting.webp';
+
+const url = 'https://www.kiwiwebdesign.co.nz/aesthetic-painting-website-case-study/';
+const title = 'Aesthetic Painting Website Case Study | Kiwi Web Design';
+const description = 'A look at the website Kiwi Web Design built for Aesthetic Painting & Decorating, an Auckland painter with projects in Huia, Sunnyvale and Te Atatu.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': url,
+      url,
+      name: title,
+      description,
+      inLanguage: 'en-NZ',
+      isPartOf: { '@id': 'https://www.kiwiwebdesign.co.nz/#website' },
+      breadcrumb: { '@id': `${url}#breadcrumb` },
+      mainEntity: { '@id': `${url}#case-study` },
+    },
+    {
+      '@type': 'CreativeWork',
+      '@id': `${url}#case-study`,
+      name: 'Aesthetic Painting & Decorating website case study',
+      description,
+      url,
+      genre: 'Case Study',
+      creator: { '@id': 'https://www.kiwiwebdesign.co.nz/#organization' },
+      about: {
+        '@type': 'Organization',
+        name: 'Aesthetic Painting & Decorating',
+        url: 'https://aestheticpainting.co.nz/',
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.kiwiwebdesign.co.nz/' },
+        { '@type': 'ListItem', position: 2, name: 'Case Studies', item: 'https://www.kiwiwebdesign.co.nz/case-studies/' },
+        { '@type': 'ListItem', position: 3, name: 'Aesthetic Painting', item: url },
+      ],
+    },
+  ],
+};
+---
+
+<Layout title={title} description={description} canonicalURL={url} schema={schema}>
+  <section class="case-hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Case Study · Painting & Decorating</p>
+        <h1>Aesthetic Painting website case study</h1>
+        <p class="hero-copy">A photo-led website for an Auckland painting business, with clear service information, a project gallery and a direct route to request a quote.</p>
+        <a class="hero-link" href="https://aestheticpainting.co.nz/" target="_blank" rel="noopener noreferrer">View the live website <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-visual">
+        <Image src={websiteImage} width={800} height={560} alt="Screenshot of the Aesthetic Painting & Decorating website homepage" loading="eager" />
+        <p>Homepage screenshot from the finished website</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="fact-strip">
+    <div class="container facts">
+      <div><strong>Client</strong><span>Aesthetic Painting & Decorating</span></div>
+      <div><strong>Industry</strong><span>Residential & commercial painting</span></div>
+      <div><strong>Service area</strong><span>Auckland, including West Auckland projects</span></div>
+      <div><strong>Website focus</strong><span>Services, completed work & quote enquiries</span></div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container content">
+      <p class="section-label">The Project</p>
+      <h2>Make the work easy to see, and the next step easy to take</h2>
+      <p>Aesthetic Painting & Decorating offers interior, exterior, residential and light-commercial painting around Auckland. For this website, the practical job was to show the standard and range of that work while helping a prospective customer move from browsing to requesting a quote.</p>
+      <p>The homepage opens with a finished interior, then offers two clear paths: explore the work or request a quote. The services page separates the four main types of work, while the gallery lets visitors inspect completed projects before contacting the team.</p>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container content">
+      <p class="section-label">What We Built</p>
+      <h2>A straightforward route from project photos to an enquiry</h2>
+      <div class="feature-list">
+        <div><span class="feature-number">01</span><div><h3>Service clarity</h3><p>Interior, exterior, residential and light-commercial painting are described separately, so visitors can find the work relevant to their property.</p></div></div>
+        <div><span class="feature-number">02</span><div><h3>Real project gallery</h3><p>The gallery shows actual painting work, including projects labelled Huia, Sunnyvale and Te Atatū. That gives local visitors examples they can inspect rather than generic claims about quality.</p></div></div>
+        <div><span class="feature-number">03</span><div><h3>Clear quote path</h3><p>Request-a-quote calls to action lead to a contact page with a form and direct contact details. The site also explains its consultation, preparation, painting and inspection process.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content">
+      <p class="section-label">West Auckland Connection</p>
+      <h2>Local work visitors can verify</h2>
+      <p>Aesthetic Painting serves Auckland and its <a href="https://aestheticpainting.co.nz/gallery" target="_blank" rel="noopener noreferrer">project gallery</a> includes work labelled Huia, Sunnyvale and Te Atatū. Visitors in West Auckland can see examples of the team's work in their part of the city.</p>
+      <p>For other local businesses planning a site that shows real work and makes enquiries simple, see our <a href="/west-auckland-web-design/">West Auckland web design service</a>.</p>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container content">
+      <p class="section-label">The Finished Website</p>
+      <h2>Services, completed work and contact in one clear journey</h2>
+      <p>Visitors can browse the four painting service groups, inspect completed projects and request a quote from the contact page. The client shared this feedback about the finished site:</p>
+      <blockquote>
+        <p>“We're extremely happy with both the look and functionality of the final result.”</p>
+        <footer>Eduardo Arnez, Aesthetic Painting & Decorating</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <nav class="related-strip" aria-label="Related pages">
+    <div class="container related-links">
+      <a href="/case-studies/">All case studies</a>
+      <a href="/west-auckland-web-design/">West Auckland web design</a>
+      <a href="https://aestheticpainting.co.nz/" target="_blank" rel="noopener noreferrer">Aesthetic Painting website <span aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
+
+  <CTABanner
+    variant="yellow"
+    title="Need a website that shows what your business does well?"
+    subtitle="Tell us about your work and we'll help you plan a clear path from first visit to enquiry."
+    ctaPrimary={{ text: 'Get a Free Quote', href: '/contact/' }}
+    ctaSecondary={{ text: 'More Case Studies', href: '/case-studies/' }}
+  />
+</Layout>
+
+<style>
+  .case-hero { background: var(--kwd-dark); color: #fff; padding: 5rem 0 4rem; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3.5rem; align-items: center; }
+  .eyebrow, .section-label { margin: 0 0 0.8rem; color: var(--kwd-yellow); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+  h1, h2, h3 { font-family: var(--kwd-font-heading); }
+  h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin: 0 0 1.25rem; }
+  .hero-copy { color: rgba(255,255,255,0.82); line-height: 1.75; max-width: 38rem; }
+  .hero-link { display: inline-block; color: var(--kwd-yellow); font-weight: 700; margin-top: 1.25rem; text-underline-offset: 4px; }
+  .hero-visual img { display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.18); }
+  .hero-visual p { color: rgba(255,255,255,0.62); font-size: 0.8rem; margin: 0.6rem 0 0; }
+  .fact-strip { background: var(--kwd-cream); border-bottom: 1px solid rgba(0,0,0,0.08); }
+  .facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .facts > div { padding: 1.4rem 1rem; border-right: 1px solid rgba(0,0,0,0.08); }
+  .facts > div:first-child { padding-left: 0; }
+  .facts > div:last-child { border-right: 0; }
+  .facts strong, .facts span { display: block; }
+  .facts strong { color: var(--kwd-brown); font-size: 0.72rem; text-transform: uppercase; margin-bottom: 0.3rem; }
+  .facts span { color: var(--kwd-dark); font-size: 0.9rem; font-weight: 600; line-height: 1.5; }
+  .content { max-width: 800px; }
+  .section-soft { background: var(--kwd-cream); }
+  .content .section-label { color: var(--kwd-brown); }
+  .content h2 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); line-height: 1.2; color: var(--kwd-dark); margin: 0 0 1.2rem; }
+  .content > p:not(.section-label) { color: var(--kwd-brown); line-height: 1.8; margin: 0 0 1.1rem; }
+  .content a { color: var(--kwd-dark); font-weight: 700; text-underline-offset: 3px; }
+  .feature-list { margin-top: 1.8rem; }
+  .feature-list > div { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; border-top: 1px solid rgba(0,0,0,0.12); padding: 1.4rem 0; }
+  .feature-number { color: var(--kwd-brown); font-weight: 700; }
+  .feature-list h3 { font-size: 1.1rem; margin: 0 0 0.4rem; color: var(--kwd-dark); }
+  .feature-list p { color: var(--kwd-brown); line-height: 1.7; margin: 0; }
+  .section-dark { background: var(--kwd-dark); }
+  .section-dark .section-label { color: var(--kwd-yellow); }
+  .section-dark h2 { color: #fff; }
+  .section-dark .content > p:not(.section-label) { color: rgba(255,255,255,0.78); }
+  blockquote { margin: 2rem 0 0; padding: 1rem 0 1rem 1.5rem; border-left: 3px solid var(--kwd-yellow); }
+  blockquote p { color: #fff; font-family: var(--kwd-font-heading); font-size: 1.3rem; line-height: 1.5; margin: 0 0 0.8rem; }
+  blockquote footer { color: rgba(255,255,255,0.68); font-size: 0.85rem; }
+  .related-strip { background: var(--kwd-cream); padding: 1.2rem 0; }
+  .related-links { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; }
+  .related-links a { color: var(--kwd-dark); font-size: 0.9rem; font-weight: 700; text-underline-offset: 3px; }
+  @media (max-width: 800px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .facts > div { padding: 1rem 0.75rem; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .facts > div:nth-child(odd) { padding-left: 0; }
+    .facts > div:nth-child(even) { border-right: 0; }
+    .facts > div:nth-last-child(-n+2) { border-bottom: 0; }
+  }
+  @media (max-width: 480px) {
+    .case-hero { padding: 3rem 0; }
+    .facts { grid-template-columns: 1fr; }
+    .facts > div { border-right: 0; padding-left: 0; }
+    .facts > div:nth-last-child(2) { border-bottom: 1px solid rgba(0,0,0,0.08); }
+  }
+</style>
