@@ -3,7 +3,7 @@ title: "Schema Markup and AI Search: What It Does and Does Not Do"
 description: "A practical guide to what schema markup can help with, what it cannot guarantee, and how Auckland businesses should implement it for Google and AI search."
 pubDate: 2026-02-25
 lastModified: 2026-08-26
-image: "/blog/AI-SEO-Auckland.jpg"
+image: "/blog/ai-seo-auckland-small-business-owner.png"
 articleSection: "AI Search"
 keywords:
   - schema markup AI search
