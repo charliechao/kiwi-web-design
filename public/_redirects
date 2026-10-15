@@ -74,3 +74,12 @@
 # Typo fix: "auckand" -> "auckland" (September 2026)
 /how-kiwi-web-design-helps-auckand-lawyers/ /how-kiwi-web-design-helps-auckland-lawyers/ 301
 /how-kiwi-web-design-helps-auckand-lawyers /how-kiwi-web-design-helps-auckland-lawyers/ 301
+
+# GBP cluster consolidation (October 2026)
+# /affordable-web-design-auckland/google-business-profile-auckland/ was a
+# near-duplicate of the GBP guide page: both covered the same 7-9 setup steps
+# and Google was splitting them (pos 18, 52 and 78 on the same query). Its
+# unique sections, common mistakes and the optimised-vs-unoptimised table,
+# were merged into the guide page before this redirect was added.
+/affordable-web-design-auckland/google-business-profile-auckland/ /google-business-profile-guide-for-auckland-businesses/ 301
+/affordable-web-design-auckland/google-business-profile-auckland /google-business-profile-guide-for-auckland-businesses/ 301

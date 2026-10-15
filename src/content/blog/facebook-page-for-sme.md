@@ -136,7 +136,7 @@ Link posts and the Page action button to the most relevant page, not automatical
 
 A complete Page can help people verify the business and may appear in search results. It does not replace a website's crawlable service pages, technical controls, structured internal links, or first-party conversion data.
 
-Use natural, accurate business language in the Page description and posts. Do not repeat location keywords unnaturally or assume that frequent posting directly improves the website's Google rankings. For durable local visibility, connect the Page to a well-maintained [small-business website](/small-business-website-design-auckland/), [local SEO](/local-seo-for-auckland-small-businesses/), and Google Business Profile.
+Use natural, accurate business language in the Page description and posts. Do not repeat location keywords unnaturally or assume that frequent posting directly improves the website's Google rankings. For durable local visibility, connect the Page to a well-maintained [small-business website](/small-business-website-design-auckland/), [local SEO](/local-seo-for-auckland-small-businesses/), and an optimised [Google Business Profile](/google-business-profile-guide-for-auckland-businesses/).
 
 ## Common setup mistakes
 

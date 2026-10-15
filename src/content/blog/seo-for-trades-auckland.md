@@ -45,7 +45,7 @@ That traffic goes to Google Maps.
 Your position in Google’s local 3-pack is influenced by:
 
 
-**1. Google Business Profile optimisation**
+**1. [Google Business Profile optimisation](/google-business-profile-guide-for-auckland-businesses/)**
 
 
 - Correct categories

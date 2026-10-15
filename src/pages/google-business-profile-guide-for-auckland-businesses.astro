@@ -14,9 +14,10 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/",
       "url": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/",
-      "name": "Google Business Profile Guide for Auckland Businesses | 7-Step Setup",
-      "description": "Complete guide to setting up and optimising your Google Business Profile for local visibility in Auckland. Covers categories, NAP, photos, reviews, posts, and tracking.",
+      "name": "Google Business Profile Optimisation NZ | GBP Management Auckland",
+      "description": "Google Business Profile optimisation for Auckland and NZ businesses. One-off GBP setup and optimisation for $299, plus a free 7-step DIY guide covering categories, NAP, photos, reviews, posts, and tracking.",
       "inLanguage": "en-NZ",
+      "dateModified": "2026-10-15",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/#breadcrumb" },
@@ -53,8 +54,29 @@ const schema = {
       "logo": { "@type": "ImageObject", "url": "https://www.kiwiwebdesign.co.nz/favicon.png", "width": 512, "height": 512 }
     },
     {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/#service",
+      "name": "Google Business Profile Optimisation",
+      "serviceType": "Google Business Profile optimisation and management",
+      "description": "One-off Google Business Profile setup and optimisation for Auckland and New Zealand businesses. Covers category selection, NAP consistency, the full business description, photos, services, Q&A, and Google Maps visibility.",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "areaServed": [
+        { "@type": "Place", "name": "Auckland" },
+        { "@type": "Place", "name": "New Zealand" }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "299",
+        "priceCurrency": "NZD",
+        "description": "One-off Google Business Profile optimisation, GST exclusive.",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/"
+      }
+    },
+    {
       "@type": "FAQPage",
       "mainEntity": [
+        { "@type": "Question", "name": "How much does Google Business Profile optimisation cost in NZ?", "acceptedAnswer": { "@type": "Answer", "text": "Kiwi Web Design charges a one-off fee of $299 + GST to fully optimise an existing Google Business Profile, or to set one up from scratch. That covers category selection, the full business description, services, photos, Q&A, and website linking. Ongoing GBP management (weekly posts, review responses, monthly reporting) is available separately as part of our local SEO plans." } },
         { "@type": "Question", "name": "Do I need a physical storefront to have a Google Business Profile?", "acceptedAnswer": { "@type": "Answer", "text": "No. Service-area businesses (like tradies, cleaners, or mobile services) can hide their address and instead specify the suburbs or regions they serve. You still appear in local search results for those areas." } },
         { "@type": "Question", "name": "How long does it take to verify a Google Business Profile?", "acceptedAnswer": { "@type": "Answer", "text": "Phone and email verification can be instant. Postcard verification typically takes 5–14 business days. Video verification is available for some business types and is usually same-day." } },
         { "@type": "Question", "name": "Why isn't my business showing up in the Google Maps 3-Pack?", "acceptedAnswer": { "@type": "Answer", "text": "The 3-Pack is determined by relevance, distance, and prominence. Common causes for not appearing are: incomplete profile, wrong primary category, few reviews, no website, or strong competition in your area. A local SEO audit can pinpoint exactly what is holding you back." } },
@@ -67,9 +89,9 @@ const schema = {
 };
 
 const stats = [
+  { number: "$299", label: "one-off GBP optimisation, no lock-in contract" },
+  { number: "5–7 days", label: "typical turnaround once we have profile access" },
   { number: "97%", label: "of consumers use Google to find local businesses" },
-  { number: "5×", label: "more views for fully-completed GBP listings vs incomplete ones" },
-  { number: "Free", label: "Google Business Profile is completely free to set up" },
   { number: "3-Pack", label: "GBP is the key to appearing in Google Maps top 3" },
 ];
 
@@ -119,6 +141,7 @@ const steps = [
 ];
 
 const faqs = [
+  { q: "How much does Google Business Profile optimisation cost in NZ?", a: "We charge a one-off fee of <strong>$299 + GST</strong> to fully optimise an existing Google Business Profile, or to set one up from scratch. That covers category selection, the full business description, services, photos, Q&amp;A, and website linking. Ongoing GBP management, weekly posts, review responses and monthly reporting, is available separately as part of our <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO plans</a>." },
   { q: "Do I need a physical storefront to have a Google Business Profile?", a: "No. Service-area businesses (like tradies, cleaners, or mobile services) can hide their address and instead specify the suburbs or regions they serve. You still appear in local search results for those areas." },
   { q: "How long does it take to verify a Google Business Profile?", a: "Phone and email verification can be instant. Postcard verification typically takes 5–14 business days. Video verification is available for some business types and is usually same-day." },
   { q: "Why isn't my business showing up in the Google Maps 3-Pack?", a: "The 3-Pack is determined by relevance, distance, and prominence. If you're not appearing, common causes are: incomplete profile, wrong primary category, few reviews, no website, or strong competition in your area. Our <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO service</a> includes a full GBP audit that pinpoints exactly what's holding you back." },
@@ -129,8 +152,8 @@ const faqs = [
 ---
 
 <Layout
-  title="Google Business Profile Guide for Auckland Businesses"
-  description="Learn how to set up and optimise your Google Business Profile for local visibility in Auckland and NZ: categories, NAP, photos, reviews, posts, tracking."
+  title="Google Business Profile Optimisation NZ | GBP Management Auckland"
+  description="Google Business Profile optimisation for Auckland and NZ businesses, $299 one-off, no lock-in. Rank higher on Google Maps. Free 7-step DIY guide included."
   canonicalURL="https://www.kiwiwebdesign.co.nz/google-business-profile-guide-for-auckland-businesses/"
   schema={schema}
 >
@@ -139,25 +162,30 @@ const faqs = [
   <section class="gbp-hero">
     <div class="container gbp-hero-inner">
       <div>
-        <p class="gbp-eyebrow">Google Business Profile Guide</p>
-        <h1>Set up your Google Business Profile. Get found in Auckland</h1>
-        <p class="gbp-hero-sub">A complete step-by-step guide to creating, completing, and optimising your Google Business Profile, the single most important free tool for local search visibility.</p>
+        <p class="gbp-eyebrow">Google Business Profile Optimisation NZ</p>
+        <h1>Google Business Profile optimisation for Auckland businesses</h1>
+        <p class="gbp-hero-sub">We optimise your Google Business Profile so you show up in the Google Maps 3-Pack for the searches your customers actually use. One-off fee, no lock-in contract. Prefer to do it yourself? The full 7-step guide is free, further down this page.</p>
         <div class="gbp-hero-actions">
-          <a href="#steps" class="gbp-btn-primary">Read the Guide ↓</a>
-          <a href="/google-business-profile-audit-auckland/" class="gbp-btn-secondary">Check Your GBP Score</a>
-          <a href="/contact/" class="gbp-btn-secondary">Get Expert Help</a>
+          <a href="/contact/" class="gbp-btn-primary">Get My Profile Optimised, $299</a>
+          <a href="/google-business-profile-audit-auckland/" class="gbp-btn-secondary">Check Your GBP Score Free</a>
+          <a href="#steps" class="gbp-btn-secondary">Read the DIY Guide ↓</a>
         </div>
+        <p class="gbp-hero-meta">Last updated 15 October 2026 · Written by Charlie Chao, Kiwi Web Design, Grey Lynn, Auckland</p>
       </div>
       <div class="gbp-hero-badge-wrap">
         <div class="gbp-hero-card">
-          <p class="gbp-card-label">Free resource</p>
-          <p class="gbp-card-title">Complete GBP setup for Auckland businesses</p>
+          <p class="gbp-card-label">One-off GBP optimisation</p>
+          <p class="gbp-card-price"><span class="gbp-price-num">$299</span> <span class="gbp-price-gst">+ GST</span></p>
+          <p class="gbp-card-title">Everything your profile needs, done once, properly</p>
           <ul class="gbp-card-list">
-            <li><span>✓</span> 7-step setup checklist</li>
-            <li><span>✓</span> Category selection tips</li>
-            <li><span>✓</span> Review strategy</li>
-            <li><span>✓</span> Common mistakes to avoid</li>
+            <li><span>✓</span> Primary &amp; secondary category review</li>
+            <li><span>✓</span> Full 750-character description</li>
+            <li><span>✓</span> Services, attributes &amp; hours</li>
+            <li><span>✓</span> Photo naming &amp; upload</li>
+            <li><span>✓</span> NAP consistency check</li>
+            <li><span>✓</span> Website linking &amp; tracking</li>
           </ul>
+          <p class="gbp-card-foot">You keep ownership of your Google account. 5–7 day turnaround.</p>
         </div>
       </div>
     </div>
@@ -175,19 +203,68 @@ const faqs = [
   <!-- AI citability snippet -->
   <div class="gbp-snippet">
     <div class="container">
-      <p><strong>Kiwi Web Design</strong> provides a free 7-step Google Business Profile setup guide for Auckland businesses. A complete, accurate profile helps Google understand the business and gives customers useful information directly in Search and Maps. We also offer professional GBP setup and management as part of our local SEO service for Auckland businesses.</p>
+      <p><strong>Kiwi Web Design</strong> offers Google Business Profile optimisation for Auckland and New Zealand businesses for a one-off fee of <strong>$299 + GST</strong>, covering categories, business description, services, photos, NAP consistency and website linking, with a 5–7 day turnaround and no lock-in contract. Ongoing GBP management, including weekly posts, review responses and monthly reporting, is available as part of our local SEO plans. A complete, accurate profile helps Google understand the business and gives customers useful information directly in Search and Maps. The full 7-step DIY guide is published free on this page.</p>
     </div>
   </div>
 
   <StatsRow items={stats} />
 
+  <!-- Service detail: Maps optimisation + ongoing management -->
+  <section class="section" id="service">
+    <div class="container gbp-svc-wrap">
+      <SectionHeader
+        eyebrow="What we do for you"
+        title="Two ways we work on your Google Business Profile"
+        subtitle="A one-off optimisation fixes the profile. Ongoing management keeps it ahead of your competitors."
+      />
+
+      <div class="gbp-svc-grid">
+        <article class="gbp-svc-card">
+          <p class="gbp-svc-tag">One-off · $299 + GST</p>
+          <h2 class="gbp-svc-title">Google Maps optimisation for Auckland businesses</h2>
+          <p>Google ranks local results on relevance, distance and prominence. Distance you cannot change. The other two are mostly decided by how well your profile is built, and most Auckland profiles are half-finished.</p>
+          <p>We go through the whole profile once, properly:</p>
+          <ul class="gbp-svc-list">
+            <li>Primary category chosen against what the businesses currently in the 3-Pack are using, plus every relevant secondary category</li>
+            <li>A full 750-character description written around the services and suburbs you actually want to be found for</li>
+            <li>Services and attributes completed, so your listing can match more searches</li>
+            <li>Photos renamed descriptively and uploaded across exterior, interior, team and work categories</li>
+            <li>NAP (name, address, phone) checked for consistency against your website and major NZ directories</li>
+            <li>Website link, UTM tracking and call tracking set up so you can see what the profile is actually bringing in</li>
+          </ul>
+          <p class="gbp-svc-foot">Turnaround is 5–7 days from the moment we have access. You keep ownership of the Google account throughout, we work as a manager and hand it back.</p>
+          <a href="/contact/" class="gbp-svc-btn">Book a GBP optimisation</a>
+        </article>
+
+        <article class="gbp-svc-card">
+          <p class="gbp-svc-tag">Ongoing · part of local SEO plans</p>
+          <h2 class="gbp-svc-title">Google Business Profile management service</h2>
+          <p>Optimisation is a one-off fix. Google rewards profiles that stay active, and so do customers comparing three businesses side by side. If you do not have time to keep posting and replying, this is the part to hand over.</p>
+          <p>Ongoing GBP management covers:</p>
+          <ul class="gbp-svc-list">
+            <li>A weekly Google post with an image and a call to action</li>
+            <li>Review responses within one business day, positive and negative</li>
+            <li>A review request system so new reviews arrive steadily rather than in bursts</li>
+            <li>Fresh photos added monthly</li>
+            <li>Q&amp;A seeded and monitored, so competitors are not answering for you</li>
+            <li>A monthly report on calls, direction requests and website clicks, not just profile views</li>
+          </ul>
+          <p class="gbp-svc-foot">Managed GBP is bundled into our local SEO plans rather than sold as a standalone retainer, because posting into a profile that is not properly built first is wasted effort.</p>
+          <a href="/local-seo-for-auckland-small-businesses/" class="gbp-svc-btn gbp-svc-btn-alt">See local SEO plans</a>
+        </article>
+      </div>
+
+      <p class="gbp-svc-note">Not sure which you need? <a href="/google-business-profile-audit-auckland/">Run the free GBP scorecard</a> first, it takes about 60 seconds and tells you what is missing before you spend anything.</p>
+    </div>
+  </section>
+
   <!-- Guide steps -->
   <section class="section" id="steps">
     <div class="container gbp-steps-wrap">
       <SectionHeader
-        eyebrow="Step-by-Step Guide"
+        eyebrow="Free DIY guide"
         title="7 steps to a fully optimised Google Business Profile"
-        subtitle="Follow these steps in order, each one builds on the last."
+        subtitle="This is the same checklist we work through on a paid optimisation. Follow the steps in order, each one builds on the last."
       />
       <div class="gbp-steps">
         {steps.map(({ num, title, content, tips }) => (
@@ -209,18 +286,74 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Common mistakes + comparison -->
+  <section class="section" style="background: var(--kwd-cream);" id="mistakes">
+    <div class="container gbp-steps-wrap">
+      <SectionHeader
+        eyebrow="From our audits"
+        title="Common mistakes Auckland businesses make"
+        subtitle="After reviewing dozens of Auckland business profiles, the same six issues come up again and again."
+      />
+
+      <div class="gbp-mistakes">
+        <div class="gbp-mistake">
+          <h3>Wrong or too-broad primary category</h3>
+          <p>Choosing "Home Services" instead of "Plumber" means you miss every specific search. This is the single most common and most expensive mistake. Be precise.</p>
+        </div>
+        <div class="gbp-mistake">
+          <h3>No photos, or stock images only</h3>
+          <p>Customers can tell. Real photos of real work build trust. Stock images do the opposite.</p>
+        </div>
+        <div class="gbp-mistake">
+          <h3>Ignoring reviews</h3>
+          <p>Not responding to reviews, especially negative ones, signals to both Google and customers that you are not engaged with your own business.</p>
+        </div>
+        <div class="gbp-mistake">
+          <h3>Inconsistent name, address or phone</h3>
+          <p>If your profile says "Charlie's Electrical Ltd" but your website says "Charlie's Electrical", those are different signals to Google. Keep NAP identical everywhere.</p>
+        </div>
+        <div class="gbp-mistake">
+          <h3>Never posting updates</h3>
+          <p>A profile with no posts looks abandoned. Weekly posts take five minutes and keep the profile active.</p>
+        </div>
+        <div class="gbp-mistake">
+          <h3>Not finishing verification</h3>
+          <p>An unverified listing will not rank at all. If you claimed your profile and never completed verification, finish that before anything else.</p>
+        </div>
+      </div>
+
+      <h2 class="gbp-cmp-title">Optimised vs unoptimised: what actually changes</h2>
+      <div class="gbp-cmp-scroll">
+        <table class="gbp-cmp">
+          <thead>
+            <tr><th>What Google and customers see</th><th>Unoptimised</th><th>Optimised</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Google Maps visibility</td><td>Rarely appears</td><td>Regularly in the 3-Pack</td></tr>
+            <tr><td>Photo count</td><td>0–2</td><td>10+ real photos</td></tr>
+            <tr><td>Review responses</td><td>None</td><td>All reviews answered</td></tr>
+            <tr><td>Weekly posts</td><td>Never</td><td>Consistent</td></tr>
+            <tr><td>Services listed</td><td>Not filled in</td><td>Complete with descriptions</td></tr>
+            <tr><td>Category</td><td>Broad or wrong</td><td>Precise primary + secondary</td></tr>
+            <tr><td>Insights reviewed</td><td>Never</td><td>Monthly</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <!-- Do it for you CTA -->
   <section class="section" style="background: var(--kwd-dark);">
     <div class="container">
       <div class="gbp-diy-card">
         <div>
-          <p class="gbp-diy-eyebrow">Want it done for you?</p>
-          <h2 class="gbp-diy-title">We set up and manage your GBP as part of our local SEO service</h2>
-          <p class="gbp-diy-desc">If you'd rather hand this off to an expert, we handle the full GBP setup, photo uploads, weekly posts, review strategy, and monthly reporting, bundled with your local SEO plan.</p>
+          <p class="gbp-diy-eyebrow">That is a lot of steps</p>
+          <h2 class="gbp-diy-title">We will do all seven for $299 + GST</h2>
+          <p class="gbp-diy-desc">Those steps take most business owners a full day, and the category and description choices are easy to get wrong in ways that quietly cost you Maps visibility for months. We do the lot in 5–7 days, one-off fee, no lock-in, and you keep ownership of the account.</p>
         </div>
         <div class="gbp-diy-actions">
-          <a href="/local-seo-for-auckland-small-businesses/" class="gbp-diy-btn-primary">See Local SEO Plans</a>
-          <a href="/contact/" class="gbp-diy-btn-secondary">Book a Free Consult</a>
+          <a href="/contact/" class="gbp-diy-btn-primary">Get My Profile Optimised</a>
+          <a href="/google-business-profile-audit-auckland/" class="gbp-diy-btn-secondary">Check My Score First</a>
         </div>
       </div>
     </div>
@@ -254,10 +387,10 @@ const faqs = [
 
   <CTABanner
     variant="yellow"
-    title="Need help with your Google Business Profile?"
-    subtitle="We set up and optimise GBP as part of our local SEO service, get in touch for a free audit."
-    ctaPrimary={{ text: "Get a Free GBP Audit", href: "/contact/" }}
-    ctaSecondary={{ text: "See Local SEO Services", href: "/local-seo-for-auckland-small-businesses/" }}
+    title="Ready to get found on Google Maps in Auckland?"
+    subtitle="One-off Google Business Profile optimisation, $299 + GST, 5–7 day turnaround, no lock-in contract."
+    ctaPrimary={{ text: "Get My Profile Optimised", href: "/contact/" }}
+    ctaSecondary={{ text: "Run the Free GBP Scorecard", href: "/google-business-profile-audit-auckland/" }}
   />
 
 </Layout>
@@ -311,6 +444,62 @@ const faqs = [
   .gbp-card-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem; }
   .gbp-card-list li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: rgba(255,255,255,0.8); }
   .gbp-card-list span { color: var(--kwd-yellow); font-weight: 700; }
+  .gbp-card-price { display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.75rem; }
+  .gbp-price-num { font-family: 'DM Serif Display', Georgia, serif; font-size: 2.5rem; line-height: 1; color: #fff; }
+  .gbp-price-gst { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.6); }
+  .gbp-card-foot { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.12); font-size: 0.78rem; line-height: 1.6; color: rgba(255,255,255,0.6); }
+  .gbp-hero-meta { margin-top: 1.5rem; font-size: 0.76rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  /* Service detail */
+  .gbp-svc-wrap { max-width: 1060px; margin-inline: auto; }
+  .gbp-svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2.5rem; align-items: start; }
+  .gbp-svc-card {
+    background: #fff;
+    border: 1px solid rgba(44,41,39,0.12);
+    border-radius: 14px;
+    padding: 2rem 1.75rem;
+  }
+  .gbp-svc-tag {
+    display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; background: var(--kwd-yellow); color: var(--kwd-dark);
+    padding: 0.3rem 0.65rem; border-radius: 999px; margin-bottom: 1rem;
+  }
+  .gbp-svc-title { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.45rem; line-height: 1.25; color: var(--kwd-dark); margin-bottom: 0.9rem; }
+  .gbp-svc-card p { font-size: 0.9rem; line-height: 1.7; color: rgba(44,41,39,0.82); margin-bottom: 0.9rem; }
+  .gbp-svc-list { list-style: none; padding: 0; margin: 0 0 1.1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .gbp-svc-list li { position: relative; padding-left: 1.4rem; font-size: 0.875rem; line-height: 1.6; color: rgba(44,41,39,0.82); }
+  .gbp-svc-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--kwd-dark); font-weight: 700; }
+  .gbp-svc-foot { font-size: 0.82rem !important; color: rgba(44,41,39,0.6) !important; font-style: italic; }
+  .gbp-svc-btn {
+    display: inline-block; background: var(--kwd-dark); color: #fff; text-decoration: none;
+    font-weight: 600; font-size: 0.9rem; padding: 0.8rem 1.4rem; border-radius: 8px; margin-top: 0.4rem;
+    transition: opacity 0.2s ease;
+  }
+  .gbp-svc-btn:hover { opacity: 0.85; }
+  .gbp-svc-btn-alt { background: transparent; color: var(--kwd-dark); border: 1.5px solid var(--kwd-dark); }
+  .gbp-svc-note { margin-top: 2rem; text-align: center; font-size: 0.9rem; color: rgba(44,41,39,0.72); }
+  .gbp-svc-note a { color: var(--kwd-dark); font-weight: 600; }
+  @media (max-width: 860px) {
+    .gbp-svc-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Common mistakes + comparison */
+  .gbp-mistakes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+  .gbp-mistake { background: #fff; border-left: 3px solid var(--kwd-yellow); border-radius: 8px; padding: 1.25rem 1.4rem; }
+  .gbp-mistake h3 { font-size: 1rem; font-weight: 700; color: var(--kwd-dark); margin-bottom: 0.5rem; line-height: 1.35; }
+  .gbp-mistake p { font-size: 0.875rem; line-height: 1.65; color: rgba(44,41,39,0.78); margin: 0; }
+  .gbp-cmp-title { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.6rem; color: var(--kwd-dark); margin: 3rem 0 1.25rem; }
+  .gbp-cmp-scroll { overflow-x: auto; }
+  .gbp-cmp { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; font-size: 0.875rem; min-width: 480px; }
+  .gbp-cmp th, .gbp-cmp td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid rgba(44,41,39,0.1); }
+  .gbp-cmp thead th { background: var(--kwd-dark); color: #fff; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .gbp-cmp tbody td:first-child { font-weight: 600; color: var(--kwd-dark); }
+  .gbp-cmp tbody td:nth-child(2) { color: rgba(44,41,39,0.6); }
+  .gbp-cmp tbody td:last-child { color: var(--kwd-dark); font-weight: 600; }
+  .gbp-cmp tbody tr:last-child td { border-bottom: none; }
+  @media (max-width: 720px) {
+    .gbp-mistakes { grid-template-columns: 1fr; }
+  }
 
   /* Steps */
   .gbp-steps-wrap { max-width: 860px; margin-inline: auto; }

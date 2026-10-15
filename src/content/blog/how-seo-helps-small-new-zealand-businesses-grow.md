@@ -59,7 +59,7 @@ For a location-based business, align the website with the real-world business. U
 
 Add local detail only where it helps a customer. A project completed in a named Auckland area, a service constraint, a delivery zone, or a location-specific booking instruction is useful. Swapping suburb names through otherwise duplicated paragraphs is not.
 
-Our [local SEO service for Auckland businesses](/local-seo-for-auckland-small-businesses/) covers the website, Google Business Profile, citations, reviews, and local landing-page structure as one system.
+Our [local SEO service for Auckland businesses](/local-seo-for-auckland-small-businesses/) covers the website, Google Business Profile, citations, reviews, and local landing-page structure as one system. If the profile itself is the weak link, a one-off [Google Business Profile optimisation](/google-business-profile-guide-for-auckland-businesses/) is the faster fix.
 
 ### 4. Design the enquiry route with the page
 
