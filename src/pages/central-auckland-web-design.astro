@@ -4,6 +4,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import GoogleReviewCarousel from '../components/GoogleReviewCarousel.astro';
 import PageVisual from '../components/PageVisual.astro';
 import centralAucklandImage from '../assets/general/Auckland-CBD.jpg';
 
@@ -234,6 +235,8 @@ const faqs = [
       <ServiceGrid items={services} cols={3} />
     </div>
   </section>
+
+  <GoogleReviewCarousel />
 
   <!-- FAQ -->
   <section class="section" style="background: var(--kwd-cream);">
