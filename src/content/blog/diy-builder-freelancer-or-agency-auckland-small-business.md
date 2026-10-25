@@ -9,6 +9,8 @@ If you've started looking into getting a website, you've probably hit the same f
 
 This is a different question from *which platform* to build on (we've covered that in our [guide to choosing a website platform](/affordable-web-design-auckland/choosing-a-website-platform-a-practical-guide-for-small-businesses-in-auckland/)). This is about *who does the work* — and increasingly, that question now includes a fourth option that didn't exist a few years ago: AI website builders.
 
+If you have decided to compare the tools themselves, read Charlie's [best website builders in New Zealand comparison](/affordable-web-design-auckland/best-website-builders-new-zealand/), covering practical trade-offs, a real Auckland project, and when DIY is enough.
+
 ## Website Builders (Wix, Squarespace, and AI Site Builders)
 
 A website builder is the DIY route: you sign up, pick a template or prompt an AI builder, and publish it yourself. It's the fastest way for any small business in NZ to get something live today.

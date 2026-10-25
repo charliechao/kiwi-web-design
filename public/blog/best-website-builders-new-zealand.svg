@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Website builders for New Zealand small businesses</title>
+  <desc id="desc">Charlie Chao's practical shortlist by need: Wix or Squarespace for DIY basics, Shopify for a product-led shop, WordPress for flexible content, Webflow for designer-led work, AI-assisted custom development for developer-managed sites, and Rocketspark as an NZ-support option reviewed from documentation. Not benchmark rankings.</desc>
+  <rect width="1200" height="630" fill="#f7f8f8"/>
+  <rect width="1200" height="166" fill="#2c2927"/>
+  <g font-family="Arial, sans-serif" letter-spacing="0">
+    <text x="48" y="40" fill="#fbe8a6" font-size="18" font-weight="700">KIWI WEB DESIGN / CHARLIE CHAO</text>
+    <text x="48" y="95" fill="#ffffff" font-size="43" font-weight="700">Which website builder fits your business?</text>
+    <text x="48" y="132" fill="#deddda" font-size="22">A practical New Zealand shortlist. Start with the job, not the template.</text>
+    <g fill="#ffffff" stroke="#d4dbda" stroke-width="1">
+      <rect x="48" y="194" width="352" height="148" rx="8"/>
+      <rect x="424" y="194" width="352" height="148" rx="8"/>
+      <rect x="800" y="194" width="352" height="148" rx="8"/>
+      <rect x="48" y="366" width="352" height="148" rx="8"/>
+      <rect x="424" y="366" width="352" height="148" rx="8"/>
+      <rect x="800" y="366" width="352" height="148" rx="8"/>
+    </g>
+    <g fill="#176c67" font-size="18" font-weight="700">
+      <text x="72" y="229">DIY BASICS</text>
+      <text x="448" y="229">PRODUCT-LED SHOP</text>
+      <text x="824" y="229">FLEXIBLE CONTENT</text>
+      <text x="72" y="401">DESIGNER-LED SITE</text>
+      <text x="448" y="401">DEVELOPER-MANAGED SITE</text>
+      <text x="824" y="401">NZ PLATFORM SUPPORT</text>
+    </g>
+    <g fill="#2c2927" font-size="29" font-weight="700">
+      <text x="72" y="274">Wix / Squarespace</text>
+      <text x="448" y="274">Shopify</text>
+      <text x="824" y="274">WordPress</text>
+      <text x="72" y="446">Webflow</text>
+      <text x="448" y="446">AI-assisted custom</text>
+      <text x="824" y="446">Rocketspark*</text>
+    </g>
+    <g fill="#555d60" font-size="19">
+      <text x="72" y="313">Keep routine editing simple.</text>
+      <text x="448" y="313">Plan checkout and fulfilment.</text>
+      <text x="824" y="313">Name the maintenance owner.</text>
+      <text x="72" y="485">Agree on the design handover.</text>
+      <text x="448" y="485">Plan editing, QA and support.</text>
+      <text x="824" y="485">Demonstrate your requirements.</text>
+    </g>
+    <rect x="48" y="547" width="6" height="47" fill="#c89b3c"/>
+    <text x="70" y="567" fill="#41494b" font-size="18">Based on Charlie's experience and provider documentation checked 26 October 2026.</text>
+    <text x="70" y="593" fill="#555d60" font-size="17">*Rocketspark is documentation-based, not personal-use testing. These are not benchmark rankings.</text>
+  </g>
+</svg>

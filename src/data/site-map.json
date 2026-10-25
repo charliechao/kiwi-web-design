@@ -3,7 +3,7 @@
     "generated": "2026-09-22",
     "purpose": "Internal linking reference for Kiwi Web Design Astro site",
     "totalPages": 66,
-    "totalBlogPosts": 36,
+    "totalBlogPosts": 37,
     "notes": "Counts describe entries in this linking reference, not a complete route inventory. Hub pages should receive the most inbound internal links. Use suggestedAnchorText when linking TO this page."
   },
   "hubs": {
@@ -912,6 +912,16 @@
     }
   ],
   "blogPosts": [
+    {
+      "url": "/affordable-web-design-auckland/best-website-builders-new-zealand/",
+      "title": "Best Website Builders in New Zealand: Which Fits Your Small Business?",
+      "topic": "first-hand website builder comparison NZ, Wix, Squarespace, Shopify, WordPress, Webflow, AI-assisted custom builds, ownership and editing",
+      "relatedServices": [
+        "/small-business-website-design-auckland/",
+        "/wordpress-website-design-auckland/",
+        "/shopify-website-design-auckland/"
+      ]
+    },
     {
       "url": "/affordable-web-design-auckland/chatgpt-ads-new-zealand-guide/",
       "title": "ChatGPT Ads in New Zealand: A Business Launch Guide",

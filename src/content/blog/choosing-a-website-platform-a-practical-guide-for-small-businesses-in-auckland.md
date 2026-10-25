@@ -137,6 +137,8 @@ Ask what can be exported, which licences stop, how administrator access transfer
 
 ## A practical platform recommendation
 
+For a direct comparison of the tools, see our [best website builders for NZ small businesses](/affordable-web-design-auckland/best-website-builders-new-zealand/) guide. This decision log stays focused on the requirements behind individual project choices.
+
 - Choose [WordPress](/wordpress-website-design-auckland/) for content-rich service websites that need flexible pages and integrations, provided maintenance has an owner.
 - Choose [Shopify](/shopify-website-design-auckland/) when product, checkout and fulfilment operations are central.
 - Add a proven booking system when real availability and reminders must be managed.

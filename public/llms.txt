@@ -65,6 +65,7 @@
 
 ## Blog
 
+- [Best Website Builders in New Zealand](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/best-website-builders-new-zealand/): Charlie Chao's first-hand comparison of Wix, Squarespace, Shopify, WordPress, Webflow and AI-assisted builds, plus a documentation-based Rocketspark option, an anonymised Auckland scaffolding project and a downloadable comparison worksheet. Not a controlled benchmark ranking.
 - [Auckland Web Design & Business Blog](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/): Practical guides and tips for Auckland small business owners on websites, SEO, and digital marketing.
 - [Auckland Small-Business Website Audit: 8 Live Sites Checked](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/auckland-small-business-website-field-audit-2026/): A declared audit of the eight live client domains linked from KWD case studies, with method, aggregate findings, examples, and limitations.
 - [What Auckland Website Buyers Actually Ask](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/what-auckland-website-buyers-actually-ask/): Aggregate themes from six eligible first-contact website enquiries, with the sample period, coding method, counts, and privacy limits disclosed.
