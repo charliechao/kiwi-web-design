@@ -7,6 +7,16 @@ import FAQAccordion from '../components/FAQAccordion.astro';
 import GoogleReviewCarousel from '../components/GoogleReviewCarousel.astro';
 import PageVisual from '../components/PageVisual.astro';
 import westAucklandImage from '../assets/general/West-Auckland.jpg';
+import aestheticPaintingImage from '../assets/case-studies/aesthetic-painting.webp';
+import { Image } from 'astro:assets';
+
+const faqs = [
+  { q: "We're a small winery in Kumeu, what does our website need?", a: "A Kumeu winery website typically needs: a strong visual story (your vineyard, your wines, your people), a wine catalogue with tasting notes, cellar door information and opening hours, a wine club sign-up, and optionally an online shop. We build all of this in WordPress, and it's manageable by a non-technical person once it's live. See our <a href=\"/small-business-website-design-auckland/\">web design packages</a> to understand scope and pricing." },
+  { q: "West Auckland has a strong independent character, can you capture that in a design?", a: "Yes, and we think this is one of the most interesting briefs we get. West Auckland independent businesses often have a distinct visual and tonal identity that corporate templates don't accommodate. We work from your aesthetic cues (your space, your product, your vibe) and design something that actually reflects you. Combined with <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO</a>, that unique identity becomes a discovery advantage too." },
+  { q: "We're a tradie based in Henderson. What's the most important thing our website should do?", a: "Generate phone calls from people in your service area who are searching right now. That means: a clear headline with your service and area, a phone number prominently placed, a before/after gallery of your work, and a contact form. Then <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO</a> and <a href=\"/google-business-profile-guide-for-auckland-businesses/\">Google Business Profile optimisation</a> to put you in front of people searching 'plumber Henderson' or 'builder West Auckland'." },
+  { q: "Can you build a website that includes an online shop for our artisan products?", a: "Yes. WooCommerce (WordPress's eCommerce plugin) is what we use for product sales. For a small artisan range (under 50 products), it's simple to set up and manage yourself after handover. For a larger range with variants, stock management, and multiple fulfilment options, we scope the build accordingly. Pair with <a href=\"/affordable-seo-auckland/\">SEO services</a> to drive organic traffic to your shop." },
+  { q: "How much does a West Auckland business website cost?", a: "Our pricing is the same regardless of location. Every <a href=\"/small-business-website-design-auckland/\">small business website</a> is quoted by scope, including the required pages, content, integrations, and functionality. We provide a fixed price before work begins." },
+];
 
 const schema = {
   "@context": "https://schema.org",
@@ -16,7 +26,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/west-auckland-web-design/",
       "url": "https://www.kiwiwebdesign.co.nz/west-auckland-web-design/",
       "name": "West Auckland Web Design | Websites for Henderson, Kumeu & Titirangi",
-      "description": "Web design for West Auckland independent businesses. Serving Henderson, New Lynn, Kumeu, Titirangi, and West Auckland. WordPress websites that reflect your identity.",
+      "description": "Web design for Henderson, Titirangi, Kumeu and West Auckland businesses. Fixed-scope quotes, local SEO built in, 5★ Google rating. Book a free consultation.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -73,13 +83,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "We're a small winery in Kumeu, what does our website need?", "acceptedAnswer": { "@type": "Answer", "text": "A Kumeu winery website typically needs: a strong visual story (your vineyard, your wines, your people), a wine catalogue with tasting notes, cellar door information and opening hours, a wine club sign-up, and optionally an online shop. We build all of this in WordPress, manageable by a non-technical person once live." } },
-        { "@type": "Question", "name": "West Auckland has a strong independent character, can you capture that in a design?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, and we think this is one of the most interesting briefs we get. West Auckland independent businesses often have a distinct visual and tonal identity that corporate templates don't accommodate. We work from your aesthetic cues and design something that actually reflects you." } },
-        { "@type": "Question", "name": "We're a tradie based in Henderson. What's the most important thing our website should do?", "acceptedAnswer": { "@type": "Answer", "text": "Generate phone calls from people in your service area who are searching right now. That means: a clear headline with your service and area, a phone number prominently placed, a before/after gallery of your work, and a contact form. Then local SEO and Google Business Profile optimisation to put you in front of people searching 'plumber Henderson' or 'builder West Auckland'." } },
-        { "@type": "Question", "name": "Can you build a website that includes an online shop for our artisan products?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. WooCommerce is what we use for product sales. For a small artisan range (under 50 products), it's simple to set up and manage yourself after handover. For a larger range with variants and stock management, we scope the build accordingly." } },
-        { "@type": "Question", "name": "How much does a West Auckland business website cost?", "acceptedAnswer": { "@type": "Answer", "text": "Every website is quoted by scope, including the required pages, content, integrations, and functionality. We provide a fixed price before work begins, with no surprises." } }
-      ]
+      "mainEntity": faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a.replace(/<[^>]+>/g, '') }
+      }))
     }
   ]
 };
@@ -132,18 +140,11 @@ const areas = [
   { name: "Swanson & Ranui", note: "Outer west. Growing residential areas with emerging local services." },
 ];
 
-const faqs = [
-  { q: "We're a small winery in Kumeu, what does our website need?", a: "A Kumeu winery website typically needs: a strong visual story (your vineyard, your wines, your people), a wine catalogue with tasting notes, cellar door information and opening hours, a wine club sign-up, and optionally an online shop. We build all of this in WordPress, and it's manageable by a non-technical person once it's live. See our <a href=\"/small-business-website-design-auckland/\">web design packages</a> to understand scope and pricing." },
-  { q: "West Auckland has a strong independent character, can you capture that in a design?", a: "Yes, and we think this is one of the most interesting briefs we get. West Auckland independent businesses often have a distinct visual and tonal identity that corporate templates don't accommodate. We work from your aesthetic cues (your space, your product, your vibe) and design something that actually reflects you. Combined with <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO</a>, that unique identity becomes a discovery advantage too." },
-  { q: "We're a tradie based in Henderson. What's the most important thing our website should do?", a: "Generate phone calls from people in your service area who are searching right now. That means: a clear headline with your service and area, a phone number prominently placed, a before/after gallery of your work, and a contact form. Then <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO</a> and <a href=\"/google-business-profile-guide-for-auckland-businesses/\">Google Business Profile optimisation</a> to put you in front of people searching 'plumber Henderson' or 'builder West Auckland'." },
-  { q: "Can you build a website that includes an online shop for our artisan products?", a: "Yes. WooCommerce (WordPress's eCommerce plugin) is what we use for product sales. For a small artisan range (under 50 products), it's simple to set up and manage yourself after handover. For a larger range with variants, stock management, and multiple fulfilment options, we scope the build accordingly. Pair with <a href=\"/affordable-seo-auckland/\">SEO services</a> to drive organic traffic to your shop." },
-  { q: "How much does a West Auckland business website cost?", a: "Our pricing is the same regardless of location. Every <a href=\"/small-business-website-design-auckland/\">small business website</a> is quoted by scope, including the required pages, content, integrations, and functionality. We provide a fixed price before work begins." },
-];
 ---
 
 <Layout
   title="West Auckland Web Design | Websites for Henderson, Kumeu & Titirangi"
-  description="Web design for West Auckland independent businesses. Serving Henderson, New Lynn, Kumeu, Titirangi, and West Auckland. WordPress websites that reflect your identity."
+  description="Web design for Henderson, Titirangi, Kumeu and West Auckland businesses. Fixed-scope quotes, local SEO built in, 5★ Google rating. Book a free consultation."
   canonicalURL="https://www.kiwiwebdesign.co.nz/west-auckland-web-design/"
   schema={schema}
 >
@@ -183,7 +184,7 @@ const faqs = [
     imgTitle="West Auckland web design for local businesses"
     eyebrow="West Auckland Presence"
     title="A local website should feel connected to the area it serves"
-    caption="From Henderson to Titirangi and Kumeu, the page now has a stronger visual anchor for West Auckland businesses."
+    caption="From Henderson trades to Titirangi cafes and Kumeu wineries, a West Auckland business website should look like it belongs where the business works."
   />
 
   <!-- AI citability snippet -->
@@ -228,6 +229,29 @@ const faqs = [
         subtitle="From Kumeu wine clubs to Henderson tradie sites, built around your specific business model."
       />
       <ServiceGrid items={services} cols={3} />
+    </div>
+  </section>
+
+  <!-- West Auckland work -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="West Auckland Work"
+        title="A website we built with West Auckland projects in its gallery"
+        subtitle="Real work, not a hypothetical example."
+      />
+      <div class="loc-work">
+        <a href="/aesthetic-painting-website-case-study/" class="loc-work-img" aria-label="Aesthetic Painting website case study">
+          <Image src={aestheticPaintingImage} width={800} height={560} alt="Screenshot of the Aesthetic Painting & Decorating website homepage" />
+        </a>
+        <div class="loc-work-text">
+          <p class="loc-work-label">Case study · Painting &amp; Decorating</p>
+          <h3>Aesthetic Painting &amp; Decorating</h3>
+          <p>An Auckland painting business whose project gallery includes work in Huia, Sunnyvale and Te Atatū. We built a photo-led site that separates interior, exterior, residential and light-commercial work, shows real completed projects, and gives visitors a direct route to request a quote.</p>
+          <p>For a West Auckland trade business, that is the pattern that matters: local customers can see work done in their part of the city before they pick up the phone.</p>
+          <a href="/aesthetic-painting-website-case-study/" class="loc-work-link">Read the Aesthetic Painting case study →</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -297,9 +321,17 @@ const faqs = [
   .rps-link:hover { background: #e8e7db; }
   .loc-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
   .loc-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
+  .loc-work { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2.5rem; align-items: center; }
+  .loc-work-img { display: block; border-radius: 12px; overflow: hidden; border: 1.5px solid rgba(0,0,0,0.07); background: #fff; }
+  .loc-work-img img { display: block; width: 100%; height: auto; }
+  .loc-work-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.5rem; }
+  .loc-work-text h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.5rem; color: var(--kwd-dark); margin-bottom: 0.75rem; line-height: 1.25; }
+  .loc-work-text p { font-size: 0.9rem; color: var(--kwd-brown); line-height: 1.75; margin-bottom: 0.875rem; }
+  .loc-work-link { display: inline-block; margin-top: 0.25rem; font-size: 0.9rem; font-weight: 600; color: var(--kwd-dark); text-decoration: underline; text-underline-offset: 3px; }
   @media (max-width: 900px) {
     .loc-hero-inner { grid-template-columns: 1fr; }
     .loc-hero-card { display: none; }
     .loc-context { grid-template-columns: 1fr; }
+    .loc-work { grid-template-columns: 1fr; gap: 1.5rem; }
   }
 </style>
