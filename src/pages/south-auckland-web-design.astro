@@ -8,6 +8,14 @@ import GoogleReviewCarousel from '../components/GoogleReviewCarousel.astro';
 import PageVisual from '../components/PageVisual.astro';
 import southAucklandImage from '../assets/general/rainbows-end-south-auckland.jpg';
 
+const faqs = [
+  { q: "Do you work with tradies in South Auckland specifically?", a: "Yes. South Auckland tradies are a key client group for us. The area has high demand for trades services but many businesses in the region still have no online presence or an outdated site that doesn't generate work. We build <a href=\"/small-business-website-design-auckland/\">tradie websites</a> specifically to generate phone call enquiries." },
+  { q: "What's the most important thing a South Auckland tradie can do online?", a: "Set up and properly maintain your Google Business Profile, and build a website with suburb-specific service pages. When someone in Papatoetoe searches 'plumber near me', Google serves businesses with a well-maintained GBP and a site that mentions Papatoetoe. We offer <a href=\"/google-business-profile-guide-for-auckland-businesses/\">Google Business Profile optimisation</a> as a one-off, and our <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO service</a> covers the ongoing side." },
+  { q: "Are your prices affordable for small South Auckland businesses?", a: "Yes. We work with businesses of all sizes and do not price differently based on location. Every <a href=\"/small-business-website-design-auckland/\">small business website</a> is scoped individually, and you receive a fixed quote before work begins." },
+  { q: "Can you help me get more Google reviews?", a: "Yes. We set up Google review request automations as part of our <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO work</a>. After a job is completed, a review request goes out automatically. South Auckland service businesses with 20+ Google reviews convert significantly better than those with none." },
+  { q: "Do you come to South Auckland for meetings?", a: "Most of our work is done remotely. A 30-minute phone or Zoom call is usually enough to brief a project. If you're in Manukau or Papakura and prefer to meet in person, we can accommodate that." },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -16,7 +24,7 @@ const schema = {
       "@id": "https://www.kiwiwebdesign.co.nz/south-auckland-web-design/",
       "url": "https://www.kiwiwebdesign.co.nz/south-auckland-web-design/",
       "name": "South Auckland Web Design | Websites for Manukau, Papakura & Pukekohe",
-      "description": "Affordable web design for South Auckland tradies and businesses. Serving Manukau, Papakura, Pukekohe, and surrounding areas. Fixed-price WordPress websites.",
+      "description": "Affordable website design for South Auckland tradies and businesses in Manukau, Papakura and Pukekohe. Fixed-scope quotes, 5★ Google rating. Free consultation.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -73,13 +81,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Do you work with tradies in South Auckland specifically?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. South Auckland tradies are a key client group for us. The area has high demand for trades services but many businesses still have no online presence or an outdated site. We build tradie websites specifically to generate phone call enquiries." } },
-        { "@type": "Question", "name": "What's the most important thing a South Auckland tradie can do online?", "acceptedAnswer": { "@type": "Answer", "text": "Set up and properly maintain your Google Business Profile, and build a website with suburb-specific service pages. When someone in Papatoetoe searches 'plumber near me', Google serves businesses with a well-maintained GBP and a site that mentions Papatoetoe. We offer Google Business Profile optimisation as a one-off, and our local SEO service covers the ongoing side." } },
-        { "@type": "Question", "name": "Are your prices affordable for small South Auckland businesses?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work with businesses of all sizes and do not price differently based on location. Every project is scoped individually, and you receive a fixed quote before work begins." } },
-        { "@type": "Question", "name": "Can you help me get more Google reviews?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We set up Google review request automations as part of our local SEO work. After a job is completed, a review request goes out automatically. South Auckland service businesses with 20+ Google reviews convert significantly better than those with none." } },
-        { "@type": "Question", "name": "Do you come to South Auckland for meetings?", "acceptedAnswer": { "@type": "Answer", "text": "Most of our work is done remotely. A 30-minute phone or Zoom call is usually enough to brief a project. If you're in Manukau or Papakura and prefer to meet in person, we can accommodate that." } }
-      ]
+      "mainEntity": faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a.replace(/<[^>]+>/g, '') }
+      }))
     }
   ]
 };
@@ -132,18 +138,11 @@ const areas = [
   { name: "Ōtāhuhu", note: "Automotive and industrial hub. Trade and service businesses with high local demand." },
 ];
 
-const faqs = [
-  { q: "Do you work with tradies in South Auckland specifically?", a: "Yes. South Auckland tradies are a key client group for us. The area has high demand for trades services but many businesses in the region still have no online presence or an outdated site that doesn't generate work. We build <a href=\"/small-business-website-design-auckland/\">tradie websites</a> specifically to generate phone call enquiries." },
-  { q: "What's the most important thing a South Auckland tradie can do online?", a: "Set up and properly maintain your Google Business Profile, and build a website with suburb-specific service pages. When someone in Papatoetoe searches 'plumber near me', Google serves businesses with a well-maintained GBP and a site that mentions Papatoetoe. We offer <a href=\"/google-business-profile-guide-for-auckland-businesses/\">Google Business Profile optimisation</a> as a one-off, and our <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO service</a> covers the ongoing side." },
-  { q: "Are your prices affordable for small South Auckland businesses?", a: "Yes. We work with businesses of all sizes and do not price differently based on location. Every <a href=\"/small-business-website-design-auckland/\">small business website</a> is scoped individually, and you receive a fixed quote before work begins." },
-  { q: "Can you help me get more Google reviews?", a: "Yes. We set up Google review request automations as part of our <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO work</a>. After a job is completed, a review request goes out automatically. South Auckland service businesses with 20+ Google reviews convert significantly better than those with none." },
-  { q: "Do you come to South Auckland for meetings?", a: "Most of our work is done remotely. A 30-minute phone or Zoom call is usually enough to brief a project. If you're in Manukau or Papakura and prefer to meet in person, we can accommodate that." },
-];
 ---
 
 <Layout
   title="South Auckland Web Design | Websites for Manukau, Papakura & Pukekohe"
-  description="Affordable web design for South Auckland tradies and businesses. Serving Manukau, Papakura, Pukekohe, and surrounding areas. Fixed-price WordPress websites."
+  description="Affordable website design for South Auckland tradies and businesses in Manukau, Papakura and Pukekohe. Fixed-scope quotes, 5★ Google rating. Free consultation."
   canonicalURL="https://www.kiwiwebdesign.co.nz/south-auckland-web-design/"
   schema={schema}
 >
@@ -182,8 +181,8 @@ const faqs = [
     imgAlt="South Auckland landmark visual for local website design services"
     imgTitle="South Auckland web design for Manukau Papakura and Pukekohe"
     eyebrow="South Auckland Presence"
-    title="A sharper visual cue for businesses serving South Auckland"
-    caption="The page now pairs its practical local SEO copy with an image section that gives visitors a clearer sense of place."
+    title="A website that looks like it belongs in South Auckland"
+    caption="From Manukau workshops to Papakura trades and Pukekohe retailers, a South Auckland business website should speak to the customers in its own suburbs."
   />
 
   <!-- AI citability snippet -->
@@ -231,6 +230,33 @@ const faqs = [
     </div>
   </section>
 
+  <!-- South Auckland work -->
+  <section class="section" style="background: var(--kwd-cream);">
+    <div class="container">
+      <SectionHeader
+        eyebrow="South Auckland Work"
+        title="A South Auckland business website we built"
+        subtitle="Real work, not a hypothetical example."
+      />
+      <div class="loc-work">
+        <figure class="loc-work-quote">
+          <blockquote>“Business has since taken off and the Website is amazing!”</blockquote>
+          <figcaption>
+            <img src="/images/reviews/tony-s.png" alt="Tony S, Streetfood Network" width="44" height="44" loading="lazy" />
+            <span><strong>Tony S</strong> · Street Food Network<br /><small>Google review</small></span>
+          </figcaption>
+        </figure>
+        <div class="loc-work-text">
+          <p class="loc-work-label">Client website · Food trucks &amp; events</p>
+          <h3>Street Food Network</h3>
+          <p>Street Food Network is a South Auckland business that connects Auckland event organisers with food trucks and mobile caterers. Its website has one main job: turning an event idea into a booking request.</p>
+          <p>Organisers describe their event, receive vendor recommendations, then choose who to book. Behind that sits a vendor directory with menus and photos, and pages for event types such as weddings, school fairs and corporate events.</p>
+          <a href="https://streetfoodnetwork.co.nz/" class="loc-work-link" target="_blank" rel="noopener">Visit streetfoodnetwork.co.nz →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <GoogleReviewCarousel />
 
   <!-- FAQ -->
@@ -262,7 +288,7 @@ const faqs = [
   <CTABanner
     variant="yellow"
     title="Get your South Auckland business found on Google"
-    subtitle="Fixed-price quote, no surprises. Most South Auckland sites live within 2 weeks."
+    subtitle="Fixed-price quote, no surprises. Most South Auckland sites go live within 2–3 weeks."
     ctaPrimary={{ text: "Get a Free Quote", href: "/contact/" }}
     ctaSecondary={{ text: "See Tradie Websites", href: "/tradie-website-design-auckland/" }}
   />
@@ -306,9 +332,20 @@ const faqs = [
   .rps-link:hover { background: #e8e7db; }
   .loc-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
   .loc-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
+  .loc-work { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2.5rem; align-items: center; }
+  .loc-work-quote { margin: 0; background: var(--kwd-dark); border-radius: 12px; padding: 2.25rem 2rem; }
+  .loc-work-quote blockquote { margin: 0 0 1.5rem; font-family: 'DM Serif Display', Georgia, serif; font-size: 1.6rem; line-height: 1.3; color: var(--kwd-yellow); }
+  .loc-work-quote figcaption { display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; color: rgba(255,255,255,0.85); line-height: 1.4; }
+  .loc-work-quote figcaption img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+  .loc-work-quote small { color: rgba(255,255,255,0.5); font-size: 0.75rem; }
+  .loc-work-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--kwd-brown); margin-bottom: 0.5rem; }
+  .loc-work-text h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.5rem; color: var(--kwd-dark); margin-bottom: 0.75rem; line-height: 1.25; }
+  .loc-work-text p { font-size: 0.9rem; color: var(--kwd-brown); line-height: 1.75; margin-bottom: 0.875rem; }
+  .loc-work-link { display: inline-block; margin-top: 0.25rem; font-size: 0.9rem; font-weight: 600; color: var(--kwd-dark); text-decoration: underline; text-underline-offset: 3px; }
   @media (max-width: 900px) {
     .loc-hero-inner { grid-template-columns: 1fr; }
     .loc-hero-card { display: none; }
     .loc-context { grid-template-columns: 1fr; }
+    .loc-work { grid-template-columns: 1fr; gap: 1.5rem; }
   }
 </style>
