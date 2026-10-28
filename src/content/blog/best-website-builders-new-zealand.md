@@ -171,7 +171,7 @@ For any platform, separate the domain, hosting or subscription, email, apps, mai
 
 There isn't a builder that supplies Google rankings or AI citations with the subscription. Look for the controls you need, then judge the website you actually publish: useful content, crawlable pages, sound internal links, a good mobile experience and evidence that supports the claims.
 
-Google's [generative-AI search guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) emphasises original, useful material and the usual search foundations. It doesn't require special AI text files or a special schema to make a page eligible. Indexing and visibility are not guaranteed.
+Google's [generative-AI search guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) emphasises original, useful material and the usual search foundations. It doesn't require special AI text files or a special schema to make a page eligible. Indexing and visibility are not guaranteed. If you want a specialist to look at your search and AI visibility rather than your builder, our [AI SEO service](/ai-seo-for-auckland-small-businesses/) starts with an audit.
 
 That is why I wouldn't move a working site just because someone says another builder is "better for SEO". Identify the problem first. Missing service content, weak evidence and a broken enquiry form don't become good simply because they sit on a different platform.
 

@@ -13,6 +13,23 @@ import consultImg from '../assets/general/about5.webp';
 import aucklandCBD from '../assets/general/Auckland-CBD.jpg';
 import Icon from '../components/Icon.astro';
 
+const faqs = [
+  { q: "What is AI SEO and how is it different from regular SEO?", a: "Traditional <a href=\"/affordable-seo-auckland/\">SEO</a> focuses on ranking in search results. AI SEO, also called GEO, adds work designed to make your business and content easier for AI-assisted search tools to understand, retrieve, and cite. The strongest approach combines both rather than treating them as separate channels." },
+  { q: "Do Auckland small businesses really need to worry about AI search?", a: "AI-assisted discovery is becoming part of how people compare products, services, and providers. The useful response is not to chase every AI trend, but to strengthen durable fundamentals: clear service pages, local signals, useful answers, structured data, crawlability, and credible third-party authority." },
+  { q: "How do you get a business cited in ChatGPT or Perplexity?", a: "There is no guaranteed citation formula. We improve the conditions that support visibility by strengthening crawlable content, direct answers, structured data, entity clarity, local business information, and credible third-party mentions." },
+  { q: "What is a GEO score?", a: "There is no universal GEO score used by all AI search systems. We use practical benchmarks such as content clarity, schema completeness, technical crawlability, brand mentions, local authority, and observed AI visibility to identify gaps and track progress." },
+  { q: "Does AI SEO replace traditional SEO?", a: "No. It extends it. Traditional ranking signals, technical quality, useful content, links, and local relevance still matter. AI SEO adds stronger entity signals, answer-ready content, and structured information on top. See our full <a href=\"/affordable-seo-auckland/\">SEO services Auckland</a> and <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO</a> services." },
+  { q: "How much does AI SEO cost?", a: "We quote AI SEO after reviewing your current visibility, competition, technical condition, content needs, local footprint, and authority gaps. The scope is tailored to the business rather than published as a generic package price." },
+  { q: "What is the difference between GEO and AEO (Answer Engine Optimisation)?", a: "GEO focuses on visibility and citations in generative AI answers, while AEO focuses more broadly on being selected for direct answers, snippets, and answer surfaces. In practice, both reward clear answers, useful structure, strong entities, and credible sources." },
+  { q: "What is llms.txt and does my website need one?", a: "llms.txt is an emerging convention intended to make important site content easier for AI systems and agents to understand. It is not a replacement for technical SEO, structured data, crawlability, or good content, so we use it only as a supporting layer where appropriate." },
+  { q: "How do you track AI citations and mentions?", a: "We review how your brand appears across relevant AI-assisted tools alongside Search Console, GA4, local visibility, referral traffic, and enquiry data. Because AI answers can vary by query and session, we treat citation monitoring as directional evidence rather than a guaranteed ranking metric." },
+  { q: "Can you help my business build authority on third-party platforms?", a: "Yes. We identify credible directories, associations, publications, community platforms, and industry sources where a genuine business presence can strengthen discoverability and authority without relying on spam or manufactured mentions." },
+  { q: "Can you optimise my website for Google Gemini?", a: "Gemini is not a separate switch you can flip. Google's AI features, including Gemini, can draw on Google Search, so the work that helps is largely the same foundation that helps Search: crawlable service pages, a complete <a href=\"/google-business-profile-guide-for-auckland-businesses/\">Google Business Profile</a>, accurate structured data, consistent business details, and credible mentions on other sites. We improve those conditions and then check, with dated observations, whether Gemini mentions the business. We cannot guarantee a mention." },
+  { q: "Do you offer ChatGPT optimisation in NZ?", a: "Yes, in the sense that we improve the conditions that make a business easier for ChatGPT to find, understand, and cite: crawlable pages, direct answers, consistent business information, and credible mentions elsewhere on the web. No agency can guarantee that ChatGPT will recommend you, and OpenAI does not publish a ranking formula. We track whether ChatGPT mentions the business over time and report what we observe." },
+  { q: "What is Google AI Mode and does it matter for NZ businesses?", a: "AI Mode is Google's conversational, AI-generated search experience, which answers a question and links to sources. New Zealand businesses are already appearing in its answers: Ahrefs recorded 19 AI Mode responses that referenced pages on our own site on 28 October 2026. The practical response is the same as for other AI search: clear service pages, accurate local information, and trustworthy sources. See <a href=\"#measured\">our own results</a> for how we measure it." },
+  { q: "How can I check whether ChatGPT, Gemini, or Perplexity mention my business?", a: "Ask each tool the questions your customers would ask, such as \"best electrician in Henderson\", note whether your business is mentioned or linked, and repeat monthly. Answers vary between runs, so treat a single result as an observation, not a ranking. Tools such as Ahrefs and Semrush offer AI visibility reports, but they can disagree with each other, so we compare more than one alongside Search Console and enquiries." },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -75,58 +92,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is AI SEO and how is it different from regular SEO?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Traditional SEO focuses on ranking in Google's blue-link results. AI SEO, also called Generative Engine Optimisation or GEO, adds work designed to make content easier for AI-assisted search tools to understand, retrieve, and cite." }
-        },
-        {
-          "@type": "Question",
-          "name": "Do Auckland small businesses really need to worry about AI search?",
-          "acceptedAnswer": { "@type": "Answer", "text": "AI-assisted search is becoming a meaningful part of how people research products, services, and providers. The practical response is to strengthen the same fundamentals that support both search and AI discovery: clear service information, strong local signals, structured data, useful content, and authoritative third-party mentions." }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you get a business cited in ChatGPT or Perplexity?",
-          "acceptedAnswer": { "@type": "Answer", "text": "There is no guaranteed citation formula. We improve the conditions that support visibility by making content crawlable and answer-ready, strengthening structured data and entity signals, and building credible third-party mentions and local business information." }
-        },
-        {
-          "@type": "Question",
-          "name": "What is a GEO score?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A GEO score is an internal benchmarking concept rather than a universal search-engine metric. We use practical checks such as content clarity, schema completeness, technical crawlability, brand mentions, and observed AI visibility to identify gaps and track progress." }
-        },
-        {
-          "@type": "Question",
-          "name": "Does AI SEO replace traditional SEO?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. Traditional search fundamentals still matter. AI SEO extends them with stronger entity signals, answer-ready content, structured data, and visibility across AI-assisted discovery environments." }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does AI SEO cost?",
-          "acceptedAnswer": { "@type": "Answer", "text": "We quote AI SEO after reviewing your current visibility, competition, technical condition, content needs, and authority gaps. The scope is tailored to the business rather than published as a generic package price." }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the difference between GEO and AEO (Answer Engine Optimization)?",
-          "acceptedAnswer": { "@type": "Answer", "text": "GEO focuses on visibility and citations in generative AI answers, while AEO focuses more broadly on being selected for direct answers, snippets, and answer surfaces. In practice, both reward clear answers, useful structure, strong entities, and credible sources." }
-        },
-        {
-          "@type": "Question",
-          "name": "What is llms.txt and does my website need one?",
-          "acceptedAnswer": { "@type": "Answer", "text": "llms.txt is an emerging convention intended to make important site content easier for AI systems and agents to understand. It is not a substitute for technical SEO, crawlability, structured data, or useful content, so we treat it as an optional supporting layer rather than a ranking shortcut." }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you track AI citations and mentions?",
-          "acceptedAnswer": { "@type": "Answer", "text": "We review how the brand appears across relevant AI-assisted search tools, alongside Search Console, GA4, local visibility, referral traffic, and enquiry data. Because AI visibility can vary by query and session, we treat citation monitoring as directional evidence rather than a guaranteed ranking metric." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you help my business build authority on third-party platforms?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We identify credible directories, associations, publications, community platforms, and industry sources where a genuine business presence can strengthen discoverability and authority without relying on spam or manufactured mentions." }
-        }
-      ]
+      "mainEntity": faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a.replace(/<[^>]+>/g, '') }
+      }))
     }
   ]
 };
@@ -210,18 +180,6 @@ const reviews = [
   { name: "Gina Dellabarca", company: "Auckland client", text: "Clear information, great communication, and a genuinely helpful audit." },
 ];
 
-const faqs = [
-  { q: "What is AI SEO and how is it different from regular SEO?", a: "Traditional <a href=\"/affordable-seo-auckland/\">SEO</a> focuses on ranking in search results. AI SEO, also called GEO, adds work designed to make your business and content easier for AI-assisted search tools to understand, retrieve, and cite. The strongest approach combines both rather than treating them as separate channels." },
-  { q: "Do Auckland small businesses really need to worry about AI search?", a: "AI-assisted discovery is becoming part of how people compare products, services, and providers. The useful response is not to chase every AI trend, but to strengthen durable fundamentals: clear service pages, local signals, useful answers, structured data, crawlability, and credible third-party authority." },
-  { q: "How do you get a business cited in ChatGPT or Perplexity?", a: "There is no guaranteed citation formula. We improve the conditions that support visibility by strengthening crawlable content, direct answers, structured data, entity clarity, local business information, and credible third-party mentions." },
-  { q: "What is a GEO score?", a: "There is no universal GEO score used by all AI search systems. We use practical benchmarks such as content clarity, schema completeness, technical crawlability, brand mentions, local authority, and observed AI visibility to identify gaps and track progress." },
-  { q: "Does AI SEO replace traditional SEO?", a: "No. It extends it. Traditional ranking signals, technical quality, useful content, links, and local relevance still matter. AI SEO adds stronger entity signals, answer-ready content, and structured information on top. See our full <a href=\"/affordable-seo-auckland/\">SEO services Auckland</a> and <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO</a> services." },
-  { q: "How much does AI SEO cost?", a: "We quote AI SEO after reviewing your current visibility, competition, technical condition, content needs, local footprint, and authority gaps. The scope is tailored to the business rather than published as a generic package price." },
-  { q: "What is the difference between GEO and AEO (Answer Engine Optimisation)?", a: "GEO focuses on visibility and citations in generative AI answers, while AEO focuses more broadly on being selected for direct answers, snippets, and answer surfaces. In practice, both reward clear answers, useful structure, strong entities, and credible sources." },
-  { q: "What is llms.txt and does my website need one?", a: "llms.txt is an emerging convention intended to make important site content easier for AI systems and agents to understand. It is not a replacement for technical SEO, structured data, crawlability, or good content, so we use it only as a supporting layer where appropriate." },
-  { q: "How do you track AI citations and mentions?", a: "We review how your brand appears across relevant AI-assisted tools alongside Search Console, GA4, local visibility, referral traffic, and enquiry data. Because AI answers can vary by query and session, we treat citation monitoring as directional evidence rather than a guaranteed ranking metric." },
-  { q: "Can you help my business build authority on third-party platforms?", a: "Yes. We identify credible directories, associations, publications, community platforms, and industry sources where a genuine business presence can strengthen discoverability and authority without relying on spam or manufactured mentions." },
-];
 ---
 
 <Layout
@@ -246,6 +204,7 @@ const faqs = [
   <div class="aiseo-snippet">
     <div class="container">
       <p><strong>Kiwi Web Design</strong> provides AI SEO and Generative Engine Optimisation for Auckland businesses. The service combines technical SEO, structured data, local entity signals, answer-ready content, authority building, and practical AI visibility monitoring. Scope is tailored to each business after an audit, with no lock-in contracts.</p>
+      <p class="aiseo-meta">Last updated 28 October 2026 · Kiwi Web Design, Grey Lynn, Auckland</p>
     </div>
   </div>
 
@@ -397,6 +356,61 @@ const faqs = [
     </div>
   </section>
 
+  <section class="section" id="choosing">
+    <div class="container aiseo-wrap">
+      <SectionHeader
+        eyebrow="Choosing an Agency"
+        title="How to choose an AI SEO agency in NZ: six questions to ask"
+        subtitle="AI search is new enough that any agency can call itself an AI SEO specialist. These questions separate real work from guesswork, and you can ask us all of them."
+      />
+      <ol class="aiseo-qs">
+        <li>
+          <h3>Do you promise citations or rankings in ChatGPT?</h3>
+          <p><strong>Good answer:</strong> no. Nobody controls what an AI assistant says, so a credible agency improves the conditions that support visibility and then measures what happens. <strong>Red flag:</strong> a guarantee of AI citations or a fixed number of mentions.</p>
+        </li>
+        <li>
+          <h3>What do you do that is different from normal SEO?</h3>
+          <p><strong>Good answer:</strong> specifics, such as clearer entity and service information, crawlable pages, answer-first content, and credible third-party mentions, all built on sound SEO. <strong>Red flag:</strong> a rebranded SEO package, or a "GEO score" presented as if every AI system used it. We explain why there is no universal score in our <a href="#faq-geo-score">FAQ</a> and in our guide to <a href="/affordable-web-design-auckland/traditional-seo-is-changing-why-auckland-businesses-must-prepare-for-ai-driven-search-aeo-geo/">what schema markup does and does not do for AI search</a>.</p>
+        </li>
+        <li>
+          <h3>How will you measure AI visibility?</h3>
+          <p><strong>Good answer:</strong> repeated, dated checks across more than one tool, reported next to Search Console, analytics and enquiries, with an honest note that the tools disagree. <strong>Red flag:</strong> a single score, or a screenshot of one lucky answer. Our own measurements are <a href="#measured">below</a>.</p>
+        </li>
+        <li>
+          <h3>Will you work on my local signals as well as my website?</h3>
+          <p><strong>Good answer:</strong> yes, for a local business. Your <a href="/google-business-profile-guide-for-auckland-businesses/">Google Business Profile</a>, reviews and consistent listings feed both Maps and AI answers. <strong>Red flag:</strong> website-only work for a business customers find on Google Maps.</p>
+        </li>
+        <li>
+          <h3>Who owns the work, and can I leave?</h3>
+          <p><strong>Good answer:</strong> you own your content, accounts and data, and there is no lock-in contract. <strong>Red flag:</strong> long minimum terms, or accounts held in the agency's name.</p>
+        </li>
+        <li>
+          <h3>Can I see your own results?</h3>
+          <p><strong>Good answer:</strong> yes, with dates, sources and limits stated. An agency that sells AI visibility should be able to show its own, including where the data is weak.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="measured" style="background: var(--kwd-cream);">
+    <div class="container aiseo-wrap">
+      <SectionHeader
+        eyebrow="Our Own Results"
+        title="Our own AI visibility, measured on 28 October 2026"
+        subtitle="We run this work on our own site first. This is what one tool reported, and why we never rely on one number."
+      />
+      <div class="aiseo-measured-grid">
+        <div class="aiseo-measured-card"><span class="amc-num">53</span><span class="amc-lbl">AI answers that referenced pages on kiwiwebdesign.co.nz, across 7 of our pages</span></div>
+        <div class="aiseo-measured-card"><span class="amc-num">15</span><span class="amc-lbl">in Google AI Overviews</span></div>
+        <div class="aiseo-measured-card"><span class="amc-num">19</span><span class="amc-lbl">in Google AI Mode</span></div>
+        <div class="aiseo-measured-card"><span class="amc-num">10</span><span class="amc-lbl">in ChatGPT</span></div>
+        <div class="aiseo-measured-card"><span class="amc-num">8</span><span class="amc-lbl">in Perplexity</span></div>
+        <div class="aiseo-measured-card"><span class="amc-num">1</span><span class="amc-lbl">in Gemini</span></div>
+      </div>
+      <p class="aiseo-measured-note">Source: the AI responses report in Ahrefs for kiwiwebdesign.co.nz, 28 October 2026. Ahrefs does not show which prompts triggered these answers, so some will be searches for our own business name, and this is a measure of presence, not a ranking for buyer searches. Semrush's AI visibility report for the same site counted far fewer mentions. That gap is the point: AI answers vary between runs and between tools, so we report dated observations from more than one source instead of a single score, and we do not promise citations.</p>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <SectionHeader eyebrow="Client Reviews" title="What our clients say." />
@@ -412,7 +426,7 @@ const faqs = [
     </div>
   </div>
 
-  <section class="section">
+  <section class="section" id="faq-geo-score">
     <div class="container" style="max-width: 860px;">
       <FAQAccordion
         items={faqs}
@@ -451,6 +465,22 @@ const faqs = [
 <style>
   .aiseo-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
   .aiseo-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
+  .aiseo-snippet .aiseo-meta { margin-top: 0.6rem; font-size: 0.78rem; color: rgba(44,41,39,0.6); }
+  .aiseo-wrap { max-width: 900px; margin-inline: auto; }
+  .aiseo-qs { list-style: none; padding: 0; margin: 2.5rem 0 0; counter-reset: aiseoq; display: flex; flex-direction: column; gap: 1.25rem; }
+  .aiseo-qs li { counter-increment: aiseoq; position: relative; background: #fff; border: 1.5px solid rgba(0,0,0,0.07); border-radius: 12px; padding: 1.25rem 1.4rem 1.25rem 4rem; }
+  .aiseo-qs li::before { content: counter(aiseoq); position: absolute; left: 1.25rem; top: 1.2rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--kwd-yellow); color: var(--kwd-dark); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .aiseo-qs h3 { font-size: 1.05rem; font-weight: 700; color: var(--kwd-dark); margin: 0 0 0.4rem; line-height: 1.35; }
+  .aiseo-qs p { margin: 0; font-size: 0.9rem; line-height: 1.7; color: rgba(44,41,39,0.8); }
+  .aiseo-qs a { color: var(--kwd-dark); text-decoration: underline; text-underline-offset: 3px; }
+  .aiseo-measured-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.25rem; }
+  .aiseo-measured-card { background: #fff; border: 1.5px solid rgba(0,0,0,0.07); border-radius: 12px; padding: 1.25rem 1.1rem; display: flex; flex-direction: column; gap: 0.35rem; }
+  .aiseo-measured-card:first-child { grid-column: 1 / -1; background: var(--kwd-dark); }
+  .amc-num { font-family: 'DM Serif Display', Georgia, serif; font-size: 2.4rem; line-height: 1; color: var(--kwd-dark); }
+  .amc-lbl { font-size: 0.85rem; line-height: 1.5; color: rgba(44,41,39,0.75); }
+  .aiseo-measured-card:first-child .amc-num { color: var(--kwd-yellow); }
+  .aiseo-measured-card:first-child .amc-lbl { color: rgba(255,255,255,0.8); }
+  .aiseo-measured-note { margin-top: 1.5rem; font-size: 0.82rem; line-height: 1.7; color: rgba(44,41,39,0.7); }
 
   .aiseo-trust-strip {
     background: var(--kwd-dark);
@@ -702,6 +732,10 @@ const faqs = [
     .seo-results { grid-template-columns: repeat(2, 1fr); }
     .aiseo-process-split { grid-template-columns: 1fr; }
     .aiseo-process-img-wrap { display: none; }
+  }
+  @media (max-width: 700px) {
+    .aiseo-measured-grid { grid-template-columns: repeat(2, 1fr); }
+    .aiseo-qs li { padding: 1.1rem 1.1rem 1.1rem 3.5rem; }
   }
   @media (max-width: 580px) {
     .aiseo-engines { grid-template-columns: 1fr; }
