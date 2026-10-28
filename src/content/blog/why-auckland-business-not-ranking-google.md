@@ -198,7 +198,7 @@ For local map pack rankings, the three most important factors are: proximity (ho
     <a class="rps-link" href="/local-seo-for-auckland-small-businesses/">Local SEO Auckland</a>
     <a class="rps-link" href="/affordable-seo-auckland/">SEO Services Auckland</a>
     <a class="rps-link" href="/google-business-profile-guide-for-auckland-businesses/">Google Business Profile Guide</a>
-    <a class="rps-link" href="/">Website Design Auckland</a>
+    <a class="rps-link" href="/affordable-web-design-auckland/">Website Design Auckland</a>
   </div>
 </div>
 
