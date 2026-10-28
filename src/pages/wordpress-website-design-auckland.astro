@@ -10,6 +10,19 @@ import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import heroImg from '../assets/general/pexels-photo-4348404-4348404-scaled-1.jpg';
 
+const faqs = [
+  { q: "Why WordPress instead of Wix or Squarespace?", a: "WordPress gives you complete ownership and control. You can move hosts, change agencies, and fully export your data. Wix and Squarespace are proprietary platforms, if they change pricing or shut down, you lose everything. WordPress also has far superior SEO capabilities and can grow into complex functionality (<a href=\"/booking-appointment-websites-with-wordpress/\">online bookings</a>, <a href=\"/woocommerce-website-design-auckland/\">eCommerce via WooCommerce</a>, <a href=\"/membership-subscription-websites-with-wordpress-auckland/\">memberships</a>) as your business scales." },
+  { q: "Is WordPress hard to use?", a: "Modern WordPress (with the block editor) is very easy to update. We include a <a href=\"/monthly-subscription/\">structured handover session</a> so you can update text, images, and add simple pages without any technical knowledge. For anything more complex, we're available to help." },
+  { q: "Do I need to worry about WordPress security?", a: "WordPress security is manageable with the right setup, and we handle all of it for you. We configure security plugins, limit login attempts, keep everything updated, and recommend our <a href=\"/monthly-subscription/\">WordPress maintenance plan</a> to keep things secure ongoing. The vast majority of WordPress hacks target outdated, unmanaged sites." },
+  { q: "What theme do you build on?", a: "We primarily build on lightweight, performance-focused foundations like GeneratePress or a custom theme. We avoid heavy page-builder themes (like Divi or Elementor) that slow down load times and create technical debt. Performance and maintainability are our priorities." },
+  { q: "Can you migrate my existing website to WordPress?", a: "Yes. We handle full <a href=\"/wordpress-website-rebuilds-auckland/\">WordPress website rebuilds and migrations</a> from Wix, Squarespace, Weebly, or older WordPress installations. We preserve your content, redirects, and SEO during the process." },
+  { q: "What does a WordPress website cost in Auckland?", a: "Every <a href=\"/small-business-website-design-auckland/\">WordPress project</a> is scoped around its pages, content, integrations, and growth requirements. We provide a clear fixed quote before work begins." },
+  { q: "What is the difference between a WordPress designer and a WordPress developer?", a: "A designer decides how the site looks and how visitors move through it. A developer builds the theme and any custom features, and keeps the site fast and secure. A small business usually needs both on one project. We handle design, build, and launch together, so you are not coordinating two suppliers." },
+  { q: "Should I hire a freelance WordPress developer or an agency in Auckland?", a: "A freelancer can suit a small, well-defined job, often at a lower cost. An agency is worth considering when you need design, build, content, SEO, and ongoing care handled consistently, with more than one person who knows your site. Whoever you choose, ask who owns the hosting and admin logins, what happens if they are unavailable, and to see sites they have built. Our <a href=\"/affordable-web-design-auckland/diy-builder-freelancer-or-agency-auckland-small-business/\">guide to choosing between a DIY builder, a freelancer, and an agency</a> goes through the trade-offs." },
+  { q: "Is WordPress the right choice for every business?", a: "No. WordPress suits businesses that want ownership, flexibility, and room to grow, but a very simple site can be better served by another approach, and we say so when that is the case. Our <a href=\"/affordable-web-design-auckland/wordpress-for-small-business-nz/\">honest guide to WordPress for New Zealand small businesses</a> covers when another platform may fit better, and our <a href=\"/affordable-web-design-auckland/best-website-builders-new-zealand/\">comparison of website builders</a> covers the alternatives." },
+  { q: "Do you support my WordPress website after launch?", a: "Yes. Our <a href=\"/monthly-subscription/\">website care plan</a> covers updates, backups, and security monitoring, and every build includes a handover session so you can edit your own content." },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -69,14 +82,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Why WordPress instead of Wix or Squarespace?", "acceptedAnswer": { "@type": "Answer", "text": "WordPress gives you complete ownership and control. You can move hosts, change agencies, and fully export your data. Wix and Squarespace are proprietary platforms, if they change pricing or shut down, you lose everything. WordPress also has far superior SEO capabilities and can grow into complex functionality (online bookings, eCommerce via WooCommerce, memberships) as your business scales." } },
-        { "@type": "Question", "name": "Is WordPress hard to use?", "acceptedAnswer": { "@type": "Answer", "text": "Modern WordPress (with the block editor) is very easy to update. We include a structured handover session so you can update text, images, and add simple pages without any technical knowledge. For anything more complex, we are available to help." } },
-        { "@type": "Question", "name": "Do I need to worry about WordPress security?", "acceptedAnswer": { "@type": "Answer", "text": "WordPress security is manageable with the right setup, and we handle all of it for you. We configure security plugins, limit login attempts, keep everything updated, and recommend our WordPress maintenance plan to keep things secure ongoing. The vast majority of WordPress hacks target outdated, unmanaged sites." } },
-        { "@type": "Question", "name": "What theme do you build on?", "acceptedAnswer": { "@type": "Answer", "text": "We primarily build on lightweight, performance-focused foundations like GeneratePress or a custom theme. We avoid heavy page-builder themes (like Divi or Elementor) that slow down load times and create technical debt. Performance and maintainability are our priorities." } },
-        { "@type": "Question", "name": "Can you migrate my existing website to WordPress?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We handle full WordPress website rebuilds and migrations from Wix, Squarespace, Weebly, or older WordPress installations. We preserve your content, redirects, and SEO during the process." } },
-        { "@type": "Question", "name": "What does a WordPress website cost in Auckland?", "acceptedAnswer": { "@type": "Answer", "text": "Every WordPress project is scoped around its pages, content, integrations, and growth requirements. We provide a clear fixed quote before work begins." } }
-      ]
+      "mainEntity": faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a.replace(/<[^>]+>/g, '') }
+      }))
     }
   ]
 };
@@ -162,14 +172,6 @@ const process = [
   { step: "4", title: "Launch & Train", desc: "We go live, set up Analytics and Search Console, and train you on updating your own content." },
 ];
 
-const faqs = [
-  { q: "Why WordPress instead of Wix or Squarespace?", a: "WordPress gives you complete ownership and control. You can move hosts, change agencies, and fully export your data. Wix and Squarespace are proprietary platforms, if they change pricing or shut down, you lose everything. WordPress also has far superior SEO capabilities and can grow into complex functionality (<a href=\"/booking-appointment-websites-with-wordpress/\">online bookings</a>, <a href=\"/woocommerce-website-design-auckland/\">eCommerce via WooCommerce</a>, <a href=\"/membership-subscription-websites-with-wordpress-auckland/\">memberships</a>) as your business scales." },
-  { q: "Is WordPress hard to use?", a: "Modern WordPress (with the block editor) is very easy to update. We include a <a href=\"/monthly-subscription/\">structured handover session</a> so you can update text, images, and add simple pages without any technical knowledge. For anything more complex, we're available to help." },
-  { q: "Do I need to worry about WordPress security?", a: "WordPress security is manageable with the right setup, and we handle all of it for you. We configure security plugins, limit login attempts, keep everything updated, and recommend our <a href=\"/monthly-subscription/\">WordPress maintenance plan</a> to keep things secure ongoing. The vast majority of WordPress hacks target outdated, unmanaged sites." },
-  { q: "What theme do you build on?", a: "We primarily build on lightweight, performance-focused foundations like GeneratePress or a custom theme. We avoid heavy page-builder themes (like Divi or Elementor) that slow down load times and create technical debt. Performance and maintainability are our priorities." },
-  { q: "Can you migrate my existing website to WordPress?", a: "Yes. We handle full <a href=\"/wordpress-website-rebuilds-auckland/\">WordPress website rebuilds and migrations</a> from Wix, Squarespace, Weebly, or older WordPress installations. We preserve your content, redirects, and SEO during the process." },
-  { q: "What does a WordPress website cost in Auckland?", a: "Every <a href=\"/small-business-website-design-auckland/\">WordPress project</a> is scoped around its pages, content, integrations, and growth requirements. We provide a clear fixed quote before work begins." },
-];
 
 const reviews = [
   { name: "Zane Barrett", company: "Barrett Access Scaffolding", text: "Charlie built our new WordPress site in under 3 weeks. It looks great, runs fast, and I can update it myself now. Best investment we've made online." },
@@ -203,6 +205,7 @@ const reviews = [
   <div class="wp-snippet">
     <div class="container">
       <p><strong>Kiwi Web Design</strong> builds WordPress websites for Auckland small businesses with a <strong>fixed, scope-based quote</strong>. Every site includes custom theme design, SEO setup, mobile-first build, and a training handover. Delivered in 2–3 weeks. You own the site outright, no lock-in, no monthly platform fees. 5★ Google rating.</p>
+      <p class="wp-meta">Last updated 28 October 2026 · Kiwi Web Design, Grey Lynn, Auckland</p>
     </div>
   </div>
 
@@ -256,6 +259,37 @@ const reviews = [
           ))}
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Right fit -->
+  <section class="section" style="background: var(--kwd-cream);" id="right-fit">
+    <div class="container wp-wrap">
+      <SectionHeader
+        eyebrow="Is WordPress Right for You?"
+        title="When WordPress is the right choice, and when it isn't"
+        subtitle="We build on WordPress because it suits most small business websites. It is not the answer to every brief, and we would rather say so before you commit."
+      />
+      <div class="wp-fit-grid">
+        <div class="wp-fit-card wp-fit-yes">
+          <h3>WordPress is usually a good fit when you</h3>
+          <ul>
+            <li>want to own your website, and be able to move host or agency later</li>
+            <li>need a clear page for each service, with room for more content over time</li>
+            <li>expect to add bookings, memberships, or an online shop</li>
+            <li>care about search visibility and want control over how pages are structured</li>
+          </ul>
+        </div>
+        <div class="wp-fit-card wp-fit-maybe">
+          <h3>Consider another approach when</h3>
+          <ul>
+            <li>you need a very small site that you will rarely change</li>
+            <li>you want to build and maintain it entirely yourself, with no ongoing help</li>
+            <li>a specialist tool you already use covers what the site needs to do</li>
+          </ul>
+        </div>
+      </div>
+      <p class="wp-fit-foot">For the full picture, read our <a href="/affordable-web-design-auckland/wordpress-for-small-business-nz/">honest guide to WordPress for New Zealand small businesses</a> or our <a href="/affordable-web-design-auckland/best-website-builders-new-zealand/">comparison of website builders</a>.</p>
     </div>
   </section>
 
@@ -345,6 +379,21 @@ const reviews = [
 <style>
   .wp-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
   .wp-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
+  .wp-snippet .wp-meta { margin-top: 0.6rem; font-size: 0.78rem; color: rgba(44,41,39,0.6); }
+  .wp-wrap { max-width: 920px; margin-inline: auto; }
+  .wp-fit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+  .wp-fit-card { background: #fff; border: 1.5px solid rgba(0,0,0,0.07); border-radius: 12px; padding: 1.5rem 1.4rem; }
+  .wp-fit-yes { border-top: 4px solid var(--kwd-yellow); }
+  .wp-fit-maybe { border-top: 4px solid rgba(44,41,39,0.35); }
+  .wp-fit-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--kwd-dark); margin: 0 0 0.85rem; line-height: 1.35; }
+  .wp-fit-card ul { margin: 0; padding-left: 1.15rem; list-style: disc; display: flex; flex-direction: column; gap: 0.55rem; }
+  .wp-fit-card li { display: list-item; }
+  .wp-fit-card li { font-size: 0.9rem; line-height: 1.6; color: rgba(44,41,39,0.85); }
+  .wp-fit-foot { margin-top: 1.75rem; font-size: 0.9rem; line-height: 1.7; color: rgba(44,41,39,0.8); }
+  .wp-fit-foot a { color: var(--kwd-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 700px) {
+    .wp-fit-grid { grid-template-columns: 1fr; }
+  }
 
   /* Comparison table */
   .wp-compare {
