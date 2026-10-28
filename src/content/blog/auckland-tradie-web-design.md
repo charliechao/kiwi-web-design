@@ -51,4 +51,4 @@ Many Auckland tradies still don’t have great websites. This is your chance to 
 At our Auckland-based web design agency, we specialise in helping tradies get online, get noticed, and get more jobs. Whether you’re starting from scratch or need to upgrade your existing site, we’ll make the process easy. We also offer [SEO services](/affordable-seo-auckland/) specifically for trade businesses to drive consistent job enquiries.
 
 
-Let’s build a site that works as hard as you do and contact [Kiwi Web Design](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/) today.
+Let’s build a site that works as hard as you do and contact [Kiwi Web Design](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/) today. You can also see how we approach [tradie website design in Auckland](/tradie-website-design-auckland/), including examples of our work for trades.

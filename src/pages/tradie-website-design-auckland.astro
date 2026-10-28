@@ -9,6 +9,19 @@ import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import tradieHeroImg from '../assets/general/Auckland_Plumber-e1750286113265.jpg';
 
+const faqs = [
+  { q: "Do tradies really need a website in 2025?", a: "Yes, more than ever. 70% of homeowners research a tradie online before calling. Without a website, you're invisible to that majority. A Facebook page isn't enough, Google doesn't show Facebook pages in local search results the way it shows websites. See our <a href=\"/small-business-website-design-auckland/\">tradie web design packages</a> to get started." },
+  { q: "How is a tradie website different from a standard business website?", a: "A tradie site is built around calls and quote requests. The phone number is front and centre, there's a gallery of completed work, individual service pages for each trade type, and <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO</a> targeting the suburbs you work in. It's a lead machine, not a brochure." },
+  { q: "What photos do I need to provide?", a: "Before and after photos of your work are ideal. We can also source stock imagery as a placeholder while you build up your own photo library. We'll advise you on the best shots to take on your phone, it doesn't need to be professional photography. Your site is built on <a href=\"/monthly-subscription/\">WordPress</a> so you can add photos yourself once live." },
+  { q: "Can you include a quote request form?", a: "Yes. Every tradie site we build includes a contact form with fields relevant to your trade (job type, address, preferred timeframe). We can also set up email notifications so you're alerted immediately when a new enquiry comes in. For service businesses that need scheduling, we can also integrate <a href=\"/booking-appointment-websites-with-wordpress/\">appointment booking</a>." },
+  { q: "Do you handle Google Business Profile too?", a: "We include a basic Google Business Profile setup with every website build. A full <a href=\"/google-business-profile-guide-for-auckland-businesses/\">Google Business Profile optimisation</a> is $299 + GST as a one-off, and ongoing GBP management (weekly posts, review responses, Q&A) is available as part of our <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO service</a>." },
+  { q: "How much does a tradie website cost?", a: "Every <a href=\"/small-business-website-design-auckland/\">tradie website</a> is scoped around the pages, services, gallery, forms, and integrations your business needs. We provide a fixed quote before work begins. You can also add <a href=\"/google-ads/\">Google Ads</a> to generate immediate leads while your SEO builds." },
+  { q: "What should a tradie website include?", a: "At minimum: a phone number people can tap on every page, a page for each main service, the suburbs you cover, real photos of your finished work, Google reviews, a quote form that asks for the right details, and your licence or registration details where they apply. See <a href=\"#checklist\">our checklist</a> for what each one involves." },
+  { q: "Do I need a separate page for each service and suburb?", a: "A separate page for each main service helps each one rank and answer one question clearly, such as switchboard upgrades or bathroom renovations. Suburb pages are worth building only where you genuinely work and can say something specific, such as jobs you have completed there. Dozens of near-identical suburb pages add little and can dilute the site, so we plan the page structure with you before design starts." },
+  { q: "Should a tradie use a website builder or a custom WordPress site?", a: "A builder can work for a very simple site, especially when you are starting out. A custom WordPress site gives you more control over page structure, service pages, speed, and how enquiries are tracked. We compared the main options in our <a href=\"/affordable-web-design-auckland/best-website-builders-new-zealand/\">guide to website builders in New Zealand</a>, including when a builder is enough." },
+  { q: "How long does a tradie website take to build?", a: "Typically 2–3 weeks from the free discovery call, once we have your photos, services, and service areas. The timing depends on the number of pages and how quickly your content arrives." },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -79,38 +92,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Do tradies really need a website in 2025?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes, more than ever. 70% of homeowners research a tradie online before calling. Without a website, you're invisible to that majority. A Facebook page isn't enough, Google doesn't show Facebook pages in local search results the way it shows websites." }
-        },
-        {
-          "@type": "Question",
-          "name": "How is a tradie website different from a standard business website?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A tradie site is built around calls and quote requests. The phone number is front and centre, there's a gallery of completed work, individual service pages for each trade type, and local SEO targeting the suburbs you work in. It's a lead machine, not a brochure." }
-        },
-        {
-          "@type": "Question",
-          "name": "What photos do I need to provide for my tradie website?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Before and after photos of your work are ideal. We can also source stock imagery as a placeholder while you build up your own photo library. Your site is built on WordPress so you can add photos yourself once live." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you include a quote request form on a tradie website?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every tradie site we build includes a contact form with fields relevant to your trade (job type, address, preferred timeframe). We can also set up email notifications so you're alerted immediately when a new enquiry comes in." }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you handle Google Business Profile too?",
-          "acceptedAnswer": { "@type": "Answer", "text": "We include a basic Google Business Profile setup with every website build. A full Google Business Profile optimisation is $299 + GST as a one-off, and ongoing GBP management (weekly posts, review responses, Q&A) is available as part of our local SEO service." }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does a tradie website cost in Auckland?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Every tradie website is scoped around the pages, services, gallery, forms, and integrations the business needs. We provide a fixed quote before work begins." }
-        }
-      ]
+      "mainEntity": faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a.replace(/<[^>]+>/g, '') }
+      }))
     }
   ]
 };
@@ -176,6 +162,26 @@ const trades = [
   { icon: "🛡️", label: "Pest Control" },
 ];
 
+const work = [
+  { trade: "Scaffolding & construction", name: "Barrett Access Scaffolding", desc: "A rebuilt website with sector landing pages, a mobile-first design, and an online quote calculator.", href: "/case-study-scaffolding/" },
+  { trade: "Construction & building", name: "Kiwiland Construction", desc: "A rebuilt website with clear service pages, a project portfolio, and consultation enquiry pathways.", href: "/kiwiland-construction-website/" },
+  { trade: "Painting & decorating", name: "Aesthetic Painting & Decorating", desc: "A photo-led website with clear service information, a project gallery, and a direct route to request a quote.", href: "/aesthetic-painting-website-case-study/" },
+  { trade: "Building inspections", name: "Inspector Guys", desc: "Clearer inspection services, visible trust signals, and a structured booking enquiry form.", href: "/inspector-guys-building-inspections-website/" },
+  { trade: "Commercial & residential cleaning", name: "Topline Services", desc: "Clear service pages, Auckland coverage information, and a mobile-first quote pathway.", href: "/topline-services-cleaning-website/" },
+  { trade: "Industrial cleaning & restoration", name: "Dryice Blasting Services", desc: "Clearer service pathways, mobile-first performance, and structured quote forms.", href: "/dryice-blasting-services-website/" },
+];
+
+const checklist = [
+  { title: "A phone number people can tap", text: "On every page and in the header, not only on the contact page. Most trade enquiries are a phone call." },
+  { title: "A page for each service you offer", text: "One page per main service, so each can rank for its own search and answer one question clearly." },
+  { title: "The suburbs you actually cover", text: "Name them in the copy and in your Google Business Profile service area. Only list areas you genuinely serve." },
+  { title: "Real photos of finished work", text: "Your own phone photos beat stock images. Label them by job type and suburb so visitors can picture the result." },
+  { title: "Reviews people can verify", text: "Show your Google reviews and link to your profile. Reply to them, including the awkward ones." },
+  { title: "Licence and registration details", text: "Show them where your trade has them, for example LBP, EWRB or PGDB registration, so customers can check you." },
+  { title: "A quote form that asks the right things", text: "Job type, suburb and timeframe, with a photo upload if the job needs one. It saves a round of back and forth." },
+  { title: "A site that works on a phone", text: "Test it on a real phone on mobile data, standing where your customers stand, before you call it finished." },
+];
+
 const process = [
   { step: "1", title: "Free Discovery Call", desc: "We talk about your trade, your service area, and the types of jobs you want more of. No generic templates, we build around your specific business." },
   { step: "2", title: "Site Structure & Plan", desc: "We map out your pages: home, services (one per trade), about, reviews, and contact. You approve the structure before we design anything." },
@@ -183,14 +189,6 @@ const process = [
   { step: "4", title: "Launch & Setup", desc: "We go live, set up Google Analytics, Google Search Console, and your Google Business Profile, and walk you through how to update it yourself." },
 ];
 
-const faqs = [
-  { q: "Do tradies really need a website in 2025?", a: "Yes, more than ever. 70% of homeowners research a tradie online before calling. Without a website, you're invisible to that majority. A Facebook page isn't enough, Google doesn't show Facebook pages in local search results the way it shows websites. See our <a href=\"/small-business-website-design-auckland/\">tradie web design packages</a> to get started." },
-  { q: "How is a tradie website different from a standard business website?", a: "A tradie site is built around calls and quote requests. The phone number is front and centre, there's a gallery of completed work, individual service pages for each trade type, and <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO</a> targeting the suburbs you work in. It's a lead machine, not a brochure." },
-  { q: "What photos do I need to provide?", a: "Before and after photos of your work are ideal. We can also source stock imagery as a placeholder while you build up your own photo library. We'll advise you on the best shots to take on your phone, it doesn't need to be professional photography. Your site is built on <a href=\"/monthly-subscription/\">WordPress</a> so you can add photos yourself once live." },
-  { q: "Can you include a quote request form?", a: "Yes. Every tradie site we build includes a contact form with fields relevant to your trade (job type, address, preferred timeframe). We can also set up email notifications so you're alerted immediately when a new enquiry comes in. For service businesses that need scheduling, we can also integrate <a href=\"/booking-appointment-websites-with-wordpress/\">appointment booking</a>." },
-  { q: "Do you handle Google Business Profile too?", a: "We include a basic Google Business Profile setup with every website build. A full <a href=\"/google-business-profile-guide-for-auckland-businesses/\">Google Business Profile optimisation</a> is $299 + GST as a one-off, and ongoing GBP management (weekly posts, review responses, Q&A) is available as part of our <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO service</a>." },
-  { q: "How much does a tradie website cost?", a: "Every <a href=\"/small-business-website-design-auckland/\">tradie website</a> is scoped around the pages, services, gallery, forms, and integrations your business needs. We provide a fixed quote before work begins. You can also add <a href=\"/google-ads/\">Google Ads</a> to generate immediate leads while your SEO builds." },
-];
 ---
 
 <Layout
@@ -217,6 +215,7 @@ const faqs = [
   <div class="tradie-snippet">
     <div class="container">
       <p><strong>Kiwi Web Design</strong> builds WordPress websites for Auckland tradies with a <strong>fixed, scope-based quote</strong>. Every tradie site includes a click-to-call button, work portfolio gallery, individual service pages, local SEO targeting, and a quote request form. Most sites go live in <strong>2–3 weeks</strong>. Trades served include plumbers, electricians, builders, painters, landscapers, roofers, cleaners, and more. No lock-in. Based in Grey Lynn, Auckland, 5★ Google rating.</p>
+      <p class="tradie-meta">Last updated 28 October 2026 · Kiwi Web Design, Grey Lynn, Auckland</p>
     </div>
   </div>
 
@@ -283,6 +282,27 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Our work for trades -->
+  <section class="section" id="our-work">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Real Work for Trades"
+        title="Websites we've built for trade and service businesses"
+        subtitle="Six Auckland businesses across six trades. Each case study shows what we built and why."
+      />
+      <div class="tradie-work-grid">
+        {work.map(({ trade, name, desc, href }) => (
+          <a href={href} class="tradie-work-card">
+            <span class="twk-trade">{trade}</span>
+            <h3>{name}</h3>
+            <p>{desc}</p>
+            <span class="twk-link">Read the case study →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Process -->
   <section class="section" style="background: var(--kwd-dark);">
     <div class="container">
@@ -293,6 +313,26 @@ const faqs = [
         subtitle="A clear process so you always know what's happening, and can get back to the tools."
       />
       <ProcessSteps items={process} dark={true} />
+    </div>
+  </section>
+
+  <!-- What a tradie website needs -->
+  <section class="section" id="checklist">
+    <div class="container tradie-wrap">
+      <SectionHeader
+        eyebrow="Tradie Website Checklist"
+        title="What a tradie website needs to win jobs"
+        subtitle="Whoever builds your site, these are the eight things to check. Use it on your current website, too."
+      />
+      <ol class="tradie-checks">
+        {checklist.map(({ title, text }) => (
+          <li>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="tradie-checks-foot">Not sure how your current site measures up? <a href="/contact/">Ask for a free review</a>. We will tell you what we would fix first, and you can fix it yourself if you prefer. Your <a href="/google-business-profile-guide-for-auckland-businesses/">Google Business Profile</a> matters as much as the website.</p>
     </div>
   </section>
 
@@ -411,4 +451,26 @@ const faqs = [
     max-width: 860px;
   }
   .tradie-snippet p { margin: 0; }
+  .tradie-snippet .tradie-meta { margin-top: 0.6rem; font-size: 0.78rem; color: rgba(44,41,39,0.6); }
+  .tradie-wrap { max-width: 960px; margin-inline: auto; }
+  .tradie-work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+  .tradie-work-card { display: flex; flex-direction: column; gap: 0.4rem; background: #fff; border: 1.5px solid rgba(0,0,0,0.07); border-radius: 12px; padding: 1.4rem 1.3rem; text-decoration: none; color: inherit; transition: transform 0.15s ease, border-color 0.15s ease; }
+  .tradie-work-card:hover { transform: translateY(-2px); border-color: var(--kwd-dark); }
+  .twk-trade { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--kwd-brown); }
+  .tradie-work-card h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.25rem; line-height: 1.25; color: var(--kwd-dark); margin: 0; }
+  .tradie-work-card p { font-size: 0.875rem; line-height: 1.65; color: var(--kwd-brown); margin: 0; flex: 1; }
+  .twk-link { font-size: 0.85rem; font-weight: 600; color: var(--kwd-dark); margin-top: 0.5rem; }
+  .tradie-checks { list-style: none; padding: 0; margin: 2.5rem 0 0; counter-reset: tcheck; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .tradie-checks li { counter-increment: tcheck; position: relative; background: var(--kwd-cream); border-radius: 12px; padding: 1.15rem 1.25rem 1.15rem 3.6rem; }
+  .tradie-checks li::before { content: counter(tcheck); position: absolute; left: 1.1rem; top: 1.1rem; width: 1.9rem; height: 1.9rem; border-radius: 50%; background: var(--kwd-yellow); color: var(--kwd-dark); font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+  .tradie-checks h3 { font-size: 1rem; font-weight: 700; color: var(--kwd-dark); margin: 0 0 0.3rem; line-height: 1.35; }
+  .tradie-checks p { margin: 0; font-size: 0.875rem; line-height: 1.65; color: var(--kwd-brown); }
+  .tradie-checks-foot { margin-top: 1.75rem; font-size: 0.9rem; line-height: 1.7; color: var(--kwd-brown); }
+  .tradie-checks-foot a { color: var(--kwd-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 900px) {
+    .tradie-work-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .tradie-work-grid, .tradie-checks { grid-template-columns: 1fr; }
+  }
 </style>
