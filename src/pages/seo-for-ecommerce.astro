@@ -7,6 +7,16 @@ import CTABanner from '../components/CTABanner.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import ecommerceSeoImage from '../assets/general/shopping-cart-for-eCommerce-1.jpg';
 
+const faqs = [
+  { q: "How is eCommerce SEO different from regular SEO?", a: "eCommerce sites have unique challenges: thousands of product pages, duplicate content from product variants, faceted navigation creating crawl issues, and category pages that need both SEO and conversion optimisation. A standard SEO approach misses most of these, eCommerce SEO requires specialist knowledge of how Google crawls and indexes large product catalogues. See how it compares with our broader <a href=\"/affordable-seo-auckland/\">SEO services in Auckland</a>." },
+  { q: "How long before I see results from eCommerce SEO?", a: "Technical fixes and on-page improvements can show results within 4–8 weeks. Competitive category-level rankings typically take 3–6 months of consistent effort. We focus on quick wins first, fixing technical issues and optimising your best-performing product pages, while building toward longer-term category dominance." },
+  { q: "Do you work with WooCommerce and Shopify?", a: "Yes. We work with both. <a href=\"/woocommerce-website-design-auckland/\">WooCommerce</a> and Shopify have different SEO implementations, URL structure, schema, sitemap generation, and plugin ecosystems are all different. We tailor our approach to your platform." },
+  { q: "My store already gets traffic from ads. Why do I need SEO?", a: "Ads stop the moment you stop paying. Organic traffic from SEO compounds over time and costs nothing per click. A well-ranked product or category page can deliver consistent revenue for years. Most successful eCommerce businesses combine both, <a href=\"/google-ads/\">Google Ads</a> for immediate sales, SEO for long-term sustainable growth." },
+  { q: "Can you help if my store was built by someone else?", a: "Yes. We can audit and optimise any WooCommerce or Shopify store regardless of who built it. We start with a technical audit to identify what's holding your store back, then work through the issues systematically. If you're planning a new <a href=\"/ecommerce-website-auckland/\">eCommerce website</a>, we can build SEO in from day one." },
+  { q: "Is Shopify or WooCommerce better for SEO?", a: "Both can rank well. What matters most is how the store is structured and what is on it: clear category and product pages, useful content, fast pages, and a clean technical setup. Shopify is simpler to run but uses some fixed URL structures, while WooCommerce on WordPress offers more control but needs more maintenance. See how we build on <a href=\"/shopify-website-design-auckland/\">Shopify</a> and <a href=\"/woocommerce-website-design-auckland/\">WooCommerce</a>." },
+  { q: "How much does eCommerce SEO cost?", a: "It depends on the size of the catalogue, the competition, and the technical state of the store, so we quote after an audit rather than from a price list. The audit shows what is worth fixing first." },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -73,13 +83,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "How is eCommerce SEO different from regular SEO?", "acceptedAnswer": { "@type": "Answer", "text": "eCommerce sites have unique challenges: thousands of product pages, duplicate content from product variants, faceted navigation creating crawl issues, and category pages that need both SEO and conversion optimisation. A standard SEO approach misses most of these, eCommerce SEO requires specialist knowledge of how Google crawls and indexes large product catalogues." } },
-        { "@type": "Question", "name": "How long before I see results from eCommerce SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Technical fixes and on-page improvements can show results within 4–8 weeks. Competitive category-level rankings typically take 3–6 months of consistent effort. We focus on quick wins first, fixing technical issues and optimising best-performing product pages, while building toward longer-term category dominance." } },
-        { "@type": "Question", "name": "Do you work with WooCommerce and Shopify?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work with both. WooCommerce and Shopify have different SEO implementations, URL structure, schema, sitemap generation, and plugin ecosystems are all different. We tailor our approach to your platform." } },
-        { "@type": "Question", "name": "My store already gets traffic from ads. Why do I need SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Ads stop the moment you stop paying. Organic traffic from SEO compounds over time and costs nothing per click. A well-ranked product or category page can deliver consistent revenue for years. Most successful eCommerce businesses combine both, Google Ads for immediate sales, SEO for long-term sustainable growth." } },
-        { "@type": "Question", "name": "Can you help if my store was built by someone else?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can audit and optimise any WooCommerce or Shopify store regardless of who built it. We start with a technical audit to identify what is holding your store back, then work through the issues systematically." } }
-      ]
+      "mainEntity": faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a.replace(/<[^>]+>/g, '') }
+      }))
     }
   ]
 };
@@ -123,13 +131,6 @@ const services = [
   },
 ];
 
-const faqs = [
-  { q: "How is eCommerce SEO different from regular SEO?", a: "eCommerce sites have unique challenges: thousands of product pages, duplicate content from product variants, faceted navigation creating crawl issues, and category pages that need both SEO and conversion optimisation. A standard SEO approach misses most of these, eCommerce SEO requires specialist knowledge of how Google crawls and indexes large product catalogues. See how it compares with our broader <a href=\"/affordable-seo-auckland/\">SEO services in Auckland</a>." },
-  { q: "How long before I see results from eCommerce SEO?", a: "Technical fixes and on-page improvements can show results within 4–8 weeks. Competitive category-level rankings typically take 3–6 months of consistent effort. We focus on quick wins first, fixing technical issues and optimising your best-performing product pages, while building toward longer-term category dominance." },
-  { q: "Do you work with WooCommerce and Shopify?", a: "Yes. We work with both. <a href=\"/woocommerce-website-design-auckland/\">WooCommerce</a> and Shopify have different SEO implementations, URL structure, schema, sitemap generation, and plugin ecosystems are all different. We tailor our approach to your platform." },
-  { q: "My store already gets traffic from ads. Why do I need SEO?", a: "Ads stop the moment you stop paying. Organic traffic from SEO compounds over time and costs nothing per click. A well-ranked product or category page can deliver consistent revenue for years. Most successful eCommerce businesses combine both, <a href=\"/google-ads/\">Google Ads</a> for immediate sales, SEO for long-term sustainable growth." },
-  { q: "Can you help if my store was built by someone else?", a: "Yes. We can audit and optimise any WooCommerce or Shopify store regardless of who built it. We start with a technical audit to identify what's holding your store back, then work through the issues systematically. If you're planning a new <a href=\"/ecommerce-website-auckland/\">eCommerce website</a>, we can build SEO in from day one." },
-];
 ---
 
 <Layout
@@ -154,6 +155,7 @@ const faqs = [
   <div class="ecom-snippet">
     <div class="container">
       <p><strong>Kiwi Web Design</strong> provides eCommerce SEO for Auckland and NZ online stores, WooCommerce and Shopify. Services include product page optimisation, category page SEO, technical audits (crawl budget, canonicalisation, duplicate content), Core Web Vitals fixes, and monthly reporting. No lock-in contracts. 5★ Google rating.</p>
+      <p class="ecom-meta">Last updated 2 November 2026 · Kiwi Web Design, Grey Lynn, Auckland</p>
     </div>
   </div>
 
@@ -229,6 +231,7 @@ const faqs = [
 <style>
   .ecom-snippet { background: #fff8e1; border-left: 4px solid var(--kwd-yellow); padding: 1rem 0; }
   .ecom-snippet p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--kwd-dark); }
+  .ecom-snippet .ecom-meta { margin-top: 0.6rem; font-size: 0.78rem; color: rgba(44,41,39,0.6); }
 
   .ecom-body p {
     font-size: 0.9375rem;

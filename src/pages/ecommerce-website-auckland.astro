@@ -10,6 +10,28 @@ import FAQAccordion from '../components/FAQAccordion.astro';
 import ecommerceHeroImg from '../assets/general/shopping-cart-for-eCommerce-1.jpg';
 import Icon from '../components/Icon.astro';
 
+const setupChecklist = [
+  { title: "Know what you sell and how it ships", text: "Your product range, variants, sizes and weights decide the platform, the shipping rules and how many photos you need." },
+  { title: "Choose your payment options", text: "Cards through a gateway such as Stripe or PayPal, plus buy-now-pay-later options such as Afterpay or Laybuy if your customers use them." },
+  { title: "Plan shipping and returns", text: "Decide your NZ courier options, rates and delivery times, and write a clear returns policy. Check your obligations under NZ consumer law, for example the Consumer Guarantees Act and the Fair Trading Act." },
+  { title: "Show prices and GST clearly", text: "Decide how prices are displayed to customers, and ask your accountant how GST applies to your sales." },
+  { title: "Write product pages that answer questions", text: "Clear titles, real photos, sizes and specifications, and delivery information on every product page." },
+  { title: "Make the store findable", text: "Descriptive category and product pages, a fast site, and a Google Business Profile if you also sell locally. See our <a href=\"/seo-for-ecommerce/\">eCommerce SEO service</a> and <a href=\"/google-business-profile-guide-for-auckland-businesses/\">Google Business Profile guide</a>." },
+  { title: "Track what matters", text: "Set up analytics and conversion tracking so you can see which pages and sources produce orders." },
+];
+
+const faqs = [
+  { q: "WooCommerce or Shopify, which should I choose?", a: "It depends on your priorities. WooCommerce gives you full ownership with no ongoing platform fees and maximum flexibility. Shopify is easier to manage day-to-day and has excellent multi-channel capabilities. We'll recommend the right one based on your product range, technical comfort, and growth plans." },
+  { q: "How many products can the website handle?", a: "Both platforms handle thousands of products. Our standard packages include setup for up to 20 products. We can quote for larger catalogues, the additional cost is mainly for the time to populate and organise the products." },
+  { q: "Can you set up AfterPay or Laybuy?", a: "Yes. We set up Buy Now Pay Later options including AfterPay, Laybuy, and Zip as part of your payment gateway configuration. These are popular with NZ shoppers and can meaningfully increase average order value." },
+  { q: "Do you handle the product photography?", a: "We don't provide product photography, but we advise on image specifications (dimensions, file size, background) so your existing photos look great on the site. Good product imagery is one of the biggest drivers of conversion, so we'll give you honest guidance." },
+  { q: "Will my store show up on Google?", a: "We set up your store with SEO foundations, product schema markup, optimised meta titles and descriptions, proper heading structure, and sitemap submission. For ongoing organic growth, our <a href=\"/seo-for-ecommerce/\">eCommerce SEO service</a> and <a href=\"/google-ads/\">Google Shopping Ads management</a> are available as separate engagements." },
+  { q: "How much does an eCommerce website cost in Auckland?", a: "Our eCommerce packages start from $3,890 + GST including store design, product setup (up to 20 products), payment gateway integration, and NZ shipping configuration. For non-eCommerce sites, see our <a href=\"/small-business-website-design-auckland/\">small business web design service</a>. Larger catalogues or custom features are quoted separately." },
+  { q: "How do I start an online store in New Zealand?", a: "Start with what you sell, how it ships, and how customers will pay. Then choose a platform (see the comparison above), set up payments, shipping, and GST, write clear product pages, and plan how customers will find the store. Our <a href=\"#setup-checklist\">setup checklist</a> covers the steps in order, and we can handle the build, setup, and launch for you." },
+  { q: "Should I sell on Trade Me or build my own online store?", a: "A marketplace such as Trade Me gives you an existing audience, but you work within its rules and fees and the customer relationship stays with the marketplace. Your own store gives you control of the brand, the customer data, and the checkout, but you have to bring the traffic. Many New Zealand businesses use both: a marketplace to reach new customers and their own store to keep them." },
+  { q: "What is the difference between an eCommerce website and a normal website?", a: "An eCommerce website adds a product catalogue, a cart and checkout, payment processing, shipping and tax settings, and order management. That extra functionality is why an online store is scoped and quoted differently from a standard business website." },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -86,38 +108,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "WooCommerce or Shopify, which should I choose for my Auckland store?",
-          "acceptedAnswer": { "@type": "Answer", "text": "It depends on your priorities. WooCommerce gives you full ownership with no ongoing platform fees and maximum flexibility. Shopify is easier to manage day-to-day and has excellent multi-channel capabilities. We'll recommend the right one based on your product range, technical comfort, and growth plans." }
-        },
-        {
-          "@type": "Question",
-          "name": "How many products can the website handle?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Both WooCommerce and Shopify handle thousands of products. Our standard packages include setup for up to 20 products. We can quote for larger catalogues, the additional cost is mainly for the time to populate and organise the products." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you set up AfterPay or Laybuy on my NZ online store?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We set up Buy Now Pay Later options including AfterPay, Laybuy, and Zip as part of your payment gateway configuration. These are popular with NZ shoppers and can meaningfully increase average order value." }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you handle product photography for eCommerce sites?",
-          "acceptedAnswer": { "@type": "Answer", "text": "We don't provide product photography, but we advise on image specifications (dimensions, file size, background) so your existing photos look great on the site. Good product imagery is one of the biggest drivers of conversion, so we'll give you honest guidance." }
-        },
-        {
-          "@type": "Question",
-          "name": "Will my eCommerce store show up on Google?",
-          "acceptedAnswer": { "@type": "Answer", "text": "We set up your store with SEO foundations, product schema markup, optimised meta titles and descriptions, proper heading structure, and sitemap submission. For ongoing organic growth, our eCommerce SEO service and Google Shopping Ads management are available as separate engagements." }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does an eCommerce website cost in Auckland?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Our eCommerce packages start from $3,890 + GST including store design, product setup (up to 20 products), payment gateway integration, and NZ shipping configuration. Larger catalogues or custom features are quoted separately." }
-        }
-      ]
+      "mainEntity": faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a.replace(/<[^>]+>/g, '') }
+      }))
     }
   ]
 };
@@ -194,14 +189,6 @@ const process = [
   { step: "4", title: "Launch & Train", desc: "We go live, configure Analytics, and walk you through adding products, processing orders, and managing your store day-to-day." },
 ];
 
-const faqs = [
-  { q: "WooCommerce or Shopify, which should I choose?", a: "It depends on your priorities. WooCommerce gives you full ownership with no ongoing platform fees and maximum flexibility. Shopify is easier to manage day-to-day and has excellent multi-channel capabilities. We'll recommend the right one based on your product range, technical comfort, and growth plans." },
-  { q: "How many products can the website handle?", a: "Both platforms handle thousands of products. Our standard packages include setup for up to 20 products. We can quote for larger catalogues, the additional cost is mainly for the time to populate and organise the products." },
-  { q: "Can you set up AfterPay or Laybuy?", a: "Yes. We set up Buy Now Pay Later options including AfterPay, Laybuy, and Zip as part of your payment gateway configuration. These are popular with NZ shoppers and can meaningfully increase average order value." },
-  { q: "Do you handle the product photography?", a: "We don't provide product photography, but we advise on image specifications (dimensions, file size, background) so your existing photos look great on the site. Good product imagery is one of the biggest drivers of conversion, so we'll give you honest guidance." },
-  { q: "Will my store show up on Google?", a: "We set up your store with SEO foundations, product schema markup, optimised meta titles and descriptions, proper heading structure, and sitemap submission. For ongoing organic growth, our <a href=\"/seo-for-ecommerce/\">eCommerce SEO service</a> and <a href=\"/google-ads/\">Google Shopping Ads management</a> are available as separate engagements." },
-  { q: "How much does an eCommerce website cost in Auckland?", a: "Our eCommerce packages start from $3,890 + GST including store design, product setup (up to 20 products), payment gateway integration, and NZ shipping configuration. For non-eCommerce sites, see our <a href=\"/small-business-website-design-auckland/\">small business web design service</a>. Larger catalogues or custom features are quoted separately." },
-];
 ---
 
 <Layout
@@ -228,6 +215,7 @@ const faqs = [
   <div class="ec-snippet">
     <div class="container">
       <p><strong>Kiwi Web Design</strong> builds eCommerce websites for Auckland businesses from <strong>$3,890 + GST</strong>. Store setup includes WooCommerce or Shopify, NZ payment gateways (Stripe, PayPal, AfterPay, Laybuy), NZ shipping rules, GST configuration, and up to 20 products. Most stores launch in <strong>2–4 weeks</strong>. Fixed price, no lock-in contracts. Based in Grey Lynn, Auckland, with a 5★ Google rating.</p>
+      <p class="ec-meta">Last updated 2 November 2026 · Kiwi Web Design, Grey Lynn, Auckland</p>
     </div>
   </div>
 
@@ -288,6 +276,25 @@ const faqs = [
   </section>
 
   <!-- FAQ -->
+  <section class="section" id="setup-checklist">
+    <div class="container ec-wrap">
+      <SectionHeader
+        eyebrow="Setup Checklist"
+        title="Starting an online store in NZ: seven things to sort out"
+        subtitle="Whoever builds your store, work through these in order. They decide the platform, the budget and how quickly you can launch."
+      />
+      <ol class="ec-checks">
+        {setupChecklist.map(({ title, text }) => (
+          <li>
+            <h3>{title}</h3>
+            <p set:html={text} />
+          </li>
+        ))}
+      </ol>
+      <p class="ec-checks-foot">These are general guides, not legal or tax advice. Check specifics with your accountant and, where needed, a lawyer. Not sure where to start? <a href="/contact/">Talk to us</a> and we will help you scope the store.</p>
+    </div>
+  </section>
+
   <section class="section" style="background: var(--kwd-cream);">
     <div class="container" style="max-width: 860px;">
       <FAQAccordion
@@ -420,4 +427,15 @@ const faqs = [
     max-width: 860px;
   }
   .ec-snippet p { margin: 0; }
+  .ec-snippet .ec-meta { margin-top: 0.6rem; font-size: 0.78rem; color: rgba(44,41,39,0.6); }
+  .ec-wrap { max-width: 900px; margin-inline: auto; }
+  .ec-checks { list-style: none; padding: 0; margin: 2.5rem 0 0; counter-reset: eccheck; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .ec-checks li { counter-increment: eccheck; position: relative; background: var(--kwd-cream); border-radius: 12px; padding: 1.15rem 1.25rem 1.15rem 3.6rem; }
+  .ec-checks li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .ec-checks li::before { content: counter(eccheck); position: absolute; left: 1.1rem; top: 1.1rem; width: 1.9rem; height: 1.9rem; border-radius: 50%; background: var(--kwd-yellow); color: var(--kwd-dark); font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+  .ec-checks h3 { font-size: 1rem; font-weight: 700; color: var(--kwd-dark); margin: 0 0 0.3rem; line-height: 1.35; }
+  .ec-checks p { margin: 0; font-size: 0.875rem; line-height: 1.65; color: var(--kwd-brown); }
+  .ec-checks a, .ec-checks-foot a { color: var(--kwd-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .ec-checks-foot { margin-top: 1.75rem; font-size: 0.85rem; line-height: 1.7; color: var(--kwd-brown); }
+  @media (max-width: 700px) { .ec-checks { grid-template-columns: 1fr; } }
 </style>
