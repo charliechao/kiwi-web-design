@@ -70,7 +70,7 @@ Separate three kinds of statement:
 
 For example, "Google requires every local business to add FAQ schema" would need an official Google source and is not accurate as a blanket claim. "We often find outdated phone numbers in client schema audits" is a practice-based observation and should be labelled that way.
 
-**Research example:** In GoodFirms' <a href="https://www.goodfirms.co/resources/content-engagement-metrics" rel="nofollow">Content Engagement Metrics 2026</a> survey of 192 marketing professionals, 69.4% of respondents investing more in brand authority reported lead or conversion growth, compared with 51.1% of the comparison group. This is an association, not proof that brand authority caused the growth. Kiwi Web Design contributed to the research and is listed among the research partners.
+**Research example:** In GoodFirms' <a href="https://www.goodfirms.co/resources/content-engagement-metrics" rel="nofollow">Content Engagement Metrics 2026</a> survey of 192 marketing professionals, 69.4% of respondents investing more in brand authority reported lead or conversion growth, compared with 51.1% of the comparison group. Kiwi Web Design contributed to the research and is listed among the research partners.
 
 ### 4. Keep business details consistent
 
