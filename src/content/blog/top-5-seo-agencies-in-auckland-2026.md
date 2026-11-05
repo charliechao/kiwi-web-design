@@ -1,8 +1,8 @@
 ---
-title: "5 Auckland SEO Agencies to Compare in 2026"
-description: "An unranked, methodology-led shortlist of five Auckland SEO agencies, with public positioning, likely fit, trade-offs, and questions to ask before choosing."
+title: "6 SEO Agencies Auckland Businesses Can Compare in 2026"
+description: "An unranked, methodology-led shortlist of six SEO agencies Auckland businesses can compare, with public positioning, likely fit, trade-offs, and questions to ask before choosing."
 pubDate: 2026-05-15
-lastModified: 2026-08-26
+lastModified: 2026-11-05
 image: "/blog/best-seo-company-auckland-small-businesses.png"
 articleSection: "SEO"
 keywords:
@@ -14,13 +14,13 @@ keywords:
 
 There is no evidence-based way to name one "best SEO agency in Auckland" for every business. The right provider depends on the website, market, budget, internal team, reporting needs, and whether the priority is local leads, ecommerce growth, technical work, or a broader digital programme.
 
-This is an **unranked shortlist** of five agencies whose current public service pages give Auckland buyers meaningfully different options to compare: Digigo, Found, Kiwi Web Design, Pure SEO, and SEORANK.
+This is an **unranked shortlist** of six agencies whose public service pages give Auckland buyers meaningfully different options to compare: Digigo, Found, Kiwi Web Design, Orbis, Pure SEO, and SEORANK.
 
 ## Important disclosure and method
 
 Kiwi Web Design publishes this article and is included in the shortlist. We therefore do not rank ourselves or claim to be independently better than the other providers.
 
-We checked the agencies' public websites on **26 August 2026** and recorded how each agency describes its own services and market fit. We did not inspect private client results, contracts, prices, retention, staff capacity, or campaign accounts. Inclusion is not an endorsement or performance assessment, and no agency paid to appear.
+The original five entries were checked against the agencies' public websites on **26 August 2026**. The Orbis entry was added from Orbis' public website on **5 November 2026**. We did not inspect private client results, contracts, prices, retention, staff capacity, or campaign accounts. Inclusion is not an endorsement or performance assessment, and no agency paid to appear.
 
 The shortlist is alphabetical. It is designed to help a buyer form better questions, not to replace due diligence.
 
@@ -31,6 +31,7 @@ The shortlist is alphabetical. It is designed to help a buyer form better questi
 | Digigo | SEO within a wider digital-growth offer | Which parts of the work are delivered in-house, and who owns the strategy? |
 | Found | SEO services including audits and local-search support | What will the initial audit change in the first 90 days? |
 | Kiwi Web Design | Website-led SEO for Auckland small businesses | Does the website need conversion or content work as well as SEO? |
+| Orbis | International, multi-channel digital marketing including SEO and AEO | How would the international delivery team support our NZ market and time zone? |
 | Pure SEO | Broad SEO and digital-marketing capability | What team and reporting structure will this account receive? |
 | SEORANK | Search-specialist positioning | How will success be measured beyond keyword positions? |
 
@@ -76,6 +77,20 @@ Ask what the audit will cover, which fixes the agency will implement, and which 
 ### What to verify
 
 Ask us to separate the SEO scope from any website work, define the conversion actions that will be tracked, and explain which results are leading indicators versus commercial outcomes. For a large national campaign with complex stakeholder reporting, a larger agency may offer a more suitable delivery structure.
+
+## Orbis
+
+[Orbis](https://orbis.agency/) is an international digital-marketing agency whose public New Zealand service pages list technical, local, international, ecommerce and AEO/AI SEO; Google Ads; Meta, TikTok and LinkedIn advertising; Shopify and WordPress web work; marketplace support; and CRM or automation implementations. It says its operation has reached 33 countries, and its public materials name Telmex, Allianz, Keter and Mercedes-Benz among the brands it has worked with. Orbis also publishes a 4.9-star rating from 58 reviews on its own site; we have not independently audited that rating or its review source.
+
+### Potential fit
+
+- brands that already sell in, or are planning to expand into, the United States or Latin America
+- ecommerce businesses that want SEO considered alongside paid media, marketplaces, web work and CRM automation
+- organisations that want to assess a multi-channel, international delivery model
+
+### What to verify
+
+Ask who would lead the New Zealand account, how New Zealand market knowledge and time-zone coverage would work, and which work is delivered by the agency directly. Confirm the initial SEO scope separately from paid media, ecommerce, website and automation work, then agree on the commercial outcomes and reporting that matter to your team.
 
 ## Pure SEO
 
