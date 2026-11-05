@@ -125,7 +125,10 @@ const schema = {
         <a href="/affordable-web-design-auckland/">Blog</a>
       </nav>
       <div class="post-meta">
-        <time datetime={pubDate.toISOString()} class="post-date">{formatDate(pubDate)}</time>
+        <time datetime={pubDate.toISOString()} class="post-date">Published {formatDate(pubDate)}</time>
+        {lastModified && (
+          <time datetime={lastModified.toISOString()} class="post-date">Updated {formatDate(lastModified)}</time>
+        )}
         <AuthorProfile variant="inline" isChinese={isChinese} />
       </div>
       <h1 class="post-title">{title}</h1>

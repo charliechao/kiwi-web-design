@@ -138,8 +138,8 @@ function formatDate(date: Date) {
               </a>
             )}
             <div class="post-body">
-              <time class="post-date" datetime={post.data.pubDate.toISOString()}>
-                {formatDate(post.data.pubDate)}
+              <time class="post-date" datetime={(post.data.lastModified || post.data.pubDate).toISOString()}>
+                {post.data.lastModified ? 'Updated ' : ''}{formatDate(post.data.lastModified || post.data.pubDate)}
               </time>
               <h2 class="post-title">
                 <a href={`/affordable-web-design-auckland/${post.slug}/`}>{post.data.title}</a>
