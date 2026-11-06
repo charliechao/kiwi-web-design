@@ -311,11 +311,15 @@ const orderedPortfolio = orderBy(portfolio, c.portfolio.first ?? [], (p) => p.ca
       <p class="lp-sec-eyebrow">Common questions</p>
       <h2 class="lp-sec-title">{c.faq.title.pre}<span class="lp-title-accent">{c.faq.title.accent}</span>{c.faq.title.post}</h2>
       <div class="lp-faq-list">
-        {c.faq.items.map(({ q, a }) => (
-          <details class="lp-faq-item" name="landing-page-faq">
-            <summary class="lp-faq-q">{q}</summary>
-            <p class="lp-faq-a">{a}</p>
-          </details>
+        {[0, 1].map((column) => (
+          <div class="lp-faq-column">
+            {c.faq.items.map(({ q, a }, i) => i % 2 === column && (
+              <details class="lp-faq-item" name="landing-page-faq" style={`order: ${i}`}>
+                <summary class="lp-faq-q">{q}</summary>
+                <p class="lp-faq-a">{a}</p>
+              </details>
+            ))}
+          </div>
         ))}
       </div>
     </div>
@@ -1242,6 +1246,7 @@ const orderedPortfolio = orderBy(portfolio, c.portfolio.first ?? [], (p) => p.ca
     align-items: start;
     gap: 0.75rem 1rem;
   }
+  .lp-faq-column { display: flex; flex-direction: column; gap: 0.75rem; min-width: 0; }
   .lp-faq-item { background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
   .lp-faq-item[open] { border-color: var(--kwd-gold, #b08d2f); }
   .lp-faq-q {
@@ -1649,6 +1654,7 @@ const orderedPortfolio = orderBy(portfolio, c.portfolio.first ?? [], (p) => p.ca
   @media (max-width: 600px) {
     .lp-problem-grid, .lp-included-grid, .lp-fit-grid, .lp-steps { grid-template-columns: 1fr; }
     .lp-faq-list { grid-template-columns: 1fr; }
+    .lp-faq-column { display: contents; }
     .lp-review-card, .lp-portfolio-item { flex-basis: 86%; }
     .lp-carousel-btn { display: none; }
     .lp-row-2 { grid-template-columns: 1fr; }
