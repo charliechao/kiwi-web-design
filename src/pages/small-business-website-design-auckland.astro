@@ -16,6 +16,41 @@ import smallBizAuckland from '../assets/general/Small-Business-Auckland.jpg';
 import webSolutions from '../assets/general/Website-Solutsions-Auckland.jpg';
 import aucklandCafe from '../assets/general/Auckland-small-business-1.jpg';
 
+const packages = [
+  {
+    name: "Starter",
+    price: "From NZ$1,290",
+    scope: "Up to 3 pages",
+    desc: "For a straightforward small-business website that establishes trust and gives customers a clear way to enquire.",
+    items: ["Up to 3 core pages", "Custom, mobile-first design", "Contact form and click-to-call", "SEO foundations and analytics setup", "Handover training"],
+    amount: "1290",
+  },
+  {
+    name: "Growth",
+    price: "From NZ$2,690",
+    scope: "5–8 pages",
+    desc: "For established service businesses that need room to explain their services, build trust, and generate more enquiries.",
+    items: ["5–8 tailored pages", "Custom, mobile-first design", "Lead-generation page structure", "SEO foundations and analytics setup", "Handover training"],
+    amount: "2690",
+    featured: true,
+  },
+  {
+    name: "eCommerce",
+    price: "From NZ$3,890",
+    scope: "Up to 10 products + multiple pages",
+    desc: "For businesses ready to sell online with a store built around their products, customers, and fulfilment process.",
+    items: ["Multi-page eCommerce website", "Up to 10 products loaded", "Payment and shipping setup", "Mobile-first product and checkout pages", "Store handover training"],
+    amount: "3890",
+  },
+  {
+    name: "Custom",
+    price: "Tailored quote",
+    scope: "Multiple pages, integrations, or bespoke features",
+    desc: "For projects that need more than a standard website, such as calculators, custom workflows, complex integrations, or larger content structures.",
+    items: ["Discovery and technical scoping", "Custom design and development", "Integrations or bespoke functionality", "Clear fixed quote before build begins"],
+  },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -54,7 +89,27 @@ const schema = {
         { "@type": "City", "name": "Auckland" },
         { "@type": "Country", "name": "New Zealand" }
       ],
-      "url": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/"
+      "url": "https://www.kiwiwebdesign.co.nz/small-business-website-design-auckland/",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Website design packages",
+        "itemListElement": packages.filter((pkg) => pkg.amount).map((pkg) => ({
+          "@type": "Offer",
+          "name": `${pkg.name} website package`,
+          "description": `${pkg.scope}. ${pkg.desc} Prices exclude GST.`,
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": pkg.amount,
+            "priceCurrency": "NZD",
+            "valueAddedTaxIncluded": false
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": `${pkg.name} website design package`,
+            "description": pkg.scope
+          }
+        }))
+      }
     },
     {
       "@type": ["LocalBusiness", "ProfessionalService"],
@@ -90,7 +145,7 @@ const schema = {
         {
           "@type": "Question",
           "name": "How much does a website cost for a small business in Auckland?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Every project gets a fixed, custom quote based on your pages, features, and platform, no surprises. Most Auckland small business sites are built on WordPress, though we also deliver fully custom builds depending on your needs. Book a free consultation for an exact quote." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Starter websites are from NZ$1,290 plus GST for up to three pages. Growth websites are from NZ$2,690 plus GST for five to eight pages. eCommerce websites are from NZ$3,890 plus GST for up to 10 products and multiple pages. Custom projects are quoted after discovery, with a fixed quote confirmed before work begins." }
         },
         {
           "@type": "Question",
@@ -105,7 +160,7 @@ const schema = {
         {
           "@type": "Question",
           "name": "Do you offer hosting and maintenance for Auckland small businesses?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Managed hosting is available and includes updates, backups, security, and monthly content changes. Ask us for hosting pricing when you get your quote." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Optional managed hosting and website care is NZ$59 plus GST per month. It includes hosting, updates, security, daily backups, monthly reporting, and 30 minutes of content editing. You can also host or manage your website elsewhere." }
         },
         {
           "@type": "Question",
@@ -185,11 +240,11 @@ const process = [
 ];
 
 const faqs = [
-  { q: "How much does a website cost for a small business in Auckland?", a: "Every project gets a fixed, custom quote based on your pages, features, and platform, no surprises. Most sites are built on <a href=\"/wordpress-website-design-auckland/\">WordPress</a>, though we also offer fully custom builds when your project needs it. Book a free consultation for an exact quote, or try our <a href=\"/affordable-web-design-auckland/website-cost-new-zealand-small-business/\">free website cost calculator</a> for a ballpark estimate." },
+  { q: "How much does a website cost for a small business in Auckland?", a: "Our <a href=\"#packages\">Starter package</a> is from NZ$1,290 + GST for up to three pages. Growth is from NZ$2,690 + GST for five to eight pages. eCommerce is from NZ$3,890 + GST for up to 10 products and multiple pages. Custom projects are quoted after discovery, with a fixed quote confirmed before work begins. You can also use our <a href=\"/affordable-web-design-auckland/website-cost-new-zealand-small-business/\">website cost calculator</a> to compare broader New Zealand website-cost scenarios." },
   { q: "How long does it take to build a website?", a: "Most projects are completed in 2–3 weeks from when we receive your content. More complex sites with custom features may take 3–4 weeks. We'll give you a timeline upfront and stick to it. See our full <a href=\"/website-design-process-in-auckland/\">website design process</a> for a step-by-step breakdown." },
   { q: "Do I need to provide content?", a: "Ideally yes, you know your business best. But we help with content guidance, structure, and can write draft copy for you. We also source stock images if needed." },
   { q: "Will I be able to update the website myself?", a: " We offer ongoing maintenance plans for most of our clients which including content updates monthly. But if you prefer to manage yourself, this can be done through WordPress CMS. " },
-  { q: "Do you offer hosting and maintenance?", a: "Yes. We offer managed hosting covering updates, backups, security, and monthly content changes. Ask us about pricing and bundling it with your build." },
+  { q: "Do you offer hosting and maintenance?", a: "Yes. Our optional managed hosting and website care plan is NZ$59 + GST per month and covers hosting, updates, security, daily backups, monthly reporting, and 30 minutes of content editing. You can also host or manage your website elsewhere. See the full <a href=\"/monthly-subscription/\">website care plan</a>." },
   { q: "Can you redesign my existing website?", a: "Yes. We do full rebuilds, redesigns, and migrations from Wix, Squarespace, old WordPress themes, or any other platform. We also build bespoke sites from scratch when a standard CMS isn't the right fit. We preserve your <a href=\"/affordable-seo-auckland/\">SEO</a> and content throughout. After launch, consider adding <a href=\"/local-seo-for-auckland-small-businesses/\">local SEO</a> or <a href=\"/google-ads/\">Google Ads</a> to drive traffic." },
   { q: "Do you build websites for small businesses outside Auckland?", a: "Yes. We're based in Grey Lynn but build websites for small businesses across New Zealand via video call. Auckland clients can always meet in person if preferred." },
 ];
@@ -301,6 +356,34 @@ const hubGroups = [
 
   <!-- Stats -->
   <StatsRow items={stats} />
+
+  <!-- Packages -->
+  <section class="section sbwd-packages" id="packages">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Website Packages"
+        title="Clear starting prices for your next website"
+        subtitle="These packages are starting points for the scopes shown below and exclude GST. Every project is confirmed in a fixed written quote before work begins."
+      />
+      <div class="sbwd-package-grid">
+        {packages.map((pkg) => (
+          <article class:list={["sbwd-package", pkg.featured && "sbwd-package--featured"]}>
+            {pkg.featured && <p class="sbwd-package-tag">Most popular</p>}
+            <h3>{pkg.name}</h3>
+            <p class="sbwd-package-price">{pkg.price}</p>
+            <p class="sbwd-package-gst">+ GST</p>
+            <p class="sbwd-package-scope">{pkg.scope}</p>
+            <p class="sbwd-package-desc">{pkg.desc}</p>
+            <ul>
+              {pkg.items.map((item) => <li>{item}</li>)}
+            </ul>
+            <a href="/contact/" class="sbwd-package-link">Request a quote</a>
+          </article>
+        ))}
+      </div>
+      <p class="sbwd-packages-note">Optional managed hosting and website care is <a href="/monthly-subscription/">NZ$59 + GST per month</a>. You can also host or manage your website elsewhere.</p>
+    </div>
+  </section>
 
   <!-- What's included -->
   <section class="section" style="background: var(--kwd-cream);">
@@ -449,6 +532,136 @@ const hubGroups = [
 </Layout>
 
 <style>
+  .sbwd-packages { background: #fff; }
+  .sbwd-package-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .sbwd-package {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(44, 41, 39, 0.16);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: #fff;
+  }
+  .sbwd-package--featured {
+    background: var(--kwd-dark);
+    border-color: var(--kwd-dark);
+    color: #fff;
+  }
+  .sbwd-package-tag {
+    align-self: flex-start;
+    margin: 0 0 0.85rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .sbwd-package h3 {
+    margin: 0;
+    color: var(--kwd-dark);
+    font-family: var(--kwd-font-heading);
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  .sbwd-package--featured h3 { color: #fff; }
+  .sbwd-package-price {
+    margin: 1.2rem 0 0.15rem;
+    color: var(--kwd-dark);
+    font-family: var(--kwd-font-heading);
+    font-size: 1.6rem;
+    line-height: 1.1;
+  }
+  .sbwd-package--featured .sbwd-package-price { color: var(--kwd-yellow); }
+  .sbwd-package-gst,
+  .sbwd-package-scope,
+  .sbwd-package-desc { margin: 0; }
+  .sbwd-package-gst {
+    color: var(--kwd-brown);
+    font-size: 0.8rem;
+  }
+  .sbwd-package--featured .sbwd-package-gst { color: rgba(255,255,255,0.64); }
+  .sbwd-package-scope {
+    margin-top: 1rem;
+    color: var(--kwd-dark);
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+  .sbwd-package--featured .sbwd-package-scope { color: #fff; }
+  .sbwd-package-desc {
+    margin-top: 0.75rem;
+    color: var(--kwd-brown);
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+  .sbwd-package--featured .sbwd-package-desc { color: rgba(255,255,255,0.72); }
+  .sbwd-package ul {
+    display: grid;
+    gap: 0.55rem;
+    padding: 0;
+    margin: 1.25rem 0;
+    list-style: none;
+  }
+  .sbwd-package li {
+    position: relative;
+    padding-left: 1.1rem;
+    color: var(--kwd-dark);
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+  .sbwd-package li::before {
+    position: absolute;
+    left: 0;
+    color: var(--kwd-brown);
+    content: "✓";
+    font-weight: 700;
+  }
+  .sbwd-package--featured li { color: rgba(255,255,255,0.88); }
+  .sbwd-package--featured li::before { color: var(--kwd-yellow); }
+  .sbwd-package-link {
+    display: block;
+    margin-top: auto;
+    border: 1px solid var(--kwd-dark);
+    border-radius: 6px;
+    padding: 0.75rem;
+    color: var(--kwd-dark);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .sbwd-package-link:hover { background: var(--kwd-cream); }
+  .sbwd-package--featured .sbwd-package-link {
+    border-color: var(--kwd-yellow);
+    background: var(--kwd-yellow);
+    color: var(--kwd-dark);
+  }
+  .sbwd-package--featured .sbwd-package-link:hover { background: #fff1a6; }
+  .sbwd-packages-note {
+    margin: 1.5rem 0 0;
+    color: var(--kwd-brown);
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .sbwd-packages-note a { color: var(--kwd-dark); font-weight: 700; }
+  @media (max-width: 1080px) {
+    .sbwd-package-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 600px) {
+    .sbwd-package-grid { grid-template-columns: 1fr; }
+  }
+
   /* Industries grid */
   .sbwd-industries {
     display: grid;

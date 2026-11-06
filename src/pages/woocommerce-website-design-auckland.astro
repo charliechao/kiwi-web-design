@@ -12,10 +12,10 @@ import Icon from '../components/Icon.astro';
 const faqs = [
   { q: "Why WooCommerce over Shopify?", a: "WooCommerce is the right choice if you want full ownership with no monthly platform fee, maximum design flexibility, and the ability to build rich content alongside your store. It also has superior NZ payment gateway support and integrates natively with <a href=\"/wordpress-website-design-auckland/\">WordPress</a>, so your blog, landing pages, and store are one unified website. Compare both options on our <a href=\"/ecommerce-website-auckland/\">eCommerce hub page</a>." },
   { q: "Is WooCommerce hard to manage?", a: "Not for day-to-day tasks. Adding products, processing orders, and checking reports is straightforward. We include a handover training session, and the WordPress block editor makes content management easy. Anything technical (updates, new features) is handled under our <a href=\"/monthly-subscription/\">WordPress maintenance plan</a>." },
-  { q: "How many products can WooCommerce handle?", a: "WooCommerce scales to tens of thousands of products with the right hosting. Our standard packages include up to 20 products. Larger catalogues are quoted separately, the cost is mainly the time to populate and organise them." },
+  { q: "How many products can WooCommerce handle?", a: "WooCommerce scales to tens of thousands of products with the right hosting. Our starting package includes setup for up to 10 products. Larger catalogues are quoted separately; the cost is mainly the time to populate and organise them." },
   { q: "Can you migrate my existing store to WooCommerce?", a: "Yes. We handle full migrations from <a href=\"/shopify-website-design-auckland/\">Shopify</a>, Wix eCommerce, Squarespace Commerce, or other platforms, preserving products, customer data, and order history where possible." },
   { q: "Do you set up the Xero integration?", a: "Yes. We set up the Xero WooCommerce integration so orders, invoices, and payments sync automatically. Same for MYOB if that's your accounting platform." },
-  { q: "What does a WooCommerce store cost?", a: "Our WooCommerce store packages start from $3,890 + GST for up to 20 products. This includes store design, payment gateway setup, NZ shipping configuration, GST setup, and Analytics. We give you a fixed quote upfront. You may also want to consider adding <a href=\"/seo-for-ecommerce/\">eCommerce SEO</a> to drive organic traffic from day one." },
+  { q: "What does a WooCommerce store cost?", a: "Our multi-page WooCommerce store packages start from $3,890 + GST for setup of up to 10 products. This includes store design, payment gateway setup, NZ shipping configuration, GST setup, and Analytics. We give you a fixed quote upfront. You may also want to consider adding <a href=\"/seo-for-ecommerce/\">eCommerce SEO</a> to drive organic traffic from day one." },
   { q: "Is WooCommerce free?", a: "The WooCommerce plugin itself is free to install, but a store still has running costs: WordPress hosting, a domain, any paid extensions, payment-gateway fees, and ongoing maintenance. We scope those with you at the start so there are no surprises." },
   { q: "Do I need special hosting for WooCommerce?", a: "WooCommerce runs on WordPress, so you need reliable WordPress hosting with enough performance for your catalogue and checkout. We can arrange <a href=\"/website-hosting-auckland/\">managed hosting</a> and look after updates and backups through our <a href=\"/monthly-subscription/\">website care plan</a>." },
 ];
@@ -77,11 +77,10 @@ const schema = {
         { "@type": "Place", "name": "New Zealand" }
       ],
       "offers": {
-        "@type": "AggregateOffer",
-        "lowPrice": "3890",
-        "highPrice": "8000",
+        "@type": "Offer",
+        "price": "3890",
         "priceCurrency": "NZD",
-        "priceSpecification": { "@type": "PriceSpecification", "valueAddedTaxIncluded": false }
+        "priceSpecification": { "@type": "PriceSpecification", "price": "3890", "priceCurrency": "NZD", "valueAddedTaxIncluded": false }
       }
     },
     {
@@ -164,7 +163,7 @@ const process = [
   <PageHero
     eyebrow="WooCommerce Auckland"
     title="WooCommerce stores built for the NZ market"
-    subtitle="Custom WooCommerce websites with NZ payment gateways (AfterPay, POLi, Laybuy), NZ shipping rules, and GST configured from day one. You own the store outright, no monthly platform fee."
+    subtitle="Multi-page WooCommerce websites with NZ payment gateways (AfterPay, POLi, Laybuy), NZ shipping rules, GST, and setup for up to 10 products. You own the store outright, no monthly platform fee."
     badgeText="From $3,890 + GST"
     ctaPrimary={{ text: "Get a Free Quote", href: "/contact/" }}
     ctaSecondary={{ text: "Compare Platforms", href: "/ecommerce-website-auckland/" }}
@@ -175,7 +174,7 @@ const process = [
   <!-- AI citability snippet -->
   <div class="woo-snippet">
     <div class="container">
-      <p><strong>Kiwi Web Design</strong> builds WooCommerce stores for Auckland and NZ businesses from <strong>$3,890 + GST</strong>. Every store includes NZ payment gateways (Stripe, AfterPay, Laybuy, POLi), NZ shipping rules, GST configuration, and Xero integration. No monthly platform fee, you own the store outright. 5★ Google rating.</p>
+      <p><strong>Kiwi Web Design</strong> builds multi-page WooCommerce stores for Auckland and NZ businesses from <strong>$3,890 + GST</strong>, including setup for up to 10 products. Every store includes NZ payment gateways (Stripe, AfterPay, Laybuy, POLi), NZ shipping rules, GST configuration, and Xero integration. No monthly platform fee, you own the store outright. 5★ Google rating.</p>
       <p class="woo-meta">Last updated 2 November 2026 · Kiwi Web Design, Grey Lynn, Auckland</p>
     </div>
   </div>

@@ -130,7 +130,8 @@ const coverage = [
 ];
 
 const faqs = [
-  { q: "What is included in the care plan?", a: "Managed WordPress hosting, core and plugin updates, website security and firewall, daily offsite backups, malware cleanup if you ever need it, analytics and a monthly report, 30 minutes of content editing, and priority support. One monthly fee, no lock-in." },
+  { q: "What is included in the care plan?", a: "Managed WordPress hosting, core and plugin updates, website security and firewall, daily offsite backups, malware cleanup if you ever need it, analytics and a monthly report, 30 minutes of content editing, and priority support. One optional monthly fee, no lock-in." },
+  { q: "Do I have to use Kiwi Web Design hosting and care?", a: "No. The plan is optional. You can host or manage your website elsewhere, and we will provide a full handover so you are not dependent on us." },
   { q: "Do I need a care plan if my website is brand new?", a: "A new site is the ideal time to start. Updates are released constantly for WordPress core, plugins, and themes, and vulnerabilities accumulate quickly without regular maintenance. The first 6 to 12 months are when most sites become exposed if left unattended." },
   { q: "Can you maintain a WordPress site you did not build?", a: "Yes. We can take over any WordPress site. We start with an audit to understand the current state of the site, its plugins, and any existing issues. If it turns out the site needs more than maintenance, we also offer <a href=\"/wordpress-website-rebuilds-auckland/\">WordPress website rebuilds</a>." },
   { q: "What happens if my site gets hacked while I am on the plan?", a: "Malware removal is covered. We diagnose the infection, clean it, close the entry point that allowed it, restore from a clean backup if that is faster, and handle any Google blacklist removal. There is no extra charge beyond your plan." },
@@ -179,6 +180,16 @@ const schema = {
         { "@type": "Place", "name": "Auckland" },
         { "@type": "Place", "name": "New Zealand" }
       ],
+      "offers": {
+        "@type": "Offer",
+        "name": "Managed website care plan",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "59",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": false
+        }
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "What the care plan covers",
@@ -218,8 +229,8 @@ const schema = {
   <PageHero
     eyebrow="Website Care Plan"
     title="WordPress maintenance and website care for Auckland businesses"
-    subtitle="Managed hosting, security, daily backups, updates, malware protection, and 30 minutes of content editing, all for a single monthly fee. No surprises, no lock-in."
-    badgeText="$59/mo + GST"
+    subtitle="Optional managed hosting, security, daily backups, updates, malware protection, and 30 minutes of content editing for a single monthly fee. No surprises, no lock-in."
+    badgeText="NZ$59/mo + GST"
     ctaPrimary={{ text: "Get Started", href: "/contact/" }}
     ctaSecondary={{ text: "See What's Included", href: "#included" }}
     imgSrc={subscriptionImage.src}
@@ -234,7 +245,7 @@ const schema = {
         <div class="ms-plan-left">
           <p class="ms-plan-eyebrow">The Plan</p>
           <h2 class="ms-plan-title">Managed Website Subscription</h2>
-          <p class="ms-plan-desc">One flat monthly fee covers everything your website needs to stay fast, secure, and up to date. You focus on running your business, we handle the tech.</p>
+          <p class="ms-plan-desc">This optional monthly plan covers everything your website needs to stay fast, secure, and up to date. You focus on running your business, we handle the tech.</p>
           <div class="ms-plan-price-row">
             <span class="ms-plan-price">$59</span>
             <div class="ms-plan-price-detail">
@@ -242,7 +253,7 @@ const schema = {
               <span class="ms-plan-gst">excl. GST</span>
             </div>
           </div>
-          <p class="ms-plan-note">No lock-in contract. Cancel with 30 days notice.</p>
+          <p class="ms-plan-note">Optional plan. No lock-in contract. Cancel with 30 days notice.</p>
           <a href="/contact/" class="ms-plan-btn">Get Started →</a>
         </div>
         <div class="ms-plan-right">

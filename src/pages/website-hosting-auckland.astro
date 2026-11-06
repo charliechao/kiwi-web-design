@@ -29,6 +29,24 @@ const schema = {
       ]
     },
     {
+      "@type": "Service",
+      "@id": "https://www.kiwiwebdesign.co.nz/website-hosting-auckland/#service",
+      "name": "Managed WordPress hosting and website care",
+      "serviceType": "Managed website hosting",
+      "description": "Optional managed WordPress hosting and website care for Auckland businesses, including updates, security, daily backups, monthly reporting, and 30 minutes of content editing.",
+      "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "name": "Managed hosting and website care plan",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "59",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": false
+        }
+      }
+    },
+    {
       "@type": "Organization",
       "@id": "https://www.kiwiwebdesign.co.nz/#organization",
       "name": "Kiwi Web Design",
@@ -39,29 +57,16 @@ const schema = {
 
 const hostingPlans = [
   {
-    name: "Starter",
-    price: "$49/mo",
+    name: "Managed Hosting & Care",
+    price: "NZ$59/mo",
     note: "+ GST",
-    desc: "Fast, reliable hosting for straightforward WordPress sites.",
+    desc: "Optional managed hosting plus WordPress maintenance, security, monitoring, and 30 minutes of content changes each month.",
     items: [
       "NZ-based server",
       "SSL certificate included",
-      "Daily backups (14-day)",
+      "Daily backups (30-day)",
       "Uptime monitoring",
       "WordPress optimised stack",
-      "Email support",
-    ],
-    highlight: false,
-    href: "/contact/",
-  },
-  {
-    name: "Full Care",
-    price: "$59/mo",
-    note: "+ GST",
-    desc: "Hosting plus full WordPress maintenance, updates, security, monitoring, and 30 minutes of content changes every month.",
-    items: [
-      "Everything in Starter",
-      "Daily backups (30-day)",
       "Monthly WP core + plugin updates",
       "Security scanning & firewall",
       "Performance caching setup",
@@ -74,7 +79,7 @@ const hostingPlans = [
       "Quarterly performance review",
     ],
     highlight: true,
-    tag: "Recommended",
+    tag: "Optional plan",
     href: "/contact/",
   },
 ];
@@ -125,6 +130,7 @@ const reasons = [
 
 const faqs = [
   { q: "Why not just use a cheap hosting provider?", a: "Cheap hosting (like GoDaddy, HostGator, or Bluehost) puts your site on shared servers with thousands of other sites, often overseas. You get slow NZ load times, no real support, and no WordPress optimisation. The $5–$15/month you save costs you in lost leads from a slow, insecure site. Pair fast hosting with a <a href=\"/monthly-subscription/\">WordPress maintenance plan</a> for complete peace of mind." },
+  { q: "Do I have to host my website with Kiwi Web Design?", a: "No. This is an optional plan. You are welcome to host or manage your website elsewhere; we will explain the practical options during your project." },
   { q: "Do you host non-WordPress sites?", a: "Our managed hosting is optimised for <a href=\"/wordpress-website-design-auckland/\">WordPress</a>. For other technologies (static sites, custom apps), get in touch and we'll advise on the right hosting solution." },
   { q: "Can I migrate from my current host?", a: "Yes. We handle full WordPress migrations, files, databases, and DNS updates. We run the new site in parallel before cutting over to ensure zero downtime." },
   { q: "What happens if my site goes down?", a: "Our monitoring alerts us immediately. We investigate and resolve hosting issues as a priority, typically within 1–2 hours during business hours. For critical issues, we're on it as fast as possible." },
@@ -144,7 +150,7 @@ const faqs = [
     eyebrow="Website Hosting Auckland"
     title="Fast, NZ-based hosting managed by people who know your site"
     subtitle="Managed WordPress hosting for Auckland small businesses. NZ servers, daily backups, SSL, security, and support from a local team, not an overseas helpdesk."
-    badgeText="From $49/month + GST"
+    badgeText="NZ$59/month + GST"
     ctaPrimary={{ text: "Get a Hosting Plan", href: "/contact/" }}
     ctaSecondary={{ text: "See Plans", href: "#plans" }}
     imgSrc={hostingImage.src}
@@ -180,9 +186,9 @@ const faqs = [
   <section class="section" id="plans">
     <div class="container">
       <SectionHeader
-        eyebrow="Hosting Plans"
-        title="Simple, flat-fee hosting plans"
-        subtitle="NZ-based, WordPress-optimised, fully managed. No lock-in contracts."
+        eyebrow="Optional Hosting & Care"
+        title="Simple, flat-fee managed hosting and care"
+        subtitle="NZ-based, WordPress-optimised, fully managed. You can also host or manage your website elsewhere."
       />
       <div class="hosting-plans">
         {hostingPlans.map((plan) => (
@@ -203,7 +209,7 @@ const faqs = [
           </div>
         ))}
       </div>
-      <p class="hosting-plans-note">All plans exclude GST. No lock-in, cancel anytime with 30 days notice.</p>
+      <p class="hosting-plans-note">The plan excludes GST. No lock-in, cancel anytime with 30 days notice.</p>
     </div>
   </section>
 
@@ -301,7 +307,8 @@ const faqs = [
 
   .hosting-plans {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: minmax(0, 460px);
+    justify-content: center;
     gap: 1.5rem;
     align-items: start;
     margin-top: 2.5rem;
