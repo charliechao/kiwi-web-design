@@ -341,18 +341,6 @@ const orderedPortfolio = orderBy(portfolio, c.portfolio.first ?? [], (p) => p.ca
     </div>
   </section>
 
-  <!-- Service coverage -->
-  <section class="lp-section lp-section-dark" id="services">
-    <div class="container">
-      <p class="lp-sec-eyebrow">{c.coverage.eyebrow}</p>
-      <h2 class="lp-sec-title">{c.coverage.title.pre}<span class="lp-title-accent">{c.coverage.title.accent}</span>{c.coverage.title.post}</h2>
-      <p class="lp-coverage-intro">{c.coverage.intro}</p>
-      <ul class="lp-coverage-list">
-        {c.coverage.items.map((item) => <li>{item}</li>)}
-      </ul>
-    </div>
-  </section>
-
   <!-- Final CTA + second form -->
   <section class="lp-final">
     <span class="lp-orb lp-orb-yellow lp-orb-lg lp-orb--final" aria-hidden="true"></span>
