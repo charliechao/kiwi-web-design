@@ -22,7 +22,7 @@ const packages = [
     price: "From NZ$1,290",
     scope: "Up to 3 pages",
     desc: "For a straightforward small-business website that establishes trust and gives customers a clear way to enquire.",
-    items: ["Up to 3 core pages", "Custom, mobile-first design", "Contact form and click-to-call", "SEO foundations and analytics setup", "Handover training"],
+    items: ["Up to 3 core pages", "Custom, mobile-first design", "SEO foundations and analytics setup", "Handover training"],
     amount: "1290",
   },
   {
@@ -41,13 +41,6 @@ const packages = [
     desc: "For businesses ready to sell online with a store built around their products, customers, and fulfilment process.",
     items: ["Multi-page eCommerce website", "Up to 10 products loaded", "Payment and shipping setup", "Mobile-first product and checkout pages", "Store handover training"],
     amount: "3890",
-  },
-  {
-    name: "Custom",
-    price: "Tailored quote",
-    scope: "Multiple pages, integrations, or bespoke features",
-    desc: "For projects that need more than a standard website, such as calculators, custom workflows, complex integrations, or larger content structures.",
-    items: ["Discovery and technical scoping", "Custom design and development", "Integrations or bespoke functionality", "Clear fixed quote before build begins"],
   },
 ];
 
@@ -362,17 +355,21 @@ const hubGroups = [
     <div class="container">
       <SectionHeader
         eyebrow="Website Packages"
-        title="Clear starting prices for your next website"
-        subtitle="These packages are starting points for the scopes shown below and exclude GST. Every project is confirmed in a fixed written quote before work begins."
+        title="Three clear starting points for your next website"
+        subtitle="Choose the scope that fits today. Prices exclude GST, and every project is confirmed in a fixed written quote before work begins."
       />
       <div class="sbwd-package-grid">
         {packages.map((pkg) => (
           <article class:list={["sbwd-package", pkg.featured && "sbwd-package--featured"]}>
             {pkg.featured && <p class="sbwd-package-tag">Most popular</p>}
-            <h3>{pkg.name}</h3>
-            <p class="sbwd-package-price">{pkg.price}</p>
-            <p class="sbwd-package-gst">+ GST</p>
-            <p class="sbwd-package-scope">{pkg.scope}</p>
+            <div class="sbwd-package-heading">
+              <h3>{pkg.name}</h3>
+              <p class="sbwd-package-scope">{pkg.scope}</p>
+            </div>
+            <div class="sbwd-package-price-wrap">
+              <p class="sbwd-package-price">{pkg.price}</p>
+              <p class="sbwd-package-gst">+ GST</p>
+            </div>
             <p class="sbwd-package-desc">{pkg.desc}</p>
             <ul>
               {pkg.items.map((item) => <li>{item}</li>)}
@@ -535,28 +532,63 @@ const hubGroups = [
   .sbwd-packages { background: #fff; }
   .sbwd-package-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
     margin-top: 2.5rem;
   }
   .sbwd-package {
+    position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(44, 41, 39, 0.16);
+    min-height: 100%;
+    border: 1px solid rgba(44, 41, 39, 0.18);
     border-radius: 8px;
-    padding: 1.5rem;
-    background: #fff;
+    padding: 1.75rem;
+    overflow: hidden;
+    background: var(--kwd-cream);
+    box-shadow: 0 1px 0 rgba(44, 41, 39, 0.05);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  }
+  .sbwd-package::before {
+    position: absolute;
+    top: 0;
+    right: 1.75rem;
+    left: 1.75rem;
+    height: 4px;
+    background: var(--kwd-dark);
+    content: "";
+    opacity: 0.13;
+    transition: opacity 180ms ease, right 180ms ease, left 180ms ease;
+  }
+  .sbwd-package:hover {
+    border-color: rgba(44, 41, 39, 0.42);
+    box-shadow: 0 14px 30px rgba(44, 41, 39, 0.14);
+    transform: translateY(-6px);
+  }
+  .sbwd-package:hover::before {
+    right: 0;
+    left: 0;
+    opacity: 1;
   }
   .sbwd-package--featured {
     background: var(--kwd-dark);
     border-color: var(--kwd-dark);
     color: #fff;
+    box-shadow: 0 8px 22px rgba(44, 41, 39, 0.18);
+  }
+  .sbwd-package--featured::before {
+    background: var(--kwd-yellow);
+    opacity: 1;
+  }
+  .sbwd-package--featured:hover {
+    border-color: var(--kwd-dark);
+    box-shadow: 0 16px 34px rgba(44, 41, 39, 0.28);
   }
   .sbwd-package-tag {
     align-self: flex-start;
-    margin: 0 0 0.85rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
+    margin: 0 0 1.25rem;
+    padding: 0.3rem 0.55rem;
+    border-radius: 3px;
     background: var(--kwd-yellow);
     color: var(--kwd-dark);
     font-size: 0.68rem;
@@ -564,6 +596,10 @@ const hubGroups = [
     line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+  }
+  .sbwd-package-heading {
+    min-height: 4.3rem;
+    padding-top: 0.25rem;
   }
   .sbwd-package h3 {
     margin: 0;
@@ -573,8 +609,17 @@ const hubGroups = [
     line-height: 1.2;
   }
   .sbwd-package--featured h3 { color: #fff; }
+  .sbwd-package-price-wrap {
+    margin-top: 1.35rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(44, 41, 39, 0.14);
+    border-bottom: 1px solid rgba(44, 41, 39, 0.14);
+  }
+  .sbwd-package--featured .sbwd-package-price-wrap {
+    border-color: rgba(255,255,255,0.18);
+  }
   .sbwd-package-price {
-    margin: 1.2rem 0 0.15rem;
+    margin: 0 0 0.15rem;
     color: var(--kwd-dark);
     font-family: var(--kwd-font-heading);
     font-size: 1.6rem;
@@ -590,7 +635,7 @@ const hubGroups = [
   }
   .sbwd-package--featured .sbwd-package-gst { color: rgba(255,255,255,0.64); }
   .sbwd-package-scope {
-    margin-top: 1rem;
+    margin-top: 0.55rem;
     color: var(--kwd-dark);
     font-size: 0.85rem;
     font-weight: 700;
@@ -598,7 +643,8 @@ const hubGroups = [
   }
   .sbwd-package--featured .sbwd-package-scope { color: #fff; }
   .sbwd-package-desc {
-    margin-top: 0.75rem;
+    min-height: 5.3rem;
+    margin-top: 1.25rem;
     color: var(--kwd-brown);
     font-size: 0.86rem;
     line-height: 1.55;
@@ -608,7 +654,7 @@ const hubGroups = [
     display: grid;
     gap: 0.55rem;
     padding: 0;
-    margin: 1.25rem 0;
+    margin: 0 0 1.5rem;
     list-style: none;
   }
   .sbwd-package li {
@@ -640,8 +686,9 @@ const hubGroups = [
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
   }
-  .sbwd-package-link:hover { background: var(--kwd-cream); }
+  .sbwd-package-link:hover { background: var(--kwd-dark); color: #fff; }
   .sbwd-package--featured .sbwd-package-link {
     border-color: var(--kwd-yellow);
     background: var(--kwd-yellow);
@@ -660,6 +707,8 @@ const hubGroups = [
   }
   @media (max-width: 600px) {
     .sbwd-package-grid { grid-template-columns: 1fr; }
+    .sbwd-package-heading,
+    .sbwd-package-desc { min-height: 0; }
   }
 
   /* Industries grid */
