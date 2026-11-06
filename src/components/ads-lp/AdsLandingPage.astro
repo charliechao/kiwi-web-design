@@ -55,6 +55,11 @@ const orderedPortfolio = orderBy(portfolio, c.portfolio.first ?? [], (p) => p.ca
         <h1>{c.hero.title.pre}<span class="lp-title-accent">{c.hero.title.accent}</span>{c.hero.title.post}</h1>
         <p class="lp-lead">{c.hero.lead}</p>
 
+        <div class="lp-pricing">
+          <strong>Professional websites from NZ$1,290 + GST</strong>
+          <p>Every project receives a fixed quote based on what your business needs.</p>
+        </div>
+
         <ul class="lp-trust">
           {c.hero.trust.map(({ icon, text }) => (
             <li><span class="lp-trust-icon"><Icon name={icon} size={18} /></span> {text}</li>
@@ -923,9 +928,12 @@ const orderedPortfolio = orderBy(portfolio, c.portfolio.first ?? [], (p) => p.ca
     font-size: 1.14rem;
     color: rgba(255,255,255,0.78);
     line-height: 1.72;
-    margin-bottom: 2.25rem;
+    margin-bottom: 1.5rem;
     max-width: 520px;
   }
+  .lp-pricing { margin-bottom: 2rem; }
+  .lp-pricing strong { color: var(--kwd-amber); font-size: 1.1rem; }
+  .lp-pricing p { color: rgba(255,255,255,0.78); font-size: 0.9rem; line-height: 1.6; margin: 0.3rem 0 0; }
   .lp-trust {
     list-style: none;
     padding: 0;

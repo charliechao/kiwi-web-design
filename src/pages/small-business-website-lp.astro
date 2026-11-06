@@ -2,7 +2,7 @@
 // Google Ads landing page — noindex, excluded from sitemap (astro.config.mjs).
 // Serves the Small Business ad group: owners, often getting their first proper
 // website, who search without "Auckland" and ask about cost, ownership and where
-// to start. No prices on this page (decided 2026-09-18).
+// to start.
 // Conversion fires on /web-design-auckland-lp/thank-you/ only; form_name tells the variants apart.
 import AdsLandingPage from '../components/ads-lp/AdsLandingPage.astro';
 import type { AdsLpContent } from '../components/ads-lp/shared';
@@ -88,6 +88,7 @@ const content: AdsLpContent = {
   faq: {
     title: { pre: "Straight answers ", accent: "before you get in touch" },
     items: [
+      { q: "How much does a website cost?", a: "Professional websites start from NZ$1,290 + GST. The final price depends on your requirements, and I'll provide a fixed quote before work begins." },
       { q: "Can we work together if I'm outside Auckland?", a: "Yes. I work with businesses throughout New Zealand. We can handle the consultation, planning, design feedback and launch by phone, video call and email. You work directly with me throughout the project." },
       { q: "I'm just starting out. Where do I begin?", a: "Send me the basics: what your business does and who your customers are. On the free consultation we'll work out which pages you need, what they should say, and what you'll need to gather. You don't need anything prepared." },
       { q: "Is it a one-off cost or a monthly fee?", a: "Before any work starts you get a clear proposal with one fixed price for the build, so there are no surprise invoices. If there are ongoing costs, like your domain name or hosting, I'll explain them on the call so you know exactly what to expect." },
