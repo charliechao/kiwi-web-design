@@ -6,6 +6,8 @@ interface Props {
   eyebrow?: string;
   title?: string;
   caption?: string;
+  linkHref?: string;
+  linkLabel?: string;
   reverse?: boolean;
 }
 
@@ -16,29 +18,53 @@ const {
   eyebrow,
   title,
   caption,
+  linkHref,
+  linkLabel,
   reverse = false,
 } = Astro.props;
 ---
 
 <section class:list={['page-visual', reverse && 'page-visual--reverse']}>
   <div class="container page-visual-inner">
-    <div class="page-visual-media">
-      <img
-        src={imgSrc}
-        alt={imgAlt}
-        title={imgTitle}
-        width="1120"
-        height="720"
-        loading="lazy"
-        decoding="async"
-        class="page-visual-img"
-      />
-    </div>
+    {linkHref ? (
+      <a
+        class="page-visual-media page-visual-media-link"
+        href={linkHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={linkLabel ?? imgAlt}
+      >
+        <img
+          src={imgSrc}
+          alt={imgAlt}
+          title={imgTitle}
+          width="1120"
+          height="720"
+          loading="lazy"
+          decoding="async"
+          class="page-visual-img"
+        />
+      </a>
+    ) : (
+      <div class="page-visual-media">
+        <img
+          src={imgSrc}
+          alt={imgAlt}
+          title={imgTitle}
+          width="1120"
+          height="720"
+          loading="lazy"
+          decoding="async"
+          class="page-visual-img"
+        />
+      </div>
+    )}
     {(eyebrow || title || caption) && (
       <div class="page-visual-copy">
         {eyebrow && <p class="page-visual-eyebrow">{eyebrow}</p>}
         {title && <h2>{title}</h2>}
         {caption && <p>{caption}</p>}
+        {linkHref && linkLabel && <a class="page-visual-link" href={linkHref} target="_blank" rel="noopener noreferrer">{linkLabel}</a>}
       </div>
     )}
   </div>
@@ -82,6 +108,15 @@ const {
     pointer-events: none;
   }
 
+  .page-visual-media-link {
+    display: block;
+  }
+
+  .page-visual-media-link:focus-visible {
+    outline: 3px solid var(--kwd-yellow);
+    outline-offset: 4px;
+  }
+
   .page-visual-img {
     display: block;
     width: 100%;
@@ -120,6 +155,18 @@ const {
     line-height: 1.7;
     font-size: 0.98rem;
   }
+
+  .page-visual-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--kwd-dark);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .page-visual-link:hover { color: var(--kwd-brown); }
 
   @media (max-width: 860px) {
     .page-visual-inner,
