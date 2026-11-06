@@ -66,7 +66,6 @@ const PAGES = [
   { slug: 'monthly-subscription',                              eyebrow: 'Pricing',             template: 'service' },
   { slug: 'press-release-and-news',                            eyebrow: 'Press & News',        template: 'service' },
   { slug: 'faq',                                               eyebrow: 'Help & Support',      template: 'service' },
-  { slug: '7-best-web-design-agencies-in-auckland-2026',       eyebrow: 'Industry Guide',      template: 'service' },
 ];
 
 // ─── HTML helpers ────────────────────────────────────────────────────────────

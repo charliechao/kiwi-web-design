@@ -54,7 +54,6 @@ const SLUGS = [
   'monthly-subscription',
   'press-release-and-news',
   'faq',
-  '7-best-web-design-agencies-in-auckland-2026',
 ];
 
 const API = 'https://www.kiwiwebdesign.co.nz/wp-json/wp/v2/pages';
