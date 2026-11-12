@@ -47,6 +47,7 @@ interface Props {
   processTitle: string;
   processText: string;
   process: ServiceItem[];
+  showProcessImage?: boolean;
   pricing: {
     eyebrow: string;
     title: string;
@@ -99,6 +100,7 @@ const {
   processTitle,
   processText,
   process,
+  showProcessImage = true,
   pricing,
   faqs,
   sourceLinks = [],
@@ -206,7 +208,7 @@ const {
         <p class="eyebrow">{processEyebrow}</p>
         <h2>{processTitle}</h2>
         <p>{processText}</p>
-        <Image src={systemImage} alt={processTitle} width={760} height={520} class="process-img" loading="lazy" />
+        {showProcessImage && <Image src={systemImage} alt={processTitle} width={760} height={520} class="process-img" loading="lazy" />}
       </div>
       <div class="steps">
         {process.map((step, index) => (
