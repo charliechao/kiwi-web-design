@@ -10,6 +10,8 @@ import aucklandVideo from '../assets/general/Auckland_Video.mp4';
 import office1 from '../assets/general/office1.jpg';
 import office2 from '../assets/general/office2.jpg';
 import beautyTouchPreview from '../assets/general/beauty-salon-website-design-seo-auckland.jpg';
+import aucklandBusinessChamberMember from '../assets/general/auckland-business-chamber-member.png';
+import mtAlbertBusinessAssociation from '../assets/general/mt-albert-business-association.png';
 import Icon from '../components/Icon.astro';
 
 const schema = {
@@ -420,6 +422,38 @@ const exploreGroups = [
         <div class="hp-studio-note hp-motion-item" style="--motion-delay: 560ms;">
           <strong>Best fit:</strong> service businesses, professional firms, tradies, restaurants, clinics, and local brands that want steady enquiries, not just a nicer website.
           <a href="https://www.youtube.com/watch?v=n9BFps8DyRY" target="_blank" rel="noopener noreferrer" class="hp-studio-video-link">Watch how we work on YouTube →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hp-network-section" aria-labelledby="network-title">
+    <div class="container hp-network-layout" data-reveal>
+      <div class="hp-network-intro hp-motion-item" style="--motion-delay: 0ms;">
+        <p class="hp-network-kicker">Local Business Networks</p>
+        <h2 id="network-title">Part of Auckland's business community</h2>
+        <p>Kiwi Web Design is a member of the Auckland Business Chamber. Charlie Chao also founded the Mount Albert Business Association to help local businesses connect and grow.</p>
+      </div>
+      <div class="hp-network-marks hp-motion-item" style="--motion-delay: 140ms;">
+        <div class="hp-network-mark hp-network-mark--chamber">
+          <p class="hp-network-role">Member of</p>
+          <Image
+            src={aucklandBusinessChamberMember}
+            alt="Member of Auckland Business Chamber"
+            width={1490}
+            height={450}
+            class="hp-network-chamber-logo"
+          />
+        </div>
+        <div class="hp-network-mark hp-network-mark--maba">
+          <p class="hp-network-role">Founder of</p>
+          <Image
+            src={mtAlbertBusinessAssociation}
+            alt="Mount Albert Business Association"
+            width={390}
+            height={390}
+            class="hp-network-maba-logo"
+          />
         </div>
       </div>
     </div>
@@ -1596,6 +1630,94 @@ const exploreGroups = [
   .hp-explore-section {
     background: #181513;
     color: #fff;
+  }
+
+  .hp-network-section {
+    background: #f7f6f1;
+    border-top: 1px solid rgba(44, 41, 39, 0.1);
+    border-bottom: 1px solid rgba(44, 41, 39, 0.1);
+  }
+  .hp-network-layout {
+    display: grid;
+    grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(2.5rem, 7vw, 7rem);
+    align-items: center;
+  }
+  .hp-network-intro {
+    max-width: 31rem;
+  }
+  .hp-network-kicker,
+  .hp-network-role {
+    margin: 0;
+    color: var(--kwd-brown);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+  .hp-network-intro h2 {
+    margin: 0.8rem 0 1rem;
+    color: var(--kwd-dark);
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.65rem);
+    line-height: 1.12;
+  }
+  .hp-network-intro > p:last-child {
+    margin: 0;
+    color: var(--kwd-brown);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  .hp-network-marks {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(10rem, 0.65fr);
+    border-top: 1px solid rgba(44, 41, 39, 0.16);
+    border-bottom: 1px solid rgba(44, 41, 39, 0.16);
+  }
+  .hp-network-mark {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 13rem;
+    padding: 1.5rem clamp(1.25rem, 3vw, 2.5rem);
+  }
+  .hp-network-mark + .hp-network-mark {
+    border-left: 1px solid rgba(44, 41, 39, 0.16);
+  }
+  .hp-network-role {
+    margin-bottom: 1rem;
+  }
+  .hp-network-chamber-logo {
+    display: block;
+    width: min(100%, 27rem);
+    height: auto;
+    mix-blend-mode: multiply;
+  }
+  .hp-network-mark--maba {
+    align-items: center;
+    background: #0b0a09;
+  }
+  .hp-network-mark--maba .hp-network-role {
+    align-self: flex-start;
+    color: rgba(255, 255, 255, 0.62);
+  }
+  .hp-network-maba-logo {
+    display: block;
+    width: min(100%, 10.5rem);
+    height: auto;
+  }
+
+  @media (max-width: 860px) {
+    .hp-network-layout { grid-template-columns: 1fr; }
+    .hp-network-intro { max-width: 43rem; }
+  }
+  @media (max-width: 560px) {
+    .hp-network-marks { grid-template-columns: 1fr; }
+    .hp-network-mark { min-height: 0; }
+    .hp-network-mark + .hp-network-mark { border-top: 1px solid rgba(44, 41, 39, 0.16); border-left: 0; }
+    .hp-network-mark--maba { align-items: flex-start; }
+    .hp-network-maba-logo { width: 9rem; }
   }
 
   .hp-work-section :global(.sh-eyebrow),
