@@ -427,38 +427,6 @@ const exploreGroups = [
     </div>
   </section>
 
-  <section class="section hp-network-section" aria-labelledby="network-title">
-    <div class="container hp-network-layout" data-reveal>
-      <div class="hp-network-intro hp-motion-item" style="--motion-delay: 0ms;">
-        <p class="hp-network-kicker">Local Business Networks</p>
-        <h2 id="network-title">Part of Auckland's business community</h2>
-        <p>Kiwi Web Design is a member of the Auckland Business Chamber. Charlie Chao also founded the Mount Albert Business Association to help local businesses connect and grow.</p>
-      </div>
-      <div class="hp-network-marks hp-motion-item" style="--motion-delay: 140ms;">
-        <div class="hp-network-mark hp-network-mark--chamber">
-          <p class="hp-network-role">Member of</p>
-          <Image
-            src={aucklandBusinessChamberMember}
-            alt="Member of Auckland Business Chamber"
-            width={1490}
-            height={450}
-            class="hp-network-chamber-logo"
-          />
-        </div>
-        <div class="hp-network-mark hp-network-mark--maba">
-          <p class="hp-network-role">Founder of</p>
-          <Image
-            src={mtAlbertBusinessAssociation}
-            alt="Mount Albert Business Association"
-            width={390}
-            height={390}
-            class="hp-network-maba-logo"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="section hp-work-section" id="results">
     <div class="container hp-work-shell">
       <div class="hp-work-intro" data-reveal>
@@ -603,6 +571,48 @@ const exploreGroups = [
       ctaSecondary={{ text: 'See Our Packages', href: '/small-business-website-design-auckland/' }}
     />
   </div>
+
+  <section class="section hp-network-section" aria-labelledby="network-title">
+    <div class="container hp-network-layout" data-reveal>
+      <div class="hp-network-intro hp-motion-item" style="--motion-delay: 0ms;">
+        <p class="hp-network-kicker">Local Business Networks</p>
+        <h2 id="network-title">Part of Auckland's business community</h2>
+        <p>Kiwi Web Design is a member of the Auckland Business Chamber. <a href="/about-us/" class="hp-network-about-link">Charlie Chao</a> also founded the Mount Albert Business Association to help local businesses connect and grow.</p>
+      </div>
+      <div class="hp-network-marks hp-motion-item" style="--motion-delay: 140ms;">
+        <a
+          href="https://aucklandchamber.co.nz/"
+          class="hp-network-mark hp-network-mark--chamber"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p class="hp-network-role">Member of</p>
+          <Image
+            src={aucklandBusinessChamberMember}
+            alt="Member of Auckland Business Chamber"
+            width={1490}
+            height={450}
+            class="hp-network-chamber-logo"
+          />
+        </a>
+        <a
+          href="https://mtalbert.org.nz/about/"
+          class="hp-network-mark hp-network-mark--maba"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p class="hp-network-role">Founder of</p>
+          <Image
+            src={mtAlbertBusinessAssociation}
+            alt="Mount Albert Business Association"
+            width={390}
+            height={390}
+            class="hp-network-maba-logo"
+          />
+        </a>
+      </div>
+    </div>
+  </section>
 
   <a
     href="https://maps.app.goo.gl/7tmoFbMhrDQebSx68"
@@ -1634,8 +1644,6 @@ const exploreGroups = [
 
   .hp-network-section {
     background: #f7f6f1;
-    border-top: 1px solid rgba(44, 41, 39, 0.1);
-    border-bottom: 1px solid rgba(44, 41, 39, 0.1);
   }
   .hp-network-layout {
     display: grid;
@@ -1672,8 +1680,6 @@ const exploreGroups = [
   .hp-network-marks {
     display: grid;
     grid-template-columns: minmax(0, 1.35fr) minmax(10rem, 0.65fr);
-    border-top: 1px solid rgba(44, 41, 39, 0.16);
-    border-bottom: 1px solid rgba(44, 41, 39, 0.16);
   }
   .hp-network-mark {
     display: flex;
@@ -1681,6 +1687,16 @@ const exploreGroups = [
     justify-content: center;
     min-height: 13rem;
     padding: 1.5rem clamp(1.25rem, 3vw, 2.5rem);
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  .hp-network-mark:hover {
+    background: rgba(44, 41, 39, 0.05);
+  }
+  .hp-network-mark:focus-visible {
+    outline: 2px solid var(--kwd-dark);
+    outline-offset: -2px;
   }
   .hp-network-mark + .hp-network-mark {
     border-left: 1px solid rgba(44, 41, 39, 0.16);
@@ -1696,11 +1712,15 @@ const exploreGroups = [
   }
   .hp-network-mark--maba {
     align-items: center;
-    background: #0b0a09;
   }
   .hp-network-mark--maba .hp-network-role {
     align-self: flex-start;
-    color: rgba(255, 255, 255, 0.62);
+  }
+  .hp-network-about-link {
+    color: var(--kwd-dark);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
   }
   .hp-network-maba-logo {
     display: block;
