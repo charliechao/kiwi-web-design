@@ -17,8 +17,8 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/google-ads/",
       "url": "https://www.kiwiwebdesign.co.nz/google-ads/",
-      "name": "Google Ads Management Auckland | Google Ads for Small Business",
-      "description": "Google Ads management for Auckland small businesses. Leads in 24–72 hours. Flat-fee management, not a % of spend. Free strategy session.",
+      "name": "Affordable Google Ads Management Auckland & NZ | Kiwi Web Design",
+      "description": "Affordable Google Ads management for Auckland and New Zealand small businesses. NZ$500 setup plus NZ$500 per month, plus GST and Google ad spend.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "about": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
@@ -67,14 +67,30 @@ const schema = {
     {
       "@type": "Service",
       "@id": "https://www.kiwiwebdesign.co.nz/google-ads/#service",
-      "name": "Google Ads Management Auckland",
+      "name": "Affordable Google Ads Management Auckland & New Zealand",
       "serviceType": "Google Ads Management",
       "category": "Digital Marketing",
-      "description": "Google Ads campaign setup and ongoing management for Auckland small businesses. Search, local service, remarketing, shopping, and conversion tracking. Flat-fee management, not a percentage of ad spend.",
+      "description": "Google Ads campaign setup and ongoing management for Auckland and New Zealand small businesses. NZ$500 setup plus NZ$500 per month, plus GST and Google ad spend. Flat-fee management, not a percentage of ad spend.",
       "provider": { "@id": "https://www.kiwiwebdesign.co.nz/#organization" },
       "areaServed": [
         { "@type": "City", "name": "Auckland" },
         { "@type": "Country", "name": "New Zealand" }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Google Ads campaign setup",
+          "price": "500",
+          "priceCurrency": "NZD",
+          "description": "One-off campaign setup. GST and Google ad spend are additional."
+        },
+        {
+          "@type": "Offer",
+          "name": "Google Ads ongoing management",
+          "price": "500",
+          "priceCurrency": "NZD",
+          "description": "Monthly campaign management. GST and Google ad spend are additional."
+        }
       ],
       "url": "https://www.kiwiwebdesign.co.nz/google-ads/"
     },
@@ -83,23 +99,28 @@ const schema = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How quickly can Google Ads start generating leads?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Typically within 24–72 hours of a campaign going live. This is one of the key advantages of Google Ads over SEO, you can start generating enquiries immediately once your ads are approved and running." }
+          "name": "How quickly can Google Ads go live?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most campaigns can be ready to launch within five business days of receiving the information and access we need. Google must approve ads before they run, and the timing of first enquiries depends on search demand, budget, competition and the landing page." }
         },
         {
           "@type": "Question",
-          "name": "How much does Google Ads management cost in Auckland?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Kiwi Web Design charges a flat monthly management fee, separate from your ad spend budget, no percentage-of-spend model. There's no published price list, we scope the management fee and recommended ad spend to your goals and competition after a free audit." }
+          "name": "How much does Google Ads management cost?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Google Ads setup is NZ$500 plus GST, followed by NZ$500 plus GST per month for ongoing management. Google advertising spend is separate and paid directly to Google. We charge a flat fee, not a percentage of your ad spend." }
         },
         {
           "@type": "Question",
-          "name": "What ad spend budget do I need for Google Ads in Auckland?",
+          "name": "Is Google ad spend included in the management fee?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The NZ$500 setup fee and NZ$500 monthly management fee cover our work. Your Google advertising budget is separate, is paid directly to Google, and depends on your industry, location and competition." }
+        },
+        {
+          "@type": "Question",
+          "name": "What ad spend budget do I need for Google Ads?",
           "acceptedAnswer": { "@type": "Answer", "text": "It depends on your industry and competition. Highly competitive industries like legal or trades typically need a bigger budget than lower-competition niches. We provide honest upfront estimates of what's needed to compete in your specific market during a free audit." }
         },
         {
           "@type": "Question",
           "name": "Should I run Google Ads or focus on SEO?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Both serve different purposes. Google Ads delivers immediate leads but requires ongoing spend. SEO takes longer but earns free traffic that compounds over time. For most growing Auckland businesses, we recommend both, Ads first for quick wins while SEO builds. Pairing Ads with well-built conversion landing pages also significantly improves your cost per lead." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Both serve different purposes. Google Ads can generate traffic as soon as your ads are approved and running, but requires ongoing spend. SEO takes longer but earns free traffic that compounds over time. For many Auckland and New Zealand small businesses, a mix of both can be useful. Pairing Ads with well-built conversion landing pages can also improve lead quality." }
         },
         {
           "@type": "Question",
@@ -109,7 +130,12 @@ const schema = {
         {
           "@type": "Question",
           "name": "Do you charge a percentage of ad spend?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. Kiwi Web Design charges a flat monthly management fee rather than a percentage of your ad spend. This means our incentive is to maximise your results, not to encourage you to spend more on ads. We'll confirm exact setup and management fees during your free audit." }
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Kiwi Web Design charges a flat fee: NZ$500 plus GST for setup and NZ$500 plus GST per month for ongoing management. Google ad spend is separate. This means our fee does not increase when you increase your advertising budget." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with small businesses outside Auckland?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Kiwi Web Design is based in Grey Lynn, Auckland, and manages Google Ads for small businesses across New Zealand. Auckland clients can meet in person, while nationwide clients can work with us online." }
         }
       ]
     }
@@ -163,8 +189,8 @@ const whyUs = [
   },
   {
     icon: "📍",
-    title: "Built for Auckland Businesses",
-    desc: "Local market knowledge means your campaigns target the right Auckland suburbs and regions. No generic national templates, every campaign is built for your specific audience.",
+    title: "Auckland-based. New Zealand-wide.",
+    desc: "We bring local Auckland knowledge and manage campaigns for small businesses throughout New Zealand. Every campaign is built around your specific audience, location and goals.",
   },
   {
     icon: "🔎",
@@ -173,8 +199,8 @@ const whyUs = [
   },
   {
     icon: "🏁",
-    title: "Fast Setup, Results Fast",
-    desc: "Unlike SEO, Google Ads can generate leads within days of going live. We set up campaigns quickly and correctly so you don't wait months for results.",
+    title: "Fast Setup, Clear Next Steps",
+    desc: "Most campaigns can be ready to launch within five business days of receiving the information and access we need. Once live, results depend on demand, budget, competition and your landing page.",
   },
 ];
 
@@ -214,27 +240,29 @@ const clientMessages = [
 const recentBookings = ["Orewa — booked", "Silverdale", "Rosedale", "Glenfield — booked", "Birkenhead", "Silverdale"];
 
 const faqs = [
-  { q: "How quickly can Google Ads start generating leads?", a: "Typically within 24–72 hours of a campaign going live. This is one of the key advantages of Google Ads over SEO, you can start generating enquiries immediately once your ads are approved and running." },
-  { q: "How much does Google Ads management cost?", a: "Our management fee is a flat monthly rate on top of your ad spend, no published price list. The total cost depends on your budget and campaign complexity, and we'll confirm exact fees during your free audit." },
+  { q: "How quickly can Google Ads go live?", a: "Most campaigns can be ready to launch within five business days of receiving the information and access we need. Google must approve ads before they run, and the timing of first enquiries depends on search demand, budget, competition and the landing page." },
+  { q: "How much does Google Ads management cost?", a: "Google Ads setup is <strong>NZ$500 + GST</strong>, followed by <strong>NZ$500 + GST per month</strong> for ongoing management. Google advertising spend is separate and paid directly to Google. We charge a flat fee, not a percentage of your ad spend." },
+  { q: "Is Google ad spend included in the management fee?", a: "No. The NZ$500 setup fee and NZ$500 monthly management fee cover our work. Your Google advertising budget is separate, is paid directly to Google, and depends on your industry, location and competition." },
   { q: "What ad spend budget do I need?", a: "It depends on your industry and competition. Highly competitive industries like legal or trades typically need more than lower-competition niches. We'll be honest with you upfront about what budget is needed to compete in your market. Use our <a href=\"/google-ads-budget-calculator-nz/\">free Google Ads budget calculator</a> to estimate your CPC, click volume, and cost per lead." },
-  { q: "Should I run Google Ads or focus on SEO?", a: "Both serve different purposes. Google Ads delivers immediate leads but requires ongoing spend. <a href=\"/affordable-seo-auckland/\">SEO services</a> take longer but earn free traffic that compounds over time. For most growing Auckland businesses, we recommend both, Ads first for quick wins while SEO builds. Pairing Ads with well-built <a href=\"/landing-pages-funnels-on-wordpress/\">conversion landing pages</a> also significantly improves your cost per lead." },
+  { q: "Should I run Google Ads or focus on SEO?", a: "Both serve different purposes. Google Ads can generate traffic as soon as your ads are approved and running, but requires ongoing spend. <a href=\"/affordable-seo-auckland/\">SEO services</a> take longer but earn free traffic that compounds over time. For many Auckland and New Zealand small businesses, a mix of both can be useful. Pairing Ads with well-built <a href=\"/landing-pages-funnels-on-wordpress/\">conversion landing pages</a> can also improve lead quality." },
   { q: "Can you take over my existing Google Ads account?", a: "Yes. We can audit and take over management of your existing campaigns, or we can set up a fresh account if you're starting from scratch. Either way, we'll start with an audit to understand what's working and what isn't." },
-  { q: "What's your management fee structure?", a: "We charge a flat monthly management fee rather than a percentage of spend. This means our incentive is to maximise your results, not to encourage you to spend more on ads. We'll confirm exact setup and management fees during your free audit." },
+  { q: "What's your management fee structure?", a: "We charge a flat fee: NZ$500 + GST for setup and NZ$500 + GST per month for ongoing management. Google ad spend is separate. This means our fee does not increase when you increase your advertising budget." },
+  { q: "Do you work with small businesses outside Auckland?", a: "Yes. Kiwi Web Design is based in Grey Lynn, Auckland, and manages Google Ads for small businesses across New Zealand. Auckland clients can meet in person, while nationwide clients can work with us online." },
 ];
 ---
 
 <Layout
-  title="Google Ads Management Auckland | Google Ads for Small Business"
-  description="Google Ads management for Auckland small businesses. Leads in 24–72 hours. Flat-fee management, not a % of spend. Free strategy session. Call 021 039 6580."
+  title="Affordable Google Ads Management Auckland & NZ | Kiwi Web Design"
+  description="Affordable Google Ads management for Auckland and New Zealand small businesses. NZ$500 setup + NZ$500/month, plus GST and Google ad spend."
   canonicalURL="https://www.kiwiwebdesign.co.nz/google-ads/"
   schema={schema}
   alternateUrl="https://www.kiwiwebdesign.co.nz/zh/google-ads/"
 >
 
   <PageHero
-    eyebrow="Google Ads Auckland"
-    title="Get more leads this week with Google Ads in Auckland"
-    subtitle="Targeted Google Ads campaigns for Auckland small businesses. We set up, manage, and optimise campaigns that send high-intent traffic to pages built to convert."
+    eyebrow="Affordable Google Ads | Auckland & NZ"
+    title="Affordable Google Ads for Auckland and New Zealand small businesses"
+    subtitle="NZ$500 + GST setup and NZ$500 + GST per month for ongoing management. We build and manage targeted campaigns, while your Google ad spend stays separate and under your control."
     badgeText="Free Ads strategy session"
     ctaPrimary={{ text: "Get a Free Ads Audit", href: "/contact/" }}
     ctaSecondary={{ text: "See Real Results", href: "#results" }}
@@ -244,7 +272,7 @@ const faqs = [
   <!-- AI citability snippet -->
   <div class="ga-snippet">
     <div class="container">
-      <p><strong>Kiwi Web Design</strong> manages Google Ads campaigns for Auckland small businesses on a flat-fee basis, not a percentage of ad spend. Services cover search campaigns, local service ads, remarketing, shopping ads, and conversion tracking. Most campaigns generate leads within <strong>24–72 hours</strong> of going live. Based in Grey Lynn, Auckland, 5★ Google ratings.</p>
+      <p><strong>Kiwi Web Design</strong> manages Google Ads for Auckland and New Zealand small businesses with transparent flat-fee pricing: <strong>NZ$500 + GST</strong> for campaign setup and <strong>NZ$500 + GST per month</strong> for ongoing management. Google ad spend is separate and paid directly to Google. We are based in Grey Lynn, Auckland, with in-person consultations available locally and online support nationwide.</p>
     </div>
   </div>
 
@@ -253,8 +281,8 @@ const faqs = [
     <div class="container">
       <SectionHeader
         eyebrow="Why Google Ads"
-        title="The fastest way to generate leads in Auckland"
-        subtitle="Google Ads puts your business at the top of search results at the exact moment your customers are looking, and you only pay when they click."
+        title="A practical way to reach ready-to-buy customers"
+        subtitle="Google Ads can put your business in front of people searching for what you offer in Auckland or anywhere else in New Zealand. You choose the ad budget and only pay Google when someone clicks."
       />
       <ServiceGrid items={whyUs} cols={2} />
     </div>
@@ -301,7 +329,7 @@ const faqs = [
 
   <!-- Team photo band -->
   <section class="ga-team-band">
-    <Image src={about3Img} alt="Kiwi Web Design team managing Google Ads campaigns for Auckland businesses" width={1600} height={640} class="ga-team-band-img" />
+    <Image src={about3Img} alt="Kiwi Web Design team managing Google Ads campaigns for Auckland and New Zealand small businesses" width={1600} height={640} class="ga-team-band-img" />
     <div class="ga-team-band-overlay">
       <div class="container">
         <p class="ga-band-eyebrow">The team behind your campaigns</p>
@@ -317,30 +345,33 @@ const faqs = [
       <div class="ga-pricing-card">
         <div class="ga-pricing-left">
           <p class="ga-pricing-eyebrow">How We Charge</p>
-          <h2 class="ga-pricing-title">Straightforward, flat-fee management</h2>
-          <p class="ga-pricing-desc">We charge a flat monthly management fee, not a percentage of your ad spend. That means our incentive is always to maximise your results, not your spend.</p>
+          <h2 class="ga-pricing-title">Straightforward pricing for small businesses</h2>
+          <p class="ga-pricing-desc">You pay a flat fee for our work, not a percentage of your ad spend. Google advertising spend is separate and paid directly to Google, so you stay in control of the budget.</p>
           <div class="ga-pricing-tiers">
             <div class="ga-tier">
-              <span class="ga-tier-price">Flat Fee</span>
-              <span class="ga-tier-label">Not a % of ad spend</span>
+              <span class="ga-tier-price">NZ$500 + GST</span>
+              <span class="ga-tier-label">One-off campaign setup</span>
             </div>
             <div class="ga-tier">
-              <span class="ga-tier-price">Setup + Monthly</span>
-              <span class="ga-tier-label">One clear invoice, quoted upfront</span>
+              <span class="ga-tier-price">NZ$500 + GST/mo</span>
+              <span class="ga-tier-label">Ongoing management</span>
             </div>
             <div class="ga-tier">
-              <span class="ga-tier-price">24–72 hrs</span>
-              <span class="ga-tier-label">Typical time to first leads</span>
+              <span class="ga-tier-price">Ad spend separate</span>
+              <span class="ga-tier-label">Paid directly to Google</span>
             </div>
           </div>
         </div>
         <div class="ga-pricing-right">
-          <h3>What's included in management:</h3>
+          <h3>Setup includes:</h3>
           <ul>
             <li>Keyword research & campaign structure</li>
             <li>Ad copywriting & creative</li>
-            <li>Landing page recommendations</li>
             <li>Conversion tracking setup</li>
+            <li>Landing page recommendations</li>
+          </ul>
+          <h3 class="ga-pricing-subhead">Ongoing management includes:</h3>
+          <ul>
             <li>Negative keyword management</li>
             <li>Bid optimisation</li>
             <li>Monthly performance report</li>
@@ -402,12 +433,12 @@ const faqs = [
     <div class="container">
       <div class="ga-consult-split">
         <div class="ga-consult-img-wrap">
-          <Image src={about4Img} alt="Free Google Ads strategy session with an Auckland small business" width={760} height={520} class="ga-consult-img" />
+          <Image src={about4Img} alt="Free Google Ads strategy session with an Auckland small business owner" width={760} height={520} class="ga-consult-img" />
         </div>
         <div class="ga-consult-content">
           <p class="ga-consult-eyebrow">Free Strategy Session</p>
           <h2 class="ga-consult-title">We start with a plan, not a pitch</h2>
-          <p class="ga-consult-desc">Every Google Ads engagement starts with a free audit and strategy session. We map out your market, estimate your cost-per-lead, and give you honest advice, even if Google Ads isn't the right fit for you yet.</p>
+          <p class="ga-consult-desc">Every Google Ads engagement starts with a free audit and strategy session. We map out your market, estimate your cost per lead, and give you honest advice, including whether Google Ads is the right fit for you yet. Auckland clients can meet in person; small businesses throughout New Zealand can work with us online.</p>
           <ul class="ga-consult-list">
             <li>Competitor ad analysis included</li>
             <li>Realistic budget and CPA estimates</li>
@@ -422,7 +453,7 @@ const faqs = [
   <!-- FAQ -->
   <section class="section">
     <div class="container" style="max-width: 860px;">
-      <FAQAccordion items={faqs} title="Google Ads Questions Answered" subtitle="Common questions from Auckland businesses about running Google Ads." />
+      <FAQAccordion items={faqs} title="Google Ads Questions Answered" subtitle="Common questions from Auckland and New Zealand small businesses about pricing, ad spend and management." />
     </div>
   </section>
 
@@ -470,8 +501,8 @@ const faqs = [
 
   <CTABanner
     variant="yellow"
-    title="Ready to get more leads this week?"
-    subtitle="Free Ads audit, we'll map your market and estimate your cost-per-lead. Call 021 039 6580 or book online."
+    title="Ready for clearer Google Ads pricing?"
+    subtitle="NZ$500 + GST setup and NZ$500 + GST per month for ongoing management, plus your separate Google ad spend. Book a free audit online or call 021 039 6580."
     ctaPrimary={{ text: "Get a Free Ads Audit", href: "/contact/" }}
     ctaSecondary={{ text: "Learn About SEO Too", href: "/affordable-seo-auckland/" }}
   />
@@ -522,6 +553,7 @@ const faqs = [
   .ga-tier-price { font-family: var(--kwd-font-heading); font-size: 1.6rem; color: var(--kwd-yellow); }
   .ga-tier-label { font-size: 0.8rem; color: rgba(255,255,255,0.55); }
   .ga-pricing-right h3 { font-family: var(--kwd-font-body); font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .ga-pricing-right .ga-pricing-subhead { margin-top: 1.5rem; }
   .ga-pricing-right ul { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 0.5rem; }
   .ga-pricing-right li { font-size: 0.875rem; color: rgba(255,255,255,0.72); padding-left: 1.25rem; position: relative; }
   .ga-pricing-right li::before { content: "✓"; position: absolute; left: 0; color: var(--kwd-yellow); font-weight: 700; }
