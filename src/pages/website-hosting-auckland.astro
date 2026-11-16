@@ -14,8 +14,8 @@ const schema = {
       "@type": "WebPage",
       "@id": "https://www.kiwiwebdesign.co.nz/website-hosting-auckland/",
       "url": "https://www.kiwiwebdesign.co.nz/website-hosting-auckland/",
-      "name": "Website Hosting Auckland | Managed WordPress Hosting NZ",
-      "description": "Fast, secure, managed website hosting for Auckland small businesses. Daily backups, SSL, performance tuning & local support. Get reliable hosting today.",
+      "name": "Website Hosting Auckland | Managed WordPress Hosting",
+      "description": "Fast, secure, managed website hosting for Auckland small businesses. Daily backups, SSL, performance tuning and direct support. Get reliable hosting today.",
       "inLanguage": "en-NZ",
       "isPartOf": { "@id": "https://www.kiwiwebdesign.co.nz/#website" },
       "breadcrumb": { "@id": "https://www.kiwiwebdesign.co.nz/website-hosting-auckland/#breadcrumb" }
@@ -62,7 +62,7 @@ const hostingPlans = [
     note: "+ GST",
     desc: "Optional managed hosting plus WordPress maintenance, security, monitoring, and 30 minutes of content changes each month.",
     items: [
-      "NZ-based server",
+      "Managed WordPress environment",
       "SSL certificate included",
       "Daily backups (30-day)",
       "Uptime monitoring",
@@ -73,7 +73,6 @@ const hostingPlans = [
       "Priority support",
       "Monthly status report",
       "30 minutes content changes/mo",
-      "Google Analytics summary",
       "Same-day support response",
       "Staging environment",
       "Quarterly performance review",
@@ -86,10 +85,10 @@ const hostingPlans = [
 
 const features = [
   {
-    icon: "🇳🇿",
-    title: "NZ-Based Servers",
-    desc: "Your site is hosted on servers in New Zealand, giving NZ visitors faster load times than overseas hosting providers.",
-    items: ["Local NZ servers", "Low latency for NZ traffic", "GDPR & NZ Privacy Act aligned", "NZ support hours"],
+    icon: "🖥️",
+    title: "Managed Hosting Environment",
+    desc: "Your site runs in a managed WordPress environment configured for dependable performance, security, and ongoing support.",
+    items: ["Managed server configuration", "Performance monitoring", "WordPress optimisation", "Support during business hours"],
   },
   {
     icon: "⚡",
@@ -117,19 +116,19 @@ const features = [
   },
   {
     icon: "🛎️",
-    title: "Local Support",
-    desc: "You're dealing with Charlie in Auckland, not an overseas helpdesk. Fast, personal support from someone who knows your site.",
-    items: ["Auckland-based support", "Email & phone support", "Priority for managed clients", "No ticket system"],
+    title: "Direct Support",
+    desc: "You'll deal with Charlie directly for fast, personal support from someone who knows your site.",
+    items: ["Email & phone support", "Priority for managed clients", "No ticket system", "Support from someone familiar with your website"],
   },
 ];
 
 const reasons = [
-  { icon: "❌", label: "Cheap hosting (Godaddy, HostGator, etc.)", issues: ["Overseas servers, slow NZ load times", "Shared resources with thousands of sites", "No WordPress optimisation", "Minimal support when things go wrong"] },
-  { icon: "✅", label: "Kiwi Web Design managed hosting", issues: ["NZ-based servers", "Isolated, optimised environment", "WordPress-specific stack", "Local support that knows your site"] },
+  { icon: "❌", label: "Cheap hosting (Godaddy, HostGator, etc.)", issues: ["Shared resources with thousands of sites", "Inconsistent performance", "No WordPress optimisation", "Minimal support when things go wrong"] },
+  { icon: "✅", label: "Kiwi Web Design managed hosting", issues: ["Managed hosting environment", "Isolated, optimised environment", "WordPress-specific stack", "Direct support from someone who knows your site"] },
 ];
 
 const faqs = [
-  { q: "Why not just use a cheap hosting provider?", a: "Cheap hosting (like GoDaddy, HostGator, or Bluehost) puts your site on shared servers with thousands of other sites, often overseas. You get slow NZ load times, no real support, and no WordPress optimisation. The $5–$15/month you save costs you in lost leads from a slow, insecure site. Pair fast hosting with a <a href=\"/monthly-subscription/\">WordPress maintenance plan</a> for complete peace of mind." },
+  { q: "Why not just use a cheap hosting provider?", a: "Cheap hosting (like GoDaddy, HostGator, or Bluehost) can put your site on shared servers with thousands of other sites. That can mean inconsistent performance, limited support, and no WordPress optimisation. The $5–$15/month you save can cost you in lost leads from a slow, insecure site. Pair fast hosting with a <a href=\"/monthly-subscription/\">WordPress maintenance plan</a> for complete peace of mind." },
   { q: "Do I have to host my website with Kiwi Web Design?", a: "No. This is an optional plan. You are welcome to host or manage your website elsewhere; we will explain the practical options during your project." },
   { q: "Do you host non-WordPress sites?", a: "Our managed hosting is optimised for <a href=\"/wordpress-website-design-auckland/\">WordPress</a>. For other technologies (static sites, custom apps), get in touch and we'll advise on the right hosting solution." },
   { q: "Can I migrate from my current host?", a: "Yes. We handle full WordPress migrations, files, databases, and DNS updates. We run the new site in parallel before cutting over to ensure zero downtime." },
@@ -140,16 +139,16 @@ const faqs = [
 ---
 
 <Layout
-  title="Website Hosting Auckland | Managed WordPress Hosting NZ"
-  description="Fast, secure, managed website hosting for Auckland small businesses. Daily backups, SSL, performance tuning & local support. Get reliable hosting today."
+  title="Website Hosting Auckland | Managed WordPress Hosting"
+  description="Fast, secure, managed website hosting for Auckland small businesses. Daily backups, SSL, performance tuning and direct support. Get reliable hosting today."
   canonicalURL="https://www.kiwiwebdesign.co.nz/website-hosting-auckland/"
   schema={schema}
 >
 
   <PageHero
     eyebrow="Website Hosting Auckland"
-    title="Fast, NZ-based hosting managed by people who know your site"
-    subtitle="Managed WordPress hosting for Auckland small businesses. NZ servers, daily backups, SSL, security, and support from a local team, not an overseas helpdesk."
+    title="Fast, managed hosting by people who know your site"
+    subtitle="Managed WordPress hosting for Auckland small businesses. Daily backups, SSL, security, and direct support from a team that knows your website."
     badgeText="NZ$59/month + GST"
     ctaPrimary={{ text: "Get a Hosting Plan", href: "/contact/" }}
     ctaSecondary={{ text: "See Plans", href: "#plans" }}
@@ -164,7 +163,7 @@ const faqs = [
       <SectionHeader
         eyebrow="Why It Matters"
         title="Cheap hosting costs you more than you save"
-        subtitle="The difference between managed NZ hosting and a $10/month shared plan isn't just speed, it's customer experience, security, and lost leads."
+        subtitle="The difference between managed hosting and a $10/month shared plan isn't just speed, it's customer experience, security, and lost leads."
       />
       <div class="hosting-compare">
         {reasons.map(({ icon, label, issues }) => (
@@ -188,7 +187,7 @@ const faqs = [
       <SectionHeader
         eyebrow="Optional Hosting & Care"
         title="Simple, flat-fee managed hosting and care"
-        subtitle="NZ-based, WordPress-optimised, fully managed. You can also host or manage your website elsewhere."
+        subtitle="WordPress-optimised and fully managed. You can also host or manage your website elsewhere."
       />
       <div class="hosting-plans">
         {hostingPlans.map((plan) => (
@@ -231,7 +230,7 @@ const faqs = [
       <FAQAccordion
         items={faqs}
         title="Hosting Questions Answered"
-        subtitle="Common questions about moving to managed NZ hosting."
+        subtitle="Common questions about moving to managed hosting."
       />
     </div>
   </section>
@@ -252,7 +251,7 @@ const faqs = [
 
   <CTABanner
     variant="yellow"
-    title="Ready to move to fast, managed NZ hosting?"
+    title="Ready to move to fast, managed hosting?"
     subtitle="Free migration, we'll move your site over and have it running faster in 48 hours."
     ctaPrimary={{ text: "Get a Hosting Plan", href: "/contact/" }}
     ctaSecondary={{ text: "See Maintenance Plans", href: "/monthly-subscription/" }}
