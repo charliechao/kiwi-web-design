@@ -9,6 +9,8 @@ import FAQAccordion from '../components/FAQAccordion.astro';
 import { Image } from 'astro:assets';
 import about3Img from '../assets/general/about3.jpg';
 import about4Img from '../assets/general/about4.jpg';
+import northShoreFurnitureAdsImg from '../assets/general/google-ads-north-shore-furniture-assembly.png';
+import potholeFixingAdsImg from '../assets/general/google-ads-pothole-fixing-auckland.png';
 
 const schema = {
   "@context": "https://schema.org",
@@ -222,23 +224,6 @@ const industries = [
   "Automotive & mechanical",
 ];
 
-// Live campaign we run for a North Shore furniture assembly business (anonymised).
-// Google Ads dashboard, 30-day period (Jun 23 – Jul 22 2026).
-const resultMetrics = [
-  { num: "16.67%", label: "Conversion rate", color: "#6ba4f8" },
-  { num: "$28.11", label: "Cost per conversion", color: "#f26a5f" },
-  { num: "10.83%", label: "Click-through rate", color: "#fbbc05" },
-  { num: "12", label: "Conversions in 30 days", color: "#5bbd7a" },
-];
-
-// The client's own words (recreated as chat bubbles, anonymised).
-const clientMessages = [
-  "I got around 7 requests last week. 5 were from WhatsApp, 2 from SMS.",
-  "I had 4 jobs booked from the 8th to the 21st of June. WhatsApp and SMS for this period gave me 14 requests.",
-];
-
-const recentBookings = ["Orewa — booked", "Silverdale", "Rosedale", "Glenfield — booked", "Birkenhead", "Silverdale"];
-
 const faqs = [
   { q: "How quickly can Google Ads go live?", a: "Most campaigns can be ready to launch within five business days of receiving the information and access we need. Google must approve ads before they run, and the timing of first enquiries depends on search demand, budget, competition and the landing page." },
   { q: "How much does Google Ads management cost?", a: "Google Ads setup is <strong>NZ$500 + GST</strong>, followed by <strong>NZ$500 + GST per month</strong> for ongoing management. Google advertising spend is separate and paid directly to Google. We charge a flat fee, not a percentage of your ad spend." },
@@ -383,48 +368,40 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Real results proof -->
+  <!-- Real Google Ads results -->
   <section class="section ga-results" id="results">
     <div class="container">
       <SectionHeader
-        eyebrow="Real Results"
-        title="A live Google Ads campaign, real booked jobs"
+        eyebrow="Real Small Business Results"
+        title="Smart Google Ads budgets. Real small-business results."
         light={true}
-        subtitle="Here's a campaign we currently run for a North Shore furniture assembly business. Same ad budget as before we took over, but now the enquiries come in almost every week."
+        subtitle="These are active Google Ads campaigns for small businesses just like yours. With focused targeting and practical daily budgets, the goal is to make every advertising dollar work harder."
       />
 
-      <div class="ga-metrics">
-        {resultMetrics.map(({ num, label, color }) => (
-          <div class="ga-metric">
-            <span class="ga-metric-num" style={`color: ${color};`}>{num}</span>
-            <span class="ga-metric-lbl">{label}</span>
+      <div class="ga-results-grid">
+        <article class="ga-result-card">
+          <div class="ga-result-image-wrap">
+            <Image src={northShoreFurnitureAdsImg} alt="Google Ads dashboard for North Shore Furniture Assembly showing 12 conversions, 69 clicks and NZ$320 spend" width={1016} height={568} format="webp" quality={85} loading="lazy" class="ga-result-image" />
           </div>
-        ))}
-      </div>
-      <p class="ga-metrics-note">Live Google Ads account, 30-day period (June–July 2026).</p>
-
-      <div class="ga-proof-grid">
-        <div class="ga-chat">
-          <p class="ga-chat-head">In the client's words</p>
-          {clientMessages.map((msg) => (
-            <div class="ga-bubble"><p>{msg}</p></div>
-          ))}
-          <div class="ga-bubble ga-bubble-list">
-            <p class="ga-bubble-list-title">Recent bookings:</p>
-            <ul>
-              {recentBookings.map((b) => (<li>{b}</li>))}
-            </ul>
+          <div class="ga-result-body">
+            <p class="ga-result-label">North Shore Furniture Assembly</p>
+            <h3>12 recorded conversions on a NZ$12/day budget</h3>
+            <p>Over this 30-day dashboard period, the campaign recorded 12 conversions from 69 clicks with NZ$320 spent. A focused budget, clear search intent and conversion tracking made the activity measurable.</p>
           </div>
-          <p class="ga-chat-foot">Messages from a North Shore furniture assembly business we manage Google Ads for. Business name withheld for privacy.</p>
-        </div>
+        </article>
 
-        <div class="ga-proof-context">
-          <h3>From wasted spend to enquiries every week</h3>
-          <p>Before we took over, this account was burning through its budget with almost nothing to show for it. We rebuilt the campaign around high-intent local searches, added proper negative keywords, and installed real conversion tracking.</p>
-          <p>Now the same monthly budget delivers a steady stream of enquiries at around <strong>$28 per lead</strong>, and the owner books furniture-assembly jobs right across the North Shore.</p>
-          <a href="/contact/" class="ga-proof-cta">Get a Free Ads Audit →</a>
-        </div>
+        <article class="ga-result-card">
+          <div class="ga-result-image-wrap">
+            <Image src={potholeFixingAdsImg} alt="Google Ads dashboard for an Auckland pothole fixing company showing 102 clicks, 1.35 thousand impressions and NZ$601 spend" width={1016} height={568} format="webp" quality={85} loading="lazy" class="ga-result-image" />
+          </div>
+          <div class="ga-result-body">
+            <p class="ga-result-label">Pothole Fixing Company, Auckland</p>
+            <h3>102 clicks on a NZ$30/day budget</h3>
+            <p>This active campaign generated 1.35K impressions and 102 clicks at an average CPC of NZ$5.89. It shows how a specialist local service can build visibility on a sensible daily budget.</p>
+          </div>
+        </article>
       </div>
+      <p class="ga-results-note">Google Ads dashboard screenshots from active client campaigns. Results vary with market demand, competition, budgets, offers and landing-page quality.</p>
     </div>
   </section>
 
@@ -618,130 +595,63 @@ const faqs = [
 
   /* Real results proof */
   .ga-results { background: var(--kwd-dark); }
-  .ga-metrics {
+  .ga-results-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
     margin-top: 2.5rem;
   }
-  .ga-metric {
+  .ga-result-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 14px;
-    padding: 1.75rem 1.5rem;
-    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
   }
-  .ga-metric-num {
-    font-family: var(--kwd-font-heading);
-    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-    line-height: 1;
+  .ga-result-image-wrap {
+    background: #fff;
+    padding: 0.5rem;
   }
-  .ga-metric-lbl {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.4;
+  .ga-result-image {
+    display: block;
+    width: 100%;
+    height: auto;
   }
-  .ga-metrics-note {
-    text-align: center;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.45);
-    margin-top: 1rem;
+  .ga-result-body {
+    padding: 1.5rem;
   }
-  .ga-proof-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3.5rem;
-    margin-top: 3.5rem;
-    align-items: start;
-  }
-  .ga-chat { display: flex; flex-direction: column; gap: 0.9rem; }
-  .ga-chat-head {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
+  .ga-result-label {
+    margin: 0 0 0.65rem;
     color: var(--kwd-yellow);
-    margin: 0 0 0.35rem;
-  }
-  .ga-bubble {
-    background: #f4f2e9;
-    border-radius: 4px 16px 16px 16px;
-    padding: 0.9rem 1.15rem;
-    max-width: 94%;
-    align-self: flex-start;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  }
-  .ga-bubble p { margin: 0; font-size: 0.9rem; color: var(--kwd-dark); line-height: 1.55; }
-  .ga-bubble-list-title { font-weight: 700; margin-bottom: 0.5rem !important; }
-  .ga-bubble-list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.3rem 1rem;
-  }
-  .ga-bubble-list li {
-    font-size: 0.85rem;
-    color: var(--kwd-brown);
-    position: relative;
-    padding-left: 1.15rem;
-    line-height: 1.4;
-  }
-  .ga-bubble-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #4caf67;
+    font-size: 0.75rem;
     font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
-  .ga-chat-foot {
+  .ga-result-body h3 {
+    color: #fff;
+    font-family: var(--kwd-font-heading);
+    font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+    line-height: 1.2;
+    margin: 0 0 0.8rem;
+  }
+  .ga-result-body p:not(.ga-result-label) {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .ga-results-note {
+    margin: 1.25rem auto 0;
+    max-width: 800px;
+    text-align: center;
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.42);
-    margin: 0.4rem 0 0;
-    font-style: italic;
     line-height: 1.5;
   }
-  .ga-proof-context { padding-top: 2.5rem; }
-  .ga-proof-context h3 {
-    font-family: var(--kwd-font-heading);
-    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-    color: #fff;
-    margin: 0 0 1rem;
-    line-height: 1.2;
-  }
-  .ga-proof-context p {
-    font-size: 0.92rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.75;
-    margin: 0 0 1rem;
-  }
-  .ga-proof-context strong { color: var(--kwd-yellow); }
-  .ga-proof-cta {
-    display: inline-block;
-    margin-top: 0.75rem;
-    background: var(--kwd-yellow);
-    color: var(--kwd-dark);
-    padding: 0.8rem 1.6rem;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  .ga-proof-cta:hover { background: var(--kwd-gold); }
   @media (max-width: 900px) {
-    .ga-metrics { grid-template-columns: repeat(2, 1fr); }
-    .ga-proof-grid { grid-template-columns: 1fr; gap: 2.25rem; }
-    .ga-proof-context { padding-top: 0; }
-  }
-  @media (max-width: 580px) {
-    .ga-bubble-list ul { grid-template-columns: 1fr; }
+    .ga-results-grid { grid-template-columns: 1fr; }
   }
 
   /* Consultation split section */
