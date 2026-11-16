@@ -788,7 +788,11 @@ const hubGroups = [
     letter-spacing: 0.08em;
     padding: 0.5rem 1.25rem;
     border-radius: 100px;
-    white-space: nowrap;
+    width: max-content;
+    max-width: calc(100% - 2rem);
+    text-align: center;
+    white-space: normal;
+    line-height: 1.4;
     box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   }
   @media (max-width: 960px) {
