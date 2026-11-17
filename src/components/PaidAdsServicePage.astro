@@ -32,6 +32,8 @@ interface Props {
   badgeText: string;
   primaryCta: LinkItem;
   secondaryCta: LinkItem;
+  equalHeroActions?: boolean;
+  brandFinalCta?: boolean;
   proof: string[];
   snippetLabel: string;
   snippet: string;
@@ -85,6 +87,8 @@ const {
   badgeText,
   primaryCta,
   secondaryCta,
+  equalHeroActions = false,
+  brandFinalCta = false,
   proof,
   snippetLabel,
   snippet,
@@ -124,7 +128,7 @@ const {
         <p class="eyebrow">{eyebrow}</p>
         <h1>{h1}</h1>
         <p class="hero-subtitle">{subtitle}</p>
-        <div class="hero-actions">
+        <div class:list={['hero-actions', { 'equal-actions': equalHeroActions }]}>
           <a href={primaryCta.href} class="btn-primary">{primaryCta.text}</a>
           <a href={secondaryCta.href} class="btn-secondary">{secondaryCta.text}</a>
         </div>
@@ -279,7 +283,7 @@ const {
     </div>
   </section>
 
-  <section class="final-cta">
+  <section class:list={['final-cta', { 'final-cta-brand': brandFinalCta }]}>
     <div class="paid-shell final-inner">
       <div>
         <h2>{finalCta.title}</h2>
@@ -387,6 +391,17 @@ const {
   .btn-primary:hover,
   .btn-secondary:hover {
     transform: translateY(-2px);
+  }
+
+  .hero-actions.equal-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 440px);
+  }
+
+  .hero-actions.equal-actions .btn-primary,
+  .hero-actions.equal-actions .btn-secondary {
+    width: 100%;
   }
 
   .proof-row {
@@ -786,6 +801,10 @@ const {
     padding: clamp(58px, 8vw, 96px) 0;
     background: #2f4a3a;
     color: #fbfaf5;
+  }
+
+  .final-cta-brand {
+    background: var(--kwd-dark);
   }
 
   .final-inner {
