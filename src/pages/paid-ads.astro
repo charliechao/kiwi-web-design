@@ -4,15 +4,15 @@ import PaidAdsServicePage from '../components/PaidAdsServicePage.astro';
 const canonicalURL = 'https://www.kiwiwebdesign.co.nz/paid-ads/';
 const alternateUrl = 'https://www.kiwiwebdesign.co.nz/zh/paid-ads/';
 const title = 'Paid Ads Auckland & NZ | Small Business Campaigns | Kiwi Web Design';
-const description = 'Paid ads for Auckland and New Zealand small businesses. Google Ads setup is NZ$500 + GST and management is NZ$500 + GST/month, plus separate ad spend.';
+const description = 'Paid ads for Auckland and New Zealand small businesses. Campaign setup is NZ$500 + GST and ongoing management is NZ$500 + GST/month for either Google Ads or ChatGPT Ads, plus separate ad spend.';
 
 const faqs = [
-  { q: 'Should I start with Google Ads or ChatGPT Ads?', a: 'For most Auckland and New Zealand small businesses, Google Ads should come first because people are already searching there with strong buying intent. ChatGPT Ads are a newer channel, so we treat them as a controlled test alongside proven search campaigns rather than an automatic replacement.' },
-  { q: 'How much does Google Ads management cost?', a: 'Google Ads setup is NZ$500 + GST, followed by NZ$500 + GST per month for ongoing management. Google advertising spend is separate, paid directly to Google, and depends on your market, location and competition.' },
-  { q: 'Is Google ad spend included in the management fee?', a: 'No. The NZ$500 setup fee and NZ$500 monthly management fee cover our work. Your Google advertising budget is separate and paid directly to Google.' },
+  { q: 'Which paid ads channel suits my business?', a: 'Google Ads and ChatGPT Ads support different customer journeys. Google Ads reaches people searching for a service, while ChatGPT Ads can introduce a clear offer during conversational discovery. We help you choose the channel, or combination of channels, that matches your goals and audience.' },
+  { q: 'How much does paid ads management cost?', a: 'Campaign setup is NZ$500 + GST. Ongoing management is NZ$500 + GST per month for either Google Ads or ChatGPT Ads. Advertising spend is separate, paid directly to the relevant platform, and depends on your market, location and competition.' },
+  { q: 'Is advertising spend included in the management fee?', a: 'No. The NZ$500 setup fee and NZ$500 monthly management fee cover our work. Your advertising budget is separate and paid directly to the relevant advertising platform.' },
   { q: 'How do you decide what ad budget I need?', a: 'We base the recommendation on search demand, competition, expected value per lead, conversion rate, and how quickly you want useful data. We scope the budget after reviewing your market rather than publishing a generic figure that may not suit your business.' },
   { q: 'Can you build the landing page too?', a: 'Yes. We can connect paid ads to dedicated landing pages, website pages, forms, analytics, and conversion tracking so the campaign has a proper conversion path.' },
-  { q: 'How do you charge for ChatGPT Ads?', a: 'ChatGPT Ads strategy and testing are quoted separately because the platform, campaign scope, creative, landing pages and measurement requirements vary. We will explain the recommended scope before work starts.' },
+  { q: 'How do you charge for ChatGPT Ads?', a: 'Ongoing management is NZ$500 + GST per month when you choose ChatGPT Ads, the same monthly fee as Google Ads management. ChatGPT Ads setup requirements are confirmed before work starts, and advertising spend is separate and paid directly to the platform.' },
   { q: 'Do you work with small businesses outside Auckland?', a: 'Yes. Kiwi Web Design is based in Grey Lynn, Auckland, and supports paid ads for small businesses throughout New Zealand. Auckland clients can meet in person, while nationwide clients can work with us online.' },
 ];
 
@@ -51,10 +51,10 @@ const schema = {
       offers: [
         {
           '@type': 'Offer',
-          name: 'Google Ads campaign setup',
+          name: 'Paid Ads campaign setup',
           price: '500',
           priceCurrency: 'NZD',
-          description: 'One-off Google Ads campaign setup. GST and Google ad spend are additional.',
+          description: 'One-off paid ads campaign setup. GST and platform ad spend are additional.',
         },
         {
           '@type': 'Offer',
@@ -62,6 +62,13 @@ const schema = {
           price: '500',
           priceCurrency: 'NZD',
           description: 'Monthly Google Ads management. GST and Google ad spend are additional.',
+        },
+        {
+          '@type': 'Offer',
+          name: 'ChatGPT Ads ongoing management',
+          price: '500',
+          priceCurrency: 'NZD',
+          description: 'Monthly ChatGPT Ads management. GST and platform ad spend are additional.',
         },
       ],
     },
@@ -86,15 +93,15 @@ const schema = {
   schema={schema}
   eyebrow="Paid Ads | Auckland & NZ"
   h1="Paid ads for Auckland and New Zealand small businesses"
-  subtitle="Start with Google Ads to capture ready-to-buy searches: NZ$500 + GST setup and NZ$500 + GST per month for ongoing management, plus separate Google ad spend. We can then assess whether ChatGPT Ads is a useful test for your business."
+  subtitle="Google Ads captures people already searching, while ChatGPT Ads can put a clear offer into conversational discovery. We connect the right channel to a strong landing page, conversion tracking and plain-English reporting so your budget has a clear job."
   badgeText="Google Ads and ChatGPT Ads strategy for New Zealand small businesses"
   primaryCta={{ text: 'Book a free ads consultation', href: '/contact/' }}
   secondaryCta={{ text: 'View ChatGPT Ads', href: '/chatgpt-ads/' }}
-  proof={['Small-business focused', 'Google Ads from NZ$500 + GST', 'Auckland-based, NZ-wide', 'Tracking included']}
-  snippetLabel="Quick answer"
-  snippet="Kiwi Web Design helps Auckland and New Zealand small businesses run Google Ads with transparent pricing: NZ$500 + GST for setup and NZ$500 + GST per month for ongoing management. Google ad spend is separate and paid directly to Google. We can also scope a controlled ChatGPT Ads test where the customer journey supports it."
+  proof={['Small-business focused', 'Ongoing management NZ$500 + GST/mo', 'Auckland-based, NZ-wide', 'Tracking included']}
+  snippetLabel="Affordable pricing"
+  snippet="Kiwi Web Design helps Auckland and New Zealand small businesses run paid campaigns with clear pricing. Campaign setup is NZ$500 + GST, while ongoing management is NZ$500 + GST per month for either Google Ads or ChatGPT Ads. Advertising spend is separate and paid directly to the relevant platform."
   introEyebrow="Channel strategy"
-  introTitle="Use proven search demand first, then test newer AI demand carefully."
+  introTitle="Choose the paid channel that matches how customers find you."
   introText="Paid ads work best when the platform, message, landing page, and tracking are planned together. We help you choose the right channel rather than spreading a small-business budget across platforms just because they exist."
   channels={[
     {
@@ -108,7 +115,7 @@ const schema = {
     {
       icon: 'Sparkles',
       title: 'ChatGPT Ads',
-      desc: 'Plan and test paid ChatGPT placements with a clear offer, suitable creative, conversion-focused landing pages, and reliable measurement.',
+      desc: 'Run paid ChatGPT placements with a clear offer, suitable creative, conversion-focused landing pages, and reliable measurement.',
       href: '/chatgpt-ads/',
       label: 'Explore ChatGPT Ads',
       items: ['Campaign strategy', 'Prompt-intent research', 'Landing-page preparation', 'Measurement setup'],
@@ -120,7 +127,7 @@ const schema = {
   features={[
     { icon: 'Globe', title: 'Landing pages that convert', desc: 'Ads point to pages built for clarity, trust, speed, and enquiry generation.' },
     { icon: 'BadgeDollarSign', title: 'Conversion tracking', desc: 'Calls, forms, and key actions are tracked so optimisation is based on real business outcomes.' },
-    { icon: 'Sparkles', title: 'Message and intent testing', desc: 'We test keywords, buyer questions, offers, and calls to action to find what moves prospects.' },
+    { icon: 'Sparkles', title: 'Message and intent refinement', desc: 'We refine keywords, buyer questions, offers, and calls to action to find what moves prospects.' },
     { icon: 'ClipboardCheck', title: 'Clear monthly reporting', desc: 'You see what happened, what changed, and what we recommend next without unnecessary platform jargon.' },
   ]}
   processEyebrow="Our process"
@@ -133,14 +140,14 @@ const schema = {
     { icon: 'ClipboardCheck', title: 'Optimise and report', desc: 'We improve campaigns using actual lead data, not guesswork, and keep reporting simple enough to act on.' },
   ]}
   pricing={{
-    eyebrow: 'Transparent Google Ads Pricing',
-    title: 'Straightforward Google Ads pricing for small businesses',
-    setupLabel: 'Google Ads setup',
+    eyebrow: 'Transparent Paid Ads Pricing',
+    title: 'Straightforward pricing for small businesses',
+    setupLabel: 'Campaign setup',
     setupPrice: 'NZ$500 + GST',
-    monthlyLabel: 'Google Ads management',
+    monthlyLabel: 'Google Ads or ChatGPT Ads management',
     monthlyPrice: 'NZ$500 + GST/mo',
-    note: 'Google Ads setup and ongoing management are fixed fees. Google advertising spend is separate and paid directly to Google. ChatGPT Ads strategy and testing are quoted separately to suit the scope.',
-    items: ['Google Ads campaign setup and conversion tracking', 'Landing-page and tracking recommendations', 'Ongoing Google Ads optimisation and plain-English reporting', 'ChatGPT Ads strategy and testing quoted separately'],
+    note: 'Campaign setup is a fixed fee. Ongoing management is NZ$500 + GST per month for either Google Ads or ChatGPT Ads. Advertising spend is separate and paid directly to the relevant platform.',
+    items: ['Campaign setup and conversion tracking', 'Landing-page and tracking recommendations', 'Ongoing management for either Google Ads or ChatGPT Ads', 'Campaign setup requirements confirmed before work begins'],
   }}
   faqs={faqs}
   relatedLabel="Related services"
@@ -161,7 +168,7 @@ const schema = {
   ]}
   finalCta={{
     title: 'Want a paid ads plan before you spend more?',
-    subtitle: 'Book a free consultation and we will tell you whether Google Ads, ChatGPT Ads, SEO, or landing-page work should come first. Auckland clients can meet in person; New Zealand-wide consultations are available online.',
+    subtitle: 'Book a free consultation and we will help you choose the right mix of Google Ads, ChatGPT Ads, SEO and landing-page work for your goals. Auckland clients can meet in person; New Zealand-wide consultations are available online.',
     primaryText: 'Book a free consultation',
     primaryHref: '/contact/',
     secondaryText: 'Call 021 039 6580',
