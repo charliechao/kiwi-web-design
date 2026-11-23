@@ -11,6 +11,7 @@
 
 ## ChatGPT Ads Resources
 
+- [How to Claim a ChatGPT Business Profile in New Zealand](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/how-to-claim-chatgpt-business-profile-new-zealand/): Charlie Chao's first-hand 22 November 2026 Business Hub claim journey, covering business search, phone or domain authority verification, government-ID checks, the early dashboard and what a claim does not guarantee. It links to current OpenAI product and setup guidance.
 - [NZ ChatGPT Ads Launch Guide](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/chatgpt-ads-new-zealand-guide/): Account eligibility, offer policies, Auckland location controls and KWD's launch decision brief. Sources checked 19 September 2026.
 - [ChatGPT Ads vs Google Search Ads](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/chatgpt-ads-vs-google-search-ads-nz/): A channel decision framework using illustrative NZ business scenarios and qualified-outcome definitions, not performance benchmarks.
 - [Inside KWD's Enquiry Tracking](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/chatgpt-ads-conversion-tracking-nz/): A source-based account of session attribution, lead IDs and successful-form event dispatch, with validation steps and evidence limits.
