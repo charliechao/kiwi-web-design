@@ -1,6 +1,6 @@
 ---
 title: "How to Claim a ChatGPT Business Profile in New Zealand: My First-Hand Setup Guide"
-description: "A first-hand New Zealand guide to claiming a business in ChatGPT: finding your listing, verifying your authority and identity, and understanding the new Business Hub dashboard."
+description: "A first-hand guide for New Zealand small businesses claiming a business in ChatGPT: finding your listing, verifying your authority and identity, and understanding the new Business Hub dashboard."
 pubDate: 2026-11-24
 lastModified: 2026-11-24
 image: "/blog/chatgpt-business-hub-new-zealand-dashboard.webp"
@@ -15,7 +15,7 @@ keywords:
 
 On 22 November 2026, I started the process of claiming Kiwi Web Design in ChatGPT from New Zealand. It is early days, but the setup was more substantial than filling in a directory form: I had to find the business, claim it, show that I was authorised to manage it, and start an identity check.
 
-This is a record of the path I saw, with screenshots from my own setup. It is not a promise that every New Zealand business will see the same options or be approved. OpenAI's product, eligibility checks and verification methods can change.
+I wrote this for New Zealand small-business owners who want to claim their details properly before customers begin finding them through ChatGPT. This is a record of the path I saw, with screenshots from my own setup. It is not a promise that every New Zealand business will see the same options or be approved.
 
 <div class="kwd-snippet">
 
@@ -39,7 +39,9 @@ When the business record appeared, ChatGPT offered a claim screen that said I co
 
 Start by searching the business name, including the version customers are most likely to use. In my case, results included similarly named businesses, so I checked the name and address carefully before continuing.
 
-That small check matters. Claiming the wrong record is not a shortcut to having a presence in ChatGPT. If the correct business is not listed, the flow may offer a way to add it instead.
+If several similar businesses appear, only claim the record that matches your business name, address and contact details. Claiming another business's record will not create or manage your own listing. If you cannot find the correct business, use the option to add it instead.
+
+**New Zealand small-business check:** Before you claim a profile, confirm the details you want to use publicly. If your business is a limited company, search the [New Zealand Companies Register](https://companies-register.companiesoffice.govt.nz/) by company name, company number or NZBN, then compare those details with your website, phone number and address. If you trade as a sole trader, focus on matching the name, website and phone number customers already use.
 
 OpenAI's [setup guide for businesses](https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt) says eligible businesses can claim an existing business or add one where the feature and verification are available.
 
@@ -64,7 +66,7 @@ Do not use an old agency phone number, an ex-staff member's address or a persona
 
 ## Step 4: Complete the identity check
 
-In my case, the dashboard then asked me to verify my identity with a government-issued ID before I could edit business information or publish a business agent. The process included photographing the front of the ID, waiting while it processed, then completing a camera check to confirm I was the person submitting it.
+In my case, the dashboard then asked me to verify my identity with a government-issued ID before I could edit business information or publish a business agent. For New Zealand business owners, the government ID step can use a New Zealand driver licence or passport. The process included photographing the front of the ID, waiting while it processed, then completing a camera check to confirm I was the person submitting it.
 
 ![ChatGPT requesting a clear photo of the front of a government-issued ID](/blog/chatgpt-business-profile-government-id.webp)
 
@@ -86,7 +88,7 @@ The more important point is that seeing a dashboard does not mean ChatGPT will i
 
 No. The optional "Connect an ad account" prompt appeared in my dashboard, but it was separate from the claim and verification steps. OpenAI's [business setup guidance](https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt) says an Ads account or an Enterprise agreement is not required just to claim an eligible business.
 
-That distinction is useful for a small business. First, make sure the correct business information is claimed and accurate. Consider paid advertising separately, with a clear budget and a landing page that can answer a ready buyer's question.
+That distinction is useful for New Zealand small businesses. First, make sure the correct business information is claimed and accurate. Consider paid advertising separately, with a clear budget and a landing page that can answer a ready buyer's question. If you want help running paid placements in ChatGPT, see our [ChatGPT Ads service](/chatgpt-ads/). Claiming a business profile and running Ads are separate activities.
 
 ## A business profile is not the same as a Business Agent
 
@@ -102,8 +104,9 @@ Before starting, I would have these ready:
 2. Access to the business phone or website domain needed for verification.
 3. A ChatGPT account held by the owner or an authorised person with a clear access plan.
 4. Government ID for the person completing identity verification, if the flow requests it.
-5. A quick check that your website's contact details, services and location are current.
-6. A decision about who will keep the profile up to date when the business changes phone number, address or website.
+5. If you are a limited company, a check of your legal details in the [New Zealand Companies Register](https://companies-register.companiesoffice.govt.nz/).
+6. A quick check that your website's contact details, services and location are current.
+7. A decision about who will keep the profile up to date when the business changes phone number, address or website.
 
 ## The practical takeaway
 
