@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
 import PageVisual from '../components/PageVisual.astro';
-import agenciesImage from '../assets/general/auckland-web-design-agency-comparison.png';
+import agenciesImage from '../assets/general/auckland-web-design-agency-comparison.webp';
 
 const schema = {
   "@context": "https://schema.org",
@@ -207,6 +207,7 @@ const agencies = [
 </section>
 
 <PageVisual
+  priority
   imgSrc={agenciesImage.src}
   imgAlt="Auckland skyline with website design and agency comparison panels"
   imgTitle="Best web design agencies in Auckland 2027"

@@ -3,7 +3,7 @@ title: "How Much Does a Website Cost in New Zealand? (2026 Guide)"
 description: "NZ website costs in 2026: small business sites $1,500–$6,000, eCommerce from $5,000, custom builds from $10,000. Real Auckland prices, what's included, and a live cost calculator."
 pubDate: 2025-07-10
 lastModified: 2026-01-05
-image: "/blog/ChatGPT-Image-Jul-10-2025-10_12_32-AM.png"
+image: "/blog/ChatGPT-Image-Jul-10-2025-10_12_32-AM.webp"
 articleSection: Website Pricing
 keywords: "website cost NZ, how much does a website cost New Zealand, website price Auckland, small business website cost NZ 2026, NZ website design prices"
 ---

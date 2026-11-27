@@ -61,11 +61,11 @@ These are presence checks, not quality scores. For example, detecting a meta des
 
 Every accessible homepage gave visitors an obvious action. These two dated screenshots show different approaches in the sample: a service business prioritising phone calls and a treatment business prioritising service discovery and booking.
 
-![Barrett Access Scaffolding homepage with visible phone call actions, captured 26 August 2026](/blog/auckland-website-audit-action-example-scaffolding-2026.png)
+![Barrett Access Scaffolding homepage with visible phone call actions, captured 26 August 2026](/blog/auckland-website-audit-action-example-scaffolding-2026.webp)
 
 *Barrett Access Scaffolding homepage, captured 26 August 2026. The desktop header and hero both present a call action.*
 
-![Beauty Touch homepage with visible Book Now and Discover Services actions, captured 26 August 2026](/blog/auckland-website-audit-action-example-booking-2026.png)
+![Beauty Touch homepage with visible Book Now and Discover Services actions, captured 26 August 2026](/blog/auckland-website-audit-action-example-booking-2026.webp)
 
 *Beauty Touch homepage, captured 26 August 2026. Booking and service-discovery actions are visible in the first viewport.*
 

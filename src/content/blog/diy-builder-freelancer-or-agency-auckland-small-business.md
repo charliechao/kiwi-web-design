@@ -2,7 +2,7 @@
 title: "Website Builder, Freelancer, or Agency? What Actually Makes Sense for a Small Business in NZ (2026)"
 description: "Wix, an AI website builder, a freelancer, or an agency — an honest breakdown for small businesses across New Zealand of what each option actually gets you, and when each one makes sense."
 pubDate: 2026-07-11
-image: "/blog/website-redesign-vs-rebuild-auckland-small-business.png"
+image: "/blog/website-redesign-vs-rebuild-auckland-small-business.webp"
 ---
 
 If you've started looking into getting a website, you've probably hit the same fork in the road every small business owner in NZ hits: build it yourself with a website builder, hire a freelancer, or go with an agency. Every option gets pitched as the obvious answer by whoever's selling it. Here's the honest version, including where we think a DIY builder is genuinely the right call.

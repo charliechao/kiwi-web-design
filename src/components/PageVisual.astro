@@ -9,6 +9,8 @@ interface Props {
   linkHref?: string;
   linkLabel?: string;
   reverse?: boolean;
+  /** Set when the image is visible without scrolling, so it loads straight away. */
+  priority?: boolean;
 }
 
 const {
@@ -21,6 +23,7 @@ const {
   linkHref,
   linkLabel,
   reverse = false,
+  priority = false,
 } = Astro.props;
 ---
 
@@ -40,7 +43,8 @@ const {
           title={imgTitle}
           width="1120"
           height="720"
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
+          fetchpriority={priority ? 'high' : undefined}
           decoding="async"
           class="page-visual-img"
         />
@@ -53,7 +57,8 @@ const {
           title={imgTitle}
           width="1120"
           height="720"
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
+          fetchpriority={priority ? 'high' : undefined}
           decoding="async"
           class="page-visual-img"
         />

@@ -3,7 +3,7 @@ title: "E-E-A-T for Small Businesses: A Practical Trust Checklist"
 description: "What Google's E-E-A-T guidance really means, what it does not mean, and how Auckland small businesses can make website claims easier to verify."
 pubDate: 2026-07-11
 lastModified: 2026-11-03
-image: "/blog/why-auckland-business-not-ranking-google.png"
+image: "/blog/why-auckland-business-not-ranking-google.webp"
 articleSection: "SEO"
 keywords:
   - E-E-A-T small business

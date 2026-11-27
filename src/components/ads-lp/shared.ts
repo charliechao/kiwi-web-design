@@ -88,5 +88,5 @@ export const portfolio = [
   { src: '/portfolio/kebudel.webp', alt: 'Kebudel website by Kiwi Web Design', caption: 'Kebudel', result: 'Better engagement from new visitors' },
   { src: '/portfolio/asc-homes.webp', alt: 'ASC Homes website by Kiwi Web Design', caption: 'ASC Homes', result: 'Stronger trust with prospective clients' },
   { src: '/portfolio/mt-albert-business.jpg', alt: 'Mt Albert Business Association website by Kiwi Web Design', caption: 'Mt Albert Business Assoc.', result: 'Easier for members to find and contact' },
-  { src: '/blog/600-21B675F7-8EB5-45A5-99242870729DC26D.png', alt: 'TopRated.nz platform by Kiwi Web Design', caption: 'TopRated.nz', result: 'Higher engagement across the platform' },
+  { src: '/blog/600-21B675F7-8EB5-45A5-99242870729DC26D.webp', alt: 'TopRated.nz platform by Kiwi Web Design', caption: 'TopRated.nz', result: 'Higher engagement across the platform' },
 ];

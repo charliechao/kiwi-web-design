@@ -3,7 +3,7 @@ title: Website Redesign vs Starting from Scratch
 description: "Should you redesign your existing website or rebuild it? Use Kiwi Web Design's practical audit framework, warning signs, and Auckland project examples."
 pubDate: 2025-12-19
 lastModified: 2026-08-26
-image: "/blog/website-redesign-vs-rebuild-auckland-small-business.png"
+image: "/blog/website-redesign-vs-rebuild-auckland-small-business.webp"
 articleSection: "Web Design"
 keywords:
   - website redesign vs rebuild
@@ -18,7 +18,7 @@ keywords:
 
 </div>
 
-![Auckland small business owner considering whether to redesign or rebuild a website](/blog/website-redesign-vs-rebuild-auckland-small-business.png)
+![Auckland small business owner considering whether to redesign or rebuild a website](/blog/website-redesign-vs-rebuild-auckland-small-business.webp)
 
 The cheapest-looking option is not always the least expensive one. A cosmetic redesign can preserve useful content and rankings, but it can also leave an old structure, slow theme, or broken enquiry journey underneath a new coat of paint.
 
