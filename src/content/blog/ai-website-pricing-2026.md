@@ -150,7 +150,7 @@ It is designed for businesses that want:
 You are not paying for outdated processes. You are paying for outcomes.
 
 
-You can learn more about our [AI-powered website design](https://kiwiwebdesign.co.nz/ai-website-design-auckland/)here:
+You can learn more about our [AI-powered website design](https://www.kiwiwebdesign.co.nz/affordable-web-design-auckland/ai-first-web-design/).
 
 
 ### The Real Question You Should Ask
